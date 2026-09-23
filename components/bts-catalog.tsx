@@ -1,6 +1,7 @@
 "use client";
 import {useEffect,useState} from 'react';
 import catalog from '@/lib/discography.json';
+import {createPortal} from 'react-dom';
 import {MusicStudy} from './music-study';
 import {KoreanText} from './korean-audio';
 
@@ -10,20 +11,41 @@ const artistSlug=(a:string)=>a.toLowerCase().replaceAll(' ','-');
 const normalized=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 function studyFor(title:string){const s=title.toLowerCase();if(/japanese|remix|instrumental|live/.test(s))return;return ({'spring day':'spring-day','life goes on':'life-goes-on','boy with luv (feat. halsey)':'boy-with-luv','dna':'dna','idol':'idol'} as Record<string,string>)[s]}
 const remixOrInstrumental=/(instrumental|remix)/i;
-const discography:Album[]=catalog.filter(a=>!remixOrInstrumental.test(a.title)).map(a=>({...a,tracks:a.tracks.filter(t=>!remixOrInstrumental.test(t.title))})).filter(a=>a.tracks.length>0);
+const blockedTitles=['PERMISSION TO DANCE ON STAGE (LIVE)','SWIM - Single','Dreamers (Music from the','Yet To Come (Hyundai Ver.)','Bad Decisions','My Universe (Supernova 7 Mix)','Permission to Dance - Single','Butter - Single','Who (feat. BTS)','FAKE LOVE (Rocking Vibe Mix)'];
+const isBlocked=(title:string)=>blockedTitles.some(b=>normalized(title).includes(normalized(b)));
+const discography:Album[]=catalog.filter(a=>!remixOrInstrumental.test(a.title)&&!isBlocked(a.title)).map(a=>({...a,tracks:a.tracks.filter(t=>!remixOrInstrumental.test(t.title)&&!isBlocked(t.title))})).filter(a=>a.tracks.length>0);
 const isSingle=(a:Album)=>/ - single$/i.test(a.title);
+const sc=(q:string)=>'https://soundcloud.com/search?q='+encodeURIComponent(q);
 const soundCloudOnly=[
- {id:'sc-sea',title:'SEA',artist:'BTS',url:'https://soundcloud.com/search?q=BTS%20SEA'},
- {id:'sc-4-oclock',title:"4 O'Clock",artist:'RM, V · BTS',url:'https://soundcloud.com/search?q=BTS%204%20O%27Clock'}
+ {id:'sc-sea',title:'SEA',artist:'BTS',url:sc('BTS SEA')},
+ {id:'sc-4-oclock',title:"4 O'Clock",artist:'RM, V · BTS',url:sc("BTS 4 O'Clock")},
+ {id:'sc-scenery',title:'Scenery (풍경)',artist:'V · BTS',url:sc('V Scenery BTS')},
+ {id:'sc-promise',title:'Promise (약속)',artist:'Jimin · BTS',url:sc('Jimin Promise BTS')},
+ {id:'sc-forever-rain',title:'Forever Rain',artist:'RM · BTS',url:sc('RM forever rain')},
+ {id:'sc-still-with-you',title:'Still With You',artist:'Jung Kook · BTS',url:sc('Jung Kook Still With You')},
+ {id:'sc-christmas-love',title:'Christmas Love',artist:'Jung Kook · BTS',url:sc('Jung Kook Christmas Love')},
+ {id:'sc-abyss',title:'Abyss',artist:'Jin · BTS',url:sc('Jin Abyss BTS')}
 ];
-function AlbumCard({album,query}:{album:Album;query:string}){
+type ListenItem={title:string;artist:string;apple:string;soundcloud?:string};
+type Listen=(item:ListenItem)=>void;
+function platformLinks(item:ListenItem){return [
+ ...(item.soundcloud?[{label:'SoundCloud',href:item.soundcloud}]:[]),
+ {label:'YouTube',href:'https://www.youtube.com/results?search_query='+encodeURIComponent(item.artist+' '+item.title+' official audio')},
+ {label:'Spotify',href:'https://open.spotify.com/search/'+encodeURIComponent(item.artist+' '+item.title)},
+ {label:'Apple Music',href:item.apple}
+];}
+function ListenModal({item,onClose}:{item:ListenItem;onClose:()=>void}){
+ return createPortal(<div className="listen-overlay" onClick={onClose}><div className="listen-box" role="dialog" aria-modal="true" aria-label="Escolher plataforma" onClick={e=>e.stopPropagation()}><button type="button" className="listen-close" aria-label="Fechar" onClick={onClose}>×</button><p className="eyebrow">ESCOLHA A PLATAFORMA</p><h3>Ouvir “{item.title}”</h3><p className="listen-artist">{item.artist}</p><ul className="listen-platforms">{platformLinks(item).map(p=><li key={p.label}><a href={p.href} target="_blank" rel="noreferrer">{p.label} ↗</a></li>)}</ul></div></div>,document.body);
+}
+function AlbumCard({album,query,onListen}:{album:Album;query:string;onListen:Listen}){
  return <details className="album" open={query.trim()?true:undefined}>
   <summary><img src={album.artwork} width="72" height="72" alt="" loading="lazy"/><span><strong>{album.title}</strong><small>{new Date(album.date+'T12:00:00Z').toLocaleDateString('pt-BR',{timeZone:'UTC'})} · {album.tracks.length} faixas</small></span><span className="album-expand" aria-hidden="true">＋</span></summary>
-  <div className="album-tracks"><a className="text-button" href={album.url} target="_blank" rel="noreferrer">Abrir álbum no Apple Music ↗</a><ol>{album.tracks.filter(t=>!query||normalized(album.title).includes(normalized(query))||normalized(t.title).includes(normalized(query))).map(track=><li key={track.id}><span className="track-number">{track.disc>1?track.disc+'.':''}{String(track.number).padStart(2,'0')}</span><span className="track-title"><KoreanText text={track.title}/>{track.artist!=='BTS'&&<small>{track.artist}</small>}</span><span className="track-actions">{studyFor(track.title)&&<a href={'#bts/estudos/'+studyFor(track.title)}>Estudar</a>}<a href={track.url} target="_blank" rel="noreferrer" aria-label={'Ouvir '+track.title+' no Apple Music'}>Ouvir ↗</a></span></li>)}</ol></div>
+  <div className="album-tracks"><button type="button" className="text-button" onClick={()=>onListen({title:album.title,artist:album.artist,apple:album.url})}>Ouvir álbum ↗</button><ol>{album.tracks.filter(t=>!query||normalized(album.title).includes(normalized(query))||normalized(t.title).includes(normalized(query))).map(track=><li key={track.id}><span className="track-number">{track.disc>1?track.disc+'.':''}{String(track.number).padStart(2,'0')}</span><span className="track-title"><KoreanText text={track.title}/>{track.artist!=='BTS'&&<small>{track.artist}</small>}</span><span className="track-actions">{studyFor(track.title)&&<a href={'#bts/estudos/'+studyFor(track.title)}>Estudar</a>}<button type="button" onClick={()=>onListen({title:track.title,artist:track.artist,apple:track.url})} aria-label={'Ouvir '+track.title+' em outra plataforma'}>Ouvir ↗</button></span></li>)}</ol></div>
  </details>;
 }
 export function BtsCatalog(){
  const [study,setStudy]=useState(''),[query,setQuery]=useState(''),[artist,setArtist]=useState('BTS');
+ const [listen,setListen]=useState<ListenItem|null>(null);
  useEffect(()=>{const read=()=>{const parts=location.hash.split('/');setStudy(parts[1]==='estudos'?(parts[2]||'spring-day'):'');setArtist(artists.find(a=>artistSlug(a)===parts[1])||'BTS');setQuery('')};read();addEventListener('hashchange',read);return()=>removeEventListener('hashchange',read)},[]);
  const match=(a:Album)=>normalized(a.title+' '+a.tracks.map(t=>t.title).join(' ')).includes(normalized(query));
  const found=discography.filter(a=>a.artist===artist).filter(match);
@@ -32,10 +54,11 @@ export function BtsCatalog(){
  const others=(artist==='BTS'?soundCloudOnly:[]).filter(s=>!query||normalized(s.title+' '+s.artist).includes(normalized(query)));
  return <><nav className="artist-tabs" aria-label="Escolher artista">{artists.map(a=><a key={a} className={a===artist?'selected':''} aria-current={a===artist?'page':undefined} href={a==='BTS'?'#bts':'#bts/'+artistSlug(a)}>{a} Músicas</a>)}</nav><div className="intro"><div><p className="eyebrow">SUA MÚSICA, SUAS DESCOBERTAS</p><h1>{artist} Músicas<span>.</span></h1><p>Explore os lançamentos do mais recente ao mais antigo, descubra suas faixas favoritas.</p></div></div>{artist==='BTS'&&<nav className="catalog-tabs" aria-label="Área de músicas"><a className={!study?'selected':''} href="#bts">Discografia</a><a className={study?'selected':''} href="#bts/estudos/spring-day">Estudar com músicas</a></nav>}{study?<MusicStudy key={study} initialSongId={study}/>:<>
  <div className="catalog-search"><label htmlFor="music-search">Buscar álbum ou música</label><input id="music-search" type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Nome da música ou do álbum…"/><p>{found.length} lançamentos no Apple Music{others.length?` · ${others.length} só no SoundCloud`:''} · álbuns, singles e colaborações creditadas a {artist}</p></div>
- <p className="muted">Os links abrem as faixas no Apple Music; as faixas de “Outros” abrem no SoundCloud. Versões instrumentais e remixes não são exibidos — só as originais e as versões oficiais (por exemplo, a versão coreana). Uma música pode aparecer em vários álbuns. Os estudos disponíveis têm um botão próprio; as demais faixas ainda não têm tradução ou explicação no BoraLang.</p>
- {albums.length>0&&<><h2 className="discography-heading">Álbuns</h2><div className="album-list">{albums.map(album=><AlbumCard key={album.id} album={album} query={query}/>)}</div></>}
- {singles.length>0&&<><h2 className="discography-heading">Singles</h2><div className="album-list">{singles.map(album=><AlbumCard key={album.id} album={album} query={query}/>)}</div></>}
- {others.length>0&&<><h2 className="discography-heading">Outros</h2><div className="album-list"><div className="soundcloud-list">{others.map(song=><div className="soundcloud-song" key={song.id}><span><strong>{song.title}</strong><small>{song.artist} · só no SoundCloud</small></span><span className="track-actions"><a href={song.url} target="_blank" rel="noreferrer" aria-label={'Ouvir '+song.title+' no SoundCloud'}>Ouvir ↗</a></span></div>)}</div></div></>}
+ <p className="muted">Ao clicar em “Ouvir” abre um seletor de plataforma: SoundCloud (quando existir), YouTube, Spotify e Apple Music. Versões instrumentais e remixes não são exibidos — só as originais e as versões oficiais (por exemplo, a versão coreana). Uma música pode aparecer em vários álbuns. Os estudos disponíveis têm um botão próprio; as demais faixas ainda não têm tradução ou explicação no BoraLang.</p>
+ {albums.length>0&&<><h2 className="discography-heading">Álbuns</h2><div className="album-list">{albums.map(album=><AlbumCard key={album.id} album={album} query={query} onListen={setListen}/>)}</div></>}
+ {singles.length>0&&<><h2 className="discography-heading">Singles</h2><div className="album-list">{singles.map(album=><AlbumCard key={album.id} album={album} query={query} onListen={setListen}/>)}</div></>}
+ {others.length>0&&<><h2 className="discography-heading">Outros</h2><div className="album-list"><div className="soundcloud-list">{others.map(song=><div className="soundcloud-song" key={song.id}><span><strong>{song.title}</strong><small>{song.artist} · só no SoundCloud</small></span><span className="track-actions"><button type="button" onClick={()=>setListen({title:song.title,artist:song.artist,apple:'https://music.apple.com/us/search?term='+encodeURIComponent(song.artist+' '+song.title),soundcloud:song.url})}>Ouvir ↗</button></span></div>)}</div></div></>}
+ {listen&&<ListenModal item={listen} onClose={()=>setListen(null)}/>}
  {!found.length&&!others.length&&<p className="empty-state">Nenhuma música encontrada. Tente outro título.</p>}
  <p className="music-reference">Catálogo digital consultado em 22/09/2026. Lançamentos japoneses não incluídos; versões instrumentais e remixes removidas. Edições regionais podem variar; faixas exclusivas de discos físicos e lançamentos fora das plataformas não estão incluídos. Fontes: <a href="https://music.apple.com/us/artist/bts/883131348" target="_blank" rel="noreferrer">Apple Music</a>, <a href="https://bts.ibighit.com/eng/discography/" target="_blank" rel="noreferrer">BIGHIT MUSIC</a>, os catálogos oficiais dos integrantes no Apple Music e o <a href="https://soundcloud.com/search?q=BTS" target="_blank" rel="noreferrer">SoundCloud</a>.</p>
 </>}</>;

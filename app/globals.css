@@ -44,3 +44,28 @@
 .soundcloud-song strong{display:block;font-size:1.02rem}
 .soundcloud-song small{display:block;margin-top:2px;color:#7a6f86;font-size:.86rem}
 .soundcloud-song .track-actions a{text-decoration:none;font-weight:600;color:#6b4891}
+/* Cards de curiosidade em post-it, sempre visiveis na explicacao */
+.post-it{position:relative;margin-top:14px;padding:15px 16px 13px;background:linear-gradient(180deg,#fff9b0,#fff176);border-radius:3px;box-shadow:0 3px 9px rgba(0,0,0,.18);transform:rotate(-1.2deg)}
+.post-it::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(1.5deg);width:74px;height:18px;background:rgba(255,255,255,.7);border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.post-it-label{display:inline-block;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:#8a7a1f}
+.post-it p{margin:7px 0 0;font-size:.93rem;line-height:1.75;color:#4a4119;white-space:normal}
+.word-analysis li:nth-child(even) .post-it{transform:rotate(1deg)}
+
+/* Modal: escolher plataforma */
+.listen-overlay{position:fixed;inset:0;z-index:60;background:rgba(28,18,44,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.listen-box{position:relative;width:min(360px,100%);background:#fff;border-radius:18px;padding:30px 24px 24px;box-shadow:0 22px 55px rgba(0,0,0,.32);text-align:center}
+.listen-close{position:absolute;top:8px;right:12px;border:0;background:none;font-size:1.6rem;line-height:1;cursor:pointer;color:#6b5f7a}
+.listen-box h3{margin:8px 0 2px;font-size:1.1rem}
+.listen-artist{margin:0 0 16px;font-size:.88rem;color:#7a6f86}
+.listen-platforms{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.listen-platforms a{display:block;padding:12px 14px;border-radius:12px;background:#f4eefb;color:#5b3f83;font-weight:600;text-decoration:none;border:1px solid #e3d6f4}
+.listen-platforms a:hover{background:#ece1fa;border-color:#c9b3e3}
+.track-actions button{border:0;background:none;padding:0;cursor:pointer;color:#653f86;font-size:.9rem;font-weight:600;font-family:inherit;text-decoration:underline;text-underline-offset:3px}
+
+/* Links de streaming no fim do estudo */
+.stream-links{margin:32px 0 6px;padding:20px 22px;border:1px dashed #c9b3e3;border-radius:16px;background:#faf6ff}
+.stream-links h3{margin:0;font-size:1.05rem}
+.stream-links .muted{margin:6px 0 0}
+.stream-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.stream-buttons a{padding:10px 16px;border-radius:999px;background:#6b4891;color:#fff;font-weight:600;text-decoration:none;font-size:.92rem}
+.stream-buttons a:hover{background:#5a3c7d}
