@@ -6,8 +6,8 @@ import {springDaySections,springDayVocabulary,StudyLine} from '@/lib/spring-day'
 import {ExerciseCard} from './exercise';
 import {KoreanText,AudioButton,useKoreanSpeech} from './korean-audio';
 
-export function MusicStudy(){
- const [songId,setSongId]=useState(songs[0].id);
+export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string}){
+ const [songId,setSongId]=useState(songs.some(s=>s.id===initialSongId)?initialSongId:songs[0].id);
  const {stop}=useKoreanSpeech();
  const song=songs.find(s=>s.id===songId)!;
  return <><div className="intro"><div><p className="eyebrow">PALAVRAS, FRASES E DESCOBERTAS</p><h1>Aprenda coreano com BTS<span>.</span></h1><p>Toque nas palavras para ouvir uma voz sintetizada em coreano.</p></div><Music2 size={42}/></div><div className="song-tabs" role="group" aria-label="Escolha uma música">{songs.map(s=><button key={s.id} aria-pressed={songId===s.id} onClick={()=>{stop();setSongId(s.id)}}>{s.title}</button>)}</div><SongLesson key={song.id} song={song}/><p className="music-reference">Traduções e explicações preparadas para estudo. Este projeto não é afiliado ao BTS.</p></>;

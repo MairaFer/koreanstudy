@@ -3,7 +3,7 @@ import "./globals.css";
 import {SpeechProvider} from "@/components/korean-audio";
 
 export const metadata: Metadata = {
-  title: "봄 · Coreano no seu ritmo",
+  title: "BoraLang · Bora aprender coreano com o BTS",
   description: "Aprenda coreano em português: 30 aulas, flashcards, quizzes e músicas do BTS.",
   icons: {
     icon: "/favicon.svg",
