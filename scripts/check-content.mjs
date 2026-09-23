@@ -15,7 +15,8 @@ console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 5 música
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
 assert.equal(springLines.length,59);
-for(const l of springLines)assert.ok(l.text&&l.translation&&l.grammar);
+assert.equal(springLines.filter(l=>l.english).length,1);
+for(const l of springLines){assert.ok(l.text&&l.translation,l.text);if(l.english){assert.ok(l.entries&&l.entries.length===0);}else{assert.ok(l.entries&&l.entries.length>0,'sem análise palavra a palavra: '+l.text);for(const entry of l.entries){assert.ok(entry.term&&entry.meaning,l.text);if(entry.notes)for(const note of entry.notes)assert.ok(note.length>2);}}}
 assert.equal(springLines.filter(l=>l.text==='보고 싶다 (보고 싶다)').length,6);
 assert.equal(springLines.filter(l=>l.text==='그곳에 좀 더 머물러줘, 머물러줘').length,2);
 assert.equal(springDayVocabulary.verbs.length,22);
@@ -26,4 +27,4 @@ assert.ok(!musicSource.includes('analyzeOnce'));
 const {koreanPhrases}=await load('lib/audio-text.ts');
 assert.deepEqual(koreanPhrases('8월에도 겨울이 와'),['8월에도 겨울이 와']);
 assert.equal(koreanPhrases('보고 싶다 (보고 싶다)').length,2);
-console.log('PASS: Spring Day: 59 frases traduzidas e explicadas, repetições preservadas, 22 verbos e 24 substantivos; sem formulário ou análise pública.');
+console.log('PASS: Spring Day: 59 frases traduzidas e analisadas palavra a palavra (inglês só com tradução), repetições preservadas, 22 verbos e 24 substantivos; sem formulário ou análise pública.');
