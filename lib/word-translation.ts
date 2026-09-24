@@ -5,7 +5,10 @@ import {hooliganSections,hooliganVocabulary} from './hooligan';
 import {twoPointZeroSections,twoPointZeroVocabulary} from './two-point-zero';
 import {aliensSections,aliensVocabulary} from './aliens';
 
+import {fyaSections,fyaVocabulary} from './fya';
+
 const studies=[
+  {id:'fya',sections:fyaSections,vocabulary:fyaVocabulary},
   {id:'spring-day',sections:springDaySections,vocabulary:springDayVocabulary},
   {id:'body-to-body',sections:bodyToBodySections,vocabulary:bodyToBodyVocabulary},
   {id:'hooligan',sections:hooliganSections,vocabulary:hooliganVocabulary},
