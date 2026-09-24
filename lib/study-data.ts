@@ -1,7 +1,7 @@
 export const STORAGE_KEY = 'bom-korean-progress-v1';
 export type ProgressState = {version:1; completed:string[]; learned:string[]; lastLesson:string|null; answers:Record<string,{value:string;correct:boolean}>; quizzes:Record<string,number>; notes:Record<string,string>};
 export const freshProgress = ():ProgressState => ({version:1,completed:[],learned:[],lastLesson:null,answers:{},quizzes:{},notes:{}});
-export const colors = ['yellow','purple','green','pink'] as const;
+export const colors = ['yellow','purple','green','pink','red','blue','gray'] as const;
 export type WordColor = typeof colors[number];
 export type SavedWord = {word:string; context:string; source:string; color:WordColor|null; saved:boolean; reviewed:boolean};
 export type StudyChange = {key:string;value:unknown};

@@ -86,3 +86,7 @@
 .word-mode[aria-pressed=true],.word-filters [aria-pressed=true]{background:#76519f!important;color:#fff!important}
 .saved-words h1{font-size:clamp(2rem,5vw,3rem);margin:8px 0 16px}.saved-words>p{max-width:720px;line-height:1.7}.word-filters{margin:24px 0}.word-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.saved-word{border:1px solid #e1d7ed;border-radius:18px;padding:22px;background:white}.saved-word h2{font-size:1.9rem}.word-context{font-size:1rem;line-height:1.8;overflow-wrap:anywhere;color:#564664}.saved-word>a{display:inline-block;margin:12px 0;color:#704393}.word-actions{margin-top:12px}.word-actions button{font-size:.86rem}.speech-toolbar{flex-wrap:wrap}
 @media(max-width:760px){.account-bar{align-items:flex-start;flex-direction:column;padding:18px}.account-actions{width:100%;flex-shrink:1}.account-actions a{font-size:.85rem}.word-grid{grid-template-columns:1fr}.speech-toolbar{gap:6px}.speech-toolbar button{font-size:.76rem}.speech-status{flex-basis:100%}.study-sheet{padding:20px!important}}
+
+.korean-word.highlight-red,.highlight-red{background:#ffc9c9!important;color:#711c24!important}
+.korean-word.highlight-blue,.highlight-blue{background:#cde5ff!important;color:#173e69!important}
+.korean-word.highlight-gray,.highlight-gray{background:#e0e3e8!important;color:#343a43!important}
