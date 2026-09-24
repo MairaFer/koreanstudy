@@ -1,4 +1,8 @@
-// Intentionally empty by default.
-// Add Drizzle tables here when the site actually needs a database.
-// See examples/d1/db/schema.ts for an opt-in example.
-export {};
+// Compound ownership key isolates every student's progress and vocabulary.
+import {sqliteTable, text, integer, primaryKey} from 'drizzle-orm/sqlite-core';
+export const studyItems = sqliteTable('study_items', {
+  userId: text('user_id').notNull(),
+  key: text('item_key').notNull(),
+  value: text('value_json').notNull(),
+  updatedAt: integer('updated_at').notNull(),
+}, table => [primaryKey({columns: [table.userId, table.key]})]);
