@@ -20,7 +20,7 @@ export function toggleWordMode(){emit({wordMode:!snapshot.wordMode});}
 export function selectWord(word:string,context:string){
   if(!snapshot.user){requestAccount();return;}
   const source=/^#(?:aulas|bts|flashcards|quizzes|palavras)(?:\/[-\w]*)*$/.test(location.hash)?location.hash:'#aulas';
-  emit({selection:snapshot.words[word]??{word,context:context.slice(0,2000),source,color:null,saved:false,reviewed:false}});
+  emit({selection:{...(snapshot.words[word]??{word,color:null,saved:false,reviewed:false}),context:context.slice(0,2000),source}});
 }
 export function closeWord(){emit({selection:null});}
 export async function loadStudy(){
