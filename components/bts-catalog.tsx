@@ -20,11 +20,6 @@ const soundCloudOnly=[
  {id:'sc-sea',title:'SEA',artist:'BTS',url:sc('BTS SEA')},
  {id:'sc-4-oclock',title:"4 O'Clock",artist:'RM, V · BTS',url:sc("BTS 4 O'Clock")},
  {id:'sc-scenery',title:'Scenery (풍경)',artist:'V · BTS',url:sc('V Scenery BTS')},
- {id:'sc-promise',title:'Promise (약속)',artist:'Jimin · BTS',url:sc('Jimin Promise BTS')},
- {id:'sc-forever-rain',title:'Forever Rain',artist:'RM · BTS',url:sc('RM forever rain')},
- {id:'sc-still-with-you',title:'Still With You',artist:'Jung Kook · BTS',url:sc('Jung Kook Still With You')},
- {id:'sc-christmas-love',title:'Christmas Love',artist:'Jung Kook · BTS',url:sc('Jung Kook Christmas Love')},
- {id:'sc-abyss',title:'Abyss',artist:'Jin · BTS',url:sc('Jin Abyss BTS')}
 ];
 type ListenItem={title:string;artist:string;apple:string;soundcloud?:string};
 type Listen=(item:ListenItem)=>void;
