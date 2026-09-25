@@ -1,6 +1,9 @@
 "use client";
 import {useEffect,useState} from 'react';
 import catalog from '@/lib/discography.json';
+import hidden from '@/lib/catalog-hidden.json';
+const hiddenAlbums=new Set(hidden.albums.map(a=>a.artist+':'+a.id));
+const hiddenTracks=new Set(hidden.tracks.map(t=>t.artist+':'+t.id));
 import {createPortal} from 'react-dom';
 import {MusicStudy} from './music-study';
 import {KoreanText} from './korean-audio';
@@ -13,7 +16,7 @@ function studyFor(title:string){const s=title.toLowerCase();if(/japanese|remix|i
 const remixOrInstrumental=/(instrumental|remix)/i;
 const blockedTitles=['PERMISSION TO DANCE ON STAGE (LIVE)','SWIM - Single','Dreamers (Music from the','Yet To Come (Hyundai Ver.)','Bad Decisions','My Universe (Supernova 7 Mix)','Permission to Dance - Single','Butter - Single','Who (feat. BTS)','FAKE LOVE (Rocking Vibe Mix)'];
 const isBlocked=(title:string)=>blockedTitles.some(b=>normalized(title).includes(normalized(b)));
-const discography:Album[]=catalog.filter(a=>!remixOrInstrumental.test(a.title)&&!isBlocked(a.title)).map(a=>({...a,tracks:a.tracks.filter(t=>!remixOrInstrumental.test(t.title)&&!isBlocked(t.title))})).filter(a=>a.tracks.length>0);
+const discography:Album[]=catalog.filter(a=>!hiddenAlbums.has(a.artist+':'+a.id)&&!remixOrInstrumental.test(a.title)&&!isBlocked(a.title)).map(a=>({...a,tracks:a.tracks.filter(t=>!hiddenTracks.has(a.artist+':'+t.id)&&!remixOrInstrumental.test(t.title)&&!isBlocked(t.title))})).filter(a=>a.tracks.length>0);
 const isSingle=(a:Album)=>/ - single$/i.test(a.title);
 const sc=(q:string)=>'https://soundcloud.com/search?q='+encodeURIComponent(q);
 const soundCloudOnly=[

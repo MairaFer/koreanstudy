@@ -1,0 +1,444 @@
+{
+  "albums": [
+    {
+      "artist": "RM",
+      "id": "1807215305",
+      "title": "Stop The Rain (TABLO X RM) - Single",
+      "date": "2025-05-02"
+    },
+    {
+      "artist": "RM",
+      "id": "1766814253",
+      "title": "Neva Play (feat. RM of BTS) - Single",
+      "date": "2024-09-06"
+    },
+    {
+      "artist": "RM",
+      "id": "1746211272",
+      "title": "Come back to me (Radio Edit) - Single",
+      "date": "2024-05-10"
+    },
+    {
+      "artist": "Jin",
+      "id": "1814719734",
+      "title": "Echo (+1db)",
+      "date": "2025-05-20"
+    },
+    {
+      "artist": "Jin",
+      "id": "1814718083",
+      "title": "Echo (+3db)",
+      "date": "2025-05-20"
+    },
+    {
+      "artist": "Jin",
+      "id": "1814717484",
+      "title": "Echo (+2db)",
+      "date": "2025-05-20"
+    },
+    {
+      "artist": "Jin",
+      "id": "1814627033",
+      "title": "Echo (Voice Memo)",
+      "date": "2025-05-16"
+    },
+    {
+      "artist": "Jin",
+      "id": "1778768694",
+      "title": "Happy (Voice Memo)",
+      "date": "2024-11-15"
+    },
+    {
+      "artist": "Jin",
+      "id": "1814691155",
+      "title": "Don't Say You Love Me (Band Ver.) - Single",
+      "date": "2025-05-20"
+    },
+    {
+      "artist": "Jin",
+      "id": "1781211218",
+      "title": "Falling - Single",
+      "date": "2024-11-26"
+    },
+    {
+      "artist": "Jin",
+      "id": "1779874049",
+      "title": "Running Wild (Extended Ver.) - Single",
+      "date": "2024-11-19"
+    },
+    {
+      "artist": "Jin",
+      "id": "1779874464",
+      "title": "Running Wild (Band Ver.) - Single",
+      "date": "2024-11-19"
+    },
+    {
+      "artist": "Jin",
+      "id": "1774062732",
+      "title": "I'll Be There - Single",
+      "date": "2024-10-25"
+    },
+    {
+      "artist": "SUGA",
+      "id": "1680524006",
+      "title": "People Pt.2 - Single",
+      "date": "2023-04-07"
+    },
+    {
+      "artist": "SUGA",
+      "id": "1549024763",
+      "title": "Blueberry Eyes (feat. SUGA of BTS, Lil Mosey & Olivia O'brien) - Single",
+      "date": "2021-01-22"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1697235165",
+      "title": "Jack In The Box (HOPE Edition)",
+      "date": "2023-08-18"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1849059289",
+      "title": "SPAGHETTI (Hot Chili ver.) - Single",
+      "date": "2025-10-31"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1849060422",
+      "title": "SPAGHETTI (Creamy Cheese ver.) - Single",
+      "date": "2025-10-31"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1849061088",
+      "title": "SPAGHETTI (Spicy Jalapeno ver.) - Single",
+      "date": "2025-10-31"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1849093576",
+      "title": "SPAGHETTI (Slowed + Reverb ver.) - Single",
+      "date": "2025-10-31"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1849077869",
+      "title": "SPAGHETTI (Sped Up ver.) - Single",
+      "date": "2025-10-31"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1846240915",
+      "title": "SPAGHETTI (English ver.) - Single",
+      "date": "2025-10-24"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1819900814",
+      "title": "Killin' It Girl - Single",
+      "date": "2025-06-17"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1816986745",
+      "title": "Killin' It Girl - Single",
+      "date": "2025-06-13"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1804716110",
+      "title": "MONA LISA (Sped Up) - Single",
+      "date": "2025-04-01"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1804716758",
+      "title": "MONA LISA (Slowed Down) - Single",
+      "date": "2025-04-01"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1800800103",
+      "title": "MONA LISA - Single",
+      "date": "2025-03-21"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1800558512",
+      "title": "Sweet Dreams (Sped Up) - Single",
+      "date": "2025-03-11"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1800558680",
+      "title": "Sweet Dreams (Slowed Down) - Single",
+      "date": "2025-03-11"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1798229712",
+      "title": "Sweet Dreams - Single",
+      "date": "2025-03-07"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1796272110",
+      "title": "LV Bag (feat. Pharrell Williams) - Single",
+      "date": "2025-02-21"
+    },
+    {
+      "artist": "j-hope",
+      "id": "1631361992",
+      "title": "MORE - Single",
+      "date": "2022-07-01"
+    },
+    {
+      "artist": "Jimin",
+      "id": "1757558114",
+      "title": "MUSE (WONDER ver.)",
+      "date": "2024-07-23"
+    },
+    {
+      "artist": "Jimin",
+      "id": "1757553312",
+      "title": "MUSE (WANDER ver.)",
+      "date": "2024-07-23"
+    },
+    {
+      "artist": "Jimin",
+      "id": "1759236955",
+      "title": "Be Mine (English Version) - Single",
+      "date": "2024-08-02"
+    },
+    {
+      "artist": "Jimin",
+      "id": "1752552180",
+      "title": "Smeraldo Garden Marching Band - Single",
+      "date": "2024-06-28"
+    },
+    {
+      "artist": "Jimin",
+      "id": "1745759862",
+      "title": "Angel (feat. Mark Ralph, Muni Long, JVKE & NLE Choppa) [Anniversary Edition] - Single",
+      "date": "2024-05-13"
+    },
+    {
+      "artist": "Jimin",
+      "id": "1694985159",
+      "title": "Angel, Pt. 2 (feat. JVKE, Charlie Puth & Muni Long) - Single",
+      "date": "2023-07-13"
+    },
+    {
+      "artist": "Jimin",
+      "id": "1691915808",
+      "title": "Angel, Pt. 2 (feat. JVKE, Charlie Puth & Muni Long) - Single",
+      "date": "2023-06-15"
+    },
+    {
+      "artist": "Jimin",
+      "id": "1693886754",
+      "title": "Angel Pt. 2 (feat. JVKE, Charlie Puth & Muni Long) - Single",
+      "date": "2023-06-22"
+    },
+    {
+      "artist": "Jimin",
+      "id": "1675962540",
+      "title": "Set Me Free Pt. 2 - Single",
+      "date": "2023-03-17"
+    },
+    {
+      "artist": "V",
+      "id": "1785149562",
+      "title": "Winter Ahead (YUNSEOKCEHOL TRIO Ver.) - Single",
+      "date": "2024-12-20"
+    },
+    {
+      "artist": "V",
+      "id": "1782520273",
+      "title": "Winter Ahead (Silent Carol Ver.) - Single",
+      "date": "2024-12-03"
+    },
+    {
+      "artist": "V",
+      "id": "1734529403",
+      "title": "FRI(END)S (Slowed Down) - Single",
+      "date": "2024-03-15"
+    },
+    {
+      "artist": "V",
+      "id": "1734529196",
+      "title": "FRI(END)S (Sped Up) - Single",
+      "date": "2024-03-15"
+    },
+    {
+      "artist": "V",
+      "id": "1700915665",
+      "title": "Layover - Single",
+      "date": "2023-08-11"
+    },
+    {
+      "artist": "V",
+      "id": "1781229281",
+      "title": "White Christmas - Single",
+      "date": "2024-12-06"
+    },
+    {
+      "artist": "V",
+      "id": "1780285810",
+      "title": "Winter Ahead - Single",
+      "date": "2024-11-29"
+    },
+    {
+      "artist": "V",
+      "id": "1741624719",
+      "title": "wherever u r - Single",
+      "date": "2024-04-18"
+    },
+    {
+      "artist": "V",
+      "id": "1729681353",
+      "title": "wherever u r - Single",
+      "date": "2023-12-30"
+    },
+    {
+      "artist": "V",
+      "id": "1736059579",
+      "title": "FRI(END)S - Single",
+      "date": "2024-03-15"
+    },
+    {
+      "artist": "V",
+      "id": "1734528982",
+      "title": "FRI(END)S - Single",
+      "date": "2024-03-15"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1715818590",
+      "title": "GOLDEN (Voice Memo A)",
+      "date": "2023-11-04"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1715803672",
+      "title": "GOLDEN (Voice Memo R)",
+      "date": "2023-11-04"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1715828041",
+      "title": "GOLDEN (Voice Memo M)",
+      "date": "2023-11-04"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1724827655",
+      "title": "GOLDEN (Voice Memo Y)",
+      "date": "2023-11-04"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1715042795",
+      "title": "Standing Next to You (Band Ver.) - Single",
+      "date": "2023-11-06"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1709528221",
+      "title": "3D - Single",
+      "date": "2023-10-02"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1709527699",
+      "title": "3D (Slowed Down) - Single",
+      "date": "2023-10-02"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1709528030",
+      "title": "3D (Sped Up) - Single",
+      "date": "2023-10-02"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1707605290",
+      "title": "3D (Alternate Ver.) - Single",
+      "date": "2023-09-29"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1698386178",
+      "title": "Seven (Festival Mix) - Single",
+      "date": "2023-07-21"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1698385752",
+      "title": "Seven (Island Mix) - Single",
+      "date": "2023-07-21"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1698385865",
+      "title": "Seven (Lofi Mix) - Single",
+      "date": "2023-07-21"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1698386278",
+      "title": "Seven (Nightfall Mix) - Single",
+      "date": "2023-07-21"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1697967260",
+      "title": "Seven (Summer Mix) - Single",
+      "date": "2023-07-17"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1697966985",
+      "title": "Seven (Band Ver.) - Single",
+      "date": "2023-07-17"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1694929649",
+      "title": "Seven - Single",
+      "date": "2023-07-14"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1639961630",
+      "title": "Left and Right (Acapella) - Single",
+      "date": "2022-08-19"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1748194057",
+      "title": "Never Let Go - Single",
+      "date": "2024-06-07"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1711686918",
+      "title": "TOO MUCH - Single",
+      "date": "2023-10-19"
+    },
+    {
+      "artist": "Jung Kook",
+      "id": "1715412128",
+      "title": "GOLDEN",
+      "date": "2023-11-03"
+    }
+  ],
+  "tracks": [
+    {
+      "artist": "V",
+      "id": "1601381962",
+      "title": "Christmas Tree (Inst.)",
+      "albumId": "1601381960"
+    }
+  ]
+}
