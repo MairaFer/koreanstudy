@@ -9,7 +9,10 @@ import {fyaSections,fyaVocabulary} from './fya';
 
 import {merryGoRoundSections,merryGoRoundVocabulary} from './merry-go-round';
 
+import {theyDontKnowSections,theyDontKnowVocabulary} from './they-dont-know-bout-us';
+
 const studies=[
+  {id:'they-dont-know-bout-us',sections:theyDontKnowSections,vocabulary:theyDontKnowVocabulary},
   {id:'merry-go-round',sections:merryGoRoundSections,vocabulary:merryGoRoundVocabulary},
   {id:'fya',sections:fyaSections,vocabulary:fyaVocabulary},
   {id:'spring-day',sections:springDaySections,vocabulary:springDayVocabulary},
