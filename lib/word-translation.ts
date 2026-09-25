@@ -7,7 +7,10 @@ import {aliensSections,aliensVocabulary} from './aliens';
 
 import {fyaSections,fyaVocabulary} from './fya';
 
+import {merryGoRoundSections,merryGoRoundVocabulary} from './merry-go-round';
+
 const studies=[
+  {id:'merry-go-round',sections:merryGoRoundSections,vocabulary:merryGoRoundVocabulary},
   {id:'fya',sections:fyaSections,vocabulary:fyaVocabulary},
   {id:'spring-day',sections:springDaySections,vocabulary:springDayVocabulary},
   {id:'body-to-body',sections:bodyToBodySections,vocabulary:bodyToBodyVocabulary},
