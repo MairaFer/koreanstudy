@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,12);
+assert.equal(lessons.length,30);assert.equal(songs.length,13);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 12 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 13 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -124,3 +124,15 @@ console.log('PASS: They Don’t Know ’Bout Us: letra, 14 linhas com coreano, v
 const catalogSource=await fs.readFile(new URL('../components/bts-catalog.tsx',import.meta.url),'utf8');
 const studyLookup=ts.transpileModule(catalogSource.match(/function studyFor\(title:string\)\{[^\n]+/)[0],{compilerOptions:{target:ts.ScriptTarget.ES2022}}).outputText;
 assert.equal(new Function(studyLookup+";return studyFor(\"they don’t know ’bout us\");")(),'they-dont-know-bout-us');
+
+const {oneMoreNightSections,oneMoreNightVocabulary}=await load('lib/one-more-night.ts');
+const nightLines=oneMoreNightSections.flatMap(s=>s.lines), nightKorean=nightLines.filter(l=>/[가-힣]/u.test(l.text));
+assert.equal(nightLines.length,72);assert.equal(nightKorean.length,24);
+for(const line of nightLines)assert.ok(line.text&&line.translation);
+for(const line of nightKorean){assert.ok(!line.english);const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Night: sem análise de '+token);for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length>=2);}
+assert.equal(oneMoreNightVocabulary.verbs.length,25);assert.equal(oneMoreNightVocabulary.nouns.length,18);
+const nightSong=songs.find(s=>s.id==='one-more-night');assert.equal(nightSong.exercises.length,5);
+for(const exercise of nightSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(exercise.options.includes(exercise.answer[0]));assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,'resposta incorreta'));}
+assert.equal(new Function(studyLookup+";return studyFor('One More Night');")(),'one-more-night');
+assert.equal(nightLines.filter(l=>l.text==='꿈이면 깨기 싫어, 내').length,3);
+console.log('PASS: One More Night: 72 linhas, 24 com coreano, 25 verbos/descritivos, 18 substantivos e 5 exercícios.');

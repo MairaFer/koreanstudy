@@ -11,7 +11,10 @@ import {merryGoRoundSections,merryGoRoundVocabulary} from './merry-go-round';
 
 import {theyDontKnowSections,theyDontKnowVocabulary} from './they-dont-know-bout-us';
 
+import {oneMoreNightSections,oneMoreNightVocabulary} from './one-more-night';
+
 const studies=[
+  {id:'one-more-night',sections:oneMoreNightSections,vocabulary:oneMoreNightVocabulary},
   {id:'they-dont-know-bout-us',sections:theyDontKnowSections,vocabulary:theyDontKnowVocabulary},
   {id:'merry-go-round',sections:merryGoRoundSections,vocabulary:merryGoRoundVocabulary},
   {id:'fya',sections:fyaSections,vocabulary:fyaVocabulary},
