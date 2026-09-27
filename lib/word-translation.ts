@@ -13,7 +13,10 @@ import {theyDontKnowSections,theyDontKnowVocabulary} from './they-dont-know-bout
 
 import {oneMoreNightSections,oneMoreNightVocabulary} from './one-more-night';
 
+import {pleaseSections,pleaseVocabulary} from './please';
+
 const studies=[
+  {id:'please',sections:pleaseSections,vocabulary:pleaseVocabulary},
   {id:'one-more-night',sections:oneMoreNightSections,vocabulary:oneMoreNightVocabulary},
   {id:'they-dont-know-bout-us',sections:theyDontKnowSections,vocabulary:theyDontKnowVocabulary},
   {id:'merry-go-round',sections:merryGoRoundSections,vocabulary:merryGoRoundVocabulary},
