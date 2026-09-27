@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,14);
+assert.equal(lessons.length,30);assert.equal(songs.length,15);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 14 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 15 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -148,3 +148,15 @@ for(const exercise of pleaseSong.exercises){assert.equal(exercise.kind,'choice')
 assert.equal(new Function(studyLookup+";return studyFor('Please');")(),'please');
 assert.equal(pleaseLines.filter(l=>l.text==='All I want is you').length,4);
 console.log('PASS: Please: 46 linhas, 24 com coreano, 17 verbos/descritivos, 11 substantivos e 5 exercícios.');
+
+const {intoTheSunSections,intoTheSunVocabulary}=await load('lib/into-the-sun.ts');
+const sunLines=intoTheSunSections.flatMap(s=>s.lines), sunKorean=sunLines.filter(l=>/[가-힣]/u.test(l.text));
+assert.equal(sunLines.length,51);assert.equal(sunKorean.length,18);
+for(const line of sunLines)assert.ok(line.text&&line.translation);
+for(const line of sunKorean){assert.ok(!line.english);const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Sun: sem análise de '+token);for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length>=2);}
+assert.equal(intoTheSunVocabulary.verbs.length,23);assert.equal(intoTheSunVocabulary.nouns.length,31);
+const sunSong=songs.find(s=>s.id==='into-the-sun');assert.equal(sunSong.exercises.length,5);
+for(const exercise of sunSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(exercise.options.includes(exercise.answer[0]));assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,'resposta incorreta'));}
+assert.equal(new Function(studyLookup+";return studyFor('Into the Sun');")(),'into-the-sun');
+assert.ok(sunLines.some(l=>l.text==='풀이 뜨고 별 지는 곳'));
+console.log('PASS: Into the Sun: 51 linhas, 18 com coreano, 23 verbos/descritivos, 31 substantivos e 5 exercícios.');

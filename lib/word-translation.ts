@@ -15,7 +15,10 @@ import {oneMoreNightSections,oneMoreNightVocabulary} from './one-more-night';
 
 import {pleaseSections,pleaseVocabulary} from './please';
 
+import {intoTheSunSections,intoTheSunVocabulary} from './into-the-sun';
+
 const studies=[
+  {id:'into-the-sun',sections:intoTheSunSections,vocabulary:intoTheSunVocabulary},
   {id:'please',sections:pleaseSections,vocabulary:pleaseVocabulary},
   {id:'one-more-night',sections:oneMoreNightSections,vocabulary:oneMoreNightVocabulary},
   {id:'they-dont-know-bout-us',sections:theyDontKnowSections,vocabulary:theyDontKnowVocabulary},
