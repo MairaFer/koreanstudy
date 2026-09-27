@@ -61,5 +61,13 @@ try{
  assert.throws(()=>domain.parseProgress('{"version":2}'));
  const oversized=new Request(origin+'/api/study',{method:'PATCH',headers:{origin,'content-type':'application/json','x-study-account':'student-a'},body:' '.repeat(250001)});assert.equal((await api.PATCH(oversized)).status,413);
  globalThis.__studyTestEnv.DB=undefined;assert.equal((await api.GET(new Request(origin+'/api/study'))).status,503);
+ const unavailable=uri('throw new Error("Local worker runtime unavailable"); export const env={};');
+ const localApi=await import(await compile('app/api/study/route.ts',{'cloudflare:workers':unavailable,'@/app/chatgpt-auth':authURI,'@/db/study-repository':repositoryURI,'@/lib/study-data':domainURI}));
+ globalThis.__studyTestUser=null;
+ assert.equal((await localApi.GET(new Request(origin+'/api/study'))).status,200);
+ assert.equal((await localApi.PATCH(request([]))).status,401);
+ globalThis.__studyTestUser=user('student-a');
+ assert.equal((await localApi.GET(new Request(origin+'/api/study'))).status,503);
+ assert.equal((await localApi.PATCH(request([{key:'completed.1-1',value:true}]))).status,503);
  console.log('PASS: anonymous reading, protected writes, cross-origin rejection, account mismatch, validation, SQL parameterization, two-account isolation, import without overwrite, words/colors/review/removal, and persistence after database reopen.');
 }finally{sqlite.close();await fs.unlink(databasePath);await fs.rmdir(temporary);delete globalThis.__studyTestEnv;delete globalThis.__studyTestUser;}

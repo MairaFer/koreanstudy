@@ -1,4 +1,3 @@
-import {env} from 'cloudflare:workers';
 import {getChatGPTUser,chatGPTSignInPath,chatGPTSignOutPath} from '@/app/chatgpt-auth';
 import {readStudy,writeStudy} from '@/db/study-repository';
 import {validateChanges} from '@/lib/study-data';
@@ -10,6 +9,7 @@ export async function GET(request:Request) {
   const session={user:user?{key:user.userId,name:user.displayName,email:user.email}:null,signIn:chatGPTSignInPath(returnTo),signOut:chatGPTSignOutPath('/')};
   if(!user)return reply({...session,records:{}});
   try {
+    const {env}=await import('cloudflare:workers');
     if(!env.DB)throw Error('Database unavailable');
     return reply({...session,records:await readStudy(env.DB,user.userId)});
   }catch{ return reply({...session,error:'Não foi possível carregar seus dados. Tente novamente.'},503); }
@@ -25,6 +25,6 @@ export async function PATCH(request:Request) {
   while(true){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>250000){await reader.cancel();return reply({error:'Dados muito grandes.'},413);}chunks.push(value);}
   let changes,importOnly=false;
   try{const bytes=new Uint8Array(size);let offset=0;for(const c of chunks){bytes.set(c,offset);offset+=c.length;}const body=JSON.parse(new TextDecoder().decode(bytes));changes=validateChanges(body.changes);importOnly=body.importOnly===true;}catch{return reply({error:'Dados de estudo inválidos.'},400);}
-  try{if(!env.DB)throw Error('Database unavailable');await writeStudy(env.DB,user.userId,changes,importOnly);return reply({ok:true});}
+  try{const {env}=await import('cloudflare:workers');if(!env.DB)throw Error('Database unavailable');await writeStudy(env.DB,user.userId,changes,importOnly);return reply({ok:true});}
   catch{return reply({error:'Não foi possível salvar. Suas alterações continuam nesta tela; tente novamente.'},503);}
 }

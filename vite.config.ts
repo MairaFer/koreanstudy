@@ -57,8 +57,14 @@ export default defineConfig(async ({ command }) => {
       ...(isCodexSeatbeltSandbox ? { watch: { useFsEvents: false, usePolling: true } } : {}),
     },
     plugins: [
+      ...(localNodePreview ? [{
+        name: 'local-worker-bindings',
+        enforce: 'pre' as const,
+        resolveId(id: string) { if (id === 'cloudflare:workers') return '\0local-worker-bindings'; },
+        load(id: string) { if (id === '\0local-worker-bindings') return 'export const env = {};'; },
+      }] : []),
       vinext(),
-      sites({ mockAuth: !managedLinux }),
+      sites({ mockAuth: !managedLinux && !localNodePreview }),
       ...(!localNodePreview ? [cloudflare({
         viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] },
         inspectorPort: false,
