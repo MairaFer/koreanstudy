@@ -17,7 +17,10 @@ import {pleaseSections,pleaseVocabulary} from './please';
 
 import {intoTheSunSections,intoTheSunVocabulary} from './into-the-sun';
 
+import {bornSingerSections,bornSingerVocabulary} from './born-singer';
+
 const studies=[
+  {id:'born-singer',sections:bornSingerSections,vocabulary:bornSingerVocabulary},
   {id:'into-the-sun',sections:intoTheSunSections,vocabulary:intoTheSunVocabulary},
   {id:'please',sections:pleaseSections,vocabulary:pleaseVocabulary},
   {id:'one-more-night',sections:oneMoreNightSections,vocabulary:oneMoreNightVocabulary},

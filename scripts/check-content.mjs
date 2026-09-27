@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,15);
+assert.equal(lessons.length,30);assert.equal(songs.length,16);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 15 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 16 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -160,3 +160,17 @@ for(const exercise of sunSong.exercises){assert.equal(exercise.kind,'choice');as
 assert.equal(new Function(studyLookup+";return studyFor('Into the Sun');")(),'into-the-sun');
 assert.ok(sunLines.some(l=>l.text==='풀이 뜨고 별 지는 곳'));
 console.log('PASS: Into the Sun: 51 linhas, 18 com coreano, 23 verbos/descritivos, 31 substantivos e 5 exercícios.');
+
+const {bornSingerSections,bornSingerVocabulary}=await load('lib/born-singer.ts');
+const bornLines=bornSingerSections.flatMap(s=>s.lines), bornKorean=bornLines.filter(l=>/[가-힣]/u.test(l.text));
+assert.equal(bornLines.length,60);assert.equal(bornKorean.length,59);
+for(const line of bornLines)assert.ok(line.text&&line.translation);
+for(const line of bornKorean){assert.ok(!line.english);const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Born Singer: sem análise de '+token);for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length>=1&&entry.notes.every(n=>n.trim().length>0));}
+for(const term of ['차의점','무건운','어께를','차나의','내신','두드렸줬어','한상']){const entry=bornKorean.flatMap(l=>l.entries).find(e=>e.term===term);assert.ok(entry&&/provavelmente|provável|padrão|esperada|parece/i.test(entry.meaning+' '+entry.notes.join(' ')),term+' sem nota de transcrição');}
+assert.ok(bornLines.some(l=>l.text.startsWith('삼번 만에')));
+const bornSong=songs.find(s=>s.id==='born-singer');assert.equal(bornSong.exercises.length,5);
+for(const exercise of bornSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(exercise.options.includes(exercise.answer[0]));assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,'resposta incorreta'));}
+assert.equal(new Function(studyLookup+";return studyFor('Born Singer');")(),'born-singer');
+assert.ok(bornSingerVocabulary.verbs.length>=30&&bornSingerVocabulary.nouns.length>=25);
+console.log('PASS: Born Singer: 60 linhas, 59 com coreano; notas de transcrição; '+bornSingerVocabulary.verbs.length+' verbos/descritivos, '+bornSingerVocabulary.nouns.length+' substantivos e 5 exercícios.');
+
