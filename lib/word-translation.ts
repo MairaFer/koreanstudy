@@ -21,6 +21,7 @@ import {bornSingerSections,bornSingerVocabulary} from './born-singer';
 
 import {noMoreDreamSections,noMoreDreamVocabulary} from './no-more-dream';
 import {nOSections,nOVocabulary} from './n-o';
+import {dangerSections,dangerVocabulary} from './danger';
 import {boyInLuvSections,boyInLuvVocabulary} from './boy-in-luv';
 
 const studies=[
@@ -38,6 +39,7 @@ const studies=[
   {id:'aliens',sections:aliensSections,vocabulary:aliensVocabulary},
   {id:'no-more-dream',sections:noMoreDreamSections,vocabulary:noMoreDreamVocabulary},
   {id:'n-o',sections:nOSections,vocabulary:nOVocabulary},
+  {id:'danger',sections:dangerSections,vocabulary:dangerVocabulary},
   {id:'boy-in-luv',sections:boyInLuvSections,vocabulary:boyInLuvVocabulary},
 ];
 const tokens=(text:string):string[]=>text.normalize('NFC').match(/[0-9]*[가-힣ㄱ-ㅎㅏ-ㅣ]+/gu)??[];
