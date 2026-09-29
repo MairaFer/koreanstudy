@@ -19,6 +19,10 @@ import {intoTheSunSections,intoTheSunVocabulary} from './into-the-sun';
 
 import {bornSingerSections,bornSingerVocabulary} from './born-singer';
 
+import {noMoreDreamSections,noMoreDreamVocabulary} from './no-more-dream';
+import {nOSections,nOVocabulary} from './n-o';
+import {boyInLuvSections,boyInLuvVocabulary} from './boy-in-luv';
+
 const studies=[
   {id:'born-singer',sections:bornSingerSections,vocabulary:bornSingerVocabulary},
   {id:'into-the-sun',sections:intoTheSunSections,vocabulary:intoTheSunVocabulary},
@@ -32,6 +36,9 @@ const studies=[
   {id:'hooligan',sections:hooliganSections,vocabulary:hooliganVocabulary},
   {id:'two-point-zero',sections:twoPointZeroSections,vocabulary:twoPointZeroVocabulary},
   {id:'aliens',sections:aliensSections,vocabulary:aliensVocabulary},
+  {id:'no-more-dream',sections:noMoreDreamSections,vocabulary:noMoreDreamVocabulary},
+  {id:'n-o',sections:nOSections,vocabulary:nOVocabulary},
+  {id:'boy-in-luv',sections:boyInLuvSections,vocabulary:boyInLuvVocabulary},
 ];
 const tokens=(text:string):string[]=>text.normalize('NFC').match(/[0-9]*[가-힣ㄱ-ㅎㅏ-ㅣ]+/gu)??[];
 const exact=(term:string,word:string)=>tokens(term).join(' ')===word;

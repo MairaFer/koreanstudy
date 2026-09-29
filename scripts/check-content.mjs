@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,16);
+assert.equal(lessons.length,30);assert.equal(songs.length,19);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 16 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 19 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -174,3 +174,48 @@ assert.equal(new Function(studyLookup+";return studyFor('Born Singer');")(),'bor
 assert.ok(bornSingerVocabulary.verbs.length>=30&&bornSingerVocabulary.nouns.length>=25);
 console.log('PASS: Born Singer: 60 linhas, 59 com coreano; notas de transcrição; '+bornSingerVocabulary.verbs.length+' verbos/descritivos, '+bornSingerVocabulary.nouns.length+' substantivos e 5 exercícios.');
 
+const {noMoreDreamSections,noMoreDreamVocabulary}=await load('lib/no-more-dream.ts');
+const nmdLines=noMoreDreamSections.flatMap(s=>s.lines), nmdKorean=nmdLines.filter(l=>!l.english);
+assert.equal(noMoreDreamSections.length,9);assert.equal(nmdLines.length,69);assert.equal(nmdLines.filter(l=>l.english).length,8);assert.equal(nmdKorean.length,61);
+for(const line of nmdLines)assert.ok(line.text&&line.translation);
+for(const line of nmdKorean){const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'No More Dream: sem análise de '+token);for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length>=2,entry.term);}
+assert.ok(nmdLines.some(l=>l.text==='얌마, 네 꿈은 뭐니? (뭐니?)'));
+assert.ok(nmdLines.some(l=>l.text==='눈을, 눈을, 눈을 떠라 다'));
+assert.equal(noMoreDreamVocabulary.verbs.length,29);assert.equal(noMoreDreamVocabulary.nouns.length,32);
+const nmdSong=songs.find(s=>s.id==='no-more-dream');assert.equal(nmdSong.exercises.length,5);
+for(const exercise of nmdSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(exercise.options.includes(exercise.answer[0]));assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,'resposta incorreta'));}
+assert.equal(new Function(studyLookup+";return studyFor('No More Dream');")(),'no-more-dream');
+assert.ok(musicSource.includes('noMoreDreamSections'));
+assert.ok((await fs.readFile(new URL('../components/bts-catalog.tsx',import.meta.url),'utf8')).includes("'no more dream':'no-more-dream'"));
+console.log('PASS: No More Dream: 9 seções, 69 linhas (61 com coreano), 29 verbos/descritivos, 32 substantivos e 5 exercícios.');
+
+const {nOSections,nOVocabulary}=await load('lib/n-o.ts');
+const nOLines=nOSections.flatMap(s=>s.lines), nOKorean=nOLines.filter(l=>!l.english);
+assert.equal(nOSections.length,10);assert.equal(nOLines.length,76);assert.equal(nOLines.filter(l=>l.english).length,23);assert.equal(nOKorean.length,53);
+for(const line of nOLines)assert.ok(line.text&&line.translation);
+for(const line of nOKorean){const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'N.O: sem análise de '+token);for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length>=2,entry.term);}
+assert.ok(nOLines.some(l=>l.text==='더는 남의 꿈에 갇혀 살지 마'));
+assert.ok(nOLines.some(l=>l.text==='어른들은 내게 말하지'));
+assert.equal(nOVocabulary.verbs.length,29);assert.equal(nOVocabulary.nouns.length,36);
+const nOSong=songs.find(s=>s.id==='n-o');assert.equal(nOSong.exercises.length,5);
+for(const exercise of nOSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(exercise.options.includes(exercise.answer[0]));assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,'resposta incorreta'));}
+assert.equal(new Function(studyLookup+";return studyFor('N.O');")(),'n-o');
+assert.ok(musicSource.includes('nOSections'));
+assert.ok((await fs.readFile(new URL('../components/bts-catalog.tsx',import.meta.url),'utf8')).includes("'n.o':'n-o'"));
+console.log('PASS: N.O: 10 seções, 76 linhas (53 com coreano), 29 verbos/descritivos, 36 substantivos e 5 exercícios.');
+
+const {boyInLuvSections,boyInLuvVocabulary}=await load('lib/boy-in-luv.ts');
+const bilLines=boyInLuvSections.flatMap(s=>s.lines), bilKorean=bilLines.filter(l=>!l.english);
+assert.equal(boyInLuvSections.length,14);
+for(const line of bilLines)assert.ok(line.text&&line.translation);
+for(const line of bilKorean){const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Boy In Luv: sem análise de '+token);for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length>=2,entry.term);}
+assert.ok(bilLines.some(l=>l.text==='되고파 너의 오빠'));
+assert.ok(bilLines.some(l=>l.text==='왜 내 맘을 흔드는 건데'));
+assert.equal(boyInLuvVocabulary.verbs.length,37);assert.equal(boyInLuvVocabulary.nouns.length,24);
+const bilSong=songs.find(s=>s.id==='boy-in-luv');assert.equal(bilSong.exercises.length,5);
+for(const exercise of bilSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(exercise.options.includes(exercise.answer[0]));assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,'resposta incorreta'));}
+assert.equal(new Function(studyLookup+";return studyFor('Boy In Luv');")(),'boy-in-luv');
+assert.equal(new Function(studyLookup+";return studyFor('상남자');")(),'boy-in-luv');
+assert.ok(musicSource.includes('boyInLuvSections'));
+assert.ok((await fs.readFile(new URL('../components/bts-catalog.tsx',import.meta.url),'utf8')).includes("'boy in luv':'boy-in-luv'"));
+console.log('PASS: Boy In Luv: 14 seções, todas as frases e termos coreanos analisados, 37 verbos/descritivos, 24 substantivos e 5 exercícios.');
