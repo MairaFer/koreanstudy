@@ -21,6 +21,7 @@ import {bornSingerSections,bornSingerVocabulary} from './born-singer';
 
 import {noMoreDreamSections,noMoreDreamVocabulary} from './no-more-dream';
 import {nOSections,nOVocabulary} from './n-o';
+import {iNeedUSections,iNeedUVocabulary} from './i-need-u';
 import {dangerSections,dangerVocabulary} from './danger';
 import {boyInLuvSections,boyInLuvVocabulary} from './boy-in-luv';
 
@@ -39,6 +40,7 @@ const studies=[
   {id:'aliens',sections:aliensSections,vocabulary:aliensVocabulary},
   {id:'no-more-dream',sections:noMoreDreamSections,vocabulary:noMoreDreamVocabulary},
   {id:'n-o',sections:nOSections,vocabulary:nOVocabulary},
+  {id:'i-need-u',sections:iNeedUSections,vocabulary:iNeedUVocabulary},
   {id:'danger',sections:dangerSections,vocabulary:dangerVocabulary},
   {id:'boy-in-luv',sections:boyInLuvSections,vocabulary:boyInLuvVocabulary},
 ];
