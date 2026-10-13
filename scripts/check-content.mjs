@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,21);
+assert.equal(lessons.length,30);assert.equal(songs.length,22);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 21 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 22 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -254,3 +254,14 @@ assert.ok(musicSource.includes('sections:iNeedUSections,vocabulary:iNeedUVocabul
 assert.equal(inuLines.filter(l=>l.text==='왜 혼자 사랑하고 혼자서만 이별해?').length,3);
 assert.ok(inuLines.some(l=>l.text==='I need you girl (whoa, oh, babe)'));
 console.log('PASS: I Need U: letra enviada, análise de todos os termos coreanos, 30 verbos/descritivos, 17 substantivos e 5 exercícios.');
+
+const {runSections,runVocabulary}=await load('lib/run.ts');const runLines=runSections.flatMap(s=>s.lines);
+assert.equal(runSections.length,11);assert.equal(runLines.length,63);assert.equal(runLines.filter(l=>l.english).length,11);
+for(const section of runSections)assert.match(section.title,/^(Abertura|Verso [12]|Pré-refrão|Refrão|Pós-refrão|Ponte)$/);
+for(const line of runLines){assert.ok(line.text&&line.translation);if(line.english)continue;const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'RUN: sem análise de '+token);for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length>=2,entry.term);}
+assert.equal(runVocabulary.verbs.length,31);assert.equal(runVocabulary.nouns.length,28);
+const runSong=songs.find(s=>s.id==='run');assert.equal(runSong.exercises.length,5);for(const e of runSong.exercises){assert.equal(e.kind,'choice');assert.ok(e.options.includes(e.answer[0]));assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorreta'));}
+assert.equal(new Function(studyLookup+";return studyFor('RUN');")(),'run');assert.equal(new Function(studyLookup+";return studyFor('Run BTS');")(),undefined);assert.equal(new Function(studyLookup+";return studyFor('RUN (Japanese Ver.)');")(),undefined);
+assert.ok(musicSource.includes('sections:runSections,vocabulary:runVocabulary'));
+assert.equal(runLines.filter(l=>l.text==='다시 run, run, run, 난 멈출 수가 없어').length,3);
+console.log('PASS: RUN: 63 linhas, 52 com coreano; títulos simples; 31 verbos/descritivos, 28 substantivos e 5 exercícios.');
