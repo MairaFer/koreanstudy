@@ -288,15 +288,15 @@ const bridge=[
 ];
 
 export const noMoreDreamSections:{title:string;lines:StudyLine[]}[]=[
- {title:'A pergunta que abre a música',lines:questionLines},
- {title:'Primeiro verso · o conforto que dispensa sonho',lines:verse1.slice(0,8)},
- {title:'Pré-refrão · o espelho',lines:verse1.slice(8)},
- {title:'Segundo verso · a cobrança',lines:verse2},
- {title:'Refrão',lines:chorus},
- {title:'Terceiro verso · o mesmo dia',lines:verse3},
- {title:'Pré-refrão e refrão',lines:[...verse1.slice(8),...chorus]},
- {title:'Ponte · acordar',lines:bridge},
- {title:'Fechamento',lines:[
+ {title:"Abertura",lines:questionLines},
+ {title:"Verso 1",lines:verse1.slice(0,8)},
+ {title:"Pré-refrão",lines:verse1.slice(8)},
+ {title:"Verso 2",lines:verse2},
+ {title:"Refrão",lines:chorus},
+ {title:"Verso 3",lines:verse3},
+ {title:"Pré-refrão e refrão",lines:[...verse1.slice(8),...chorus]},
+ {title:"Ponte",lines:bridge},
+ {title:"Final",lines:[
   ...chorus,
   en('To all the youngsters without dreams, haha','Para todos os jovens sem sonhos, haha.')
  ]}

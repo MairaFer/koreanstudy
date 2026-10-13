@@ -65,7 +65,7 @@ const outro:StudyLine[]=[en('yeah, we land on it','É, a gente pousa aqui.'),lin
  e('찍어','carimba; imprime uma marca',['찍다 + -어 → 찍어. O contexto stamp favorece o sentido de marcar/carimbar.','찍다 também pode significar fotografar ou escolher uma opção, mas essas leituras não são as mais diretas aqui. A tradução escolhe o comando informal.'])
 ]),en('Stamp on it, stamp on it','Carimba, carimba.')];
 export const aliensSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Primeiro verso · convite ao estádio',lines:[
+ {title:"Verso 1",lines:[
   en("This gon' be the jam of the year (ay)",'Essa vai ser a música do ano (ay).'),
   line('지루하고 따분해 모든 게 (모든 게)','Tudo está chato e monótono (tudo).',[
    e('지루하고','tedioso e…',['지루하다, ser tedioso, recebe -고 para ligar a descrição à seguinte.','É um verbo descritivo; -고 conecta as qualidades, sem indicar causa por si só.']),
@@ -96,10 +96,10 @@ export const aliensSections:{title:string;lines:StudyLine[]}[]=[
    e('stadium으로 집합','reunir-se no estádio; todos para o estádio',['(으)로 marca direção após stadium. 집합 é uma convocação nominal curta, repetida do verso anterior.'])
   ]),worry
  ]},
- {title:'Pré-refrão · palmas e ritmo',lines:pre},
- {title:'Identidade e regras da casa',lines:post},
- {title:'Refrão · ritmo de vida',lines:chorus},
- {title:'Segundo verso · linguagem e referências culturais',lines:[
+ {title:"Pré-refrão",lines:pre},
+ {title:"Pós-refrão",lines:post},
+ {title:"Refrão",lines:chorus},
+ {title:"Verso 2",lines:[
   en('It goes, let me, honey, talk about the business','É assim: deixa eu, meu bem, falar dos negócios.'),
   en('Everybody know now where the K is','Agora todo mundo sabe onde está o K.'),
   line('어디까지 가니, 이런 제길?','Até onde você vai, droga?',[
@@ -132,10 +132,10 @@ export const aliensSections:{title:string;lines:StudyLine[]}[]=[
   ]),
   en('Are they for real? For real? (For real?)','Eles são mesmo de verdade? É sério? (É sério?)')
  ]},
- {title:'Pré-refrão · retorno',lines:pre},
- {title:'Identidade e regras da casa · retorno',lines:post},
- {title:'Refrão · retorno',lines:chorus},
- {title:'Final · deixar a marca',lines:[...outro,...outro]}
+ {title:"Pré-refrão",lines:pre},
+ {title:"Pós-refrão",lines:post},
+ {title:"Refrão",lines:chorus},
+ {title:"Final",lines:[...outro,...outro]}
 ];
 export const aliensVocabulary={
  verbs:[{ko:'지루하다',pt:'ser tedioso; verbo descritivo'},{ko:'따분하다',pt:'ser monótono; verbo descritivo'},{ko:'빠르다',pt:'ser rápido; verbo descritivo'},{ko:'고민하다',pt:'pensar muito; preocupar-se'},{ko:'다르다',pt:'ser diferente; verbo descritivo'},{ko:'부러워하다',pt:'invejar; admirar o que outro tem'},{ko:'설명하다',pt:'explicar'},{ko:'아프다',pt:'doer; verbo descritivo'},{ko:'치다',pt:'bater, em bater palmas'},{ko:'흔들다',pt:'balançar'},{ko:'보다',pt:'ver; olhar'},{ko:'배우다',pt:'aprender'},{ko:'놓다',pt:'pôr; deixar; auxiliar de resultado mantido'},{ko:'벗다',pt:'tirar roupa ou calçado'},{ko:'차리다',pt:'observar, em observar as boas maneiras'},{ko:'밤새우다',pt:'passar a noite acordado'},{ko:'대다',pt:'auxiliar de repetição/intensidade'},{ko:'원하다',pt:'querer; desejar'},{ko:'가다',pt:'ir'},{ko:'저주하다',pt:'amaldiçoar'},{ko:'하다',pt:'fazer'},{ko:'크다',pt:'ser grande; verbo descritivo'},{ko:'말하다',pt:'falar; dizer'},{ko:'찍다',pt:'carimbar; deixar uma marca, aqui'}],

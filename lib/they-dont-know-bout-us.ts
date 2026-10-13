@@ -84,16 +84,16 @@ const second=[
 ];
 const chorus=(adlibs:string[])=>adlibs.map(a=>en("They don't know 'bout us"+a,'Eles não sabem nada sobre nós'+a+'.'));
 export const theyDontKnowSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Abertura · a voz que acalma',lines:[en("They don't know about us",'Eles não sabem nada sobre nós.'),en('How your voice','Como sua voz'),en('Can calm the sea-ea-ea','Pode acalmar o mar.'),en("They don't",'Eles não sabem.')]},
- {title:'Primeiro verso · as histórias dos outros',lines:[en('I can show you love, I can show you','Posso te mostrar amor, posso te mostrar.'),en('If you wanna know me','Se quiser me conhecer,'),en("What can I do for you? (They don't)",'O que posso fazer por você? (Eles não sabem.)'),...first]},
- {title:'Pré-refrão · tentar explicar',lines:[en('Hold up, chill, and take a bubble bath, bae (hey)','Espera, relaxa e toma um banho de espuma, amor (hey).'),en('Do the math and go, just say what you say','Faça as contas e vá em frente, diga o que quiser.'),en("Oh, it's hard and that we cannot explain (hey)",'Oh, é difícil, e isso não conseguimos explicar (hey).'),en("Every time we tryna, tryna explain, we find",'Toda vez que tentamos, tentamos explicar, percebemos…')]},
- {title:'Refrão · eles não sabem',lines:chorus(['',' (mm-mm)','',' (ah)','',' (yeah, yeah)','',''])},
- {title:'Pós-refrão',lines:Array.from({length:4},(_,i)=>en("Yeah, damn, ooh, damn right, ooh, damn right"+(i<3?" (they don't know)":''),'É, droga, exatamente, exatamente'+(i<3?' (eles não sabem).':'.')))},
- {title:'Retomada · eu também não sei',lines:[en('I can show you love, I can show you','Posso te mostrar amor, posso te mostrar.'),en('If you wanna know me, what can I do for you?','Se quiser me conhecer, o que posso fazer por você?'),question,answer,en("(They don't)",'(Eles não sabem.)')]},
- {title:'Segundo verso · apenas sete pessoas',lines:second},
- {title:'Refrão · repetição',lines:chorus(['',' (mm-hmm)','',' (ah)','',' (ah-ooh)','',''])},
- {title:'Pós-refrão final',lines:Array.from({length:4},(_,i)=>[en("Yeah, damn, ooh, damn right (they don't know 'bout us, they don't know 'bout us)",'É, droga, exatamente (eles não sabem nada sobre nós, eles não sabem nada sobre nós).'),en("Ooh, damn right (they don't"+(i<3?' know':'')+')','Oh, exatamente (eles não sabem).')]).flat()},
- {title:'Final · o mar',lines:[en('Us, how your voice','Nós, como sua voz'),en('Can calm the sea-ea-ea-ea-ea','Pode acalmar o mar.')]} 
+ {title:"Abertura",lines:[en("They don't know about us",'Eles não sabem nada sobre nós.'),en('How your voice','Como sua voz'),en('Can calm the sea-ea-ea','Pode acalmar o mar.'),en("They don't",'Eles não sabem.')]},
+ {title:"Verso 1",lines:[en('I can show you love, I can show you','Posso te mostrar amor, posso te mostrar.'),en('If you wanna know me','Se quiser me conhecer,'),en("What can I do for you? (They don't)",'O que posso fazer por você? (Eles não sabem.)'),...first]},
+ {title:"Pré-refrão",lines:[en('Hold up, chill, and take a bubble bath, bae (hey)','Espera, relaxa e toma um banho de espuma, amor (hey).'),en('Do the math and go, just say what you say','Faça as contas e vá em frente, diga o que quiser.'),en("Oh, it's hard and that we cannot explain (hey)",'Oh, é difícil, e isso não conseguimos explicar (hey).'),en("Every time we tryna, tryna explain, we find",'Toda vez que tentamos, tentamos explicar, percebemos…')]},
+ {title:"Refrão",lines:chorus(['',' (mm-mm)','',' (ah)','',' (yeah, yeah)','',''])},
+ {title:"Pós-refrão",lines:Array.from({length:4},(_,i)=>en("Yeah, damn, ooh, damn right, ooh, damn right"+(i<3?" (they don't know)":''),'É, droga, exatamente, exatamente'+(i<3?' (eles não sabem).':'.')))},
+ {title:"Verso 1",lines:[en('I can show you love, I can show you','Posso te mostrar amor, posso te mostrar.'),en('If you wanna know me, what can I do for you?','Se quiser me conhecer, o que posso fazer por você?'),question,answer,en("(They don't)",'(Eles não sabem.)')]},
+ {title:"Verso 2",lines:second},
+ {title:"Refrão",lines:chorus(['',' (mm-hmm)','',' (ah)','',' (ah-ooh)','',''])},
+ {title:"Pós-refrão",lines:Array.from({length:4},(_,i)=>[en("Yeah, damn, ooh, damn right (they don't know 'bout us, they don't know 'bout us)",'É, droga, exatamente (eles não sabem nada sobre nós, eles não sabem nada sobre nós).'),en("Ooh, damn right (they don't"+(i<3?' know':'')+')','Oh, exatamente (eles não sabem).')]).flat()},
+ {title:"Final",lines:[en('Us, how your voice','Nós, como sua voz'),en('Can calm the sea-ea-ea-ea-ea','Pode acalmar o mar.')]}
 ];
 export const theyDontKnowVocabulary={verbs:[
  {ko:'다르다',pt:'ser diferente (descritivo)'},{ko:'묻다',pt:'perguntar'},{ko:'대답하다',pt:'responder'},{ko:'모르다',pt:'não saber'},

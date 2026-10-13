@@ -3,7 +3,7 @@
 import type {StudyLine,StudyEntry} from './spring-day';
 const e=(term:string,meaning:string,notes:string[],card?:string):StudyEntry=>({term,meaning,notes,card});
 const koreanSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Primeiro verso · movimento e chamada ao público',lines:[
+ {title:"Verso 1",lines:[
   {text:'통제 불능 머리 춤 (yeah)',translation:'Uma dança de cabeça fora de controle (yeah).',entries:[
    e('통제','controle; contenção',['Substantivo de origem sino-coreana. O verbo correspondente é 통제하다: controlar.','Aqui se combina com 불능 para caracterizar algo que não se consegue controlar.']),
    e('불능','impossibilidade; incapacidade',['통제 불능 significa “impossível de controlar”, ou, mais naturalmente, “fora de controle”.','불능 não é a negação verbal 안. É um substantivo que indica impossibilidade.']),
@@ -27,7 +27,7 @@ const koreanSections:{title:string;lines:StudyLine[]}[]=[
    e('우린','nós; a gente',['Contração de 우리는: 우리 (nós) + 는 (partícula de tópico).','A redução preserva o papel de tópico: “quanto a nós…”.','O predicado vem em inglês, dancin’. Não há um verbo coreano conjugado depois de 우린; é uma frase com alternância de idiomas.'],'Para reconhecer contrações semelhantes: 나는 → 난 e 너는 → 넌. Em todas, a partícula de tópico continua fazendo parte do sentido.')
   ]}
  ]},
- {title:'Segundo verso · concessão, intensidade e passagem livre',lines:[
+ {title:"Verso 2",lines:[
   {text:'Like El Cucuy, 굳이 말 안 해도 알잖아',translation:'Como El Cucuy, mesmo sem eu precisar dizer, você já sabe, né?',entries:[
    e('굳이','fazendo questão; dando-se ao trabalho',['Advérbio. Com uma expressão negativa, pode transmitir que não é necessário insistir em fazer algo.','Aqui, 굳이 말 안 해도 sugere “mesmo sem me dar ao trabalho de dizer”. Não é simplesmente “com força”.']),
    e('말','fala; palavras',['Faz parte de 말하다, “falar/dizer”. No uso coloquial, é comum a sequência 말 안 하다.','Pode-se entender a relação como 말(을) 안 하다: o conteúdo nominal vem antes de 안 하다, com a partícula omitida.']),
@@ -55,27 +55,27 @@ const watch=(ooh=false)=>en("Watch this, watch this beat goin’ hooligan".repla
 const hook=(ooh=false):StudyLine[]=>[watch(),en("We pop out, we actin' a fool again"+(ooh?' (ooh)':''),'A gente chega e volta a fazer loucuras.'+(ooh?' (ooh)':'')),laugh,watch(ooh)];
 const bass:StudyLine[]=[en("Why this bassline slappin' so rude?",'Por que essa linha de baixo bate tão pesado?'),en('Drop it lower than chopped and screwed (screwed, screwed, screwed)','Desce ainda mais que o chopped and screwed (screwed, screwed, screwed).'),laugh,watch()];
 export const hooliganSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Abertura',lines:hook(true)},
- {title:'A batida',lines:bass},
- {title:'Primeiro verso · movimento e chamada ao público',lines:[
+ {title:"Abertura",lines:hook(true)},
+ {title:"Abertura",lines:bass},
+ {title:"Verso 1",lines:[
   en("Man, I'm 'bout to blow a fuse (yeah)",'Cara, estou prestes a perder a cabeça (yeah).'),ko[0],ko[1],ko[2],
   en('Somebody move, somebody move','Alguém se mexe, alguém se mexe.'),ko[3],
   en('I can never ever choose (yeah)','Eu nunca consigo escolher (yeah).'),en("Every one o' you a muse",'Cada um de vocês é uma inspiração.'),
   en("Crowd lookin' like a campus",'A multidão parece um campus.'),ko[4]
  ]},
- {title:'Refrão',lines:[...hook(),...bass]},
- {title:'Segundo verso · concessão, intensidade e passagem livre',lines:[
+ {title:"Refrão",lines:[...hook(),...bass]},
+ {title:"Verso 2",lines:[
   en('I go cuckoo, crazy, loco, save me','Eu enlouqueço, fico maluco, louco — me salva.'),ko[5],ko[6],ko[7],
   en('Take you out, take you out','Vou te tirar de cena, vou te tirar de cena.'),en("What's the future? Where's the now?",'O que é o futuro? Onde está o agora?'),en('This is international','Isso é internacional.'),en('Make it unforgettable','Faça isso ser inesquecível.')
  ]},
- {title:'Refrão · retorno',lines:hook(true)},
- {title:'Ponte',lines:[
+ {title:"Refrão",lines:hook(true)},
+ {title:"Ponte",lines:[
   en('Yeah, we the mess, gonna get a bigger mop here (bigger mop)','É, a bagunça somos nós; vai precisar de um esfregão maior aqui (um esfregão maior).'),
   en('This that K, gotta get a better pop here (better pop)','Isso é aquele K; tem que ter um pop melhor aqui (um pop melhor).'),
   en("You gon' hear this one playin' round the clock, yeah (round the clock)",'Você vai ouvir essa tocando o dia inteiro, é (o dia inteiro).'),
   en('Round the clock, clock, clock, clock','O dia inteiro, inteiro, inteiro, inteiro.')
  ]},
- {title:'Refrão final',lines:[...bass,...bass]}
+ {title:"Refrão",lines:[...bass,...bass]}
 ];
 export const hooliganVocabulary={
  verbs:[{ko:'통제하다',pt:'controlar'},{ko:'춤추다',pt:'dançar'},{ko:'뛰다',pt:'pular; correr'},{ko:'미치다',pt:'enlouquecer; ficar fora de si'},{ko:'모이다',pt:'reunir-se'},{ko:'말하다',pt:'falar; dizer'},{ko:'하다',pt:'fazer'},{ko:'알다',pt:'saber'},{ko:'때리다',pt:'bater; golpear'},{ko:'부수다',pt:'quebrar; despedaçar'},{ko:'되다',pt:'tornar-se; chegar a uma situação'},{ko:'비키다',pt:'sair da frente; dar passagem'}],

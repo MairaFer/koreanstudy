@@ -143,17 +143,17 @@ const lastVerse=[
  ]),en('Hit it, get it, do it again','Manda ver, vai nessa, faz de novo.')
 ];
 export const oneMoreNightSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Abertura · sombra e saudade antecipada',lines:opening},
- {title:'Pré-refrão · não quero acordar',lines:pre()},
- {title:'Refrão · mais uma noite',lines:chorus(1)},
- {title:'Verso · a presença como presente',lines:verse},
- {title:'Pré-refrão · repetição',lines:pre()},
- {title:'Refrão · a fantasia continua',lines:chorus(2)},
- {title:'Ponte · estrelas e sonho',lines:bridge},
- {title:'Verso final · atravessar a madrugada',lines:lastVerse},
- {title:'Pré-refrão · última repetição',lines:pre()},
- {title:'Refrão final',lines:chorus(3)},
- {title:'Encerramento · olhos fechados',lines:[en('Close your eyes, tell me what you see','Feche os olhos, me diga o que vê.'),en("(Ain't nothin' but a dream tonight)",'(Esta noite, não passa de um sonho.)'),en('Baby, I, baby, I give it to you all night, yeah','Amor, eu, amor, eu te dou isso a noite toda, sim.'),en('Every night is our fantasy','Toda noite é nossa fantasia.'),en("(Ain't nothin' but a dream tonight)",'(Esta noite, não passa de um sonho.)'),en('Baby, I, baby, I, give me, right at your time, yeah','Amor, eu, amor, eu… me dê, no seu tempo, sim.')]} 
+ {title:"Abertura",lines:opening},
+ {title:"Pré-refrão",lines:pre()},
+ {title:"Refrão",lines:chorus(1)},
+ {title:"Verso",lines:verse},
+ {title:"Pré-refrão",lines:pre()},
+ {title:"Refrão",lines:chorus(2)},
+ {title:"Ponte",lines:bridge},
+ {title:"Verso final",lines:lastVerse},
+ {title:"Pré-refrão",lines:pre()},
+ {title:"Refrão",lines:chorus(3)},
+ {title:"Final",lines:[en('Close your eyes, tell me what you see','Feche os olhos, me diga o que vê.'),en("(Ain't nothin' but a dream tonight)",'(Esta noite, não passa de um sonho.)'),en('Baby, I, baby, I give it to you all night, yeah','Amor, eu, amor, eu te dou isso a noite toda, sim.'),en('Every night is our fantasy','Toda noite é nossa fantasia.'),en("(Ain't nothin' but a dream tonight)",'(Esta noite, não passa de um sonho.)'),en('Baby, I, baby, I, give me, right at your time, yeah','Amor, eu, amor, eu… me dê, no seu tempo, sim.')]}
 ];
 export const oneMoreNightVocabulary={verbs:[
  {ko:'인하다',pt:'ser causado por; decorrer de'},{ko:'울다',pt:'chorar'},{ko:'되다',pt:'tornar-se; acabar por, em -게 되다'},{ko:'서다',pt:'ficar de pé'},{ko:'있다',pt:'estar; existir'},

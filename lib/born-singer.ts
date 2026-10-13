@@ -325,13 +325,13 @@ const ending:StudyLine[]=[
 위로|para cima|위 + 로 marca direção. Não é aqui o substantivo 위로, consolo; a repetição destaca a ascensão.`)
 ];
 export const bornSingerSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Refrão inicial · cantor de nascença',lines:chorus(true)},
- {title:'Primeira parte · do primeiro palco à identidade',lines:verse1},
- {title:'Refrão · a miragem está aqui',lines:chorus()},
- {title:'Segunda parte · medo, estreia e reconhecimento',lines:verse2},
- {title:'Refrão · felicidade apesar da dúvida',lines:chorus()},
- {title:'Parte final · preservar o começo',lines:ending},
- {title:'Refrão final',lines:chorus()}
+ {title:"Refrão",lines:chorus(true)},
+ {title:"Verso 1",lines:verse1},
+ {title:"Refrão",lines:chorus()},
+ {title:"Verso 2",lines:verse2},
+ {title:"Refrão",lines:chorus()},
+ {title:"Verso final",lines:ending},
+ {title:"Refrão",lines:chorus()}
 ];
 export const bornSingerVocabulary={verbs:[
  {ko:'늦다',pt:'ser tarde; atrasar-se (descritivo)'},{ko:'멀다',pt:'ser distante (descritivo)'},{ko:'이르다',pt:'ser cedo (descritivo)'},{ko:'행복하다',pt:'ser feliz (descritivo)'},{ko:'서다',pt:'ficar de pé; estar no palco'},{ko:'검문하다',pt:'interrogar; inspecionar'},{ko:'다르다',pt:'ser diferente (descritivo)'},{ko:'덧쓰다',pt:'escrever por cima'},{ko:'원하다',pt:'querer'},{ko:'추다',pt:'dançar, em 춤을 추다'},{ko:'살다',pt:'viver'},{ko:'느끼다',pt:'sentir'},{ko:'견디다',pt:'suportar'},{ko:'지켜보다',pt:'observar; acompanhar'},{ko:'버티다',pt:'aguentar; resistir'},{ko:'밀려오다',pt:'chegar em onda'},{ko:'들다',pt:'segurar; pegar'},{ko:'쓰다',pt:'escrever'},{ko:'달라지다',pt:'mudar; ficar diferente'},{ko:'변하다',pt:'mudar'},{ko:'전하다',pt:'transmitir'},{ko:'지키다',pt:'preservar; proteger'},{ko:'노래하다',pt:'cantar'},{ko:'두렵다',pt:'ter medo; ser temível (descritivo)'},{ko:'증명하다',pt:'provar; demonstrar'},{ko:'믿다',pt:'acreditar; confiar'},{ko:'배신하다',pt:'trair'},{ko:'펴다',pt:'abrir; estender; endireitar'},{ko:'오르다',pt:'subir'},{ko:'고르다',pt:'regular o fôlego, em 숨을 고르다'},{ko:'시작되다',pt:'começar'},{ko:'쏟아내다',pt:'despejar; expressar intensamente'},{ko:'두드리다',pt:'bater levemente; dar tapinhas'},{ko:'흘러가다',pt:'fluir; passar (tempo)'},{ko:'채우다',pt:'preencher; completar'},{ko:'겪다',pt:'vivenciar; passar por'},{ko:'흘리다',pt:'derramar'},{ko:'적시다',pt:'molhar; encharcar'},{ko:'끝나다',pt:'terminar'},{ko:'번지다',pt:'espalhar-se'},{ko:'다짐하다',pt:'prometer; reafirmar uma decisão'},{ko:'잃다',pt:'perder'},{ko:'부끄럽다',pt:'sentir vergonha (descritivo)'}

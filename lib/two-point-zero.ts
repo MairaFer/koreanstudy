@@ -56,12 +56,12 @@ const hook=(adlibs=false):StudyLine[]=>[
  en('Yeah, we on that brand new, you know how we do'+(adlibs?' (ay, ay, ay)':''),'É, estamos numa fase totalmente nova; você sabe como a gente faz.'+(adlibs?' (ay, ay, ay)':''))
 ];
 export const twoPointZeroSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Abertura',lines:intro},
- {title:'Refrão · acender uma nova fase',lines:hook(true)},
- {title:'Verso em coreano · uma nova versão',lines:verse},
- {title:'Retorno da abertura',lines:intro},
- {title:'Refrão',lines:hook()},
- {title:'Verso em inglês',lines:[
+ {title:"Abertura",lines:intro},
+ {title:"Refrão",lines:hook(true)},
+ {title:"Verso 1",lines:verse},
+ {title:"Abertura",lines:intro},
+ {title:"Refrão",lines:hook()},
+ {title:"Verso 2",lines:[
   en('Pop, pop, pop, pop, pop, pop, pop, pop, pop, pop, uh','Pá, pá, pá, pá, pá, pá, pá, pá, pá, pá, uh.'),
   en("Baby, gettin' too lit, rah, rah, rah, rah, rah, rah (yeah)",'Baby, está ficando intenso demais, rah, rah, rah, rah, rah, rah (é).'),
   en("Hit 'em up like pop (ha), hit 'em with the truth, like rah, uh",'Ataca com um pá (ha), manda a verdade na cara deles, tipo rah, uh.'),
@@ -69,8 +69,8 @@ export const twoPointZeroSections:{title:string;lines:StudyLine[]}[]=[
   en('Let it be, let it bleed, uh','Deixa acontecer, deixa sangrar, uh.'),
   en('Hit a lick, uh, in a split (stop, ride)','Faço um golpe, uh, num instante (para, segue).')
  ]},
- {title:'Último retorno da abertura',lines:intro},
- {title:'Refrão final',lines:[...hook(),...hook()]}
+ {title:"Abertura",lines:intro},
+ {title:"Refrão",lines:[...hook(),...hook()]}
 ];
 export const twoPointZeroVocabulary={
  verbs:[{ko:'붙이다',pt:'acender; fazer pegar; fixar'},{ko:'다르다',pt:'ser diferente; verbo descritivo'},{ko:'뛰다',pt:'correr; pular'},{ko:'않다',pt:'auxiliar de negação'},{ko:'되다',pt:'tornar-se; sofrer uma mudança'},{ko:'내다',pt:'produzir; provocar'},{ko:'버리다',pt:'descartar; jogar fora'},{ko:'쓰다',pt:'usar, neste contexto'},{ko:'수거하다',pt:'recolher; coletar'},{ko:'가다',pt:'ir'},{ko:'있다',pt:'existir; ter, em 여유가 있다'},{ko:'수고하다',pt:'trabalhar com esforço'}],

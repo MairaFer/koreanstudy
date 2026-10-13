@@ -138,15 +138,15 @@ const finalVerse=[
  ])
 ];
 export const merryGoRoundSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Abertura · a montanha-russa',lines:opening},
- {title:'Refrão · o carrossel',lines:chorus},
- {title:'Pós-refrão · a volta se repete',lines:post},
- {title:'Primeira parte · crescer e continuar girando',lines:first},
- {title:'Abertura · repetição',lines:opening},
- {title:'Refrão · repetição',lines:chorus},
- {title:'Pós-refrão · repetição',lines:post},
- {title:'Ponte · um pedido para sair',lines:bridge},
- {title:'Parte final · pensamentos em círculo',lines:finalVerse}
+ {title:"Abertura",lines:opening},
+ {title:"Refrão",lines:chorus},
+ {title:"Pós-refrão",lines:post},
+ {title:"Verso 1",lines:first},
+ {title:"Abertura",lines:opening},
+ {title:"Refrão",lines:chorus},
+ {title:"Pós-refrão",lines:post},
+ {title:"Ponte",lines:bridge},
+ {title:"Verso final",lines:finalVerse}
 ];
 export const merryGoRoundVocabulary={verbs:[
  {ko:'되다',pt:'tornar-se'},{ko:'같다',pt:'ser igual; parecer (descritivo)'},{ko:'여전하다',pt:'continuar igual (descritivo)'},

@@ -58,7 +58,7 @@ line('그곳에 좀 더 머물러줘, 머물러줘','Fique aí mais um pouco, fi
  e('머물러줘','fique aí para mim / fique mais um pouco',['머무르다 = permanecer; o ㄹ final troca de lugar: 머무르 + 어 → 머물러','-어 주다 = fazer algo em favor de quem fala; 머물러줘 é um pedido informal','A repetição 머물러줘, 머물러줘 reforça o pedido'])])];
 
 export const springDaySections:{title:string;lines:StudyLine[]}[]=[
-{title:'',lines:[
+{title:"",lines:[
  line('보고 싶다, 이렇게 말하니까 더 보고 싶다','Sinto sua falta; dizer isso me faz sentir ainda mais saudade.',[
   e('보고 싶다','quero ver · sinto sua falta',['보다 = ver','-고 싶다 = querer fazer alguma coisa: radical do verbo + -고 싶다'],'보고 싶다 geralmente significa “estou com saudade”, porque em coreano é muito comum expressar saudade de uma pessoa através da ideia de querer vê-la.'),
   e('이렇게','assim | desse jeito | desta maneira',['이렇다 = ser assim','-게 forma o advérbio: 이렇게 = desse jeito']),
@@ -83,7 +83,7 @@ export const springDaySections:{title:string;lines:StudyLine[]}[]=[
   e('조차','até mesmo (inclui o mais inesperado)',['Normalmente se escreve junto do substantivo: 것조차']),
   e('힘들어진','que ficou difícil / que se tornou difícil',['힘들다 = ser difícil, difícil de aguentar','-어지다 = tornar-se: mudança de estado → 힘들어지다','-(으)ㄴ modifica 우리가: 힘들어진 우리가']),
   e('우리가','nós (sujeito)',['A frase fica suspensa e retoma o “nós” da linha anterior'])])]},
-{title:'',lines:[
+{title:"",lines:[
  line('여긴 온통 겨울 뿐이야 8월에도 겨울이 와','Aqui só há inverno; até em agosto o inverno chega.',[
   e('여긴','aqui (aqui como tópico)',['여기 = aqui','는 marca o tópico e se contrai: 여기 + 는 → 여긴']),
   e('온통','inteiramente, totalmente, só'),
@@ -113,7 +113,7 @@ export const springDaySections:{title:string;lines:StudyLine[]}[]=[
   e('그 봄날이','aquele dia de primavera (sujeito)',['그 = aquele','봄날 = dia de primavera','이 = partícula de sujeito']),
   e('올까','será que vai chegar?',['오다 → 올 = futuro -(으)ㄹ de 오다','-(으)ㄹ까 = dúvida dirigida a si mesmo']),
   e('friend','a palavra inglesa para amigo, mantida na letra')])]},
-{title:'',lines:[
+{title:"",lines:[
  line('허공을 떠도는 작은먼지처럼, 작은 먼지처럼','Como uma pequena poeira vagando no ar, como uma pequena poeira,',[
   e('허공을','pelo espaço vazio, no ar',['허공 = espaço vazio, o ar','을 = partícula de objeto: aquilo por onde se vaga']),
   e('떠도는','que vagueia, vagueando',['떠돌다 = vagar, andar sem destino','O ㄹ da base cai antes de -는: 떠돌 + 는 → 떠도는','-는 modifica o substantivo seguinte (먼지)']),
@@ -127,9 +127,9 @@ export const springDaySections:{title:string;lines:StudyLine[]}[]=[
   e('조금 더 빨리','um pouco mais depressa',['조금 = um pouco','더 = mais','빨리 = depressa, rápido (de 빠르다)']),
   e('네게','para você, até você',['너 = você (informal)','에게 = partícula que indica direção: “a, para”; se contrai em 게']),
   e('닿을 수 있을 텐데','poderia alcançar, eu chegaria…',['닿다 = alcançar, tocar','-(으)ㄹ 수 있다 = poder, ser capaz de (possibilidade)','-(으)ㄹ 텐데 = expectativa hipotética com continuação implícita: expressa desejo e pesar'])])]},
-{title:'Refrão',lines:chorus},
-{title:'',lines:refrain},
-{title:'',lines:[
+{title:"Refrão",lines:chorus},
+{title:"",lines:refrain},
+{title:"",lines:[
  line('네가 변한 건지? (네가 변한 건지?)','Será que foi você que mudou? (Será que foi você que mudou?)',[
   e('네가','você, quem mudou (sujeito)',['너 = você (informal)','가 = partícula de sujeito']),
   e('변한','que mudou / mudou?',['변하다 = mudar','-(으)ㄴ liga a ação ao substantivo seguinte (건지): “a mudança de você”']),
@@ -149,7 +149,7 @@ export const springDaySections:{title:string;lines:StudyLine[]}[]=[
   e('뭐','e daí? / fazer o quê?',['No fim da frase, expressa resignação ou autoacalento: “fazer o quê, mudamos mesmo”']),
   e('모두가','todos, todo mundo (sujeito)',['모두 = todos','가 = partícula de sujeito']),
   e('그런','essa, essa mesma (situação)',['그렇다 + -ㄴ → 그런: “aquela coisa de mudar”'])])]},
-{title:'',lines:[
+{title:"",lines:[
  line('그래, 밉다 니가 넌 떠났지만','Sim, sinto raiva de você; você foi embora, mas...',[
   e('그래','sim, é; admitindo',['Expressa concordância ou resignação antes de uma verdade difícil']),
   e('밉다','sinto raiva de você',['Verbo descritivo com irregularidade em ㅂ (밉 → 미워)','A ordem inverte o normal: em vez de “eu te odeio”, a letra diz “raiva, você é que...”']),
@@ -190,8 +190,8 @@ export const springDaySections:{title:string;lines:StudyLine[]}[]=[
   e('아직','ainda, ainda não'),
   e('널','você (objeto: 너를)'),
   e('보내지 못하는데','não consigo deixar ir (frase aberta)',['보내다 = enviar; deixar partir','-지 못하다 = não conseguir fazer','-데 = abre um fundo ou contraste; a frase fica sem fecho, esperando a compreensão do outro'])])]},
-{title:'Refrão',lines:chorus},
-{title:'',lines:[
+{title:"Refrão",lines:chorus},
+{title:"",lines:[
  en("You know it all, you're my best friend","Você sabe de tudo; você é meu melhor amigo."),
  line('아침은 다시 올 거야','A manhã vai voltar, pode contar.',[
   e('아침은','a manhã (tópico)',['아침 = manhã','는 = partícula de tópico']),
@@ -205,7 +205,7 @@ export const springDaySections:{title:string;lines:StudyLine[]}[]=[
   e('영원할','ser eterno, durar para sempre',['영원하다 = ser eterno','-(으)ㄹ = forma em futuro ou suposição antes da negação']),
   e('순','(não) pode / (não) é possível',['De 수는, abreviada na fala rápida: 영원할 수는 없다 = “não pode ser eterno”']),
   e('없으니까','porque não existe, porque não há',['없다 = não existir, não haver','-니까 = porque… / já que… (razão)'])])]},
-{title:'',lines:[
+{title:"",lines:[
  line('벚꽃이 피나봐요','Parece que as cerejeiras estão florescendo.',[
   e('벚꽃이','as flores de cerejeira (sujeito)',['벚꽃 = flor de cerejeira (벚 cerejeira + 꽃 flor)','이 = partícula de sujeito']),
   e('피나봐요','parece que florescem (dedução)',['피다 = florescer','-나 봐요 = “parece que...”: dedução baseada em algo visto ou ouvido','A forma é educada, mesmo sendo uma constatação'])]),
@@ -213,7 +213,7 @@ export const springDaySections:{title:string;lines:StudyLine[]}[]=[
   e('이 겨울도','este inverno também',['이 = este','겨울 = inverno','도 = também, até']),
   e('끝이 나요','chega ao fim / termina (registro educado)',['끝이 나다 = literalmente “surgir um fim”','-아/어요 = presente educado: 나요'])]),
  ...chorus.slice(2,4)]},
-{title:'',lines:[
+{title:"",lines:[
  line('조금만 기다리면 (기다리면)','Se esperar só um pouco (se esperar),',[
   e('조금만','só um pouco, apenas um pouco',['조금 = um pouco','만 = apenas, somente']),
   e('기다리면','se esperar / quando esperar',['기다리다 = esperar','-(으)면 = se, quando: condição']),
@@ -230,7 +230,7 @@ export const springDaySections:{title:string;lines:StudyLine[]}[]=[
   e('데리러','para buscar alguém',['데리다 = levar, buscar alguém','-(으)러 = finalidade: “para fazer”']),
   e('갈게','eu vou te buscar (promessa para você)',['가다 = ir','-(으)ㄹ게 = promessa ou intenção voltada a quem escuta']),
   e('yeah, yeah','interjeição inglesa “sim, sim”, mantida para o ritmo')])]},
-{title:'',lines:refrain},
+{title:"",lines:refrain},
 ];
 
 export const springDayVocabulary={

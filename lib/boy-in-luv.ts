@@ -362,20 +362,20 @@ const preClimax=[
 ];
 
 export const boyInLuvSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Abertura · Quero ser seu namorado',lines:intro},
- {title:'Refrão-pergunta · Por que balança o meu coração?',lines:hook},
- {title:'Primeiro verso · Como o papai se declarou?',lines:verse1},
- {title:'Segundo verso · Por que fico agindo feito criança?',lines:verse2},
- {title:'Terceiro verso · Até a faculdade com você',lines:verse3},
- {title:'Ponte · Não me provoque',lines:preChorus1},
- {title:'Refrão principal · Segure firme antes que eu avance',lines:[...chorusLines,...chorusLines]},
- {title:'Refrão-pergunta de novo',lines:hook},
- {title:'Quarto verso · O número 1 e o KakaoTalk',lines:verse4},
- {title:'Quinto verso · Chame o 119 ou chame a mim',lines:verse5},
- {title:'Ponte antes do clímax',lines:preChorus1},
- {title:'Refrão principal novamente',lines:[...chorusLines,...chorusLines]},
- {title:'Clímax · Vou me tornar o seu homem',lines:preClimax},
- {title:'Refrão final e encerramento',lines:[...chorusLines,...chorusLines]}
+ {title:"Abertura",lines:intro},
+ {title:"Refrão",lines:hook},
+ {title:"Verso 1",lines:verse1},
+ {title:"Verso 2",lines:verse2},
+ {title:"Verso 3",lines:verse3},
+ {title:"Ponte",lines:preChorus1},
+ {title:"Refrão",lines:[...chorusLines,...chorusLines]},
+ {title:"Refrão",lines:hook},
+ {title:"Verso 4",lines:verse4},
+ {title:"Verso 5",lines:verse5},
+ {title:"Ponte",lines:preChorus1},
+ {title:"Refrão",lines:[...chorusLines,...chorusLines]},
+ {title:"Clímax",lines:preClimax},
+ {title:"Refrão",lines:[...chorusLines,...chorusLines]}
 ];
 
 export const boyInLuvVocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]}={

@@ -258,16 +258,16 @@ const verse4=[
 ];
 
 export const nOSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Abertura · o bom apartamento e o bom carro',lines:opening},
- {title:'Primeiro verso · a esteira',lines:verse1},
- {title:'Segundo bloco · quem fez isso?',lines:[...verse2,...verse2b]},
- {title:'Pré-refrão · o conselho dos adultos',lines:preChorus},
- {title:'Refrão',lines:chorus},
- {title:'Abertura outra vez',lines:opening},
- {title:'Terceiro bloco · vontade de parar',lines:verse3},
- {title:'Quarto bloco · a confissão dos adultos',lines:verse4},
- {title:'Último pré-refrão e refrão',lines:[...preChorus,...chorus]},
- {title:'Fechamento',lines:[sayNo,sayNo,sayNo,sayNo]}
+ {title:"Abertura",lines:opening},
+ {title:"Verso 1",lines:verse1},
+ {title:"Verso 2",lines:[...verse2,...verse2b]},
+ {title:"Pré-refrão",lines:preChorus},
+ {title:"Refrão",lines:chorus},
+ {title:"Abertura",lines:opening},
+ {title:"Verso 3",lines:verse3},
+ {title:"Verso 4",lines:verse4},
+ {title:"Pré-refrão e refrão",lines:[...preChorus,...chorus]},
+ {title:"Final",lines:[sayNo,sayNo,sayNo,sayNo]}
 ];
 
 

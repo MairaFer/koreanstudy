@@ -21,13 +21,13 @@ const chorus=[
  en('Somebody like you / Somebody like / Everybody like you','Alguém como você / alguém como / todo mundo gosta de você.')];
 
 export const bodyToBodySections:{title:string;lines:StudyLine[]}[]=[
- {title:'Intro · chamada ao público',lines:[
+ {title:"Abertura",lines:[
   en('I need the whole stadium to jump','Preciso que o estádio inteiro pule.'),
   en('Put your phone down, let\'s get all the fun','Guarde o celular, vamos curtir tudo.'),
   en('I got my eyes on the row in the front','Meus olhos estão na primeira fila.'),
   en('The vibe is high, if we bein\' blunt','A energia está alta, sendo bem diretos.'),
   en('The vibe is high, let the building (hey)','A energia está alta, deixe o prédio (hey).')]},
- {title:'Primeira parte · coreano',lines:[
+ {title:"Verso 1",lines:[
   en('B-T-uh, from everywhere to Korea','B-T-uh, de todas as partes para a Coreia.'),
   line('총, 칼, 키보드, 다 좀 치워','Guardem armas, facas e teclados — tudo isso.',[
    e('총','arma de fogo',['Arma de tiro; em coreano, 총 é a palavra usada tanto para arma quanto para a contagem de tiros']),
@@ -54,8 +54,8 @@ export const bodyToBodySections:{title:string;lines:StudyLine[]}[]=[
    e('좀 더','um pouco mais',['좀 (um pouco, de 조금) + 더 (mais)']),
    e('가까이','perto, mais perto',['De 가깝다 (estar perto); vira advérbio: 가까이 오다 (vir perto)']),
    e('와','venha (comando informal)',['오다 = vir','-아/어 명령 → 와 (informal)','A forma educada é 오세요 — a letra escolhe a proximidade do informal'])])]},
- {title:'Refrão · body to body',lines:chorus},
- {title:'Segunda parte · coreano',lines:[
+ {title:"Refrão",lines:chorus},
+ {title:"Verso 2",lines:[
   en("It's so tight","É tudo tão intenso (tão perto)."),
   line('I mean, 너와의 사이','Quero dizer, a relação entre nós dois.',[
    e('너와의','entre você e eu (…)',['너 = você (informal)','-와 = com','-의 = partícula possessiva: “de você e de mim”']),
@@ -75,8 +75,8 @@ export const bodyToBodySections:{title:string;lines:StudyLine[]}[]=[
    e('마음','coração, sentimento',['Coração e mente numa só palavra: 마음이 높다 = o ânimo está alto'])]),
   en('Be about it, be about it, be about it','Bora fazer, bora fazer, bora fazer.'),
   en('You could see about it or you read about it','Dá para experimentar ou só ler sobre isso.')]},
- {title:'Refrão · repetição',lines:chorus},
- {title:'Arirang · trecho folclórico',lines:[
+ {title:"Refrão",lines:chorus},
+ {title:"Ponte",lines:[
   line('아리랑, 아리랑, 아라리요','Arirang, arirang, arariyo (refrão tradicional).',[
    e('아리랑','Arirang',['Nome da canção folclórica e também de uma colina','Provavelmente vem de 아리다 (ser dolorido, belo) + -랑: “o caminho da beleza e da dor”'],'아리랑 é a canção folclórica mais famosa da Coreia, transmitida de geração em geração — e é o trecho que a letra canta para costurar tradição e show moderno.'),
    e('아라리요','arariyo (variante do refrão)',['Não é palavra de uso comum no dia a dia','Mantém a sonoridade e a rima do folclore'])]),
@@ -93,7 +93,7 @@ export const bodyToBodySections:{title:string;lines:StudyLine[]}[]=[
    e('도','nem, também',['Também, ainda mais; com 못 nega o todo: “nem dez li”']),
    e('못 가서','por não conseguir ir',['못 = não conseguir (diferente de 안 = não por vontade)','-가서 = 가다 (ir) + -아서 (por, e então…)']),
    e('발병난다','ficam com os pés doentes',['발 (pé) + 병 (doença) + 나다 (surgir) → 발이 병이 나다 → 발병나다 (forma contraída)','-나다 = surgir, aparecer (problema)'])])]},
- {title:'Fechamento · de volta ao público',lines:[
+ {title:"Final",lines:[
   en('I need the whole stadium to jump','Preciso que o estádio inteiro pule.'),
   en('Put your phone down, let\'s get all the fun','Guarde o celular, vamos curtir tudo.'),
   en('You at the side, at the back, at the front','Você, do lado, lá atrás, na frente.')]},

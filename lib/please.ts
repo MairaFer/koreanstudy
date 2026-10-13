@@ -94,17 +94,17 @@ const post=(last=false)=>[
  en(last?'If you wanna, if you wanna':"If you wanna, if you wanna, I'll do a thing- (whoo)",last?'Se você quiser, se quiser.':'Se você quiser, se quiser, faço algo… (whoo).')
 ];
 export const pleaseSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Abertura · se você quiser',lines:[en("If you wanna, if you wanna, I'll do that thing for ya",'Se você quiser, se quiser, faço isso por você.'),en('If you wanna, if you wanna','Se você quiser, se quiser.')]},
- {title:'Refrão · mais um passo',lines:chorus(1)},
- {title:'Primeiro verso · o caminho até você',lines:verse},
- {title:'Pré-refrão · dia e noite',lines:pre()},
- {title:'Refrão · fique comigo',lines:chorus(2)},
- {title:'Pós-refrão · por você',lines:post()},
- {title:'Segundo verso · alegria e amparo',lines:second},
- {title:'Pré-refrão · repetição',lines:pre()},
- {title:'Refrão · o pior dia',lines:chorus(3)},
- {title:'Pós-refrão · repetição',lines:post(true)},
- {title:'Refrão final',lines:chorus(4)}
+ {title:"Abertura",lines:[en("If you wanna, if you wanna, I'll do that thing for ya",'Se você quiser, se quiser, faço isso por você.'),en('If you wanna, if you wanna','Se você quiser, se quiser.')]},
+ {title:"Refrão",lines:chorus(1)},
+ {title:"Verso 1",lines:verse},
+ {title:"Pré-refrão",lines:pre()},
+ {title:"Refrão",lines:chorus(2)},
+ {title:"Pós-refrão",lines:post()},
+ {title:"Verso 2",lines:second},
+ {title:"Pré-refrão",lines:pre()},
+ {title:"Refrão",lines:chorus(3)},
+ {title:"Pós-refrão",lines:post(true)},
+ {title:"Refrão",lines:chorus(4)}
 ];
 export const pleaseVocabulary={verbs:[
  {ko:'갈라놓다',pt:'separar; afastar pessoas'},{ko:'다가서다',pt:'aproximar-se'},{ko:'함께하다',pt:'estar junto; compartilhar'},{ko:'주다',pt:'dar; fazer algo por alguém (auxiliar)'},{ko:'세다',pt:'ser forte (descritivo)'},{ko:'안다',pt:'abraçar'},{ko:'있다',pt:'estar; existir'},

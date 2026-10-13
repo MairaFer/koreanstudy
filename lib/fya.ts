@@ -45,22 +45,22 @@ const korean:StudyLine[]=[
  ]}
 ];
 export const fyaSections:{title:string;lines:StudyLine[]}[]=[
- {title:'Abertura · tudo em chamas',lines:[...refrain().slice(0,3),en("Oh, oh, oh, I see what you're saying, man",'Oh, oh, oh, entendo o que você está dizendo, cara.')]},
- {title:'Refrão · não chegue perto demais',lines:refrain()},
- {title:'Primeira parte · combustível',lines:[
+ {title:"Abertura",lines:[...refrain().slice(0,3),en("Oh, oh, oh, I see what you're saying, man",'Oh, oh, oh, entendo o que você está dizendo, cara.')]},
+ {title:"Refrão",lines:refrain()},
+ {title:"Verso 1",lines:[
   en('Gimme that gasoline, gimme that, make me fiend','Me dá essa gasolina, me dá isso, me deixa querendo mais.'),
   en("Gimme that, make me sweat, something I can't forget",'Me dá isso, me faz suar, algo que eu não consiga esquecer.'),
   en("Burnin' out with my slime, we in a flame, go wild",'Queimando tudo com meu parceiro, estamos em chamas, vamos à loucura.'),
   en("It's 200 degrees",'São 200 graus.')
  ]},
- {title:'Pré-refrão · a pista',lines:pre()},
- {title:'Refrão · a energia sobe',lines:refrain(true)},
- {title:'Pós-refrão',lines:[en("It's fire",'Tá pegando fogo.'),en("It's fire",'Tá pegando fogo.')]},
- {title:'Verso em coreano · calor e movimento',lines:korean},
- {title:'Pré-refrão · repetição',lines:pre(true)},
- {title:'Refrão · repetição',lines:refrain()},
- {title:'Pós-refrão · repetição',lines:[en("It's fire",'Tá pegando fogo.')]},
- {title:'Refrão final',lines:refrain(true)}
+ {title:"Pré-refrão",lines:pre()},
+ {title:"Refrão",lines:refrain(true)},
+ {title:"Pós-refrão",lines:[en("It's fire",'Tá pegando fogo.'),en("It's fire",'Tá pegando fogo.')]},
+ {title:"Verso 2",lines:korean},
+ {title:"Pré-refrão",lines:pre(true)},
+ {title:"Refrão",lines:refrain()},
+ {title:"Pós-refrão",lines:[en("It's fire",'Tá pegando fogo.')]},
+ {title:"Refrão",lines:refrain(true)}
 ];
 export const fyaVocabulary={verbs:[
  {ko:'뜨겁다',pt:'estar quente (descritivo)'},{ko:'무섭다',pt:'ser assustador; sentir medo (descritivo)'},
