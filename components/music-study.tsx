@@ -22,6 +22,13 @@ import {runSections,runVocabulary} from '@/lib/run';
 import {iNeedUSections,iNeedUVocabulary} from '@/lib/i-need-u';
 import {dangerSections,dangerVocabulary} from '@/lib/danger';
 import {boyInLuvSections,boyInLuvVocabulary} from '@/lib/boy-in-luv';
+import {dnaSections,dnaVocabulary} from '@/lib/dna';
+import {fakeLoveSections,fakeLoveVocabulary} from '@/lib/fake-love';
+import {bstSections,bstVocabulary} from '@/lib/blood-sweat-tears';
+import {idolSections,idolVocabulary} from '@/lib/idol';
+import {bwlSections,bwlVocabulary} from '@/lib/boy-with-luv';
+import {onSections,onVocabulary} from '@/lib/on';
+import {lgoSections,lgoVocabulary} from '@/lib/life-goes-on';
 import {useProgress} from '@/lib/progress';
 import {ExerciseCard} from './exercise';
 import {KoreanText,AudioButton} from './korean-audio';
@@ -49,7 +56,13 @@ const studies:Record<string,StudyConfig>={
  'body-to-body':{sections:bodyToBodySections,vocabulary:bodyToBodyVocabulary,summary:'Uma canção de show que chama o público para dançar junto. Observe os comandos informais sem 요 (와, 치워, 비워, 내려놔), os pronomes contraídos (뭘, 너와의) e o trecho folclórico 아리랑.',heading:'Body to Body · letra e significado'},
  'no-more-dream':{sections:noMoreDreamSections,vocabulary:noMoreDreamVocabulary,summary:'A música de estreia como um grito contra o sonho que os adultos escolhem por você. Explore perguntas informais (-니), proibições (-지 마), expressões fixas como 철이 들다 e as imagens de beisebol que atravessam a letra.',heading:'No More Dream · letra e significado',badge:'Letra completa · análise preparada',references:<p className="music-reference">Referências de consulta: <a href="https://krdict.korean.go.kr/" target="_blank" rel="noreferrer">Dicionário Básico de Coreano</a> · <a href="https://www.korean.go.kr/front/onlineQna/onlineQnaList.do" target="_blank" rel="noreferrer">Perguntas frequentes do Instituto Nacional da Língua Coreana</a>. Traduções contextuais da letra fornecida; grafias coloquiais e repetições vocais foram preservadas.</p>},
  'n-o':{sections:nOSections,vocabulary:nOVocabulary,summary:'Um manifesto contra a pressão sobre os jovens para serem o número um às custas da própria felicidade. Estude o discurso relatado (-라고), a exclusividade (뿐, 밖에), o apelo enfático (-지 마) e hipóteses com -(으)ㄹ 텐데.',heading:'N.O · letra e significado',badge:'Letra completa · análise preparada',references:<p className="music-reference">Referências de consulta: <a href="https://krdict.korean.go.kr/" target="_blank" rel="noreferrer">Dicionário Básico de Coreano</a> · <a href="https://www.korean.go.kr/front/onlineQna/onlineQnaList.do" target="_blank" rel="noreferrer">Perguntas frequentes do Instituto Nacional da Língua Coreana</a>. Traduções contextuais da letra oficial; as partes em inglês têm tradução direta e as linhas com coreano trazem análise morfológica termo a termo.</p>},
- 'boy-in-luv':{sections:boyInLuvSections,vocabulary:boyInLuvVocabulary,summary:'A energia impulsiva do amor juvenil e a determinação de se confessar. Estude a contração de desejo (-고파), o gancho enfático (-는 건데), a subordinação temporal (-기 전에) e gírias modernas das relações cotidianas (밀당, 어장).',heading:'Boy In Luv (상남자) · letra e significado',badge:'Letra completa · análise preparada',references:<p className="music-reference">Referências de consulta: <a href="https://krdict.korean.go.kr/" target="_blank" rel="noreferrer">Dicionário Básico de Coreano</a> · <a href="https://www.korean.go.kr/front/onlineQna/onlineQnaList.do" target="_blank" rel="noreferrer">Perguntas frequentes do Instituto Nacional da Língua Coreana</a>. Traduções contextuais da letra fornecida; contrações coloquiais como 되고파 e gírias como 밀당 têm explicações morfológicas detalhadas.</p>}
+ 'boy-in-luv':{sections:boyInLuvSections,vocabulary:boyInLuvVocabulary,summary:'A energia impulsiva do amor juvenil e a determinacao de se confessar.',heading:'Boy In Luv (상남자) · letra e significado',badge:'Letra completa · análise preparada',references:<p className="music-reference">Traducoes contextuais da letra fornecida.</p>},
+  'on':{sections:onSections,vocabulary:onVocabulary,summary:'Sombra que cresce a cada passo e dor que vira sangue e carne.',heading:'ON · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'boy-with-luv':{sections:bwlSections,vocabulary:bwlVocabulary,summary:'Curiosidade, asas e promessa de proteger entre voar alto e falar abrindo o jogo.',heading:'Boy With Luv · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'idol':{sections:idolSections,vocabulary:idolVocabulary,summary:'Orgulho de ser artista e idol entre festa tradicional e autoamor.',heading:'IDOL · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'blood-sweat-tears':{sections:bstSections,vocabulary:bstVocabulary,summary:'Entrega total de sangue suor e lagrimas entre doce e veneno.',heading:'Blood Sweat e Tears · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'fake-love':{sections:fakeLoveSections,vocabulary:fakeLoveVocabulary,summary:'Fingir alegria e forca por amor ate perder a propria identidade.',heading:'Fake Love · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'dna':{sections:dnaSections,vocabulary:dnaVocabulary,summary:'Amor como destino escrito no DNA.',heading:'DNA · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
 };
 function SongLesson({song}:{song:Song}){const {progress,setProgress}=useProgress();const [onlyKorean,setOnlyKorean]=useState(false);
  const study=studies[song.id];
