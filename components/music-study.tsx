@@ -29,6 +29,10 @@ import {idolSections,idolVocabulary} from '@/lib/idol';
 import {bwlSections,bwlVocabulary} from '@/lib/boy-with-luv';
 import {onSections,onVocabulary} from '@/lib/on';
 import {lgoSections,lgoVocabulary} from '@/lib/life-goes-on';
+import {ytcSections,ytcVocabulary} from '@/lib/yet-to-come';
+import {runBtsSections,runBtsVocabulary} from '@/lib/run-bts';
+import {personaSections,personaVocabulary} from '@/lib/persona';
+import {staySections,stayVocabulary} from '@/lib/stay';
 import {useProgress} from '@/lib/progress';
 import {ExerciseCard} from './exercise';
 import {KoreanText,AudioButton} from './korean-audio';
@@ -57,12 +61,17 @@ const studies:Record<string,StudyConfig>={
  'no-more-dream':{sections:noMoreDreamSections,vocabulary:noMoreDreamVocabulary,summary:'A música de estreia como um grito contra o sonho que os adultos escolhem por você. Explore perguntas informais (-니), proibições (-지 마), expressões fixas como 철이 들다 e as imagens de beisebol que atravessam a letra.',heading:'No More Dream · letra e significado',badge:'Letra completa · análise preparada',references:<p className="music-reference">Referências de consulta: <a href="https://krdict.korean.go.kr/" target="_blank" rel="noreferrer">Dicionário Básico de Coreano</a> · <a href="https://www.korean.go.kr/front/onlineQna/onlineQnaList.do" target="_blank" rel="noreferrer">Perguntas frequentes do Instituto Nacional da Língua Coreana</a>. Traduções contextuais da letra fornecida; grafias coloquiais e repetições vocais foram preservadas.</p>},
  'n-o':{sections:nOSections,vocabulary:nOVocabulary,summary:'Um manifesto contra a pressão sobre os jovens para serem o número um às custas da própria felicidade. Estude o discurso relatado (-라고), a exclusividade (뿐, 밖에), o apelo enfático (-지 마) e hipóteses com -(으)ㄹ 텐데.',heading:'N.O · letra e significado',badge:'Letra completa · análise preparada',references:<p className="music-reference">Referências de consulta: <a href="https://krdict.korean.go.kr/" target="_blank" rel="noreferrer">Dicionário Básico de Coreano</a> · <a href="https://www.korean.go.kr/front/onlineQna/onlineQnaList.do" target="_blank" rel="noreferrer">Perguntas frequentes do Instituto Nacional da Língua Coreana</a>. Traduções contextuais da letra oficial; as partes em inglês têm tradução direta e as linhas com coreano trazem análise morfológica termo a termo.</p>},
  'boy-in-luv':{sections:boyInLuvSections,vocabulary:boyInLuvVocabulary,summary:'A energia impulsiva do amor juvenil e a determinacao de se confessar.',heading:'Boy In Luv (상남자) · letra e significado',badge:'Letra completa · análise preparada',references:<p className="music-reference">Traducoes contextuais da letra fornecida.</p>},
+  'yet-to-come':{sections:ytcSections,vocabulary:ytcVocabulary,summary:'Passado bonito e melhor que ainda vem entre menino interior e capitulo novo.',heading:'Yet To Come · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'life-goes-on':{sections:lgoSections,vocabulary:lgoVocabulary,summary:'Mundo parado sem aviso e vida que segue como eco e flecha.',heading:'Life Goes On · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'on':{sections:onSections,vocabulary:onVocabulary,summary:'Sombra que cresce a cada passo e dor que vira sangue e carne.',heading:'ON · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'boy-with-luv':{sections:bwlSections,vocabulary:bwlVocabulary,summary:'Curiosidade, asas e promessa de proteger entre voar alto e falar abrindo o jogo.',heading:'Boy With Luv · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'idol':{sections:idolSections,vocabulary:idolVocabulary,summary:'Orgulho de ser artista e idol entre festa tradicional e autoamor.',heading:'IDOL · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'blood-sweat-tears':{sections:bstSections,vocabulary:bstVocabulary,summary:'Entrega total de sangue suor e lagrimas entre doce e veneno.',heading:'Blood Sweat e Tears · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'fake-love':{sections:fakeLoveSections,vocabulary:fakeLoveVocabulary,summary:'Fingir alegria e forca por amor ate perder a propria identidade.',heading:'Fake Love · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'dna':{sections:dnaSections,vocabulary:dnaVocabulary,summary:'Amor como destino escrito no DNA.',heading:'DNA · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'run-bts':{sections:runBtsSections,vocabulary:runBtsVocabulary,summary:'Correr como hábito e luta entre o fim que chega e o recomeço que se recusa.',heading:'Run BTS · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'intro-persona':{sections:personaSections,vocabulary:personaVocabulary,summary:'A pergunta de quem sou eu entre as vozes que cobram e o mapa da propria alma.',heading:'Intro: Persona · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'stay':{sections:staySections,vocabulary:stayVocabulary,summary:'A certeza de que alguém fica, onde quer que esteja.',heading:'Stay · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
 };
 function SongLesson({song}:{song:Song}){const {progress,setProgress}=useProgress();const [onlyKorean,setOnlyKorean]=useState(false);
  const study=studies[song.id];

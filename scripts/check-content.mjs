@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,22);
+assert.equal(lessons.length,30);assert.equal(songs.length,29);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 22 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 29 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -261,7 +261,49 @@ for(const section of runSections)assert.match(section.title,/^(Abertura|Verso [1
 for(const line of runLines){assert.ok(line.text&&line.translation);if(line.english)continue;const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'RUN: sem análise de '+token);for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length>=2,entry.term);}
 assert.equal(runVocabulary.verbs.length,31);assert.equal(runVocabulary.nouns.length,28);
 const runSong=songs.find(s=>s.id==='run');assert.equal(runSong.exercises.length,5);for(const e of runSong.exercises){assert.equal(e.kind,'choice');assert.ok(e.options.includes(e.answer[0]));assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorreta'));}
-assert.equal(new Function(studyLookup+";return studyFor('RUN');")(),'run');assert.equal(new Function(studyLookup+";return studyFor('Run BTS');")(),undefined);assert.equal(new Function(studyLookup+";return studyFor('RUN (Japanese Ver.)');")(),undefined);
+assert.equal(new Function(studyLookup+";return studyFor('RUN');")(),'run');assert.equal(new Function(studyLookup+";return studyFor('Run BTS');")(),'run-bts');assert.equal(new Function(studyLookup+";return studyFor('RUN (Japanese Ver.)');")(),undefined);
 assert.ok(musicSource.includes('sections:runSections,vocabulary:runVocabulary'));
 assert.equal(runLines.filter(l=>l.text==='다시 run, run, run, 난 멈출 수가 없어').length,3);
 console.log('PASS: RUN: 63 linhas, 52 com coreano; títulos simples; 31 verbos/descritivos, 28 substantivos e 5 exercícios.');
+
+// Validação das 10 músicas com análise palavra por palavra e exercícios.
+const btsNewSongs=['dna','fake-love','blood-sweat-tears','idol','boy-with-luv','on','life-goes-on','yet-to-come','run-bts','intro-persona','stay'];
+const btsVideoIds={dna:'MBdVXkSdhwU','fake-love':'7C2z4GqqS5E','blood-sweat-tears':'hmE9f-TEutc',idol:'pBuZEGYXA6E','boy-with-luv':'XsX3ATc3FbA',on:'mPVDGOVjRQ0','life-goes-on':'-5q5mZbe3V8','yet-to-come':'kXpOEzNZ8hQ','intro-persona':'kyR7DPMVVzo',stay:''};
+for(const id of btsNewSongs){
+ const song=songs.find(s=>s.id===id);assert.ok(song,'música ausente: '+id);
+ assert.equal(song.exercises.length,5,id+' deve ter 5 exercícios');
+ for(const e of song.exercises){assert.ok(e.kind==='choice'||e.kind==='gap',e.id+' kind');assert.ok(e.prompt&&e.explanation,e.id);if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]),e.id);}assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorreta'));}
+ if(btsVideoIds[id])assert.match(song.videoId,new RegExp('^'+btsVideoIds[id].replace(/[-/\\^$*+?.()|[\]{}]/g,'\\$&')+'$'),id+' videoId oficial');
+ assert.ok(musicSource.includes("'"+id+"'"),'music-study deve mapear '+id);
+}
+assert.ok(musicSource.includes('sections:dnaSections,vocabulary:dnaVocabulary'));
+assert.ok(musicSource.includes('sections:fakeLoveSections,vocabulary:fakeLoveVocabulary'));
+assert.ok(musicSource.includes('sections:bstSections,vocabulary:bstVocabulary'));
+assert.ok(musicSource.includes('sections:idolSections,vocabulary:idolVocabulary'));
+assert.ok(musicSource.includes('sections:bwlSections,vocabulary:bwlVocabulary'));
+assert.ok(musicSource.includes('sections:onSections,vocabulary:onVocabulary'));
+assert.ok(musicSource.includes('sections:lgoSections,vocabulary:lgoVocabulary'));
+assert.ok(musicSource.includes('sections:ytcSections,vocabulary:ytcVocabulary'));
+assert.ok(musicSource.includes('sections:runBtsSections,vocabulary:runBtsVocabulary'));
+assert.ok(musicSource.includes('sections:personaSections,vocabulary:personaVocabulary'));
+assert.equal(new Function(studyLookup+";return studyFor('DNA');")(),'dna');
+assert.equal(new Function(studyLookup+";return studyFor('FAKE LOVE');")(),'fake-love');
+assert.equal(new Function(studyLookup+";return studyFor('Blood Sweat & Tears');")(),'blood-sweat-tears');
+assert.equal(new Function(studyLookup+";return studyFor('피 땀 눈물');")(),'blood-sweat-tears');
+assert.equal(new Function(studyLookup+";return studyFor('IDOL');")(),'idol');
+assert.equal(new Function(studyLookup+";return studyFor('Boy With Luv (feat. Halsey)');")(),'boy-with-luv');
+assert.equal(new Function(studyLookup+";return studyFor('ON');")(),'on');
+assert.equal(new Function(studyLookup+";return studyFor('Life Goes On');")(),'life-goes-on');
+assert.equal(new Function(studyLookup+";return studyFor('Yet To Come');")(),'yet-to-come');
+assert.equal(new Function(studyLookup+";return studyFor('Run BTS');")(),'run-bts');
+assert.equal(new Function(studyLookup+";return studyFor('Intro : Persona');")(),'intro-persona');
+assert.equal(new Function(studyLookup+";return studyFor('Intro: Persona');")(),'intro-persona');
+assert.equal(new Function(studyLookup+";return studyFor('Stay');")(),'stay');
+assert.equal(new Function(studyLookup+";return studyFor('FAKE LOVE (Rocking Vibe Mix)');")(),undefined);
+for(const [id,lib,exp] of [['dna','lib/dna.ts','dnaSections'],['fake-love','lib/fake-love.ts','fakeLoveSections'],['blood-sweat-tears','lib/blood-sweat-tears.ts','bstSections'],['idol','lib/idol.ts','idolSections'],['boy-with-luv','lib/boy-with-luv.ts','bwlSections'],['on','lib/on.ts','onSections'],['life-goes-on','lib/life-goes-on.ts','lgoSections'],['yet-to-come','lib/yet-to-come.ts','ytcSections'],['run-bts','lib/run-bts.ts','runBtsSections'],['intro-persona','lib/persona.ts','personaSections'],['stay','lib/stay.ts','staySections']]){
+ const mod=await load(lib);const sections=mod[exp];assert.ok(Array.isArray(sections)&&sections.length>0,lib+' deve exportar '+exp);
+ const linesSec=sections.flatMap(s=>s.lines);
+ for(const line of linesSec){assert.ok(line.text&&line.translation,lib+': linha sem texto ou tradução');if(line.english)continue;const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),lib+': sem análise de '+token+' em '+line.text);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length>=1&&e.notes.every(n=>n.length>0),e.term);}
+}
+console.log('PASS: 11 músicas BTS (DNA, Fake Love, Blood Sweat and Tears, IDOL, Boy With Luv, ON, Life Goes On, Yet To Come, Run BTS, Intro: Persona, Stay): análises completas palavra por palavra, 5 exercícios cada, videoIds oficiais e mapeamentos studyFor.');
+

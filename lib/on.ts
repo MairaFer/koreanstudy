@@ -19,6 +19,7 @@ const opening=[
   e('잠에서 눈을 뜬', 'que abriu os olhos do sono', ['잠 = sono', '눈을 뜨다 = abrir os olhos', '-ㄴ = relativo']),
   e('여긴 또 어디', 'aqui é onde de novo', ['여기 = aqui', '또 = de novo', '어디 = onde'])]),
  line('어쩜 서울 또 New York or Paris', 'Talvez Seul, ou New York ou Paris.', [
+  e('또', 'e, ou', ['Conecta as alternativas de cidade','Soa também como "de novo", ecoando o tema']),
   e('어쩜', 'talvez', ['Forma de 어쩌면']),
   e('서울', 'Seul', ['A cidade de partida'])]),
  line('일어나니 휘청이는 몸', 'Levanto e o corpo balança.', [
@@ -38,7 +39,8 @@ const opening=[
   e('두렵잖을 리 없잖아', 'claro que tem medo', ['두렵다 = ter medo', '-잖아 = como sabe', '-ㄹ 리 없다 = impossível não'])]),
  line('다 괜찮을 리 없잖아', 'Claro que nem tudo está bem.', [
   e('다 괜찮을 리 없잖아', 'claro que nem tudo está bem', ['괜찮다 = estar bem', 'Mesma estrutura de negação'])]),
- line('그래도 I know', 'Mesmo assim eu sei.', []),
+ line('그래도 I know', 'Mesmo assim eu sei.', [
+  e('그래도', 'mesmo assim', ['그렇다 = ser assim','-아도 = ainda que, mesmo assim'])]),
  line('서툴게 I flow', 'Desajeitado eu fluo.', [
   e('서툴게', 'desajeitadamente', ['서툴다 = ser desajeitado', '-게 = modo'])]),
  line('저 까만 바람과 함께 날아', 'Voo com aquele vento negro.', [

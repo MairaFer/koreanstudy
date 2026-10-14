@@ -18,6 +18,7 @@ const opening=[
  line('널 위해서라면','Se for por você.',[
   e('널 위해서라면','se for por você',['Reprise: a condição amorosa se repete','널 + 위해서라면 mantém a hipótese'])]),
  line('난 아파도 강한 척 할 수가 있었어','Mesmo com dor, eu conseguia fingir força.',[
+  e('난','eu (tópico)',['Contração de 나는']),
   e('아파도','mesmo doendo',['아프다 = doer','-어도 = mesmo que']),
   e('강한 척','fingindo ser forte',['강하다 = ser forte','-ㄴ 척 = fingimento']),
   e('할 수가 있었어','eu conseguia fazer',['Mesma estrutura do verso do sorriso fingido'])]),
@@ -103,6 +104,7 @@ const rap=[
   e('니가 좋아하던 나로','naquele eu de que você gostava',['좋아하다 = gostar','-던 = lembrança','-로 = em, como']),
   e('변한 내가','eu mudado',['변하다 = mudar','-ㄴ = relativo'])]),
  line('아니라 하네, 예전에 니가 잘 알고 있던 내가 (oh)','Dizem que não sou, aquele eu que você conhecia bem antes (oh).',[
+  e('예전에 니가','antes, você',['예전에 = antes, antigamente','니가 = você (contração de 너가)']),
   e('아니라 하네','dizem que não sou',['아니다 = não ser','dizem que não é aquele']),
   e('잘 알고 있던 내가','eu que você conhecia bem',['알다 = saber, conhecer','-고 있던 = lembrança contínua'])]),
  line('아니긴 뭐가 아냐? 난 눈 멀었어','Como assim não sou? Fiquei cego.',[
