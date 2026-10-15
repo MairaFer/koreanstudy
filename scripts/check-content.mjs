@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,29);
+assert.equal(lessons.length,30);assert.equal(songs.length,30);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 29 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 30 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -307,3 +307,14 @@ for(const [id,lib,exp] of [['dna','lib/dna.ts','dnaSections'],['fake-love','lib/
 }
 console.log('PASS: 11 músicas BTS (DNA, Fake Love, Blood Sweat and Tears, IDOL, Boy With Luv, ON, Life Goes On, Yet To Come, Run BTS, Intro: Persona, Stay): análises completas palavra por palavra, 5 exercícios cada, videoIds oficiais e mapeamentos studyFor.');
 
+
+const {fireSections,fireVocabulary}=await load('lib/fire.ts');const fireLines=fireSections.flatMap(s=>s.lines);
+assert.equal(fireSections.length,10);assert.equal(fireLines.length,72);assert.equal(fireLines.filter(l=>!l.english).length,40);
+for(const section of fireSections)assert.match(section.title,/^(Abertura|Verso [12]|Pré-refrão|Refrão|Ponte|Final)$/);
+for(const line of fireLines){assert.ok(line.text&&line.translation);if(line.english)continue;const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'FIRE: sem análise de '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length>=2,e.term);}
+assert.equal(fireVocabulary.verbs.length,22);assert.equal(fireVocabulary.nouns.length,16);
+const fireSong=songs.find(s=>s.id==='fire');assert.equal(fireSong.exercises.length,5);for(const e of fireSong.exercises){assert.equal(e.kind,'choice');assert.ok(e.options.includes(e.answer[0]));assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorreta'));}
+assert.equal(new Function(studyLookup+";return studyFor('Burning Up (FIRE)');")(),'fire');assert.equal(new Function(studyLookup+";return studyFor('Burning Up (FIRE) [Live]');")(),undefined);assert.equal(new Function(studyLookup+";return studyFor('FYA');")(),'fya');
+assert.equal(fireLines.filter(l=>l.text==='용서해 줄게').length,1);assert.equal(fireLines.at(-1).text,'용서해 줄게');assert.equal(fireLines.filter(l=>l.text==='싹 다 불태워라').length,6);
+assert.ok(musicSource.includes('sections:fireSections,vocabulary:fireVocabulary'));
+console.log('PASS: FIRE: 72 linhas, 40 com coreano; repetições internas preservadas, 22 verbos/descritivos, 16 substantivos e 5 exercícios.');
