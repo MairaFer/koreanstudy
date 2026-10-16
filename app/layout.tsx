@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {SpeechProvider} from "@/components/korean-audio";
+import {PurpleGarden} from "@/components/purple-garden";
 
 export const metadata: Metadata = {
   title: "BoraLang · Bora aprender coreano com o BTS",
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased"><SpeechProvider>{children}</SpeechProvider></body>
+      <body className="antialiased"><PurpleGarden/><SpeechProvider>{children}</SpeechProvider></body>
     </html>
   );
 }

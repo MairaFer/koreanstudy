@@ -100,3 +100,19 @@
 .brand-logo{display:block;width:160px;height:75px;object-fit:cover;object-position:center 51%;max-width:100%}
 .site-header .brand small{margin:0;font-size:.75rem;letter-spacing:0;line-height:1.4;font-weight:400}
 @media(max-width:600px){.brand-logo{width:140px;height:66px}.site-header .brand small{font-size:.7rem}}
+
+/* Quiet purple foliage stays behind the study content and never captures input. */
+body{isolation:isolate}
+.purple-garden{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;contain:strict;color:#9c72c0}
+.garden-branch{position:absolute;left:-34px;bottom:-35px;width:150px;height:350px;opacity:.12;transform:rotate(-7deg)}
+.garden-leaf{position:absolute;top:-60px;width:18px;height:28px;opacity:0;animation:garden-drift 26s linear infinite;will-change:transform,opacity}
+.garden-leaf svg{width:100%;height:100%;display:block}
+.garden-leaf-0{left:2%;animation-delay:-3s}
+.garden-leaf-1{right:2%;animation-delay:-16s;animation-duration:31s;width:14px}
+.garden-leaf-2{left:5%;animation-delay:-23s;animation-duration:35s;width:12px}
+.garden-leaf-3{right:5%;animation-delay:-9s;animation-duration:29s;width:20px}
+.garden-leaf-4{right:1%;animation-delay:-29s;animation-duration:39s;width:11px}
+@keyframes garden-drift{0%{transform:translate3d(0,-40px,0) rotate(-25deg);opacity:0}12%{opacity:.2}40%{transform:translate3d(14px,42vh,0) rotate(40deg)}72%{transform:translate3d(-10px,76vh,0) rotate(110deg);opacity:.16}100%{transform:translate3d(8px,110vh,0) rotate(165deg);opacity:0}}
+@media(max-width:700px){.garden-branch{left:-46px;width:110px;height:255px;opacity:.09}.garden-leaf{width:11px;height:18px}.garden-leaf-2,.garden-leaf-3,.garden-leaf-4{display:none}.garden-leaf-0{left:1%}.garden-leaf-1{right:1%}}
+@media(prefers-reduced-motion:reduce){.garden-leaf{animation:none;display:none}.garden-branch{transform:none}}
+@media print{.purple-garden{display:none}}
