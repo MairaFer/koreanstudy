@@ -1,4 +1,5 @@
 import vinext from "vinext";
+import cloudflareConfig from "./wrangler.cloudflare.json";
 import { defineConfig } from "vite";
 import hostingConfig from "./.openai/hosting.json";
 import { readExecutionProfile } from "./scripts/execution-profile.mjs";
@@ -8,6 +9,7 @@ const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
   "00000000-0000-4000-8000-000000000000";
 
 const { d1, r2 } = hostingConfig;
+const independentCloudflare = process.env.BORALANG_CLOUDFLARE === "1";
 
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
@@ -52,6 +54,7 @@ export default defineConfig(async ({ command }) => {
   const { cloudflare } = await import("@cloudflare/vite-plugin");
 
   return {
+    define: {"process.env.NEXT_PUBLIC_AUTH_PROVIDER": JSON.stringify(independentCloudflare ? "google" : "chatgpt")},
     server: {
       ...(managedLinux ? { host: "0.0.0.0", allowedHosts: ["terminal.local"] } : {}),
       ...(isCodexSeatbeltSandbox ? { watch: { useFsEvents: false, usePolling: true } } : {}),
@@ -64,11 +67,11 @@ export default defineConfig(async ({ command }) => {
         load(id: string) { if (id === '\0local-worker-bindings') return 'export const env = {};'; },
       }] : []),
       vinext(),
-      sites({ mockAuth: !managedLinux && !localNodePreview }),
+      ...(!independentCloudflare ? [sites({ mockAuth: !managedLinux && !localNodePreview })] : []),
       ...(!localNodePreview ? [cloudflare({
         viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] },
         inspectorPort: false,
-        config: localBindingConfig,
+        config: independentCloudflare ? cloudflareConfig : localBindingConfig,
       })] : []),
     ],
   };

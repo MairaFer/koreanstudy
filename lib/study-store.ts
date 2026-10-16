@@ -13,7 +13,7 @@ function emit(patch:Partial<Snapshot>){snapshot={...snapshot,...patch};for(const
 function subscribe(l:()=>void){listeners.add(l);return()=>{listeners.delete(l);};}
 function applyRecords(){emit({progress:recordsProgress(records),words:Object.fromEntries(Object.entries(records).filter(([k,v])=>k.startsWith('word.')&&v).map(([k,v])=>[k.slice(5),v as SavedWord])),pending:pending.size});}
 const endpoint=()=>'/api/study?returnTo='+encodeURIComponent('/'+location.hash);
-export const signInHref=()=>'/signin-with-chatgpt?return_to='+encodeURIComponent(typeof location==='undefined'?'/':'/'+location.hash);
+export const signInHref=()=>(process.env.NEXT_PUBLIC_AUTH_PROVIDER==='google'?'/entrar?return_to=':'/signin-with-chatgpt?return_to=')+encodeURIComponent(typeof location==='undefined'?'/':'/'+location.hash);
 export function requestAccount(){emit({gate:true});}
 export function closeAccount(){emit({gate:false});}
 export function toggleWordMode(){emit({wordMode:!snapshot.wordMode});}

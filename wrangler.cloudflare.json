@@ -1,0 +1,22 @@
+{
+  "name": "boralang",
+  "account_id": "b034c73887f3967966c1be0a7c0a1e58",
+  "main": "vinext/server/fetch-handler",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "vars": {
+    "AUTH_BASE_URL": "https://boralang.fernanda-maira2004.workers.dev",
+    "GOOGLE_CLIENT_ID": "576562700400-gmrhd18p8prs37m3nak1rrse292udfbk.apps.googleusercontent.com"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "boralang",
+      "database_id": "c5a2f53b-0165-456e-ac1b-e236ab8ff522",
+      "migrations_dir": "migrations/cloudflare"
+    }
+  ]
+}

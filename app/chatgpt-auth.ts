@@ -14,12 +14,18 @@ const USER_FULL_NAME_HEADER = "oai-authenticated-user-full-name";
 const USER_FULL_NAME_ENCODING_HEADER =
   "oai-authenticated-user-full-name-encoding";
 const PERCENT_ENCODED_UTF8 = "percent-encoded-utf-8";
-const SIGN_IN_PATH = "/signin-with-chatgpt";
-const SIGN_OUT_PATH = "/signout-with-chatgpt";
+const SIGN_IN_PATH = process.env.NEXT_PUBLIC_AUTH_PROVIDER === "google" ? "/entrar" : "/signin-with-chatgpt";
+const SIGN_OUT_PATH = process.env.NEXT_PUBLIC_AUTH_PROVIDER === "google" ? "/sair" : "/signout-with-chatgpt";
 const CALLBACK_PATH = "/callback";
 
 export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
   const requestHeaders = await headers();
+  if(process.env.NEXT_PUBLIC_AUTH_PROVIDER === 'google') {
+    if(!requestHeaders.get('cookie')?.includes('better-auth.session_token=')) return null;
+    const {googleAuth}=await import('@/lib/google-auth');
+    const session=await (await googleAuth()).api.getSession({headers:requestHeaders});
+    return session ? {userId:session.user.id,displayName:session.user.name,email:session.user.email,fullName:session.user.name} : null;
+  }
   const userId = requestHeaders.get(USER_ID_HEADER);
   const email = requestHeaders.get(USER_EMAIL_HEADER);
   if (!userId || !email) return null;
