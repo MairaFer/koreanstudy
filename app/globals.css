@@ -97,6 +97,6 @@
 
 /* Supplied brand artwork; crop only its empty canvas in the header. */
 .site-header .brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;letter-spacing:normal}
-.brand-logo{display:block;width:240px;height:112px;object-fit:cover;object-position:center 51%;max-width:100%}
+.brand-logo{display:block;width:160px;height:75px;object-fit:cover;object-position:center 51%;max-width:100%}
 .site-header .brand small{margin:0;font-size:.75rem;letter-spacing:0;line-height:1.4;font-weight:400}
-@media(max-width:600px){.brand-logo{width:200px;height:94px}.site-header .brand small{font-size:.7rem}}
+@media(max-width:600px){.brand-logo{width:140px;height:66px}.site-header .brand small{font-size:.7rem}}
