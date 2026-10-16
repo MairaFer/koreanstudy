@@ -20,3 +20,5 @@ Não considerar migração concluída antes de verificar secrets, login real, li
 
 ## Validação em 15/10/2026
 Instalação e lockfile atualizados; TypeScript, check-google-auth, check-backend, check-study-store e build Cloudflare passaram. Publicação confirmada no endereço acima. GET /, /entrar e /api/study: 200; headers de identidade forjados ignorados; PATCH anônimo: 401. BETTER_AUTH_SECRET configurado diretamente no cofre. GOOGLE_CLIENT_SECRET confirmado no cofre; início OAuth validado e entrada completa confirmada pela usuária. Pendente: transferência de dados antigos e conexão do GitHub para deploy automático.
+
+Conexão GitHub confirmada no painel: MairaFer/koreanstudy, branch master, build npm run build:cloudflare, publicação com migrações D1 e dist/server/wrangler.json. Primeiro build automático em verificação.
