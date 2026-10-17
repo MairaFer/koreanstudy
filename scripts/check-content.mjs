@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,54);
+assert.equal(lessons.length,30);assert.equal(songs.length,55);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 54 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 55 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -797,3 +797,30 @@ assert.equal(new Function(studyLookup+";return studyFor('Louder Than Bombs');")(
 const louderSong=songs.find(s=>s.id==='louder-than-bombs');assert.equal(louderSong.exercises.length,5);
 for(const exercise of louderSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: Louder Than Bombs: 55 supplied lines, Korean analysis, repeated verse, break/say/sing progression, vocabulary, catalog link and 5 clickable exercises.');
+
+const {ughSections,ughVocabulary}=await load('lib/ugh.ts');
+const ughLines=ughSections.flatMap(s=>s.lines);
+assert.equal(ughSections.length,11);assert.equal(ughLines.length,76);
+assert.equal(ughLines[0].text,'타닥 또 타오르는 저 불씨');
+assert.equal(ughLines.at(-1).text,'나는 꺼져야만 했던 그 분노에 분노해');
+assert.equal(ughLines.filter(l=>l.english).length,1);
+assert.equal(ughLines.filter(l=>l.text==='나는 욱해 욱해').length,10);
+assert.equal(ughLines.filter(l=>l.text==='나는 악의에 가득 찬 분노에 분노해').length,5);
+assert.equal(ughLines.filter(l=>l.text==='그래 욱 욱 욱해라 욱').length,4);
+assert.ok(ughLines.some(l=>l.text==='타오를 땐 이유가 있으'));
+assert.ok(ughLines.some(l=>l.text==='나 시켰어봐 그냥 에헴 비헴 에헴'));
+for(const line of ughLines){
+ assert.ok(line.text&&line.translation);
+ if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}
+ const terms=line.entries.map(e=>e.term).join(' ');
+ for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'UGH!: missing analysis of '+token);
+ for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length);
+}
+assert.equal(ughVocabulary.verbs.length,34);assert.equal(ughVocabulary.nouns.length,28);
+assert.ok(ughLines.find(l=>l.text==='반응이 없음 걍 담궈버리지 푹푹 yeah').entries.some(e=>e.notes.some(n=>n.includes('담가'))));
+assert.ok(ughLines.find(l=>l.text==='이곳에선 모두가 도덕적 사고와').entries.some(e=>e.notes.some(n=>n.includes('não acidente'))));
+assert.ok(ughLines.find(l=>l.text==='그 정돈 감수해야지 에헴').entries.some(e=>e.notes.some(n=>n.includes('pigarro'))));
+for(const title of ['UGH!','UGH','욱','UGH! (욱)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'ugh');
+const ughSong=songs.find(s=>s.id==='ugh');assert.equal(ughSong.exercises.length,5);
+for(const exercise of ughSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: UGH!: 76 supplied lines, Korean analysis, sound fragments, wordplay and colloquial spellings, repeated choruses, vocabulary, catalog links and 5 clickable exercises.');

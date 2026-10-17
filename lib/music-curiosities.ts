@@ -417,6 +417,33 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "노래할 거라고",
       "card": "Os refrões passam de se quebrar a falar e, por fim, cantar. A promessa termina com 노래할 거라고, retomando 약속해 de antes. A voz ganha uma forma de continuar diante das ondas; isso é uma leitura da progressão da letra, não a afirmação de que toda dor foi resolvida."
     }
+  ],
+  "ugh": [
+    {
+      "term": "나는 욱해 욱해",
+      "card": "욱하다 descreve uma explosão súbita de raiva. O título aproxima o som dessa reação de uma interjeição, e o refrão a transforma em verbo repetido. Isso é mais específico do que simplesmente estar irritado por muito tempo.",
+      "source": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=69018"
+    },
+    {
+      "term": "But 이건 분노 아닌 분뇨",
+      "card": "분노 é raiva ou indignação; 분뇨 são fezes e urina. A proximidade sonora permite desqualificar uma agressão que se apresenta como indignação legítima. As palavras não são sinônimos e não precisam ser pronunciadas como se fossem idênticas."
+    },
+    {
+      "term": "물기 시작하면 둥둥둥 동네북이 돼 둥둥둥",
+      "card": "동네북 é literalmente o tambor do bairro e, figurativamente, alguém que todos atacam. O som 둥둥둥 faz o tambor aparecer na própria linha, enquanto a tradução saco de pancadas comunica a função da expressão em português."
+    },
+    {
+      "term": "판단이 완벽한 사람이 돼 웃기시네",
+      "card": "O honorífico -시- nem sempre torna a fala sinceramente respeitosa. Em 웃기시네, junto à crítica da perfeição moral, ele pode intensificar o sarcasmo: que pessoa engraçada, não? O contexto e a entonação orientam a leitura."
+    },
+    {
+      "term": "나는 꺼져야만 했던 분노에 분노해",
+      "card": "꺼지다 retoma a imagem do fogo: apagar-se. A construção 꺼져야만 했던 expressa uma necessidade passada reforçada; ela não determina sozinha se aquela raiva era nociva ou se uma indignação legítima foi sufocada. Convém separar a gramática da interpretação do verso."
+    },
+    {
+      "term": "그 정돈 감수해야지 에헴",
+      "card": "에헴 imita limpar a garganta e pode encenar autoridade ou importância. Na ponte, as falas sobre ganhar bem e aguentar tudo são lidas como uma caricatura de quem minimiza o sofrimento alheio. A análise apresenta essa voz sem tratar sua cobrança como conselho ao estudante."
+    }
   ]
 };
 

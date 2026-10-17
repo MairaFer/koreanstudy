@@ -1,3 +1,4 @@
+import {ughSections,ughVocabulary} from './ugh';
 import {louderThanBombsSections,louderThanBombsVocabulary} from './louder-than-bombs';
 import {myTimeSections,myTimeVocabulary} from './my-time';
 import {blackSwanSections,blackSwanVocabulary} from './black-swan';
@@ -98,6 +99,7 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'ugh',sections:ughSections,vocabulary:ughVocabulary},
  {id:'louder-than-bombs',sections:louderThanBombsSections,vocabulary:louderThanBombsVocabulary},
  {id:'my-time',sections:myTimeSections,vocabulary:myTimeVocabulary},
  {id:'black-swan',sections:blackSwanSections,vocabulary:blackSwanVocabulary},
