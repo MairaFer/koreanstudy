@@ -34,6 +34,7 @@ import {ytcSections,ytcVocabulary} from '@/lib/yet-to-come';
 import {runBtsSections,runBtsVocabulary} from '@/lib/run-bts';
 import {personaSections,personaVocabulary} from '@/lib/persona';
 import {staySections,stayVocabulary} from '@/lib/stay';
+import {egoSections,egoVocabulary} from '@/lib/ego';
 import {cypherPt3Sections,cypherPt3Vocabulary} from '@/lib/cypher-pt3';
 import {seesawSections,seesawVocabulary} from '@/lib/seesaw';
 import {moonSections,moonVocabulary} from '@/lib/moon';
@@ -78,6 +79,7 @@ const studies:Record<string,StudyConfig>={
   'run-bts':{sections:runBtsSections,vocabulary:runBtsVocabulary,summary:'Correr como hábito e luta entre o fim que chega e o recomeço que se recusa.',heading:'Run BTS · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'intro-persona':{sections:personaSections,vocabulary:personaVocabulary,summary:'A pergunta de quem sou eu entre as vozes que cobram e o mapa da propria alma.',heading:'Intro: Persona · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'stay':{sections:staySections,vocabulary:stayVocabulary,summary:'A certeza de que alguém fica, onde quer que esteja.',heading:'Stay · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'ego':{sections:egoSections,vocabulary:egoVocabulary,summary:'O caminho escolhido, a vida alternativa imaginada e a confiança em si mesmo. Notas de grafia preservam a letra enviada.',heading:'Outro : Ego · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'cypher-pt3':{sections:cypherPt3Sections,vocabulary:cypherPt3Vocabulary,summary:'Batalha de rap, identidade artística e trocadilhos. Notas de registro coloquial e de grafias ambíguas da transcrição.',heading:'BTS Cypher PT.3 : KILLER · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'seesaw':{sections:seesawSections,vocabulary:seesawVocabulary,summary:'A gangorra como metáfora de uma relação desgastada e da dificuldade de decidir quando descer.',heading:'Trivia 轉 : Seesaw · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'moon':{sections:moonSections,vocabulary:moonVocabulary,summary:'A lua e a Terra como metáfora de carinho, gratidão e companhia.',heading:'Moon · coreano palavra por palavra',badge:'Letra completa · análise preparada'},

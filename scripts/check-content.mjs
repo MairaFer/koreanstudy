@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,34);
+assert.equal(lessons.length,30);assert.equal(songs.length,35);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 34 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 35 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -369,3 +369,15 @@ assert.equal(cypherPt3Vocabulary.verbs.length,36);assert.equal(cypherPt3Vocabula
 for(const title of ['BTS Cypher PT.3 : KILLER (feat. Supreme Boi)','BTS Cypher, Pt. 3: KILLER (feat. Supreme Boi)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'cypher-pt3');
 assert.equal(songs.find(s=>s.id==='cypher-pt3').exercises.length,5);
 console.log('PASS: Cypher 3: '+cypherLines.length+' linhas, refrões preservados, cópia integral duplicada removida, análise de todos os termos coreanos, vocabulário e exercícios.');
+
+const {egoSections,egoVocabulary}=await load('lib/ego.ts');const egoLines=egoSections.flatMap(s=>s.lines);
+assert.equal(egoSections.length,8);assert.equal(egoLines.length,60);
+assert.equal(egoLines[0].text,"We're now going to progress to some steps which are a bit more difficult");
+assert.equal(egoLines.at(-1).text,"That's my ego, that's my ego (Map of the Soul)");
+assert.equal(egoLines.filter(l=>l.text==='그 길로, 길로, 길로').length,2);
+assert.equal(egoLines.filter(l=>l.text==='(Ready, set, and begin)').length,2);
+for(const l of egoLines){assert.ok(l.text&&l.translation);if(l.english)continue;const terms=l.entries.map(e=>e.term).join(' ');for(const token of l.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Ego: sem análise de '+token);for(const e of l.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(egoVocabulary.verbs.length,22);assert.equal(egoVocabulary.nouns.length,25);
+for(const title of ['Outro : Ego','Outro: Ego'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'ego');
+assert.equal(songs.find(s=>s.id==='ego').exercises.length,5);
+console.log('PASS: Ego: '+egoLines.length+' linhas, 8 seções, termos coreanos analisados, notas de grafia, vocabulário e botão Estudar.');
