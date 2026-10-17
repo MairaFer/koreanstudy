@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,44);
+assert.equal(lessons.length,30);assert.equal(songs.length,45);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 44 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 45 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -558,3 +558,22 @@ assert.equal(forYouthVocabulary.verbs.length,35);assert.equal(forYouthVocabulary
 assert.equal(new Function(studyLookup+";return studyFor('For Youth');")(),'for-youth');
 assert.equal(songs.find(s=>s.id==='for-youth').exercises.length,5);
 console.log('PASS: For Youth: 69 linhas, 13 seções, repetições preservadas, termos coreanos analisados, notas de grafia, vocabulário e 5 exercícios de clicar.');
+
+const {flyToMyRoomSections,flyToMyRoomVocabulary}=await load('lib/fly-to-my-room.ts');
+const flyLines=flyToMyRoomSections.flatMap(s=>s.lines);
+assert.equal(flyToMyRoomSections.length,9);assert.equal(flyLines.length,78);
+assert.equal(flyLines[0].text,'떠나볼까 let me fly to my');
+assert.equal(flyLines.at(-1).text,"And now I'm feelin' brand new (new)");
+assert.equal(flyLines.filter(l=>l.text==='시선을 낮추고 어디든 막 zoom').length,5);
+for(const line of flyLines){
+ assert.ok(line.text&&line.translation);
+ if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}
+ const terms=line.entries.map(e=>e.term).join(' ');
+ for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Fly To My Room: missing analysis of '+token);
+ for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length);
+}
+assert.equal(flyToMyRoomVocabulary.verbs.length,21);assert.equal(flyToMyRoomVocabulary.nouns.length,20);
+for(const title of ['Fly To My Room','내 방을 여행하는 법'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'fly-to-my-room');
+const flySong=songs.find(s=>s.id==='fly-to-my-room');assert.equal(flySong.exercises.length,5);
+for(const exercise of flySong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: Fly To My Room: 78 supplied lines, 9 sections, Korean analysis, vocabulary, catalog links and 5 clickable exercises.');

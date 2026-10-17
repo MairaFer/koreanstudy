@@ -39,6 +39,7 @@ import {justDanceSections,justDanceVocabulary} from './just-dance';
 import {zeroOclockSections,zeroOclockVocabulary} from './zero-oclock';
 import {dimpleSections,dimpleVocabulary} from './dimple';
 import {forYouthSections,forYouthVocabulary} from './for-youth';
+import {flyToMyRoomSections,flyToMyRoomVocabulary} from './fly-to-my-room';
 import {cypherPt3Sections,cypherPt3Vocabulary} from './cypher-pt3';
 import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
@@ -84,6 +85,7 @@ const studies=[
  {id:'zero-oclock',sections:zeroOclockSections,vocabulary:zeroOclockVocabulary},
  {id:'dimple',sections:dimpleSections,vocabulary:dimpleVocabulary},
  {id:'for-youth',sections:forYouthSections,vocabulary:forYouthVocabulary},
+ {id:'fly-to-my-room',sections:flyToMyRoomSections,vocabulary:flyToMyRoomVocabulary},
  {id:'cypher-pt3',sections:cypherPt3Sections,vocabulary:cypherPt3Vocabulary},
  {id:'seesaw',sections:seesawSections,vocabulary:seesawVocabulary},
  {id:'moon',sections:moonSections,vocabulary:moonVocabulary},
