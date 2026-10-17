@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,31);
+assert.equal(lessons.length,30);assert.equal(songs.length,32);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 31 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 32 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -329,3 +329,17 @@ assert.ok(!jamaisLines.some(l=>l.text==='Je ne sais pas'));
 assert.ok(jamaisVuVocabulary.verbs.length>=10&&jamaisVuVocabulary.nouns.length>=10);
 assert.equal(new Function(studyLookup+";return studyFor('Jamais Vu');")(),'jamais-vu');
 console.log('PASS: Jamais Vu segue a versão enviada, preserva refrões e final e liga a discografia ao estudo.');
+
+const {moonSections,moonVocabulary}=await load('lib/moon.ts');
+const moonLines=moonSections.flatMap(s=>s.lines);
+assert.equal(moonLines.length,58);
+assert.equal(moonSections.length,10);
+assert.equal(moonLines[0].text,'달과 지구는 언제부터');
+assert.equal(moonLines.at(-1).text,'All for you');
+assert.equal(moonLines.filter(l=>l.text==='모두들 내가 아름답다 하지만').length,1);
+assert.equal(moonLines.filter(l=>l.text==='문득 생각해 너도 날 지금 보고 있을까').length,2);
+for(const l of moonLines){assert.ok(l.text&&l.translation);if(l.english)continue;const terms=l.entries.map(e=>e.term).join(' ');for(const token of l.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Moon: termo sem análise');}
+assert.ok(moonVocabulary.verbs.length>=10&&moonVocabulary.nouns.length>=10);
+assert.equal(new Function(studyLookup+";return studyFor('Moon');")(),'moon');
+assert.ok(songs.find(s=>s.id==='moon').exercises.every(e=>e.kind==='choice'&&isCorrect(e,e.answer[0])));
+console.log('PASS: Moon, 58 linhas na sequência enviada, 10 seções, vocabulário, exercícios e botão Estudar.');
