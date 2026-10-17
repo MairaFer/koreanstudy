@@ -34,6 +34,7 @@ import {ytcSections,ytcVocabulary} from '@/lib/yet-to-come';
 import {runBtsSections,runBtsVocabulary} from '@/lib/run-bts';
 import {personaSections,personaVocabulary} from '@/lib/persona';
 import {staySections,stayVocabulary} from '@/lib/stay';
+import {jamaisVuSections,jamaisVuVocabulary} from '@/lib/jamais-vu';
 import {useProgress} from '@/lib/progress';
 import {ExerciseCard} from './exercise';
 import {KoreanText,AudioButton} from './korean-audio';
@@ -74,6 +75,7 @@ const studies:Record<string,StudyConfig>={
   'run-bts':{sections:runBtsSections,vocabulary:runBtsVocabulary,summary:'Correr como hábito e luta entre o fim que chega e o recomeço que se recusa.',heading:'Run BTS · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'intro-persona':{sections:personaSections,vocabulary:personaVocabulary,summary:'A pergunta de quem sou eu entre as vozes que cobram e o mapa da propria alma.',heading:'Intro: Persona · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'stay':{sections:staySections,vocabulary:stayVocabulary,summary:'A certeza de que alguém fica, onde quer que esteja.',heading:'Stay · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'jamais-vu':{sections:jamaisVuSections,vocabulary:jamaisVuVocabulary,summary:'Tentativas, quedas e a decisão de continuar: a metáfora do jogo e do remédio.',heading:'Jamais Vu · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
 };
 function SongLesson({song}:{song:Song}){const {progress,setProgress}=useProgress();const [onlyKorean,setOnlyKorean]=useState(false);
  const study=studies[song.id];

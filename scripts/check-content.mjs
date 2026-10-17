@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,30);
+assert.equal(lessons.length,30);assert.equal(songs.length,31);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 30 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 31 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -267,8 +267,8 @@ assert.equal(runLines.filter(l=>l.text==='다시 run, run, run, 난 멈출 수�
 console.log('PASS: RUN: 63 linhas, 52 com coreano; títulos simples; 31 verbos/descritivos, 28 substantivos e 5 exercícios.');
 
 // Validação das 10 músicas com análise palavra por palavra e exercícios.
-const btsNewSongs=['dna','fake-love','blood-sweat-tears','idol','boy-with-luv','on','life-goes-on','yet-to-come','run-bts','intro-persona','stay'];
-const btsVideoIds={dna:'MBdVXkSdhwU','fake-love':'7C2z4GqqS5E','blood-sweat-tears':'hmE9f-TEutc',idol:'pBuZEGYXA6E','boy-with-luv':'XsX3ATc3FbA',on:'mPVDGOVjRQ0','life-goes-on':'-5q5mZbe3V8','yet-to-come':'kXpOEzNZ8hQ','intro-persona':'kyR7DPMVVzo',stay:''};
+const btsNewSongs=['dna','fake-love','blood-sweat-tears','idol','boy-with-luv','on','life-goes-on','yet-to-come','run-bts','intro-persona','stay','jamais-vu'];
+const btsVideoIds={dna:'MBdVXkSdhwU','fake-love':'7C2z4GqqS5E','blood-sweat-tears':'hmE9f-TEutc',idol:'pBuZEGYXA6E','boy-with-luv':'XsX3ATc3FbA',on:'mPVDGOVjRQ0','life-goes-on':'-5q5mZbe3V8','yet-to-come':'kXpOEzNZ8hQ','intro-persona':'kyR7DPMVVzo',stay:'','jamais-vu':'',};
 for(const id of btsNewSongs){
  const song=songs.find(s=>s.id===id);assert.ok(song,'música ausente: '+id);
  assert.equal(song.exercises.length,5,id+' deve ter 5 exercícios');
@@ -300,12 +300,12 @@ assert.equal(new Function(studyLookup+";return studyFor('Intro : Persona');")(),
 assert.equal(new Function(studyLookup+";return studyFor('Intro: Persona');")(),'intro-persona');
 assert.equal(new Function(studyLookup+";return studyFor('Stay');")(),'stay');
 assert.equal(new Function(studyLookup+";return studyFor('FAKE LOVE (Rocking Vibe Mix)');")(),undefined);
-for(const [id,lib,exp] of [['dna','lib/dna.ts','dnaSections'],['fake-love','lib/fake-love.ts','fakeLoveSections'],['blood-sweat-tears','lib/blood-sweat-tears.ts','bstSections'],['idol','lib/idol.ts','idolSections'],['boy-with-luv','lib/boy-with-luv.ts','bwlSections'],['on','lib/on.ts','onSections'],['life-goes-on','lib/life-goes-on.ts','lgoSections'],['yet-to-come','lib/yet-to-come.ts','ytcSections'],['run-bts','lib/run-bts.ts','runBtsSections'],['intro-persona','lib/persona.ts','personaSections'],['stay','lib/stay.ts','staySections']]){
+for(const [id,lib,exp] of [['dna','lib/dna.ts','dnaSections'],['fake-love','lib/fake-love.ts','fakeLoveSections'],['blood-sweat-tears','lib/blood-sweat-tears.ts','bstSections'],['idol','lib/idol.ts','idolSections'],['boy-with-luv','lib/boy-with-luv.ts','bwlSections'],['on','lib/on.ts','onSections'],['life-goes-on','lib/life-goes-on.ts','lgoSections'],['yet-to-come','lib/yet-to-come.ts','ytcSections'],['run-bts','lib/run-bts.ts','runBtsSections'],['intro-persona','lib/persona.ts','personaSections'],['stay','lib/stay.ts','staySections'],['jamais-vu','lib/jamais-vu.ts','jamaisVuSections']]){
  const mod=await load(lib);const sections=mod[exp];assert.ok(Array.isArray(sections)&&sections.length>0,lib+' deve exportar '+exp);
  const linesSec=sections.flatMap(s=>s.lines);
  for(const line of linesSec){assert.ok(line.text&&line.translation,lib+': linha sem texto ou tradução');if(line.english)continue;const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),lib+': sem análise de '+token+' em '+line.text);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length>=1&&e.notes.every(n=>n.length>0),e.term);}
 }
-console.log('PASS: 11 músicas BTS (DNA, Fake Love, Blood Sweat and Tears, IDOL, Boy With Luv, ON, Life Goes On, Yet To Come, Run BTS, Intro: Persona, Stay): análises completas palavra por palavra, 5 exercícios cada, videoIds oficiais e mapeamentos studyFor.');
+console.log('PASS: 12 estudos BTS adicionais: traduções, cobertura dos termos coreanos e exercícios verificados.');
 
 
 const {fireSections,fireVocabulary}=await load('lib/fire.ts');const fireLines=fireSections.flatMap(s=>s.lines);
@@ -318,3 +318,14 @@ assert.equal(new Function(studyLookup+";return studyFor('Burning Up (FIRE)');")(
 assert.equal(fireLines.filter(l=>l.text==='용서해 줄게').length,1);assert.equal(fireLines.at(-1).text,'용서해 줄게');assert.equal(fireLines.filter(l=>l.text==='싹 다 불태워라').length,6);
 assert.ok(musicSource.includes('sections:fireSections,vocabulary:fireVocabulary'));
 console.log('PASS: FIRE: 72 linhas, 40 com coreano; repetições internas preservadas, 22 verbos/descritivos, 16 substantivos e 5 exercícios.');
+
+const {jamaisVuSections,jamaisVuVocabulary}=await load('lib/jamais-vu.ts');
+const jamaisLines=jamaisVuSections.flatMap(s=>s.lines);
+assert.equal(jamaisVuSections.length,9);
+assert.equal(jamaisLines[0].text,'또 져버린 것 같아');
+assert.equal(jamaisLines.at(-1).text,"I won't give up");
+assert.equal(jamaisLines.filter(l=>l.text==='멈춰버린 심장을 뛰게 할 remedy').length,4);
+assert.ok(!jamaisLines.some(l=>l.text==='Je ne sais pas'));
+assert.ok(jamaisVuVocabulary.verbs.length>=10&&jamaisVuVocabulary.nouns.length>=10);
+assert.equal(new Function(studyLookup+";return studyFor('Jamais Vu');")(),'jamais-vu');
+console.log('PASS: Jamais Vu segue a versão enviada, preserva refrões e final e liga a discografia ao estudo.');
