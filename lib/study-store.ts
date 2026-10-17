@@ -71,8 +71,9 @@ export function changeWord(word:SavedWord|null,key:string){
 }
 export function highlightWord(word:string,context:string,color:SavedWord['color']){
   const previous=snapshot.words[word];
+  if(previous&&previous.color===color){changeWord(null,word);return;}
   const source=previous&&location.hash==='#palavras'?previous.source:/^#(?:aulas|bts|flashcards|quizzes|palavras)(?:\/[-\w]*)*$/.test(location.hash)?location.hash:'#aulas';
-  changeWord({word,context:(previous&&location.hash==='#palavras'?previous.context:context).slice(0,2000),source,color:previous?.color===color?null:color,saved:true,reviewed:previous?.reviewed??false},word);
+  changeWord({word,context:(previous&&location.hash==='#palavras'?previous.context:context).slice(0,2000),source,color,saved:true,reviewed:previous?.reviewed??false},word);
 }
 export async function retryStudy(){if(snapshot.loadFailed)await loadStudy();else if(pending.size)await flushStudy();else await loadStudy();}
 export async function importLegacy(){
