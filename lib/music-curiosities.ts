@@ -444,6 +444,30 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "그 정돈 감수해야지 에헴",
       "card": "에헴 imita limpar a garganta e pode encenar autoridade ou importância. Na ponte, as falas sobre ganhar bem e aguentar tudo são lidas como uma caricatura de quem minimiza o sofrimento alheio. A análise apresenta essa voz sem tratar sua cobrança como conselho ao estudante."
     }
+  ],
+  "inner-child": [
+    {
+      "term": "그때의 넌",
+      "card": "O eu de hoje conversa com o eu de antes. Por isso, nós, você e eu alternam ao longo da letra sem exigir três personagens diferentes. Essa leitura organiza a cena; não transforma cada imagem em uma informação biográfica confirmada."
+    },
+    {
+      "term": "많이 웃었음 해",
+      "card": "Uma forma que parece passado pode falar de um desejo. Em 웃었으면 해, o importante é a construção inteira: espero que você sorria. A versão abreviada 웃었음 해 soa mais coloquial; não quer dizer apenas você sorriu."
+    },
+    {
+      "term": "움트던 장미 속 많은 가시",
+      "card": "Uma rosa que brota também tem espinhos. A imagem permite ler beleza, crescimento e dor juntos, em vez de reduzir o passado apenas ao sofrimento. No dicionário, 움트다 pode descrever brotos que nascem e, por extensão, algo que começa a surgir.",
+      "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=71420&nation=eng"
+    },
+    {
+      "term": "내가 너가 될 테니",
+      "card": "Na fala e nas letras, você pode encontrar 너가. Para escrever na norma padrão, use 네가 quando 너 recebe a partícula 가, inclusive diante de tornar-se. Aqui a troca entre eu e você encena um encontro entre épocas da mesma pessoa.",
+      "source": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=5874&mn_id=217"
+    },
+    {
+      "term": "빛들은 지금의 나니까",
+      "card": "A luz muda de papel: primeiro é algo distante que se persegue; depois, é o eu presente que pode iluminar o passado. Essa leitura liga o começo e a ponte, oferecendo uma interpretação da imagem sem afirmar que ela tem um único sentido."
+    }
   ]
 };
 

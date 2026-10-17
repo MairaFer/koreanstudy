@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,55);
+assert.equal(lessons.length,30);assert.equal(songs.length,56);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 55 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 56 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -824,3 +824,21 @@ for(const title of ['UGH!','UGH','욱','UGH! (욱)'])assert.equal(new Function(s
 const ughSong=songs.find(s=>s.id==='ugh');assert.equal(ughSong.exercises.length,5);
 for(const exercise of ughSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: UGH!: 76 supplied lines, Korean analysis, sound fragments, wordplay and colloquial spellings, repeated choruses, vocabulary, catalog links and 5 clickable exercises.');
+
+const {innerChildSections,innerChildVocabulary}=await load('lib/inner-child.ts');
+const innerLines=innerChildSections.flatMap(s=>s.lines);
+assert.equal(innerChildSections.length,6);assert.equal(innerLines.length,60);
+assert.equal(innerLines[0].text,'그때 우리');assert.equal(innerLines.at(-1).text,"We gon' change");
+assert.equal(innerLines.filter(l=>l.english).length,21);
+assert.equal(innerLines.filter(l=>l.text==="We gon' change").length,18);
+assert.equal(innerLines.filter(l=>l.text==='숨을 마시고 네 문을 두드리네').length,2);
+for(const line of innerLines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Inner Child: missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(innerChildVocabulary.verbs.length,25);assert.equal(innerChildVocabulary.nouns.length,25);
+assert.ok(innerLines.find(l=>l.text==='많이 웃었음 해').entries.some(e=>e.notes.some(n=>n.includes('웃었으면 해'))));
+assert.ok(innerLines.find(l=>l.text==='아팠을 거야').entries.some(e=>e.notes.some(n=>n.includes('retrospectiva'))));
+assert.ok(innerLines.find(l=>l.text==='내가 너가 될 테니').entries.some(e=>e.notes.some(n=>n.includes('네가'))));
+assert.ok(innerLines.find(l=>l.text==='네게 내 손을 맞닿으면').entries.some(e=>e.notes.some(n=>n.includes('손이 맞닿으면'))));
+assert.equal(new Function(studyLookup+";return studyFor('Inner Child');")(),'inner-child');
+const innerSong=songs.find(s=>s.id==='inner-child');assert.equal(innerSong.exercises.length,5);
+for(const exercise of innerSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: Inner Child: all 60 supplied lines, 18 change refrains, past inference and wishes, supplied spellings, vocabulary, catalog link and 5 clickable exercises.');
