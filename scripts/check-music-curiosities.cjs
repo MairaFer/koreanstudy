@@ -45,8 +45,5 @@ assert.ok(persona.translation.includes('cão'));assert.ok(!JSON.stringify(person
 const necklace=require('../lib/persona.ts').personaSections.flatMap(s=>s.lines).find(l=>l.text.includes('진주목걸일 거네'));
 assert.ok(necklace.translation.includes('penduram'));
 assert.ok(necklace.entries.some(e=>e.notes?.some(n=>n.includes('걸다'))));
-const necklace=require('../lib/persona.ts').personaSections.flatMap(s=>s.lines).find(l=>l.text.includes('진주목걸일 거네'));
-assert.ok(necklace.translation.includes('penduram'));
-assert.ok(necklace.entries.some(e=>e.notes?.some(n=>n.includes('걸다'))));
 assert.ok(source.includes('addMusicCuriosities(song.id,study.sections)'));
 console.log('PASS: 48 studies reviewed; 50 new cards in 37 studies; 11 retained; PT/ENG cards render with sources; originals preserved; repeated choruses and repeated application do not duplicate additions.');
