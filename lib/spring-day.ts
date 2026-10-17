@@ -1,7 +1,7 @@
 // Spring Day — estudo com análise palavra a palavra.
 // Cada linha em coreano recebe entradas termo a termo: tradução, gramática e cards de curiosidade.
 // Linhas em inglês recebem apenas a tradução, sem explicação de gramática.
-export type StudyEntry={term:string;meaning:string;notes?:string[];card?:string};
+export type StudyEntry={term:string;meaning:string;notes?:string[];card?:string;cardSource?:string};
 export type StudyLine={text:string;translation:string;entries?:StudyEntry[];grammar?:string;english?:boolean};
 const line=(text:string,translation:string,entries:StudyEntry[]):StudyLine=>({text,translation,entries});
 const en=(text:string,translation:string):StudyLine=>({text,translation,entries:[],english:true});

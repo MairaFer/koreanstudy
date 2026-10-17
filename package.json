@@ -13,7 +13,7 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
     "build:cloudflare": "node scripts/build-cloudflare.mjs",
-    "check:locales": "node scripts/check-locales.mjs && node scripts/check-artist-names.cjs && node scripts/check-localized-render.cjs"
+    "check:locales": "node scripts/check-locales.mjs && node scripts/check-artist-names.cjs && node scripts/check-music-curiosities.cjs && node scripts/check-localized-render.cjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

@@ -30,13 +30,13 @@ const opening=[
   e('사실 난', 'na verdade eu', ['사실 = na verdade', '난 = 나는 contraído']),
   e('너무 좋아', 'ótimo demais', ['너무 = demais', '좋다 = ser bom']),
   e('근데 조금 불편해', 'mas um pouco desconfortável', ['근데 = mas', '조금 = um pouco', '불편하다 = ser desconfortável'])]),
- line('나는 내가 개인지 돼진지 뭔지도 아직 잘 모르겠는데', 'Se sou pessoa ou porco, o que sou, ainda não sei bem.', [
+ line('나는 내가 개인지 돼진지 뭔지도 아직 잘 모르겠는데', 'Se sou um cão ou um porco, o que sou, ainda não sei bem.', [
   e('나는 내가', 'eu o meu eu', ['Reprise enfática de 나는', '내가 = eu como sujeito']),
-  e('개인지 돼진지', 'se é pessoa ou porco', ['개 = pessoa cão', '돼지 = porco', '든지 = quer que seja']),
+  e('개인지 돼진지', 'se sou um cão ou um porco', ['개 = cão; 돼지 = porco; -인지 forma pergunta indireta: se é. A letra reduz 돼지인지 a 돼진지.']),
   e('뭔지도 아직 잘 모르겠는데', 'o que é ainda não sei bem', ['무슨 o que', '도 também', '아직 = ainda', '모르다 = não saber'])]),
- line('남들이 와서 진주목걸일 거네', 'Os outros vêm e devem ser pérolas.', [
+ line('남들이 와서 진주목걸일 거네', 'Os outros vêm e penduram em mim um colar de pérolas.', [
   e('남들이 와서', 'os outros vêm', ['남들 = os outros', '와서 = vindo e']),
-  e('진주목걸일 거네', 'devem ser colar de pérolas', ['진주목걸이 = colar de pérolas', 'ㄹ 거네 = conjectura'])]),
+  e('진주목걸일 거네', 'penduram um colar de pérolas', ['진주목걸일 reduz 진주목걸이를, colar de pérolas + objeto. 거네 vem de 걸다, pendurar, com -네; o ㄹ cai antes de ㄴ. Aqui não é uma previsão com -(으)ㄹ 거.'])]),
  line('칵 퉤', 'Cof cof.', [
   e('칵', 'som de tossir', ['Onomatopeia de tosse', 'Só aparece na letra como efeito sonoro']),
   e('퉤', 'som de cuspir', ['Onomatopeia acompanhando a tosse', 'Par de 칵 퉤 imita tossir'])])];

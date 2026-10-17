@@ -17,3 +17,10 @@ public text only; it is not a substitute for editorial review. Apply and review
 `check-localized-render.cjs`. The latter renders all 48 prepared song studies and
 checks the English-only-line behavior. `coverage.json` records source extraction
 for maintenance; it is not loaded by the app.
+
+Review every new music study for useful curiosity cards as well as grammar notes.
+`lib/music-curiosities.ts` adds contextual cards at the first matching term while
+preserving cards in the original study modules. Prepare both languages, distinguish
+interpretation from established facts, and link primary references when relevant.
+Run `node scripts/check-music-curiosities.cjs` to check anchors, bilingual cards,
+preservation of existing content, and duplicates in repeated choruses.
