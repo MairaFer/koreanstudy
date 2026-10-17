@@ -18,7 +18,11 @@ for(const file of files){
    if(ts.isCallExpression(p)&&p.arguments[0]===n&&['l','en','e'].includes(p.expression.getText(sf)))return;
    if(ts.isBinaryExpression(p)&&[ts.SyntaxKind.EqualsEqualsEqualsToken,ts.SyntaxKind.ExclamationEqualsEqualsToken].includes(p.operatorToken.kind))return;
    add(n.text);
-  }else if(ts.isTemplateExpression(n)){let s=n.head.text;n.templateSpans.forEach((sp,i)=>{s+='{'+i+'}'+sp.literal.text;});add(s);}
+  }else if(ts.isTemplateExpression(n)){
+   // SVG coordinates are presentation data, not translatable copy.
+   if(ts.isJsxExpression(n.parent)&&ts.isJsxAttribute(n.parent.parent)&&n.parent.parent.name.getText(sf)==='transform')return;
+   let s=n.head.text;n.templateSpans.forEach((sp,i)=>{s+='{'+i+'}'+sp.literal.text;});add(s);
+  }
   ts.forEachChild(n,visit);
  }
  visit(sf);byFile[file]=[...found];
