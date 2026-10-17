@@ -304,6 +304,30 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "card": "어루만지다 pode ser acariciar com a mão ou confortar por palavras e gestos. Em 말로 마음을 어루만지다, o carinho chega pela fala. Essa passagem entre toque e acolhimento permite ouvir o pedido da letra nos dois planos.",
       "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70490"
     }
+  ],
+  "dionysus": [
+    {
+      "term": "티르소스 grippin' 포도 eatin'",
+      "card": "티르소스 é o tirso de Dioniso: um bastão associado ao deus grego do vinho, frequentemente representado com hera. A presença de 포도 e 아이비 aproxima as imagens da música dessa iconografia. O microfone feito de madeira e hera pode ser lido como uma transformação artística do bastão.",
+      "source": "https://www.metmuseum.org/art/collection/search/254918"
+    },
+    {
+      "term": "예술도 술이지 뭐",
+      "card": "예술 significa arte; 술 significa bebida alcoólica. A segunda palavra soa como o final da primeira, criando a ponte entre beber e mergulhar na criação. É um jogo sonoro, não uma afirmação de que as duas palavras têm a mesma origem."
+    },
+    {
+      "term": "예술에 취해 불러 옹헤야",
+      "card": "옹헤야 remete a uma canção tradicional ligada à debulha da cevada, especialmente em regiões de Gyeongsang. Funciona como refrão rítmico: não precisa ser traduzido como uma frase comum. Na música, essa referência aproxima a festa de uma tradição vocal coreana.",
+      "source": "https://www.gugak.go.kr/ency/topic/view/954"
+    },
+    {
+      "term": "내가 아이돌이든 예술가이든",
+      "card": "우린 두 번 태어나지 ganha uma continuação na passagem de ídolo a artista. A construção 아이돌이든 예술가이든 coloca os dois rótulos em pé de igualdade: seja um ou outro, o que importa? Essa é uma leitura da relação entre os versos, não uma definição de quem pode ser artista."
+    },
+    {
+      "term": "뭐가 중요해 짠해",
+      "card": "짠 pode imitar o encontro dos copos em um brinde. Com 해, a leitura contextual é vamos brindar. Já 짠하다 pode expressar pena ou uma emoção apertada no peito em outros contextos. A sequência de copos e celebração é o que orienta a escolha aqui."
+    }
   ]
 };
 

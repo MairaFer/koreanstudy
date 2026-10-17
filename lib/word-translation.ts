@@ -1,3 +1,4 @@
+import {dionysusSections,dionysusVocabulary} from './dionysus';
 import {lessons} from './course';
 import {springDaySections,springDayVocabulary} from './spring-day';
 import {bodyToBodySections,bodyToBodyVocabulary} from './body-to-body';
@@ -93,6 +94,7 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'dionysus',sections:dionysusSections,vocabulary:dionysusVocabulary},
  {id:'make-it-right',sections:makeItRightSections,vocabulary:makeItRightVocabulary},
  {id:'cypher-pt3',sections:cypherPt3Sections,vocabulary:cypherPt3Vocabulary},
  {id:'seesaw',sections:seesawSections,vocabulary:seesawVocabulary},

@@ -1,4 +1,5 @@
 "use client";
+import {dionysusSections,dionysusVocabulary} from '@/lib/dionysus';
 /* localized-returns */
 import {useLocale,Localized} from '@/components/localization';
 import {useState,type ReactNode} from 'react';
@@ -101,6 +102,7 @@ const studies:Record<string,StudyConfig>={
   'blue-grey':{sections:blueGreySections,vocabulary:blueGreyVocabulary,summary:'Cores, incertezas e a busca de acolhimento. Metáforas, perguntas indiretas e pedidos explicados a partir da letra enviada.',heading:'Blue & Grey · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'telepathy':{sections:telepathySections,vocabulary:telepathyVocabulary,summary:'Proximidade apesar da distância, lembranças do mar e a escolha de um ritmo em comum. A letra enviada é preservada, com explicações de expressões coloquiais, contrações e imagens poéticas.',heading:'Telepathy (잠시) · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'dis-ease':{sections:disEaseSections,vocabulary:disEaseVocabulary,summary:'Cobrança, descanso e identidade. Jogos de palavras com doença, garrafa e trabalho, expressões figuradas e gramática explicados a partir da letra enviada.',heading:'Dis-ease (병) · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
+  'dionysus':{sections:dionysusSections,vocabulary:dionysusVocabulary,summary:"Arte, criação e reinvenção em imagens de festa. Estude comandos, contadores, alternativas e modificadores, com cards sobre Dioniso, jogos sonoros e tradição musical coreana.",heading:"Dionysus · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'make-it-right':{sections:makeItRightSections,vocabulary:makeItRightVocabulary,summary:'Uma jornada entre deserto, mar e retorno. Acolhimento, pedidos, finalidade e promessas explicados a partir da letra enviada, com cards sobre percepção, abertura e carinho.',heading:'Make It Right · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'dimple':{sections:dimpleSections,vocabulary:dimpleVocabulary,summary:'Covinhas, sorrisos e um encanto descrito como perigoso. Gramática, pedidos informais e o trocadilho illegal/illegirl explicados em português.',heading:'보조개 (Dimple) · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'zero-oclock':{sections:zeroOclockSections,vocabulary:zeroOclockVocabulary,summary:'O fim de um dia difícil e o desejo de recomeçar. Expressões cotidianas, imagens do relógio e formas de convite e esperança explicadas em português.',heading:'00:00 (Zero O’Clock) · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
