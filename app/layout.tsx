@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {SpeechProvider} from "@/components/korean-audio";
+import {LocaleProvider} from '@/components/localization';
 import {PurpleGarden} from "@/components/purple-garden";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased"><PurpleGarden/><SpeechProvider>{children}</SpeechProvider></body>
+      <body className="antialiased"><LocaleProvider><PurpleGarden/><SpeechProvider>{children}</SpeechProvider></LocaleProvider></body>
     </html>
   );
 }

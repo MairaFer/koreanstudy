@@ -127,3 +127,9 @@ body{isolation:isolate}
 .word-more-options{display:block;background:none;border:0;padding:8px 3px 1px;color:#76519f;font-size:.72rem;min-height:28px}
 .word-color-group{margin-top:28px}.word-color-group-title{display:flex;gap:10px;align-items:center;margin-bottom:14px;font-size:1.15rem}.word-color-group-title small{font-weight:400;color:#81718e}.group-color-dot{width:17px;height:17px;border-radius:50%;border:1px solid #49315f20;flex-shrink:0}.no-color-dot{background:#fff}
 @media(max-width:380px){.word-color-swatches{gap:4px}.word-color-swatch{width:30px;height:30px;flex-basis:30px}}
+/* Compact persistent language control, including small screens. */
+.language-switcher{display:inline-flex;align-items:center;gap:3px;padding:4px;border:1px solid #ded3eb;border-radius:999px;background:#fff;flex-shrink:0}
+.language-switcher button{border:0;border-radius:999px;background:transparent;color:#5f4978;padding:7px 11px;font:inherit;font-size:.76rem;font-weight:700;cursor:pointer;min-height:34px}
+.language-switcher button[aria-pressed="true"]{background:#7651a7;color:white}
+.language-switcher button:focus-visible{outline:3px solid #b796d7;outline-offset:3px}
+@media(max-width:700px){.site-header>.language-switcher{margin-left:auto;align-self:center}.language-switcher button{padding:7px 9px}.site-header nav{flex-basis:100%}}

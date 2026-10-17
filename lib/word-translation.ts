@@ -4,21 +4,13 @@ import {bodyToBodySections,bodyToBodyVocabulary} from './body-to-body';
 import {hooliganSections,hooliganVocabulary} from './hooligan';
 import {twoPointZeroSections,twoPointZeroVocabulary} from './two-point-zero';
 import {aliensSections,aliensVocabulary} from './aliens';
-
 import {fyaSections,fyaVocabulary} from './fya';
-
-import {merryGoRoundSections,merryGoRoundVocabulary} from './merry-go-round';
-
-import {theyDontKnowSections,theyDontKnowVocabulary} from './they-dont-know-bout-us';
-
-import {oneMoreNightSections,oneMoreNightVocabulary} from './one-more-night';
-
-import {pleaseSections,pleaseVocabulary} from './please';
-
-import {intoTheSunSections,intoTheSunVocabulary} from './into-the-sun';
-
 import {bornSingerSections,bornSingerVocabulary} from './born-singer';
-
+import {intoTheSunSections,intoTheSunVocabulary} from './into-the-sun';
+import {pleaseSections,pleaseVocabulary} from './please';
+import {oneMoreNightSections,oneMoreNightVocabulary} from './one-more-night';
+import {theyDontKnowSections,theyDontKnowVocabulary} from './they-dont-know-bout-us';
+import {merryGoRoundSections,merryGoRoundVocabulary} from './merry-go-round';
 import {noMoreDreamSections,noMoreDreamVocabulary} from './no-more-dream';
 import {nOSections,nOVocabulary} from './n-o';
 import {fireSections,fireVocabulary} from './fire';
@@ -26,27 +18,76 @@ import {runSections,runVocabulary} from './run';
 import {iNeedUSections,iNeedUVocabulary} from './i-need-u';
 import {dangerSections,dangerVocabulary} from './danger';
 import {boyInLuvSections,boyInLuvVocabulary} from './boy-in-luv';
-
+import {dnaSections,dnaVocabulary} from './dna';
+import {fakeLoveSections,fakeLoveVocabulary} from './fake-love';
+import {bstSections,bstVocabulary} from './blood-sweat-tears';
+import {idolSections,idolVocabulary} from './idol';
+import {bwlSections,bwlVocabulary} from './boy-with-luv';
+import {onSections,onVocabulary} from './on';
+import {lgoSections,lgoVocabulary} from './life-goes-on';
+import {ytcSections,ytcVocabulary} from './yet-to-come';
+import {runBtsSections,runBtsVocabulary} from './run-bts';
+import {personaSections,personaVocabulary} from './persona';
+import {staySections,stayVocabulary} from './stay';
+import {egoSections,egoVocabulary} from './ego';
+import {friendsSections,friendsVocabulary} from './friends';
+import {filterSections,filterVocabulary} from './filter';
+import {herSections,herVocabulary} from './her';
+import {singularitySections,singularityVocabulary} from './singularity';
+import {euphoriaSections,euphoriaVocabulary} from './euphoria';
+import {justDanceSections,justDanceVocabulary} from './just-dance';
+import {zeroOclockSections,zeroOclockVocabulary} from './zero-oclock';
+import {dimpleSections,dimpleVocabulary} from './dimple';
+import {forYouthSections,forYouthVocabulary} from './for-youth';
+import {cypherPt3Sections,cypherPt3Vocabulary} from './cypher-pt3';
+import {seesawSections,seesawVocabulary} from './seesaw';
+import {moonSections,moonVocabulary} from './moon';
+import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
-  {id:'born-singer',sections:bornSingerSections,vocabulary:bornSingerVocabulary},
-  {id:'into-the-sun',sections:intoTheSunSections,vocabulary:intoTheSunVocabulary},
-  {id:'please',sections:pleaseSections,vocabulary:pleaseVocabulary},
-  {id:'one-more-night',sections:oneMoreNightSections,vocabulary:oneMoreNightVocabulary},
-  {id:'they-dont-know-bout-us',sections:theyDontKnowSections,vocabulary:theyDontKnowVocabulary},
-  {id:'merry-go-round',sections:merryGoRoundSections,vocabulary:merryGoRoundVocabulary},
-  {id:'fya',sections:fyaSections,vocabulary:fyaVocabulary},
-  {id:'spring-day',sections:springDaySections,vocabulary:springDayVocabulary},
-  {id:'body-to-body',sections:bodyToBodySections,vocabulary:bodyToBodyVocabulary},
-  {id:'hooligan',sections:hooliganSections,vocabulary:hooliganVocabulary},
-  {id:'two-point-zero',sections:twoPointZeroSections,vocabulary:twoPointZeroVocabulary},
-  {id:'aliens',sections:aliensSections,vocabulary:aliensVocabulary},
-  {id:'no-more-dream',sections:noMoreDreamSections,vocabulary:noMoreDreamVocabulary},
-  {id:'n-o',sections:nOSections,vocabulary:nOVocabulary},
-  {id:'fire',sections:fireSections,vocabulary:fireVocabulary},
-  {id:'run',sections:runSections,vocabulary:runVocabulary},
-  {id:'i-need-u',sections:iNeedUSections,vocabulary:iNeedUVocabulary},
-  {id:'danger',sections:dangerSections,vocabulary:dangerVocabulary},
-  {id:'boy-in-luv',sections:boyInLuvSections,vocabulary:boyInLuvVocabulary},
+ {id:'spring-day',sections:springDaySections,vocabulary:springDayVocabulary},
+ {id:'body-to-body',sections:bodyToBodySections,vocabulary:bodyToBodyVocabulary},
+ {id:'hooligan',sections:hooliganSections,vocabulary:hooliganVocabulary},
+ {id:'two-point-zero',sections:twoPointZeroSections,vocabulary:twoPointZeroVocabulary},
+ {id:'aliens',sections:aliensSections,vocabulary:aliensVocabulary},
+ {id:'fya',sections:fyaSections,vocabulary:fyaVocabulary},
+ {id:'born-singer',sections:bornSingerSections,vocabulary:bornSingerVocabulary},
+ {id:'into-the-sun',sections:intoTheSunSections,vocabulary:intoTheSunVocabulary},
+ {id:'please',sections:pleaseSections,vocabulary:pleaseVocabulary},
+ {id:'one-more-night',sections:oneMoreNightSections,vocabulary:oneMoreNightVocabulary},
+ {id:'they-dont-know-bout-us',sections:theyDontKnowSections,vocabulary:theyDontKnowVocabulary},
+ {id:'merry-go-round',sections:merryGoRoundSections,vocabulary:merryGoRoundVocabulary},
+ {id:'no-more-dream',sections:noMoreDreamSections,vocabulary:noMoreDreamVocabulary},
+ {id:'n-o',sections:nOSections,vocabulary:nOVocabulary},
+ {id:'fire',sections:fireSections,vocabulary:fireVocabulary},
+ {id:'run',sections:runSections,vocabulary:runVocabulary},
+ {id:'i-need-u',sections:iNeedUSections,vocabulary:iNeedUVocabulary},
+ {id:'danger',sections:dangerSections,vocabulary:dangerVocabulary},
+ {id:'boy-in-luv',sections:boyInLuvSections,vocabulary:boyInLuvVocabulary},
+ {id:'dna',sections:dnaSections,vocabulary:dnaVocabulary},
+ {id:'fake-love',sections:fakeLoveSections,vocabulary:fakeLoveVocabulary},
+ {id:'blood-sweat-tears',sections:bstSections,vocabulary:bstVocabulary},
+ {id:'idol',sections:idolSections,vocabulary:idolVocabulary},
+ {id:'boy-with-luv',sections:bwlSections,vocabulary:bwlVocabulary},
+ {id:'on',sections:onSections,vocabulary:onVocabulary},
+ {id:'life-goes-on',sections:lgoSections,vocabulary:lgoVocabulary},
+ {id:'yet-to-come',sections:ytcSections,vocabulary:ytcVocabulary},
+ {id:'run-bts',sections:runBtsSections,vocabulary:runBtsVocabulary},
+ {id:'intro-persona',sections:personaSections,vocabulary:personaVocabulary},
+ {id:'stay',sections:staySections,vocabulary:stayVocabulary},
+ {id:'ego',sections:egoSections,vocabulary:egoVocabulary},
+ {id:'friends',sections:friendsSections,vocabulary:friendsVocabulary},
+ {id:'filter',sections:filterSections,vocabulary:filterVocabulary},
+ {id:'her',sections:herSections,vocabulary:herVocabulary},
+ {id:'singularity',sections:singularitySections,vocabulary:singularityVocabulary},
+ {id:'euphoria',sections:euphoriaSections,vocabulary:euphoriaVocabulary},
+ {id:'just-dance',sections:justDanceSections,vocabulary:justDanceVocabulary},
+ {id:'zero-oclock',sections:zeroOclockSections,vocabulary:zeroOclockVocabulary},
+ {id:'dimple',sections:dimpleSections,vocabulary:dimpleVocabulary},
+ {id:'for-youth',sections:forYouthSections,vocabulary:forYouthVocabulary},
+ {id:'cypher-pt3',sections:cypherPt3Sections,vocabulary:cypherPt3Vocabulary},
+ {id:'seesaw',sections:seesawSections,vocabulary:seesawVocabulary},
+ {id:'moon',sections:moonSections,vocabulary:moonVocabulary},
+ {id:'jamais-vu',sections:jamaisVuSections,vocabulary:jamaisVuVocabulary},
 ];
 const tokens=(text:string):string[]=>text.normalize('NFC').match(/[0-9]*[가-힣ㄱ-ㅎㅏ-ㅣ]+/gu)??[];
 const exact=(term:string,word:string)=>tokens(term).join(' ')===word;

@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import ts from 'typescript';
+const source=JSON.parse(fs.readFileSync('locales/source.json','utf8'));
+const english=JSON.parse(fs.readFileSync('locales/en.json','utf8'));
+const overrides=JSON.parse(fs.readFileSync('locales/en-overrides.json','utf8'));
+let js=ts.transpileModule(fs.readFileSync('lib/localization.ts','utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText;
+js=js.replace(/^import .*$/gm,'').replace(/export /g,'');
+const {translate}=new Function('english','overrides',js+';return {translate};')(english,overrides);
+const ko=/[\u1100-\u11ff\u3130-\u318f\uac00-\ud7af]+/gu;
+for(const text of source){
+ assert.ok(Object.hasOwn(english,text)||Object.hasOwn(overrides,text),'Missing English: '+text);
+ const value=translate(text,'eng');assert.ok(typeof value==='string'&&value.trim(),'Empty English: '+text);
+ assert.equal(translate(text,'pt'),text,'PT changed');
+ assert.deepEqual((value.match(ko)||[]).sort(),(text.match(ko)||[]).sort(),'Korean changed: '+text);
+ assert.ok(!/IXQ\d|KZQ\d|QZK|QXI/.test(value),'Unrestored marker');
+ if(/\b(?:cópula|terminação|orações)\b/.test(text))assert.ok(!/\bcopulation\b|\bprayer\b/.test(value),'Grammar terminology: '+text);
+ if(value===text)assert.ok(!/\b(?:não|você|vocês|explicação|tradução|significa|conjugação|palavra|passado|desejo)\b/i.test(text),'Untranslated Portuguese: '+text);
+}
+assert.equal(translate('Ver explicação','eng'),'Show explanation');
+assert.equal(translate('Roxo','eng'),'Purple');
+assert.equal(translate('Olá, Fernanda','eng'),'Hi, Fernanda');
+assert.equal(translate('Olá, Rosa','eng'),'Hi, Rosa');
+assert.equal(translate('constructor','eng'),'constructor');
+assert.equal(translate('3 frases com coreano visíveis. Frases que misturam idiomas continuam aparecendo.','eng'),'Showing 3 lines with Korean. Lines that mix Korean and English are included.');
+assert.equal(translate('영원히','eng'),'영원히');
+const music=fs.readFileSync('components/music-study.tsx','utf8');
+assert.ok(music.includes("canReveal=locale==='pt'||!english"));
+assert.ok(music.includes('canReveal&&show&&'));
+assert.ok(music.includes('localize={false}'));
+const layout=fs.readFileSync('app/layout.tsx','utf8');assert.ok(layout.includes('<LocaleProvider>'));
+const app=fs.readFileSync('app/page.tsx','utf8');assert.ok(app.includes('<LanguageSwitcher/>'));
+const locale=fs.readFileSync('components/localization.tsx','utf8');assert.ok(locale.includes('localStorage.setItem'));assert.ok(locale.includes('document.documentElement.lang'));
+const words=fs.readFileSync('lib/word-translation.ts','utf8');assert.equal((words.match(/sections:\w+Sections/g)||[]).length,44);
+console.log('PASS: '+source.length+' English entries covered; Korean preserved, PT unchanged, dynamic labels, all 44 studies, language controls and English-line reveal behavior.');
