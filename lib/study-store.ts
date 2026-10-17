@@ -67,7 +67,12 @@ export function setProgress(update:SetStateAction<ProgressState>){
 export function changeWord(word:SavedWord|null,key:string){
   if(!snapshot.user){requestAccount();return;}
   if(snapshot.loadFailed||importing){emit({warning:'Aguarde o carregamento dos dados ou tente novamente.'});return;}
-  queue([{key:'word.'+key,value:word}]);
+  queue([{key:'word.'+key,value:word?.color?{...word,saved:true}:word}]);
+}
+export function highlightWord(word:string,context:string,color:SavedWord['color']){
+  const previous=snapshot.words[word];
+  const source=previous&&location.hash==='#palavras'?previous.source:/^#(?:aulas|bts|flashcards|quizzes|palavras)(?:\/[-\w]*)*$/.test(location.hash)?location.hash:'#aulas';
+  changeWord({word,context:(previous&&location.hash==='#palavras'?previous.context:context).slice(0,2000),source,color,saved:true,reviewed:previous?.reviewed??false},word);
 }
 export async function retryStudy(){if(snapshot.loadFailed)await loadStudy();else if(pending.size)await flushStudy();else await loadStudy();}
 export async function importLegacy(){

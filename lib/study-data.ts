@@ -58,3 +58,8 @@ export function diffProgress(before:ProgressState,after:ProgressState):StudyChan
   const a=progressRecords(before),b=progressRecords(after);
   return [...new Set([...Object.keys(a),...Object.keys(b)])].filter(k=>JSON.stringify(a[k])!==JSON.stringify(b[k])).map(key=>({key,value:b[key]??(key.startsWith('learned.')||key.startsWith('completed.')?false:null)}));
 }
+
+export const colorNames:Record<WordColor,string>={yellow:'Amarelo',purple:'Roxo',green:'Verde',pink:'Rosa',red:'Vermelho',blue:'Azul',gray:'Cinza'};
+export function groupWordsByColor(words:SavedWord[]){
+ return [...colors,null].map(color=>({color,label:color?colorNames[color]:'Sem destaque',words:words.filter(w=>w.color===color).sort((a,b)=>a.word.localeCompare(b.word,'ko'))})).filter(g=>g.words.length);
+}
