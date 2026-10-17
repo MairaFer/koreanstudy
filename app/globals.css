@@ -3,6 +3,7 @@
 @import "../vendor/shadcn-tailwind-4.13.0.css";
 /* Account entry: a calm botanical space, scoped away from study pages. */
 .auth-page{position:relative;z-index:1;min-height:100svh;padding:20px 32px 22px;background:radial-gradient(ellipse at 8% 12%,#eee5f780,transparent 45%),radial-gradient(ellipse at 95% 90%,#eee5f760,transparent 40%)}
+body:has(.auth-page) .speech-toolbar{display:none}
 .auth-header{max-width:1120px;margin:0 auto 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .auth-header>a{display:block;border-radius:12px}
 .auth-shell{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;border:1px solid #e6dced;border-radius:30px;background:#fff;box-shadow:0 20px 70px #62417e0c;overflow:hidden}
