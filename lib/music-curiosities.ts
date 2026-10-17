@@ -288,6 +288,22 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "card": "미시감 corresponde a jamais vu: o que era familiar parece estranho ou como se nunca tivesse sido visto. Contrasta com déjà vu, a impressão de já conhecer algo novo. Aqui ajuda a ler a repetição do jogo como experiência que continua desconcertante.",
       "source": "https://www.korea.kr/news/reporterView.do?newsId=65070482"
     }
+  ],
+  "make-it-right": [
+    {
+      "term": "눈치챘던 순간",
+      "card": "눈치채다 é perceber algo a partir de sinais. Já 눈치를 보다 se aproxima de observar as reações e expectativas de outras pessoas. Nesta abertura, o olhar se volta ao próprio eu: a letra usa uma percepção normalmente voltada ao entorno para falar de si.",
+      "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=92522"
+    },
+    {
+      "term": "활짝 펼칠게",
+      "card": "활짝 combina com coisas que se abrem, mas também com expressões como 활짝 웃다, sorrir de orelha a orelha. Com o mapa, dá a sensação de abrir sem reserva o caminho que orienta a volta. Não é apenas uma indicação de tamanho."
+    },
+    {
+      "term": "날 어루만져줘",
+      "card": "어루만지다 pode ser acariciar com a mão ou confortar por palavras e gestos. Em 말로 마음을 어루만지다, o carinho chega pela fala. Essa passagem entre toque e acolhimento permite ouvir o pedido da letra nos dois planos.",
+      "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70490"
+    }
   ]
 };
 
