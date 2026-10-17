@@ -35,6 +35,10 @@ store.changeWord(word,word.word);await settled();assert.equal(remote['word.보�
 store.changeWord({...word,saved:false},word.word);await settled();assert.equal(remote['word.보고'].saved,true,'Destaques sempre são salvos');
 store.highlightWord(word.word,word.context,'blue');await settled();assert.equal(remote['word.보고'].color,'blue');assert.equal(remote['word.보고'].saved,true);
 await store.loadStudy();assert.equal(store.useStudy().words[word.word].color,'blue','Cor persiste após recarga');
+store.highlightWord(word.word,word.context,'blue');await settled();assert.equal(remote['word.보고'].color,null,'Escolher a mesma cor remove o destaque');assert.equal(remote['word.보고'].saved,true,'Remover cor preserva palavra salva');
+await store.loadStudy();assert.equal(store.useStudy().words[word.word].color,null,'Remoção persiste após recarga');
+store.highlightWord(word.word,word.context,'blue');await settled();assert.equal(remote['word.보고'].color,'blue','A cor pode ser aplicada novamente');
+store.highlightWord(word.word,word.context,'pink');await settled();assert.equal(remote['word.보고'].color,'pink','Outra cor troca o destaque');
 store.changeWord({...word,color:null,reviewed:true},word.word);await settled();assert.equal(remote['word.보고'].reviewed,true);
 store.changeWord(null,word.word);await settled();assert.equal(remote['word.보고'],undefined);
 const domain=await import(domainURI);const grouped=domain.groupWordsByColor([{...word,color:'blue'},{...word,word:'싶다',color:'yellow'},{...word,word:'나',color:null}]);assert.deepEqual(grouped.map(g=>g.color),['yellow','blue',null]);assert.equal(grouped[1].words[0].word,word.word);local.set(domain.STORAGE_KEY,JSON.stringify({...domain.freshProgress(),completed:['1-2'],quizzes:{Iniciante:1}}));
