@@ -38,6 +38,7 @@ import {egoSections,egoVocabulary} from '@/lib/ego';
 import {friendsSections,friendsVocabulary} from '@/lib/friends';
 import {filterSections,filterVocabulary} from '@/lib/filter';
 import {herSections,herVocabulary} from '@/lib/her';
+import {singularitySections,singularityVocabulary} from '@/lib/singularity';
 import {cypherPt3Sections,cypherPt3Vocabulary} from '@/lib/cypher-pt3';
 import {seesawSections,seesawVocabulary} from '@/lib/seesaw';
 import {moonSections,moonVocabulary} from '@/lib/moon';
@@ -82,6 +83,7 @@ const studies:Record<string,StudyConfig>={
   'run-bts':{sections:runBtsSections,vocabulary:runBtsVocabulary,summary:'Correr como hábito e luta entre o fim que chega e o recomeço que se recusa.',heading:'Run BTS · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'intro-persona':{sections:personaSections,vocabulary:personaVocabulary,summary:'A pergunta de quem sou eu entre as vozes que cobram e o mapa da propria alma.',heading:'Intro: Persona · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'stay':{sections:staySections,vocabulary:stayVocabulary,summary:'A certeza de que alguém fica, onde quer que esteja.',heading:'Stay · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'singularity':{sections:singularitySections,vocabulary:singularityVocabulary,summary:'Voz, identidade e a imagem de um lago congelado. A transcrição enviada é preservada com notas sobre grafia, espaçamento e ambiguidades.',heading:'Singularity · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'her':{sections:herSections,vocabulary:herVocabulary,summary:'Amor, identidade e máscaras: metáforas e contrastes explicados a partir da letra enviada.',heading:'Her · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'filter':{sections:filterSections,vocabulary:filterVocabulary,summary:'Escolhas, transformações e a metáfora de um filtro que muda a percepção. Gramática e expressões explicadas em português.',heading:'Filter · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'friends':{sections:friendsSections,vocabulary:friendsVocabulary,summary:'Amizade, lembranças e a promessa de continuar juntos. Expressões coloquiais e frases ligadas entre linhas explicadas em português.',heading:'Friends · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},

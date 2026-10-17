@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,38);
+assert.equal(lessons.length,30);assert.equal(songs.length,39);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 38 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 39 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -440,3 +440,21 @@ assert.equal(herVocabulary.verbs.length,38);assert.equal(herVocabulary.nouns.len
 for(const title of ['Her','Outro: Her','Outro : Her'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'her');
 assert.equal(songs.find(s=>s.id==='her').exercises.length,5);
 console.log('PASS: Her: 82 linhas, 6 seções, refrões preservados, termos coreanos analisados, 38 verbos, 41 substantivos e 5 exercícios de clicar.');
+
+const {singularitySections,singularityVocabulary}=await load('lib/singularity.ts');
+const singularityLines=singularitySections.flatMap(s=>s.lines);
+assert.equal(singularitySections.length,7);assert.equal(singularityLines.length,28);
+assert.equal(singularityLines[0].text,'무언가 깨지는 소리');
+assert.equal(singularityLines.at(-1).text,'그 때 내가 무얼해야했는지');
+for(const line of singularityLines){
+  assert.ok(line.text&&line.translation);
+  const terms=line.entries.map(e=>e.term).join(' ');
+  for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Singularity: sem análise de '+token);
+  for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length);
+}
+assert.ok(singularityLines.find(l=>l.text==='낮설음 가득한 소리').entries.some(e=>e.notes.join(' ').includes('낯섦')));
+assert.ok(singularityLines.find(l=>l.text==='나를 괴롭히는 환상 통은 여전해').entries.some(e=>e.meaning.includes('dor fantasma')));
+assert.equal(singularityVocabulary.verbs.length,29);assert.equal(singularityVocabulary.nouns.length,20);
+for(const title of ['Singularity','Intro: Singularity','Intro : Singularity'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'singularity');
+assert.equal(songs.find(s=>s.id==='singularity').exercises.length,5);
+console.log('PASS: Singularity: 28 linhas, 7 seções, grafias enviadas preservadas com notas, cobertura dos termos coreanos, vocabulário e 5 exercícios de clicar.');
