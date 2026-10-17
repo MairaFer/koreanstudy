@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,33);
+assert.equal(lessons.length,30);assert.equal(songs.length,34);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 33 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 34 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -356,3 +356,16 @@ assert.equal(seesawVocabulary.verbs.length,21);assert.equal(seesawVocabulary.nou
 for(const title of ['Trivia 轉 : Seesaw','Trivia 轉: Seesaw','Seesaw'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'seesaw');
 const seesawSong=songs.find(s=>s.id==='seesaw');assert.equal(seesawSong.exercises.length,5);assert.ok(seesawSong.exercises.every(e=>e.kind==='choice'&&isCorrect(e,e.answer[0])));
 console.log('PASS: Seesaw: 70 linhas, 13 seções, termos coreanos analisados, 21 verbos, 22 substantivos, exercícios e links da discografia.');
+
+const {cypherPt3Sections,cypherPt3Vocabulary}=await load('lib/cypher-pt3.ts');
+const cypherLines=cypherPt3Sections.flatMap(s=>s.lines);
+assert.equal(cypherPt3Sections.length,6);assert.equal(cypherLines.length,131);
+assert.equal(cypherLines[0].text,'니가 무엇을 하든 I will kill for');
+assert.equal(cypherLines.at(-1).text,'불신을 참아낸 닌자가 돼 다시 돌아왔지');
+assert.equal(cypherLines.filter(l=>l.text==='Hater들은 많지').length,3);
+assert.equal(cypherLines.filter(l=>l.text==='니가 무엇을 하든 I will kill for').length,1);
+for(const l of cypherLines){assert.ok(l.text&&l.translation);if(l.english)continue;const terms=l.entries.map(e=>e.term).join(' ');for(const token of l.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Cypher 3: sem análise de '+token);for(const e of l.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(cypherPt3Vocabulary.verbs.length,36);assert.equal(cypherPt3Vocabulary.nouns.length,31);
+for(const title of ['BTS Cypher PT.3 : KILLER (feat. Supreme Boi)','BTS Cypher, Pt. 3: KILLER (feat. Supreme Boi)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'cypher-pt3');
+assert.equal(songs.find(s=>s.id==='cypher-pt3').exercises.length,5);
+console.log('PASS: Cypher 3: '+cypherLines.length+' linhas, refrões preservados, cópia integral duplicada removida, análise de todos os termos coreanos, vocabulário e exercícios.');
