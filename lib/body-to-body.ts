@@ -45,15 +45,15 @@ export const bodyToBodySections:{title:string;lines:StudyLine[]}[]=[
   line('뭘 체면 따져, 내려놔, 야, 인마','Para de medir a aparência; abaixem a guarda, ô gente.',[
    e('뭘','o quê (objeto)',['무엇을 se contrai em 뭘: 무엇 (o que) + 을 (objeto)','Aqui indica ironia: “de que adianta tanto critério”']),
    e('체면','aparência, decoro',['O que os outros vão pensar; a “máscara” social','-A expressão 체면을 따지다 significa ser exigente com a aparência e a posição']),
-   e('따져','medem, julgam (informal)',['따지다 = medir, julgar, barganhar','-아/어 명령 → 따져 (sem 요)','Compare com a forma educada: 따지지 마세요 (não fique julgando)']),
-   e('내려놔','abaixem, deixem de lado (informal)',['내려놓다 = pôr para baixo, abandonar a pose','-아/어 명령 → 내려놔','Educado: 내려놓으세요 / 놓으세요']),
+   e('따져','medem, julgam (informal)',['따지다 = medir, julgar, barganhar','-아/어 → 따져: forma informal, sem 요. Aqui, junto de 뭘, funciona como pergunta retórica: por que se preocupar tanto com a aparência?','Compare com a forma educada: 따지지 마세요 (não fique julgando)']),
+   e('내려놔','abaixem, deixem de lado (informal)',['내려놓다 = pôr para baixo, abandonar a pose','-아/어 no imperativo (ordem ou pedido informal): 내려놔 = abaixe, largue ou deixe de lado. O contexto indica o comando.','Educado: 내려놓으세요 / 놓으세요']),
    e('야','ei, ô',['Interjeição para chamar alguém; muito comum entre amigos']),
    e('인마','gente, ô pessoa',['Forma antiga e coloquial de 사람 (pessoa)','Soa informal e afetuosa, como “ô gente”'])]),
   en('Hop in','Suba, entre na vibe.'),
   line('좀 더 가까이 와 skin to skin','Cheguem um pouco mais perto, pele com pele.',[
    e('좀 더','um pouco mais',['좀 (um pouco, de 조금) + 더 (mais)']),
    e('가까이','perto, mais perto',['De 가깝다 (estar perto); vira advérbio: 가까이 오다 (vir perto)']),
-   e('와','venha (comando informal)',['오다 = vir','-아/어 명령 → 와 (informal)','A forma educada é 오세요 — a letra escolhe a proximidade do informal'])])]},
+   e('와','venha (comando informal)',['오다 = vir','-아/어 no imperativo (ordem ou pedido informal): 와 = venha. A mesma forma pode ter outros usos em outro contexto.','A forma educada é 오세요 — a letra escolhe a proximidade do informal'])])]},
  {title:"Refrão",lines:chorus},
  {title:"Verso 2",lines:[
   en("It's so tight","É tudo tão intenso (tão perto)."),
