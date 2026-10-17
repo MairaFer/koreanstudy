@@ -352,6 +352,30 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "card": "A letra enviada alterna grafias com -던지 e -던가 em contextos de escolha ou indiferença. Na escrita normativa, essas funções usam -든지 e -든가; as formas com -던- aparecem em outros contextos, como retomar uma experiência. Por isso preservamos a letra e explicamos a forma a usar ao estudar.",
       "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=306525"
     }
+  ],
+  "black-swan": [
+    {
+      "term": "뛰지 않는대",
+      "card": "A grafia -는대 relata uma afirmação, como uma forma abreviada de -는다고 해. Já -는데 pode introduzir contexto ou contraste. Sons próximos não tornam as duas terminações intercambiáveis. Aqui preservamos a grafia enviada e não inventamos uma pessoa específica dizendo a frase.",
+      "source": "https://www.korean.go.kr/nkview/news/10/107.htm"
+    },
+    {
+      "term": "와닿지 못해",
+      "card": "와닿다 não exige toque físico. Quando uma música, uma fala ou um texto mexe com você ou faz sentido de verdade, esse verbo pode expressar essa conexão. Por isso a canção pode ser ouvida, mas não 와닿다: o problema descrito é o vínculo emocional.",
+      "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=27&pageIndex=1&qna_seq=319566"
+    },
+    {
+      "term": "소리 없는 소릴 질러",
+      "card": "소리 없는 소릴 질러 combina grito e ausência de som. Depois, 힘껏 나는 소리 질러 apresenta um grito com toda a força. A mudança de formulação permite ler uma passagem da expressão bloqueada para a afirmação da própria voz. É uma leitura do contraste entre os versos."
+    },
+    {
+      "term": "귓가엔 빠른 심장 소리만",
+      "card": "느린 e 빠른 modificam o mesmo grupo, 심장 소리. O coração antes lento reaparece rápido depois do encontro com o próprio eu. A repetição com uma palavra trocada ajuda a perceber a mudança da cena, mesmo quando o refrão mantém a imagem de afundar."
+    },
+    {
+      "term": "차라리 내 발로 갈게",
+      "card": "내 발로 enfatiza ir pelos próprios meios; 끌려가지 fala de ser arrastado por algo. Essa oposição permite ler uma mudança de iniciativa: o eu escolhe entrar e criar em vez de apenas ser levado. O mar e a floresta continuam imagens abertas, não lugares que a análise precisa identificar literalmente."
+    }
   ]
 };
 
