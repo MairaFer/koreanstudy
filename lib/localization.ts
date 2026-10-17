@@ -3,6 +3,8 @@ import overrides from '@/locales/en-overrides.json';
 export type Locale='pt'|'eng';
 const dictionary:Record<string,string>=Object.assign(Object.create(null),english,overrides);
 const normalize=(s:string)=>s.replace(/\s+/g,' ').trim();
+// Artist names are identities, not words to translate.
+const artistNames=new Set(['BTS','RM','Jin','SUGA','Agust D','j-hope','Jimin','V','Jung Kook','Jungkook']);
 const resolved=new Map<string,string>();
 const escape=(s:string)=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const templates=Object.entries(dictionary).filter(([key])=>/\{\d+\}/.test(key)).map(([key,value])=>{
@@ -12,7 +14,9 @@ const templates=Object.entries(dictionary).filter(([key])=>/\{\d+\}/.test(key)).
 });
 export function translate(text:string,locale:Locale):string{
  if(locale==='pt'||!text.trim()||!/[a-zA-ZÀ-ÿ]/.test(text))return text;
- const key=normalize(text);let result=dictionary[key]??resolved.get(key);
+ const key=normalize(text);
+ if(artistNames.has(key))return text;
+ let result=dictionary[key]??resolved.get(key);
  if(result===undefined){
   for(const template of templates){const match=template.pattern.exec(key);if(!match)continue;const values:Record<number,string>={};template.indices.forEach((n,i)=>values[n]=template.preserveValues?match[i+1]:translate(match[i+1],'eng'));result=template.value.replace(/\{(\d+)\}/g,(_,n)=>values[Number(n)]??'');break;}
  }
