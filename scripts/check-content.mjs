@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,50);
+assert.equal(lessons.length,30);assert.equal(songs.length,51);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 50 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 51 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -693,3 +693,29 @@ assert.equal(new Function(studyLookup+";return studyFor('Dionysus');")(),'dionys
 const dionysusSong=songs.find(s=>s.id==='dionysus');assert.equal(dionysusSong.exercises.length,5);
 for(const exercise of dionysusSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: Dionysus: 113 supplied lines, Korean coverage, repetitions, contextual grammar, vocabulary, catalog link and 5 clickable exercises.');
+
+const {interludeShadowSections,interludeShadowVocabulary}=await load('lib/interlude-shadow.ts');
+const shadowLines=interludeShadowSections.flatMap(s=>s.lines);
+assert.equal(interludeShadowSections.length,8);assert.equal(shadowLines.length,103);
+assert.equal(shadowLines[0].text,'I wanna be a rap star');
+assert.equal(shadowLines.at(-1).text,'우린 너고 우린 나야, 알겠니');
+assert.equal(shadowLines.filter(l=>l.english).length,48);
+assert.equal(shadowLines.filter(l=>l.text==='I wanna be a rap star').length,4);
+assert.equal(shadowLines.filter(l=>l.text==='I wanna be...').length,3);
+assert.equal(shadowLines.filter(l=>l.text==="Please don't let me shine").length,4);
+assert.equal(shadowLines.filter(l=>l.text==='공교롭게도 여긴 장공이잖아').length,2);
+for(const line of shadowLines){
+ assert.ok(line.text&&line.translation);
+ if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}
+ const terms=line.entries.map(e=>e.term).join(' ');
+ for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Shadow: missing analysis of '+token);
+ for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length);
+}
+assert.equal(interludeShadowVocabulary.verbs.length,36);assert.equal(interludeShadowVocabulary.nouns.length,23);
+assert.ok(shadowLines.find(l=>l.text.includes('알겠니매번')).entries.some(e=>e.notes.some(n=>n.includes('junção'))));
+assert.ok(shadowLines.find(l=>l.text==='성공 거부 실패, 어디 있던지 yeah').entries.some(e=>e.notes.some(n=>n.includes('ambígua'))));
+assert.ok(shadowLines.find(l=>l.text==='떼어낼 수 없어 니가 뭐를 하던지 yeah').entries.some(e=>e.notes.some(n=>n.includes('하든지'))));
+for(const title of ['Interlude: Shadow','Interlude : Shadow','Shadow'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'interlude-shadow');
+const shadowSong=songs.find(s=>s.id==='interlude-shadow');assert.equal(shadowSong.exercises.length,5);
+for(const exercise of shadowSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: Interlude: Shadow: 103 supplied lines, Korean analysis, repetitions, transcription notes, vocabulary, catalog aliases and 5 clickable exercises.');

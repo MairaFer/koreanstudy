@@ -328,6 +328,30 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "뭐가 중요해 짠해",
       "card": "짠 pode imitar o encontro dos copos em um brinde. Com 해, a leitura contextual é vamos brindar. Já 짠하다 pode expressar pena ou uma emoção apertada no peito em outros contextos. A sequência de copos e celebração é o que orienta a escolha aqui."
     }
+  ],
+  "interlude-shadow": [
+    {
+      "term": "발 밑에 그림자",
+      "card": "그림자 começa como sombra sob os pés e passa a agir como uma voz que acompanha o eu. A apresentação oficial do álbum descreve a sombra como parte de si, reconhecida ao olhar para dentro. Isso dá contexto à leitura; não é um diagnóstico psicológico do artista.",
+      "source": "https://bts.ibighit.com/eng/discography/detail/map_of_the_soul-7.html"
+    },
+    {
+      "term": "저 빛과 비례하는 내 그림자",
+      "card": "빛 pode ser lida como visibilidade e sucesso; 그림자, como medo e solidão que acompanham essa exposição. A relação proporcional pertence à metáfora da música. Não significa que qualquer sombra real sempre aumente quando a luz fica mais forte."
+    },
+    {
+      "term": "나의 바람대로",
+      "card": "바람 pode significar vento ou desejo. Aqui, com 나의 e -대로, a leitura é conforme o meu desejo. A imagem de voar torna vento uma associação possível ao ouvir, mas a construção explica que a altura foi desejada."
+    },
+    {
+      "term": "최선이 최선이란 걸",
+      "card": "차선 apresenta a segunda melhor alternativa; 최선 pode indicar a melhor opção e também o máximo esforço. Repetir a mesma palavra permite a leitura dar o máximo é o melhor caminho. A fala confrontadora cobra esse esforço; a análise não transforma essa cobrança em conselho."
+    },
+    {
+      "term": "떼어낼 수 없어 니가 뭐를 하던지",
+      "card": "A letra enviada alterna grafias com -던지 e -던가 em contextos de escolha ou indiferença. Na escrita normativa, essas funções usam -든지 e -든가; as formas com -던- aparecem em outros contextos, como retomar uma experiência. Por isso preservamos a letra e explicamos a forma a usar ao estudar.",
+      "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=306525"
+    }
   ]
 };
 
