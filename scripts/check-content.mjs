@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,32);
+assert.equal(lessons.length,30);assert.equal(songs.length,33);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 32 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 33 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -343,3 +343,16 @@ assert.ok(moonVocabulary.verbs.length>=10&&moonVocabulary.nouns.length>=10);
 assert.equal(new Function(studyLookup+";return studyFor('Moon');")(),'moon');
 assert.ok(songs.find(s=>s.id==='moon').exercises.every(e=>e.kind==='choice'&&isCorrect(e,e.answer[0])));
 console.log('PASS: Moon, 58 linhas na sequência enviada, 10 seções, vocabulário, exercícios e botão Estudar.');
+
+const {seesawSections,seesawVocabulary}=await load('lib/seesaw.ts');
+const seesawLines=seesawSections.flatMap(s=>s.lines);
+assert.equal(seesawLines.length,70);assert.equal(seesawSections.length,13);
+assert.equal(seesawLines[0].text,'시작은 뭐 즐거웠었네');
+assert.equal(seesawLines.at(-1).text,"(Hol' up Hol' up) 니가 없는 이 시소에서 내려");
+assert.equal(seesawLines.filter(l=>l.text==='All right 반복된 시소게임').length,3);
+assert.equal(seesawLines.filter(l=>l.text==='이젠 그만해').length,2);
+for(const l of seesawLines){assert.ok(l.text&&l.translation);const terms=l.entries.map(e=>e.term).join(' ');for(const token of l.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Seesaw: termo sem análise: '+token);for(const e of l.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(seesawVocabulary.verbs.length,21);assert.equal(seesawVocabulary.nouns.length,22);
+for(const title of ['Trivia 轉 : Seesaw','Trivia 轉: Seesaw','Seesaw'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'seesaw');
+const seesawSong=songs.find(s=>s.id==='seesaw');assert.equal(seesawSong.exercises.length,5);assert.ok(seesawSong.exercises.every(e=>e.kind==='choice'&&isCorrect(e,e.answer[0])));
+console.log('PASS: Seesaw: 70 linhas, 13 seções, termos coreanos analisados, 21 verbos, 22 substantivos, exercícios e links da discografia.');
