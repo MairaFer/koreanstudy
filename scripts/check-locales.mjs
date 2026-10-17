@@ -17,6 +17,8 @@ for(const text of source){
 }
 assert.equal(translate('Ver explicação','eng'),'Show explanation');
 assert.equal(translate('Roxo','eng'),'Purple');
+assert.equal(translate('SUGA Músicas','eng'),'SUGA Songs');
+assert.equal(translate('Ouvir frase: 안녕','eng'),'Listen to sentence: 안녕');
 assert.equal(translate('Olá, Fernanda','eng'),'Hi, Fernanda');
 assert.equal(translate('Olá, Rosa','eng'),'Hi, Rosa');
 assert.equal(translate('constructor','eng'),'constructor');

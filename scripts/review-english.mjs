@@ -10,6 +10,8 @@ const escape=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 let repaired=0;
 for(const [source,value] of Object.entries(dictionary)){
  let text=value;
+ if(/letra enviada|letra fornecida|letra completa|letra da música|letra de uma música/.test(source))text=text.replace(/\bletters?\b/gi,'lyrics');
+ if(/auxiliar de|como auxiliar|verbo auxiliar/.test(source))text=text.replace(/as an assistant/gi,'as an auxiliary verb').replace(/\bassistant\b/gi,'auxiliary');
  if(/portugu[eê]s|tradução portuguesa/i.test(source))text=text.replace(/Portuguese/g,'English').replace(/portuguese/g,'English');
  if(/consoantes/.test(source))text=text.replace(/simple, aspirated and tense/g,'plain, aspirated, and tense consonants');
  if(/cópula|copula/.test(source))text=text.replace(/\bcopulation\b/gi,'copula');
