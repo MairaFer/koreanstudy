@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,53);
+assert.equal(lessons.length,30);assert.equal(songs.length,54);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 53 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 54 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -770,3 +770,30 @@ for(const title of ['My Time','시차','My Time (시차)','시차 (My Time)'])as
 const myTimeSong=songs.find(s=>s.id==='my-time');assert.equal(myTimeSong.exercises.length,5);
 for(const exercise of myTimeSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: My Time: 57 supplied lines, Korean analysis, repetitions, final can/will contrast, vocabulary, catalog aliases and 5 clickable exercises.');
+
+const {louderThanBombsSections,louderThanBombsVocabulary}=await load('lib/louder-than-bombs.ts');
+const louderLines=louderThanBombsSections.flatMap(s=>s.lines);
+assert.equal(louderThanBombsSections.length,10);assert.equal(louderLines.length,55);
+assert.equal(louderLines[0].text,'이젠 너무 선명해졌어');
+assert.equal(louderLines.at(-1).text,'Louder than bombs I sing');
+assert.equal(louderLines.filter(l=>l.english).length,19);
+assert.equal(louderLines.filter(l=>l.text==='사람들은 뭐 우리가 부럽대').length,2);
+assert.equal(louderLines.filter(l=>l.text==='Louder than bombs I break').length,2);
+assert.equal(louderLines.filter(l=>l.text==='Louder than bombs I say').length,2);
+assert.equal(louderLines.filter(l=>l.text==='Louder than bombs I sing').length,2);
+assert.equal(louderLines.filter(l=>l.text==='Lighter than the light').length,2);
+for(const line of louderLines){
+ assert.ok(line.text&&line.translation);
+ if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}
+ const terms=line.entries.map(e=>e.term).join(' ');
+ for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Louder Than Bombs: missing analysis of '+token);
+ for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length);
+}
+assert.equal(louderThanBombsVocabulary.verbs.length,30);assert.equal(louderThanBombsVocabulary.nouns.length,19);
+assert.ok(louderLines.find(l=>l.text==='그 표정이 아니란 걸 안 그때부터').entries.some(e=>e.notes.some(n=>n.includes('알다'))));
+assert.ok(louderLines.find(l=>l.text==='파도가 일곤 해').entries.some(e=>e.notes.some(n=>n.includes('permanece'))));
+assert.ok(louderLines.find(l=>l.text==='사람들은 뭐 우리가 부럽대').entries.some(e=>e.notes.some(n=>n.includes('Não significa que nós invejamos'))));
+assert.equal(new Function(studyLookup+";return studyFor('Louder Than Bombs');")(),'louder-than-bombs');
+const louderSong=songs.find(s=>s.id==='louder-than-bombs');assert.equal(louderSong.exercises.length,5);
+for(const exercise of louderSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: Louder Than Bombs: 55 supplied lines, Korean analysis, repeated verse, break/say/sing progression, vocabulary, catalog link and 5 clickable exercises.');

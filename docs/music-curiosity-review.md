@@ -1,6 +1,6 @@
 # Music curiosity review
 
-Reviewed all 53 prepared studies. Existing cards are retained. New cards cover wordplay, idioms, register, cultural references and contextual imagery; grammar notes remain available. Additions appear only at the first matching entry, so repeated choruses do not repeat new cards. Portuguese and English text is prepared in advance. Interpretation is distinguished from literal definitions and confirmed references.
+Reviewed all 54 prepared studies. Existing cards are retained. New cards cover wordplay, idioms, register, cultural references and contextual imagery; grammar notes remain available. Additions appear only at the first matching entry, so repeated choruses do not repeat new cards. Portuguese and English text is prepared in advance. Interpretation is distinguished from literal definitions and confirmed references.
 
 | Study | Existing unique cards | New cards |
 | --- | ---: | ---: |
@@ -57,6 +57,7 @@ Reviewed all 53 prepared studies. Existing cards are retained. New cards cover w
 | interlude-shadow | 0 | 5 |
 | black-swan | 0 | 5 |
 | my-time | 0 | 4 |
+| louder-than-bombs | 0 | 5 |
 
 Related correction: in Intro: Persona, 개 means dog, not person; -인지 marks an indirect question. The adjacent necklace line is also corrected: 거네 comes from 걸다 (hang), and 진주목걸일 contracts the noun with its object marker.
 

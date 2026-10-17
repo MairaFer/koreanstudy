@@ -395,6 +395,28 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "계속 달려",
       "card": "No final, a formulação inglesa muda de não posso para eu vou. A busca por um tempo próprio continua como pergunta, então a música não precisa ser lida como uma solução já concluída. A repetição com mudança de verbo abre espaço para decisão e esperança, numa leitura do texto."
     }
+  ],
+  "louder-than-bombs": [
+    {
+      "term": "파도가 일곤 해",
+      "card": "일다 descreve ondas que surgem; não é o mesmo verbo que 일하다, trabalhar. O mar tranquilo e as ondas permitem ler a tristeza do outro como algo que movimenta o mundo interior do eu. -곤 하다 marca recorrência: a imagem não se limita a uma única onda."
+    },
+    {
+      "term": "안 그때부터",
+      "card": "안 nem sempre é uma negação. Aqui, ele vem de 알다, saber, antes de um nome: o ㄹ cai com -(으)ㄴ. Assim, 안 그때 se lê como o momento em que soube. Procurar o verbo e o nome que ele modifica evita entender a frase como não naquele momento."
+    },
+    {
+      "term": "우리가 부럽대",
+      "card": "Em 우리가 부럽대, o eu relata que outras pessoas invejam nós. A acusação de hipocrisia da linha seguinte também pertence a essas vozes externas. Distinguir quem fala evita atribuir ao narrador a opinião que ele está contestando."
+    },
+    {
+      "term": "똥밭에 구르네",
+      "card": "똥밭 é uma imagem grosseira: um terreno cheio de fezes. Com 구르다, rolar, sugere passar por humilhações ou dificuldades, faça o eu o que fizer. Traduzir apenas como um lugar ruim apaga parte da força e do registro da expressão."
+    },
+    {
+      "term": "노래할 거라고",
+      "card": "Os refrões passam de se quebrar a falar e, por fim, cantar. A promessa termina com 노래할 거라고, retomando 약속해 de antes. A voz ganha uma forma de continuar diante das ondas; isso é uma leitura da progressão da letra, não a afirmação de que toda dor foi resolvida."
+    }
   ]
 };
 
