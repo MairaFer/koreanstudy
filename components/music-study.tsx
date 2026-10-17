@@ -40,6 +40,7 @@ import {filterSections,filterVocabulary} from '@/lib/filter';
 import {herSections,herVocabulary} from '@/lib/her';
 import {singularitySections,singularityVocabulary} from '@/lib/singularity';
 import {euphoriaSections,euphoriaVocabulary} from '@/lib/euphoria';
+import {justDanceSections,justDanceVocabulary} from '@/lib/just-dance';
 import {cypherPt3Sections,cypherPt3Vocabulary} from '@/lib/cypher-pt3';
 import {seesawSections,seesawVocabulary} from '@/lib/seesaw';
 import {moonSections,moonVocabulary} from '@/lib/moon';
@@ -84,6 +85,7 @@ const studies:Record<string,StudyConfig>={
   'run-bts':{sections:runBtsSections,vocabulary:runBtsVocabulary,summary:'Correr como hábito e luta entre o fim que chega e o recomeço que se recusa.',heading:'Run BTS · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'intro-persona':{sections:personaSections,vocabulary:personaVocabulary,summary:'A pergunta de quem sou eu entre as vozes que cobram e o mapa da propria alma.',heading:'Intro: Persona · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
   'stay':{sections:staySections,vocabulary:stayVocabulary,summary:'A certeza de que alguém fica, onde quer que esteja.',heading:'Stay · coreano palavra por palavra',badge:'Letra completa · análise preparada'},
+  'just-dance':{sections:justDanceSections,vocabulary:justDanceVocabulary,summary:'Dança, sintonia e sentimentos que ganham forma no movimento. A letra enviada é preservada, com notas sobre linguagem figurada e passagens elípticas.',heading:'Trivia 起: Just Dance · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'euphoria':{sections:euphoriaSections,vocabulary:euphoriaVocabulary,summary:'Alegria, sonhos e a promessa de continuar de mãos dadas. Explicações de metáforas, hipóteses e pedidos, com notas de grafia sobre a letra enviada.',heading:'Euphoria · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'singularity':{sections:singularitySections,vocabulary:singularityVocabulary,summary:'Voz, identidade e a imagem de um lago congelado. A transcrição enviada é preservada com notas sobre grafia, espaçamento e ambiguidades.',heading:'Singularity · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'her':{sections:herSections,vocabulary:herVocabulary,summary:'Amor, identidade e máscaras: metáforas e contrastes explicados a partir da letra enviada.',heading:'Her · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
