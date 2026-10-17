@@ -40,6 +40,7 @@ import {zeroOclockSections,zeroOclockVocabulary} from './zero-oclock';
 import {dimpleSections,dimpleVocabulary} from './dimple';
 import {forYouthSections,forYouthVocabulary} from './for-youth';
 import {flyToMyRoomSections,flyToMyRoomVocabulary} from './fly-to-my-room';
+import {blueGreySections,blueGreyVocabulary} from './blue-grey';
 import {cypherPt3Sections,cypherPt3Vocabulary} from './cypher-pt3';
 import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
@@ -86,6 +87,7 @@ const studies=[
  {id:'dimple',sections:dimpleSections,vocabulary:dimpleVocabulary},
  {id:'for-youth',sections:forYouthSections,vocabulary:forYouthVocabulary},
  {id:'fly-to-my-room',sections:flyToMyRoomSections,vocabulary:flyToMyRoomVocabulary},
+ {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'cypher-pt3',sections:cypherPt3Sections,vocabulary:cypherPt3Vocabulary},
  {id:'seesaw',sections:seesawSections,vocabulary:seesawVocabulary},
  {id:'moon',sections:moonSections,vocabulary:moonVocabulary},
