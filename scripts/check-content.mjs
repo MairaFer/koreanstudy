@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,42);
+assert.equal(lessons.length,30);assert.equal(songs.length,43);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 42 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 43 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -518,3 +518,23 @@ assert.equal(zeroOclockVocabulary.verbs.length,41);assert.equal(zeroOclockVocabu
 for(const title of ["00:00 (Zero O'Clock)",'00:00 (Zero O’Clock)',"Zero O'Clock"])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'zero-oclock');
 assert.equal(songs.find(s=>s.id==='zero-oclock').exercises.length,5);
 console.log('PASS: Zero Oclock: 91 linhas, 12 seções, refrões e final preservados, termos coreanos analisados, 41 verbos, 29 substantivos e 5 exercícios de clicar.');
+
+const {dimpleSections,dimpleVocabulary}=await load('lib/dimple.ts');
+const dimpleLines=dimpleSections.flatMap(s=>s.lines);
+assert.equal(dimpleSections.length,12);assert.equal(dimpleLines.length,54);
+assert.equal(dimpleLines[0].text,'꼭꼭 숨었다가 웃으면 나타나');
+assert.equal(dimpleLines.at(-1).text,'But I want it anyway anyway anyway');
+assert.equal(dimpleLines.filter(l=>l.text==='그 보조갠 illegal').length,6);
+assert.equal(dimpleLines.filter(l=>l.text==='So I call you illegirl').length,3);
+assert.equal(dimpleLines.filter(l=>l.text==='Illegal').length,2);
+for(const line of dimpleLines){
+  assert.ok(line.text&&line.translation);
+  if(line.english)continue;
+  const terms=line.entries.map(e=>e.term).join(' ');
+  for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Dimple: sem análise de '+token);
+  for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length);
+}
+assert.equal(dimpleVocabulary.verbs.length,21);assert.equal(dimpleVocabulary.nouns.length,13);
+for(const title of ['Dimple','보조개','보조개 (Dimple)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'dimple');
+assert.equal(songs.find(s=>s.id==='dimple').exercises.length,5);
+console.log('PASS: Dimple: 54 linhas, 12 seções, repetições preservadas, termos coreanos analisados, trocadilho explicado, vocabulário e 5 exercícios de clicar.');
