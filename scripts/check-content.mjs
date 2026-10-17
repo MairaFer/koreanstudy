@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,52);
+assert.equal(lessons.length,30);assert.equal(songs.length,53);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 52 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 53 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -745,3 +745,28 @@ assert.equal(new Function(studyLookup+";return studyFor('Black Swan');")(),'blac
 const blackSwanSong=songs.find(s=>s.id==='black-swan');assert.equal(blackSwanSong.exercises.length,5);
 for(const exercise of blackSwanSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: Black Swan: 83 supplied lines, Korean analysis, repeated hooks and choruses, slow/fast contrast, vocabulary, catalog link and 5 clickable exercises.');
+
+const {myTimeSections,myTimeVocabulary}=await load('lib/my-time.ts');
+const myTimeLines=myTimeSections.flatMap(s=>s.lines);
+assert.equal(myTimeSections.length,6);assert.equal(myTimeLines.length,57);
+assert.equal(myTimeLines[0].text,'24 누구보다 더 빨리 어른이 된 것만 같아');
+assert.equal(myTimeLines.at(-1).text,'Find my time');
+assert.equal(myTimeLines.filter(l=>l.english).length,43);
+assert.equal(myTimeLines.filter(l=>l.text==='왜 나만 다른 시공간 속인 걸까').length,2);
+assert.equal(myTimeLines.filter(l=>l.text==='Can I someday finna find my time').length,4);
+assert.equal(myTimeLines.filter(l=>l.text==="Oh I can't call ya I can't hol' ya").length,2);
+assert.equal(myTimeLines.filter(l=>l.text==="Oh I will call ya I will hol' ya").length,1);
+for(const line of myTimeLines){
+ assert.ok(line.text&&line.translation);
+ if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}
+ const terms=line.entries.map(e=>e.term).join(' ');
+ for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'My Time: missing analysis of '+token);
+ for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length);
+}
+assert.equal(myTimeVocabulary.verbs.length,19);assert.equal(myTimeVocabulary.nouns.length,16);
+assert.ok(myTimeLines.find(l=>l.text==='모잘 눌러쓰고 계속 달려').entries.some(e=>e.notes.some(n=>n.includes('모자를'))));
+assert.ok(myTimeLines.find(l=>l.text==='나도 모르게 커버린 어린 나').entries.some(e=>e.notes.some(n=>n.includes('크다'))));
+for(const title of ['My Time','시차','My Time (시차)','시차 (My Time)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'my-time');
+const myTimeSong=songs.find(s=>s.id==='my-time');assert.equal(myTimeSong.exercises.length,5);
+for(const exercise of myTimeSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: My Time: 57 supplied lines, Korean analysis, repetitions, final can/will contrast, vocabulary, catalog aliases and 5 clickable exercises.');

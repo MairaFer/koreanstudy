@@ -1,3 +1,4 @@
+import {myTimeSections,myTimeVocabulary} from './my-time';
 import {blackSwanSections,blackSwanVocabulary} from './black-swan';
 import {interludeShadowSections,interludeShadowVocabulary} from './interlude-shadow';
 import {dionysusSections,dionysusVocabulary} from './dionysus';
@@ -96,6 +97,7 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'my-time',sections:myTimeSections,vocabulary:myTimeVocabulary},
  {id:'black-swan',sections:blackSwanSections,vocabulary:blackSwanVocabulary},
  {id:'interlude-shadow',sections:interludeShadowSections,vocabulary:interludeShadowVocabulary},
  {id:'dionysus',sections:dionysusSections,vocabulary:dionysusVocabulary},

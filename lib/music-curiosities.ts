@@ -376,6 +376,25 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "차라리 내 발로 갈게",
       "card": "내 발로 enfatiza ir pelos próprios meios; 끌려가지 fala de ser arrastado por algo. Essa oposição permite ler uma mudança de iniciativa: o eu escolhe entrar e criar em vez de apenas ser levado. O mar e a floresta continuam imagens abertas, não lugares que a análise precisa identificar literalmente."
     }
+  ],
+  "my-time": [
+    {
+      "term": "다른 시공간 속인 걸까",
+      "card": "시차 pode indicar diferença de horário ou de momento entre acontecimentos. A letra reúne viagens, manhãs, noites e a sensação de crescer fora do ritmo dos outros. Ler o título como descompasso temporal conecta essas imagens; não significa apenas estar cansado depois de um voo.",
+      "source": "https://www.korean.go.kr/common/download.do?book_seq=355&c_file_name=0736b8dc-bde5-435b-84e8-0ad2bc4fea3f_0.pdf&downGubun=bookDataView&file_path=bookData&o_file_name=%ED%8A%B9%EC%88%98%EC%96%B8%EC%96%B4-02-22.pdf"
+    },
+    {
+      "term": "커버린 어린 나",
+      "card": "커버린 vem de 크다, crescer, com -어 버리다. Não é a palavra inglesa cover. Ao colocar cresci completamente ao lado de 어린 나, meu eu jovem, a letra aproxima crescimento e juventude ainda sentida. A nuance de perda vem do contexto, não de uma regra que faça a terminação ser sempre triste."
+    },
+    {
+      "term": "모잘 눌러쓰고",
+      "card": "모잘 é uma contração de 모자를, boné ou chapéu como objeto. O som final vem da partícula -를 e não faz parte do nome 모자. Reconhecer essa contração evita confundir a palavra com 모자라다, faltar ou ser insuficiente."
+    },
+    {
+      "term": "계속 달려",
+      "card": "No final, a formulação inglesa muda de não posso para eu vou. A busca por um tempo próprio continua como pergunta, então a música não precisa ser lida como uma solução já concluída. A repetição com mudança de verbo abre espaço para decisão e esperança, numa leitura do texto."
+    }
   ]
 };
 
