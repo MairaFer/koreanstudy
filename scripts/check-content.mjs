@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,47);
+assert.equal(lessons.length,30);assert.equal(songs.length,48);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 47 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 48 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -621,3 +621,29 @@ for(const title of ['Telepathy','잠시','Telepathy (잠시)'])assert.equal(new 
 const telepathySong=songs.find(s=>s.id==='telepathy');assert.equal(telepathySong.exercises.length,5);
 for(const exercise of telepathySong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: Telepathy: 51 supplied lines, repetitions, Korean coverage, spelling and context notes, vocabulary, catalog links and 5 clickable exercises.');
+
+const {disEaseSections,disEaseVocabulary}=await load('lib/dis-ease.ts');
+const disEaseLines=disEaseSections.flatMap(s=>s.lines);
+assert.equal(disEaseSections.length,13);assert.equal(disEaseLines.length,96);
+assert.equal(disEaseLines[0].text,'Mm, uh-oh');
+assert.equal(disEaseLines.at(-1).text,'버려 겁겁겁 버려');
+assert.ok(!disEaseLines.some(l=>l.text==='창 닫기'),'Copied close-window control is not a lyric');
+assert.equal(disEaseLines.filter(l=>l.text==='Everyday 나를 위로해').length,3);
+assert.equal(disEaseLines.filter(l=>l.text==='Maybe').length,2);
+assert.ok(disEaseLines.some(l=>l.text==='벼벼벼벼벼 병'));
+assert.ok(disEaseLines.some(l=>l.text==='거거거거거 겁'));
+for(const line of disEaseLines){
+ assert.ok(line.text&&line.translation);
+ if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}
+ const terms=line.entries.map(e=>e.term).join(' ');
+ for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Dis-ease: missing analysis of '+token);
+ for(const entry of line.entries)assert.ok(entry.meaning&&entry.notes.length);
+}
+assert.equal(disEaseVocabulary.verbs.length,33);assert.equal(disEaseVocabulary.nouns.length,29);
+assert.ok(disEaseLines.find(l=>l.text==="I'm ill, 그래 내가 일 그 자체").entries.some(e=>e.notes.some(n=>n.includes('trocadilho'))));
+assert.ok(disEaseLines.find(l=>l.text==='이 유리 같은 병이 때리지 니 머리').entries.some(e=>e.notes.some(n=>n.includes('garrafa'))));
+assert.ok(disEaseLines.find(l=>l.text==='다시 아침이야 오늘을 나야 해').entries.some(e=>e.notes.some(n=>n.includes('atravessar'))));
+for(const title of ['Dis-ease','병','Dis-ease (병)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'dis-ease');
+const disEaseSong=songs.find(s=>s.id==='dis-ease');assert.equal(disEaseSong.exercises.length,5);
+for(const exercise of disEaseSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: Dis-ease: 96 lyric lines, repetitions and sound fragments, Korean analysis, contextual wordplay, vocabulary, catalog links and 5 clickable exercises.');

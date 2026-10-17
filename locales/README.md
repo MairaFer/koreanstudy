@@ -14,6 +14,6 @@ When editing Portuguese content, run `node scripts/collect-locale.mjs` and provi
 English for any new keys. The optional `prepare-english.mjs` helper bootstraps
 public text only; it is not a substitute for editorial review. Apply and review
 `review-english.mjs`, then run `check-locales.mjs` and
-`check-localized-render.cjs`. The latter renders all 47 prepared song studies and
+`check-localized-render.cjs`. The latter renders all 48 prepared song studies and
 checks the English-only-line behavior. `coverage.json` records source extraction
 for maintenance; it is not loaded by the app.

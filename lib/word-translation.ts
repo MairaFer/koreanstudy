@@ -42,6 +42,7 @@ import {forYouthSections,forYouthVocabulary} from './for-youth';
 import {flyToMyRoomSections,flyToMyRoomVocabulary} from './fly-to-my-room';
 import {blueGreySections,blueGreyVocabulary} from './blue-grey';
 import {telepathySections,telepathyVocabulary} from './telepathy';
+import {disEaseSections,disEaseVocabulary} from './dis-ease';
 import {cypherPt3Sections,cypherPt3Vocabulary} from './cypher-pt3';
 import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
@@ -90,6 +91,7 @@ const studies=[
  {id:'fly-to-my-room',sections:flyToMyRoomSections,vocabulary:flyToMyRoomVocabulary},
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
+ {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
  {id:'cypher-pt3',sections:cypherPt3Sections,vocabulary:cypherPt3Vocabulary},
  {id:'seesaw',sections:seesawSections,vocabulary:seesawVocabulary},
  {id:'moon',sections:moonSections,vocabulary:moonVocabulary},
