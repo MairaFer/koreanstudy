@@ -48,6 +48,7 @@ import {dimpleSections,dimpleVocabulary} from '@/lib/dimple';
 import {forYouthSections,forYouthVocabulary} from '@/lib/for-youth';
 import {flyToMyRoomSections,flyToMyRoomVocabulary} from '@/lib/fly-to-my-room';
 import {blueGreySections,blueGreyVocabulary} from '@/lib/blue-grey';
+import {telepathySections,telepathyVocabulary} from '@/lib/telepathy';
 import {cypherPt3Sections,cypherPt3Vocabulary} from '@/lib/cypher-pt3';
 import {seesawSections,seesawVocabulary} from '@/lib/seesaw';
 import {moonSections,moonVocabulary} from '@/lib/moon';
@@ -95,6 +96,7 @@ const studies:Record<string,StudyConfig>={
   'for-youth':{sections:forYouthSections,vocabulary:forYouthVocabulary,summary:'Lembranças, gratidão e a promessa de permanecer juntos. Gramática de recordação, intenção, apoio e arrependimento explicada a partir da letra enviada.',heading:'For Youth · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'fly-to-my-room':{sections:flyToMyRoomSections,vocabulary:flyToMyRoomVocabulary,summary:'Um novo olhar sobre o quarto e o cotidiano. A letra enviada é preservada, com notas sobre metáforas, frases abertas e gramática.',heading:'Fly To My Room · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'blue-grey':{sections:blueGreySections,vocabulary:blueGreyVocabulary,summary:'Cores, incertezas e a busca de acolhimento. Metáforas, perguntas indiretas e pedidos explicados a partir da letra enviada.',heading:'Blue & Grey · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
+  'telepathy':{sections:telepathySections,vocabulary:telepathyVocabulary,summary:'Proximidade apesar da distância, lembranças do mar e a escolha de um ritmo em comum. A letra enviada é preservada, com explicações de expressões coloquiais, contrações e imagens poéticas.',heading:'Telepathy (잠시) · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'dimple':{sections:dimpleSections,vocabulary:dimpleVocabulary,summary:'Covinhas, sorrisos e um encanto descrito como perigoso. Gramática, pedidos informais e o trocadilho illegal/illegirl explicados em português.',heading:'보조개 (Dimple) · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'zero-oclock':{sections:zeroOclockSections,vocabulary:zeroOclockVocabulary,summary:'O fim de um dia difícil e o desejo de recomeçar. Expressões cotidianas, imagens do relógio e formas de convite e esperança explicadas em português.',heading:'00:00 (Zero O’Clock) · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},
   'just-dance':{sections:justDanceSections,vocabulary:justDanceVocabulary,summary:'Dança, sintonia e sentimentos que ganham forma no movimento. A letra enviada é preservada, com notas sobre linguagem figurada e passagens elípticas.',heading:'Trivia 起: Just Dance · coreano palavra por palavra',badge:'Letra enviada · análise preparada'},

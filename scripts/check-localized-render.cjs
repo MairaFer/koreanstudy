@@ -11,7 +11,10 @@ console.log('Music studies loaded.');
 const {songs}=require('../lib/songs.ts');
 const {ExerciseCard}=require('../components/exercise.tsx');
 function render(component,locale){return renderToStaticMarkup(React.createElement(LocaleProvider,{initialLocale:locale},component));}
-let checked=0;for(const song of songs){
+const requested=process.argv[2];
+const studies=requested?songs.filter(song=>song.id===requested):songs;
+assert.ok(studies.length,'Unknown study: '+requested);
+let checked=0;for(const song of studies){
  const english=render(React.createElement(MusicStudy,{initialSongId:song.id}),'eng');
  assert.ok(english.includes('Learn Korean with BTS'),song.id+' English heading');
  assert.ok(!english.includes('Ver tradução')&&!english.includes('Show translation'),song.id+' English lines must not have translation buttons');
@@ -26,4 +29,4 @@ const exercise=render(React.createElement(ExerciseCard,{exercise:optionSong.exer
 assert.ok(exercise.includes('CHOOSE AN ANSWER'));assert.ok(!exercise.includes('ESCOLHA UMA RESPOSTA'));
 const Home=require('../app/page.tsx').default;const {About,Help}=require('../components/info-pages.tsx');const {GoogleLogin}=require('../components/google-login.tsx');
 for(const [component,expected] of [[Home,'Your next step in Korean'],[About,'ABOUT US'],[Help,'HELP &amp; FAQ'],[GoogleLogin,'Continue with Google']]){const html=render(React.createElement(component),'eng');assert.ok(html.includes(expected),'English page: '+expected);}
-console.log('PASS: all '+songs.length+' song pages render in PT and ENG; English lyrics have no translation control, Korean lines retain explanations, and exercise controls are localized.');
+console.log('PASS: '+checked+' song pages render in PT and ENG; English lyrics have no translation control, Korean lines retain explanations, and exercise controls are localized.');
