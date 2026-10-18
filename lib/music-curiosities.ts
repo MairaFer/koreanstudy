@@ -496,6 +496,29 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "너의 삶에 모든 영광과 번영이 깃들길",
       "card": "Uma bênção pode ser sincera ou irônica. As palavras desejam glória e prosperidade, mas vêm depois da imagem de alguém que insulta sorrindo. O efeito nasce do contraste entre palavras gentis e comportamento hostil; a gramática do desejo, sozinha, não contém sarcasmo."
     }
+  ],
+  "we-are-bulletproof-eternal": [
+    {
+      "term": "가진 게 꿈밖에 없었네",
+      "card": "A negação não apaga o sonho. Com 밖에 e 없다, a frase diz que não existia nada além dele: só havia sonhos. É diferente do substantivo que indica exterior mais uma partícula de lugar. Observar a construção inteira evita traduzir a palavra isoladamente como fora.",
+      "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=261&pageIndex=1&qna_seq=327788&searchCondition=&searchKeyword="
+    },
+    {
+      "term": "일곱의 겨울과 봄 뒤에",
+      "card": "As estações fazem duas coisas: marcam a passagem do tempo e permitem ler dificuldade e renovação. O número sete ecoa os sete do refrão, mas a imagem não precisa virar uma cronologia exata de acontecimentos. Mais adiante, a pergunta sobre a primavera mantém a esperança junto da dúvida."
+    },
+    {
+      "term": "이건 쇠로 된 증명",
+      "card": "Prova e resistência se encontram na imagem do ferro, seguida de bullet-proof. A letra recupera o nome antes ridicularizado e o apresenta como algo comprovado pela caminhada. Isso permite ler a proteção como vínculo e perseverança; não significa que as pessoas sejam literalmente invulneráveis."
+    },
+    {
+      "term": "부정적인 시선에 맞서 우린 해냈구",
+      "card": "Conseguir chegar ao resultado é importante neste verso. A construção em 해내다 também aparece na ideia de conseguir conter em 막아내다: não só fazer uma ação, mas levá-la adiante apesar dos obstáculos. A grafia coloquial do final foi mantida e comentada nas notas."
+    },
+    {
+      "term": "여기 우리가 함께이기에",
+      "card": "O nós ganha companhia ao longo da letra. O começo lembra apenas sete; o final diz que, com vocês, esse nós é maior. A leitura é de inclusão de quem acompanha o grupo, não de uma alteração literal na quantidade de integrantes. O inglês you pode se referir a uma pessoa ou a várias; aqui vocês acompanha a voz coletiva."
+    }
   ]
 };
 
