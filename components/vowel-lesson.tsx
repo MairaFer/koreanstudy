@@ -1,6 +1,6 @@
 'use client';
 import {useRef,useState} from 'react';
-import {ArrowLeft,ArrowRight,Check,CheckCircle2,ChevronRight,Headphones,Heart,Leaf,RotateCcw,Volume2} from 'lucide-react';
+import {ArrowLeft,ArrowRight,BookOpen,Check,CheckCircle2,ChevronRight,Headphones,Heart,Leaf,RotateCcw,Volume2} from 'lucide-react';
 import {Localized,useLocale} from './localization';
 import {useKoreanSpeech} from './korean-audio';
 import {listeningRounds,vowelPairs,vowels,type Vowel} from '@/lib/vowel-lab';
@@ -26,8 +26,10 @@ export function VowelLesson({initialStep=0}:{initialStep?:number}){
   <nav className="vl-steps" aria-label="Etapas da primeira aula">{steps.map((label,i)=><button type="button" key={label} aria-current={step===i?'step':undefined} onClick={()=>go(i)}><span>{i+1}</span>{label}</button>)}</nav>
   <div className="vl-panel" key={step}>
   {step===0?<>
-   <p className="vl-kicker">01 · ENXERGUE A LÓGICA</p><h3>As letras moram juntas.</h3><p>No Hangul, o alfabeto coreano, as letras se juntam em um bloco. Cada bloco representa uma sílaba. Primeiro, vamos usar uma vogal e um parceiro silencioso.</p>
-   <div className="vl-ingredients"><div><strong lang="ko">ㅇ</strong><span>Marca o começo</span><small>Aqui, não tem som.</small></div><b aria-hidden="true">+</b><div><strong lang="ko">{vowel.letter}</strong><span>A vogal dá o som</span><small>Escolha uma abaixo.</small></div></div>
+   <div className="vl-note"><BookOpen size={20} aria-hidden="true"/><div><strong>Um pouco de história</strong><p>O Hangul foi criado pelo rei Sejong, na Coreia da dinastia Joseon, em 1443 e divulgado em 1446. Chamado inicialmente de Hunminjeongeum, nasceu para facilitar o acesso à leitura e à escrita, em uma época em que se usavam caracteres chineses.</p><a className="text-button" href="https://www.hangeul.go.kr/en/exhi/dailyExhibition.do" target="_blank" rel="noreferrer">Origem do Hangul · Museu Nacional do Hangul ↗</a></div></div>
+   <p className="vl-kicker">01 · ENXERGUE A LÓGICA</p><h3>As letras moram juntas.</h3><p>No Hangul, o alfabeto coreano, cada bloco representa uma sílaba. Para escrever esse bloco, precisamos obrigatoriamente de uma consoante na posição inicial e de uma vogal. Essas são as duas partes mínimas; o bloco também pode ter uma consoante final.</p>
+   <p>E quando a sílaba começa com som de vogal? A posição inicial continua obrigatória na escrita. É aí que entra a consoante ㅇ: no início do bloco, ela é silenciosa e não acrescenta som. Em 아, por exemplo, escrevemos ㅇ + ㅏ, mas ouvimos apenas a vogal.</p>
+   <div className="vl-ingredients"><div><strong lang="ko">ㅇ</strong><span>Consoante inicial</span><small>ㅇ é silencioso aqui.</small></div><b aria-hidden="true">+</b><div><strong lang="ko">{vowel.letter}</strong><span>Vogal</span><small>Escolha uma abaixo.</small></div></div>
    <div className="vl-choice-row" role="group" aria-label="Vogal para montar">{[0,4,9].map(i=><button type="button" key={i} aria-pressed={selected===i} onClick={()=>{setSelected(i);setJoined(false);}}><span lang="ko">{vowels[i].letter}</span></button>)}</div>
    <figure className="vl-assembly"><Block vowel={vowel} joined={joined}/><figcaption><strong>{joined?'Um bloco, uma sílaba.':vowel.layout==='vertical'?'A vogal fica à direita.':'A vogal fica embaixo.'}</strong><p>{vowel.layout==='vertical'?'Com uma vogal vertical, a letra inicial ocupa o lado esquerdo.':'Com uma vogal horizontal, a letra inicial ocupa a parte de cima.'}</p><button type="button" className="primary" onClick={()=>{setJoined(!joined);if(!joined)speech.speak(vowel.block);}}>{joined?<RotateCcw size={16}/>:<Check size={16}/>} {joined?'Separar letras':'Juntar letras'}</button>{joined&&<button type="button" className="text-button" onClick={()=>speech.speak(vowel.block)}><Volume2 size={16}/>Ouvir o bloco</button>}</figcaption></figure>
    <div className="vl-note"><Leaf size={20} aria-hidden="true"/><p><strong>Guarde esta ideia:</strong> o círculo inicial ocupa um lugar na escrita. Em <span lang="ko">아</span>, ele não acrescenta um som. Você escuta a vogal, não o nome da letra.</p></div>

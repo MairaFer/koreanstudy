@@ -7635,5 +7635,11 @@
   "stay": "stay",
   "Ouvir a expressão": "Listen to the expression",
   "otherLeaves": "otherLeaves",
-  "youLeave": "youLeave"
+  "youLeave": "youLeave",
+  "Um pouco de história": "A little history",
+  "O Hangul foi criado pelo rei Sejong, na Coreia da dinastia Joseon, em 1443 e divulgado em 1446. Chamado inicialmente de Hunminjeongeum, nasceu para facilitar o acesso à leitura e à escrita, em uma época em que se usavam caracteres chineses.": "King Sejong created Hangul in 1443, during Korea’s Joseon dynasty, and introduced it publicly in 1446. Originally called Hunminjeongeum, it was designed to make reading and writing more accessible at a time when Chinese characters were used.",
+  "Origem do Hangul · Museu Nacional do Hangul ↗": "Origins of Hangul · National Hangeul Museum ↗",
+  "No Hangul, o alfabeto coreano, cada bloco representa uma sílaba. Para escrever esse bloco, precisamos obrigatoriamente de uma consoante na posição inicial e de uma vogal. Essas são as duas partes mínimas; o bloco também pode ter uma consoante final.": "In Hangul, the Korean alphabet, each block represents one syllable. A written block must have a consonant in the initial position and a vowel. These are its two essential parts; it may also have a final consonant.",
+  "E quando a sílaba começa com som de vogal? A posição inicial continua obrigatória na escrita. É aí que entra a consoante ㅇ: no início do bloco, ela é silenciosa e não acrescenta som. Em 아, por exemplo, escrevemos ㅇ + ㅏ, mas ouvimos apenas a vogal.": "What if a syllable starts with a vowel sound? The initial position is still required in writing. This is where the consonant ㅇ comes in: at the start of a block, it is silent and adds no sound. In 아, for example, we write ㅇ + ㅏ but hear only the vowel.",
+  "ㅇ é silencioso aqui.": "ㅇ is silent here."
 }
