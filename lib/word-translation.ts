@@ -1,3 +1,4 @@
+import {allNightSections,allNightVocabulary} from './all-night';
 import {brandNewDaySections,brandNewDayVocabulary} from './a-brand-new-day';
 import {dreamGlowSections,dreamGlowVocabulary} from './dream-glow';
 import {heartbeatSections,heartbeatVocabulary} from './heartbeat';
@@ -105,6 +106,7 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'all-night',sections:allNightSections,vocabulary:allNightVocabulary},
  {id:'a-brand-new-day',sections:brandNewDaySections,vocabulary:brandNewDayVocabulary},
  {id:'dream-glow',sections:dreamGlowSections,vocabulary:dreamGlowVocabulary},
  {id:'heartbeat',sections:heartbeatSections,vocabulary:heartbeatVocabulary},

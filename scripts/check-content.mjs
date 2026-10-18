@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,61);
+assert.equal(lessons.length,30);assert.equal(songs.length,62);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 61 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 62 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -936,3 +936,22 @@ for(const title of ['A Brand New Day','A Brand New Day (Pt. 2)','A Brand New Day
 const brandSong=songs.find(s=>s.id==='a-brand-new-day');assert.equal(brandSong.exercises.length,5);
 for(const exercise of brandSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: A Brand New Day: all 48 supplied lines, choruses and final questions, Korean coverage, pronoun/day distinction, vocabulary, catalog aliases and 5 clickable exercises.');
+
+const {allNightSections,allNightVocabulary}=await load('lib/all-night.ts');
+const allNightLines=allNightSections.flatMap(s=>s.lines);
+assert.equal(allNightSections.length,9);assert.equal(allNightLines.length,77);
+assert.equal(allNightLines[0].text,'Yeah, I kick out the door, yeah, I kick out the door (door)');assert.equal(allNightLines.at(-1).text,'All night, all night, all night, all nights');
+assert.equal(allNightLines.filter(l=>l.english).length,55);
+assert.equal(allNightLines.filter(l=>l.text==='해 뜰 때까지 더 계속해 all night').length,3);
+assert.equal(allNightLines.filter(l=>l.text==='영감아 기다려 널 잡을게 all mine').length,3);
+assert.equal(allNightLines.filter(l=>l.text==='All night, all night, all night, all night').length,8);
+assert.equal(allNightLines.filter(l=>l.text==='All night, all night, all night, all nights').length,8);
+for(const line of allNightLines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'All Night: missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(allNightVocabulary.verbs.length,24);assert.equal(allNightVocabulary.nouns.length,21);
+assert.ok(allNightLines.find(l=>l.text==='영감아 기다려 널 잡을게 all mine').entries.some(e=>e.notes.some(n=>n.includes('inspiração'))));
+assert.ok(allNightLines.find(l=>l.text==='많을 수 있다는 사실만 넌 알아둬').entries.some(e=>e.notes.some(n=>n.includes('pegadas, não com pessoas'))));
+assert.ok(allNightLines.find(l=>l.text==='괜찮아 내 수고는 내가 알어').entries.some(e=>e.notes.some(n=>n.includes('알아'))));
+for(const title of ['All Night','All Night (Pt. 3)','All Night (BTS World Original Soundtrack) [Pt. 3]'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'all-night');
+const allNightSong=songs.find(s=>s.id==='all-night');assert.equal(allNightSong.exercises.length,5);
+for(const exercise of allNightSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: All Night: all 77 supplied lines, repeated hooks and chorus variants, Korean analysis, contextual meanings, vocabulary, catalog aliases and 5 clickable exercises.');

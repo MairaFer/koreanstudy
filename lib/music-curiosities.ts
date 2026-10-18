@@ -594,6 +594,29 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "나 무서워도 안 숙였어",
       "card": "Coragem e medo aparecem juntos. O eu relata ter corrido e mantido a cabeça erguida mesmo com receio; no final, a pergunta inicial volta. Essa volta permite ouvir a coragem como algo que se pratica, sem exigir que toda dúvida tenha desaparecido."
     }
+  ],
+  "all-night": [
+    {
+      "term": "영감아 기다려 널 잡을게 all mine",
+      "card": "A inspiração vira alguém a quem se pode pedir que espere e prometer alcançar. Essa personificação explica tanto o chamado quanto o pronome você. O contexto escolhe o sentido criativo de 영감; traduzir a palavra isoladamente como senhor idoso mudaria a cena."
+    },
+    {
+      "term": "괜찮아 내 수고는 내가 알어",
+      "card": "A voz conversa de maneira informal: a forma enviada 알어 corresponde à escrita padrão 알아, e a redução para simplesmente aparece em outro verso. O ponto central é o reconhecimento do próprio esforço. Esse registro aproxima a letra da fala, sem transformar toda grafia coloquial em modelo para escrita formal."
+    },
+    {
+      "term": "코 앞이잖아 그래미",
+      "card": "Número um, prêmio e dinheiro aparecem como sinais de reconhecimento no discurso do eu da canção. A proximidade do Grammy é apresentada como aspiração; não é uma notícia de premiação. Rkive, na abertura, foi mantido como nome próprio, e o contraste com o esforço no estúdio ajuda a organizar o trecho."
+    },
+    {
+      "term": "때론 네가 걷던 길 위엔 시기와 시비가",
+      "card": "A comparação atravessa três linhas. Inveja e provocações podem ser mais numerosas que as pegadas de quem veio antes; as pessoas não são o item contado nessa comparação. O Dicionário Básico de Coreano registra 시비 tanto para julgar certo e errado quanto para disputas; o contexto de hostilidade orienta a escolha aqui.",
+      "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=66601"
+    },
+    {
+      "term": "해가 뜨기 전 어둠은 꽤나 짙어",
+      "card": "A noite reúne trabalho, festa e desejo de proximidade ao longo da canção. A imagem da escuridão antes do amanhecer pode acompanhar a espera por clareza ou inspiração. Ela não obriga a tratar toda fala romântica como se fosse apenas sobre música: o contexto muda entre os versos."
+    }
   ]
 };
 
