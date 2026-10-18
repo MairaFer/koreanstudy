@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,69);
+assert.equal(lessons.length,30);assert.equal(songs.length,71);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 69 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 71 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -1078,3 +1078,35 @@ for(const title of ['Trivia 承: Love','Trivia 承 : Love','Trivia: Love'])asser
 for(const title of ['The Truth Untold','The Truth Untold (feat. Steve Aoki)','전하지 못한 진심','The Truth Untold (전하지 못한 진심)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'the-truth-untold');
 for(const id of ['trivia-love','the-truth-untold']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
 console.log('PASS: Trivia Love and The Truth Untold: 86 and 57 supplied lines, repeated hooks and endings, Korean analysis, wordplay and contextual grammar, vocabulary, catalog aliases and 10 clickable exercises.');
+
+const {tearSections,tearVocabulary}=await load('lib/tear.ts');
+const {bestOfMeSections,bestOfMeVocabulary}=await load('lib/best-of-me.ts');
+const tearLines=tearSections.flatMap(s=>s.lines),bestLines=bestOfMeSections.flatMap(s=>s.lines);
+assert.equal(tearSections.length,11);assert.equal(tearLines.length,105);assert.equal(tearLines.filter(l=>l.english).length,29);
+assert.equal(tearLines[0].text,'이별은 내게 티어');assert.equal(tearLines.at(-1).text,'Tear...');
+assert.equal(tearLines.filter(l=>l.text==="You're my fear").length,2);
+assert.equal(tearLines.filter(l=>l.text==="You're my you're my fear").length,2);
+assert.equal(tearLines.filter(l=>l.text==='What more can I say?').length,3);
+assert.equal(tearLines.filter(l=>l.text==='이게 진짜 너고 이게 진짜 나야').length,2);
+assert.equal(tearLines.filter(l=>l.text==='Woo yeah yeah yeah burn it').length,2);
+assert.ok(tearLines.find(l=>l.text==='이곳이 우리의 마지막이 돼'));assert.ok(tearLines.find(l=>l.text==='이 곳이 우리의 마지막이 돼'));
+assert.ok(tearLines.find(l=>l.text==='오고야 말았던 나의 댓가').entries.some(e=>e.notes.some(n=>n.includes('대가'))));
+assert.ok(tearLines.find(l=>l.text==='스치는 저 바람에도 비어').entries.some(e=>e.notes.some(n=>n.includes('비다')&&n.includes('베이다'))));
+assert.ok(tearLines.find(l=>l.text==='하지만 이젠 쓰기만 한 beer').entries.some(e=>e.notes.some(n=>n.includes('amargo'))));
+assert.ok(tearLines.find(l=>l.text==='안 울 걸 안 찢을 걸').entries.some(e=>e.notes.some(n=>n.includes('garantidas'))));
+assert.equal(bestOfMeSections.length,12);assert.equal(bestLines.length,81);assert.equal(bestLines.filter(l=>l.english).length,29);
+assert.equal(bestLines[0].text,'When you say that you love me');assert.equal(bestLines.at(-1).text,'변하지 않는다고 just one more time');
+assert.deepEqual(bestOfMeSections[0].lines,bestOfMeSections.at(-1).lines);
+assert.equal(bestLines.filter(l=>l.text==='You got the best of me').length,15);
+assert.equal(bestLines.filter(l=>l.text==='When you say that you love me').length,4);
+assert.equal(bestLines.filter(l=>l.text==='넌 나의 구원 넌 나의 창').length,2);
+assert.equal(bestLines.filter(l=>l.text==='하루하루').length,2);
+assert.ok(bestLines.find(l=>l.text==='눈이 내리던 나').entries.some(e=>e.notes.some(n=>n.includes('neve'))));
+assert.ok(bestLines.find(l=>l.text==='사랑하는 법은 존재하니까').entries.some(e=>e.notes.some(n=>n.includes('modo ou maneira'))));
+assert.ok(bestLines.find(l=>l.text==='다정한 파도고 싶었지만').entries.some(e=>e.notes.some(n=>n.includes('파도이고 싶었지만'))));
+for(const[id,lines]of[['Tear',tearLines],['Best Of Me',bestLines]])for(const line of lines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),id+': missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(tearVocabulary.verbs.length,53);assert.equal(tearVocabulary.nouns.length,40);assert.equal(bestOfMeVocabulary.verbs.length,30);assert.equal(bestOfMeVocabulary.nouns.length,31);
+for(const title of ['Tear','Outro: Tear','Outro : Tear'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'tear');
+assert.equal(new Function(studyLookup+";return studyFor('Best Of Me');")(),'best-of-me');
+for(const id of ['tear','best-of-me']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
+console.log('PASS: Tear and Best Of Me: 105 and 81 supplied lines, fear/tear variants and circular ending, Korean coverage, spelling and contextual grammar, vocabulary, catalog aliases and 10 clickable exercises.');

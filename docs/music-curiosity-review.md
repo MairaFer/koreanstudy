@@ -1,6 +1,6 @@
 # Music curiosity review
 
-Reviewed all 69 prepared studies. Existing cards are retained. New cards cover wordplay, idioms, register, cultural references and contextual imagery; grammar notes remain available. Additions appear only at the first matching entry, so repeated choruses do not repeat new cards. Portuguese and English text is prepared in advance. Interpretation is distinguished from literal definitions and confirmed references.
+Reviewed all 71 prepared studies. Existing cards are retained. New cards cover wordplay, idioms, register, cultural references and contextual imagery; grammar notes remain available. Additions appear only at the first matching entry, so repeated choruses do not repeat new cards. Portuguese and English text is prepared in advance. Interpretation is distinguished from literal definitions and confirmed references.
 
 | Study | Existing unique cards | New cards |
 | --- | ---: | ---: |
@@ -77,3 +77,5 @@ External references for factual cards are linked directly from each relevant car
 | epiphany | 0 | 4 |
 | trivia-love | 0 | 5 |
 | the-truth-untold | 0 | 5 |
+| tear | 0 | 5 |
+| best-of-me | 0 | 5 |

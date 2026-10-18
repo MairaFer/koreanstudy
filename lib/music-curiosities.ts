@@ -774,6 +774,53 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     "term": "초라한 모습 보여줄 순 없어",
     "card": "As palavras que descrevem o eu como sem brilho ou feio pertencem à maneira como o narrador se enxerga. Já a outra pessoa é associada a calor verdadeiro e beleza. A diferença entre esses retratos ajuda a entender o medo de se mostrar, sem tratar a autoavaliação como um julgamento objetivo."
   }
+],
+  "tear": [
+  {
+    "term": "이별은 내게 티어",
+    "card": "A escrita inglesa tear reúne lágrima e rasgo, mas os sentidos não têm a mesma pronúncia: a lágrima rima com dear; rasgar rima com care. A letra aproxima chorar e dilacerar o coração, depois troca parte do refrão para fear, medo. O jogo envolve escrita, som e imagens.",
+    "source": "https://dictionary.cambridge.org/us/dictionary/english/tear"
+  },
+  {
+    "term": "오고야 말았던 나의 댓가",
+    "card": "A grafia padrão é 대가, preço ou consequência, mesmo que a pronúncia tenha som forte de ㄲ. A forma enviada 댓가 foi mantida na letra. A nota separa a leitura do material recebido do modelo de escrita que o estudante deve usar.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=331257&searchCondition=&searchKeyword="
+  },
+  {
+    "term": "그 꿈은 비로소 꿈이 되었네",
+    "card": "꿈 muda de função sem mudar de palavra. Primeiro é um projeto que parecia compartilhado; depois é algo que ficou apenas no sonho. Essa virada ajuda a entender a distância entre o que o eu acreditava viver e o desfecho que reconhece."
+  },
+  {
+    "term": "늘 대답은 어렵지",
+    "card": "정답 é a resposta considerada certa; 대답 é a resposta que se dá a alguém. A letra diz que a primeira já está decidida, mas a segunda continua difícil. Saber o desfecho não torna simples pronunciá-lo. O contraste também combina com os instantes de fala e perda de foco no final."
+  },
+  {
+    "term": "두 글자가 준 우리의 끝",
+    "card": "글자 pode contar blocos de escrita. Em coreano, um bloco de Hangul geralmente representa uma sílaba; 이별, separação, tem dois blocos. A imagem de duas sílabas capazes de trazer um fim concentra uma mudança enorme num enunciado muito curto."
+  }
+],
+  "best-of-me": [
+  {
+    "term": "넌 내",
+    "card": "O refrão foi adaptado como você tem o melhor de mim, combinando com a ideia de entregar o próprio melhor. O inglês get the best of someone também pode significar vencer ou dominar alguém em outros contextos. Aqui a leitura acompanha a entrega afetiva e a vulnerabilidade presentes na letra."
+  },
+  {
+    "term": "다정한 파도고 싶었지만",
+    "card": "A onda que queria ser gentil encontra a outra pessoa como mar. A troca de escala faz o eu perceber que essa pessoa é maior que a imagem que ele tinha para si. O mar não recebe um significado único de dicionário: a relação entre as duas imagens produz a leitura."
+  },
+  {
+    "term": "넌 나의 구원 넌 나의 창",
+    "card": "창 foi traduzido aqui como janela, uma abertura junto da imagem de salvação. É importante reconhecer o contexto: o mesmo som pode ter outros sentidos em outras frases. A ocorrência de uma lâmina em outro verso não obriga a escolher o homônimo lança nesta linha.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=24885&nation=eng&nationCode=6"
+  },
+  {
+    "term": "난 너의 칼에 입맞춰",
+    "card": "Beijar a lâmina aproxima um gesto de afeto de algo que pode ferir. A imagem vem depois de falar a língua do outro e respirar sua respiração, aprofundando a ideia de entrega. O texto pode ser lido como uma voz vulnerável, sem transformar suas frases em regras para todo relacionamento."
+  },
+  {
+    "term": "하루하루",
+    "card": "Dias e estações se repetem antes do refrão, criando continuidade. O final volta às mesmas palavras da abertura, então a declaração de amor parece pedir confirmação de novo. As repetições foram mantidas para preservar esse movimento circular."
+  }
 ]
 };
 
