@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,63);
+assert.equal(lessons.length,30);assert.equal(songs.length,64);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 63 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 64 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -979,3 +979,24 @@ for(const title of ['Mikrokosmos','소우주','Mikrokosmos (소우주)','소우�
 const microSong=songs.find(s=>s.id==='mikrokosmos');assert.equal(microSong.exercises.length,5);
 for(const exercise of microSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: Mikrokosmos: all 68 supplied lines, chorus variants and final vocalizations, Korean analysis, seven billion, contextual star particle, vocabulary, aliases and 5 clickable exercises.');
+
+const {homeSections,homeVocabulary}=await load('lib/home.ts');
+const homeLines=homeSections.flatMap(s=>s.lines);
+assert.equal(homeSections.length,12);assert.equal(homeLines.length,93);
+assert.equal(homeLines[0].text,'미칠듯한 설레임에');assert.equal(homeLines.at(-1).text,'La la la la la la la la I love it');
+assert.equal(homeLines.filter(l=>l.english).length,40);
+assert.equal(homeLines.filter(l=>l.text==='니가 있는 곳').length,2);
+assert.equal(homeLines.filter(l=>l.text==='미리 켜둬 너의 switch').length,2);
+assert.equal(homeLines.filter(l=>l.text==='켜뒀구나 너의 switch').length,1);
+assert.equal(homeLines.filter(l=>l.text==='Home').length,6);
+assert.equal(homeLines.filter(l=>l.text==='Your love, your love, your love').length,4);
+for(const line of homeLines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'HOME: missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(homeVocabulary.verbs.length,43);assert.equal(homeVocabulary.nouns.length,28);
+assert.ok(homeLines.find(l=>l.text==='미칠듯한 설레임에').entries.some(e=>e.notes.some(n=>n.includes('설렘'))));
+assert.ok(homeLines.find(l=>l.text==='볼품없던 날 알아줬던 너').entries.some(e=>e.notes.some(n=>n.includes('나를'))));
+assert.ok(homeLines.find(l=>l.text==='아마 그곳이 mi casa').entries.some(e=>e.notes.some(n=>n.includes('espanhol'))));
+assert.ok(homeLines.find(l=>l.text==='다녀왔어 hi mi casa').translation.includes('volta'));
+assert.equal(new Function(studyLookup+";return studyFor('HOME');")(),'home');
+const homeSong=songs.find(s=>s.id==='home');assert.equal(homeSong.exercises.length,5);
+for(const exercise of homeSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: HOME: all 93 supplied lines, Korean analysis, chorus and switch changes, spelling notes, contextual meanings, vocabulary, catalog link and 5 clickable exercises.');

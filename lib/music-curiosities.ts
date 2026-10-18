@@ -640,6 +640,30 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     "term": "우린 우리대로 빛나",
     "card": "O final reúne duas ideias próximas, mas diferentes: brilhar do nosso jeito e brilhar por sermos quem somos. Antes disso, olhar e sonhar se transforma em olhar e respirar. Essas mudanças pequenas aprofundam a reciprocidade sem apagar a individualidade de cada pessoa."
   }
+],
+  "home": [
+  {
+    "term": "미칠듯한 설레임에",
+    "card": "A letra enviada usa 설레임, mas a forma padrão é 설렘, derivada de 설레다. As duas grafias podem aparecer em textos que você encontra; para escrever em coreano padrão, use 설렘. Aqui a forma recebida continua visível e a nota distingue leitura da letra e modelo de escrita.",
+    "source": "https://korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=6031&mn_id=217&pageIndex=1"
+  },
+  {
+    "term": "마치 무슨 본때를 보여줄 것처럼",
+    "card": "Mostrar 본때 pode ser mostrar capacidade ou dar uma demonstração marcante; em tom hostil, a expressão também pode sugerir dar uma lição. Aqui a saída empolgada e as expectativas favorecem mostrar do que sou capaz. Traduzir toda ocorrência como ameaça apagaria o contexto."
+  },
+  {
+    "term": "뭔가 채울수록 더 비어가",
+    "card": "Os dois versos com quanto mais criam um paradoxo: preencher traz vazio, estar acompanhado traz solidão. O contraste com casa grande e amigos permite ler isso como distância entre sucesso exterior e acolhimento. É uma leitura da letra, sem transformar a sensação do eu em diagnóstico."
+  },
+  {
+    "term": "아마 그곳이 mi casa",
+    "card": "Mi casa é espanhol para minha casa. No refrão, a pessoa define o lar mais que o tamanho do imóvel. A riqueza também passa a ser sentida com alguém. A imagem do interruptor pode sugerir luz acesa e recepção; não é preciso impor um único sentido oculto à palavra."
+  },
+  {
+    "term": "다녀왔어 hi mi casa",
+    "card": "다녀오다 reúne a ida e a volta. 다녀왔어 pode anunciar cheguei de volta; uma forma educada é 다녀왔어요. O final também muda o pedido para deixar ligado em uma descoberta de que já estava ligado. A acolhida esperada se torna percebida.",
+    "source": "https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=%EB%8B%A4%EB%85%80%EC%98%A4%EB%8B%A4&nation=eng"
+  }
 ]
 };
 
