@@ -867,6 +867,53 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     "term": "스물다섯, 잘 사는 법은 아직도 보르겠어",
     "card": "A transcrição enviada tem 보르겠어; a análise usa o sentido contextual de 모르겠어, não sei. Mais adiante, a contagem de milhagem também tem uma grafia irregular e foi explicada como aproximação. As notas distinguem o texto recebido das formas de estudo."
   }
+],
+  "go-go": [
+  {
+    "term": "탕진잼 탕진잼 탕진잼",
+    "card": "탕진잼 combina gastar até acabar e 잼, redução de 재미, diversão. YOLO abrevia You Only Live Once, você só vive uma vez. A euforia desses chamados contrasta com futuro hipotecado e conta vazia; essa tensão permite uma leitura irônica do consumo na canção.",
+    "source": "https://www.korea.kr/briefing/policyBriefingView.do?endDate=2024-10-13&newsId=148848005&pageIndex=&srchWord=&startDate=2023-10-13&tongYeog=Y"
+  },
+  {
+    "term": "티끌 모아 티끌 탕진잼 다 지불해",
+    "card": "O provérbio 티끌 모아 태산 diz que até pequenas partículas, juntas, podem formar uma montanha. A letra troca 태산 por 티끌: juntar pó continua dando pó. A mudança curta quebra a promessa de que guardar pouco a pouco sempre levará a algo grande na experiência desse eu.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=309011"
+  },
+  {
+    "term": "밑 빠진 독이야",
+    "card": "밑 빠진 독에 물 붓기 é despejar água num pote sem fundo: esforço ou recursos entram, mas o recipiente não enche. A letra transforma a conta bancária nesse pote e o eu em quem despeja água todos os dias. 독 aqui é um recipiente, não veneno.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=66592"
+  },
+  {
+    "term": "쥐구멍 볕들 때까지",
+    "card": "A imagem lembra 쥐구멍에도 볕 들 날 있다: até num buraco de rato haverá um dia de sol. O provérbio fala da possibilidade de a sorte chegar mesmo a quem vive mal. No refrão, esperar essa luz se aproxima de continuar até o amanhecer."
+  },
+  {
+    "term": "내 일주일 월화수목 금금금금",
+    "card": "월화수목 são abreviações de segunda a quinta; 금 é sexta-feira. A letra alonga a sequência repetindo sexta, em vez de completar uma semana normal. O calendário vira parte do ritmo e do desejo de prolongar o clima de festa, enquanto o título aproxima o som de 고민 e Go."
+  }
+],
+  "magic-shop": [
+  {
+    "term": "문을 하나 만들자 너의 맘 속에다",
+    "card": "A loja ganha uma porta criada dentro do coração. Chá quente, céu e acolhimento constroem esse espaço como refúgio imaginado. A imagem convida o ouvinte a entrar na história; seu funcionamento vem da cena poética, não de uma descrição de um comércio real."
+  },
+  {
+    "term": "넌 절벽 끝에 서 있던",
+    "card": "A quebra de verso pode enganar: o trecho que estava à beira do precipício modifica o eu na linha seguinte. Você é o tópico da frase inteira e a última razão daquele eu. Ler as duas linhas juntas evita trocar quem estava no limite."
+  },
+  {
+    "term": "필 땐 장미꽃처럼",
+    "card": "Rosa, flor de cerejeira e glória-da-manhã acompanham três ações: florescer, espalhar-se ao vento e murchar. A sequência valoriza momentos diferentes da flor e prepara a revisão do desejo de ser sempre o melhor. As comparações não dependem de uma regra botânica literal."
+  },
+  {
+    "term": "무기였던 내 욕심은 되려 날 옥죄고 또 목줄이 됐어",
+    "card": "A mesma ambição muda de arma para coleira. O que antes parecia ajudar passa a apertar o eu; 옥죄다 torna essa pressão concreta. A lembrança posterior distingue competir para ser o melhor de querer oferecer consolo e emoção a alguém."
+  },
+  {
+    "term": "넌 찾아낼 거야 네 안에 있는 galaxy",
+    "card": "O encerramento devolve ao ouvinte aquilo que ele ajudou o eu a encontrar: o melhor de si e sua galáxia interior. O movimento de mostre para mim, eu mostro para você torna o apoio recíproco. A resposta não fica apenas do lado de quem canta."
+  }
 ]
 };
 

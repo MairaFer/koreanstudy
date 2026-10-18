@@ -1,3 +1,5 @@
+import {goGoSections,goGoVocabulary} from './go-go';
+import {magicShopSections,magicShopVocabulary} from './magic-shop';
 import {imFineSections,imFineVocabulary} from './im-fine';
 import {airplanePt2Sections,airplanePt2Vocabulary} from './airplane-pt2';
 import {tearSections,tearVocabulary} from './tear';
@@ -117,6 +119,8 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'go-go',sections:goGoSections,vocabulary:goGoVocabulary},
+ {id:'magic-shop',sections:magicShopSections,vocabulary:magicShopVocabulary},
  {id:'im-fine',sections:imFineSections,vocabulary:imFineVocabulary},
  {id:'airplane-pt2',sections:airplanePt2Sections,vocabulary:airplanePt2Vocabulary},
  {id:'tear',sections:tearSections,vocabulary:tearVocabulary},

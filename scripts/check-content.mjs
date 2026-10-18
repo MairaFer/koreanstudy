@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,73);
+assert.equal(lessons.length,30);assert.equal(songs.length,75);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 73 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 75 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -1141,3 +1141,34 @@ for(const title of ['Airplane Pt. 2','Airplane Pt.2','Airplane, Pt. 2'])assert.e
 assert.equal(new Function(studyLookup+";return studyFor('Airplane');")(),undefined);
 for(const id of ['im-fine','airplane-pt2']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
 console.log('PASS: I am Fine and Airplane Pt. 2: 81 and 76 supplied lines, all repeated refrains and destination variants, pronouns and spellings preserved, Korean analysis, vocabulary, aliases and 10 clickable exercises.');
+
+const {goGoSections,goGoVocabulary}=await load('lib/go-go.ts');
+const {magicShopSections,magicShopVocabulary}=await load('lib/magic-shop.ts');
+const goLines=goGoSections.flatMap(s=>s.lines),magicLines=magicShopSections.flatMap(s=>s.lines);
+assert.equal(goGoSections.length,13);assert.equal(goLines.length,86);assert.equal(goLines.filter(l=>l.english).length,24);
+assert.equal(goLines[0].text,'DOLLAR DOLLAR');assert.equal(goLines.at(-1).text,'고민보다 Go Go (Everybody!)');
+assert.equal(goLines.filter(l=>l.text==='DOLLAR DOLLAR').length,5);
+assert.equal(goLines.filter(l=>l.text==='탕진잼 탕진잼 탕진잼').length,8);
+assert.equal(goLines.filter(l=>l.text==='고민보다 Go').length,12);
+assert.equal(goLines.filter(l=>l.text==='고민보다 Go Go (Everybody!)').length,6);
+assert.equal(goLines.filter(l=>l.text==='쥐구멍 볕들 때까지').length,2);
+assert.ok(goLines.find(l=>l.text==='티끌 모아 티끌 탕진잼 다 지불해').entries.some(e=>e.notes.some(n=>n.includes('provérbio'))));
+assert.ok(goLines.find(l=>l.text==='내 일주일 월화수목 금금금금').entries.some(e=>e.notes.some(n=>n.includes('금요일'))));
+assert.ok(goLines.find(l=>l.text==='밑 빠진 독이야').entries.some(e=>e.notes.some(n=>n.includes('pote')&&n.includes('veneno'))));
+assert.equal(magicShopSections.length,12);assert.equal(magicLines.length,69);assert.equal(magicLines.filter(l=>l.english).length,18);
+assert.equal(magicLines[0].text,'망설인다는 걸 알아 진심을 말해도');assert.equal(magicLines.at(-1).text,'Show you show you');
+assert.equal(magicLines.filter(l=>l.text==="So show me (I'll show you)").length,9);
+assert.equal(magicLines.filter(l=>l.text==='문을 하나 만들자 너의 맘 속에다').length,2);
+assert.equal(magicLines.filter(l=>l.text==='You gave me the best of me').length,2);
+assert.equal(magicLines.filter(l=>l.text==='넌 괜찮을 거야 oh 여긴 Magic Shop').length,1);
+assert.equal(magicLines.filter(l=>l.text==='넌 괜찮을 거야 oh 여긴 Magic shop').length,1);
+assert.ok(magicLines.find(l=>l.text==='넌 절벽 끝에 서 있던').entries.some(e=>e.notes.some(n=>n.includes('eu')&&n.includes('내'))));
+assert.equal(magicLines.find(l=>l.text==='내 마지막 이유야').translation,'É minha última razão.');
+assert.ok(magicLines.find(l=>l.text==='우리가 만든 걸까').entries.some(e=>e.notes.some(n=>n.includes('것일까'))));
+assert.ok(magicLines.find(l=>l.text==='질 땐 나팔꽃처럼').entries.some(e=>e.notes.some(n=>n.includes('murchar'))));
+for(const[id,lines]of[['Go Go',goLines],['Magic Shop',magicLines]])for(const line of lines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),id+': missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(goGoVocabulary.verbs.length,26);assert.equal(goGoVocabulary.nouns.length,31);assert.equal(magicShopVocabulary.verbs.length,41);assert.equal(magicShopVocabulary.nouns.length,38);
+for(const title of ['GoGo','Go, Go','Go Go','고민보다 Go','고민보다 Go (Go, Go)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'go-go');
+assert.equal(new Function(studyLookup+";return studyFor('Magic Shop');")(),'magic-shop');
+for(const id of ['go-go','magic-shop']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
+console.log('PASS: Go Go and Magic Shop: 86 and 69 supplied lines, repeated refrains and finale, proverb/slang notes, cliff subject and grammatical forms, vocabulary, catalog aliases and 10 clickable exercises.');
