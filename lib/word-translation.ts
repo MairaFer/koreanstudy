@@ -1,3 +1,5 @@
+import {imFineSections,imFineVocabulary} from './im-fine';
+import {airplanePt2Sections,airplanePt2Vocabulary} from './airplane-pt2';
 import {tearSections,tearVocabulary} from './tear';
 import {bestOfMeSections,bestOfMeVocabulary} from './best-of-me';
 import {triviaLoveSections,triviaLoveVocabulary} from './trivia-love';
@@ -115,6 +117,8 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'im-fine',sections:imFineSections,vocabulary:imFineVocabulary},
+ {id:'airplane-pt2',sections:airplanePt2Sections,vocabulary:airplanePt2Vocabulary},
  {id:'tear',sections:tearSections,vocabulary:tearVocabulary},
  {id:'best-of-me',sections:bestOfMeSections,vocabulary:bestOfMeVocabulary},
  {id:'trivia-love',sections:triviaLoveSections,vocabulary:triviaLoveVocabulary},

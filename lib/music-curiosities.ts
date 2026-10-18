@@ -821,6 +821,52 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     "term": "하루하루",
     "card": "Dias e estações se repetem antes do refrão, criando continuidade. O final volta às mesmas palavras da abertura, então a declaração de amor parece pedir confirmação de novo. As repetições foram mantidas para preservar esse movimento circular."
   }
+],
+  "im-fine": [
+  {
+    "term": "괜찮아 오직 나만이 나의 구원이잖아",
+    "card": "A afirmação de ser a própria salvação combina com soltar a mão do outro e dizer que se pertence a si. A leitura destaca a agência do eu na canção. Mais adiante, a possibilidade de cair retorna; estar bem aparece como algo que o eu insiste em dizer e praticar."
+  },
+  {
+    "term": "네 목소린 모두 알아 주니까",
+    "card": "네, seu, e 내, meu, são formas escritas diferentes. A versão enviada diz sua voz; por isso a tradução não mudou o sujeito possessivo para tornar a sequência mais previsível. Comparar a grafia é especialmente útil quando as duas vogais soam próximas na fala."
+  },
+  {
+    "term": "이 스산한 달빛이",
+    "card": "스산하다 pode reunir frio, desolação e uma sensação inquietante. No luar, essa palavra muda o clima em relação ao céu claro do início. A ponte ainda pergunta se a outra pessoa vê e ouve o mesmo, preparando a afirmação que será repetida.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=65080"
+  },
+  {
+    "term": "주문을 걸어",
+    "card": "주문 pode ser pedido comercial em outras cenas, mas 주문을 걸다 é lançar um encantamento. O pesadelo e a frase repetida orientam esse sentido. A música apresenta a própria fala como um gesto que ajuda o eu a enfrentar aquilo que pode voltar."
+  },
+  {
+    "term": "또 다시 쓰러진대도",
+    "card": "O final admite cair de novo e ainda assim repete estou bem. As concessões da letra mantêm dificuldade e persistência lado a lado. A afirmação repetida não apaga o pesadelo da cena; mostra o modo como o eu tenta responder a ele."
+  }
+],
+  "airplane-pt2": [
+  {
+    "term": "우리가 가는 그 곳이 어디든 party",
+    "card": "Mariachi se refere a uma tradição musical mexicana e também pode nomear seus intérpretes. El é o artigo espanhol. O refrão usa essa referência ao lado de uma lista internacional de destinos; a continuidade entre cantar e viajar organiza o trecho.",
+    "source": "https://www.gob.mx/cultura/prensa/el-mariachi-referente-de-la-musica-tradicional-mexicana?idiom=es-MX"
+  },
+  {
+    "term": "(We still) 호텔방서 작업",
+    "card": "A repetição de still contrasta a mudança de escala com a permanência do trabalho. Viajar pelo mundo não elimina a criação no quarto de hotel nem os dias bons e ruins. O nome de lugar recebe uma redução coloquial: 호텔방서 vem de 호텔방에서."
+  },
+  {
+    "term": "(I still) 오늘은 뭐로 살지 김남준 아님 RM?",
+    "card": "A pergunta coloca lado a lado o nome pessoal 김남준 e o nome artístico RM. Ela pode ser lida como uma negociação entre vida pessoal e papel público. A idade citada pertence ao momento narrado na letra e não deve ser lida como idade atual."
+  },
+  {
+    "term": "여권은 과로사 직전",
+    "card": "O passaporte recebe uma condição humana de excesso de trabalho. Essa personificação exagera a rotina de viagens e dialoga com não saber parar nem descansar. A imagem também desloca a ostentação de dinheiro para sinais de trabalho e circulação."
+  },
+  {
+    "term": "스물다섯, 잘 사는 법은 아직도 보르겠어",
+    "card": "A transcrição enviada tem 보르겠어; a análise usa o sentido contextual de 모르겠어, não sei. Mais adiante, a contagem de milhagem também tem uma grafia irregular e foi explicada como aproximação. As notas distinguem o texto recebido das formas de estudo."
+  }
 ]
 };
 

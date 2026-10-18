@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,71);
+assert.equal(lessons.length,30);assert.equal(songs.length,73);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 71 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 73 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -1110,3 +1110,34 @@ for(const title of ['Tear','Outro: Tear','Outro : Tear'])assert.equal(new Functi
 assert.equal(new Function(studyLookup+";return studyFor('Best Of Me');")(),'best-of-me');
 for(const id of ['tear','best-of-me']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
 console.log('PASS: Tear and Best Of Me: 105 and 81 supplied lines, fear/tear variants and circular ending, Korean coverage, spelling and contextual grammar, vocabulary, catalog aliases and 10 clickable exercises.');
+
+const {imFineSections,imFineVocabulary}=await load('lib/im-fine.ts');
+const {airplanePt2Sections,airplanePt2Vocabulary}=await load('lib/airplane-pt2.ts');
+const fineLines=imFineSections.flatMap(s=>s.lines),airLines=airplanePt2Sections.flatMap(s=>s.lines);
+assert.equal(imFineSections.length,11);assert.equal(fineLines.length,81);assert.equal(fineLines.filter(l=>l.english).length,21);
+assert.equal(fineLines[0].text,'시리도록 푸른 하늘 아래 눈 떠');assert.equal(fineLines.at(-1).text,"I'm fine.");
+assert.equal(fineLines.filter(l=>l.text==="I'm feeling just fine, fine, fine").length,8);
+assert.equal(fineLines.filter(l=>l.text==='혼자서라도 외쳐보겠어').length,2);
+assert.equal(fineLines.filter(l=>l.text==='차가운 내 심장은').length,2);
+assert.equal(fineLines.filter(l=>l.text==='몇 번이라도 되뇌보겠어').length,2);
+assert.equal(fineLines.find(l=>l.text==='네 목소린 모두 알아 주니까').translation,'Porque todos reconhecem a sua voz.');
+assert.ok(fineLines.find(l=>l.text==='나 끝없는 꿈 속이어도').entries.some(e=>e.notes.some(n=>n.includes('속이다, enganar'))));
+assert.ok(fineLines.find(l=>l.text==='주문을 걸어').entries.some(e=>e.notes.some(n=>n.includes('encantamento')&&n.includes('걸다'))));
+assert.ok(fineLines.find(l=>l.text==='이젠 너의 손을 놓을게').entries.some(e=>e.notes.some(n=>n.includes('decisão'))));
+assert.equal(airplanePt2Sections.length,7);assert.equal(airLines.length,76);assert.equal(airLines.filter(l=>l.english).length,32);
+assert.equal(airLines[0].text,'이상한 꼬마');assert.equal(airLines.at(-1).text,'El Mariachi');
+assert.equal(airLines.filter(l=>l.text==='El Mariachi').length,13);assert.equal(airLines.filter(l=>l.text==='El Mariachi...').length,1);
+assert.equal(airLines.filter(l=>l.text==="I don't know, I don't know, I don't know, I don't know").length,4);
+assert.equal(airLines.filter(l=>l.text==='우리가 가는 그 곳이 어디든 party').length,2);
+assert.ok(airLines.find(l=>l.text==="We goin' from NY to Cali"));assert.ok(airLines.find(l=>l.text==="We goin' from Mexico City"));
+assert.ok(airLines.find(l=>l.text==='스물다섯, 잘 사는 법은 아직도 보르겠어').entries.some(e=>e.notes.some(n=>n.includes('모르겠어'))));
+assert.ok(airLines.find(l=>l.text==='마일리지만 몇 심만 대').entries.some(e=>e.notes.some(n=>n.includes('몇십만 대'))));
+assert.ok(airLines.find(l=>l.text==='(We still) 호텔방서 작업').entries.some(e=>e.notes.some(n=>n.includes('-에서'))));
+assert.ok(airLines.find(l=>l.text==='그래 좀 쉬는 법도').entries.some(e=>e.notes.some(n=>n.includes('descansar'))));
+for(const[id,lines]of[["I'm Fine",fineLines],['Airplane Pt. 2',airLines]])for(const line of lines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),id+': missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(imFineVocabulary.verbs.length,48);assert.equal(imFineVocabulary.nouns.length,27);assert.equal(airplanePt2Vocabulary.verbs.length,32);assert.equal(airplanePt2Vocabulary.nouns.length,36);
+for(const title of ["I'm Fine",'I’m Fine','Im Fine'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'im-fine');
+for(const title of ['Airplane Pt. 2','Airplane Pt.2','Airplane, Pt. 2'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'airplane-pt2');
+assert.equal(new Function(studyLookup+";return studyFor('Airplane');")(),undefined);
+for(const id of ['im-fine','airplane-pt2']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
+console.log('PASS: I am Fine and Airplane Pt. 2: 81 and 76 supplied lines, all repeated refrains and destination variants, pronouns and spellings preserved, Korean analysis, vocabulary, aliases and 10 clickable exercises.');
