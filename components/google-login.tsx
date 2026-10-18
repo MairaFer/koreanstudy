@@ -37,7 +37,7 @@ export function GoogleLogin({logout=false}:{logout?:boolean}) {
   if(logout)location.assign('/');else if(typeof data.url==='string' && new URL(data.url).origin==='https://accounts.google.com')location.assign(data.url);else throw Error('Não foi possível abrir o Google.');
  }catch(e){setError(e instanceof Error?e.message:'Falha ao entrar.');setBusy(false);}}
  return <Localized><div className="auth-page">
-  <header className="auth-header"><a href="/" aria-label="BoraLang, início"><img className="brand-logo" src="/brand/boralang-leaves-logo.webp" alt="BoraLang" width="160" height="75"/></a><LanguageSwitcher/></header>
+  <header className="auth-header"><a href="/" aria-label="BoraLang, início"><img className="brand-logo" src="/brand/boralang-leaves-logo-v2.webp" alt="BoraLang" width="160" height="75"/></a><LanguageSwitcher/></header>
   <main className="auth-shell" id="main">
    <section className="auth-story" aria-labelledby="auth-story-title">
     <div className="auth-story-copy"><span className="auth-kicker"><Leaf size={15} aria-hidden="true"/>Bora aprender coreano com o BTS</span><h2 id="auth-story-title">Seu coreano.<br/><span>No seu tempo.</span></h2><p>Cada descoberta é uma nova folha na sua jornada.</p></div>
