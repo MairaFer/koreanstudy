@@ -664,6 +664,30 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     "card": "다녀오다 reúne a ida e a volta. 다녀왔어 pode anunciar cheguei de volta; uma forma educada é 다녀왔어요. O final também muda o pedido para deixar ligado em uma descoberta de que já estava ligado. A acolhida esperada se torna percebida.",
     "source": "https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=%EB%8B%A4%EB%85%80%EC%98%A4%EB%8B%A4&nation=eng"
   }
+],
+  "answer-love-myself": [
+  {
+    "term": "니가 내린 잣대들은 너에게 더 엄격하단 걸",
+    "card": "잣대 pode nomear uma régua de medir e, em sentido figurado, um critério de julgamento. Neste verso, estabelecer uma medida e ser rigoroso descrevem a avaliação que alguém faz de si. A tradução usa padrões para manter essa imagem sem sugerir uma régua física na cena."
+  },
+  {
+    "term": "니 삶 속의 굵은 나이테",
+    "card": "나이테 são os anéis de crescimento visíveis no corte de um tronco. Na letra, eles aparecem na vida de uma pessoa: a imagem permite ler tempo e experiência como partes do eu. O sentido botânico é uma definição; essa ligação com a história pessoal é uma interpretação do verso.",
+    "source": "https://krdict.korean.go.kr/m/eng/searchResultView?ParaWordNo=38898"
+  },
+  {
+    "term": "더 아름다울 美",
+    "card": "A sequência muda de me, o pronome inglês, para 美, caractere que significa beleza e é lido 미 em coreano. O som próximo reúne o eu que foi triste, o eu que sentiu dor e uma beleza ainda por vir. É um jogo entre línguas e escrita; 美 não é uma tradução literal do pronome me.",
+    "source": "https://www.korean.go.kr/nkview/nklife/1999_2/1999_0205.pdf"
+  },
+  {
+    "term": "내 실수로 생긴 흉터까지 다 내 별자린데",
+    "card": "Cicatrizes e constelação reorganizam a mesma ideia de marcas. Em vez de excluir os erros do retrato do eu, até essas marcas são incluídas pelo -까지. A leitura poética valoriza a integração da própria história; não afirma que um erro deixa de ter consequências."
+  },
+  {
+    "term": "정답은 없을지도 몰라",
+    "card": "A letra primeiro põe em dúvida uma resposta correta e depois afirma uma resposta no próprio percurso. Esse movimento não exige tratar um verso como contradição a corrigir: a busca faz parte do processo. O refrão em inglês também fala em aprender, em vez de anunciar que o aprendizado já terminou."
+  }
 ]
 };
 

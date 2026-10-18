@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,64);
+assert.equal(lessons.length,30);assert.equal(songs.length,65);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 64 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 65 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -1000,3 +1000,23 @@ assert.equal(new Function(studyLookup+";return studyFor('HOME');")(),'home');
 const homeSong=songs.find(s=>s.id==='home');assert.equal(homeSong.exercises.length,5);
 for(const exercise of homeSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: HOME: all 93 supplied lines, Korean analysis, chorus and switch changes, spelling notes, contextual meanings, vocabulary, catalog link and 5 clickable exercises.');
+
+const {answerLoveMyselfSections,answerLoveMyselfVocabulary}=await load('lib/answer-love-myself.ts');
+const answerLines=answerLoveMyselfSections.flatMap(s=>s.lines);
+assert.equal(answerLoveMyselfSections.length,10);assert.equal(answerLines.length,61);
+assert.equal(answerLines[0].text,'눈을 뜬다 어둠 속 나');assert.equal(answerLines.at(-1).text,'빠짐없이 남김없이 모두 다 나');
+assert.equal(answerLines.filter(l=>l.english).length,11);
+assert.equal(answerLines.filter(l=>l.text==="You've shown me I have reasons").length,3);
+assert.equal(answerLines.filter(l=>l.text==='내 숨 내 걸어온 길 전부로 답해').length,3);
+assert.equal(answerLines.filter(l=>l.text==="(I'm learning how to love myself)").length,3);
+assert.equal(answerLines.filter(l=>l.text==='어제의 나 오늘의 나 내일의 나').length,2);
+for(const line of answerLines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Answer: Love Myself: missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(answerLoveMyselfVocabulary.verbs.length,43);assert.equal(answerLoveMyselfVocabulary.nouns.length,48);
+assert.ok(answerLines.find(l=>l.text==='더 아름다울 美').entries.some(e=>e.notes.some(n=>n.includes('미')&&n.includes('me'))));
+assert.ok(answerLines.find(l=>l.text==='니 삶 속의 굵은 나이테').entries.some(e=>e.notes.some(n=>n.includes('anéis'))));
+assert.equal(answerLines.find(l=>l.text==='But 더는 죽고 싶지가 않은 걸').translation,'Mas já não quero mais morrer.');
+assert.ok(answerLines.find(l=>l.text==='정답은 없을지도 몰라').entries.some(e=>e.notes.some(n=>n.includes('possibilidade'))));
+for(const title of ['Answer: Love Myself','Answer : Love Myself','Answer Love Myself'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'answer-love-myself');
+const answerSong=songs.find(s=>s.id==='answer-love-myself');assert.equal(answerSong.exercises.length,5);
+for(const exercise of answerSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: Answer: Love Myself: 61 supplied lines, repeated refrains, Korean coverage, me/美 wordplay, negation and uncertainty, vocabulary, catalog aliases and 5 clickable exercises.');
