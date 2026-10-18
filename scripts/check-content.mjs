@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,75);
+assert.equal(lessons.length,30);assert.equal(songs.length,77);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 75 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 77 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -1172,3 +1172,33 @@ for(const title of ['GoGo','Go, Go','Go Go','고민보다 Go','고민보다 Go (
 assert.equal(new Function(studyLookup+";return studyFor('Magic Shop');")(),'magic-shop');
 for(const id of ['go-go','magic-shop']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
 console.log('PASS: Go Go and Magic Shop: 86 and 69 supplied lines, repeated refrains and finale, proverb/slang notes, cliff subject and grammatical forms, vocabulary, catalog aliases and 10 clickable exercises.');
+
+const {anpanmanSections,anpanmanVocabulary}=await load('lib/anpanman.ts');
+const {micDropSections,micDropVocabulary}=await load('lib/mic-drop.ts');
+const anpanLines=anpanmanSections.flatMap(s=>s.lines),micLines=micDropSections.flatMap(s=>s.lines);
+assert.equal(anpanmanSections.length,12);assert.equal(anpanLines.length,89);assert.equal(anpanLines.filter(l=>l.english).length,31);
+assert.equal(anpanLines[0].text,'Waiting for you, Anpanman');assert.equal(anpanLines.at(-1).text,'Lemme say "All the bad men, cop out"');
+assert.equal(anpanLines.filter(l=>l.text==='Waiting for you, Anpanman').length,2);
+assert.equal(anpanLines.filter(l=>l.text==='Waiting for you Anpanman').length,4);
+assert.equal(anpanLines.filter(l=>l.text==='내가 가진 건 이 노래 한방').length,4);
+assert.equal(anpanLines.filter(l=>l.text==='계속 돌려 돌려 나의 Anpan').length,2);
+assert.equal(anpanLines.filter(l=>l.text==='돌려 돌려 나의 Anpan').length,1);
+assert.ok(anpanLines.find(l=>l.text==='부름 바로 날라갈게').entries.some(e=>e.notes.some(n=>n.includes('날아갈게'))));
+assert.ok(anpanLines.find(l=>l.text==='무릎팍 까지는 것 따윈 두렵지 않아').entries.some(e=>e.notes.some(n=>n.includes('까지다')&&n.includes('ralado'))));
+assert.ok(anpanLines.find(l=>l.text==='한 일인지 모르겠어 정말').entries.some(e=>e.notes.some(n=>n.includes('linha anterior'))));
+assert.equal(micDropSections.length,9);assert.equal(micLines.length,92);assert.equal(micLines.filter(l=>l.english).length,33);
+assert.equal(micLines[0].text,'Yeah 누가 내 수저 더럽대');assert.equal(micLines.at(-1).text,'꽤 꽤 폼나지 포 포 폼나지');
+assert.equal(micLines.filter(l=>l.text==='Mic mic bungee').length,2);
+assert.equal(micLines.filter(l=>l.text==='MIC Drop').length,8);
+assert.equal(micLines.filter(l=>l.text==='How you dare').length,6);
+assert.equal(micLines.filter(l=>l.text==='더 볼 일 없어 마지막 인사야').length,2);
+assert.ok(micLines.find(l=>l.text==="I don't care 마이크 잡음 금수저 여럿 패").entries.some(e=>e.notes.some(n=>n.includes('잡으면')&&n.includes('ruído'))));
+assert.ok(micLines.find(l=>l.text==='너무 heavy 내 두 손이 모잘라').entries.some(e=>e.notes.some(n=>n.includes('모자라다'))));
+assert.ok(micLines.find(l=>l.text==='이거 완전 네 글자').entries.some(e=>e.notes.some(n=>n.includes('quatro')&&n.includes('não é seu'))));
+assert.ok(micLines.find(l=>l.text==='우린 탁 쏴 마치 콜라지').entries.some(e=>e.notes.some(n=>n.includes('não a palavra colagem'))));
+for(const[id,lines]of[['Anpanman',anpanLines],['MIC Drop',micLines]])for(const line of lines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));assert.equal(line.entries.length,0);continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),id+': missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(anpanmanVocabulary.verbs.length,32);assert.equal(anpanmanVocabulary.nouns.length,24);assert.equal(micDropVocabulary.verbs.length,29);assert.equal(micDropVocabulary.nouns.length,45);
+for(const [title,id]of[['Anpanman','anpanman'],['MIC Drop','mic-drop']])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),id);
+for(const title of ['MIC Drop (Steve Aoki Remix) [Full Length Edition]','MIC Drop (feat. Desiigner) [Steve Aoki Remix]'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),undefined);
+for(const id of ['anpanman','mic-drop']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
+console.log('PASS: Anpanman and MIC Drop: 89 and 92 supplied lines, all repetitions and final variants, Korean coverage, contextual idioms and contractions, spelling notes, vocabulary, original-only catalog links and 10 clickable exercises.');

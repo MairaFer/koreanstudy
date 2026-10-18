@@ -1,6 +1,6 @@
 # Music curiosity review
 
-Reviewed all 75 prepared studies. Existing cards are retained. New cards cover wordplay, idioms, register, cultural references and contextual imagery; grammar notes remain available. Additions appear only at the first matching entry, so repeated choruses do not repeat new cards. Portuguese and English text is prepared in advance. Interpretation is distinguished from literal definitions and confirmed references.
+Reviewed all 77 prepared studies. Existing cards are retained. New cards cover wordplay, idioms, register, cultural references and contextual imagery; grammar notes remain available. Additions appear only at the first matching entry, so repeated choruses do not repeat new cards. Portuguese and English text is prepared in advance. Interpretation is distinguished from literal definitions and confirmed references.
 
 | Study | Existing unique cards | New cards |
 | --- | ---: | ---: |
@@ -83,3 +83,5 @@ External references for factual cards are linked directly from each relevant car
 | airplane-pt2 | 0 | 5 |
 | go-go | 0 | 5 |
 | magic-shop | 0 | 5 |
+| anpanman | 0 | 5 |
+| mic-drop | 0 | 5 |

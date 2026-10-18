@@ -3,6 +3,53 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"anpanman":[
+  {
+    "term": "But 줄 수 있는 건 오직 Anpan",
+    "card": "Anpanman é um herói cuja cabeça é um pão com pasta doce de feijão. Na história, ele oferece parte dela a quem está com fome. A letra transforma esse gesto de dar o que se tem em uma imagem de ajuda: o recurso do eu não é um carro extraordinário, mas uma canção e o reconhecimento do esforço de alguém.",
+    "source": "https://www.anpanman.jp/about/qanda/"
+  },
+  {
+    "term": "무릎팍 까지는 것 따윈 두렵지 않아",
+    "card": "Aqui 까지는 vem de ficar ralado e modifica uma ação transformada em nome. Não é a partícula até. O joelho ralado da fantasia infantil reaparece na ponte como possibilidade de cair e errar; ajudar não exige ser invulnerável."
+  },
+  {
+    "term": "눈 뜨니 hero but still in 미로",
+    "card": "O herói em inglês e 미로, labirinto, se aproximam pelo som. A rima deixa uma tensão clara: receber o papel de herói não significa já saber o caminho. As feridas escondidas e o medo admitido na ponte desenvolvem essa diferença."
+  },
+  {
+    "term": "과 수고했단 말뿐이다만",
+    "card": "Dizer que alguém se esforçou reconhece o que a pessoa atravessou. Aqui esse reconhecimento aparece junto do pão: recursos simples, mas concretos, para apoiar alguém. O verso continua a lista da linha anterior; começar a leitura pelo e evita tratá-lo como uma frase isolada."
+  },
+  {
+    "term": "또 진흙투성이겠지만",
+    "card": "O sufixo -투성이 descreve estar cheio ou coberto de algo, muitas vezes desagradável: aqui, lama. A ponte repete concessões sobre cair, errar e se sujar antes de pedir confiança. O herói prometido inclui essas limitações."
+  }
+],
+"mic-drop":[
+  {
+    "term": "I don't care 마이크 잡음 금수저 여럿 패",
+    "card": "As colheres de diferentes materiais podem representar a situação econômica da família. 금수저 é a colher de ouro, alguém que nasce rico. A letra responde ao insulto à própria colher trocando o critério: o microfone passa a ser o instrumento com que o eu afirma seu valor.",
+    "source": "https://kli.korean.go.kr/term/trgtWord/indexTrgtWord.do?trgtWordNo=223123583"
+  },
+  {
+    "term": "우리 콘서트 절대 없어 포도",
+    "card": "As uvas são uma imagem dos pontos que indicam lugares disponíveis no mapa de ingressos. Dizer que não há nenhuma comunica lotação esgotada. É uma leitura contextual do verso, apoiada pela sequência de convites, procura e troféus; não uma afirmação de que shows não vendem frutas."
+  },
+  {
+    "term": "혹 배가 아프다면 고소해",
+    "card": "A expressão de dor de barriga pode indicar inveja. A ordem de processar é confirmada pela linha inglesa seguinte, enquanto o som também permite ouvir satisfação pelo revés alheio e um sabor tostado. O campo da comida já vinha de bifes, mastigar e ratatouille; a tradução precisa acompanhar esse jogo."
+  },
+  {
+    "term": "Hater들은 벌써 학을 떼",
+    "card": "학을 떼다 é uma expressão de horror ou repulsa. O elemento 학 se liga historicamente à palavra para febres da malária, não a uma ave. No refrão, os rivais já não suportam a cena de sucesso; a tradução natural comunica essa reação sem reproduzir a origem ao pé da letra.",
+    "source": "https://www.korean.go.kr/nkview/nklife/2002_2/2002_0212.pdf"
+  },
+  {
+    "term": "사필귀정 ah",
+    "card": "A linha anterior anuncia quatro caracteres: 사필귀정, escritos 事必歸正 em hanja. A ideia é que os acontecimentos acabam voltando ao que é correto. O eu usa a expressão para apresentar o sucesso como resposta aos críticos, com deboche e confiança; ela não significa simplesmente quatro palavras."
+  }
+],
   "born-singer": [
     {
       "term": "초심을",
