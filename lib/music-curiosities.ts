@@ -571,6 +571,29 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "잠시만 멈춘 채 에 에",
       "card": "Uma pausa não é automaticamente uma desistência. O futuro descrito como brilhante fica parado só por um momento, e logo vem a promessa de não abandonar o sonho. No final, as asas ainda tremem quando se abrem: a imagem permite ler coragem junto da insegurança, sem exigir que o medo desapareça primeiro."
     }
+  ],
+  "a-brand-new-day": [
+    {
+      "term": "헤쳐 나아 갈 수 있을까?",
+      "card": "Abrir caminho entre obstáculos é o sentido de 헤치다 nesta imagem. O Dicionário Básico de Coreano também usa o verbo para atravessar uma multidão ou vencer dificuldades. Não confunda com 해치다, causar dano: a pergunta é sobre atravessar o medo e avançar.",
+      "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=87001&nation=eng&nationCode=6"
+    },
+    {
+      "term": "내 안의 목소리를 듣게 됐어",
+      "card": "As imagens de estar encantado ou em transe dão lugar a ouvir a voz interior. Essa sequência permite ler a atração do sonho como uma descoberta do próprio desejo. O texto não precisa identificar uma força externa específica para que a passagem faça sentido."
+    },
+    {
+      "term": "나를 찾은 날에",
+      "card": "A mesma forma escrita pode ter funções diferentes. 날 é dia nesta linha, modificado pelo que aconteceu nele; já em 날 감싸 e 날 보여줘, é a contração de a mim. A partícula de tempo e o papel na frase ajudam a escolher o sentido, em vez de decorar uma tradução única."
+    },
+    {
+      "term": "나는 날 믿었기에 핍박 기로에도",
+      "card": "A encruzilhada é uma imagem de escolha: 기로 é um nome, não a construção gramatical para decidir fazer algo. Ao lado da opressão e da confiança no eu, ela prepara a ideia de seguir um caminho próprio na linha seguinte. Os nomes são compactados na letra; a relação entre eles é interpretada pelo contexto."
+    },
+    {
+      "term": "나 무서워도 안 숙였어",
+      "card": "Coragem e medo aparecem juntos. O eu relata ter corrido e mantido a cabeça erguida mesmo com receio; no final, a pergunta inicial volta. Essa volta permite ouvir a coragem como algo que se pratica, sem exigir que toda dúvida tenha desaparecido."
+    }
   ]
 };
 
