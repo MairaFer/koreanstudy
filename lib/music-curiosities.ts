@@ -728,6 +728,52 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     "term": "하지만 이대로의 내가 곧 나인 걸",
     "card": "곧 pode indicar em breve em outras frases, mas aqui afirma identidade: este eu é precisamente eu. A letra admite possíveis limitações e ainda assim afirma beleza. A concessão não exige corrigir toda imperfeição antes de reconhecer o próprio valor."
   }
+],
+  "trivia-love": [
+  {
+    "term": "사람을 사랑으로 만들 사람",
+    "card": "사람, pessoa, e 사랑, amor, diferem no 받침 da última sílaba: ㅁ em 람 e ㅇ em 랑. O desenho de um contorno com cantos dá lugar a um círculo. O verso transforma essa mudança visual e sonora em imagem de uma pessoa transformada pelo amor."
+  },
+  {
+    "term": "I와 U의 거린 멀지만",
+    "card": "O jogo passa ao alfabeto inglês. I e U podem soar como eu e você; entre as duas letras aparecem as letras intermediárias. Outro jogo muda i para o em live e love. São formas de encenar aproximação com a própria escrita, por isso as letras foram mantidas nas duas línguas."
+  },
+  {
+    "term": "봐 내와 네도 똑같은 소리가 나잖아",
+    "card": "A norma distingue 내 e 네 pelas vogais ㅐ e ㅔ. Na fala, a diferença pode ser difícil de perceber; a canção explora essa proximidade. Isso ajuda a entender o jogo sem ensinar que as duas palavras são obrigatoriamente idênticas na pronúncia de todos os falantes.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=73&qna_seq=320008"
+  },
+  {
+    "term": "넌 나의 바람, 바람, 바람",
+    "card": "바람 pode ser vento ou desejo. Antes, o eu espera não ser apenas um vento passageiro; no final, a pessoa amada é o seu desejo. A rede de sons próximos entre pessoa, vento, orgulho e amor cria continuidade mesmo quando cada nome tem uma função diferente."
+  },
+  {
+    "term": "넌 나의 기억을 추억으로 바꿀 사람",
+    "card": "기억 e 추억 podem ser traduzidos como memória, mas o verso os coloca em contraste: de lembrar fatos para guardar recordações com valor afetivo. Essa nuance vem da cena da canção. A imagem do livro reaparece depois para apresentar a vida da outra pessoa como história da qual o eu quer participar."
+  }
+],
+  "the-truth-untold": [
+  {
+    "term": "이 모래성에 난 날 매었어",
+    "card": "No castelo de areia, o eu diz que amarrou a si mesmo: 난 é o tópico e 날 é o objeto. 매다 significa amarrar. O castelo sugere um refúgio frágil; a ação reflexiva torna o isolamento algo em que o próprio narrador também participa.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=26487&nation=eng"
+  },
+  {
+    "term": "또 가면을 쓰고 널 만나러 가",
+    "card": "A máscara permite o encontro e ao mesmo tempo impede mostrar quem se é. No final ela aparece quebrada, junto do castelo em ruínas. Essa mudança retoma as mesmas imagens em outro estado e aprofunda o desencontro entre querer alguém e conseguir se revelar."
+  },
+  {
+    "term": "외로움의 정원에 핀",
+    "card": "A letra alterna 피다, a flor florescer, e 피우다, alguém fazer a flor florescer. A diferença muda quem age. No jardim de solidão algo já floresceu; depois o eu imagina cultivar uma flor parecida com a outra pessoa como uma forma de oferecer algo."
+  },
+  {
+    "term": "용길 내서 너의 앞에 섰더라면",
+    "card": "A coragem aparece numa hipótese sobre o que não foi feito: se eu tivesse ficado à sua frente. A pergunta seguinte imagina um presente diferente. O retorno ao choro encerra essa possibilidade imaginada e traz a cena de volta ao que o eu está vivendo."
+  },
+  {
+    "term": "초라한 모습 보여줄 순 없어",
+    "card": "As palavras que descrevem o eu como sem brilho ou feio pertencem à maneira como o narrador se enxerga. Já a outra pessoa é associada a calor verdadeiro e beleza. A diferença entre esses retratos ajuda a entender o medo de se mostrar, sem tratar a autoavaliação como um julgamento objetivo."
+  }
 ]
 };
 

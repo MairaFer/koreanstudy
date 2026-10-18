@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,67);
+assert.equal(lessons.length,30);assert.equal(songs.length,69);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 67 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 69 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -1048,3 +1048,33 @@ assert.equal(new Function(studyLookup+";return studyFor('Intro : Serendipity');"
 assert.equal(new Function(studyLookup+";return studyFor('Epiphany');")(),'epiphany');
 for(const id of ['serendipity','epiphany']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
 console.log('PASS: Serendipity full length and Epiphany: all supplied lines and repetitions, full-only aliases, Korean analysis, contextual meanings, vocabulary and 10 clickable exercises.');
+
+const {triviaLoveSections,triviaLoveVocabulary}=await load('lib/trivia-love.ts');
+const {truthUntoldSections,truthUntoldVocabulary}=await load('lib/the-truth-untold.ts');
+const triviaLoveLines=triviaLoveSections.flatMap(s=>s.lines),truthLines=truthUntoldSections.flatMap(s=>s.lines);
+assert.equal(triviaLoveSections.length,11);assert.equal(triviaLoveLines.length,86);assert.equal(triviaLoveLines.filter(l=>l.english).length,25);
+assert.equal(triviaLoveLines[0].text,'Is this love');assert.equal(triviaLoveLines.at(-1).text,'단 한 사랑 (단 한 사랑)');
+assert.equal(triviaLoveLines.filter(l=>l.text==='I live so I love').length,8);
+assert.equal(triviaLoveLines.filter(l=>l.text==='넌 나의 바람, 바람, 바람').length,2);
+assert.equal(triviaLoveLines.filter(l=>l.text==='(만 아니길 바랄 뿐)').length,2);
+assert.ok(triviaLoveLines.find(l=>l.text==='F*** JKLMNOPQRST'));
+assert.ok(triviaLoveLines.find(l=>l.text==='으로 만들어 만들어'));
+assert.ok(triviaLoveLines.find(l=>l.text==='봐 내와 네도 똑같은 소리가 나잖아').entries.some(e=>e.notes.some(n=>n.includes('ㅐ')&&n.includes('ㅔ'))));
+assert.ok(triviaLoveLines.find(l=>l.text==='너의 책장의 일부가 되고파').entries.some(e=>e.notes.some(n=>n.includes('página')&&n.includes('-고 싶어'))));
+assert.ok(triviaLoveLines.find(l=>l.text==='넌 나의 바람, 바람, 바람').translation.includes('desejo'));
+assert.ok(triviaLoveLines.find(l=>l.text==='스치는 바람, 바람, 바람').translation.includes('vento'));
+assert.equal(truthUntoldSections.length,10);assert.equal(truthLines.length,57);assert.equal(truthLines.filter(l=>l.english).length,16);
+assert.equal(truthLines[0].text,'외로움이 가득히');assert.equal(truthLines.at(-1).text,'And I still want you');
+assert.equal(truthLines.filter(l=>l.text==='또 가면을 쓰고 널 만나러 가').length,2);
+assert.equal(truthLines.filter(l=>l.text==='But I still want you').length,4);
+assert.equal(truthLines.filter(l=>l.text==='And I still want you').length,2);
+assert.ok(truthLines.find(l=>l.text==='너의 온긴 모두 다 진짜란 걸').entries.some(e=>e.notes.some(n=>n.includes('온기는'))));
+assert.ok(truthLines.find(l=>l.text==='이 모래성에 난 날 매었어').translation.includes('me amarrei'));
+assert.ok(truthLines.find(l=>l.text==='용길 내서 너의 앞에 섰더라면').entries.some(e=>e.notes.some(n=>n.includes('hipótese')&&n.includes('용기를'))));
+assert.ok(truthLines.find(l=>l.text==='예쁜 너를 닮은 꽃을 피운 다음').entries.some(e=>e.notes.some(n=>n.includes('피우다'))));
+for(const [id,lines]of[['Trivia Love',triviaLoveLines],['The Truth Untold',truthLines]])for(const line of lines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),id+': missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(triviaLoveVocabulary.verbs.length,34);assert.equal(triviaLoveVocabulary.nouns.length,31);assert.equal(truthUntoldVocabulary.verbs.length,39);assert.equal(truthUntoldVocabulary.nouns.length,18);
+for(const title of ['Trivia 承: Love','Trivia 承 : Love','Trivia: Love'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'trivia-love');
+for(const title of ['The Truth Untold','The Truth Untold (feat. Steve Aoki)','전하지 못한 진심','The Truth Untold (전하지 못한 진심)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'the-truth-untold');
+for(const id of ['trivia-love','the-truth-untold']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
+console.log('PASS: Trivia Love and The Truth Untold: 86 and 57 supplied lines, repeated hooks and endings, Korean analysis, wordplay and contextual grammar, vocabulary, catalog aliases and 10 clickable exercises.');
