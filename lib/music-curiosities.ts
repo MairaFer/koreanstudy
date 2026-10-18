@@ -617,7 +617,30 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "해가 뜨기 전 어둠은 꽤나 짙어",
       "card": "A noite reúne trabalho, festa e desejo de proximidade ao longo da canção. A imagem da escuridão antes do amanhecer pode acompanhar a espera por clareza ou inspiração. Ela não obriga a tratar toda fala romântica como se fosse apenas sobre música: o contexto muda entre os versos."
     }
-  ]
+  ],
+  "mikrokosmos": [
+  {
+    "term": "반짝이는 별빛들",
+    "card": "O título coreano 소우주 significa microcosmo, um pequeno universo. A leitura de cada pessoa como um mundo inteiro combina com a passagem de estrelas e prédios para vidas individuais. Essa ligação é uma interpretação das imagens da letra; não exige tratar cada estrela como um objeto astronômico literal.",
+    "source": "https://www.korean.go.kr/nkview/nklife/1990_4/23_3.html"
+  },
+  {
+    "term": "70억 개의 빛으로 빛나는",
+    "card": "Na contagem coreana, 억 vale cem milhões: 70억 corresponde a sete bilhões. O número da letra cria a imagem de muitas vidas e mundos individuais. Ele é mantido como parte do texto da canção, sem ser apresentado como uma estimativa atual da população mundial. 개 conta unidades; 가지 destaca variedades."
+  },
+  {
+    "term": "가장 깊은 밤에 더 빛나는 별빛",
+    "card": "O pós-refrão passa de uma descrição, a noite mais profunda, para uma relação gradual: quanto mais a noite se aprofunda, mais a luz brilha. No contexto, escuridão e brilho permitem uma leitura de dificuldade e valor humano. A imagem poética não precisa virar uma afirmação física sobre estrelas."
+  },
+  {
+    "term": "사람이란 불, 사람이란 별로",
+    "card": "Uma separação de palavras muda a leitura. Neste trecho, 별로 é estrela mais a partícula 로 e se liga a cheio na linha seguinte. Em frases como 별로 안 좋아요, a mesma escrita funciona como advérbio, não muito. Ler o verso seguinte evita escolher o significado errado."
+  },
+  {
+    "term": "우린 우리대로 빛나",
+    "card": "O final reúne duas ideias próximas, mas diferentes: brilhar do nosso jeito e brilhar por sermos quem somos. Antes disso, olhar e sonhar se transforma em olhar e respirar. Essas mudanças pequenas aprofundam a reciprocidade sem apagar a individualidade de cada pessoa."
+  }
+]
 };
 
 export function addMusicCuriosities(songId:string,sections:{title:string;lines:StudyLine[]}[]):{title:string;lines:StudyLine[]}[]{

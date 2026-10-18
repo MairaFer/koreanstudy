@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,62);
+assert.equal(lessons.length,30);assert.equal(songs.length,63);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 62 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 63 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -955,3 +955,27 @@ for(const title of ['All Night','All Night (Pt. 3)','All Night (BTS World Origin
 const allNightSong=songs.find(s=>s.id==='all-night');assert.equal(allNightSong.exercises.length,5);
 for(const exercise of allNightSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: All Night: all 77 supplied lines, repeated hooks and chorus variants, Korean analysis, contextual meanings, vocabulary, catalog aliases and 5 clickable exercises.');
+
+const {mikrokosmosSections,mikrokosmosVocabulary}=await load('lib/mikrokosmos.ts');
+const microLines=mikrokosmosSections.flatMap(s=>s.lines);
+assert.equal(mikrokosmosSections.length,13);assert.equal(microLines.length,68);
+assert.equal(microLines[0].text,'반짝이는 별빛들');assert.equal(microLines.at(-1).text,'Na na na na na na na na');
+assert.equal(microLines.filter(l=>l.english).length,22);
+assert.equal(microLines.filter(l=>l.text==='가장 깊은 밤에 더 빛나는 별빛').length,4);
+assert.equal(microLines.filter(l=>l.text==='밤이 깊을수록 더 빛나는 별빛').length,2);
+assert.equal(microLines.filter(l=>l.text==='난 너를 보며 꿈을 꿔').length,2);
+assert.equal(microLines.filter(l=>l.text==='난 너를 보며 숨을 쉬어').length,1);
+assert.equal(microLines.filter(l=>l.text==='Na na na na na na').length,4);
+assert.equal(microLines.filter(l=>l.text==='Na na na na na na na').length,2);
+assert.equal(microLines.filter(l=>l.text==='Na na na na na na na na').length,2);
+for(const line of microLines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Mikrokosmos: missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(mikrokosmosVocabulary.verbs.length,22);assert.equal(mikrokosmosVocabulary.nouns.length,32);
+assert.ok(microLines.find(l=>l.text==='70억 개의 빛으로 빛나는').translation.includes('sete bilhões'));
+assert.ok(microLines.find(l=>l.text==='사람이란 불, 사람이란 별로').entries.some(e=>e.notes.some(n=>n.includes('별 + 로'))));
+assert.ok(microLines.find(l=>l.text==='우린 우리대로 빛나').entries.some(e=>e.notes.some(n=>n.includes('do nosso jeito'))));
+assert.ok(microLines.find(l=>l.text==='별처럼 다 (우린 빛나)'));
+assert.ok(microLines.find(l=>l.text==='저 어둠도 달빛도 아닌 우리 때문일 거야'));
+for(const title of ['Mikrokosmos','소우주','Mikrokosmos (소우주)','소우주 (Mikrokosmos)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'mikrokosmos');
+const microSong=songs.find(s=>s.id==='mikrokosmos');assert.equal(microSong.exercises.length,5);
+for(const exercise of microSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: Mikrokosmos: all 68 supplied lines, chorus variants and final vocalizations, Korean analysis, seven billion, contextual star particle, vocabulary, aliases and 5 clickable exercises.');
