@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,65);
+assert.equal(lessons.length,30);assert.equal(songs.length,67);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 65 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 67 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -1020,3 +1020,31 @@ for(const title of ['Answer: Love Myself','Answer : Love Myself','Answer Love My
 const answerSong=songs.find(s=>s.id==='answer-love-myself');assert.equal(answerSong.exercises.length,5);
 for(const exercise of answerSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: Answer: Love Myself: 61 supplied lines, repeated refrains, Korean coverage, me/美 wordplay, negation and uncertainty, vocabulary, catalog aliases and 5 clickable exercises.');
+
+const {serendipitySections,serendipityVocabulary}=await load('lib/serendipity.ts');
+const {epiphanySections,epiphanyVocabulary}=await load('lib/epiphany.ts');
+const serenLines=serendipitySections.flatMap(s=>s.lines),epiLines=epiphanySections.flatMap(s=>s.lines);
+assert.equal(serendipitySections.length,12);assert.equal(serenLines.length,64);assert.equal(serenLines.filter(l=>l.english).length,22);
+assert.equal(serenLines[0].text,'이 모든 건 우연이 아냐');assert.equal(serenLines.at(-1).text,'Let me love you');
+assert.equal(serenLines.filter(l=>l.text==='Just let me love you').length,9);
+assert.equal(serenLines.filter(l=>l.text==='우주가 처음 생겨났을 때부터').length,3);
+assert.equal(serenLines.filter(l=>l.text==='넌 내 푸른 곰팡이').length,2);
+assert.ok(serenLines.find(l=>l.text==='이젠 곁에 와줘'));assert.ok(serenLines.find(l=>l.text==='이제 우리가 되는 거야'));
+assert.ok(serenLines.find(l=>l.text==='온 세상이 어제완 달라').entries.some(e=>e.notes.some(n=>n.includes('어제와는'))));
+assert.equal(serenLines.find(l=>l.text==='넌 내 푸른 곰팡이').translation,'Você é meu mofo azul.');
+assert.equal(serenLines.find(l=>l.text==='난 네 삼색 고양이').translation,'Eu sou seu gato tricolor.');
+assert.equal(epiphanySections.length,8);assert.equal(epiLines.length,31);assert.equal(epiLines.filter(l=>l.english).length,7);
+assert.equal(epiLines[0].text,'참 이상해 분명 난 너를 너무 사랑했는데');assert.equal(epiLines.at(-1).text,"I'm the one I should love");
+assert.equal(epiLines.filter(l=>l.text==="I'm the one I should love").length,5);
+assert.equal(epiLines.filter(l=>l.text==='좀 부족해도 너무 아름다운 걸').length,3);
+assert.equal(epiLines.filter(l=>l.text==='이제야 깨달아 So I love me').length,1);
+assert.equal(epiLines.filter(l=>l.text==='이제야 깨달아 so I love me').length,2);
+assert.ok(epiLines.find(l=>l.text==='흔들리고 두려워도 앞으로 걸어가)'));
+assert.ok(epiLines.find(l=>l.text==='하지만 이대로의 내가 곧 나인 걸').entries.some(e=>e.notes.some(n=>n.includes('não em breve'))));
+for(const [id,lines]of[['Serendipity',serenLines],['Epiphany',epiLines]])for(const line of lines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),id+': missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(serendipityVocabulary.verbs.length,31);assert.equal(serendipityVocabulary.nouns.length,20);assert.equal(epiphanyVocabulary.verbs.length,25);assert.equal(epiphanyVocabulary.nouns.length,10);
+for(const title of ['Serendipity (Full Length Edition)','Serendipity (Full Length)','Serendipity'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'serendipity');
+assert.equal(new Function(studyLookup+";return studyFor('Intro : Serendipity');")(),undefined);
+assert.equal(new Function(studyLookup+";return studyFor('Epiphany');")(),'epiphany');
+for(const id of ['serendipity','epiphany']){const song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);for(const exercise of song.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}}
+console.log('PASS: Serendipity full length and Epiphany: all supplied lines and repetitions, full-only aliases, Korean analysis, contextual meanings, vocabulary and 10 clickable exercises.');

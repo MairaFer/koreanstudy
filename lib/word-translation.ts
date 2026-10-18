@@ -1,3 +1,5 @@
+import {serendipitySections,serendipityVocabulary} from './serendipity';
+import {epiphanySections,epiphanyVocabulary} from './epiphany';
 import {answerLoveMyselfSections,answerLoveMyselfVocabulary} from './answer-love-myself';
 import {homeSections,homeVocabulary} from './home';
 import {mikrokosmosSections,mikrokosmosVocabulary} from './mikrokosmos';
@@ -109,6 +111,8 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'serendipity',sections:serendipitySections,vocabulary:serendipityVocabulary},
+ {id:'epiphany',sections:epiphanySections,vocabulary:epiphanyVocabulary},
  {id:'answer-love-myself',sections:answerLoveMyselfSections,vocabulary:answerLoveMyselfVocabulary},
  {id:'home',sections:homeSections,vocabulary:homeVocabulary},
  {id:'mikrokosmos',sections:mikrokosmosSections,vocabulary:mikrokosmosVocabulary},

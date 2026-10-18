@@ -688,6 +688,46 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     "term": "정답은 없을지도 몰라",
     "card": "A letra primeiro põe em dúvida uma resposta correta e depois afirma uma resposta no próprio percurso. Esse movimento não exige tratar um verso como contradição a corrigir: a busca faz parte do processo. O refrão em inglês também fala em aprender, em vez de anunciar que o aprendizado já terminou."
   }
+],
+  "serendipity": [
+  {
+    "term": "넌 내 푸른 곰팡이",
+    "card": "곰팡이 significa mofo; 푸른 acrescenta a cor azul ou verde conforme o contexto. A estranheza da imagem faz parte da letra e foi mantida. As linhas de salvação permitem uma leitura de algo que ajuda o eu, mas não provam sozinhas uma explicação médica nem mudam a palavra para remédio."
+  },
+  {
+    "term": "난 네 삼색 고양이",
+    "card": "삼색 reúne três cores; em 삼색 고양이, descreve a pelagem do gato. A tradução inglesa usa calico cat. A imagem aproxima o eu de um animal que veio ao encontro de alguém; a linha não informa sexo, genética ou uma regra de raridade, então nada disso é tratado como fato da letra."
+  },
+  {
+    "term": "우린 시리도록 피어",
+    "card": "A flor não aparece só como objeto bonito: ela floresce 시리도록, até sentir uma dor aguda ou um frio penetrante. A imagem permite ouvir uma beleza tão intensa que dói. Essa leitura nasce da combinação das palavras; não é uma afirmação sobre como flores sentem fisicamente."
+  },
+  {
+    "term": "우주가 우릴 위해 움직였어",
+    "card": "O universo se move e o destino sente ciúme: forças abstratas recebem ações e emoções humanas. Isso sustenta a sensação romântica de um encontro inevitável. A análise trata essas frases como imagens da voz da canção, sem transformá-las em explicação científica ou crença obrigatória."
+  },
+  {
+    "term": "우리가 되어줘",
+    "card": "O pedido para se tornar um nós reaparece depois como agora estamos nos tornando um nós. A passagem de pedido a processo dá movimento à relação. O final que continua pedindo para amar foi mantido porque faz parte desta versão completa."
+  }
+],
+  "epiphany": [
+  {
+    "term": "웃고 있는 가면 속의 진짜 내 모습을 다 드러내",
+    "card": "Uma máscara pode sorrir enquanto esconde uma tempestade. A oposição entre exterior e interior organiza o começo da letra. O sentido de revelar é deixar o eu aparecer; a imagem não precisa ser traduzida como uma máscara física em todas as linhas."
+  },
+  {
+    "term": "이제야 깨달아 So I love me",
+    "card": "이제, agora, ganha uma nuance importante com -야: só agora ou finalmente agora. A palavra ajuda a entender o título como descoberta. O refrão não diz apenas eu me amo; ele mostra o momento de reconhecer algo que antes não era percebido."
+  },
+  {
+    "term": "조금은 뭉툭하고 부족할지 몰라",
+    "card": "뭉툭하다 descreve algo sem uma ponta aguda, como um contorno rombudo. No autorretrato, sem jeito ou pouco lapidado adapta essa imagem. Em inglês, rough around the edges conserva a ideia; blunt sozinho poderia ser confundido com falar de modo grosseiro."
+  },
+  {
+    "term": "하지만 이대로의 내가 곧 나인 걸",
+    "card": "곧 pode indicar em breve em outras frases, mas aqui afirma identidade: este eu é precisamente eu. A letra admite possíveis limitações e ainda assim afirma beleza. A concessão não exige corrigir toda imperfeição antes de reconhecer o próprio valor."
+  }
 ]
 };
 
