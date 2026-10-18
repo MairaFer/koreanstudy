@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,59);
+assert.equal(lessons.length,30);assert.equal(songs.length,60);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 59 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 60 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -899,3 +899,22 @@ assert.equal(new Function(studyLookup+";return studyFor('Heartbeat');")(),'heart
 const heartSong=songs.find(s=>s.id==='heartbeat');assert.equal(heartSong.exercises.length,5);
 for(const exercise of heartSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: Heartbeat: all 51 supplied lines, repeated choruses and final, spelling distinctions, Korean coverage, vocabulary, catalog link and 5 clickable exercises.');
+
+const {dreamGlowSections,dreamGlowVocabulary}=await load('lib/dream-glow.ts');
+const dreamLines=dreamGlowSections.flatMap(s=>s.lines);
+assert.equal(dreamGlowSections.length,9);assert.equal(dreamLines.length,34);
+assert.equal(dreamLines[0].text,'I spend my whole life following the night time');assert.equal(dreamLines.at(-1).text,"You'll glow (hey hey)");
+assert.equal(dreamLines.filter(l=>l.english).length,21);
+assert.equal(dreamLines.filter(l=>l.text==='내 꿈은 여기 stay 에 에 에').length,2);
+assert.equal(dreamLines.filter(l=>l.text==='나 포기 안 할게 에 에').length,2);
+assert.equal(dreamLines.filter(l=>l.text==="You'll glow (hey hey)").length,3);
+assert.ok(!dreamLines.some(l=>l.text.includes('&#x20;')));
+for(const line of dreamLines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Dream Glow: missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(dreamGlowVocabulary.verbs.length,16);assert.equal(dreamGlowVocabulary.nouns.length,17);
+assert.ok(dreamLines.find(l=>l.text==='제껴본 적 없는 상대한텐 못 져 (hey hey)').entries.some(e=>e.notes.some(n=>n.includes('제치다'))));
+assert.ok(dreamLines.find(l=>l.text==='감추곤 했던 까진 무르팍 (hey)').entries.some(e=>e.notes.some(n=>n.includes('까지다'))));
+assert.ok(dreamLines.find(l=>l.text==='눈부셨던 미래 에 에 에').entries.some(e=>e.notes.some(n=>n.includes('prolongado'))));
+for(const title of ['Dream Glow','Dream Glow (Pt. 1)'])assert.equal(new Function(studyLookup+';return studyFor('+JSON.stringify(title)+');')(),'dream-glow');
+const dreamSong=songs.find(s=>s.id==='dream-glow');assert.equal(dreamSong.exercises.length,5);
+for(const exercise of dreamSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: Dream Glow: 34 supplied lines, Korean analysis, repeated refrains and vocalizations, opponent meaning, vocabulary, catalog aliases and 5 clickable exercises.');

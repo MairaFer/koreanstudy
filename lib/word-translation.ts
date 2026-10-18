@@ -1,3 +1,4 @@
+import {dreamGlowSections,dreamGlowVocabulary} from './dream-glow';
 import {heartbeatSections,heartbeatVocabulary} from './heartbeat';
 import {eternalSections,eternalVocabulary} from './we-are-bulletproof-eternal';
 import {respectSections,respectVocabulary} from './respect';
@@ -103,6 +104,7 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'dream-glow',sections:dreamGlowSections,vocabulary:dreamGlowVocabulary},
  {id:'heartbeat',sections:heartbeatSections,vocabulary:heartbeatVocabulary},
  {id:'we-are-bulletproof-eternal',sections:eternalSections,vocabulary:eternalVocabulary},
  {id:'respect',sections:respectSections,vocabulary:respectVocabulary},

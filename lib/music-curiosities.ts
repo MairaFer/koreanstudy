@@ -547,6 +547,30 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "운명을 느껴 너 너 너 너 너",
       "card": "A batida do coração dá uma medida poética de proximidade. Na parte em inglês, a ideia de estar a uma batida de distância sugere estar muito perto; não é uma unidade literal de espaço. Já destino nomeia como o encontro é sentido pelo eu da canção, sem precisar ser uma afirmação objetiva sobre o futuro."
     }
+  ],
+  "dream-glow": [
+    {
+      "term": "감추곤 했던 까진 무르팍 (hey)",
+      "card": "Os meninos considerados fáceis de criar escondem joelhos ralados. O contraste permite ler a distância entre parecer comportado e viver quedas, esforço ou dor. A imagem deixa ver uma experiência escondida; não confirma por si só um episódio biográfico específico."
+    },
+    {
+      "term": "내 별자리는 태양의 파편",
+      "card": "Constelação e fragmento do sol aproximam uma identidade no céu de uma fonte intensa de luz. A leitura combina com o sonho que brilha no refrão. Embora 별자리 também possa significar signo conforme o contexto, este verso não identifica um signo astrológico específico."
+    },
+    {
+      "term": "찬란한 암전 그림자의 춤 (hey)",
+      "card": "Uma escuridão radiante aproxima ideias opostas. No teatro, 암전 é o escurecimento usado para mudar uma cena ou a disposição do palco. Na letra, a combinação com brilho e sombras pode sugerir movimento mesmo quando a luz parece ter desaparecido; essa é uma interpretação da imagem.",
+      "source": "https://kli.korean.go.kr/term/trgtWord/indexTrgtWord.do?trgtWordNo=2323640"
+    },
+    {
+      "term": "제껴본 적 없는 상대한텐 못 져 (hey hey)",
+      "card": "A dupla negação precisa ser lida por partes: nunca ter superado um adversário e não poder perder para ele. Ela expressa disposição para encarar um desafio ainda não vencido. A grafia coloquial está preservada; no sentido de ultrapassar ou superar alguém, o Instituto Nacional da Língua Coreana orienta usar 제치다 na escrita padrão.",
+      "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=325852"
+    },
+    {
+      "term": "잠시만 멈춘 채 에 에",
+      "card": "Uma pausa não é automaticamente uma desistência. O futuro descrito como brilhante fica parado só por um momento, e logo vem a promessa de não abandonar o sonho. No final, as asas ainda tremem quando se abrem: a imagem permite ler coragem junto da insegurança, sem exigir que o medo desapareça primeiro."
+    }
   ]
 };
 
