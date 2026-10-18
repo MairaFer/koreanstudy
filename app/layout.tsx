@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   title: "BoraLang · Bora aprender coreano com o BTS",
   description: "Aprenda coreano em português: 30 aulas, flashcards, quizzes e músicas do BTS.",
   icons: {
-    icon: "/brand/boralang-icon.png",
-    shortcut: "/brand/boralang-icon.png",
+    icon: "/brand/boralang-leaves-icon.png",
+    shortcut: "/brand/boralang-leaves-icon.png",
   },
 };
 
