@@ -1,3 +1,4 @@
+import {respectSections,respectVocabulary} from './respect';
 import {innerChildSections,innerChildVocabulary} from './inner-child';
 import {ughSections,ughVocabulary} from './ugh';
 import {louderThanBombsSections,louderThanBombsVocabulary} from './louder-than-bombs';
@@ -100,6 +101,7 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'respect',sections:respectSections,vocabulary:respectVocabulary},
  {id:'inner-child',sections:innerChildSections,vocabulary:innerChildVocabulary},
  {id:'ugh',sections:ughSections,vocabulary:ughVocabulary},
  {id:'louder-than-bombs',sections:louderThanBombsSections,vocabulary:louderThanBombsVocabulary},

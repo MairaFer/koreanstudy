@@ -468,6 +468,34 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "빛들은 지금의 나니까",
       "card": "A luz muda de papel: primeiro é algo distante que se persegue; depois, é o eu presente que pode iluminar o passado. Essa leitura liga o começo e a ponte, oferecendo uma interpretação da imagem sem afirmar que ela tem um único sentido."
     }
+  ],
+  "respect": [
+    {
+      "term": "존중조차도 없는데",
+      "card": "O inglês respect pode cobrir mais de uma nuance. Aqui 존경 aponta para admiração, enquanto 존중 destaca considerar e tratar o outro com respeito. A crítica ganha força justamente porque a palavra elevada aparece sem a atitude correspondente; não é uma divisão rígida entre dois sinônimos em qualquer contexto."
+    },
+    {
+      "term": "\"Re-spect\" 말 그대로 보고 자꾸 보는 거",
+      "card": "Olhar de novo é a imagem que a letra constrói ao separar a palavra inglesa. Ela ajuda a perguntar se a admiração resiste quando os defeitos aparecem. Não use esse jogo como uma definição literal de dicionário: na conversa comum, respect não significa simplesmente olhar repetidamente."
+    },
+    {
+      "term": "뒤에선 호박씨 까는 거",
+      "card": "As sementes de abóbora são uma imagem idiomática. O Instituto Nacional da Língua Coreana explica 호박씨 까다 como fingir que não se age de determinada maneira, disfarçando intenções. Nesta letra, o cenário de bastidores aproxima a expressão de falar pelas costas. Esse contexto não deve substituir o sentido geral da expressão.",
+      "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=274899&searchCondition=&searchKeyword="
+    },
+    {
+      "term": "나도 잘은 몰라 brotha 낸들 알어",
+      "card": "A letra mantém a fala espontânea. O texto enviado traz 낸들 e 알어; para estudar a escrita padrão, compare 난들 e 알아. A primeira forma participa da pergunta retórica como eu ia saber?; a segunda vem de saber. Preservar a voz coloquial não exige ensiná-la como modelo de escrita formal.",
+      "source": "https://korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=5886&mn_id=217&pageIndex=215"
+    },
+    {
+      "term": "너도 나를 respect 할 거라는 생각은 1도 없으니 스킵해",
+      "card": "O número 1 vira ênfase coloquial: diante da negação, nem um pouco. Ele não conta uma pessoa nem mede temperatura aqui. Esse registro, junto da abreviação para falar francamente e do empréstimo skip, aproxima o verso de uma conversa provocativa."
+    },
+    {
+      "term": "너의 삶에 모든 영광과 번영이 깃들길",
+      "card": "Uma bênção pode ser sincera ou irônica. As palavras desejam glória e prosperidade, mas vêm depois da imagem de alguém que insulta sorrindo. O efeito nasce do contraste entre palavras gentis e comportamento hostil; a gramática do desejo, sozinha, não contém sarcasmo."
+    }
   ]
 };
 
