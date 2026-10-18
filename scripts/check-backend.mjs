@@ -34,6 +34,8 @@ try{
  assert.equal((await api.PATCH(request([{key:'completed.1-1',value:true}],{headers:{'x-study-account':'student-b'}}))).status,409);
  for(const invalid of [
   {key:'word.보고',value:{...word,color:'url(evil)'}},
+  {key:'word.보고',value:{...word,savedAt:-1}},
+  {key:'word.보고',value:{...word,savedAt:'yesterday'}},
   {key:'word.보고',value:{...word,source:'javascript:alert(1)'}},
   {key:'quizzes.Iniciante',value:11},
   {key:'answers.__proto__',value:{value:'x',correct:true}},
@@ -47,10 +49,12 @@ try{
  assert.equal((await api.PATCH(request([{key:'word.보고',value:{...word,color:'green'}},{key:'completed.1-2',value:true}]))).status,200);
  globalThis.__studyTestUser=user('student-a');
  let a=await repository.readStudy(adapter,'student-a');assert.equal(a['word.보고'].color,'purple');assert.equal(a['quizzes.Iniciante'],8);assert.equal(a['completed.1-2'],undefined);
+ assert.ok(Number.isSafeInteger(a['word.보고'].savedAt),'Legacy words receive their existing database date');
  await api.PATCH(request([{key:'quizzes.Iniciante',value:2},{key:'completed.1-3',value:true}],{body:{importOnly:true}}));
  a=await repository.readStudy(adapter,'student-a');assert.equal(a['quizzes.Iniciante'],8);assert.equal(a['completed.1-3'],true);
- await api.PATCH(request([{key:'word.보고',value:{...word,reviewed:true,color:null}}]));
+ await api.PATCH(request([{key:'word.보고',value:{...word,reviewed:true,color:null,savedAt:1234}}]));
  assert.equal((await repository.readStudy(adapter,'student-a'))['word.보고'].reviewed,true);
+ assert.equal((await repository.readStudy(adapter,'student-a'))['word.보고'].savedAt,1234,'Explicit save dates persist through the database');
  await api.PATCH(request([{key:'word.보고',value:null}]));
  assert.equal((await repository.readStudy(adapter,'student-a'))['word.보고'],undefined);assert.equal((await repository.readStudy(adapter,'student-b'))['word.보고'].color,'green');
  sqlite.close();sqlite=new DatabaseSync(databasePath);

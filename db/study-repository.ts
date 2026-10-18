@@ -1,7 +1,12 @@
 import type {StudyChange,StudyRecords} from '../lib/study-data';
 export async function readStudy(db:D1Database,userId:string):Promise<StudyRecords> {
-  const rows=await db.prepare('SELECT item_key, value_json FROM study_items WHERE user_id = ?').bind(userId).all<{item_key:string;value_json:string}>();
-  return Object.fromEntries(rows.results.map(row=>[row.item_key,JSON.parse(row.value_json)]));
+  const rows=await db.prepare('SELECT item_key, value_json, updated_at FROM study_items WHERE user_id = ?').bind(userId).all<{item_key:string;value_json:string;updated_at:number}>();
+  return Object.fromEntries(rows.results.map(row=>{
+    const value=JSON.parse(row.value_json);
+    // Older records have no save date; retain their existing database date.
+    if(row.item_key.startsWith('word.')&&value&&typeof value==='object'&&value.savedAt===undefined)value.savedAt=row.updated_at;
+    return [row.item_key,value];
+  }));
 }
 export async function writeStudy(db:D1Database,userId:string,changes:StudyChange[],importOnly=false) {
   const timestamp=Date.now();

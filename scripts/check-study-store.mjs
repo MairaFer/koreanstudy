@@ -32,6 +32,8 @@ assert.ok(store.useStudy().pending);assert.match(store.useStudy().warning,/Sem c
 fail=false;await store.retryStudy();assert.equal(store.useStudy().pending,0);assert.equal(remote['quizzes.Iniciante'],7);
 const word={word:'보고',context:'보고 싶다',source:'#bts/estudos/spring-day',color:'yellow',saved:true,reviewed:false};
 store.changeWord(word,word.word);await settled();assert.equal(remote['word.보고'].color,'yellow');
+const savedAt=remote['word.보고'].savedAt;assert.ok(Number.isSafeInteger(savedAt)&&savedAt>0);
+store.changeWord({...store.useStudy().words[word.word],reviewed:true},word.word);await settled();assert.equal(remote['word.보고'].savedAt,savedAt,'Reviewing must preserve the save date');
 store.changeWord({...word,saved:false},word.word);await settled();assert.equal(remote['word.보고'].saved,true,'Destaques sempre são salvos');
 store.highlightWord(word.word,word.context,'blue');await settled();assert.equal(remote['word.보고'].color,'blue');assert.equal(remote['word.보고'].saved,true);
 await store.loadStudy();assert.equal(store.useStudy().words[word.word].color,'blue','Cor persiste após recarga');
@@ -42,6 +44,7 @@ store.highlightWord(word.word,word.context,'pink');await settled();assert.equal(
 store.changeWord({...word,color:null,reviewed:true},word.word);await settled();assert.equal(remote['word.보고'].reviewed,true);
 store.changeWord(null,word.word);await settled();assert.equal(remote['word.보고'],undefined);
 const domain=await import(domainURI);const grouped=domain.groupWordsByColor([{...word,color:'blue'},{...word,word:'싶다',color:'yellow'},{...word,word:'나',color:null}]);assert.deepEqual(grouped.map(g=>g.color),['yellow','blue',null]);assert.equal(grouped[1].words[0].word,word.word);local.set(domain.STORAGE_KEY,JSON.stringify({...domain.freshProgress(),completed:['1-2'],quizzes:{Iniciante:1}}));
+const latest=domain.groupWordsByColor([{...word,savedAt:10},{...word,word:'싶다',savedAt:20}]);assert.equal(latest[0].words[0].word,'싶다','Folder preview must use the latest save, not alphabetical order');
 await store.importLegacy();assert.equal(remote['quizzes.Iniciante'],7);assert.equal(remote['completed.1-2'],true);assert.equal(local.size,0);
 remote={};user={key:'student-b',name:'Student B',email:'b@example.invalid'};await store.loadStudy();assert.deepEqual(store.useStudy().progress.completed,[]);assert.deepEqual(store.useStudy().words,{});
 user=null;await store.loadStudy();assert.equal(store.useStudy().user,null);assert.equal(store.useStudy().pending,0);

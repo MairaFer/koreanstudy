@@ -3615,5 +3615,12 @@
   "Walkin' with us": "Walkin' with us",
   "Yeah we are not seven, with you": "Yeah we are not seven, with you",
   "Yeah we are not seven": "Yeah we are not seven",
-  "With you": "With you"
+  "With you": "With you",
+  "Suas palavras, organizadas em pastas por cor. Cada card mostra a última palavra salva; abra uma pasta para revisar as outras.": "Your words, organized into color folders. Each card shows your most recently saved word. Open a folder to review the rest.",
+  "Última palavra salva": "Most recently saved",
+  "Abrir pasta": "Open folder",
+  "Todas as pastas": "All folders",
+  "Esta pasta está vazia": "This folder is empty",
+  "Suas próximas palavras desta cor aparecerão aqui.": "Words you save with this color will appear here.",
+  "Data da palavra inválida.": "Invalid word save date."
 }

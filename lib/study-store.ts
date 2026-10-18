@@ -67,7 +67,9 @@ export function setProgress(update:SetStateAction<ProgressState>){
 export function changeWord(word:SavedWord|null,key:string){
   if(!snapshot.user){requestAccount();return;}
   if(snapshot.loadFailed||importing){emit({warning:'Aguarde o carregamento dos dados ou tente novamente.'});return;}
-  queue([{key:'word.'+key,value:word?.color?{...word,saved:true}:word}]);
+  const previous=snapshot.words[key];
+  const value=word?{...word,saved:word.color?true:word.saved,savedAt:!previous||previous.color!==word.color||(!previous.saved&&word.saved)?Date.now():previous.savedAt??Date.now()}:null;
+  queue([{key:'word.'+key,value}]);
 }
 export function highlightWord(word:string,context:string,color:SavedWord['color']){
   const previous=snapshot.words[word];

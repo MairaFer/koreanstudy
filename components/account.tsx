@@ -2,7 +2,8 @@
 /* localized-returns */
 import {Localized} from '@/components/localization';
 import {useState} from 'react';
-import {groupWordsByColor} from '@/lib/study-data';
+import {groupWordsByColor,colorNames,type SavedWord,type WordColor} from '@/lib/study-data';
+import {ArrowLeft,ChevronRight,Folder,FolderOpen} from 'lucide-react';
 import {useStudy,closeAccount,signInHref,importLegacy,retryStudy,changeWord} from '@/lib/study-store';
 import {Sheet,SheetContent,SheetHeader,SheetTitle,SheetDescription} from '@/components/ui/sheet';
 import {KoreanText} from '@/components/korean-audio';
@@ -12,10 +13,36 @@ export function AccountBar(){
 }
 export function SavedWords(){
   const {user,words,loaded,loadFailed}=useStudy();
-  const [filter,setFilter]=useState('saved');
   if(!loaded)return <Localized>{<p>Carregando suas palavras…</p>}</Localized>;
   if(!user)return <Localized>{<section className="empty-state"><h1>Suas palavras, sempre com você.</h1><p>Crie sua conta para guardar vocabulário e destacar palavras em todas as aulas e análises.</p><a className="primary" href={signInHref()} target="_top">Entrar / Criar conta</a><p><a href="#bts">Continuar explorando as músicas</a></p></section>}</Localized>;
   if(loadFailed)return <Localized>{<p>Não foi possível carregar suas palavras. Use “Tentar novamente” acima.</p>}</Localized>;
-  const all=Object.values(words),list=all.filter(w=>filter==='highlighted'?!!w.color:filter==='review'?(w.saved||!!w.color)&&!w.reviewed:(w.saved||!!w.color));
-  return <Localized>{<section className="saved-words"><p className="eyebrow">SEU CADERNO DE COREANO</p><h1>Minhas palavras<span>.</span></h1><p>Toque em uma palavra coreana para ouvir e destacar. Escolher uma cor salva a palavra automaticamente; seu caderno fica organizado por cor.</p><div className="word-filters" aria-label="Filtrar palavras">{[['saved','Todas as salvas'],['review','Para revisar'],['highlighted','Com destaque']].map(([id,label])=><button className="secondary" key={id} aria-pressed={filter===id} onClick={()=>setFilter(id)}>{label}</button>)}</div><p>{list.length} palavra(s)</p>{groupWordsByColor(list).map(group=><section className="word-color-group" key={group.color??'none'}><h2 className="word-color-group-title"><span aria-hidden="true" className={'group-color-dot '+(group.color?'highlight-'+group.color:'no-color-dot')}/>{group.label}<small>{group.words.length}</small></h2><div className="word-grid">{group.words.map(w=><article className="saved-word" key={w.word}><h2><KoreanText text={w.word}/></h2><p className="word-context"><KoreanText text={w.context}/></p><a href={w.source}>Ver no contexto →</a><div className="word-actions">{w.saved&&<button className="secondary" aria-pressed={w.reviewed} onClick={()=>changeWord({...w,reviewed:!w.reviewed},w.word)}>{w.reviewed?'Aprendida · revisar de novo':'Marcar como aprendida'}</button>}<button className="text-button" onClick={()=>changeWord(w.saved||w.color?null:{...w,saved:true},w.word)}>{w.saved||w.color?(w.color?'Retirar e remover destaque':'Retirar da revisão'):'Salvar para revisar'}</button>{w.color&&<button className="text-button" onClick={()=>changeWord(null,w.word)}>Remover destaque e dos salvos</button>}</div></article>)}</div></section>)}{!list.length&&<div className="empty-state"><h2>{filter==='review'?'Nenhuma palavra pendente de revisão':'Seu caderno começa com uma palavra'}</h2><p>Escolha uma aula ou música e salve as palavras que você quer lembrar.</p><a className="primary" href="#bts">Explorar músicas</a></div>}</section>}</Localized>;
+  return <SavedWordsNotebook key={user.key} words={words}/>;
+}
+export function SavedWordsNotebook({words}:{words:Record<string,SavedWord>}){
+  const [filter,setFilter]=useState('saved');
+  const [folder,setFolder]=useState<WordColor|'none'|null>(null);
+  const list=Object.values(words).filter(w=>filter==='highlighted'?!!w.color:filter==='review'?(w.saved||!!w.color)&&!w.reviewed:(w.saved||!!w.color));
+  const groups=groupWordsByColor(list);
+  const selected=groups.find(group=>(group.color??'none')===folder);
+  const folderLabel=folder==='none'?'Sem destaque':folder?colorNames[folder]:'';
+  return <Localized>{<section className="saved-words">
+    <p className="eyebrow">SEU CADERNO DE COREANO</p><h1>Minhas palavras<span>.</span></h1>
+    <p>Suas palavras, organizadas em pastas por cor. Cada card mostra a última palavra salva; abra uma pasta para revisar as outras.</p>
+    <div className="word-filters" aria-label="Filtrar palavras">{[['saved','Todas as salvas'],['review','Para revisar'],['highlighted','Com destaque']].map(([id,label])=><button className="secondary" key={id} aria-pressed={filter===id} onClick={()=>{setFilter(id);setFolder(null);}}>{label}</button>)}</div>
+    {folder===null?<>
+      <p>{list.length} palavra(s)</p>
+      <div className="word-folder-grid">{groups.map(group=><button type="button" className="word-folder" key={group.color??'none'} onClick={()=>setFolder(group.color??'none')}>
+        <span className="word-folder-top"><span className={'word-folder-icon '+(group.color?'highlight-'+group.color:'no-color-dot')}><Folder size={25} aria-hidden="true"/></span><span className="word-folder-count">{group.words.length} palavra(s)</span></span>
+        <span className="word-folder-label">{group.label}</span><span className="word-folder-caption">Última palavra salva</span>
+        <span className="word-folder-preview" lang="ko" translate="no">{group.words[0].word}</span>
+        <span className="word-folder-open">Abrir pasta <ChevronRight size={18} aria-hidden="true"/></span>
+      </button>)}</div>
+    </>:<section className="word-color-group" aria-label={folderLabel}>
+      <button className="text-button back" onClick={()=>setFolder(null)}><ArrowLeft size={17} aria-hidden="true"/>Todas as pastas</button>
+      <h2 className="word-color-group-title"><FolderOpen size={23} aria-hidden="true"/><span aria-hidden="true" className={'group-color-dot '+(folder!=='none'?'highlight-'+folder:'no-color-dot')}/>{folderLabel}<small>{selected?.words.length??0} palavra(s)</small></h2>
+      <div className="word-grid">{selected?.words.map(w=><article className="saved-word" key={w.word}><h2><KoreanText text={w.word}/></h2><p className="word-context"><KoreanText text={w.context}/></p><a href={w.source}>Ver no contexto →</a><div className="word-actions">{w.saved&&<button className="secondary" aria-pressed={w.reviewed} onClick={()=>changeWord({...w,reviewed:!w.reviewed},w.word)}>{w.reviewed?'Aprendida · revisar de novo':'Marcar como aprendida'}</button>}<button className="text-button" onClick={()=>changeWord(null,w.word)}>{w.color?'Remover destaque e dos salvos':'Retirar da revisão'}</button></div></article>)}</div>
+      {!selected&&<div className="empty-state"><h3>Esta pasta está vazia</h3><p>Suas próximas palavras desta cor aparecerão aqui.</p></div>}
+    </section>}
+    {folder===null&&!list.length&&<div className="empty-state"><h2>{filter==='review'?'Nenhuma palavra pendente de revisão':'Seu caderno começa com uma palavra'}</h2><p>Escolha uma aula ou música e salve as palavras que você quer lembrar.</p><a className="primary" href="#bts">Explorar músicas</a></div>}
+  </section>}</Localized>;
 }

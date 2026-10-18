@@ -3,7 +3,7 @@ export type ProgressState = {version:1; completed:string[]; learned:string[]; la
 export const freshProgress = ():ProgressState => ({version:1,completed:[],learned:[],lastLesson:null,answers:{},quizzes:{},notes:{}});
 export const colors = ['yellow','purple','green','pink','red','blue','gray'] as const;
 export type WordColor = typeof colors[number];
-export type SavedWord = {word:string; context:string; source:string; color:WordColor|null; saved:boolean; reviewed:boolean};
+export type SavedWord = {word:string; context:string; source:string; color:WordColor|null; saved:boolean; reviewed:boolean; savedAt?:number};
 export type StudyChange = {key:string;value:unknown};
 export type StudyRecords = Record<string,unknown>;
 const plain = (x:unknown):x is Record<string,unknown> => !!x && typeof x==='object' && !Array.isArray(x);
@@ -19,6 +19,7 @@ export function validateChanges(input:unknown):StudyChange[] {
     } else if(kind==='word') {
       if(!/^[0-9가-힣ㄱ-ㅎㅏ-ㅣ]{1,80}$/u.test(name)||name!==name.normalize('NFC')) throw Error('Palavra inválida.');
       if(value!==null&&(!plain(value)||value.word!==name||typeof value.context!=='string'||value.context.length>2000||typeof value.source!=='string'||value.source.length>300||!/^#(?:aulas|bts|flashcards|quizzes|palavras)(?:\/[-\w]*)*$/.test(value.source)||typeof value.saved!=='boolean'||typeof value.reviewed!=='boolean'||!(value.color===null||colors.includes(value.color as WordColor)))) throw Error('Dados da palavra inválidos.');
+      if(plain(value)&&value.savedAt!==undefined&&(!Number.isSafeInteger(value.savedAt)||Number(value.savedAt)<0)) throw Error('Data da palavra inválida.');
     } else {
       if(!id.test(name)||['__proto__','constructor','prototype'].includes(name)) throw Error('Identificador inválido.');
       if(kind==='completed'||kind==='learned') {if(typeof value!=='boolean') throw Error('Marcação inválida.');}
@@ -61,5 +62,5 @@ export function diffProgress(before:ProgressState,after:ProgressState):StudyChan
 
 export const colorNames:Record<WordColor,string>={yellow:'Amarelo',purple:'Roxo',green:'Verde',pink:'Rosa',red:'Vermelho',blue:'Azul',gray:'Cinza'};
 export function groupWordsByColor(words:SavedWord[]){
- return [...colors,null].map(color=>({color,label:color?colorNames[color]:'Sem destaque',words:words.filter(w=>w.color===color).sort((a,b)=>a.word.localeCompare(b.word,'ko'))})).filter(g=>g.words.length);
+ return [...colors,null].map(color=>({color,label:color?colorNames[color]:'Sem destaque',words:words.filter(w=>w.color===color).sort((a,b)=>(b.savedAt??0)-(a.savedAt??0)||a.word.localeCompare(b.word,'ko'))})).filter(g=>g.words.length);
 }
