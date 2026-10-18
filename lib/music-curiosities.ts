@@ -519,6 +519,34 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "term": "여기 우리가 함께이기에",
       "card": "O nós ganha companhia ao longo da letra. O começo lembra apenas sete; o final diz que, com vocês, esse nós é maior. A leitura é de inclusão de quem acompanha o grupo, não de uma alteração literal na quantidade de integrantes. O inglês you pode se referir a uma pessoa ou a várias; aqui vocês acompanha a voz coletiva."
     }
+  ],
+  "heartbeat": [
+    {
+      "term": "꿈같은 현실 깊이가 주나봐",
+      "card": "A profundidade da realidade conversa com o enjoo da linha em inglês e com a imagem de estar perdido no mar. Um encontro pode parecer tão extraordinário que desorienta. Essa é uma leitura das imagens da letra; não transforma a sensação em uma descrição médica."
+    },
+    {
+      "term": "한낮의 뜬 달 같은 나인가봐",
+      "card": "Uma lua em pleno dia pode ser vista, mas chama atenção por parecer fora de seu cenário habitual. A comparação permite ler o eu como deslocado dentro de uma realidade que parece sonho. A imagem não exige afirmar que a lua só aparece à noite."
+    },
+    {
+      "term": "어제처럼 다시 이 손 놓치 말고",
+      "card": "Soltar e deixar escapar são ideias próximas, mas vêm de verbos diferentes. 놓다 forma 놓지 말고; 놓치다 forma 놓치지 말고. A letra enviada traz 놓치 말고. Na pronúncia padrão, 놓지 soa [노치], pois ㅎ e ㅈ se combinam em ㅊ. Isso ajuda a separar o som ouvido da escrita usada para estudar a gramática.",
+      "source": "https://www.korean.go.kr/nkview/nklife/1998_1/8-8.html"
+    },
+    {
+      "term": "발 맞춰 봐 다시 더는 헤매이지 않도록",
+      "card": "Acompanhar o passo aproxima o movimento dos pés do ritmo do coração. A expressão 발을 맞추다 pode falar de andar no mesmo ritmo e, por extensão contextual, agir em sintonia. O Instituto Nacional da Língua Coreana usa o exemplo de ajustar os passos ao explicar 맞추다; não é o verbo de acertar uma resposta.",
+      "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=312100"
+    },
+    {
+      "term": "널 만난건 이 우주가 빚어낸 한 편의",
+      "card": "Youniverse combina you e universe, criando a ideia de você como um universo. A palavra inventada em inglês se liga à imagem de 우주, o universo que molda o encontro como uma história. Ela não é um termo coreano para memorizar como vocabulário padrão."
+    },
+    {
+      "term": "운명을 느껴 너 너 너 너 너",
+      "card": "A batida do coração dá uma medida poética de proximidade. Na parte em inglês, a ideia de estar a uma batida de distância sugere estar muito perto; não é uma unidade literal de espaço. Já destino nomeia como o encontro é sentido pelo eu da canção, sem precisar ser uma afirmação objetiva sobre o futuro."
+    }
   ]
 };
 

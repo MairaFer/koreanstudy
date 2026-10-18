@@ -4,13 +4,13 @@ import ts from 'typescript';
 async function load(file){const source=await fs.readFile(new URL('../'+file,import.meta.url),'utf8');const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));}
 const {lessons,levels,quizFor,isCorrect,normalizeAnswer}=await load('lib/course.ts');
 const {songs}=await load('lib/songs.ts');
-assert.equal(lessons.length,30);assert.equal(songs.length,58);
+assert.equal(lessons.length,30);assert.equal(songs.length,59);
 const allIds=[];for(const level of levels){assert.equal(lessons.filter(l=>l.level===level).length,10);assert.equal(quizFor(level).length,10);}
 for(const lesson of lessons){assert.equal(lesson.cards.length,8,lesson.id);assert.equal(lesson.exercises.length,5,lesson.id);assert.ok(lesson.body.length>=2);for(const c of lesson.cards){assert.ok(c.ko&&c.pt)}allIds.push(lesson.id);for(const e of lesson.exercises){allIds.push(e.id);assert.ok(e.answer.length&&e.explanation);assert.ok(isCorrect(e,e.answer[0]));assert.ok(!isCorrect(e,'incorrect test answer'));if(e.kind==='choice'){assert.equal(new Set(e.options).size,e.options.length,e.id+' duplicate choices');assert.ok(e.options.includes(e.answer[0]));}if(e.kind==='order')assert.deepEqual([...e.options].sort(),e.answer[0].split(' ').sort());}}
 for(const s of songs){allIds.push(s.id);if(s.videoId)assert.match(s.videoId,/^[\w-]{11}$/);assert.ok(s.clips.reduce((n,c)=>n+c.text.trim().split(/\s+/).length,0)<=10);for(const c of s.clips){allIds.push(c.id);assert.ok(c.end>c.start&&c.start>=0);assert.ok(c.grammar&&c.translation);}assert.ok(s.exercises.length>=2);}
 assert.equal(new Set(allIds).size,allIds.length);
 assert.equal(normalizeAnswer('  가요.  '),'가요');assert.equal(normalizeAnswer('가요'.normalize('NFD')),'가요');assert.ok(!isCorrect({answer:['갈 거예요']},'갈거예요'));
-console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 58 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
+console.log('PASS: 30 aulas, 150 exercícios, 240 cartões, 3 quizzes, 59 músicas; IDs, respostas, alternativas, Hangul e limites de citações verificados.');
 
 const {springDaySections,springDayVocabulary}=await load('lib/spring-day.ts');
 const springLines=springDaySections.flatMap(s=>s.lines);
@@ -880,3 +880,22 @@ assert.equal(new Function(studyLookup+";return studyFor('We Are Bulletproof Pt.2
 const eternalSong=songs.find(s=>s.id==='we-are-bulletproof-eternal');assert.equal(eternalSong.exercises.length,5);
 for(const exercise of eternalSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
 console.log('PASS: The Eternal: 76 supplied lines, all choruses and final preserved, Korean analysis, vocabulary, precise catalog aliases and 5 clickable exercises.');
+
+const {heartbeatSections,heartbeatVocabulary}=await load('lib/heartbeat.ts');
+const heartLines=heartbeatSections.flatMap(s=>s.lines);
+assert.equal(heartbeatSections.length,11);assert.equal(heartLines.length,51);
+assert.equal(heartLines[0].text,'It leaves me feeling seasick baby');assert.equal(heartLines.at(-1).text,'운명을 느껴 나 나 나 나 나');
+assert.equal(heartLines.filter(l=>l.english).length,23);
+assert.equal(heartLines.filter(l=>l.text==='어제처럼 다시 이 손 놓치 말고').length,3);
+assert.equal(heartLines.filter(l=>l.text==='발 맞춰 봐 다시 더는 헤매이지 않도록').length,3);
+assert.equal(heartLines.filter(l=>l.text==='운명을 느껴 너 너 너 너 너').length,5);
+assert.equal(heartLines.filter(l=>l.text==='운명을 느껴 나 나 나 나 나').length,5);
+for(const line of heartLines){assert.ok(line.text&&line.translation);if(line.english){assert.ok(!/[가-힣]/.test(line.text));continue;}const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'Heartbeat: missing '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length);}
+assert.equal(heartbeatVocabulary.verbs.length,19);assert.equal(heartbeatVocabulary.nouns.length,18);
+assert.ok(heartLines.find(l=>l.text==='어제처럼 다시 이 손 놓치 말고').entries.some(e=>e.notes.some(n=>n.includes('놓지 말고')&&n.includes('놓치지 말고'))));
+assert.ok(heartLines.find(l=>l.text==='다시 널 찾을꺼야 운명처럼').entries.some(e=>e.notes.some(n=>n.includes('찾을 거야'))));
+assert.ok(heartLines.some(l=>l.text==='I got youniverse, done'));
+assert.equal(new Function(studyLookup+";return studyFor('Heartbeat');")(),'heartbeat');
+const heartSong=songs.find(s=>s.id==='heartbeat');assert.equal(heartSong.exercises.length,5);
+for(const exercise of heartSong.exercises){assert.equal(exercise.kind,'choice');assert.ok(isCorrect(exercise,exercise.answer[0]));assert.ok(!isCorrect(exercise,exercise.options.find(o=>!exercise.answer.includes(o))));}
+console.log('PASS: Heartbeat: all 51 supplied lines, repeated choruses and final, spelling distinctions, Korean coverage, vocabulary, catalog link and 5 clickable exercises.');
