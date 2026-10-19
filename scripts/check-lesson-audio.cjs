@@ -4,7 +4,7 @@ Module._resolveFilename=function(request,parent,...rest){return resolve.call(thi
 for(const ext of ['.ts','.tsx'])require.extensions[ext]=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true}}).outputText,file);
 const React=require('react'),{renderToStaticMarkup}=require('react-dom/server'),{LocaleProvider}=require('../components/localization.tsx'),{LessonText}=require('../components/lesson-text.tsx'),{KoreanText}=require('../components/korean-audio.tsx');
 const {lessons}=require('../lib/course.ts');
-const components=['vowel','consonant','syllable','batchim','greetings','sentence'].map(name=>Object.values(require('../components/'+name+'-lesson.tsx')).find(c=>typeof c==='function'&&/Lesson$/.test(c.name)));
+const components=['vowel','consonant','syllable','batchim','greetings','sentence','particle'].map(name=>Object.values(require('../components/'+name+'-lesson.tsx')).find(c=>typeof c==='function'&&/Lesson$/.test(c.name)));
 const ko=/[가-힣ㄱ-ㅎㅏ-ㅣ]/u,voids=new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
 function render(node,locale){return renderToStaticMarkup(React.createElement(LocaleProvider,{initialLocale:locale},node));}
 // Check the rendered output, including text returned by helper components and
@@ -22,7 +22,7 @@ function checkReadableKorean(html,context){
  return words;
 }
 let count=0;for(const locale of ['pt','eng'])for(const Component of components)for(let step=0;step<4;step++)count+=checkReadableKorean(render(React.createElement(Component,{initialStep:step}),locale),Component.name+' '+locale+' '+step);
-for(const locale of ['pt','eng'])for(const lesson of lessons.slice(6)){
+for(const locale of ['pt','eng'])for(const lesson of lessons.slice(7)){
  const content=React.createElement(LessonText,null,React.createElement('article',null,React.createElement('h1',null,lesson.title),...lesson.body.map((p,i)=>React.createElement('p',{key:i},p)),React.createElement('p',null,lesson.tip),...lesson.examples.map((e,i)=>React.createElement('p',{key:'example-'+i},e.ko+' — '+e.pt))));
  count+=checkReadableKorean(render(content,locale),lesson.id+' '+locale);
 }
@@ -30,4 +30,4 @@ const fixture=React.createElement(LessonText,null,React.createElement(React.Frag
 for(const locale of ['pt','eng']){const html=render(fixture,locale);assert.equal((html.match(/class="korean-word /g)||[]).length,4);checkReadableKorean(html,'fragment fixture '+locale);assert.match(html,/<button type="button">[^<]*한<\/button>/);assert.match(html,/<div aria-hidden="true">나<\/div>/);}
 assert.ok(count>500,'Expected extensive Korean prose coverage across the course');
 const page=fs.readFileSync('app/page.tsx','utf8');assert.ok(page.includes("view==='aulas'&&current?<LessonText>"));
-console.log('PASS: '+count+' word pronunciation controls; all 24 interactive lesson stages and 24 other lessons checked in PT/ENG, including conditional fragments, headings, explanations and tips; existing controls remain unnested and existing KoreanText is not duplicated.');
+console.log('PASS: '+count+' word pronunciation controls; all 28 interactive lesson stages and 23 other lessons checked in PT/ENG, including conditional fragments, headings, explanations and tips; existing controls remain unnested and existing KoreanText is not duplicated.');
