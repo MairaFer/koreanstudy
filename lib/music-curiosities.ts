@@ -3,6 +3,50 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"love-maze":[
+  {
+    "term": "머리 쓰며 사랑한 적 없기에",
+    "card": "Usar a cabeça aqui é calcular riscos e vantagens no amor. O verso anterior contrasta negócio com exercício: a relação é apresentada como algo vivido e praticado, não como uma conta que garante lucro. A análise acompanha essa escolha do eu lírico, sem dizer que pensar numa relação seja errado."
+  },
+  {
+    "term": "내가 당겨도 오지 않아도 돼",
+    "card": "Empurrar, cair, levantar e puxar formam uma sequência de movimento entre duas pessoas. O final, porém, permite não vir: a construção 오지 않아도 돼 deixa espaço para a decisão do outro. Ela contrasta com os pedidos intensos de não soltar as mãos."
+  },
+  {
+    "term": "우리가 함께면 끝이 없는 미로조차 낙원",
+    "card": "O inglês aproxima a maze, um labirinto, de amaze, surpreender. A formulação cantada é estilizada e não funciona como modelo de conjugação inglesa. Mais adiante, o labirinto sem fim vira paraíso quando há companhia: a solução poética não é apenas encontrar a saída, mas mudar a experiência do caminho."
+  },
+  {
+    "term": "미지수의 그 기로도",
+    "card": "공식, fórmula, e 미지수, incógnita, criam um campo matemático; 법, lei, e 섭리, providência, sugerem uma ordem maior. A letra aproxima a sensação de destino da incerteza real do caminho, que ainda exige escolha e tentativa."
+  },
+  {
+    "term": "잡은 두 손이 지도가 되어",
+    "card": "As mãos aparecem primeiro como algo que não se deve perder e terminam como mapa. O apoio compartilhado passa de vínculo a orientação. A passagem prepara o retorno de pegue minha mão no refrão, sem precisar prometer uma saída fácil."
+  }
+],
+"so-what":[
+  {
+    "term": "이미 주사윈 던져진 지 오래",
+    "card": "Os dados lançados figuram uma situação já posta em movimento, cujo resultado não se controla por completo. 던져진 é passivo; -ㄴ 지 오래 acrescenta que já faz tempo. Não é preciso transformar a cena em um jogo literal para entender a decisão de seguir."
+  },
+  {
+    "term": "고민들의 9할은 니가 만들어 낸 상상의 늪",
+    "card": "할 conta décimos: 9할 corresponde a nove décimos. A letra usa o número como exagero expressivo, não como dado de pesquisa. O pântano da imaginação descreve como ficar preso a cenários imaginados pode ampliar a preocupação."
+  },
+  {
+    "term": "고민보다 Go Go 쫄지마렴 cheer up",
+    "card": "A expressão retoma o título 고민보다 Go, também conhecido como Go, Go. Aqui a semelhança sonora de 고민 e Go transforma remoer em movimento. O registro coloquial de 쫄다, intimidar-se, reforça o tom de incentivo entre pessoas próximas."
+  },
+  {
+    "term": "경계선 위에서 위태롭다 해도",
+    "card": "A linha de limite, o vento e a corrida constroem uma imagem de avançar mesmo na incerteza. As concessões admitem instabilidade, erros e lágrimas; o refrão não depende de dizer que está tudo resolvido. O movimento é uma resposta à paralisia do eu."
+  },
+  {
+    "term": "고통은 내 훈장",
+    "card": "A medalha transforma a dor vivida em marca de resistência na voz do eu lírico. Não torna o sofrimento uma obrigação. A abertura volta no final com a mesma escolha de não se deixar definir pelos julgamentos: e daí funciona aqui como uma resposta a essas pressões."
+  }
+],
 "134340":[
   {
     "term": "나에겐 이름이 없구나",

@@ -1,3 +1,5 @@
+import {loveMazeSections,loveMazeVocabulary} from './love-maze';
+import {soWhatSections,soWhatVocabulary} from './so-what';
 import {plutoSections,plutoVocabulary} from './pluto';
 import {paradiseSections,paradiseVocabulary} from './paradise';
 import {anpanmanSections,anpanmanVocabulary} from './anpanman';
@@ -123,6 +125,8 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'love-maze',sections:loveMazeSections,vocabulary:loveMazeVocabulary},
+ {id:'so-what',sections:soWhatSections,vocabulary:soWhatVocabulary},
  {id:'134340',sections:plutoSections,vocabulary:plutoVocabulary},
  {id:'paradise',sections:paradiseSections,vocabulary:paradiseVocabulary},
  {id:'anpanman',sections:anpanmanSections,vocabulary:anpanmanVocabulary},
