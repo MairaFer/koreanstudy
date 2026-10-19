@@ -2,6 +2,7 @@
 import {useRef,useState} from 'react';
 import {ArrowLeft,ArrowRight,CheckCircle2,Leaf,Lightbulb,RotateCcw,Volume2} from 'lucide-react';
 import {LessonText} from './lesson-text';
+import {ArmyPractice} from './army-lesson';
 import {useKoreanSpeech} from './korean-audio';
 import {farewellScenes,greetingChallenges,greetingDialogues,greetingPhrases} from '@/lib/greetings-lab';
 
@@ -47,7 +48,7 @@ export function GreetingsLesson({initialStep=0}:{initialStep?:number}){
  <div className="gl-dialogue-controls"><span>{wins.length} / 6 <span>situações resolvidas nesta visita</span></span><button type="button" className="secondary" onClick={()=>{setRound((round+1)%greetingChallenges.length);setAnswer(null);speech.stop();}}>Próxima situação<ArrowRight size={17}/></button><button type="button" className="text-button" onClick={()=>{setRound(0);setAnswer(null);setWins([]);speech.stop();}}><RotateCcw size={16}/>Recomeçar a prática</button></div>
  <h4>O que levar desta aula</h4><ul className="vl-takeaways"><li><CheckCircle2/>Escolha a expressão pela intenção e pela relação com a pessoa.</li><li><CheckCircle2/>Na despedida, observe quem recebe suas palavras.</li><li><CheckCircle2/>Ouça e pratique as expressões inteiras, com seu contexto.</li></ul><p>Os cinco exercícios abaixo registram seu progresso na aula. A prática das cenas é um espaço livre para experimentar.</p>
  </>}
- </div><div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#greetings-practice" onClick={e=>{e.preventDefault();const el=document.getElementById('greetings-practice');el?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});el?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
+ </div>{step===3&&<ArmyPractice lesson={5}/>}<div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#greetings-practice" onClick={e=>{e.preventDefault();const el=document.getElementById('greetings-practice');el?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});el?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
  <p className="vl-audio-status" role="status">{speech.status}</p><details className="vl-reference"><summary>Uma fonte para continuar aprendendo</summary><p>O material de coreano para estudantes internacionais do Study in Korea apresenta expressões úteis e diferencia as despedidas conforme quem sai e quem fica.</p><a href="https://cdn.studyinkorea.go.kr/public/res/guide/guideBook_ko.pdf" target="_blank" rel="noreferrer">Expressões úteis · Study in Korea, material em coreano ↗</a></details>
  </div></LessonText>;
 }

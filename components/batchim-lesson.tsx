@@ -2,6 +2,7 @@
 import {useRef,useState,type ReactNode} from 'react';
 import {ArrowLeft,ArrowRight,CheckCircle2,Flower2,House,Leaf,Lightbulb,Moon,RotateCcw,Shirt,Snowflake,Soup,Volume2} from 'lucide-react';
 import {LessonText} from './lesson-text';
+import {ArmyPractice,ArmyMemberNames} from './army-lesson';
 import {useKoreanSpeech} from './korean-audio';
 import {SyllableDiagram} from './syllable-lesson';
 import {splitSyllable,type SyllableParts} from '@/lib/syllable-lab';
@@ -51,7 +52,7 @@ export function BatchimLesson({initialStep=0}:{initialStep?:number}){
  <div className="sl-round-footer"><span>{wins.length} / 6 <span>descobertas nesta visita</span></span><button type="button" className="secondary" onClick={()=>{speech.stop();setRound((round+1)%batchimRounds.length);setAnswer(null);}}>Próximo desafio<ArrowRight size={17}/></button><button type="button" className="text-button" onClick={()=>{setWins([]);setRound(0);setAnswer(null);speech.stop();}}><RotateCcw size={16}/>Recomeçar a oficina</button></div>
  <h4>O que levar desta aula</h4><ul className="vl-takeaways"><li><CheckCircle2/>O 받침 ocupa a base; não acrescente uma vogal ao final.</li><li><CheckCircle2/>A escrita pode manter uma letra cujo som muda conforme o contexto.</li><li><CheckCircle2/>Antes de uma partícula com vogal, muitos finais se ligam; o ㅇ final permanece nasal.</li></ul><p>Agora consolide a descoberta nos cinco exercícios abaixo. Eles registram seu progresso na aula.</p>
  </>}
- </div><div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#batchim-practice" onClick={e=>{e.preventDefault();const el=document.getElementById('batchim-practice');el?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});el?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
+ </div>{step===3&&<ArmyPractice lesson={4}/>}<div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#batchim-practice" onClick={e=>{e.preventDefault();const el=document.getElementById('batchim-practice');el?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});el?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
  <p className="vl-audio-status" role="status">{speech.status}</p><details className="vl-reference"><summary>Uma fonte para continuar aprendendo</summary><p>As regras de pronúncia padrão do Instituto Nacional da Língua Coreana explicam os sons finais e a ligação antes de partículas e terminações com vogal.</p><a href="https://www.korean.go.kr/front/page/pageView.do?page_id=P000100&mn_id=95" target="_blank" rel="noreferrer">Pronúncia do 받침 · referência em coreano ↗</a></details>
- </div></LessonText>;
+ <ArmyMemberNames/></div></LessonText>;
 }
