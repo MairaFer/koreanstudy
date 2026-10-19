@@ -3,6 +3,50 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"stigma":[
+  {
+    "term": "그저 묻어두기엔",
+    "card": "묻어 vem de enterrar; 물어, de perguntar. A diferença é pequena na aparência, mas muda a imagem: aqui algo foi escondido e não pode continuar enterrado. -기엔 reduz -기에는 e introduz a situação que se tornou impossível de sustentar."
+  },
+  {
+    "term": "되돌릴 수 없는 깨진 유리 조각 같아",
+    "card": "O vidro partido e a ferida que se aprofunda tornam visível uma consequência que a voz não consegue desfazer. Stigma pode ser lido como marca persistente de culpa nesse campo de imagens. É uma interpretação da letra, não uma identificação de uma falta real do cantor."
+  },
+  {
+    "term": "이래보라고 저래보라고",
+    "card": "As aspas anteriores encenam uma cobrança e uma desculpa. Em seguida, o eu pergunta com que direito daria ordens ao outro. Ler as três linhas juntas evita transformar 말하겠어 numa promessa isolada de dizer o que alguém deve fazer."
+  },
+  {
+    "term": "숨겨도 감춰도 지워지지 않어",
+    "card": "Esconder e encobrir não equivalem a apagar: as duas concessões em -어도 desembocam numa negação passiva. A alternância inglesa entre brother e sister amplia os destinatários do pedido de desculpa, mas a letra não define quem são essas pessoas fora da narrativa."
+  },
+  {
+    "term": "내 죄를 사해줘",
+    "card": "Antes, o outro suportava a culpa no lugar do eu; no final, o eu pede receber o castigo e ser perdoado. 사하다 é vocabulário de perdão ou absolvição, distinto de 사다, comprar. Essa linguagem não basta para determinar uma religião ou um acontecimento biográfico."
+  }
+],
+"begin":[
+  {
+    "term": "Love you my brother 형들이 있어",
+    "card": "형 não significa qualquer irmão em qualquer situação: é uma forma usada por um homem para um irmão ou homem próximo mais velho. 형들 torna o grupo plural. Junto de brother, a letra constrói uma relação de proximidade e crescimento; a palavra não obriga uma leitura de parentesco biológico."
+  },
+  {
+    "term": "향기가 없던 텅 비어있던 나 나",
+    "card": "O eu passado é apresentado como sem fragrância e vazio. Depois, emoções surgem e ele se torna eu mesmo. O movimento entre essas imagens explica begin como começo de uma identidade afetiva, não apenas início de uma atividade."
+  },
+  {
+    "term": "대신 울고 싶어",
+    "card": "Querer chorar no lugar do outro é seguido imediatamente por não poder fazê-lo. O refrão troca a substituição impossível pelo convite de chorar junto. A leitura nasce dessa sequência de versos, sem transformar empatia em poder de apagar a dor alheia."
+  },
+  {
+    "term": "형이 아프면 내가 아픈 것보다 아파",
+    "card": "A comparação depende de 것보다: a oração eu estar sofrendo vira uma unidade que pode ser comparada. Não é mais velho do que eu; 형 já expressa a relação de idade, enquanto 보다 compara a intensidade da dor."
+  },
+  {
+    "term": "Brother let's cry, cry 울고 말자",
+    "card": "A sequência vai de sorrir junto a chorar junto e depois voar junto. No final, make me begin e made me again aproximam começo e reconstrução. O inglês muda do presente ao passado, preservando duas perspectivas da mesma transformação."
+  }
+],
 "pied-piper":[
   {
     "term": "그만해 뮤비는 나중에 해석하고",

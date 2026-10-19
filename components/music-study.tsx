@@ -1,4 +1,8 @@
 "use client";
+import {stigmaSections,stigmaVocabulary} from '@/lib/stigma';
+
+import {beginSections,beginVocabulary} from '@/lib/begin';
+
 import {piedPiperSections,piedPiperVocabulary} from '@/lib/pied-piper';
 import {boyMeetsEvilSections,boyMeetsEvilVocabulary} from '@/lib/boy-meets-evil';
 import {normalKoreanSections,normalKoreanVocabulary} from '@/lib/normal-korean';
@@ -103,6 +107,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+  'stigma':{sections:stigmaSections,vocabulary:stigmaVocabulary,summary:"Uma voz já não consegue esconder a culpa: a ferida, o vidro e a luz dão forma ao que permanece. Explore ações prolongadas, concessões, passivas, perguntas retóricas e pedidos de perdão, sem confundir a narrativa poética com biografia.",heading:"Stigma · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+  'begin':{sections:beginSections,vocabulary:beginVocabulary,summary:"Um eu adolescente e vazio ganha emoções na relação com seus irmãos mais velhos. Explore lembranças em -던, capacidade, comparação e a passagem de querer sofrer no lugar do outro a sorrir, chorar e voar junto.",heading:"Begin · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'fire':{sections:fireSections,vocabulary:fireVocabulary,summary:'Um convite a viver do próprio jeito, atravessando a desordem e os rótulos sociais. Estude permissões, ordens, formas coloquiais e a diferença entre arder e queimar algo.',heading:'Burning Up (FIRE) · coreano palavra por palavra',badge:'Letra completa · análise preparada',references:<p className="music-reference">Traduções contextuais da letra fornecida, com as repetições musicais preservadas. Referências: <a href="https://krdict.korean.go.kr/eng/mainAction" target="_blank" rel="noreferrer">Dicionário Básico de Coreano</a> · <a href="https://www.korea.kr/briefing/policyBriefingView.do?newsId=148803537" target="_blank" rel="noreferrer">Contexto social de 금수저 e 흙수저</a>.</p>},
  'run':{sections:runSections,vocabulary:runVocabulary,summary:'A corrida por um amor que parece impossível. Estude concessões, limites, pedidos e imagens de flores, sol e lembranças, com a letra enviada preservada.',heading:'RUN · coreano palavra por palavra',badge:'Letra completa · análise preparada',references:<p className="music-reference">Traduções contextuais da letra fornecida. Consulta lexical: <a href="https://krdict.korean.go.kr/eng/mainAction" target="_blank" rel="noreferrer">Dicionário Básico de Coreano</a>. Imagens figuradas, sujeitos implícitos e construções abreviadas são explicados nas notas.</p>},
  'i-need-u':{sections:iNeedUSections,vocabulary:iNeedUVocabulary,summary:'Amor, mágoa e a dificuldade de partir. Explore o contraste 안 돼/안대, desejos, concessões e pedidos com discurso indireto. Texto enviado preservado, com traduções contextuais.',heading:'I Need U · coreano palavra por palavra',badge:'Letra completa · análise preparada',references:<p className="music-reference">Traduções contextuais da letra fornecida. Consulte o <a href="https://krdict.korean.go.kr/eng/mainAction" target="_blank" rel="noreferrer">Dicionário Básico de Coreano</a> para vocabulário e terminações. Expressões ríspidas, elipses e leituras figuradas estão indicadas nas notas.</p>},

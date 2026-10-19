@@ -1,3 +1,5 @@
+import {stigmaSections,stigmaVocabulary} from './stigma';
+import {beginSections,beginVocabulary} from './begin';
 import {piedPiperSections,piedPiperVocabulary} from './pied-piper';
 import {boyMeetsEvilSections,boyMeetsEvilVocabulary} from './boy-meets-evil';
 import {normalKoreanSections,normalKoreanVocabulary} from './normal-korean';
@@ -85,6 +87,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'stigma',sections:stigmaSections,vocabulary:stigmaVocabulary},
+ {id:'begin',sections:beginSections,vocabulary:beginVocabulary},
  {id:'spring-day',sections:springDaySections,vocabulary:springDayVocabulary},
  {id:'body-to-body',sections:bodyToBodySections,vocabulary:bodyToBodyVocabulary},
  {id:'hooligan',sections:hooliganSections,vocabulary:hooliganVocabulary},
