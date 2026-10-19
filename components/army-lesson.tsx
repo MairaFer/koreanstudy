@@ -15,7 +15,7 @@ function BlockBuilder({word}:{word:string}){
   <div className="army-pieces" role="group" aria-label="Blocos para montar">{blocks.map((_,i)=>blocks.length-1-i).map(i=><button type="button" key={i} disabled={picked.includes(i)} onClick={()=>{setPicked(p=>[...p,i]);speech.speak(blocks[i]);}} lang="ko">{blocks[i]}</button>)}</div>
   <div className="army-actions"><button type="button" className="text-button" disabled={!picked.length} onClick={()=>setPicked(p=>p.slice(0,-1))}><Undo2 size={16}/>Apagar último bloco</button><button type="button" className="text-button" onClick={()=>{setPicked([]);speech.stop();}}><RotateCcw size={16}/>Tentar de novo</button></div>
   {complete&&<p role="status" className="army-feedback">{written===word?'Isso! Os blocos formam o nome ou a palavra do modelo.':'Compare com o modelo, da esquerda para a direita. Apague um bloco e tente novamente.'}</p>}
-  <p className="vl-audio-status" role="status">{speech.status}</p>
+  
  </div></LessonText>;
 }
 
@@ -30,7 +30,7 @@ export function ArmyPractice({lesson,initialSelected=0}:{lesson:1|2|3|4|5;initia
   <div className="army-focus"><div><strong lang="ko" className="army-model">{word.ko}</strong><p>{word.meaning}</p><button type="button" className="secondary" onClick={()=>speech.speak(word.ko)}><Volume2 size={17}/>Ouvir a palavra inteira</button></div>{lesson<5&&<div className="army-block-focus"><span>{lesson===2?'PRIMEIRO BLOCO':'ÚLTIMO BLOCO'}</span><strong lang="ko">{block}</strong><p>{lesson===1?'Procure a vogal.':lesson===2?'Procure a consoante inicial.':lesson===4?'Procure a consoante na base.':'Um bloco, uma sílaba.'}</p>{lesson===3&&<p>{parts.initial} + {parts.vowel}{parts.final?' + '+parts.final:''}</p>}</div>}</div>
   <h4>{data.prompt}</h4>
   {lesson===3?<BlockBuilder key={word.ko} word={word.ko}/>:<><div className="army-pieces" role="group" aria-label="Escolha sua resposta">{data.options.map(option=><button type="button" key={option} aria-pressed={answer===option} lang="ko" onClick={()=>{setAnswer(option);speech.speak(option);}}>{option}</button>)}</div>{answer&&<div className="army-feedback" role="status"><strong>{answer===data.answers[selected]?'Isso! Você encontrou.':'Observe o cartão e tente novamente.'}</strong>{answer===data.answers[selected]&&<p>{data.feedback}</p>}</div>}</>}
-  <p className="vl-audio-status" role="status">{speech.status}</p>
+  
  </section></LessonText>;
 }
 
@@ -43,7 +43,7 @@ function MemberName({name}:{name:string}){
   <div className="army-name-parts"><div><small>Consoante inicial</small><strong lang="ko">{parts.initial}</strong></div><div><small>Vogal</small><strong lang="ko">{parts.vowel}</strong></div><div><small>Consoante final · 받침</small><strong lang="ko">{parts.final||'—'}</strong></div></div>
   <p>{parts.final?'Este bloco tem 받침: copie a consoante final na base.':'Este bloco não tem 받침: bastam a consoante inicial e a vogal.'}</p>
   <h4>Agora escreva com os blocos</h4><BlockBuilder word={name}/>
-  <p className="vl-audio-status" role="status">{speech.status}</p>
+  
  </div></LessonText>;
 }
 
@@ -59,6 +59,6 @@ export function ArmyMemberNames({initialMember=0,initialReal=false}:{initialMemb
   <MemberName key={person.id+String(real)} name={real?person.real:person.ko}/>
   <p className="army-caption">As grafias latinas ajudam a reconhecer a pessoa; não são uma transcrição exata da pronúncia coreana. O nome artístico de RM é escrito em letras latinas; 알엠 mostra sua leitura em Hangul.</p>
   <p className="army-caption"><CheckCircle2 size={16} aria-hidden="true"/>Esta oficina é para explorar. Os exercícios de progresso da aula continuam abaixo.</p>
-  <a className="text-button" href="https://bts.ibighit.com/eng/profile/" target="_blank" rel="noreferrer">Integrantes · perfil oficial do BTS ↗</a><p className="vl-audio-status" role="status">{speech.status}</p>
+  <a className="text-button" href="https://bts.ibighit.com/eng/profile/" target="_blank" rel="noreferrer">Integrantes · perfil oficial do BTS ↗</a>
  </section></LessonText>;
 }
