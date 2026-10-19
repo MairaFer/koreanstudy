@@ -1,7 +1,8 @@
 'use client';
 import {useRef,useState} from 'react';
 import {ArrowLeft,ArrowRight,BookOpen,CheckCircle2,Leaf,Lightbulb,MessageCircle,Milk,RotateCcw,TreeDeciduous,Volume2,Waves} from 'lucide-react';
-import {Localized,useLocale} from './localization';
+import {useLocale} from './localization';
+import {LessonText} from './lesson-text';
 import {useKoreanSpeech} from './korean-audio';
 import {assemblyChallenges,joinSyllable,labFinals,labInitials,labVowels,orderPieces,splitSyllable,wordBlocks,type SyllableParts} from '@/lib/syllable-lab';
 
@@ -12,7 +13,7 @@ export function SyllableDiagram({parts,active,onPick}:{parts:SyllableParts;activ
  const {t}=useLocale();const horizontal=['ㅗ','ㅛ','ㅜ','ㅠ','ㅡ'].includes(parts.vowel);
  return <div className={'sl-diagram '+(horizontal?'sl-horizontal':'sl-vertical')+(parts.final?' sl-with-final':'')} role="group" aria-label={t('Posições do bloco silábico')}>{(['initial','vowel','final'] as Part[]).filter(p=>p!=='final'||parts.final).map(p=><button type="button" key={p} className={'sl-cell sl-'+p} aria-pressed={active===p} aria-label={t(partNames[p])+': '+parts[p]} onClick={()=>onPick(p)}><strong lang="ko">{parts[p]}</strong><small>{t(partNames[p])}</small></button>)}</div>;
 }
-function Formula({parts}:{parts:SyllableParts}){return <p className="sl-formula"><span lang="ko">{parts.initial}</span><b>+</b><span lang="ko">{parts.vowel}</span>{parts.final&&<><b>+</b><span lang="ko">{parts.final}</span></>}<b>=</b><strong lang="ko">{joinSyllable(parts)}</strong></p>;}
+function Formula({parts}:{parts:SyllableParts}){return <LessonText><p className="sl-formula"><span lang="ko">{parts.initial}</span><b>+</b><span lang="ko">{parts.vowel}</span>{parts.final&&<><b>+</b><span lang="ko">{parts.final}</span></>}<b>=</b><strong lang="ko">{joinSyllable(parts)}</strong></p></LessonText>;}
 const steps=['Descubra as posições','Acrescente o 받침','Monte seus blocos','Junte os blocos em palavras'];
 export function SyllableLesson({initialStep=0}:{initialStep?:number}){
  const {t}=useLocale(),speech=useKoreanSpeech();const [step,setStep]=useState(initialStep),[layoutVowel,setLayoutVowel]=useState('ㅏ'),[active,setActive]=useState<Part>('initial'),[hasFinal,setHasFinal]=useState(false),[ending,setEnding]=useState('ㅇ'),[round,setRound]=useState(0),[parts,setParts]=useState<SyllableParts>({initial:'ㄱ',vowel:'ㅏ',final:''}),[checked,setChecked]=useState(false),[hint,setHint]=useState(false),[wins,setWins]=useState<number[]>([]),[wordIndex,setWordIndex]=useState(0),[blockIndex,setBlockIndex]=useState(0),[ordered,setOrdered]=useState<number[]>([]);const root=useRef<HTMLDivElement>(null);
@@ -20,7 +21,7 @@ export function SyllableLesson({initialStep=0}:{initialStep?:number}){
  function go(n:number){speech.stop();setStep(n);setActive('initial');if(n===1&&!['ㅏ','ㅗ'].includes(layoutVowel))setLayoutVowel('ㅏ');requestAnimationFrame(()=>{root.current?.focus({preventScroll:true});root.current?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});}
  function change(part:Part,value:string){setParts(p=>({...p,[part]:value}));setChecked(false);}
  const illustrations={book:BookOpen,speech:MessageCircle,tree:TreeDeciduous,sea:Waves,milk:Milk};
- return <Localized><div className="vowel-lab syllable-lab" ref={root} tabIndex={-1}>
+ return <LessonText><div className="vowel-lab syllable-lab" ref={root} tabIndex={-1}>
  <div className="vl-welcome"><div><span className="vl-kicker"><Leaf size={15} aria-hidden="true"/>LETRAS QUE SE ENCONTRAM</span><h2>Peças pequenas. Palavras inteiras.</h2><p>Você já explorou vogais e consoantes. Agora vai descobrir como elas se organizam em blocos e como esses blocos formam palavras.</p></div><div className="vl-welcome-art" aria-hidden="true"><span>한</span><Leaf/></div></div>
  <nav className="vl-steps" aria-label="Etapas da terceira aula">{steps.map((label,i)=><button type="button" key={label} aria-current={step===i?'step':undefined} onClick={()=>go(i)}><span>{i+1}</span>{label}</button>)}</nav>
  <div className="vl-panel" key={step}>
@@ -54,5 +55,5 @@ export function SyllableLesson({initialStep=0}:{initialStep?:number}){
  </>}
  </div><div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#syllable-practice" onClick={e=>{e.preventDefault();const target=document.getElementById('syllable-practice');target?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});target?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
  <p className="vl-audio-status" role="status">{speech.status}</p><details className="vl-reference"><summary>Uma fonte para continuar aprendendo</summary><p>Veja como as letras se organizam em unidades silábicas no material do Instituto Nacional da Língua Coreana.</p><a href="https://www.korean.go.kr/eng_hangeul/principle/001.html" target="_blank" rel="noreferrer">Estrutura do Hangul · material em inglês ↗</a></details>
- </div></Localized>;
+ </div></LessonText>;
 }

@@ -1,7 +1,7 @@
 'use client';
 import {useRef,useState,type ReactNode} from 'react';
 import {ArrowLeft,ArrowRight,CheckCircle2,Flower2,House,Leaf,Lightbulb,Moon,RotateCcw,Shirt,Snowflake,Soup,Volume2} from 'lucide-react';
-import {Localized} from './localization';
+import {LessonText} from './lesson-text';
 import {useKoreanSpeech} from './korean-audio';
 import {SyllableDiagram} from './syllable-lesson';
 import {splitSyllable,type SyllableParts} from '@/lib/syllable-lab';
@@ -23,7 +23,7 @@ export function BatchimLesson({initialStep=0}:{initialStep?:number}){
  const [step,setStep]=useState(initialStep),[example,setExample]=useState(5),[active,setActive]=useState<keyof SyllableParts>('initial'),[sound,setSound]=useState(0),[link,setLink]=useState(0),[connected,setConnected]=useState(false),[round,setRound]=useState(0),[answer,setAnswer]=useState<string|null>(null),[wins,setWins]=useState<number[]>([]);
  const word=finalSounds[example],family=finalSounds[sound],connection=linkingExamples[link],task=batchimRounds[round];
  function go(n:number){speech.stop();setStep(n);requestAnimationFrame(()=>{root.current?.focus({preventScroll:true});root.current?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});}
- return <Localized><div className="vowel-lab batchim-lab" ref={root} tabIndex={-1}>
+ return <LessonText><div className="vowel-lab batchim-lab" ref={root} tabIndex={-1}>
  <div className="vl-welcome"><div><span className="vl-kicker"><Leaf size={15} aria-hidden="true"/>UMA BASE, NOVOS CAMINHOS</span><h2>O fim de um bloco pode ligar dois sons.</h2><p>Encontre a consoante final, descubra como ela soa em pausa e acompanhe sua ligação com a vogal seguinte. As figuras ajudam a ligar escrita, som e significado.</p></div><div className="vl-welcome-art" aria-hidden="true"><span>밥</span><Leaf/></div></div>
  <nav className="vl-steps" aria-label="Etapas da quarta aula">{steps.map((label,i)=><button type="button" key={label} aria-current={step===i?'step':undefined} onClick={()=>go(i)}><span>{i+1}</span>{label}</button>)}</nav>
  <div className="vl-panel" key={step}>
@@ -53,5 +53,5 @@ export function BatchimLesson({initialStep=0}:{initialStep?:number}){
  </>}
  </div><div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#batchim-practice" onClick={e=>{e.preventDefault();const el=document.getElementById('batchim-practice');el?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});el?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
  <p className="vl-audio-status" role="status">{speech.status}</p><details className="vl-reference"><summary>Uma fonte para continuar aprendendo</summary><p>As regras de pronúncia padrão do Instituto Nacional da Língua Coreana explicam os sons finais e a ligação antes de partículas e terminações com vogal.</p><a href="https://www.korean.go.kr/front/page/pageView.do?page_id=P000100&mn_id=95" target="_blank" rel="noreferrer">Pronúncia do 받침 · referência em coreano ↗</a></details>
- </div></Localized>;
+ </div></LessonText>;
 }

@@ -1,7 +1,8 @@
 'use client';
 import {useRef,useState} from 'react';
 import {ArrowLeft,ArrowRight,Check,CheckCircle2,Headphones,Leaf,Volume2,Wind} from 'lucide-react';
-import {Localized,useLocale} from './localization';
+import {useLocale} from './localization';
+import {LessonText} from './lesson-text';
 import {useKoreanSpeech} from './korean-audio';
 import {builderVowels,composeInitial,consonantFamilies,consonantListening,consonants,soundKinds,type SoundPlace} from '@/lib/consonant-lab';
 
@@ -16,7 +17,7 @@ export function ConsonantLesson({initialStep=0}:{initialStep?:number}){
  const consonant=consonants[selected],currentFamily=consonantFamilies[family],question=consonantListening[round],syllable=composeInitial(initial,vowel);
  function go(n:number){speech.stop();setStep(n);requestAnimationFrame(()=>{root.current?.focus({preventScroll:true});root.current?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});}
  function explore(i:number){setSelected(i);const c=consonants[i];setVisited(v=>v.includes(c.letter)?v:[...v,c.letter]);speech.speak(composeInitial(c.letter,'ㅏ'));}
- return <Localized><div className="vowel-lab consonant-lab" ref={root} tabIndex={-1}>
+ return <LessonText><div className="vowel-lab consonant-lab" ref={root} tabIndex={-1}>
  <div className="vl-welcome"><div><span className="vl-kicker"><Leaf size={15} aria-hidden="true"/>SEU PRÓXIMO BROTO</span><h2>A mesma vogal. Novos começos.</h2><p>Na aula anterior, você conheceu as vogais. Agora, vamos trocar a consoante inicial para descobrir novos sons e montar suas próprias sílabas.</p></div><div className="vl-welcome-art" aria-hidden="true"><span>나</span><Leaf/></div></div>
  <nav className="vl-steps" aria-label="Etapas da segunda aula">{steps.map((label,i)=><button type="button" key={label} aria-current={step===i?'step':undefined} onClick={()=>go(i)}><span>{i+1}</span>{label}</button>)}</nav>
  <div className="vl-panel" key={step}>
@@ -46,5 +47,5 @@ export function ConsonantLesson({initialStep=0}:{initialStep?:number}){
  </>}
  </div><div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#consonant-practice" onClick={e=>{e.preventDefault();const target=document.getElementById('consonant-practice');target?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});target?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
  <p className="vl-audio-status" role="status">{speech.status}</p><details className="vl-reference"><summary>Uma fonte para continuar aprendendo</summary><p>Veja a formação das consoantes e as categorias de sons no material do Instituto Nacional da Língua Coreana.</p><a href="https://www.korean.go.kr/eng_hangeul/principle/002.html" target="_blank" rel="noreferrer">Consoantes do Hangul · material em inglês ↗</a></details>
- </div></Localized>;
+ </div></LessonText>;
 }

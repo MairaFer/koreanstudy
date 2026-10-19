@@ -1,7 +1,8 @@
 'use client';
 import {useRef,useState} from 'react';
 import {ArrowLeft,ArrowRight,BookOpen,Check,CheckCircle2,ChevronRight,Headphones,Heart,Leaf,RotateCcw,Volume2} from 'lucide-react';
-import {Localized,useLocale} from './localization';
+import {useLocale} from './localization';
+import {LessonText} from './lesson-text';
 import {useKoreanSpeech} from './korean-audio';
 import {listeningRounds,vowelPairs,vowels,type Vowel} from '@/lib/vowel-lab';
 
@@ -21,7 +22,7 @@ export function VowelLesson({initialStep=0}:{initialStep?:number}){
  function go(n:number){speech.stop();setStep(n);requestAnimationFrame(()=>{root.current?.focus({preventScroll:true});root.current?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});}
  function explore(i:number){setSelected(i);setJoined(false);setReplay(r=>r+1);setVisited(v=>v.includes(vowels[i].letter)?v:[...v,vowels[i].letter]);speech.speak(vowels[i].block);}
  function listen(){setHeard(true);speech.speak(question.target);}
- return <Localized><div className="vowel-lab" ref={root} tabIndex={-1}>
+ return <LessonText><div className="vowel-lab" ref={root} tabIndex={-1}>
   <div className="vl-welcome"><div><span className="vl-kicker"><Leaf size={15} aria-hidden="true"/>SEU PRIMEIRO BROTO</span><h2>Veja. Escute. Experimente.</h2><p>Você não precisa decorar tudo de uma vez. Vamos descobrir como as letras viram sons, um pequeno passo de cada vez.</p></div><div className="vl-welcome-art" aria-hidden="true"><span>아</span><Leaf/><Heart/></div></div>
   <nav className="vl-steps" aria-label="Etapas da primeira aula">{steps.map((label,i)=><button type="button" key={label} aria-current={step===i?'step':undefined} onClick={()=>go(i)}><span>{i+1}</span>{label}</button>)}</nav>
   <div className="vl-panel" key={step}>
@@ -50,5 +51,5 @@ export function VowelLesson({initialStep=0}:{initialStep?:number}){
   <div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#vowel-practice" onClick={e=>{e.preventDefault();document.getElementById('vowel-practice')?.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('vowel-practice')?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
   <p className="vl-audio-status" role="status">{speech.status}</p>
   <details className="vl-reference"><summary>Uma fonte para continuar aprendendo</summary><p>Explore a formação das vogais no material do Instituto Nacional da Língua Coreana.</p><a href="https://korean.go.kr/hangeul/principle/003.html" target="_blank" rel="noreferrer">Formação das vogais · material em coreano ↗</a></details>
- </div></Localized>;
+ </div></LessonText>;
 }

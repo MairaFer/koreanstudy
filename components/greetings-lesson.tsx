@@ -1,15 +1,15 @@
 'use client';
 import {useRef,useState} from 'react';
 import {ArrowLeft,ArrowRight,CheckCircle2,Leaf,Lightbulb,RotateCcw,Volume2} from 'lucide-react';
-import {Localized} from './localization';
+import {LessonText} from './lesson-text';
 import {useKoreanSpeech} from './korean-audio';
 import {farewellScenes,greetingChallenges,greetingDialogues,greetingPhrases} from '@/lib/greetings-lab';
 
 export function GreetingScene({scene='meet',youLeave=false,otherLeaves=false}:{scene?:string;youLeave?:boolean;otherLeaves?:boolean}){
- return <Localized><div className="gl-scene"><svg viewBox="0 0 360 185" aria-hidden="true" fill="none" stroke="#79538c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="5" width="352" height="173" rx="28" fill="#f5eef9" stroke="none"/><path d="M35 152H325" stroke="#ddcde6"/><path d="M34 66Q58 47 48 27Q72 36 64 60M310 41Q307 23 327 20Q336 38 310 41" fill="#b7c89e" stroke="none"/>
+ return <LessonText><div className="gl-scene"><svg viewBox="0 0 360 185" aria-hidden="true" fill="none" stroke="#79538c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="5" width="352" height="173" rx="28" fill="#f5eef9" stroke="none"/><path d="M35 152H325" stroke="#ddcde6"/><path d="M34 66Q58 47 48 27Q72 36 64 60M310 41Q307 23 327 20Q336 38 310 41" fill="#b7c89e" stroke="none"/>
  {[90,270].map((x,i)=><g key={x} transform={`translate(${x} 0)`}><ellipse cy="153" rx="36" ry="5" fill="#dfd0e8" stroke="none"/><path d="M-27 143V118Q-27 97 0 97Q27 97 27 118V143" fill={i?'#c6d3b4':'#cdb0df'}/><circle cy="70" r="23" fill={i?'#d6af96':'#f0cebc'}/><path d="M-22 65Q-25 39 0 44Q27 42 23 67L12 54Q-5 68-22 65" fill="#795b7e" stroke="none"/><path d="M-8 72h1m14 0h1M-5 83q5 5 10 0"/>{scene==='sorry'?<path d="M-26 122-7 117M26 122 7 117"/>:i?<path d="M-26 116-43 100M26 119l11 13"/>:<path d="M26 116 43 100M-26 119l-11 13"/>}</g>)}
  {scene==='thanks'?<g><path d="m161 111 31-31 10 10-31 31-15 5Z" fill="#d2b1e3"/><path d="m185 87 10 10m-34 14 10 10-15 5Z" fill="#f0d4be"/><path d="m195 77 10 10 5-5-10-10Z" fill="#b9cba1"/></g>:scene==='sorry'?<g><path d="m170 67 8 14-12 13m24-27-8 14 12 13" stroke="#b0879e"/><path d="M160 114q20 17 40 0" stroke="#b8c89d"/></g>:scene==='farewell'?<g><path d="M164 145V52h32v93" stroke="#ba9dcc"/><circle cx="188" cy="100" r="2"/>{youLeave&&<path d="M122 31H65m10-9L65 31l10 9" stroke="#8b699b"/>}{otherLeaves&&<path d="M238 31h57m-10-9 10 9-10 9" stroke="#7c9066"/>}</g>:<g><path d="M154 44h52q9 0 9 9v23q0 9-9 9h-17l-13 12V85h-22q-9 0-9-9V53q0-9 9-9Z" fill="#e9d8f2"/><path d="M163 64h34m-27 10h20"/></g>}
- </svg><div className="gl-scene-labels"><span><strong>Você</strong>{scene==='farewell'&&<small>{youLeave?'Saindo':'Ficando'}</small>}</span><span><strong>Outra pessoa</strong>{scene==='farewell'&&<small>{otherLeaves?'Saindo':'Ficando'}</small>}</span></div></div></Localized>;
+ </svg><div className="gl-scene-labels"><span><strong>Você</strong>{scene==='farewell'&&<small>{youLeave?'Saindo':'Ficando'}</small>}</span><span><strong>Outra pessoa</strong>{scene==='farewell'&&<small>{otherLeaves?'Saindo':'Ficando'}</small>}</span></div></div></LessonText>;
 }
 const steps=['Escolha suas expressões','Quem fica? Quem vai?','Converse em pequenas cenas','Sua vez de responder'];
 export function GreetingsLesson({initialStep=0}:{initialStep?:number}){
@@ -17,7 +17,7 @@ export function GreetingsLesson({initialStep=0}:{initialStep?:number}){
  const [step,setStep]=useState(initialStep),[phrase,setPhrase]=useState(0),[friend,setFriend]=useState(false),[farewell,setFarewell]=useState(0),[farewellAnswer,setFarewellAnswer]=useState<string|null>(null),[dialogue,setDialogue]=useState(0),[visibleLines,setVisibleLines]=useState(1),[meanings,setMeanings]=useState<number[]>([]),[round,setRound]=useState(0),[answer,setAnswer]=useState<string|null>(null),[wins,setWins]=useState<number[]>([]);
  const expression=greetingPhrases[phrase],departure=farewellScenes[farewell],conversation=greetingDialogues[dialogue],challenge=greetingChallenges[round];
  function go(n:number){speech.stop();setStep(n);requestAnimationFrame(()=>{root.current?.focus({preventScroll:true});root.current?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});}
- return <Localized><div className="vowel-lab greetings-lab" ref={root} tabIndex={-1}>
+ return <LessonText><div className="vowel-lab greetings-lab" ref={root} tabIndex={-1}>
  <div className="vl-welcome"><div><span className="vl-kicker"><Leaf size={15} aria-hidden="true"/>PALAVRAS QUE APROXIMAM</span><h2>Uma conversa começa com um gesto.</h2><p>Agora os blocos viram encontros. Explore expressões educadas, acompanhe pequenas conversas e escolha o que dizer em cada situação.</p></div><div className="vl-welcome-art" aria-hidden="true"><span>안녕</span><Leaf/></div></div>
  <nav className="vl-steps" aria-label="Etapas da quinta aula">{steps.map((label,i)=><button type="button" key={label} aria-current={step===i?'step':undefined} onClick={()=>go(i)}><span>{i+1}</span>{label}</button>)}</nav><div className="vl-panel" key={step}>
  {step===0?<>
@@ -49,5 +49,5 @@ export function GreetingsLesson({initialStep=0}:{initialStep?:number}){
  </>}
  </div><div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#greetings-practice" onClick={e=>{e.preventDefault();const el=document.getElementById('greetings-practice');el?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});el?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
  <p className="vl-audio-status" role="status">{speech.status}</p><details className="vl-reference"><summary>Uma fonte para continuar aprendendo</summary><p>O material de coreano para estudantes internacionais do Study in Korea apresenta expressões úteis e diferencia as despedidas conforme quem sai e quem fica.</p><a href="https://cdn.studyinkorea.go.kr/public/res/guide/guideBook_ko.pdf" target="_blank" rel="noreferrer">Expressões úteis · Study in Korea, material em coreano ↗</a></details>
- </div></Localized>;
+ </div></LessonText>;
 }

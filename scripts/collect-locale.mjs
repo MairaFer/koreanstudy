@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import ts from 'typescript';
 const roots=['app','components','lib'];
-const files=roots.flatMap(root=>fs.readdirSync(root,{recursive:true}).filter(p=>/\.tsx?$/.test(p)&&!p.includes('ui'+path.sep)&&!p.includes('localization')&&!p.includes('locale')).map(p=>path.join(root,p)));
+const files=roots.flatMap(root=>fs.readdirSync(root,{recursive:true}).filter(p=>/\.tsx?$/.test(p)&&!p.includes('ui'+path.sep)&&!p.includes('localization')&&!p.includes('locale')&&!p.endsWith('lesson-text.tsx')).map(p=>path.join(root,p)));
 const texts=new Set(),byFile={};
 const skip=new Set(['id','className','href','src','type','kind','videoId','ko','koTitle','term','source','lang','value','key','color','method','credentials','target','rel','view']);
 for(const file of files){
