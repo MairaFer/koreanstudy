@@ -1,3 +1,5 @@
+import {piedPiperSections,piedPiperVocabulary} from './pied-piper';
+import {boyMeetsEvilSections,boyMeetsEvilVocabulary} from './boy-meets-evil';
 import {normalKoreanSections,normalKoreanVocabulary} from './normal-korean';
 import {comeOverSections,comeOverVocabulary} from './come-over';
 import {loveMazeSections,loveMazeVocabulary} from './love-maze';
@@ -127,6 +129,8 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'pied-piper',sections:piedPiperSections,vocabulary:piedPiperVocabulary},
+ {id:'boy-meets-evil',sections:boyMeetsEvilSections,vocabulary:boyMeetsEvilVocabulary},
  {id:'normal-korean',sections:normalKoreanSections,vocabulary:normalKoreanVocabulary},
  {id:'come-over',sections:comeOverSections,vocabulary:comeOverVocabulary},
  {id:'love-maze',sections:loveMazeSections,vocabulary:loveMazeVocabulary},

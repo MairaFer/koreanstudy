@@ -3,6 +3,52 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"pied-piper":[
+  {
+    "term": "그만해 뮤비는 나중에 해석하고",
+    "card": "A música interrompe a sedução para falar de assistir a vídeos, olhar fotos e interpretar clipes. É uma ironia sobre o próprio conteúdo que atrai o fã: a voz manda estudar e logo volta a convidar para ouvir. O exagero do tempo que some reforça essa tensão, sem ser uma medida literal do uso de telas."
+  },
+  {
+    "term": "이 노랜 내가 네게 주는 상",
+    "card": "상, prêmio, prepara o contraste com 벌, punição. O elogio 착해 soa como recompensa por seguir a voz, e o pré-refrão insiste que não há castigo. Essas escolhas mantêm a ambiguidade entre carinho, brincadeira e domínio no personagem que canta."
+  },
+  {
+    "term": "널 이끄는 피리 부는 사나이처럼",
+    "card": "O título remete ao Flautista de Hamelin. Na versão literária de Robert Browning, a música do flautista faz ratos e depois crianças segui-lo. A canção reaproveita a força de atração do som para construir uma voz sedutora; isso não torna o eu lírico um retrato literal do personagem da história.",
+    "source": "https://www.gutenberg.org/cache/epub/18343/pg18343-images.html"
+  },
+  {
+    "term": "알면서도 이끌리는 선악과처럼",
+    "card": "선악과 nomeia o fruto do conhecimento do bem e do mal, ligado à narrativa de Gênesis. A comparação destaca ser atraído mesmo sabendo que há uma proibição. A letra não identifica uma espécie de fruta; traduzir como maçã acrescentaria algo que o verso não diz.",
+    "source": "https://bible.usccb.org/bible/genesis/3"
+  },
+  {
+    "term": "널 구하러 온 거야 널 망치러 온 거야",
+    "card": "Salvar e arruinar ocupam a mesma construção de finalidade. A repetição coloca o conforto e o risco lado a lado, em vez de escolher um sentido simples para a voz. A doçura, a ideia de prazer culpado e o pedido de perdão prolongam essa tensão."
+  }
+],
+"boy-meets-evil":[
+  {
+    "term": "칼은 무뎌져",
+    "card": "A lâmina primeiro é afiada todos os dias pela ambição, depois perde o fio diante do desejo que o eu não contém. Mais adiante, é a realidade que corta e rasga. A imagem transforma um instrumento de determinação em vulnerabilidade."
+  },
+  {
+    "term": "외쳤지만 저버렸지 내 양심을",
+    "card": "저버리다 é abandonar, trair ou deixar de honrar algo, aqui a própria consciência. A grafia se aproxima de 져 버리다, acabar perdendo, mas são construções diferentes. O objeto posposto mostra o que foi abandonado e impede trocar o sentido do verbo."
+  },
+  {
+    "term": "그 욕심이 지옥을 부르는 나팔이 될 지는",
+    "card": "A frase anterior diz que o eu não tinha imaginado; esta linha completa o que ele não previa. A trombeta que chama o inferno amplia a consequência do desejo. A referência funciona dentro do campo de demônio, culpa e tentação construído pela letra, sem precisar atribuir uma cena específica a ela."
+  },
+  {
+    "term": "But 이 죄를 벗기엔",
+    "card": "A forma pode enganar quem reconhece 벗기다, tirar algo de alguém. Aqui a leitura é 벗다 + -기에는, reduzida a 벗기엔: para se livrar desta culpa. Ver a oração inteira evita decidir a gramática apenas pela aparência de uma palavra."
+  },
+  {
+    "term": "놓치긴 싫었어 악마의 손길을",
+    "card": "O eu reconhece a ameaça e ainda assim não quer perder o toque. O refrão inglês mantém a mesma contradição entre ruim e doce. A repetição final nomeia o mal, mas não apaga o conflito que a voz acabou de narrar."
+  }
+],
 "normal-korean":[
   {
     "term": "유명세와 fame, yeah, the things we choose",
