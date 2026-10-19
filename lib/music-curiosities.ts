@@ -3,6 +3,53 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"normal-korean":[
+  {
+    "term": "유명세와 fame, yeah, the things we choose",
+    "card": "유명세 não é simplesmente uma taxa oficial: a palavra compara as dificuldades de ser conhecido a um preço que se paga. Ao colocá-la junto de fame, a letra permite ouvir o reconhecimento e o seu custo ao mesmo tempo. A acepção coloquial de notoriedade também circula, mas não apaga esse contraste.",
+    "source": "https://www.korean.go.kr/common/download.do%3Bfront%3DD69463770EF882E66C0BBB6A9FA3FF6C?c_file_name=ddd92678-70b3-4dbb-ac7c-ddfeaf23f3d7_0.pdf&file_path=reportData&o_file_name=%EA%B8%B0%EC%9E%90%EB%A5%BC+%EC%9C%84%ED%95%9C+%EC%8B%A0%EB%AC%B8%EC%96%B8%EC%96%B4+%EA%B8%B8%EC%9E%A1%EC%9D%B4.pdf"
+  },
+  {
+    "term": "조명이 꺼지면 찾아드는 꿈",
+    "card": "O sonho pode ser lido junto do desejo seguinte: que o mundo esqueça o eu por um instante. Apagar a iluminação muda a cena do espetáculo para uma vontade íntima. A leitura de sonho como desejo é contextual; a palavra também pode nomear o que se sonha dormindo."
+  },
+  {
+    "term": "알아 이제 너무 익숙해진 걸",
+    "card": "O inglês diz incomum, enquanto o coreano admite que isso já ficou familiar demais. A contradição sustenta o título: repetição pode tornar uma experiência habitual sem fazê-la confortável. O refrão questiona o nome normal em vez de resolver a tensão."
+  },
+  {
+    "term": "무뎌지기도, 부서지기도 하는 인간이기에",
+    "card": "A construção -기도…-기도 하다 dá lugar a estados diferentes da mesma pessoa. Ficar insensível e se quebrar não precisam ser uma identidade fixa. A linha seguinte traz a duração do esforço de suportar, por meio de -어 오다."
+  },
+  {
+    "term": "평범이고 자시고 특별이고",
+    "card": "Comum e especial começam como rótulos opostos, mas acabam comparados à mesma fumaça que se dispersa. A expressão -이고 자시고 afasta a própria discussão. A sequência passa da classificação à dificuldade de agarrar algo que se desfaz."
+  }
+],
+"come-over":[
+  {
+    "term": "각자 이야긴 물어 둘까?",
+    "card": "Há uma diferença importante na transcrição: 묻다, perguntar, vira 물어; 묻다, enterrar, mantém 묻어. A ideia de guardar as histórias do passado combina com a segunda forma, mas o texto enviado usa a primeira. Por isso a tradução está marcada como leitura contextual, e não como correção confirmada.",
+    "source": "https://www.korean.go.kr/kornorms/m/m_regltn.do"
+  },
+  {
+    "term": "다시 시작하는 우리",
+    "card": "O eu imagina um nós que recomeça, mas a pergunta posso ir até você e a frase inglesa sobre não ser amado como antes mantêm a resposta em aberto. O desejo de reconciliação não equivale à confirmação de que o outro já aceitou."
+  },
+  {
+    "term": "네 심장을 두드려 보란 듯이 right now",
+    "card": "A porta da parte inglesa se transforma em coração. O eu diz que odeia metáforas enquanto fala de poeira, fumaça e depois de um coração em que se bate. Essa tensão pode mostrar a dificuldade de falar diretamente da própria dor."
+  },
+  {
+    "term": "날카로워 또 베여도 그것도 나의 page",
+    "card": "A página aproxima corte e escrita de uma história pessoal: mesmo o que dói entra no relato do eu. O trecho anterior contém 살 na transcrição enviada; não se deve ensinar essa grafia como se fosse 삶, vida. A nota preserva essa diferença e a incerteza da leitura."
+  },
+  {
+    "term": "그래, 답을 찾은 rover, 난 노저어",
+    "card": "Rover sugere quem vagueia; remar retoma deslocamento e travessia. Em 노를 젓다, o verbo 젓다 perde o ㅅ antes de -어 e vira 저어. No final, come over pede aproximação, enquanto not over nega o fim: o mesmo over participa de dois sentidos.",
+    "source": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=75774"
+  }
+],
 "love-maze":[
   {
     "term": "머리 쓰며 사랑한 적 없기에",

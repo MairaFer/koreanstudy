@@ -1,3 +1,5 @@
+import {normalKoreanSections,normalKoreanVocabulary} from './normal-korean';
+import {comeOverSections,comeOverVocabulary} from './come-over';
 import {loveMazeSections,loveMazeVocabulary} from './love-maze';
 import {soWhatSections,soWhatVocabulary} from './so-what';
 import {plutoSections,plutoVocabulary} from './pluto';
@@ -125,6 +127,8 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'normal-korean',sections:normalKoreanSections,vocabulary:normalKoreanVocabulary},
+ {id:'come-over',sections:comeOverSections,vocabulary:comeOverVocabulary},
  {id:'love-maze',sections:loveMazeSections,vocabulary:loveMazeVocabulary},
  {id:'so-what',sections:soWhatSections,vocabulary:soWhatVocabulary},
  {id:'134340',sections:plutoSections,vocabulary:plutoVocabulary},
