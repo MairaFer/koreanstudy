@@ -1,3 +1,5 @@
+import {plutoSections,plutoVocabulary} from './pluto';
+import {paradiseSections,paradiseVocabulary} from './paradise';
 import {anpanmanSections,anpanmanVocabulary} from './anpanman';
 import {micDropSections,micDropVocabulary} from './mic-drop';
 import {goGoSections,goGoVocabulary} from './go-go';
@@ -121,6 +123,8 @@ const studies=[
  {id:'blue-grey',sections:blueGreySections,vocabulary:blueGreyVocabulary},
  {id:'telepathy',sections:telepathySections,vocabulary:telepathyVocabulary},
  {id:'dis-ease',sections:disEaseSections,vocabulary:disEaseVocabulary},
+ {id:'134340',sections:plutoSections,vocabulary:plutoVocabulary},
+ {id:'paradise',sections:paradiseSections,vocabulary:paradiseVocabulary},
  {id:'anpanman',sections:anpanmanSections,vocabulary:anpanmanVocabulary},
  {id:'mic-drop',sections:micDropSections,vocabulary:micDropVocabulary},
  {id:'go-go',sections:goGoSections,vocabulary:goGoVocabulary},

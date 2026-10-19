@@ -3,6 +3,55 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"134340":[
+  {
+    "term": "나에겐 이름이 없구나",
+    "card": "134340 é o número de catálogo de Plutão, reclassificado como planeta anão em 2006. Ele manteve o nome e continua orbitando o Sol. A letra usa a perda de lugar como metáfora de abandono: o eu se sente reduzido a um número, embora sua órbita continue.",
+    "source": "https://science.nasa.gov/dwarf-planets/pluto/"
+  },
+  {
+    "term": "넌 정말로 Eris를 찾아낸 걸까",
+    "card": "Eris é outro planeta anão; sua descoberta ajudou a motivar a discussão sobre a classificação de Plutão. Dentro da canção, perguntar por Eris pode sugerir a chegada de outra pessoa. Essa leitura é uma interpretação da metáfora, não uma afirmação sobre um relacionamento real.",
+    "source": "https://science.nasa.gov/dwarf-planets/eris/"
+  },
+  {
+    "term": "Us는 u의 복수형일 뿐",
+    "card": "O eu desmonta a palavra us como se ela contivesse apenas u, a abreviação informal de you, repetido. A pergunta afetiva é se aquele nós alguma vez incluiu um eu. Em inglês, us é pronome objeto da primeira pessoa do plural; não é plural de you."
+  },
+  {
+    "term": "난 헛돌고만 있어",
+    "card": "맴돌다 é circular ao redor; 헛돌다 acrescenta a sensação de girar em falso, sem chegar a lugar algum. A órbita que não se rompe pode parecer permanência, mas a troca de verbo a transforma em desgaste sem encontro."
+  },
+  {
+    "term": "니 향기 따윈 기억도 안나 잠깐",
+    "card": "O verso primeiro despreza a própria lembrança e logo interrompe a fala com espera. O perfume reconhecido, a saudação comum e o coração disparado enfraquecem a declaração de indiferença. A narrativa mostra a contradição sem precisar declarar que o eu mentiu."
+  }
+],
+"paradise":[
+  {
+    "term": "마라톤 마라톤",
+    "card": "O número da linha seguinte retoma os 42,195 quilômetros de uma maratona. A corrida apresenta a promessa de recompensa no fim; o restante da letra pergunta o que acontece quando se exige correr sem destino. O paraíso vai sendo deslocado da chegada para os momentos da própria vida.",
+    "source": "https://atletismosudamericano.org/maraton/en/the-distance/"
+  },
+  {
+    "term": "우린 꿈을 남한테서 꿔 (빚처럼)",
+    "card": "꾸다 pode significar sonhar, como em 꿈을 꾸다, ou tomar algo emprestado. De outras pessoas e como dívida fazem ouvir as duas leituras: um sonho pode vir das expectativas alheias e ser sentido como obrigação de pagar.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=14648"
+  },
+  {
+    "term": "위대해져야 한다 배워 (빛처럼)",
+    "card": "빚, dívida, e 빛, luz, têm 받침 diferentes, mas os dois isolados soam [빋]. Diante do ㅊ de 처럼, as finais também se neutralizam; 빚처럼 e 빛처럼 aproximam dívida e brilho. A escrita recupera os sentidos que o som sobrepõe.",
+    "source": "https://www.korean.go.kr/nkview/nknews/199904/9_5.htm"
+  },
+  {
+    "term": "너의 dream. 사실은 짐",
+    "card": "A palavra inglesa dream se aproxima pelo som de 짐, fardo ou bagagem. O sonho que deveria inspirar vira peso. A sequência admite desejos pequenos e até não ter um grande plano: o alvo é a obrigação de sonhar de um jeito padronizado."
+  },
+  {
+    "term": "꿈이 없어도 괜찮아",
+    "card": "Tudo bem não ter um sonho não significa que sonhar seja errado. As concessões retiram a exigência de uma ambição grandiosa para merecer uma vida. A presença de momentos felizes e o valor das respirações do ouvinte sustentam essa leitura contextual."
+  }
+],
 "anpanman":[
   {
     "term": "But 줄 수 있는 건 오직 Anpan",

@@ -10,7 +10,7 @@ const {musicCuriosities,addMusicCuriosities}=require('../lib/music-curiosities.t
 const source=fs.readFileSync('components/music-study.tsx','utf8');
 let reviewed=0,added=0,updated=0,retained=0;
 for(const match of source.matchAll(/import \{(\w+Sections),[^}]+\} from ['"]@\/lib\/([^'"]+)['"]/g)){
- const file=match[2],id=file==='persona'?'intro-persona':file;
+ const file=match[2],id=file==='persona'?'intro-persona':file==='pluto'?'134340':file;
  const sections=require('../lib/'+file+'.ts')[match[1]];
  const before=JSON.stringify(sections);
  const original=sections.flatMap(s=>s.lines.flatMap(l=>l.entries||[]));
@@ -30,7 +30,7 @@ for(const match of source.matchAll(/import \{(\w+Sections),[^}]+\} from ['"]@\/l
  }
  reviewed++;
 }
-assert.equal(reviewed,77);assert.equal(updated,66);assert.equal(retained,11);assert.equal(added,194);
+assert.equal(reviewed,79);assert.equal(updated,68);assert.equal(retained,11);assert.equal(added,204);
 const {CuriosityCard}=require('../components/music-study.tsx');
 for(const [id,cards] of Object.entries(musicCuriosities))for(const card of cards)for(const locale of ['pt','eng']){
  const html=renderToStaticMarkup(React.createElement(LocaleProvider,{initialLocale:locale},React.createElement(CuriosityCard,{text:card.card,source:card.source})));
@@ -46,4 +46,4 @@ const necklace=require('../lib/persona.ts').personaSections.flatMap(s=>s.lines).
 assert.ok(necklace.translation.includes('penduram'));
 assert.ok(necklace.entries.some(e=>e.notes?.some(n=>n.includes('걸다'))));
 assert.ok(source.includes('addMusicCuriosities(song.id,study.sections)'));
-console.log('PASS: 77 studies reviewed; 194 new cards in 66 studies; 11 retained; PT/ENG cards render with sources; originals preserved; repeated choruses and repeated application do not duplicate additions.');
+console.log('PASS: 79 studies reviewed; 204 new cards in 68 studies; 11 retained; PT/ENG cards render with sources; originals preserved; repeated choruses and repeated application do not duplicate additions.');
