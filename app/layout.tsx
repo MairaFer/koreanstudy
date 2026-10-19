@@ -3,6 +3,7 @@ import "./globals.css";
 import {SpeechProvider} from "@/components/korean-audio";
 import {LocaleProvider} from '@/components/localization';
 import {PurpleGarden} from "@/components/purple-garden";
+import {ThemeProvider} from '@/components/theme';
 
 export const metadata: Metadata = {
   title: "BoraLang · Bora aprender coreano com o BTS",
@@ -19,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className="antialiased"><LocaleProvider><PurpleGarden/><SpeechProvider>{children}</SpeechProvider></LocaleProvider></body>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body className="antialiased"><ThemeProvider><LocaleProvider><PurpleGarden/><SpeechProvider>{children}</SpeechProvider></LocaleProvider></ThemeProvider></body>
     </html>
   );
 }

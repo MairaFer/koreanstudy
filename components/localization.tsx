@@ -1,6 +1,7 @@
 'use client';
 import {Children,cloneElement,createContext,isValidElement,useContext,useEffect,useState,type ReactNode} from 'react';
 import {translate,type Locale} from '@/lib/localization';
+import {ThemeToggle} from './theme';
 const Context=createContext<{locale:Locale;setLocale:(locale:Locale)=>void}>({locale:'pt',setLocale:()=>{}});
 const storageKey='boralang.language.v1';
 export function LocaleProvider({children,initialLocale='pt'}:{children:ReactNode;initialLocale?:Locale}){
@@ -25,4 +26,4 @@ function localize(node:ReactNode,locale:Locale):ReactNode{
  return cloneElement(node,props);
 }
 export function Localized({children}:{children:ReactNode}){const {locale}=useLocale();return <>{locale==='pt'?children:localize(children,locale)}</>;}
-export function LanguageSwitcher(){const {locale,setLocale}=useLocale();return <div className="language-switcher" role="group" aria-label={locale==='eng'?'Site language':'Idioma do site'}>{(['pt','eng'] as const).map(value=><button type="button" key={value} lang={value==='pt'?'pt-BR':'en'} aria-label={value==='pt'?'Português':'English'} aria-pressed={locale===value} onClick={()=>setLocale(value)}>{value.toUpperCase()}</button>)}</div>;}
+export function LanguageSwitcher(){const {locale,setLocale}=useLocale();return <div className="site-preferences"><div className="language-switcher" role="group" aria-label={locale==='eng'?'Site language':'Idioma do site'}>{(['pt','eng'] as const).map(value=><button type="button" key={value} lang={value==='pt'?'pt-BR':'en'} aria-label={value==='pt'?'Português':'English'} aria-pressed={locale===value} onClick={()=>setLocale(value)}>{value.toUpperCase()}</button>)}</div><ThemeToggle/></div>;}

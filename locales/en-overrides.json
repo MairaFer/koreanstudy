@@ -8040,5 +8040,13 @@
   "Ouvir o bloco do desafio": "Listen to the challenge’s syllable block",
   "formas reconhecidas nesta visita": "forms recognized during this visit",
   "Próxima forma": "Next form",
-  "Recomeçar esta prática": "Restart this practice"
+  "Recomeçar esta prática": "Restart this practice",
+  "Modo noturno": "Night mode",
+  "Ativar modo claro": "Switch to light mode",
+  "Ativar modo noturno": "Switch to night mode",
+  "light": "light",
+  "dark": "dark",
+  "Night mode": "Night mode",
+  "Switch to light mode": "Switch to light mode",
+  "Switch to night mode": "Switch to night mode"
 }

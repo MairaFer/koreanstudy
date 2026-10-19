@@ -1336,6 +1336,17 @@
     "Veja como as letras se organizam em unidades silábicas no material do Instituto Nacional da Língua Coreana.",
     "Estrutura do Hangul · material em inglês ↗"
   ],
+  "components\\theme.tsx": [
+    "use client",
+    "Night mode",
+    "Modo noturno",
+    "Switch to light mode",
+    "Switch to night mode",
+    "Ativar modo claro",
+    "Ativar modo noturno",
+    "light",
+    "dark"
+  ],
   "components\\vowel-lesson.tsx": [
     "use client",
     "{0}s",

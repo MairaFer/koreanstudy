@@ -1,0 +1,35 @@
+/* Night-only tokens. Each use in globals.css retains its original light value
+   as a fallback, so switching back restores the existing palette exactly.
+   Keep learning highlights and illustration inks in their original colors. */
+html[data-theme="dark"] {
+ color-scheme:dark;
+ --background:#2d2636; --foreground:#eee6f5;
+ --card:#372e42; --card-foreground:#eee6f5;
+ --popover:#40344d; --popover-foreground:#eee6f5;
+ --primary:#79539f; --primary-foreground:#fff;
+ --secondary:#4a385a; --secondary-foreground:#e4c8f6;
+ --muted:#40344d; --muted-foreground:#c8bbd3;
+ --accent:#513c62; --accent-foreground:#ebd3fa;
+ --destructive:#ed9fb2; --border:#665571; --input:#665571; --ring:#c4a0df;
+ --night-panel:#372e42; --night-soft:#40344d; --night-tinted:#4a385a;
+ --night-ink:#eee6f5; --night-muted:#c8bbd3; --night-purple:#dbb9f2;
+ --night-green:#c3d8ad; --night-blue:#c2d8f1; --night-pink:#f1bfd6; --night-amber:#eed3a6;
+ --night-green-panel:#354337; --night-blue-panel:#333e50; --night-pink-panel:#503646; --night-amber-panel:#4a3e30;
+ --night-line:#665571; --night-focus:#c4a0df;
+ --night-glass:#d7b8ef14;
+ --vl-purple:#dbb9f2; --vl-line:#665571;
+}
+html:not([data-theme="dark"]){color-scheme:light}
+.site-preferences{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:9px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card);color:var(--foreground);font:inherit;font-size:.76rem;font-weight:600;white-space:nowrap}
+.theme-toggle svg{color:var(--primary);flex-shrink:0}
+.theme-toggle:hover{background:var(--secondary)}
+.theme-toggle[aria-pressed="true"]{background:var(--secondary);border-color:var(--ring)}
+html[data-theme="dark"] .theme-toggle svg{color:#e2c3f5}
+.theme-toggle:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+html[data-theme="dark"] .auth-garden{isolation:isolate}
+html[data-theme="dark"] .auth-garden circle{opacity:.12}
+html[data-theme="dark"] .garden-branch{opacity:.16}
+html[data-theme="dark"] .garden-leaf{opacity:.12}
+@media(max-width:700px){.site-header>.site-preferences{margin-left:auto;align-self:center}}
+@media(max-width:400px){.site-preferences{gap:6px}.theme-toggle{width:44px;padding:9px}.theme-toggle>span{display:none}}
