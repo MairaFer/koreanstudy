@@ -3,6 +3,60 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"supplementary-story":[
+  {
+    "term": "웃을 수 있어 함께라면",
+    "card": "A companhia não apaga as feridas do verso anterior: ela abre a possibilidade de sorrir apesar delas. Essa leitura acompanha a apresentação oficial de You Never Walk Alone como uma mensagem de consolo e esperança para jovens em sofrimento.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/you_never_walk_alone.html"
+  },
+  {
+    "term": "But 너의 그 손이 내 날개가 돼",
+    "card": "A mão da outra pessoa se torna asa. O apoio não aparece só como sentimento abstrato: a imagem do contato dá ao eu uma forma de seguir e voar. As asas nascidas da dor continuam voltadas para a luz."
+  },
+  {
+    "term": "날아갈 수 있다면 날 테야",
+    "card": "A forma 날 precisa do contexto. Aqui ela vem de voar, enquanto em outros versos pode ser a contração de a mim ou o nome dia. A condição de poder voar é seguida por uma decisão: se for possível, o eu vai voar."
+  },
+  {
+    "term": "뿐이라 해도",
+    "card": "O trecho sobre destino e preço do erro está dentro de hipóteses concessivas: mesmo que seja assim. A letra não afirma que toda dor de alguém seja castigo merecido. O pedido que vem depois continua sendo caminhar e voar em companhia."
+  },
+  {
+    "term": "함께 해주겠니",
+    "card": "O pedido de ficar junto reaparece depois de admitir um caminho longo, áspero e sujeito a quedas. A pergunta oferece espaço para a resposta da outra pessoa. É um convite à presença, não uma promessa de eliminar todos os obstáculos."
+  },
+  {
+    "term": "나를 느껴봐 너도 혼자가 아니야",
+    "card": "O trecho em inglês avança de rastejar para caminhar, correr e voar. Em Not Today, a sequência encontra alternativas quando voar não é possível; aqui ela sobe do chão ao céu. As duas letras permitem ler movimento e companhia como formas de continuar."
+  }
+],
+"intro-hyyh":[
+  {
+    "term": "오늘따라 림이 멀어보여",
+    "card": "림 é o aro de basquete, do inglês rim. A quadra e a bola fixam esse sentido; a palavra não descreve uma borda qualquer sem contexto. O aro parecer distante liga a percepção física do jogo ao estado emocional do garoto."
+  },
+  {
+    "term": "유일하게 맘이 되려 놓여",
+    "card": "A expressão 마음이 놓이다 significa sentir alívio, como se o coração pudesse repousar. Ela não precisa ser traduzida literalmente como colocar uma mente em algum lugar. O gesto de arremessar oferece esse respiro dentro da preocupação com o futuro."
+  },
+  {
+    "term": "성적은 바닥을 기지만 난 더 오히려",
+    "card": "As notas rastejam pelo chão: a imagem transforma desempenho baixo em movimento da quadra. O mesmo ambiente abriga habilidade, prazer e cobrança escolar. A letra não reduz o valor da pessoa às notas; ela mostra a pressão que a comparação produz."
+  },
+  {
+    "term": "덕에 암처럼 퍼지는 걱정 god damn it",
+    "card": "덕에 costuma ser apresentado como graças a, mas aqui o resultado é negativo. A formulação pode soar amarga ou irônica: avaliações e critérios alheios fazem a preocupação crescer. O contexto decide se a expressão realmente agradece alguma coisa."
+  },
+  {
+    "term": "이 숨은 꿈틀대는 꿈들",
+    "card": "숨 é fôlego e 꿈 é sonho. A linha aproxima esses sons e faz o fôlego se tornar sonhos que se movem. 숨은 aqui se separa em fôlego mais marcador de tópico; não é automaticamente a forma que significa escondido."
+  },
+  {
+    "term": "그 답은 이미 정해졌어 난 행복하다",
+    "card": "A resposta final de felicidade convive com o medo e a comparação narrados antes. A apresentação oficial do álbum descreve uma juventude em que beleza e incerteza coexistem. Assim, o momento belo não precisa ser uma vida inteira sem conflito.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/hwayangyeonhwa-pt1.html"
+  }
+],
 "not-today":[
   {
     "term": "그래 우리는 extra",
