@@ -750,6 +750,43 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "card": "뜀박질 tem uma sonoridade mais expressiva que o neutro 달리기, corrida. Junto de 멍청이, tolo, faz o esforço parecer uma corrida desajeitada e autodepreciativa, coerente com cair e continuar correndo."
     }
   ],
+  "dope": [
+  {
+    "term": "아 쩔어 쩔어 쩔어 우리 연습실 땀내",
+    "card": "쩔어 funciona como gíria de algo impressionante, mas o suor e o estúdio também aproximam a ideia de estar impregnado ou tomado por algo. Para o sentido de ficar impregnado de suor, a forma normativa indicada pelo dicionário é 절다. A letra mantém a grafia expressiva 쩔다 e explora seus contextos.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=57&pageIndex=1&qna_seq=334669"
+  },
+  {
+    "term": "봐 쩌렁 쩌렁 쩌렁한",
+    "card": "쩌렁 aproxima o ouvido de 쩔어, mas descreve um som que ressoa. Na linha seguinte, é a dança que responde: movimento, ruído e atitude se misturam. Nem toda sílaba parecida pertence ao mesmo verbo; a repetição também constrói o ritmo."
+  },
+  {
+    "term": "덕분에 모로 가도 달리는 성공가도",
+    "card": "모로 가도 pode evocar 모로 가도 서울만 가면 된다: chegar ao destino apesar da rota escolhida. O provérbio destaca o resultado e pode até ser usado criticamente quando os meios são questionáveis. Aqui, a imagem é recolocada na estrada do sucesso; a ligação com o provérbio é uma leitura contextual.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=307424"
+  },
+  {
+    "term": "3포세대? 5포세대?",
+    "card": "삼포세대, a geração das três renúncias, é um rótulo ligado a abrir mão de namoro, casamento e filhos sob pressões sociais e econômicas. A contagem de renúncias se amplia em rótulos como 오포세대. O rap questiona reduzir a juventude a essa lista; não é uma classificação de personalidade de todos os jovens.",
+    "source": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2019/10/rejuvenating-korea-policies-for-a-changing-society_fa737e99/c5eed747-en.pdf"
+  },
+  {
+    "term": "그럼 난 육포가 좋으니까 6포세대",
+    "card": "A resposta troca a série de renúncias por comida: 육포 é carne seca, e 6포 pode ser lido com 육, seis. O humor interrompe o tom fatalista dos números anteriores. Não significa que comer carne seca seja uma sexta renúncia real."
+  },
+  {
+    "term": "우릴 싹 주식처럼 매도해",
+    "card": "매도하다 reúne dois verbos de mesma escrita: vender e condenar ou atacar verbalmente. 주식, ações de uma empresa, faz ouvir o sentido de venda enquanto a frase critica como os jovens são julgados. A tradução inglesa usa sell us short para recuperar parte desse jogo, e as notas explicitam os dois sentidos."
+  },
+  {
+    "term": "절대 마 포기 you know you not lonely",
+    "card": "A ordem mais comum para estudar é 절대 포기하지 마. A letra desloca 마 para antes de 포기, ajustando a frase ao rap. Reconhecer essa liberdade rítmica ajuda a entender a mensagem sem tratar a ordem da letra como modelo neutro de uma conversa."
+  },
+  {
+    "term": "너와 내 새벽은 낮보다 예뻐",
+    "card": "O refrão contrasta a noite de trabalho com a diversão dos outros; depois, a madrugada passa a ser nossa. A frase sobre beleza e a pergunta por esperança ampliam a voz individual para encorajar outra pessoa. 낮보다 mostra a comparação gramatical que sustenta essa virada."
+  }
+],
   "hold-me-tight": [
   {
     "term": "술잔을 비우니 그리움이 차는구나",
