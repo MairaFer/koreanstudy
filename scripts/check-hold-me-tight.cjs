@@ -1,0 +1,102 @@
+const fs=require('node:fs'),path=require('node:path'),Module=require('node:module'),assert=require('node:assert/strict'),ts=require('typescript');
+const original=Module._resolveFilename;Module._resolveFilename=function(r,p,...a){return original.call(this,r.startsWith('@/')?path.join(process.cwd(),r.slice(2)):r,p,...a)};
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true}}).outputText,f);
+const {holdMeTightSections:sections,holdMeTightVocabulary:vocab}=require('../lib/hold-me-tight.ts'),{songs}=require('../lib/songs.ts'),{translate}=require('../lib/localization.ts'),{musicCuriosities,addMusicCuriosities}=require('../lib/music-curiosities.ts');
+const expected=`술잔을 비우니 그리움이 차는구나
+그냥 다 지고 볼 걸
+왜 난 따지고 봤을까
+길가에 버려진 쓰레기봉투까지도
+바람에 쓸쓸한 소리를 내
+나의 백지에 널 좀 덧칠했을 뿐인데
+정신 차려보니
+이미 한 폭의 그림이 돼
+너와 난 핸드폰
+떨어지면 고장 날 걸 너도 알잖아
+너의 체취만이 날 온전하게 해
+어서 날 안아
+오직 너 하나만 보여 보여
+나 오직 너 밖엔 안보여 보여
+봐 공정하지 공평하지
+너한테 빼곤 다
+이젠 단 하루도 너 없이는 Please
+꽉 잡아줘 날 안아줘
+Can you trust me
+Can you trust me
+Can you trust me
+꽉 끌어안아줘
+꽉 잡아줘 날 안아줘
+Can you trust me
+Can you trust me
+제발 제발 제발 끌어안아줘
+여전히 너에게선 빛이 나
+여전히 향기 나는 꽃 같아
+이제 나를 믿어줘
+다시 나를 잡아줘
+너를 느낄 수 있게
+나를 끌어안아줘
+너 없인 숨을 쉴 수 없어 난
+너 없인 아무것도 아냐 난
+닫힌 맘을 열어줘 내 심장을 적셔줘
+너를 느낄 수 있게 나를 끌어안아줘
+너의 품 너의 온기 너의 마음
+오직 너 하나만 보여
+다시 보고 싶다고 빌어
+지금 이 순간 따스한 꽃 향기 바람도
+구름 한 점 없이 맑은 저기 하늘도
+다 모든 게 차갑고
+저 맑은 하늘도 다 어두워
+너 빼면 시체인 내가 무슨 숨을 쉬어
+아파 나 항상 cry cry cry
+나 미치고 너 없이 지치고
+니 생각 수시로
+다 미 미워 매일이 시 싫어
+날 울려 링딩동
+기회가 있다면 널 잡아
+나 달려 시작해 count down
+장미 같은 니 품에 찔릴 각오로
+다시 널 안아
+나 오직 너 밖엔 안보여
+봐 공정하지 공평하지
+너한테 빼곤 다
+이젠 단 하루도 너 없이는 Please
+꽉 잡아줘 날 안아줘
+Can you trust me
+Can you trust me
+Can you trust me
+꽉 끌어안아줘
+꽉 잡아줘 날 안아줘
+Can you trust me
+Can you trust me
+제발 제발 제발 끌어안아줘
+차가워진 니 표정이
+말 대신 모든 걸 대변해
+이별이 밀물처럼
+내게 떠밀려오는 걸 대면해
+곧 마지막이란 걸 알지만
+널 놓아줄 수는 없는걸
+말하지 마 떠나지 마
+조용히 나를 안아줘 girl
+날 잡아줘 잡아줘
+날 안아줘 안아줘
+꽉 안아줘
+Trust me trust me
+Trust me trust me
+Trust me
+꽉 잡아줘 꽉 잡아줘
+날 안아줘
+Can you trust me
+Can you trust me
+제발 제발 제발 끌어안아줘
+여전히 너에게선 빛이 나
+여전히 향기 나는 꽃 같아
+이제 나를 믿어줘
+다시 나를 잡아줘
+너를 느낄 수 있게
+나를 끌어안아줘`.split('\n');
+const all=sections.flatMap(s=>s.lines);assert.deepEqual(all.map(l=>l.text),expected);assert.equal(all.length,91);assert.deepEqual(sections[2].lines,sections[7].lines);assert.deepEqual(sections[3].lines,sections.at(-1).lines);
+for(const l of all){assert.ok(l.translation);if(/[가-힣]/.test(l.text)){assert.ok(l.entries.length);for(const tok of l.text.match(/[가-힣]+/g)||[])assert.ok(l.entries.some(e=>e.term.includes(tok)),tok);assert.ok(l.entries[0].notes[0]);}else assert.ok(l.english);}
+const id='hold-me-tight',song=songs.find(s=>s.id===id);assert.equal(song.exercises.length,5);assert.equal(vocab.verbs.length,35);assert.equal(vocab.nouns.length,27);
+const ko=/[가-힣ㄱ-ㅎㅏ-ㅣ]+/g;for(const x of [...sections.map(s=>s.title),...all.flatMap(l=>[l.translation,...l.entries.flatMap(e=>[e.meaning,...e.notes])]),...musicCuriosities[id].map(c=>c.card),song.intro,song.topic,song.example.pt,song.example.explanation,...song.exercises.flatMap(e=>[e.prompt,...e.options,e.explanation]),...Object.values(vocab).flat().map(w=>w.pt)]){const en=translate(x,'eng');if(/[A-Za-zÀ-ÿ]{2}/.test(x))assert.notEqual(en,x,'Missing adaptation: '+x);assert.deepEqual((en.match(ko)||[]).sort(),(x.match(ko)||[]).sort(),'Korean changed: '+x);}
+const result=addMusicCuriosities(id,sections);assert.equal(result.flatMap(s=>s.lines.flatMap(l=>l.entries)).filter(e=>e.card).length,8);assert.deepEqual(addMusicCuriosities(id,result),result);
+const cat=fs.readFileSync('components/bts-catalog.tsx','utf8').match(/function studyFor\(title:string\)([\s\S]*?)\n/)[0],lookup=new Function(ts.transpileModule(cat,{compilerOptions:{target:ts.ScriptTarget.ES2022}}).outputText+';return studyFor;')();for(const t of ['Hold Me Tight','잡아줘','Hold Me Tight (잡아줘)'])assert.equal(lookup(t),id);for(const t of ['Hold Me Tight (Live)','Hold Me Tight (Japanese Ver.)','Hold Me Tight (Remix)'])assert.equal(lookup(t),undefined);
+console.log('PASS: Hold Me Tight: 91 supplied lines, all repeated choruses and final, bilingual contextual notes, 8 unique cards, 35 verbs, 27 nouns, catalog links and 5 exercises.');

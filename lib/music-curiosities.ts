@@ -750,6 +750,40 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "card": "뜀박질 tem uma sonoridade mais expressiva que o neutro 달리기, corrida. Junto de 멍청이, tolo, faz o esforço parecer uma corrida desajeitada e autodepreciativa, coerente com cair e continuar correndo."
     }
   ],
+  "hold-me-tight": [
+  {
+    "term": "술잔을 비우니 그리움이 차는구나",
+    "card": "O copo esvazia, mas a saudade enche. A inversão faz um gesto de alívio produzir mais ausência. -는구나 dá à frase o tom de quem percebe esse efeito enquanto ele acontece."
+  },
+  {
+    "term": "나의 백지에 널 좀 덧칠했을 뿐인데",
+    "card": "O eu trata sua página em branco como uma vida que recebeu apenas um pouco do outro. Nas linhas seguintes, já existe uma pintura inteira. O contraste entre 좀, um pouco, e o quadro completo dimensiona o espaço que essa pessoa passou a ocupar."
+  },
+  {
+    "term": "떨어지면 고장 날 걸 너도 알잖아",
+    "card": "A metáfora do celular depende de 떨어지다: um aparelho pode cair e quebrar; duas pessoas podem se separar. 고장 나다 traz a linguagem de um objeto que deixa de funcionar para a relação afetiva. Não é necessário imaginar que cada pessoa seja um aparelho diferente."
+  },
+  {
+    "term": "너한테 빼곤 다",
+    "card": "Leia junto com a linha anterior: justo e imparcial com todos, menos com você. A pequena exceção muda toda a afirmação. O trecho dramatiza uma concentração afetiva que não distribui atenção por igual."
+  },
+  {
+    "term": "다 미 미워 매일이 시 싫어",
+    "card": "미 e 시 repetem o começo de 미워 e 싫어 no ritmo do rap. Não devem receber traduções isoladas como se fossem palavras novas. Reconhecer a palavra completa ajuda a acompanhar a fragmentação expressiva da fala."
+  },
+  {
+    "term": "날 울려 링딩동",
+    "card": "울리다 pode fazer alguém chorar e também fazer algo soar. O som 링딩동 permite ouvir as duas possibilidades próximas: dor e toque. É um jogo de sentido dentro da letra, sem precisar atribuir uma referência externa específica."
+  },
+  {
+    "term": "장미 같은 니 품에 찔릴 각오로",
+    "card": "O abraço vira rosa: desejado pela beleza, mas capaz de ferir. 찔리다 põe os espinhos na imagem, e 각오 apresenta a disposição de enfrentar a dor. Isso descreve a ambivalência do eu; não transforma sofrimento em regra para um relacionamento."
+  },
+  {
+    "term": "내게 떠밀려오는 걸 대면해",
+    "card": "A frase começa com 이별이 밀물처럼: a separação se aproxima como maré enchente. 떠밀려오다 sugere uma força que vem empurrada em direção ao eu. Ler as duas linhas juntas recupera o sujeito e explica por que o fim parece inevitável."
+  }
+],
   "i-need-u": [
 {"term":"혼자서만 이별해","card":"혼자 aparece dos dois lados: amar sozinho e viver sozinho a separação. Com 서만, a segunda parte reforça que só o eu parece carregar a despedida. A pergunta expressa essa sensação de desequilíbrio; não exige imaginar duas separações diferentes."},
 {"term":"그냥 미워","card":"미워 vem de 밉다, sentir aversão. Pouco depois, 사랑해 declara amor enquanto a resposta em inglês diz ódio. Essa alternância encena sentimentos incompatíveis coexistindo; ler só uma dessas frases perde a contradição que sustenta o refrão."},
