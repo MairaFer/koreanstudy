@@ -1,4 +1,6 @@
 "use client";
+import {funBoysSections,funBoysVocabulary} from '@/lib/fun-boys';
+import {converseHighSections,converseHighVocabulary} from '@/lib/converse-high';
 import {dopeSections,dopeVocabulary} from '@/lib/dope';
 import {holdMeTightSections,holdMeTightVocabulary} from '@/lib/hold-me-tight';
 import {movingOnSections,movingOnVocabulary} from '@/lib/moving-on';
@@ -141,6 +143,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'fun-boys':{sections:funBoysSections,vocabulary:funBoysVocabulary,summary:"Uma festa sem fingimento, com jogos entre animação, identidade e o nome do BTS. Explore chamadas ao grupo, gírias, brincadeiras de escolher, rimas entre idiomas e os trocadilhos de 일상, 이상 e 정상.",heading:"Fun Boys (흥탄소년단) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+ 'converse-high':{sections:converseHighSections,vocabulary:converseHighVocabulary,summary:"O fascínio por um tênis vira uma conversa de vozes que nem sempre concordam. Explore inferência, condições, contadores, cores, marcas e as imagens de encontro, cor e uma pequena falha no jade.",heading:"Converse High · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'dope':{sections:dopeSections,vocabulary:dopeVocabulary,summary:"Uma apresentação de identidade, esforço e confiança que também enfrenta os rótulos impostos à juventude. Explore a gíria 쩔어, jogos de som e sentido, condições, promessas e convites para acompanhar o ritmo.",heading:"Dope (쩔어) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'hold-me-tight':{sections:holdMeTightSections,vocabulary:holdMeTightVocabulary,summary:"Um pedido de abraço atravessado por saudade, medo da separação e desejo de confiança. Explore pedidos com -아/어 줘, negação com 밖에, condições e imagens que ligam copo, pintura, celular, rosa e maré.",heading:"Hold Me Tight (잡아줘) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'moving-on':{sections:movingOnSections,vocabulary:movingOnVocabulary,summary:"Uma casa pequena guarda brigas, risos, esforço e o cheiro de uma época. Explore lembranças, propostas, intenções interrompidas e as referências culturais da mudança, até a imagem de uma vida que passa por novos endereços e novas etapas.",heading:"Move (이사) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

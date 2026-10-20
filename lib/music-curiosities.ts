@@ -750,6 +750,79 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
       "card": "뜀박질 tem uma sonoridade mais expressiva que o neutro 달리기, corrida. Junto de 멍청이, tolo, faz o esforço parecer uma corrida desajeitada e autodepreciativa, coerente com cair e continuar correndo."
     }
   ],
+  "fun-boys": [
+  {
+    "term": "자 왔어 아 흥탄소년단",
+    "card": "흥 é a animação que faz querer cantar, dançar e entrar na brincadeira. 흥탄소년단 remodela o nome 방탄소년단 para apresentar uma turma tomada por essa energia. Fun Boys e Boyz with Fun são títulos usados para este mesmo estudo; o nome artístico BTS permanece BTS.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=87534&nation=eng"
+  },
+  {
+    "term": "아 완전 신나 가식 따윈 집에 간 지",
+    "card": "A frase atravessa a quebra de verso: 가식 já foi para casa há muito tempo. O que foi embora é o fingimento, não uma pessoa chamada Gasik. A personificação prepara um convite para participar mesmo sem afinação ou ritmo."
+  },
+  {
+    "term": "일상에 상을 하나 더해 난 이상해지지",
+    "card": "A brincadeira não é uma regra de somar letras: 일상 é rotina e 이상하다 é ser estranho. O rap ouve 일 como um e 이 como dois; acrescentar mais um 상 permite imaginar dois 상, 이상. Traduzir apenas rotina e estranho perderia a conta sonora que liga as palavras."
+  },
+  {
+    "term": "정상인 상태로는 정상에 못 가요 baby",
+    "card": "정상 aparece com dois sentidos: normalidade e cume. O eu brinca que ficar perfeitamente normal não leva ao topo. É um elogio da singularidade na apresentação, construído com homônimos, e não uma afirmação clínica sobre saúde."
+  },
+  {
+    "term": "난 맏형이지만 (no no no)",
+    "card": "맏형 situa o homem mais velho dentro da convivência do grupo. O contraste com ser provocado e ainda levar tudo numa boa enfraquece, de modo cômico, a expectativa de uma autoridade sempre séria. 형 não exige que os integrantes sejam irmãos biológicos."
+  },
+  {
+    "term": "희망이 함께면 시간가는 줄을 몰라",
+    "card": "희망 significa esperança e também faz ouvir Hope, de j-hope. A chamada 호식이 se aproxima de Hoseok, seu nome pessoal. Essa sobreposição de palavra comum, nome e apelido cria familiaridade entre os integrantes; os nomes não devem virar outras palavras na tradução.",
+    "source": "https://magazine.weverse.io/article/view/1308?lang=en"
+  },
+  {
+    "term": "오늘은 내가 술래 미니마니모",
+    "card": "술래 é quem pega ou procura numa brincadeira. 미니마니모 evoca a cantiga de escolher eeny, meeny, miny, moe; a frase põe o eu no comando dessa escolha. O efeito lúdico continua nas sequências sonoras e nas chamadas para todos se juntarem."
+  },
+  {
+    "term": "밥 먹었니? 중국어로는 취빨러 마?",
+    "card": "A pergunta é já comeu? A aproximação 취빨러 마 evoca 吃饭了吗, chī fàn le ma, e prolonga a série de rimas com 빨려, 빨러 e 말려. É uma representação sonora de rap; para estudar mandarim, use a frase chinesa e sua pronúncia, não a leitura coreana isolada dessas sílabas.",
+    "source": "https://learn.vistahigherlearning.com/journeys/assets/CHN1e_V2_SE_U07_001-061_spread_low.pdf"
+  }
+],
+  "converse-high": [
+  {
+    "term": "별 수 없나 봐 나는 wo",
+    "card": "별 não quer dizer estrela em toda expressão. 별 수 없다 significa não ter outra saída ou não poder evitar algo. Mais adiante, 하늘 별 e 신발의 별 retomam estrelas de fato, permitindo comparar a mesma escrita em contextos diferentes."
+  },
+  {
+    "term": "10만원이면 두 켤레를 사",
+    "card": "10만원 é cem mil won, pois 만 vale dez mil. 켤레 conta pares, como dois calçados que formam um conjunto. O preço é parte da fala da canção; use o verso para estudar número, condição e contador, sem tratá-lo como oferta atual da marca."
+  },
+  {
+    "term": "Alright 빨주노초파남보",
+    "card": "A sequência guarda uma sílaba por cor: 빨강, 주황, 노랑, 초록, 파랑, 남색 e 보라. O visual do tênis vira um arco-íris portátil. 보라 aqui é violeta; não é o imperativo veja de 보다, que pode ter a mesma escrita em outro contexto."
+  },
+  {
+    "term": "No thanks 난 컨 bus 타고 부릉부릉",
+    "card": "A marca é desmontada pelo som: 컨 se junta a taxi, cycle e subway, antes de chegar a 컨 bus. A piada depende de bus soar como parte de Converse; 타고 e 부릉부릉 completam a imagem de viajar. Os fragmentos servem ao rap, não a uma família regular de palavras coreanas."
+  },
+  {
+    "term": "니 신발의 별을 볼래",
+    "card": "A escolha troca as estrelas do céu pela estrela no tênis. O modelo Chuck Taylor All Star de cano alto tem um conhecido emblema no tornozelo; essa referência visual dá um alvo concreto à metáfora. A marca funciona como parte do cenário, sem precisar traduzir seu nome.",
+    "source": "https://www.converse.com/shop/p/chuck-taylor-all-star-canvas-unisex-high-top-shoe/M9006MP.html"
+  },
+  {
+    "term": "넌 아예 내게 물들어버렸나",
+    "card": "O texto passa de roçar a penetrar e depois a tingir. Nesse verso, 넌 põe você como tópico e sujeito da mudança: será que você ficou influenciado por mim? A linha anterior atribui a frase a alguém sem dizer quem; não é necessário inventar um autor para explicar a imagem."
+  },
+  {
+    "term": "매력을 죽이는 옥의 티",
+    "card": "O jade valioso com uma pequena falha é a imagem de algo bonito com um detalhe que incomoda. A letra traz 옥의 티 e foi preservada; o provérbio registrado como 옥에 티 usa 에. Neste trecho, 티 é falha, diferente da camiseta em 흰 티.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=73&pageIndex=1&qna_seq=336247"
+  },
+  {
+    "term": "컨버스 컨버스 i really hate a 컨버스",
+    "card": "A admiração por Converse dá lugar a uma voz que prefere Jordan, e depois o refrão volta a desejar Converse. A graça inclui essa discordância: são perspectivas encenadas na música, não uma única opinião que precisa ser harmonizada. Low e high também marcam a preferência específica de uma das vozes."
+  }
+],
   "dope": [
   {
     "term": "아 쩔어 쩔어 쩔어 우리 연습실 땀내",
