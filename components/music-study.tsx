@@ -1,4 +1,8 @@
 "use client";
+import {outroWingsSections,outroWingsVocabulary} from '@/lib/outro-wings';
+
+import {notTodaySections,notTodayVocabulary} from '@/lib/not-today';
+
 import {twoThreeSections,twoThreeVocabulary} from '@/lib/two-three';
 
 import {centuryGirlSections,centuryGirlVocabulary} from '@/lib/21st-century-girl';
@@ -127,6 +131,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'outro-wings':{sections:outroWingsSections,vocabulary:outroWingsVocabulary,summary:"Uma pequena pena se torna asa, e o primeiro voo transforma medo e arrependimento em escolha. Explore ordens citadas, pronomes contraídos, concessão enfática e expectativas, incluindo a ponte final da versão Outro.",heading:"Outro: Wings · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+ 'not-today':{sections:notTodaySections,vocabulary:notTodayVocabulary,summary:"Um chamado aos subestimados para continuar juntos, mesmo quando é preciso mudar a forma de avançar. Explore condições condensadas, proibições, negações e jogos bilíngues, do figurante extraordinário ao teto de vidro.",heading:"Not Today · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'two-three':{sections:twoThreeSections,vocabulary:twoThreeVocabulary,summary:"Sem prometer apenas dias felizes, a voz convida a contar juntos e desejar mais dias bons. Explore números nativos, condições, desejos com -기를, falas irônicas e gratidão, do caminho de flores à luz de quem fica por perto.",heading:"2! 3! (Still Wishing There Will Be Better Days) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  '21st-century-girl':{sections:centuryGirlSections,vocabulary:centuryGirlVocabulary,summary:"Um chamado para não se diminuir diante dos julgamentos e reconhecer o próprio valor. Explore proibições informais, concessões, fala citada e o jogo sonoro entre elegância e beleza, acompanhando o convite entre gerações.",heading:"21st Century Girl · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'am-i-wrong':{sections:amIWrongSections,vocabulary:amIWrongVocabulary,summary:"A pergunta sobre estar errado confronta a indiferença diante de ódio e injustiça. Explore concessões, condições, gírias, jogos de som e o paradoxo da normalidade, preservando o desejo de continuar vivendo e encontrar uma crença.",heading:"Am I Wrong · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

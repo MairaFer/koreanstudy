@@ -36,5 +36,5 @@ assert.ok(music.includes('localize={false}'));
 const layout=fs.readFileSync('app/layout.tsx','utf8');assert.ok(layout.includes('<LocaleProvider>'));
 const app=fs.readFileSync('app/page.tsx','utf8');assert.ok(app.includes('<LanguageSwitcher/>'));
 const locale=fs.readFileSync('components/localization.tsx','utf8');assert.ok(locale.includes('localStorage.setItem'));assert.ok(locale.includes('document.documentElement.lang'));
-const words=fs.readFileSync('lib/word-translation.ts','utf8');assert.equal((words.match(/sections:\w+Sections/g)||[]).length,97);
-console.log('PASS: '+source.length+' English entries covered; Korean preserved, PT unchanged, dynamic labels, all 97 studies, language controls and English-line reveal behavior.');
+const words=fs.readFileSync('lib/word-translation.ts','utf8');assert.equal((words.match(/sections:\w+Sections/g)||[]).length,99);
+console.log('PASS: '+source.length+' English entries covered; Korean preserved, PT unchanged, dynamic labels, all 99 studies, language controls and English-line reveal behavior.');

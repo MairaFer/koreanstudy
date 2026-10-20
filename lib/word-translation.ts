@@ -1,5 +1,7 @@
 import {cypher4Sections,cypher4Vocabulary} from './cypher-pt4';
 import {centuryGirlSections,centuryGirlVocabulary} from './21st-century-girl';
+import {notTodaySections,notTodayVocabulary} from './not-today';
+import {outroWingsSections,outroWingsVocabulary} from './outro-wings';
 import {twoThreeSections,twoThreeVocabulary} from './two-three';
 import {amIWrongSections,amIWrongVocabulary} from './am-i-wrong';
 import {lostSections,lostVocabulary} from './lost';
@@ -97,6 +99,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'outro-wings',sections:outroWingsSections,vocabulary:outroWingsVocabulary},
+ {id:'not-today',sections:notTodaySections,vocabulary:notTodayVocabulary},
  {id:'two-three',sections:twoThreeSections,vocabulary:twoThreeVocabulary},
  {id:'21st-century-girl',sections:centuryGirlSections,vocabulary:centuryGirlVocabulary},
  {id:'am-i-wrong',sections:amIWrongSections,vocabulary:amIWrongVocabulary},

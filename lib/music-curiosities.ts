@@ -3,6 +3,60 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"not-today":[
+  {
+    "term": "그래 우리는 extra",
+    "card": "Extra pode ser figurante, alguém que não ocupa o centro da cena. Junto de ordinary, comum, forma extraordinary, extraordinário. O jogo transforma a posição de quem é subestimado em possibilidade de protagonismo."
+  },
+  {
+    "term": "언젠가 꽃은 지겠지",
+    "card": "지다 pode ter sentidos diferentes conforme o contexto: uma flor pode murchar ou cair; uma pessoa pode perder uma disputa. Com 꽃, a imagem imediata é o fim da flor. A introdução sobre perder permite ouvir uma ressonância entre os dois sentidos, sem confundi-los."
+  },
+  {
+    "term": "날아갈 수 없음 뛰어",
+    "card": "A sequência troca voar por correr, caminhar e rastejar. A resistência não depende de conseguir manter a mesma velocidade ou capacidade: ela encontra outra forma de continuar. As condições condensadas não devem ser copiadas como a forma neutra de escrever uma explicação."
+  },
+  {
+    "term": "기어서라도 gear up",
+    "card": "기어 vem de 기다, rastejar, e se aproxima do som de gear em inglês. A letra usa essa ponte sonora para passar da ação física a preparar-se. Esperar é 기다리다: a semelhança no começo não torna esses dois verbos iguais."
+  },
+  {
+    "term": "꿇지 마라 울지 않아",
+    "card": "As duas negações têm funções diferentes. A primeira manda não se ajoelhar; a segunda afirma que não se chora. O paralelismo sonoro não apaga a diferença entre uma proibição e uma declaração."
+  },
+  {
+    "term": "널 가두는 유리천장 따윈 부숴",
+    "card": "O teto de vidro é uma metáfora para barreiras pouco visíveis que impedem a ascensão. O termo tem uso histórico para obstáculos enfrentados por mulheres e minorias no trabalho; aqui, a letra o coloca no chamado mais amplo aos subestimados. A barreira não é um teto físico.",
+    "source": "https://www.govinfo.gov/content/pkg/GOVPUB-Y3-PURL-LPS3994/pdf/GOVPUB-Y3-PURL-LPS3994.pdf"
+  },
+  {
+    "term": "방탄이란 걸 믿어 (믿어)",
+    "card": "방탄 é parte do nome coreano do BTS e também significa à prova de balas. A letra faz essa identidade conversar com o vocabulário de resistência e com o refrão coletivo. O sentido é uma imagem de união e persistência."
+  }
+],
+"outro-wings":[
+  {
+    "term": "이 작은 깃털이 날개가 될 것이고",
+    "card": "A pena pequena vira asa na lembrança infantil; mais adiante, a dor nas costas é explicada como asas nascendo. A imagem liga começo modesto, dificuldade e crescimento, sem dizer que toda dor real tenha essa mesma causa."
+  },
+  {
+    "term": "가지 말라는 길을 가고",
+    "card": "A frase contém duas vozes: alguém diz não vá, e o eu segue por esse caminho. A ordem negativa aparece dentro do modificador do nome caminho. Separar a voz citada da ação principal evita traduzir o verso como se o próprio eu estivesse proibindo a viagem."
+  },
+  {
+    "term": "끝은 창대한 비약일 걸",
+    "card": "미약 fala de algo fraco ou pequeno; 비약 é um salto ou avanço. Os sons próximos ajudam a transformar a pequenez do presente em impulso para um final grandioso. A terminação anterior concede a dificuldade, em vez de negá-la."
+  },
+  {
+    "term": "원해선 안 될 걸 원하고",
+    "card": "걸 nem sempre tem a mesma função. Nesta linha, reduz 것을 e faz do que não se deve desejar um objeto. Em finais como o primeiro voo, a construção funciona como explicação; no salto esperado, a terminação expressa expectativa. Leia a frase inteira antes de atribuir um único sentido à forma."
+  },
+  {
+    "term": "이제 알겠어",
+    "card": "Este estudo segue Outro: Wings, incluindo a passagem final sobre escolher confiança e não envelhecer em arrependimento. A discografia oficial distingue Outro: Wings, em You Never Walk Alone, de Interlude: Wings, em Wings. Por isso, o botão deste estudo acompanha a versão Outro.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/you_never_walk_alone.html"
+  }
+],
 "21st-century-girl":[
   {
     "term": "넌 귀티나 귀티 또 pretty야 pretty",
