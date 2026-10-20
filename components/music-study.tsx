@@ -1,4 +1,6 @@
 "use client";
+import {loveIsNotOverFullSections,loveIsNotOverFullVocabulary} from '@/lib/love-is-not-over-full';
+import {deadLeavesSections,deadLeavesVocabulary} from '@/lib/dead-leaves';
 import {funBoysSections,funBoysVocabulary} from '@/lib/fun-boys';
 import {converseHighSections,converseHighVocabulary} from '@/lib/converse-high';
 import {dopeSections,dopeVocabulary} from '@/lib/dope';
@@ -143,6 +145,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'love-is-not-over-full':{sections:loveIsNotOverFullSections,vocabulary:loveIsNotOverFullVocabulary,summary:"A separação já aconteceu, mas o sentimento continua. Explore 안녕 como chegada e despedida, imagens de pontuação, desejos e o contraste entre o fim da relação e a persistência do amor.",heading:"Love Is Not Over (Full Length Edition) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+ 'dead-leaves':{sections:deadLeavesSections,vocabulary:deadLeavesVocabulary,summary:"Um amor que perde a vitalidade é comparado a folhas frágeis. Explore pedidos para ficar, verbos de transformação, a quinta estação e o desejo de recuperar uma reciprocidade que está desaparecendo.",heading:"Autumn Leaves (Dead Leaves) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'fun-boys':{sections:funBoysSections,vocabulary:funBoysVocabulary,summary:"Uma festa sem fingimento, com jogos entre animação, identidade e o nome do BTS. Explore chamadas ao grupo, gírias, brincadeiras de escolher, rimas entre idiomas e os trocadilhos de 일상, 이상 e 정상.",heading:"Fun Boys (흥탄소년단) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'converse-high':{sections:converseHighSections,vocabulary:converseHighVocabulary,summary:"O fascínio por um tênis vira uma conversa de vozes que nem sempre concordam. Explore inferência, condições, contadores, cores, marcas e as imagens de encontro, cor e uma pequena falha no jade.",heading:"Converse High · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'dope':{sections:dopeSections,vocabulary:dopeVocabulary,summary:"Uma apresentação de identidade, esforço e confiança que também enfrenta os rótulos impostos à juventude. Explore a gíria 쩔어, jogos de som e sentido, condições, promessas e convites para acompanhar o ritmo.",heading:"Dope (쩔어) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

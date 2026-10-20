@@ -3,6 +3,77 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"love-is-not-over-full":[
+  {
+    "term": "이 시간이 널 따라 흐려지는 것 같아",
+    "card": "흐르다 é fluir; 흐려지다 é perder a nitidez. As duas primeiras linhas aproximam os sons, mas mudam a imagem: a noite continua passando enquanto o tempo compartilhado parece se apagar."
+  },
+  {
+    "term": "넌 내게 안녕이라 말했지",
+    "card": "안녕 pode servir para cumprimentar e para se despedir em registro informal. Aqui o contexto de dormir e do possível fim faz a despedida pesar. Mais adiante, a palavra reúne começo e fim na mesma imagem."
+  },
+  {
+    "term": "할 말은 끝났지 눈물과 놓이는, dot",
+    "card": "O sinal vermelho da linha anterior interrompe o movimento; o ponto final encerra o que havia para dizer. Essa pontuação marca um fim exterior que a repetição do refrão ainda resiste a aceitar."
+  },
+  {
+    "term": "I'm not okay 이 부정을 반복해",
+    "card": "부정 pode significar negação. Aqui, repetir que não está bem também acompanha a recusa emocional em aceitar o fim. O sentido nasce da frase e da situação, não de uma tradução isolada da palavra."
+  },
+  {
+    "term": "이건 발악이자 바람인 걸",
+    "card": "바람 aqui é desejo, e não vento. 발악 expressa uma luta desesperada; -이자 apresenta as duas coisas ao mesmo tempo. O apelo é tanto resistência quanto vontade de reencontro."
+  },
+  {
+    "term": "끝없는 내 사랑이자 사람인 걸",
+    "card": "사랑 e 사람 se aproximam no som, mudando a consoante final. O jogo une o sentimento e a pessoa amada: a linha seguinte, 넌, retoma você como tema dessa descrição."
+  },
+  {
+    "term": "이별, 너에게는 희극이라도",
+    "card": "비극 é tragédia; 희극 é comédia. A oposição dramatiza uma experiência desigual da separação. A letra apresenta a percepção do eu que sofre, sem confirmar o que a outra pessoa realmente sente."
+  },
+  {
+    "term": "이 끝이 없는 미로 속에서 어서 날 꺼내줘",
+    "card": "O labirinto sem fim dá forma à repetição emocional: o relacionamento termina, mas o pedido de amor retorna. A edição completa desenvolve essa tensão nos versos adicionais; por isso ela tem um estudo próprio, separado do outro."
+  }
+],
+"dead-leaves":[
+  {
+    "term": "말라가는 고엽",
+    "card": "고엽 destaca a folha seca; 낙엽 destaca folhas que caem ou caíram. A letra alterna essas imagens: uma folha pode estar seca e ainda presa ao galho. A relação perde a vitalidade antes da queda definitiva.",
+    "source": "https://www.korean.go.kr/nkview/kclean/kclean_1.htm"
+  },
+  {
+    "term": "힘없이 스러져만 가 내 사랑이",
+    "card": "스러지다 descreve algo que vai se apagando ou desaparecendo gradualmente. Isso combina com o amor que se enfraquece aos poucos. A tradução precisa conservar essa perda progressiva de força.",
+    "source": "https://korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=98&pageIndex=1&qna_seq=325518"
+  },
+  {
+    "term": "바스라질 것만 같아서",
+    "card": "A folha parece tão frágil que um toque poderia desfazê-la. Essa imagem cria um impasse: ele quer segurar a relação, mas teme que o próprio contato a destrua. A grafia da letra enviada foi preservada."
+  },
+  {
+    "term": "초연해진 마음속의 고요",
+    "card": "초연하다 sugere não se deixar prender por algo, mantendo a compostura. A quietude contrasta com os pedidos intensos do refrão. Esse contraste permite ler o afastamento de um lado e o apego do outro.",
+    "source": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=79625"
+  },
+  {
+    "term": "너는 나의 다섯 번째 계절",
+    "card": "A quinta estação é uma imagem inventada para alguém que escapa ao ciclo comum. Perto dela, 푸른색 mantém a pessoa viva e verde na memória, mesmo quando o restante da relação aparece como outono e folhas secas."
+  },
+  {
+    "term": "미련이 빨래처럼 조각조각 널어지네",
+    "card": "널다 é estender, como roupa no varal. O apego fica espalhado em pedaços visíveis, difícil de recolher. Os finais semelhantes de 널어지네, 덜어지네 e 떨어지네 fazem as imagens se encadearem pelo som."
+  },
+  {
+    "term": "그래 내 사랑은 오르기 위해 떨어지네",
+    "card": "-기 위해 expressa finalidade: cair para subir. A contradição mantém o amor entre queda e desejo de ascensão. É uma imagem poética tensa, sem garantir que a relação será recuperada."
+  },
+  {
+    "term": "다시 나를 원하는 널 원해",
+    "card": "원하는 modifica 널: quero você que me queira de novo. O pedido não é só pela presença física; é pela volta do desejo recíproco. A construção deixa esse desejo dentro de outro desejo."
+  }
+],
 "moving-on":[
   {
     "term": "17평 아홉 연습생 코찔찔이 시절",

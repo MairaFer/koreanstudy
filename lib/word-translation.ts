@@ -2,6 +2,8 @@ import {cypher4Sections,cypher4Vocabulary} from './cypher-pt4';
 import {centuryGirlSections,centuryGirlVocabulary} from './21st-century-girl';
 import {notTodaySections,notTodayVocabulary} from './not-today';
 import {supplementaryStorySections,supplementaryStoryVocabulary} from './supplementary-story';
+import {loveIsNotOverFullSections,loveIsNotOverFullVocabulary} from './love-is-not-over-full';
+import {deadLeavesSections,deadLeavesVocabulary} from './dead-leaves';
 import {funBoysSections,funBoysVocabulary} from './fun-boys';
 import {converseHighSections,converseHighVocabulary} from './converse-high';
 import {dopeSections,dopeVocabulary} from './dope';
@@ -107,6 +109,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'love-is-not-over-full',sections:loveIsNotOverFullSections,vocabulary:loveIsNotOverFullVocabulary},
+ {id:'dead-leaves',sections:deadLeavesSections,vocabulary:deadLeavesVocabulary},
  {id:'fun-boys',sections:funBoysSections,vocabulary:funBoysVocabulary},
  {id:'converse-high',sections:converseHighSections,vocabulary:converseHighVocabulary},
  {id:'dope',sections:dopeSections,vocabulary:dopeVocabulary},
