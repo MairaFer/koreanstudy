@@ -1,4 +1,8 @@
 "use client";
+import {firstLoveSections,firstLoveVocabulary} from '@/lib/first-love';
+
+import {lieSections,lieVocabulary} from '@/lib/lie';
+
 import {stigmaSections,stigmaVocabulary} from '@/lib/stigma';
 
 import {beginSections,beginVocabulary} from '@/lib/begin';
@@ -107,6 +111,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+  'first-love':{sections:firstLoveSections,vocabulary:firstLoveVocabulary,summary:"Um piano marrom atravessa infância, afastamento e reencontro. Explore lembranças, comparações, fala relatada e promessas, acompanhando a personificação do instrumento e a relação afetiva com a música.",heading:"First Love · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+  'lie':{sections:lieSections,vocabulary:lieVocabulary,summary:"Uma voz pede afastamento e socorro enquanto tenta recuperar o eu anterior à mentira. Explore pedidos, concessões, estados resultantes e frases que atravessam as quebras de verso, com atenção aos sujeitos omitidos.",heading:"Lie · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'stigma':{sections:stigmaSections,vocabulary:stigmaVocabulary,summary:"Uma voz já não consegue esconder a culpa: a ferida, o vidro e a luz dão forma ao que permanece. Explore ações prolongadas, concessões, passivas, perguntas retóricas e pedidos de perdão, sem confundir a narrativa poética com biografia.",heading:"Stigma · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'begin':{sections:beginSections,vocabulary:beginVocabulary,summary:"Um eu adolescente e vazio ganha emoções na relação com seus irmãos mais velhos. Explore lembranças em -던, capacidade, comparação e a passagem de querer sofrer no lugar do outro a sorrir, chorar e voar junto.",heading:"Begin · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'fire':{sections:fireSections,vocabulary:fireVocabulary,summary:'Um convite a viver do próprio jeito, atravessando a desordem e os rótulos sociais. Estude permissões, ordens, formas coloquiais e a diferença entre arder e queimar algo.',heading:'Burning Up (FIRE) · coreano palavra por palavra',badge:'Letra completa · análise preparada',references:<p className="music-reference">Traduções contextuais da letra fornecida, com as repetições musicais preservadas. Referências: <a href="https://krdict.korean.go.kr/eng/mainAction" target="_blank" rel="noreferrer">Dicionário Básico de Coreano</a> · <a href="https://www.korea.kr/briefing/policyBriefingView.do?newsId=148803537" target="_blank" rel="noreferrer">Contexto social de 금수저 e 흙수저</a>.</p>},

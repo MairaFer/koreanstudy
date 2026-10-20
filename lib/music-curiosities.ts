@@ -3,6 +3,52 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"first-love":[
+  {
+    "term": "한 켠에 자리잡은 갈색 piano",
+    "card": "O piano aparece no canto da casa e no canto da memória; a mesma imagem fecha a letra. A grafia 켠 foi mantida como enviada. Para o sentido de lado ou parte, a orientação normativa é 편, como em 한편; uma letra pode trazer grafias que não convém usar como modelo de escrita.",
+    "source": "https://korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=6022&mn_id=217&pageIndex=1"
+  },
+  {
+    "term": "널 우러러보며",
+    "card": "O piano primeiro é maior do que a criança; depois, a altura do eu o ultrapassa. Olhar para cima é também admirar. Essa mudança física acompanha o afastamento e o reencontro com o instrumento, sem trocar automaticamente o destinatário por uma pessoa amada."
+  },
+  {
+    "term": "이대론 가지마 you say",
+    "card": "O piano recebe uma voz: pede que o eu não vá embora e, nas aspas seguintes, oferece despedida sem culpa e promessa de reencontro. A personificação permite à relação com a música responder e acolher. As falas são parte da narrativa, não uma conversa literal com o instrumento."
+  },
+  {
+    "term": "뵈지 않던 그때 울고, 웃고",
+    "card": "Há duas palavras de aparência igual: 뵈다 pode reduzir 보이다, ser visível, e também pode ser uma forma respeitosa de ver alguém. Aqui 한 치 앞도 e a negação pedem o primeiro sentido: não enxergar nem um pouco à frente. O contexto decide a leitura.",
+    "source": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62091"
+  },
+  {
+    "term": "두 번 다시 내가 널 놓지 않을 테니까",
+    "card": "A mão começou pequena sobre as teclas; no final, o vínculo vira promessa de não soltar a mão do outro. A voz atribui ao piano permanência mesmo quando houve abandono e ressentimento. O retorno às primeiras quatro linhas fecha a narrativa como uma memória que continua viva."
+  }
+],
+"lie":[
+  {
+    "term": "너의 달콤한 미소로 내게",
+    "card": "O sorriso doce e a suavidade da cobra aparecem antes dos pedidos para escapar. A letra aproxima atração e ameaça sem dizer exatamente quem é o interlocutor. A análise acompanha essa ambiguidade, em vez de dar ao personagem uma identidade externa à canção."
+  },
+  {
+    "term": "계속돼 도망쳐봐도",
+    "card": "O eu pede tanto afastamento quanto resgate. Tentar fugir não basta: -어도 concede a tentativa e 빠져 있어 mantém o estado de estar preso. A repetição do refrão faz a forma da música acompanhar o ciclo descrito pela voz."
+  },
+  {
+    "term": "순결했던 날 찾아줘",
+    "card": "날 pode ser a palavra dia em outras frases, mas aqui reduz 나를. A forma que era puro descreve esse eu como objeto de encontrar. A frase pede recuperar a si mesmo, não encontrar um dia puro no calendário."
+  },
+  {
+    "term": "나를 원해",
+    "card": "A forma 원해 não indica sozinha quem quer: o coreano permite omitir o sujeito. A tradução adota você me quer, preservando nas notas a possibilidade de outra ligação. A voz que se sente distante e quer ser resgatada continua sem um interlocutor claramente identificado."
+  },
+  {
+    "term": "거짓이 날 삼키려 해",
+    "card": "Na ponte, o eu insiste em continuar o mesmo enquanto a mentira cresce e tenta engoli-lo. 커져 버린 descreve a mentira; 거짓이 torna esse sujeito explícito no verso seguinte. Seguir a frase através da quebra de linha evita atribuir o crescimento ao eu."
+  }
+],
 "stigma":[
   {
     "term": "그저 묻어두기엔",

@@ -1,3 +1,5 @@
+import {firstLoveSections,firstLoveVocabulary} from './first-love';
+import {lieSections,lieVocabulary} from './lie';
 import {stigmaSections,stigmaVocabulary} from './stigma';
 import {beginSections,beginVocabulary} from './begin';
 import {piedPiperSections,piedPiperVocabulary} from './pied-piper';
@@ -87,6 +89,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'first-love',sections:firstLoveSections,vocabulary:firstLoveVocabulary},
+ {id:'lie',sections:lieSections,vocabulary:lieVocabulary},
  {id:'stigma',sections:stigmaSections,vocabulary:stigmaVocabulary},
  {id:'begin',sections:beginSections,vocabulary:beginVocabulary},
  {id:'spring-day',sections:springDaySections,vocabulary:springDayVocabulary},
