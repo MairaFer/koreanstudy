@@ -3,6 +3,52 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"lost":[
+  {
+    "term": "가지 못한 길도 갈 수 없는 길도",
+    "card": "A letra coloca lado a lado caminhos não percorridos e caminhos que não se podem percorrer. As duas formas negativas não são idênticas: uma recorda uma possibilidade não realizada; a outra formula uma impossibilidade. A dúvida cresce diante de tantas rotas, não de uma única escolha simples."
+  },
+  {
+    "term": "그 길을 찾는 방법",
+    "card": "Perder o caminho é apresentado como uma maneira de encontrá-lo. A frase ressignifica a busca sem afirmar que estar perdido deixa de doer. O refrão mantém as tempestades e termina com a escolha de tentar confiar no próprio caminho."
+  },
+  {
+    "term": "먹일 찾기 위해 며칠이고 방황하는",
+    "card": "먹일 reduz 먹이를: a comida procurada pela formiga. A imagem acompanha tentativas, esbarrões e procura prolongada antes de imaginar a volta para casa. A formiga funciona como comparação para persistir; o trecho não precisa ser tratado como descrição científica do comportamento de todas as formigas."
+  },
+  {
+    "term": "그래도 믿고 싶어 믿기지 않지만",
+    "card": "A primeira passagem dizia 믿고 있어, continuo acreditando; a segunda troca por 믿고 싶어, quero acreditar. A mudança preserva vulnerabilidade em vez de repetir uma certeza perfeita. O pedido para não ficar sozinho também muda de forma, enquanto a busca continua."
+  },
+  {
+    "term": "돌아가도 언젠가 닿을 테니까",
+    "card": "A ponte aceita lentidão e desvios, mas insiste em caminhar com os próprios pés. A despedida se dirige à esperança sem prazo ou compromisso definido; a voz logo afirma que não perderá seu sonho. Por isso, traduzir essa passagem como abandonar todo sonho apagaria o contraste da própria letra."
+  }
+],
+"mama":[
+  {
+    "term": "춤에 미쳐 엄마 허리띠를 졸라맸지",
+    "card": "Apertar o cinto é uma expressão para economizar e aceitar privações. A sequência revela que o apoio ao sonho envolveu trabalho e dívida. 빚, dívida, não deve ser traduzido como 빛, luz: aqui a pequena diferença escrita muda o custo concreto que a letra apresenta.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=87687&lang=eng"
+  },
+  {
+    "term": "주셨기에 버팀목이었기에",
+    "card": "O filho agora oferece apoio porque antes a mãe foi seu pilar. Formas como 주셨기에, 가셨어 e 띄워주신 usam o honorífico -시- para tratar as ações dela com respeito. A proximidade de 엄마 e 아들내미 convive com essa marca gramatical de consideração."
+  },
+  {
+    "term": "실패는 성공의 어머니 어머니",
+    "card": "O provérbio apresenta o fracasso como mãe do sucesso, no sentido de aprender com a experiência. Repetir 어머니 aproxima essa mãe figurada da mãe a quem o eu se dirige. A letra passa do ensinamento geral à pessoa de quem diz ter aprendido paixão e dedicação.",
+    "source": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=74361"
+  },
+  {
+    "term": "꽃이 되어 그대만의 꽃길이 될게",
+    "card": "A mãe primeiro é alimento para um broto. O filho promete florescer e virar caminho de flores para ela. A imagem devolve o cuidado recebido como desejo de conforto e alegria; 꽃길 não precisa virar apenas uma rua literal com plantas."
+  },
+  {
+    "term": "오직 하나 엄마 손이 약손",
+    "card": "A mão materna é chamada de 약손, mão que alivia, e a linha seguinte usa placebo. As duas imagens aproximam cuidado, confiança e conforto. A leitura da canção é afetiva: não transforma o abraço da mãe numa promessa de tratamento nem diz que seu carinho é falso."
+  }
+],
 "awake":[
   {
     "term": "버텨보는 거야",

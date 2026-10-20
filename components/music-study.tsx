@@ -1,4 +1,8 @@
 "use client";
+import {lostSections,lostVocabulary} from '@/lib/lost';
+
+import {mamaSections,mamaVocabulary} from '@/lib/mama';
+
 import {awakeSections,awakeVocabulary} from '@/lib/awake';
 
 import {reflectionSections,reflectionVocabulary} from '@/lib/reflection';
@@ -115,6 +119,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+  'lost':{sections:lostSections,vocabulary:lostVocabulary,summary:"Entre deserto, mar e tempestade, a voz decide tentar confiar no próprio caminho. Explore possibilidades e impossibilidades, mudanças entre acreditar e querer acreditar, a imagem da formiga e a escolha de caminhar no próprio ritmo.",heading:"Lost · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+  'mama':{sections:mamaSections,vocabulary:mamaVocabulary,summary:"O sonho se torna possível pelo cuidado da mãe, e o filho promete ser seu apoio. Explore expressões de sacrifício, honoríficos, causas e promessas, do pequeno barco aos brotos e ao caminho de flores.",heading:"MAMA · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'awake':{sections:awakeSections,vocabulary:awakeVocabulary,summary:"A voz talvez não consiga voar, mas ainda quer estender a mão e seguir um pouco mais. Explore tentativas, perguntas e respostas relatadas, o contador de flores e a diferença entre reconhecer limites e deixar de caminhar.",heading:"Awake · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'reflection':{sections:reflectionSections,vocabulary:reflectionVocabulary,summary:"A vida vira filme, o medo pega a mão do eu e Ttukseom oferece outro mundo. Explore palavras que rimam sem ter o mesmo sentido, formas de possibilidade e o paradoxo de desejar liberdade até da liberdade, preservando o pedido final de amor por si.",heading:"Reflection · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'first-love':{sections:firstLoveSections,vocabulary:firstLoveVocabulary,summary:"Um piano marrom atravessa infância, afastamento e reencontro. Explore lembranças, comparações, fala relatada e promessas, acompanhando a personificação do instrumento e a relação afetiva com a música.",heading:"First Love · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

@@ -1,3 +1,5 @@
+import {lostSections,lostVocabulary} from './lost';
+import {mamaSections,mamaVocabulary} from './mama';
 import {awakeSections,awakeVocabulary} from './awake';
 import {reflectionSections,reflectionVocabulary} from './reflection';
 import {firstLoveSections,firstLoveVocabulary} from './first-love';
@@ -91,6 +93,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'lost',sections:lostSections,vocabulary:lostVocabulary},
+ {id:'mama',sections:mamaSections,vocabulary:mamaVocabulary},
  {id:'awake',sections:awakeSections,vocabulary:awakeVocabulary},
  {id:'reflection',sections:reflectionSections,vocabulary:reflectionVocabulary},
  {id:'first-love',sections:firstLoveSections,vocabulary:firstLoveVocabulary},
