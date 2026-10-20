@@ -751,6 +751,10 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     }
   ],
   "i-need-u": [
+{"term":"혼자서만 이별해","card":"혼자 aparece dos dois lados: amar sozinho e viver sozinho a separação. Com 서만, a segunda parte reforça que só o eu parece carregar a despedida. A pergunta expressa essa sensação de desequilíbrio; não exige imaginar duas separações diferentes."},
+{"term":"그냥 미워","card":"미워 vem de 밉다, sentir aversão. Pouco depois, 사랑해 declara amor enquanto a resposta em inglês diz ódio. Essa alternância encena sentimentos incompatíveis coexistindo; ler só uma dessas frases perde a contradição que sustenta o refrão."},
+{"term":"하늘이 파래서","card":"O céu azul e a luz do sol costumam sugerir alegria, mas aqui deixam as lágrimas mais visíveis. As duas formas em -아서 apresentam causas dessa visibilidade. O mundo luminoso contrasta com o estado do eu, em vez de provar que ele já está bem."},
+{"term":"마지막 선물을","card":"O último presente retoma o pedido para que a outra pessoa diga que devem terminar. Não é um objeto material: seria um encerramento que impeça o eu de voltar. A falta de coragem da linha anterior explica por que ele pede ao outro que pronuncie essas palavras."},
     {
       "term": "안대",
       "card": "Ouça o contraste: 안 돼 é “não pode”; 안대 é uma venda para os olhos. Os sons se aproximam, mas a escrita e o contexto mudam o sentido. A venda torna visível a ideia de esconder a verdade."

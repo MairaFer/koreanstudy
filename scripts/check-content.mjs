@@ -243,7 +243,7 @@ console.log('PASS: Danger: 76 linhas, 72 com coreano, 30 verbos/descritivos, 27 
 const {iNeedUSections,iNeedUVocabulary}=await load('lib/i-need-u.ts');
 const inuLines=iNeedUSections.flatMap(s=>s.lines);
 assert.equal(iNeedUSections.length,9);
-assert.equal(inuLines.length,67);
+assert.equal(inuLines.length,66);
 for(const line of inuLines){assert.ok(line.text&&line.translation);if(line.english)continue;const terms=line.entries.map(e=>e.term).join(' ');for(const token of line.text.match(/[가-힣]+/gu)||[])assert.ok(terms.includes(token),'I Need U: sem análise de '+token);for(const e of line.entries)assert.ok(e.meaning&&e.notes.length>=2,e.term);}
 assert.equal(iNeedUVocabulary.verbs.length,30);assert.equal(iNeedUVocabulary.nouns.length,17);
 const inuSong=songs.find(s=>s.id==='i-need-u');assert.equal(inuSong.exercises.length,5);
@@ -251,8 +251,10 @@ for(const e of inuSong.exercises){assert.equal(e.kind,'choice');assert.ok(e.opti
 assert.equal(new Function(studyLookup+";return studyFor('I NEED U');")(),'i-need-u');
 assert.equal(new Function(studyLookup+";return studyFor('I NEED U (Japanese Ver.)');")(),undefined);
 assert.ok(musicSource.includes('sections:iNeedUSections,vocabulary:iNeedUVocabulary'));
-assert.equal(inuLines.filter(l=>l.text==='왜 혼자 사랑하고 혼자서만 이별해?').length,3);
-assert.ok(inuLines.some(l=>l.text==='I need you girl (whoa, oh, babe)'));
+assert.equal(inuLines.filter(l=>l.text==='왜 혼자 사랑하고 혼자서만 이별해').length,3);
+assert.equal(inuLines.filter(l=>l.text==='I need you girl (I need you girl)').length,6);
+assert.ok(inuLines.some(l=>l.text==='용서해 (shit)'));
+assert.ok(!inuLines.some(l=>l.text.includes('whoa')||l.text==='Shit'));
 console.log('PASS: I Need U: letra enviada, análise de todos os termos coreanos, 30 verbos/descritivos, 17 substantivos e 5 exercícios.');
 
 const {runSections,runVocabulary}=await load('lib/run.ts');const runLines=runSections.flatMap(s=>s.lines);
