@@ -2,6 +2,12 @@
 @import "tw-animate-css";
 @import "../vendor/shadcn-tailwind-4.13.0.css";
 @import "./night-theme.css";
+.speech-toolbar-controls{display:flex;flex-wrap:wrap;align-items:center;gap:inherit;width:100%}
+.speech-toolbar-controls[hidden]{display:none}
+.speech-toolbar-toggle{position:absolute;top:-36px;right:16px;display:flex;align-items:center;justify-content:center;width:48px;height:36px;border:1px solid var(--night-line,#d8c9e3);border-bottom:0;border-radius:12px 12px 0 0;background:var(--night-panel,#faf7fd);color:var(--night-purple,#633184);cursor:pointer;box-shadow:0 -3px 12px #4324590c}
+.speech-toolbar-toggle:hover{background:var(--night-soft,#eee2fa)}
+.speech-toolbar.is-collapsed{height:0;min-height:0;padding:0;border:0;background:transparent;box-shadow:none}
+@media(max-width:760px){.speech-toolbar-toggle{height:40px;top:-40px;width:52px}}
 /* Account entry: a calm botanical space, scoped away from study pages. */
 .auth-page{position:relative;z-index:1;min-height:100svh;padding:20px 32px 22px;background:radial-gradient(ellipse at 8% 12%,#eee5f780,transparent 45%),radial-gradient(ellipse at 95% 90%,#eee5f760,transparent 40%)}
 body:has(.auth-page) .speech-toolbar{display:none}
