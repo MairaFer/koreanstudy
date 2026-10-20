@@ -3,6 +3,55 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"21st-century-girl":[
+  {
+    "term": "넌 귀티나 귀티 또 pretty야 pretty",
+    "card": "귀티 descreve um ar elegante ou refinado; pretty elogia a beleza em inglês. O verso aproxima os sons das duas palavras e transforma o elogio em ritmo. O sentido não é uma afirmação literal de origem nobre ou riqueza."
+  },
+  {
+    "term": "21세기 소녀들아",
+    "card": "Os séculos XX e XXI usam números sino-coreanos. O chamado passa de uma geração para outra, enquanto 들 marca plural e 아 chama diretamente as garotas. Já a contagem de um, dois, três na outra música usa o sistema nativo."
+  },
+  {
+    "term": "말해 너는 강하다고",
+    "card": "A construção não pede para provar força: pede para dizer que você é forte. O conteúdo da afirmação vem com 다고, ligado ao verbo dizer. A linha seguinte aplica a mesma estrutura ao sentimento de ser suficiente."
+  },
+  {
+    "term": "(Okay) 쟤들에 널 맞추진 마",
+    "card": "O olhar admirado de outras pessoas aparece no verso, mas o conselho central é não se diminuir nem se moldar ao padrão delas. Assim, o elogio externo convive com a afirmação de valor próprio."
+  },
+  {
+    "term": "넌 사랑 받아 마땅해",
+    "card": "마땅하다 apresenta algo como justo ou merecido. Aqui, receber amor é apresentado como algo que a pessoa merece, não como prêmio por mudar sua aparência ou conseguir a aprovação de todos."
+  }
+],
+"two-three":[
+  {
+    "term": "꽃길만 걷자",
+    "card": "O caminho de flores representa uma trajetória favorável. Mas a letra cita a frase para logo dizer que não pode fazer essa promessa. A esperança posterior ganha força justamente por reconhecer que a dor pode continuar existindo."
+  },
+  {
+    "term": "너넨 아이돌이니까 안 들어도 구리겠네",
+    "card": "As acusações deste trecho são falas encenadas de críticos. A análise deve manter essa distância: o verso expõe um julgamento feito antes de ouvir a música, e a resposta agradece ironicamente a motivação que os ataques acabaram produzindo."
+  },
+  {
+    "term": "너네 가사 맘에 안 들어 안 봐도 비디오네",
+    "card": "안 봐도 비디오 é uma expressão coloquial para algo tão previsível que se imagina a cena sem precisar vê-la. Neste contexto, mostra a certeza apressada de quem critica; não identifica um videoclipe específico."
+  },
+  {
+    "term": "괜찮아 자 하나 둘 셋 하면 잊어",
+    "card": "하나, 둘 e 셋 são um, dois e três no sistema nativo. Contar junto organiza o convite para soltar lembranças tristes e segurar as mãos. O gesto poético oferece companhia, sem exigir que alguém consiga esquecer a dor imediatamente."
+  },
+  {
+    "term": "그래도 좋은 날이 앞으로 많기를",
+    "card": "A palavra 그래도, ainda assim, mantém as dificuldades dentro da mensagem. A terminação 기를 deixa implícito um desejo: que haja muitos dias bons. O refrão escolhe esperança compartilhada em vez de garantir que nada ruim voltará a acontecer."
+  },
+  {
+    "term": "화양연화의 그 꽃이 돼줘서",
+    "card": "화양연화 também dá nome à série de álbuns do BTS apresentada oficialmente em inglês como The Most Beautiful Moment in Life. Neste agradecimento, a pessoa se torna a flor desse período: a referência conecta beleza, juventude e o apoio que sustenta a caminhada.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/hwayangyeonhwa-pt1.html"
+  }
+],
 "cypher-pt4":[
   {
     "term": "숨쉬고 있어서 I'm sorry bae",

@@ -1,4 +1,8 @@
 "use client";
+import {twoThreeSections,twoThreeVocabulary} from '@/lib/two-three';
+
+import {centuryGirlSections,centuryGirlVocabulary} from '@/lib/21st-century-girl';
+
 import {amIWrongSections,amIWrongVocabulary} from '@/lib/am-i-wrong';
 
 import {cypher4Sections,cypher4Vocabulary} from '@/lib/cypher-pt4';
@@ -123,6 +127,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'two-three':{sections:twoThreeSections,vocabulary:twoThreeVocabulary,summary:"Sem prometer apenas dias felizes, a voz convida a contar juntos e desejar mais dias bons. Explore números nativos, condições, desejos com -기를, falas irônicas e gratidão, do caminho de flores à luz de quem fica por perto.",heading:"2! 3! (Still Wishing There Will Be Better Days) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+ '21st-century-girl':{sections:centuryGirlSections,vocabulary:centuryGirlVocabulary,summary:"Um chamado para não se diminuir diante dos julgamentos e reconhecer o próprio valor. Explore proibições informais, concessões, fala citada e o jogo sonoro entre elegância e beleza, acompanhando o convite entre gerações.",heading:"21st Century Girl · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'am-i-wrong':{sections:amIWrongSections,vocabulary:amIWrongVocabulary,summary:"A pergunta sobre estar errado confronta a indiferença diante de ódio e injustiça. Explore concessões, condições, gírias, jogos de som e o paradoxo da normalidade, preservando o desejo de continuar vivendo e encontrar uma crença.",heading:"Am I Wrong · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'cypher-pt4':{sections:cypher4Sections,vocabulary:cypher4Vocabulary,summary:"Desculpas irônicas respondem à crítica, enquanto costura, percussão e imagens visuais apresentam esforço e autoconfiança. Explore gírias, contrações e formas condensadas do rap, com o refrão de amor por si preservado.",heading:"BTS Cypher 4 · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'lost':{sections:lostSections,vocabulary:lostVocabulary,summary:"Entre deserto, mar e tempestade, a voz decide tentar confiar no próprio caminho. Explore possibilidades e impossibilidades, mudanças entre acreditar e querer acreditar, a imagem da formiga e a escolha de caminhar no próprio ritmo.",heading:"Lost · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
