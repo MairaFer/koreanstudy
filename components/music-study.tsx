@@ -1,4 +1,6 @@
 "use client";
+import {loveNotOverSections,loveNotOverVocabulary} from '@/lib/outro-love-is-not-over';
+
 import {introHyyhSections,introHyyhVocabulary} from '@/lib/intro-hyyh';
 
 import {supplementaryStorySections,supplementaryStoryVocabulary} from '@/lib/supplementary-story';
@@ -135,6 +137,7 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'outro-love-is-not-over':{sections:loveNotOverSections,vocabulary:loveNotOverVocabulary,summary:"A noite continua, a imagem do tempo se apaga e a distância vira um pedido de volta. Explore mudança e continuidade, impressões com 것 같다, definições poéticas de amor e separação e pedidos informais, seguindo a versão Outro enviada.",heading:"Outro: Love Is Not Over · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'intro-hyyh':{sections:introHyyhSections,vocabulary:introHyyhVocabulary,summary:"Na quadra, a bola carrega dúvidas, o drible traz alívio e a realidade volta a pesar. Explore metáforas de movimento, fala citada, aparências e critérios externos, até a pergunta final sobre a própria felicidade.",heading:"Intro: The Most Beautiful Moment in Life · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'supplementary-story':{sections:supplementaryStorySections,vocabulary:supplementaryStoryVocabulary,summary:"Mãos se tornam asas e a presença compartilhada permite sorrir sem negar as feridas. Explore condições, concessões, pedidos de companhia e imagens de destino e luz, preservando a contagem de movimentos e o final repetido.",heading:"A Supplementary Story: You Never Walk Alone · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'outro-wings':{sections:outroWingsSections,vocabulary:outroWingsVocabulary,summary:"Uma pequena pena se torna asa, e o primeiro voo transforma medo e arrependimento em escolha. Explore ordens citadas, pronomes contraídos, concessão enfática e expectativas, incluindo a ponte final da versão Outro.",heading:"Outro: Wings · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

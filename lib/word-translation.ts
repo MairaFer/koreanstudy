@@ -2,6 +2,7 @@ import {cypher4Sections,cypher4Vocabulary} from './cypher-pt4';
 import {centuryGirlSections,centuryGirlVocabulary} from './21st-century-girl';
 import {notTodaySections,notTodayVocabulary} from './not-today';
 import {supplementaryStorySections,supplementaryStoryVocabulary} from './supplementary-story';
+import {loveNotOverSections,loveNotOverVocabulary} from './outro-love-is-not-over';
 import {introHyyhSections,introHyyhVocabulary} from './intro-hyyh';
 import {outroWingsSections,outroWingsVocabulary} from './outro-wings';
 import {twoThreeSections,twoThreeVocabulary} from './two-three';
@@ -101,6 +102,7 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'outro-love-is-not-over',sections:loveNotOverSections,vocabulary:loveNotOverVocabulary},
  {id:'intro-hyyh',sections:introHyyhSections,vocabulary:introHyyhVocabulary},
  {id:'supplementary-story',sections:supplementaryStorySections,vocabulary:supplementaryStoryVocabulary},
  {id:'outro-wings',sections:outroWingsSections,vocabulary:outroWingsVocabulary},

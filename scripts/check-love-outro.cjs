@@ -1,0 +1,17 @@
+const fs=require('node:fs'),path=require('node:path'),Module=require('node:module'),assert=require('node:assert/strict'),ts=require('typescript');
+const original=Module._resolveFilename;
+Module._resolveFilename=function(request,parent,...rest){if(request.startsWith('@/'))request=path.join(process.cwd(),request.slice(2));return original.call(this,request,parent,...rest);};
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true,resolveJsonModule:true}}).outputText,file);
+const {loveNotOverSections,loveNotOverVocabulary}=require('../lib/outro-love-is-not-over.ts'),{songs}=require('../lib/songs.ts'),{translate}=require('../lib/localization.ts'),{musicCuriosities,addMusicCuriosities}=require('../lib/music-curiosities.ts');
+const all=loveNotOverSections.flatMap(s=>s.lines);assert.equal(all.length,22);assert.equal(all.filter(l=>l.english).length,4);
+assert.equal(all[0].text,'그 긴 밤이 널 따라 흘러만 가는 것 같아');assert.equal(all.at(-1).text,'이별이란 아프고 더 아픈 것 같애');
+for(const [text,n] of [['사랑이란 아프고 아픈 것 yeah',3],['이별이란 아프고 더 아픈 것 같애',3],['니가 없으면 난 안될 것 같아',2],['사랑해줘 사랑해줘',2],['다시 내 품으로 와줘',2],['Love is not over, over, over',4]])assert.equal(all.filter(l=>l.text===text).length,n,text);
+assert.deepEqual(loveNotOverSections[2].lines,loveNotOverSections[3].lines);assert.deepEqual(loveNotOverSections[5].lines,loveNotOverSections[2].lines.slice(0,2));
+assert.ok(all[1].entries[0].notes[0].includes('흐르다'));assert.ok(all.find(l=>l.text.startsWith('니 눈엔')).entries[0].notes[0].includes('눈에는'));
+for(const l of all){assert.ok(l.translation);if(/[가-힣]/.test(l.text))assert.ok(l.entries?.length&&l.entries[0].notes?.[0]);else assert.ok(l.english);}
+const id='outro-love-is-not-over',song=songs.find(s=>s.id===id);assert.ok(song);assert.equal(song.exercises.length,5);assert.equal(loveNotOverVocabulary.verbs.length,14);assert.equal(loveNotOverVocabulary.nouns.length,7);
+const result=addMusicCuriosities(id,loveNotOverSections);assert.equal(result.flatMap(s=>s.lines.flatMap(l=>l.entries||[])).filter(e=>e.card).length,5);assert.deepEqual(addMusicCuriosities(id,result),result);
+const ko=/[가-힣ㄱ-ㅎㅏ-ㅣ]+/g;for(const x of [...loveNotOverSections.map(s=>s.title),...all.flatMap(l=>[l.translation,...(l.entries||[]).flatMap(e=>[e.meaning,...e.notes])]),...musicCuriosities[id].map(c=>c.card),song.intro,...song.exercises.flatMap(e=>[e.prompt,...e.options,e.explanation])]){const e=translate(x,'eng');if(/[a-zA-ZÀ-ÿ]/.test(x))assert.notEqual(x,e,'Missing adaptation '+x);assert.deepEqual((x.match(ko)||[]).sort(),(e.match(ko)||[]).sort());}
+const source=fs.readFileSync('components/bts-catalog.tsx','utf8'),expression=source.match(/function studyFor\(title:string\)([\s\S]*?)\n/)[0],studyFor=new Function(ts.transpileModule(expression,{compilerOptions:{target:ts.ScriptTarget.ES2022}}).outputText+';return studyFor;')();
+assert.equal(studyFor('Outro: Love Is Not Over'),id);assert.equal(studyFor('Outro : Love Is Not Over'),id);assert.equal(studyFor('Love Is Not Over (Full Length Edition)'),undefined);assert.equal(studyFor('Outro: Love Is Not Over (Live)'),undefined);
+console.log('PASS: Outro Love Is Not Over: 22 supplied lines; repeated choruses and final, contextual PT/ENG grammar, 5 cards, vocabulary, short-version-only catalog links and 5 exercises.');

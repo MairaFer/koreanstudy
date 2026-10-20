@@ -3,6 +3,29 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"outro-love-is-not-over":[
+  {
+    "term": "그 긴 밤이 널 따라 흘러만 가는 것 같아",
+    "card": "Este estudo acompanha o Outro curto de The Most Beautiful Moment in Life, Pt. 1. A discografia oficial também apresenta uma Full Length Edition em Young Forever. As linhas adicionais dessa versão não estão nesta letra, por isso o botão deste estudo acompanha somente o Outro.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/hwayangyeonhwa-young_forever.html"
+  },
+  {
+    "term": "이 시간이 널 따라 흐려지는 것 같아",
+    "card": "흐르다 é fluir; 흐려지다 é ficar turvo ou perder a nitidez. Os sons próximos aproximam duas imagens diferentes: uma noite que continua passando e um tempo que parece se apagar. A análise mantém essa diferença em vez de traduzir os dois verbos como passar."
+  },
+  {
+    "term": "사랑이란 아프고 아픈 것 yeah",
+    "card": "사랑이란 e 이별이란 abrem reflexões sobre o que seriam amor e separação. A repetição de doloroso encena o sentimento do eu, e a comparação seguinte intensifica a separação. A letra fala a partir dessa experiência, não define como todo relacionamento deve ser."
+  },
+  {
+    "term": "니가 없으면 난 안될 것 같아",
+    "card": "A frase mantém uma impressão: o eu sente que não ficará bem sem a outra pessoa. A forma 안 될 é negada e não descreve aqui uma proibição. Distinguir impressão emocional de fato objetivo ajuda a ler a intensidade do pedido sem perder a nuance gramatical."
+  },
+  {
+    "term": "다시 내 품으로 와줘",
+    "card": "품 é o espaço formado pelo abraço, com sentido de acolhimento. Ir para esse espaço vira voltar aos braços de alguém em uma tradução natural. O pedido se repete, enquanto a linha inglesa insiste que o amor não terminou: a canção deixa o desejo de retorno em aberto."
+  }
+],
 "supplementary-story":[
   {
     "term": "웃을 수 있어 함께라면",
