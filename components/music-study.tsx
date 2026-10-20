@@ -1,4 +1,8 @@
 "use client";
+import {awakeSections,awakeVocabulary} from '@/lib/awake';
+
+import {reflectionSections,reflectionVocabulary} from '@/lib/reflection';
+
 import {firstLoveSections,firstLoveVocabulary} from '@/lib/first-love';
 
 import {lieSections,lieVocabulary} from '@/lib/lie';
@@ -111,6 +115,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+  'awake':{sections:awakeSections,vocabulary:awakeVocabulary,summary:"A voz talvez não consiga voar, mas ainda quer estender a mão e seguir um pouco mais. Explore tentativas, perguntas e respostas relatadas, o contador de flores e a diferença entre reconhecer limites e deixar de caminhar.",heading:"Awake · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+  'reflection':{sections:reflectionSections,vocabulary:reflectionVocabulary,summary:"A vida vira filme, o medo pega a mão do eu e Ttukseom oferece outro mundo. Explore palavras que rimam sem ter o mesmo sentido, formas de possibilidade e o paradoxo de desejar liberdade até da liberdade, preservando o pedido final de amor por si.",heading:"Reflection · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'first-love':{sections:firstLoveSections,vocabulary:firstLoveVocabulary,summary:"Um piano marrom atravessa infância, afastamento e reencontro. Explore lembranças, comparações, fala relatada e promessas, acompanhando a personificação do instrumento e a relação afetiva com a música.",heading:"First Love · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'lie':{sections:lieSections,vocabulary:lieVocabulary,summary:"Uma voz pede afastamento e socorro enquanto tenta recuperar o eu anterior à mentira. Explore pedidos, concessões, estados resultantes e frases que atravessam as quebras de verso, com atenção aos sujeitos omitidos.",heading:"Lie · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'stigma':{sections:stigmaSections,vocabulary:stigmaVocabulary,summary:"Uma voz já não consegue esconder a culpa: a ferida, o vidro e a luz dão forma ao que permanece. Explore ações prolongadas, concessões, passivas, perguntas retóricas e pedidos de perdão, sem confundir a narrativa poética com biografia.",heading:"Stigma · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

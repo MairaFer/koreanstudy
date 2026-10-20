@@ -1,3 +1,5 @@
+import {awakeSections,awakeVocabulary} from './awake';
+import {reflectionSections,reflectionVocabulary} from './reflection';
 import {firstLoveSections,firstLoveVocabulary} from './first-love';
 import {lieSections,lieVocabulary} from './lie';
 import {stigmaSections,stigmaVocabulary} from './stigma';
@@ -89,6 +91,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'awake',sections:awakeSections,vocabulary:awakeVocabulary},
+ {id:'reflection',sections:reflectionSections,vocabulary:reflectionVocabulary},
  {id:'first-love',sections:firstLoveSections,vocabulary:firstLoveVocabulary},
  {id:'lie',sections:lieSections,vocabulary:lieVocabulary},
  {id:'stigma',sections:stigmaSections,vocabulary:stigmaVocabulary},

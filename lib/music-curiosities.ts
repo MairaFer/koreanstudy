@@ -3,6 +3,51 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"awake":[
+  {
+    "term": "버텨보는 거야",
+    "card": "A abertura recusa explicar a atitude apenas como acreditar e oferece outra leitura: tentar aguentar. O contraste é importante porque a canção não exige certeza para continuar. Mais adiante, a voz admite medo e ainda assim descreve pequenos gestos de persistência."
+  },
+  {
+    "term": "날갤 단 것처럼은 안 돼",
+    "card": "날갤 reduz 날개를; 단 vem de 달다, prender ou colocar, e não do adjetivo ser doce. A comparação com asas e pétalas mantém um limite: talvez não seja possível voar. 손 뻗고 싶어 responde com querer estender a mão, não com uma afirmação de que o limite desapareceu."
+  },
+  {
+    "term": "행복했던 시간들이 내게 물었어",
+    "card": "Os tempos felizes fazem uma pergunta, como se tivessem voz. 물었어 introduz a pergunta relatada em 괜찮은 거냐고; 대답했어 abre a resposta que termina em 뿐이라고. Acompanhar essas ligações ajuda a distinguir lembrança, pergunta e resposta nas linhas curtas."
+  },
+  {
+    "term": "그래도 여섯 송이 꽃을 손에 꼭 쥐고",
+    "card": "여섯 é seis no sistema nativo; 송이 conta flores. A imagem concreta é segurar seis flores firmemente enquanto se continua caminhando. Pode sugerir vínculos que sustentam o eu, mas o verso não nomeia essas flores nem exige uma identificação única para elas."
+  },
+  {
+    "term": "조금 더",
+    "card": "Wide awake reforça estar plenamente desperto, enquanto o refrão reconhece limites e mantém vontade de tentar. No último retorno, 조금 더 aparece separado: um pouco mais. A pequena pausa dá destaque à continuidade desejada, sem transformar a canção numa promessa de vitória garantida."
+  }
+],
+"reflection":[
+  {
+    "term": "나는 이 영화가 너무 재밌어",
+    "card": "A abertura transforma cada vida em filme, com estrelas, histórias, noites e manhãs diferentes. Depois, 찍다 continua essa imagem como filmar ou registrar. A vontade de fazer bem o próprio filme convive com o desejo de tratar a si mesmo com carinho; não é uma garantia de que o eu já se ame."
+  },
+  {
+    "term": "내가 너무 미울 때 난 뚝섬에 와",
+    "card": "뚝섬 é um nome de lugar: Ttukseom, ligado à paisagem do rio Han em Seul. A referência dá um cenário concreto à caminhada e ao encontro imaginado com quem olha o rio. O card situa o lugar; o sentimento que ele ganha na canção é uma leitura da letra.",
+    "source": "https://english.seoul.go.kr/service/amusement/hangang/islands/"
+  },
+  {
+    "term": "나는 나의 모든 기쁨이자 시름",
+    "card": "이름, 지름, 시름 e 싫음 aproximam sons, mas não significados: nome, diâmetro, aflição e desgosto. A sequência liga mundo, corpo e julgamento de si. 시름 e 싫음 não são a mesma palavra, embora o som e a posição no verso reforcem a ligação."
+  },
+  {
+    "term": "우리 옷깃을 스치면 인연이 될까",
+    "card": "Um leve roçar de roupas vira pergunta sobre um possível laço. A voz logo imagina uma vida anterior e incontáveis encontros, usando formas de incerteza. O movimento transforma a distância de um desconhecido em possibilidade de ligação, sem afirmar que isso aconteceu."
+  },
+  {
+    "term": "자유에게서 자유롭고 싶다",
+    "card": "Querer ser livre da própria liberdade preserva um paradoxo: até a ideia de liberdade pode se tornar algo de que o eu quer se afastar. A alegria e a infelicidade aparecem juntas logo depois. O final repete oito vezes um desejo de conseguir amar a si mesmo, e não uma declaração de que já conseguiu."
+  }
+],
 "first-love":[
   {
     "term": "한 켠에 자리잡은 갈색 piano",
