@@ -1,4 +1,8 @@
 "use client";
+import {amIWrongSections,amIWrongVocabulary} from '@/lib/am-i-wrong';
+
+import {cypher4Sections,cypher4Vocabulary} from '@/lib/cypher-pt4';
+
 import {lostSections,lostVocabulary} from '@/lib/lost';
 
 import {mamaSections,mamaVocabulary} from '@/lib/mama';
@@ -119,6 +123,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'am-i-wrong':{sections:amIWrongSections,vocabulary:amIWrongVocabulary,summary:"A pergunta sobre estar errado confronta a indiferença diante de ódio e injustiça. Explore concessões, condições, gírias, jogos de som e o paradoxo da normalidade, preservando o desejo de continuar vivendo e encontrar uma crença.",heading:"Am I Wrong · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+ 'cypher-pt4':{sections:cypher4Sections,vocabulary:cypher4Vocabulary,summary:"Desculpas irônicas respondem à crítica, enquanto costura, percussão e imagens visuais apresentam esforço e autoconfiança. Explore gírias, contrações e formas condensadas do rap, com o refrão de amor por si preservado.",heading:"BTS Cypher 4 · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'lost':{sections:lostSections,vocabulary:lostVocabulary,summary:"Entre deserto, mar e tempestade, a voz decide tentar confiar no próprio caminho. Explore possibilidades e impossibilidades, mudanças entre acreditar e querer acreditar, a imagem da formiga e a escolha de caminhar no próprio ritmo.",heading:"Lost · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'mama':{sections:mamaSections,vocabulary:mamaVocabulary,summary:"O sonho se torna possível pelo cuidado da mãe, e o filho promete ser seu apoio. Explore expressões de sacrifício, honoríficos, causas e promessas, do pequeno barco aos brotos e ao caminho de flores.",heading:"MAMA · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
   'awake':{sections:awakeSections,vocabulary:awakeVocabulary,summary:"A voz talvez não consiga voar, mas ainda quer estender a mão e seguir um pouco mais. Explore tentativas, perguntas e respostas relatadas, o contador de flores e a diferença entre reconhecer limites e deixar de caminhar.",heading:"Awake · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

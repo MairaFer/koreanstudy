@@ -3,6 +3,62 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"cypher-pt4":[
+  {
+    "term": "숨쉬고 있어서 I'm sorry bae",
+    "card": "As desculpas são irônicas: respirar e estar saudável não são erros. Ao pedir desculpas por existir, a voz exagera as cobranças dos críticos e retoma o controle da resposta."
+  },
+  {
+    "term": "그래 해보자 사물놀이 bae",
+    "card": "사물놀이 é uma formação musical de quatro instrumentos de percussão: 북, 장구, 징 e 꽹과리. A referência prolonga a imagem de virar um tambor para receber as batidas dos críticos.",
+    "source": "https://www.korean-culture.org/koreanet/view.do?seq=5118"
+  },
+  {
+    "term": "무플보단 악플이 좋아",
+    "card": "무플 significa ausência de comentários; 악플 são comentários maldosos. A preferência provocadora por atenção negativa prepara o contraste: o crítico conhece o artista, mas o artista nem conhece o crítico. Não é uma recomendação para aceitar assédio."
+  },
+  {
+    "term": "한 땀씩 바느질",
+    "card": "Aqui 땀 conta pontos de costura, não gotas de suor. Costurar ponto por ponto transforma o trabalho em imagem de persistência; o nó seguinte pode tanto concluir a costura quanto encerrar o esforço de quem desiste."
+  },
+  {
+    "term": "골라 X 쳐 like kaws",
+    "card": "KAWS é um artista conhecido, entre outros traços, pelos olhos em X de seus personagens. A menção a marcar um X permite uma associação visual com essa assinatura; isso não torna toda a linha uma descrição literal de uma obra específica.",
+    "source": "https://www.ngv.vic.gov.au/exhibition/kaws/"
+  },
+  {
+    "term": "너의 똥차들의 콩깍지를",
+    "card": "콩깍지 é a vagem de feijão; na expressão sobre cobrir os olhos, representa uma percepção encoberta pela ilusão. O verso combina essa imagem com um insulto aos rivais. A formulação é condensada: não é preciso inventar uma história de ex-parceiros ou de carros para explicá-la.",
+    "source": "https://world.kbs.co.kr/service/contents_view.htm?board_seq=229511&id=&lang=k&menu_cate=learnkorean&page=208"
+  },
+  {
+    "term": "쉽게 얻은 게 하나도 없음에 늘 감사하네",
+    "card": "O refrão afirma amor e conhecimento de si, enquanto este verso lembra que nada veio facilmente. A autoconfiança do diss se constrói sobre esforço e conquistas; não significa que a voz não tenha conquistado nada."
+  }
+],
+"am-i-wrong":[
+  {
+    "term": "귀가 있어도 듣질 않어",
+    "card": "Ter ouvidos e olhos contrasta com recusar ouvir e ver. A crítica é à indiferença diante do que acontece, não à deficiência auditiva ou visual. As formas coloquiais preservam o tom de fala direta."
+  },
+  {
+    "term": "다 마음에 물고기가 살어",
+    "card": "물고기 é peixe. A palavra inglesa selfish, egoísta, contém o som de fish: a sequência cria um jogo bilíngue, como se um peixe chamado egoísmo morasse no coração. Isso não é uma explicação da origem da palavra inglesa."
+  },
+  {
+    "term": "황새 VS 뱁새 전쟁이야 errday",
+    "card": "황새 é a cegonha, de pernas longas; 뱁새 é uma ave pequena. O contraste lembra o provérbio da ave pequena que se machuca ao tentar acompanhar a cegonha. Aqui a imagem permite ler uma disputa em condições desiguais, sem transformar desigualdade em regra que deva ser aceita.",
+    "source": "https://krdict.korean.go.kr/m/eng/searchResultView?ParaWordNo=87412&currentPage=15&exaType=&font_size=12&mainSearchWord=%EC%83%88&nation=eng&nationCode=6&proverbType=&searchType=W&sort=W&viewType=A&wordMatchFlag=N"
+  },
+  {
+    "term": "미친 세상에 안 미친 게 미친겨",
+    "card": "O paradoxo pergunta o que seria normal em um mundo descrito como enlouquecido. As palavras de loucura fazem parte da retórica da crítica social, não de um diagnóstico. O desconforto diante de notícias e ódio é colocado em oposição à indiferença."
+  },
+  {
+    "term": "찾고 싶어 나의 믿음을",
+    "card": "A pergunta sobre estar errado não termina em desistência: a ponte ainda deseja viver e reencontrar aquilo em que acreditar. 믿음 pode ser crença ou confiança; não exige uma religião específica nesta passagem."
+  }
+],
 "lost":[
   {
     "term": "가지 못한 길도 갈 수 없는 길도",

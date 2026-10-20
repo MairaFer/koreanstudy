@@ -1,3 +1,5 @@
+import {cypher4Sections,cypher4Vocabulary} from './cypher-pt4';
+import {amIWrongSections,amIWrongVocabulary} from './am-i-wrong';
 import {lostSections,lostVocabulary} from './lost';
 import {mamaSections,mamaVocabulary} from './mama';
 import {awakeSections,awakeVocabulary} from './awake';
@@ -93,6 +95,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'am-i-wrong',sections:amIWrongSections,vocabulary:amIWrongVocabulary},
+ {id:'cypher-pt4',sections:cypher4Sections,vocabulary:cypher4Vocabulary},
  {id:'lost',sections:lostSections,vocabulary:lostVocabulary},
  {id:'mama',sections:mamaSections,vocabulary:mamaVocabulary},
  {id:'awake',sections:awakeSections,vocabulary:awakeVocabulary},
