@@ -3,6 +3,47 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"moving-on":[
+  {
+    "term": "17평 아홉 연습생 코찔찔이 시절",
+    "card": "평 é uma unidade de área, aproximadamente 3,3058 m². Assim, 17평 correspondem a cerca de 56,2 m², e não a dezessete metros quadrados. A letra fala de nove trainees nesse espaço; isso não altera o número de integrantes do BTS.",
+    "source": "https://mods.go.kr/boardDownload.es?bid=12030&list_no=372711&seq=2"
+  },
+  {
+    "term": "항상 목 쉬었고",
+    "card": "목이 쉬다 é ficar rouco; 목이 메다 é sentir a garganta apertar, como pela emoção. O rap aproxima as duas expressões, mas elas não descrevem a mesma sensação. A primeira acompanha a preocupação e a voz; a segunda, o olhar para artistas mais experientes."
+  },
+  {
+    "term": "그리 넓어 보이던 새 집도",
+    "card": "A casa que parecia enorme se torna pequena à medida que a ambição cresce. O espaço físico serve de medida para a transformação interior. A mudança do título pode ser mudar de endereço e também avançar para outra etapa, como sugere o nome inglês Moving On."
+  },
+  {
+    "term": "미운 정 쌓이고 쌓였어",
+    "card": "정 é um vínculo de afeição que se forma com a convivência. 고운 정 aponta para as experiências agradáveis; 미운 정 inclui o apego que permanece também entre atritos e desavenças. Traduzir a segunda expressão apenas como ódio perderia essa ligação."
+  },
+  {
+    "term": "끝나고서는 수고의 짜장면 하나",
+    "card": "짜장면 é um prato de macarrão com molho escuro de feijão, ligado à culinária sino-coreana. É uma refeição muito associada ao dia de mudança na Coreia. Na letra, o prato funciona como pequena recompensa concreta depois de carregar e arrumar a casa.",
+    "source": "https://www.acc.go.kr/webzine/index.do?article=731&lang="
+  },
+  {
+    "term": "엄마 심장의 기계와 광활한 흉터였어",
+    "card": "O nascimento é descrito como a primeira mudança, saindo do ventre materno. A lembrança liga esse começo a uma máquina e a uma cicatriz da mãe. A letra enviada não detalha a situação médica: a análise mantém a imagem sem inventar diagnóstico, procedimento ou aparelho específico."
+  },
+  {
+    "term": "상업적이란 집으로 이사간 대가는",
+    "card": "A casa deixa de ser apenas moradia e passa a nomear uma posição na carreira. As acusações sobre seguir dinheiro aparecem como julgamento alheio, ligado ao dedo apontado da linha seguinte. A voz relata o preço dessa mudança, não oferece uma descrição neutra de todo trabalho comercial."
+  },
+  {
+    "term": "내 삶은 월세 나도 매달려 알어?",
+    "card": "월세 é aluguel mensal e 보증금 é depósito de garantia. A vida vira moradia alugada e a dignidade vira a garantia empenhada. 매달려 significa agarrar-se ou ficar pendurado, enquanto seu som também evoca 매달, todo mês: o custo recorrente conversa com o esforço de continuar."
+  },
+  {
+    "term": "이번 이사의 손 없는 날은 언제일까",
+    "card": "Em 손 없는 날, 손 não é mão: é o nome de um espírito que, segundo a tradição, poderia atrapalhar atividades. A expressão designa dias considerados favoráveis para eventos como mudanças. Aqui a pergunta sobre uma data propícia também dá forma ao desejo de um novo começo.",
+    "source": "https://world.kbs.co.kr/service/contents_view.htm?board_seq=229228&id=&lang=k&menu_cate=learnkorean&page=229"
+  }
+],
 "outro-love-is-not-over":[
   {
     "term": "그 긴 밤이 널 따라 흘러만 가는 것 같아",

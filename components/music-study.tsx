@@ -1,4 +1,6 @@
 "use client";
+import {movingOnSections,movingOnVocabulary} from '@/lib/moving-on';
+
 import {loveNotOverSections,loveNotOverVocabulary} from '@/lib/outro-love-is-not-over';
 
 import {introHyyhSections,introHyyhVocabulary} from '@/lib/intro-hyyh';
@@ -137,6 +139,7 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'moving-on':{sections:movingOnSections,vocabulary:movingOnVocabulary,summary:"Uma casa pequena guarda brigas, risos, esforço e o cheiro de uma época. Explore lembranças, propostas, intenções interrompidas e as referências culturais da mudança, até a imagem de uma vida que passa por novos endereços e novas etapas.",heading:"Move (이사) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'outro-love-is-not-over':{sections:loveNotOverSections,vocabulary:loveNotOverVocabulary,summary:"A noite continua, a imagem do tempo se apaga e a distância vira um pedido de volta. Explore mudança e continuidade, impressões com 것 같다, definições poéticas de amor e separação e pedidos informais, seguindo a versão Outro enviada.",heading:"Outro: Love Is Not Over · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'intro-hyyh':{sections:introHyyhSections,vocabulary:introHyyhVocabulary,summary:"Na quadra, a bola carrega dúvidas, o drible traz alívio e a realidade volta a pesar. Explore metáforas de movimento, fala citada, aparências e critérios externos, até a pergunta final sobre a própria felicidade.",heading:"Intro: The Most Beautiful Moment in Life · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'supplementary-story':{sections:supplementaryStorySections,vocabulary:supplementaryStoryVocabulary,summary:"Mãos se tornam asas e a presença compartilhada permite sorrir sem negar as feridas. Explore condições, concessões, pedidos de companhia e imagens de destino e luz, preservando a contagem de movimentos e o final repetido.",heading:"A Supplementary Story: You Never Walk Alone · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
