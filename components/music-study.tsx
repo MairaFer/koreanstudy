@@ -1,4 +1,6 @@
 "use client";
+import {hipHopLoverSections,hipHopLoverVocabulary} from '@/lib/hip-hop-lover';
+import {letMeKnowSections,letMeKnowVocabulary} from '@/lib/let-me-know';
 import {warOfHormoneSections,warOfHormoneVocabulary} from '@/lib/war-of-hormone';
 import {whatAmIToYouSections,whatAmIToYouVocabulary} from '@/lib/what-am-i-to-you';
 import {skitOneNightSections,skitOneNightVocabulary} from '@/lib/skit-one-night';
@@ -157,6 +159,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'hip-hop-lover':{sections:hipHopLoverSections,vocabulary:hipHopLoverVocabulary,summary:"Três caminhos fazem do hip-hop uma identidade: a descoberta pela escrita, o encontro entre dança e rap e a decisão de dedicar a vida à música. Acompanhe referências a artistas e obras, expressões figuradas e a transformação de ouvinte em criador.",heading:"Hip Hop Lover · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
+ 'let-me-know':{sections:letMeKnowSections,vocabulary:letMeKnowVocabulary,summary:"Uma relação terminou, mas o apego continua repetindo a mesma melodia. Explore imagens de chuva, flores, cinzas e partitura; observe como saber que acabou difere de conseguir aceitar, e como a memória reaparece no corpo e na imaginação.",heading:"Let Me Know · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'what-am-i-to-you':{sections:whatAmIToYouSections,vocabulary:whatAmIToYouVocabulary,summary:"O entusiasmo de conquistar alguém muda para a angústia de estar num vínculo sem reciprocidade. Explore mensagens curtas, jogos com Messi e understand, o amor unilateral mesmo tendo um par e a dúvida sobre transformar carinho em contrato.",heading:"Intro: What Am I to You · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'war-of-hormone':{sections:warOfHormoneSections,vocabulary:warOfHormoneVocabulary,summary:"Uma voz exagerada e atrapalhada descreve atração por meio de hormônios, equações, cinema e elogios do corpo. Explore comparações, gírias, pedidos informais e trocadilhos sem confundir a perspectiva do narrador com uma regra sobre homens e mulheres.",heading:"War of Hormone · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'skit-one-night':{sections:skitOneNightSections,vocabulary:skitOneNightVocabulary,summary:"A transcrição enviada acompanha brincadeiras sobre atrasos, cansaço depois do palco, lembranças do início e dúvidas sobre o próximo sucesso. Leia cada fala com tradução contextual e notas de coreano. Grafias de fala, risadas e interrupções foram preservadas; a romanização foi retirada.",heading:"Skit: One Night in a Strange City · coreano fala por fala",badge:"Transcrição enviada · sem romanização"},

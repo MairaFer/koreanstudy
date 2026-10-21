@@ -3,6 +3,79 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"hip-hop-lover":[
+  {
+    "term": "심청이마냥 급 다가와",
+    "card": "No conto de Simcheong, é o pai da personagem quem recupera a visão. A letra aproxima a chegada do hip-hop desse despertar: o eu passa a enxergar um mundo novo. A referência cultural sustenta a metáfora; não afirma que Simcheong fosse cega.",
+    "source": "https://www.koreanculture.org/performing-arts/2020/5/6/gugak-wednesdays-online-korean-music-concerts"
+  },
+  {
+    "term": "The Chronic과 그 다음 명작 2001",
+    "card": "A enumeração mistura pessoas, grupos e títulos. The Chronic e 2001 são obras de Dr. Dre; o número 2001 é o nome do disco, não uma data que você deva converter em explicação cronológica. O site do artista confirma o título e as faixas. Na letra, a lista mostra a formação de um ouvinte.",
+    "source": "https://www.drdre.com/releases-archive/2001/"
+  },
+  {
+    "term": "부갈루, 킹텃, 올드스쿨 리듬 타",
+    "card": "Boogaloo e King Tut pertencem ao vocabulário da dança; não são mais dois rappers da lista anterior. A mudança do ouvido para o corpo prepara a interseção entre rap e dança. A referência traz uma conversa sobre popping com praticantes da modalidade.",
+    "source": "https://www.redbull.com/us-en/videos/100-days-of-popping-episode-3-video"
+  },
+  {
+    "term": "그가 금요일 밤을 비출 때부터",
+    "card": "A noite de sexta iluminada retoma Friday Night Lights, de J. Cole. Ao redor dela, Cole World e Hope world aproximam o universo de uma influência do mundo que o eu quer criar. Aqui Hope world é a formulação desta letra: não é necessário atribuir a ela um lançamento futuro.",
+    "source": "https://jcole.lnk.to/FridayNightLights"
+  },
+  {
+    "term": "적어내렸던 my 16 bars",
+    "card": "No rap, bars são compassos: unidades musicais que organizam a escrita e a execução. O número dezesseis descreve esse conjunto na lembrança do eu. Não significa dezesseis bares e não impõe que toda música de rap tenha sempre o mesmo tamanho."
+  },
+  {
+    "term": "날 던지고 밤새도록 갈았던 무딘 펜촉의 날",
+    "card": "O primeiro 날 é a contração de 나를, a mim; o último é o fio de uma lâmina. A mesma forma sonora permite lançar a si próprio no estúdio e afiar a caneta. É o contexto gramatical, e não uma tradução fixa de 날, que resolve cada ocorrência."
+  },
+  {
+    "term": "받는 언수외 대신해서",
+    "card": "언수외 reúne as abreviações de 언어, 수리 e 외국어. O verso contrapõe áreas de avaliação escolar às rimas acumuladas nos cadernos. Isso explica o custo e a direção da escolha narrada; não transforma abandonar estudos numa recomendação para o leitor."
+  },
+  {
+    "term": "그 결과 내 인생 자체를 음악 안에 뼈 묻었어",
+    "card": "뼈를 묻다, literalmente enterrar os ossos, pode comunicar dedicação de toda uma vida. Na sequência, a hipótese de amar a cultura ser um crime leva a outra hipérbole. O encerramento reúne compromisso e intensidade, sem narrar um enterro real."
+  }
+],
+"let-me-know":[
+  {
+    "term": "뚝뚝뚝 비가 고여 (네가 고여)",
+    "card": "A chuva se torna a pessoa quando 비가 dá lugar a 네가. O mesmo verbo 고이다, acumular-se como líquido, liga lágrimas e lembrança. A repetição sonora faz a memória ocupar fisicamente os olhos do eu; não precisa ser chuva literal."
+  },
+  {
+    "term": "사랑은 벚꽃처럼",
+    "card": "As flores que abrem e caem e o fogo que deixa cinzas contam duas versões de uma perda: beleza breve e intensidade consumida. São imagens da experiência do eu, sem estabelecer que todo amor deva acabar rapidamente."
+  },
+  {
+    "term": "난 계속해서 제자리 도돌이표",
+    "card": "도돌이표 é um sinal de repetição da partitura. A relação terminou, mas o eu continua executando o mesmo trecho emocional. Essa diferença entre o fim da música e a insistência de quem ficou explica por que já saber a resposta não encerra a pergunta."
+  },
+  {
+    "term": "미련이 마침표 앞에서 버티고 있어",
+    "card": "마침표 é ponto final da escrita, colocado aqui ao lado de imagens musicais. O sujeito da frase é 미련, o apego que resta: ele próprio resiste ao ponto que deveria fechar a história. A mistura de linguagens é poética; não ensina que um ponto final seja o nome técnico de uma barra musical."
+  },
+  {
+    "term": "이별의 힘에 무너진 도미노",
+    "card": "O dominó transforma a separação numa queda em cadeia: promessas, lembranças e luzes do mundo interior vão sendo atingidas. O verbo 무너지다 dá ao sofrimento uma forma espacial, de algo que perde a sustentação."
+  },
+  {
+    "term": "마치 줄리엣 & 로미오",
+    "card": "Julieta e Romeu evocam uma história de amor trágico. O verso usa uma comparação breve, sem obrigar o ouvinte a identificar cada situação da música com uma cena da peça. A referência permite conhecer o texto e o contexto teatral separadamente.",
+    "source": "https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/"
+  },
+  {
+    "term": "너와 내 온기가 안 식혀지지",
+    "card": "O calor que não esfria recupera a imagem do equador no primeiro rap. Ainda assim, a canção é contada por uma pessoa: dizer seu calor e o meu não confirma o que a outra sente agora. A memória preserva uma intimidade que o presente já não garante."
+  },
+  {
+    "term": "체한 듯이 다시",
+    "card": "취한 듯이 aproxima a lembrança da embriaguez; 체한 듯이 passa à indigestão. A semelhança sonora une perda de controle e algo que não se consegue processar. Quando o eu briga e faz as pazes depois, a cena continua explicitamente na imaginação."
+  }
+],
 "what-am-i-to-you":[
   {
     "term": "근데 왜 근데 왜",
