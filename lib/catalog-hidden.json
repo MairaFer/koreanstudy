@@ -431,6 +431,18 @@
       "id": "1715412128",
       "title": "GOLDEN",
       "date": "2023-11-03"
+    },
+    {
+      "artist": "BTS",
+      "id": "1694722609",
+      "title": "All Night (BTS World Original Soundtrack) [Pt. 3] - Single",
+      "date": "2019-06-21"
+    },
+    {
+      "artist": "BTS",
+      "id": "1694722473",
+      "title": "A Brand New Day (BTS World Original Soundtrack) [Pt. 2] - Single",
+      "date": "2019-06-14"
     }
   ],
   "tracks": [
@@ -439,6 +451,36 @@
       "id": "1601381962",
       "title": "Christmas Tree (Inst.)",
       "albumId": "1601381960"
+    },
+    {
+      "artist": "BTS",
+      "id": "1598731064",
+      "title": "DNA (Pedal 2 LA Mix)",
+      "albumId": "1598730614"
+    },
+    {
+      "artist": "BTS",
+      "id": "1598662277",
+      "title": "I Need U (Urban Mix)",
+      "albumId": "1598661880"
+    },
+    {
+      "artist": "BTS",
+      "id": "1598662283",
+      "title": "Run (Ballad Mix)",
+      "albumId": "1598661880"
+    },
+    {
+      "artist": "BTS",
+      "id": "1598662285",
+      "title": "Run (Alternative Mix)",
+      "albumId": "1598661880"
+    },
+    {
+      "artist": "BTS",
+      "id": "1598662289",
+      "title": "Butterfly (Alternative Mix)",
+      "albumId": "1598661880"
     }
   ]
 }

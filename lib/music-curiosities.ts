@@ -3,6 +3,43 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"skit-be":[
+  {
+    "term": "축하드립니다!",
+    "card": "Esta é a quarta faixa de BE, conforme a lista oficial do álbum. O estudo acompanha uma conversa de comemoração, não estrofes cantadas. A transcrição enviada não identifica cada voz: os nomes citados numa fala não bastam para atribuir quem está falando. Um vídeo oficial de bastidores permite conhecer a cena separadamente.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/be.html"
+  },
+  {
+    "term": "아 1위가수 1위가수로 불러 주시다니",
+    "card": "A repetição de artista número um vira um título cerimonial dentro de uma conversa íntima. As formas respeitosas convivem com provocações e interrupções. Por isso, formalidade gramatical não equivale automaticamente a distância emocional ou hierarquia rígida no tom desta cena."
+  },
+  {
+    "term": "난 겹경사다 진짜",
+    "card": "겹경사 reúne alegrias que coincidem: aqui, aniversário e primeiro lugar. A brincadeira sobre não precisar de outro presente depende de ler as falas em sequência. A conquista pertence ao grupo; o aniversário acrescenta uma dimensão pessoal à comemoração."
+  },
+  {
+    "term": "목요일날 뜰걸아마? 공식적인 차트에서?",
+    "card": "A conversa distingue receber a notícia, vê-la no ranking e tentar entender os horários. As perguntas sobre quinta e sábado são estimativas dos participantes; não devem virar datas históricas garantidas pela tradução. A diferença de fuso explica parte da confusão narrada. O vídeo oficial registra o contexto da comemoração do Hot 100.",
+    "source": "https://www.youtube.com/watch?v=nrClLF4D8t0"
+  },
+  {
+    "term": "(삐)",
+    "card": "O bipe ocupa o lugar de uma fala, mas não revela seu conteúdo. A resposta seguinte, chamando o comentário de impressionante, cria humor com essa ausência. Preservar o marcador sonoro permite acompanhar a troca sem inventar um palavrão ou uma frase específica."
+  },
+  {
+    "term": "하지만 빌보드 1위 가수는 오안 취를 막지 못했다",
+    "card": "A sequência 오안 취 aparece separada aqui e junta em 오안취? na pergunta seguinte. O contexto retorna à coreografia, mas a transcrição por si só não confirma uma expansão da sequência. Em vez de ensinar uma sigla incerta como vocabulário padrão, preservamos a forma enviada e explicamos as partes claras da oração."
+  },
+  {
+    "term": "아니야 우리 초심 찾기 프로젝트 한거지, 1위한 순간에서 No More Dream 연습한다",
+    "card": "초심 é a intenção ou o espírito de quando algo começou. Ensaiar a canção de estreia no momento da conquista torna a rotina um símbolo de continuidade. A graça se desenvolve quando outra fala provoca esse discurso e, depois, alguém propõe transformá-lo numa letra. A página oficial do primeiro disco confirma No More Dream no repertório de estreia.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/2_cool_4_school.html"
+  },
+  {
+    "term": "홉아 이런게 행복 아닐까?",
+    "card": "A pergunta final aproxima felicidade de um momento compartilhado, depois de elogios, brincadeiras e vontade de voltar ao palco. 아닐까 convida a pensar junto, sem declarar uma definição universal. A fala seguinte sobre sentir tudo de modo diferente mantém o encerramento reflexivo."
+  }
+],
 "hip-hop-lover":[
   {
     "term": "심청이마냥 급 다가와",
