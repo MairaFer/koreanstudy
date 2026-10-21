@@ -16,14 +16,13 @@ const studies=requested?songs.filter(song=>song.id===requested):songs;
 assert.ok(studies.length,'Unknown study: '+requested);
 let checked=0;for(const song of studies){
  const english=render(React.createElement(MusicStudy,{initialSongId:song.id}),'eng');
- const contextual=song.id==='skit-one-night';
- assert.ok(english.includes(contextual?'Listening and interpretation guide':'Learn Korean with BTS'),song.id+' English heading');
+ assert.ok(english.includes('Learn Korean with BTS'),song.id+' English heading');
  assert.ok(!english.includes('Ver tradução')&&!english.includes('Show translation'),song.id+' English lines must not have translation buttons');
  assert.ok(!english.includes('Ver explicação'),song.id+' PT control');
- assert.ok(english.includes(contextual?'Show the example explanation':'Show explanation'),song.id+' Korean explanation control');
+ assert.ok(english.includes('Show explanation'),song.id+' Korean explanation control');
  assert.ok(english.includes('Key vocabulary'),song.id+' vocabulary');
  assert.ok(english.includes('Check answer'),song.id+' exercises');
- if(checked===0){const portuguese=render(React.createElement(MusicStudy,{initialSongId:song.id}),'pt');assert.ok(portuguese.includes(contextual?'Revelar explicação do exemplo':'Ver explicação'),song.id+' PT preserved');}checked++;if(checked%10===0)console.log('Rendered studies:',checked);
+ if(checked===0){const portuguese=render(React.createElement(MusicStudy,{initialSongId:song.id}),'pt');assert.ok(portuguese.includes('Ver explicação'),song.id+' PT preserved');}checked++;if(checked%10===0)console.log('Rendered studies:',checked);
 }
 const optionSong=songs.find(s=>s.id==='for-youth');
 const exercise=render(React.createElement(ExerciseCard,{exercise:optionSong.exercises[0],index:0,onAnswer:()=>{}}),'eng');

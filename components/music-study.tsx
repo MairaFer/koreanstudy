@@ -1,5 +1,5 @@
 "use client";
-import {SkitContextStudy} from './skit-context-study';
+import {skitOneNightSections,skitOneNightVocabulary} from '@/lib/skit-one-night';
 import {butterflyPrologueSections,butterflyPrologueVocabulary} from '@/lib/butterfly-prologue';
 import {youngForeverSections,youngForeverVocabulary} from '@/lib/young-forever';
 import {saveMeSections,saveMeVocabulary} from '@/lib/save-me';
@@ -151,11 +151,11 @@ import {KoreanText,AudioButton} from './korean-audio';
 
 export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string}){
  const song=songs.find(s=>s.id===initialSongId)??songs[0];
- if(song.id==='skit-one-night')return <SkitContextStudy song={song}/>;
  return <Localized>{<><div className="intro"><div><p className="eyebrow">PALAVRAS, FRASES E DESCOBERTAS</p><h1>Aprenda coreano com BTS<span>.</span></h1><p>Toque nas palavras para ouvir uma voz sintetizada em coreano.</p></div><Music2 size={42}/></div><div className="song-tabs"><span className="pill">{song.title}</span></div><SongLesson key={song.id} song={song}/><p className="music-reference">Traduções e explicações preparadas para estudo. Este projeto não é afiliado ao BTS.</p></>}</Localized>;
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'skit-one-night':{sections:skitOneNightSections,vocabulary:skitOneNightVocabulary,summary:"A transcrição enviada acompanha brincadeiras sobre atrasos, cansaço depois do palco, lembranças do início e dúvidas sobre o próximo sucesso. Leia cada fala com tradução contextual e notas de coreano. Grafias de fala, risadas e interrupções foram preservadas; a romanização foi retirada.",heading:"Skit: One Night in a Strange City · coreano fala por fala",badge:"Transcrição enviada · sem romanização"},
  'butterfly-prologue':{sections:butterflyPrologueSections,vocabulary:butterflyPrologueVocabulary,summary:"A Prologue Mix aproxima o olhar de pequenos gestos, da luz, do perfume e do toque. O encantamento convive com o medo de perder uma presença que parece frágil. Siga a letra enviada, explore pedidos íntimos e dúvidas com -ㄹ까, e perceba como o encerramento retorna ao início.",heading:"Butterfly (Prologue Mix) · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'save-me':{sections:saveMeSections,vocabulary:saveMeVocabulary,summary:"Uma voz presa dentro de si pede ajuda e encontra na outra pessoa luz, cuidado e a possibilidade de voltar a ser ela mesma. Estude pedidos com -어 주다, frases que atravessam versos e o jogo sonoro do rap final, sem reduzir metáforas a traduções literais.",heading:"Save Me · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'young-forever':{sections:youngForeverSections,vocabulary:youngForeverVocabulary,summary:"Depois do show, o palco quente e vazio revela insegurança e gratidão ao mesmo tempo. A letra passa da avaliação de si ao compromisso de cantar mesmo sem aplausos eternos. Explore concessões, desejo, ordem poética e a juventude como vínculo com os sonhos.",heading:"Epilogue: Young Forever · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},

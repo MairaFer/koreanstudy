@@ -3,6 +3,41 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"skit-one-night":[
+  {
+    "term": "맨날 늦어 내가 한마디 해?",
+    "card": "Este skit é uma faixa falada de The Most Beautiful Moment in Life, Pt. 2. Acompanhe as trocas de turno em vez de procurar um refrão. A análise segue a transcrição enviada, sem atribuir cada fala a um integrante quando o texto não identifica quem fala.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/hwayangyeonhwa-pt2.html"
+  },
+  {
+    "term": "알게써여 내가 리더형한테 한마디 할게여",
+    "card": "A escrita imita a voz: 알게써여 e 할게여 podem ser estudadas pelas formas padrão 알겠어요 e 할게요. Preservamos a transcrição, mas distinguimos pronúncia estilizada de ortografia de referência. A terminação -ㄹ게요 comunica uma intenção levando o ouvinte em conta."
+  },
+  {
+    "term": "남준이형 리더형의 특권이에요",
+    "card": "형 pode ser usado por um homem para um irmão mais velho ou homem mais velho próximo. Aqui o tratamento se mistura ao papel de líder e à brincadeira sobre privilégios. O registro íntimo não deve ser transportado automaticamente para falar com desconhecidos."
+  },
+  {
+    "term": "슈가형 진짜 너무 날로 먹는다 진짜",
+    "card": "날로 먹다 literalmente é comer cru. Como expressão, pode criticar alguém por conseguir algo com pouco esforço. No contexto, a provocação se liga a deixar o público cantar: uma tradução sobre comida perderia a piada."
+  },
+  {
+    "term": "내말을 들어봐 내가 내가 옛날에 월드콘을 먹었는데",
+    "card": "월드콘 é um nome de sorvete; 월드투어 é turnê mundial. O som compartilhado conecta um consumo cotidiano às viagens do grupo. A resposta seguinte comenta o humor da fala: a graça está nessa mudança de escala, não em traduzir os nomes literalmente."
+  },
+  {
+    "term": "갑자기 뭐 거의 약간 타이타닉인데 지금",
+    "card": "A referência a Titanic transforma a queda do clima em um barco afundando. 침몰 e 전복되다 prolongam a imagem nos turnos seguintes. Trata-se de humor sobre a conversa, não de um relato de acidente."
+  },
+  {
+    "term": "잘될 것 같은데요",
+    "card": "-ㄹ 것 같다 apresenta uma previsão como impressão: acho que vai dar certo. As reações exageradas ao comentário fazem parte da dinâmica humorística. Não é necessário transformar a cena em uma regra factual sobre sorte ou sobre quem prevê o futuro."
+  },
+  {
+    "term": "7천명으로 하시죠",
+    "card": "A conversa passa de 5천명 para 7천명. 천 significa mil, e 명 conta pessoas. A mudança aparece como correção entre os participantes; a transcrição não basta para verificar o tamanho real do público. No final, 하나씩 desloca o foco para conquistas construídas uma a uma."
+  }
+],
 "butterfly-prologue":[
   {
     "term": "아무것도 생각하지 마",

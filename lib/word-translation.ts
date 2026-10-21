@@ -1,5 +1,5 @@
 import {butterflyPrologueSections,butterflyPrologueVocabulary} from './butterfly-prologue';
-import {skitContext} from './skit-context';
+import {skitOneNightSections,skitOneNightVocabulary} from './skit-one-night';
 import {youngForeverSections,youngForeverVocabulary} from './young-forever';
 import {saveMeSections,saveMeVocabulary} from './save-me';
 import {cypher4Sections,cypher4Vocabulary} from './cypher-pt4';
@@ -119,6 +119,7 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'skit-one-night',sections:skitOneNightSections,vocabulary:skitOneNightVocabulary},
  {id:'butterfly-prologue',sections:butterflyPrologueSections,vocabulary:butterflyPrologueVocabulary},
  {id:'save-me',sections:saveMeSections,vocabulary:saveMeVocabulary},
  {id:'young-forever',sections:youngForeverSections,vocabulary:youngForeverVocabulary},
@@ -247,7 +248,7 @@ export function wordTranslation(word:string,context:string,source:string):{meani
   const contextual=lines.filter(line=>line.text===context||line.entries?.some(e=>e.term===context));
   for(const line of contextual){const entry=line.entries?.find(e=>exact(e.term,word));if(entry)return {meaning:entry.meaning};}
   const lesson=lessons.find(l=>source==='#aulas/'+l.id);
-  const cards=[...(source.includes('/skit-one-night')?skitContext.vocabulary:[]),...(lesson?.cards??[]),...ordered.flatMap(s=>[...s.vocabulary.verbs,...s.vocabulary.nouns]),...lessons.flatMap(l=>l.cards)];
+  const cards=[...(lesson?.cards??[]),...ordered.flatMap(s=>[...s.vocabulary.verbs,...s.vocabulary.nouns]),...lessons.flatMap(l=>l.cards)];
   // Keep meanings tied to the selected line when the token is part of an expression.
   for(const line of contextual){const entry=line.entries?.find(e=>tokens(e.term).includes(word));if(entry){const card=cards.find(c=>exact(c.ko,word));if(card)return {meaning:card.pt};return {meaning:entry.meaning,expression:entry.term};}}
   const card=cards.find(c=>exact(c.ko,word));if(card)return {meaning:card.pt};
