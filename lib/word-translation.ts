@@ -1,3 +1,5 @@
+import {lookHereSections,lookHereVocabulary} from './look-here';
+import {secondGradeSections,secondGradeVocabulary} from './2nd-grade';
 import {blanketKickSections,blanketKickVocabulary} from './blanket-kick';
 import {heaven247Sections,heaven247Vocabulary} from './24-7-heaven';
 import {rainSections,rainVocabulary} from './rain';
@@ -128,6 +130,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'look-here',sections:lookHereSections,vocabulary:lookHereVocabulary},
+ {id:'2nd-grade',sections:secondGradeSections,vocabulary:secondGradeVocabulary},
  {id:'blanket-kick',sections:blanketKickSections,vocabulary:blanketKickVocabulary},
  {id:'24-7-heaven',sections:heaven247Sections,vocabulary:heaven247Vocabulary},
  {id:'rain',sections:rainSections,vocabulary:rainVocabulary},

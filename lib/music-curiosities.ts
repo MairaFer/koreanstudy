@@ -3,6 +3,76 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"look-here":[
+  {
+    "term": "여기 봐 도망가지 마",
+    "card": "여기 봐 significa olhar aqui e dá nome à faixa. A página oficial de DARK & WILD apresenta Look here na posição 12. O refrão constrói uma voz insistente e segura de si; a ordem e a previsão de ser desejado devem ser lidas como falas dessa personagem.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/dark_and_wild.html"
+  },
+  {
+    "term": "너는 꽃이고 나는 벌이야",
+    "card": "Flor e abelha, depois mel e urso: dois pares simples condensam a ideia de atração. O contexto seleciona 벌 como abelha, embora a forma possa ter outros sentidos em coreano. -이고 conecta as identificações, e a segunda imagem amplia a primeira."
+  },
+  {
+    "term": "너를 만난 건 내 바램이었어",
+    "card": "A letra enviada escreve 바램 para desejo; a forma padrão nesse sentido é 바람, do verbo desejar. Preservar o texto e mostrar a forma de consulta ajuda a reconhecer o que se ouve e a procurar no dicionário. 바람 também pode significar vento, mas essa leitura não orienta o verso."
+  },
+  {
+    "term": "호시탐탐 너의 빈자리를 노려 토끼굴 그래피티",
+    "card": "A expressão de espreitar uma oportunidade dá energia à aproximação. Já o segmento da toca de coelho e do grafite é uma montagem sem relação explicada no verso. Convém preservar essa estranheza: não há base no texto enviado para atribuir uma obra específica ou um lugar real a ela."
+  },
+  {
+    "term": "너 몸무겐 99킬로",
+    "card": "A hipérbole do peso é seguida pela impossibilidade de afastar a pessoa da cabeça. Juntas, as linhas transformam a presença mental em peso difícil de remover. O número integra a encenação do flerte; não deve ser apresentado como informação real sobre alguém."
+  },
+  {
+    "term": "너는 귀티 아님 pretty 혹은 진리 아님 이치",
+    "card": "A sequência encosta palavras coreanas e inglesas pelo som. Ar refinado, beleza, verdade e princípio se sucedem como elogios e material de rima. Nas próximas linhas, nomes e objetos continuam a cadeia. Traduzir palavra por palavra ajuda a reconhecer os elementos, mas não reconstrói sozinho a brincadeira sonora."
+  },
+  {
+    "term": "우쭈쭈 그랬쪄 해줘 Get it?",
+    "card": "O som de mimo e a grafia infantilizada criam uma fala fofa, como uma resposta carinhosa que o eu pede para ouvir. O verbo de pedir que façam algo por ele importa: a linha não relata que a outra pessoa já respondeu assim. Essa diferença preserva a perspectiva da cena."
+  },
+  {
+    "term": "조만간 니가 날 원할 테니까",
+    "card": "O final verbal combina previsão e justificativa. A confiança do eu sustenta o refrão, enquanto a seção sobre mensagens conta uma mudança do ponto de vista dele. Separar previsão, pedido e relato permite acompanhar a narrativa sem transformar toda a insistência em certeza sobre sentimentos alheios."
+  }
+],
+"2nd-grade":[
+  {
+    "term": "가요계 2학년",
+    "card": "O segundo ano pertence explicitamente à indústria musical. A página oficial coreana de DARK & WILD lista 2학년 como faixa 13. O texto usa a escola para representar uma carreira que já passou pela estreia, mas ainda convive com inexperiência e pressão.",
+    "source": "https://bts.ibighit.com/kor/discography/detail/dark_and_wild.html"
+  },
+  {
+    "term": "받아 새 후배들 인사도",
+    "card": "Os termos de veterano e júnior dependem da ordem de entrada num grupo ou profissão. Receber cumprimentos de quem chegou depois cria uma pequena sensação de status; encontrar artistas com vários anos de experiência logo desfaz a impressão de já saber tudo. A cena alterna orgulho e humildade."
+  },
+  {
+    "term": "선입견, 악플, 이중잣대",
+    "card": "O público se torna professor, e preconceito, comentários maldosos e critérios desiguais viram matérias. Essa troca transforma o currículo escolar numa lista de experiências difíceis da exposição pública. A pergunta sobre ser primeiro da classe depois questiona se classificação basta para definir sucesso musical."
+  },
+  {
+    "term": "눈칫밥은 덜 먹겠지만",
+    "card": "O arroz da cautela é uma imagem de precisar medir cada gesto pela reação alheia. Logo depois, as matérias por aprender formam um banquete. O jogo de comida diz que pode haver menos insegurança social, mas ainda há muita coisa a aprender; não descreve a alimentação dos integrantes."
+  },
+  {
+    "term": "선생님 여기도 수능이 있나요",
+    "card": "O exame de ingresso universitário funciona aqui dentro da escola imaginada. A pergunta transporta a lógica de prova e nota para a carreira artística. O eu não pede uma inscrição real: ele questiona a cobrança e afirma que quer fazer música, ainda que prêmios e primeiro lugar também sejam desejáveis."
+  },
+  {
+    "term": "이상과 현실 사이의 걸리버",
+    "card": "Gulliver sugere uma experiência de escala deslocada: entre o ideal e a realidade, o eu ainda tenta avaliar seu tamanho. É possível reconhecer a alusão sem escolher um episódio específico da obra ou afirmar uma intenção exclusiva que o verso não explica."
+  },
+  {
+    "term": "꼭꼭 숨어라 내 잔머리가 다 보일라",
+    "card": "A linha ecoa uma cantiga de esconde-esconde em que o cabelo pode denunciar quem se esconde. 잔머리 também significa pequenos truques ou esperteza. A troca cria humor sobre algo que pode ficar visível; o texto enviado usa 내, meu, que deve ser mantido em vez de ser corrigido silenciosamente."
+  },
+  {
+    "term": "이건 새 시대 시발점",
+    "card": "O ponto de partida reafirma a disposição para continuar, e a palavra completa tem sentido de início. Ela aparece ao lado de ordens rudes e desafio à autoridade, mas isso não torna cada sílaba uma ofensa. O refrão final volta à energia de palco e à passagem rápida do tempo."
+  }
+],
 "blanket-kick":[
   {
     "term": "자다 이불킥 날리겠어",

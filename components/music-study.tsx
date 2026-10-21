@@ -1,4 +1,6 @@
 "use client";
+import {lookHereSections,lookHereVocabulary} from '@/lib/look-here';
+import {secondGradeSections,secondGradeVocabulary} from '@/lib/2nd-grade';
 import {blanketKickSections,blanketKickVocabulary} from '@/lib/blanket-kick';
 import {heaven247Sections,heaven247Vocabulary} from '@/lib/24-7-heaven';
 import {rainSections,rainVocabulary} from '@/lib/rain';
@@ -164,6 +166,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'look-here':{sections:lookHereSections,vocabulary:lookHereVocabulary,summary:"Uma cantada começa por curiosidade, ganha confiança e vira uma sequência de comparações, rimas e exageros. Acompanhe o que o eu pede, prevê e conta sobre a outra pessoa; explore os pares flor e abelha, as imagens da cidade e a mistura de coreano com inglês.",heading:"Look Here · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
+ '2nd-grade':{sections:secondGradeSections,vocabulary:secondGradeVocabulary,summary:"O segundo ano de carreira vira uma escola: há juniores, veteranos, professores e matérias difíceis. Entre orgulho e insegurança, o eu questiona notas e rankings, pede espaço para fazer música e retoma a energia de seguir em frente.",heading:"2nd Grade · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'blanket-kick':{sections:blanketKickSections,vocabulary:blanketKickVocabulary,summary:"A atração faz o eu brincar, hesitar e agir de um jeito que depois o deixa morrendo de vergonha. Na cama, o cobertor vira mar e saco de pancadas. Explore os trocadilhos, as imagens físicas do constrangimento e as perguntas que mantêm incerta a resposta da outra pessoa.",heading:"Blanket Kick · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  '24-7-heaven':{sections:heaven247Sections,vocabulary:heaven247Vocabulary,summary:"O primeiro encontro se aproxima, e a expectativa transforma cada dia em domingo. Acompanhe a noite em claro, os planos de roupa e tempo, o jogo entre Sunday e someday e a passagem de um desejo distante para uma alegria que já acompanha a rotina.",heading:"24/7=Heaven · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'rain':{sections:rainSections,vocabulary:rainVocabulary,summary:"Um dia chuvoso em Seul transforma cansaço, rotina e caminhada em imagens de um eu que se observa. Acompanhe o cinza da cidade, a nitidez dos sons, as marcas deixadas pela chuva e as perguntas sobre ser lembrado por alguém. O fim mantém a inquietação mesmo depois de o tempo abrir.",heading:"Rain · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
