@@ -1,4 +1,6 @@
 "use client";
+import {warOfHormoneSections,warOfHormoneVocabulary} from '@/lib/war-of-hormone';
+import {whatAmIToYouSections,whatAmIToYouVocabulary} from '@/lib/what-am-i-to-you';
 import {skitOneNightSections,skitOneNightVocabulary} from '@/lib/skit-one-night';
 import {butterflyPrologueSections,butterflyPrologueVocabulary} from '@/lib/butterfly-prologue';
 import {youngForeverSections,youngForeverVocabulary} from '@/lib/young-forever';
@@ -155,6 +157,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'what-am-i-to-you':{sections:whatAmIToYouSections,vocabulary:whatAmIToYouVocabulary,summary:"O entusiasmo de conquistar alguém muda para a angústia de estar num vínculo sem reciprocidade. Explore mensagens curtas, jogos com Messi e understand, o amor unilateral mesmo tendo um par e a dúvida sobre transformar carinho em contrato.",heading:"Intro: What Am I to You · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
+ 'war-of-hormone':{sections:warOfHormoneSections,vocabulary:warOfHormoneVocabulary,summary:"Uma voz exagerada e atrapalhada descreve atração por meio de hormônios, equações, cinema e elogios do corpo. Explore comparações, gírias, pedidos informais e trocadilhos sem confundir a perspectiva do narrador com uma regra sobre homens e mulheres.",heading:"War of Hormone · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'skit-one-night':{sections:skitOneNightSections,vocabulary:skitOneNightVocabulary,summary:"A transcrição enviada acompanha brincadeiras sobre atrasos, cansaço depois do palco, lembranças do início e dúvidas sobre o próximo sucesso. Leia cada fala com tradução contextual e notas de coreano. Grafias de fala, risadas e interrupções foram preservadas; a romanização foi retirada.",heading:"Skit: One Night in a Strange City · coreano fala por fala",badge:"Transcrição enviada · sem romanização"},
  'butterfly-prologue':{sections:butterflyPrologueSections,vocabulary:butterflyPrologueVocabulary,summary:"A Prologue Mix aproxima o olhar de pequenos gestos, da luz, do perfume e do toque. O encantamento convive com o medo de perder uma presença que parece frágil. Siga a letra enviada, explore pedidos íntimos e dúvidas com -ㄹ까, e perceba como o encerramento retorna ao início.",heading:"Butterfly (Prologue Mix) · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'save-me':{sections:saveMeSections,vocabulary:saveMeVocabulary,summary:"Uma voz presa dentro de si pede ajuda e encontra na outra pessoa luz, cuidado e a possibilidade de voltar a ser ela mesma. Estude pedidos com -어 주다, frases que atravessam versos e o jogo sonoro do rap final, sem reduzir metáforas a traduções literais.",heading:"Save Me · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},

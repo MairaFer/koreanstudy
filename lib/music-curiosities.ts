@@ -3,6 +3,75 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"what-am-i-to-you":[
+  {
+    "term": "근데 왜 근데 왜",
+    "card": "A repetição de 근데 왜 corta a felicidade que vinha crescendo. A pergunta não muda apenas o assunto: ela abre o contraste entre conquistar alguém e sentir reciprocidade depois da conquista. A narrativa é a percepção do eu, sem acesso direto ao pensamento da outra pessoa."
+  },
+  {
+    "term": "맨날 단답, ㅇㅇ, 잔다, ㄴㄴ",
+    "card": "ㅇㅇ costuma marcar concordância informal no chat; ㄴㄴ representa uma negativa. Junto de 단답, as abreviações fazem as respostas parecerem mínimas. O problema narrado não é o aplicativo em si, mas a diferença entre o investimento dos dois lados."
+  },
+  {
+    "term": "난 허허벌판을 달리는 메시지",
+    "card": "메시지 é mensagem, mas o goleiro da linha anterior prepara a leitura 메시 + 지: sou Messi. Assim, enviar mensagens vira correr por um campo. A imagem dá movimento ao esforço de uma pessoa enquanto a outra parece ter abandonado o jogo."
+  },
+  {
+    "term": "조금은 달달하게, 막 깨가 쏟아지진 않아도",
+    "card": "깨가 쏟아지다 é uma imagem idiomática para um casal muito doce e afetuoso. O eu nem exige esse extremo: pede um pouco de carinho cotidiano. Traduzir como gergelim caindo apagaria a expectativa amorosa por trás da frase."
+  },
+  {
+    "term": "난 항상 너의 밑에 서 있으니까 under-stand",
+    "card": "A letra divide understand em under e stand para ilustrar uma posição inferior no relacionamento. É um jogo inventado dentro da canção: não ensine essa divisão como origem ou tradução normal da palavra inglesa. A imagem continua no ato de sustentar a pessoa nos ombros."
+  },
+  {
+    "term": "내 짝 있는 짝사랑 난 바래",
+    "card": "짝 é um par; 짝사랑 é amor não correspondido. Ter um par e ainda sentir amor unilateral cria a contradição emocional central. A aproximação sonora torna o namoro formal insuficiente para garantir a experiência de estar acompanhado."
+  },
+  {
+    "term": "줄다리기 같잖아 what you say",
+    "card": "Cabo de guerra exige forças dos dois lados. Sem oponente, o esforço deixa de ser uma disputa real e vira falta de resposta. A imagem questiona a dinâmica do vínculo; não sugere que amar precise significar vencer o parceiro."
+  },
+  {
+    "term": "자꾸 이딴식일 거면 계약서에 도장 찍자",
+    "card": "O contrato tenta transformar incerteza afetiva em regras mensuráveis: beijos e mensagens por dia. Mas 속이 좀 시원해질까 ainda pergunta se isso traria alívio. A dúvida final impede ler a proposta como solução garantida ou modelo de relacionamento."
+  }
+],
+"war-of-hormone":[
+  {
+    "term": "존재해 줘서 (참) 감사해",
+    "card": "A faixa usa a voz de um narrador tomado pela atração, com elogios hiperbólicos e avaliações do corpo. Para interpretar, separe o que essa voz deseja daquilo que seria uma afirmação factual sobre todas as pessoas. A troca entre pose confiante e reação atrapalhada também faz parte do humor."
+  },
+  {
+    "term": "(베리마취) 땡큐! 내 시력을 올려줘",
+    "card": "베리마취 e 땡큐 registram inglês pelo som: very much e thank you. Separar 마취 para traduzir como anestesia perderia a frase. A visão que melhora e o LASIK natural seguinte continuam como exageros de admiração."
+  },
+  {
+    "term": "여자들은 방정식 우리 남자들은 해 (yup)",
+    "card": "해, junto de 방정식, é a solução de uma equação. A matemática vira uma metáfora de flerte confiante. O verso não precisa ser traduzido como sol só porque 해 também pode ter esse sentido em outros contextos."
+  },
+  {
+    "term": "어림 반푼어치 없지 한두 번씩",
+    "card": "어림 반푼어치 없다 expressa rejeição forte: nem pensar, não tem chance. A linha seguinte especifica o que o narrador rejeita, uma relação passageira. A unidade de sentido é a expressão inteira e sua continuação, não uma conta monetária literal."
+  },
+  {
+    "term": "근데 널 보며 배워 body 건축학개론",
+    "card": "건축학개론 pode ser lido literalmente como introdução à arquitetura e é o título coreano de Architecture 101. Ao aproximar a expressão de body, o verso trata a observação do corpo como matéria de estudo. A referência cultural não significa que a letra conte o enredo do filme.",
+    "source": "https://www.koreafilm.or.kr/movie/PM_004816"
+  },
+  {
+    "term": "넌 좀 심해 그 자체",
+    "card": "심해 junta dois caminhos de leitura: o substantivo mar profundo e a forma de 심하다, ser intenso ou demais. 바다, mar, na linha anterior prepara a primeira leitura; o elogio exagerado mantém a segunda. Uma adaptação natural precisa explicar o que a tradução sozinha não preserva."
+  },
+  {
+    "term": "작은 제스쳐 하나에도 뻑이 가지",
+    "card": "뻑이 가다 é uma expressão coloquial de ficar muito impressionado ou encantado. Aqui um único gesto basta para provocar a reação. 하나에도 dá essa ideia de até um só, enquanto a gíria sustenta o tom brincalhão."
+  },
+  {
+    "term": "앞 태도 최고 뒤 태도 최고",
+    "card": "No final enviado, 앞 태도 e 뒤 태도 aparecem separados. O refrão anterior esclarece que se trata de 앞태 e 뒤태, aparência de frente e de costas, seguidas de 도. Ler 태도 como atitude apenas por causa do espaço produziria um sentido diferente do contexto."
+  }
+],
 "skit-one-night":[
   {
     "term": "맨날 늦어 내가 한마디 해?",

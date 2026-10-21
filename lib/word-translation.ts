@@ -1,3 +1,5 @@
+import {warOfHormoneSections,warOfHormoneVocabulary} from './war-of-hormone';
+import {whatAmIToYouSections,whatAmIToYouVocabulary} from './what-am-i-to-you';
 import {butterflyPrologueSections,butterflyPrologueVocabulary} from './butterfly-prologue';
 import {skitOneNightSections,skitOneNightVocabulary} from './skit-one-night';
 import {youngForeverSections,youngForeverVocabulary} from './young-forever';
@@ -119,6 +121,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'what-am-i-to-you',sections:whatAmIToYouSections,vocabulary:whatAmIToYouVocabulary},
+ {id:'war-of-hormone',sections:warOfHormoneSections,vocabulary:warOfHormoneVocabulary},
  {id:'skit-one-night',sections:skitOneNightSections,vocabulary:skitOneNightVocabulary},
  {id:'butterfly-prologue',sections:butterflyPrologueSections,vocabulary:butterflyPrologueVocabulary},
  {id:'save-me',sections:saveMeSections,vocabulary:saveMeVocabulary},
