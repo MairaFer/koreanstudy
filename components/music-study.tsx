@@ -1,4 +1,6 @@
 "use client";
+import {whalien52Sections,whalien52Vocabulary} from '@/lib/whalien-52';
+import {silverSpoonSections,silverSpoonVocabulary} from '@/lib/silver-spoon';
 import {maCitySections,maCityVocabulary} from '@/lib/ma-city';
 import {butterflySections,butterflyVocabulary} from '@/lib/butterfly';
 import {loveIsNotOverFullSections,loveIsNotOverFullVocabulary} from '@/lib/love-is-not-over-full';
@@ -147,6 +149,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'whalien-52':{sections:whalien52Sections,vocabulary:whalien52Vocabulary,summary:"Uma baleia de voz singular dá forma ao desejo de ser ouvido. Explore solidão, barreiras feitas de palavras, sonhos de baleia, discurso citado e a esperança de que uma canção alcance alguém, preservando a mudança de pronome no final enviado.",heading:"Whalien 52 · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+ 'silver-spoon':{sections:silverSpoonSections,vocabulary:silverSpoonVocabulary,summary:"A pequena ave do provérbio contesta uma corrida com condições desiguais. Explore privilégio herdado, trabalho mal remunerado, rótulos de geração, expressões idiomáticas e a virada da ironia contra as cegonhas para a solidariedade entre baepsae.",heading:"Silver Spoon (Baepsae) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'ma-city':{sections:maCitySections,vocabulary:maCityVocabulary,summary:"Ilsan, Busan, Gwangju e Daegu formam um mapa de pertencimento. Explore lugares reais, fala regional, comparações, jogos de palavras e referências à história e ao beisebol que dão sentido ao orgulho de cada cidade.",heading:"Ma City · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'butterfly':{sections:butterflySections,vocabulary:butterflyVocabulary,summary:"Uma presença tão preciosa parece capaz de desaparecer ao menor toque. Explore pedidos íntimos, perguntas de receio, comparações delicadas e a referência a Kafka à Beira-Mar, sem transformar as imagens poéticas numa única história obrigatória.",heading:"Butterfly · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'love-is-not-over-full':{sections:loveIsNotOverFullSections,vocabulary:loveIsNotOverFullVocabulary,summary:"A separação já aconteceu, mas o sentimento continua. Explore 안녕 como chegada e despedida, imagens de pontuação, desejos e o contraste entre o fim da relação e a persistência do amor.",heading:"Love Is Not Over (Full Length Edition) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

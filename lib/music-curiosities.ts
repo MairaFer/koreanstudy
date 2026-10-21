@@ -3,6 +3,82 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"whalien-52":[
+  {
+    "term": "한 마리 고래가 나즈막히 외롭게 말을 해",
+    "card": "O título aproxima whale, baleia, e alien, alguém que se sente estranho ao meio. O 52 remete a uma chamada de baleia registrada em torno de 52 Hz. A letra transforma essa singularidade em solidão humana; a gravação científica, por si só, não prova que outras baleias sejam incapazes de ouvi-la.",
+    "source": "https://www.whoi.edu/oceanus/feature/a-lone-voice-crying-in-the-watery-wilderness/?archives=true&id=4721&sortBy=printed"
+  },
+  {
+    "term": "외로움이란 녀석만 내 곁에서 머물 때",
+    "card": "A solidão vira um sujeito que fica ao lado do eu. O paradoxo é ter companhia justamente daquilo que significa estar só. Na linha seguinte, o cadeado torna essa solidão também uma imagem de fechamento."
+  },
+  {
+    "term": "외로움조차 니들 눈엔 척이 돼",
+    "card": "조차 significa até, inclusive o que parecia menos provável. Aqui até a solidão é interpretada como fingimento. A barreira não é apenas falta de resposta: é ter a própria emoção desautorizada pelo olhar alheio."
+  },
+  {
+    "term": "숨을 쉴 때 관심 끝 외로운 바닷속 꼬마",
+    "card": "A superfície pode ser lida como o instante visível ao público; a profundidade guarda o que continua sem atenção. O menino no fundo do mar aproxima a baleia do eu humano e separa ser visto de ser compreendido."
+  },
+  {
+    "term": "지금 새우잠 자더라도 꿈은 고래답게",
+    "card": "새우잠 é dormir encolhido, como um camarão. O verso contrasta o pequeno espaço do corpo com o tamanho de uma baleia nos sonhos. -더라도 admite a dificuldade presente; -답게 mantém a ambição fiel à própria identidade.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=63368"
+  },
+  {
+    "term": "매일 춤을 추게 할거야",
+    "card": "A aproximação entre elogios e baleia que dança lembra 칭찬은 고래도 춤추게 한다, título coreano de Whale Done!. É um eco cultural possível: o incentivo permite imaginar movimento e alegria no lugar do isolamento.",
+    "source": "https://library.krihs.re.kr/searchA/10110/contents/5923210"
+  },
+  {
+    "term": "혼자 하는 돌림 노래,",
+    "card": "Um 돌림 노래 normalmente combina vozes que entram em momentos diferentes. Fazê-lo sozinho cria uma contradição expressiva: existe repetição, mas falta alguém para responder e completar o encontro."
+  },
+  {
+    "term": "눈먼 고래들조차 난 볼 수 있을 거야",
+    "card": "A letra enviada usa 날 no primeiro trecho e 난 no final. 날 reduz 나를, eu como objeto: outras baleias me veem. 난 reduz 나는, eu como tópico: eu consigo vê-las. A diferença foi preservada, sem corrigir silenciosamente uma versão pela outra."
+  }
+],
+"silver-spoon":[
+  {
+    "term": "황새 덕에 내 가랑인 탱탱",
+    "card": "O provérbio 뱁새가 황새를 따라가면 다리가 찢어진다 diz que a pequena ave se machuca ao tentar acompanhar a cegonha de pernas longas. A canção pode ser lida como uma resposta: em vez de aceitar a desvantagem como destino, exige mudar as regras.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=58705"
+  },
+  {
+    "term": "금수저로 태어난 내 선생님",
+    "card": "금수저 é colher de ouro e aponta para vantagens recebidas ao nascer. Em português, berço de ouro comunica esse contexto. O título inglês Silver Spoon usa outra cor de colher; isso não muda 금, ouro, no termo coreano.",
+    "source": "https://love.seoul.go.kr/articles/7115"
+  },
+  {
+    "term": "알바 가면 열정페이",
+    "card": "열정페이 junta paixão e pagamento para denunciar trabalho pago de forma insuficiente ou nem pago, justificado pelo entusiasmo de quem quer uma oportunidade. Traduzir como salário de paixão sem explicar isso inverteria a crítica.",
+    "source": "https://love.seoul.go.kr/articles/7115"
+  },
+  {
+    "term": "언론에선 맨날 몇 포 세대",
+    "card": "포 retoma 포기, renúncia. Expressões como geração das três renúncias nomeiam oportunidades de vida abandonadas sob pressão social e econômica. 몇 deixa a contagem aberta: a mídia parece sempre acrescentar outra coisa de que os jovens teriam de desistir.",
+    "source": "https://www.korea.kr/news/policyNewsView.do?newsId=148856671"
+  },
+  {
+    "term": "They say '똑같은 초원이면 괜찮잖니!'",
+    "card": "O campo igual não torna iguais as pernas de quem compete. A resposta citada trata a regra comum como prova suficiente de justiça; a música contesta essa lógica mostrando condições de partida diferentes."
+  },
+  {
+    "term": "아 노력노력 타령 좀 그만둬",
+    "card": "타령 é a repetição cansativa de um assunto. A crítica mira o sermão de que bastaria se esforçar, quando as condições são desiguais. A letra pede outras regras em vez de tratar a dificuldade como culpa individual."
+  },
+  {
+    "term": "아 노랗구나 싹수가",
+    "card": "싹수가 노랗다 significa não dar sinais de um futuro promissor desde o começo. O verso muda a ordem para destacar a constatação e devolve, com ironia, um julgamento de potencial às próprias cegonhas.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=320902&searchCondition=&searchKeyword="
+  },
+  {
+    "term": "(우린 뱁새야) 같이 살자고",
+    "card": "Antes, 다 해먹어라 ironiza quem fica com tudo. No fim, 같이 살자고 propõe viver juntos. A mudança de 황새 para 우린 뱁새 transforma o rótulo depreciativo em identidade coletiva e solidariedade."
+  }
+],
 "ma-city":[
   {
     "term": "집 같던 라페스타 또 웨스턴돔",
