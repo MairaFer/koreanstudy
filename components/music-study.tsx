@@ -1,4 +1,6 @@
 "use client";
+import {blanketKickSections,blanketKickVocabulary} from '@/lib/blanket-kick';
+import {heaven247Sections,heaven247Vocabulary} from '@/lib/24-7-heaven';
 import {rainSections,rainVocabulary} from '@/lib/rain';
 import {turnOffYourCellphoneSections,turnOffYourCellphoneVocabulary} from '@/lib/turn-off-your-cellphone';
 import {skitBeSections,skitBeVocabulary} from '@/lib/skit-be';
@@ -162,6 +164,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'blanket-kick':{sections:blanketKickSections,vocabulary:blanketKickVocabulary,summary:"A atração faz o eu brincar, hesitar e agir de um jeito que depois o deixa morrendo de vergonha. Na cama, o cobertor vira mar e saco de pancadas. Explore os trocadilhos, as imagens físicas do constrangimento e as perguntas que mantêm incerta a resposta da outra pessoa.",heading:"Blanket Kick · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
+ '24-7-heaven':{sections:heaven247Sections,vocabulary:heaven247Vocabulary,summary:"O primeiro encontro se aproxima, e a expectativa transforma cada dia em domingo. Acompanhe a noite em claro, os planos de roupa e tempo, o jogo entre Sunday e someday e a passagem de um desejo distante para uma alegria que já acompanha a rotina.",heading:"24/7=Heaven · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'rain':{sections:rainSections,vocabulary:rainVocabulary,summary:"Um dia chuvoso em Seul transforma cansaço, rotina e caminhada em imagens de um eu que se observa. Acompanhe o cinza da cidade, a nitidez dos sons, as marcas deixadas pela chuva e as perguntas sobre ser lembrado por alguém. O fim mantém a inquietação mesmo depois de o tempo abrir.",heading:"Rain · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'turn-off-your-cellphone':{sections:turnOffYourCellphoneSections,vocabulary:turnOffYourCellphoneVocabulary,summary:"Um encontro entre amigos vira uma disputa entre tela e presença. Explore pedidos informais, a ironia de smart, apelidos de redes sociais, sons de interface e a metáfora da bateria. A reclamação culmina numa razão simples: o eu veio ver a pessoa e conversar com ela.",heading:"Can You Turn Off Your Cellphone? · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'skit-be':{sections:skitBeSections,vocabulary:skitBeVocabulary,summary:"Uma conversa comemora o primeiro lugar na Billboard e um aniversário, entre brincadeiras, mensagens sem resposta e planos de ensaio. Acompanhe as falas enviadas, a alternância entre linguagem formal e íntima e a ideia de reencontrar o começo. Trechos pouco claros são sinalizados, sem atribuir vozes que a transcrição não identifica.",heading:"Skit · BE · coreano fala por fala",badge:"Transcrição enviada · conversa do álbum BE"},

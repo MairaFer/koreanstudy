@@ -1,3 +1,5 @@
+import {blanketKickSections,blanketKickVocabulary} from './blanket-kick';
+import {heaven247Sections,heaven247Vocabulary} from './24-7-heaven';
 import {rainSections,rainVocabulary} from './rain';
 import {turnOffYourCellphoneSections,turnOffYourCellphoneVocabulary} from './turn-off-your-cellphone';
 import {skitBeSections,skitBeVocabulary} from './skit-be';
@@ -126,6 +128,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'blanket-kick',sections:blanketKickSections,vocabulary:blanketKickVocabulary},
+ {id:'24-7-heaven',sections:heaven247Sections,vocabulary:heaven247Vocabulary},
  {id:'rain',sections:rainSections,vocabulary:rainVocabulary},
  {id:'turn-off-your-cellphone',sections:turnOffYourCellphoneSections,vocabulary:turnOffYourCellphoneVocabulary},
  {id:'skit-be',sections:skitBeSections,vocabulary:skitBeVocabulary},

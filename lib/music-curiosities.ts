@@ -3,6 +3,76 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"blanket-kick":[
+  {
+    "term": "자다 이불킥 날리겠어",
+    "card": "이불킥 combina cobertor e kick. Além do gesto literal, comunica a vergonha de lembrar na cama de uma cena constrangedora. A canção aparece como Embarrassed em catálogos em inglês; o título Blanket Kick preserva a imagem que a letra desenvolve com ondas e golpes. A página oficial situa a faixa em DARK & WILD.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/dark_and_wild.html"
+  },
+  {
+    "term": "나 가지가지 하다 나무 되겠어",
+    "card": "가지가지 하다 pode apontar para fazer de tudo, aqui uma sequência de atitudes bobas. 가지 também é galho; somar galhos leva à árvore. Logo depois, o eu avalia a própria piada como infantil. O trocadilho funciona ao mesmo tempo como humor e exemplo da falta de jeito que ele lamenta."
+  },
+  {
+    "term": "네게 해가 되기 부끄러워",
+    "card": "A lua fria do verso seguinte orienta a leitura de 해 como sol. O eu desejaria mostrar calor, mas se apresenta distante. A forma também permite ouvir a expressão de causar dano; explicar as duas possibilidades é mais útil que trocar toda a passagem por uma única equivalência fixa."
+  },
+  {
+    "term": "Oh gimme 다리미 내 손발 펴줄",
+    "card": "손발이 오그라들다 descreve mãos e pés se encolhendo e pode expressar vergonha alheia ou constrangimento. O ferro de passar seria a solução absurda para desamassar essa reação. A imagem pertence ao humor figurado, junto da transformação do cobertor em adversário de luta."
+  },
+  {
+    "term": "자꾸 네게 흑심이 생겨",
+    "card": "O lápis prepara a leitura de um miolo escuro; 흑심 também significa intenção escondida ou pouco inocente. A expressão de coração escuro no verso seguinte mantém essa cor. A graça está em reconhecer o desejo que o eu tenta esconder, sem precisar inventar atos que o texto não narra."
+  },
+  {
+    "term": "마른 세수만 어느새",
+    "card": "마른 세수 é passar as mãos no rosto sem água. Depois de tentar esconder o interesse, o eu se entrega pelo gesto nervoso. A imagem se aproxima do engolir em seco: o corpo conta aquilo que a fala não consegue dizer com naturalidade."
+  },
+  {
+    "term": "찐한 키스나 한번 해 볼까",
+    "card": "O beijo é apresentado como algo que o eu pensa em tentar. O verbo seguinte relata segurar o ombro, e a ligação do pai interrompe a cena. Preservar as formas de intenção e pergunta evita transformar a possibilidade num beijo que a letra não confirma."
+  },
+  {
+    "term": "어딜까 니 맘은 거길까?",
+    "card": "As flechas que não atingem o alvo mostram a percepção de fracasso do eu. As perguntas sobre o coração alheio mantêm a resposta desconhecida; o refrão volta ao que ele próprio faz depois, em casa. A mudança de 머리는 para 머린 no pós-refrão final é uma contração, não outra cabeça ou outro personagem."
+  }
+],
+"24-7-heaven":[
+  {
+    "term": "24/7 하루 종일 니 생각만 했지",
+    "card": "24/7 significa vinte e quatro horas por dia, sete dias por semana. O título 24/7=Heaven transforma a alegria contínua numa pequena equação afetiva. A faixa está em DARK & WILD; não é uma conta matemática a resolver ou a afirmação de que alguém nunca pensa em outra coisa literalmente.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/dark_and_wild.html"
+  },
+  {
+    "term": "너라는 해가 뜬 Sunday",
+    "card": "A pessoa amada é um sol que nasce, e Sunday contém sun. O jogo aproxima luz, alegria e o domingo esperado. Mais adiante, todos os dias parecem domingo: a canção descreve a mudança de sensação que acompanha o namoro, sem alterar o calendário."
+  },
+  {
+    "term": "상상만 했던 someday",
+    "card": "Someday é um dia futuro indeterminado; Sunday é domingo. A semelhança sonora transforma um desejo vago numa data que se aproxima. O refrão final afirma que já não é só algum dia, mas o encontro ainda é antecipado, não descrito como uma cena já concluída."
+  },
+  {
+    "term": "오늘은 한숨도 못 잘 것 같아",
+    "card": "한숨 pode ser suspiro, mas 한숨도 못 자다 significa não dormir nem um pouco. O verbo dormir e a negação orientam a leitura. A expectativa feliz explica a noite em claro nesta narrativa; não é necessário traduzir todos os usos de 한숨 pela mesma palavra."
+  },
+  {
+    "term": "시간아 조금만 빨리 달려줘",
+    "card": "O vocativo -아 costuma chamar alguém; aqui ele chama o próprio tempo. O pedido para correr mais rápido transforma a demora numa pessoa que poderia colaborar. O ponteiro dos segundos irritante do primeiro rap prepara essa impaciência divertida."
+  },
+  {
+    "term": "만약 시간이 너란 주식이라면 투자를 하지",
+    "card": "만약 e -(이)라면 marcam uma hipótese: se o tempo fosse uma ação chamada você, o eu investiria. A metáfora torna visível a dedicação de tempo e planejamento. O verso não diz que a outra pessoa seja literalmente um bem financeiro nem apresenta uma operação real de investimento."
+  },
+  {
+    "term": "너와 입을 옷 choice 옷장을 포위",
+    "card": "Cercar o armário exagera a dificuldade de escolher a roupa para o encontro. A cena combina preparação prática e agitação interna, que aparece no barulho do coração e no cantarolar. O planejamento é vivido sozinho, antes de encontrar a outra pessoa."
+  },
+  {
+    "term": "이제는 아냐 someday",
+    "card": "A mudança do último refrão importa: os anteriores pediam ao tempo que corresse; agora o sorriso aparece espontaneamente e o desejo parece próximo. O retorno às linhas do primeiro encontro mantém a atmosfera de expectativa. A conclusão celebra essa proximidade sem acrescentar acontecimentos que não foram narrados."
+  }
+],
 "rain":[
   {
     "term": "(비가 오는 짙은 색 서울 그 위에)",
