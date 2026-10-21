@@ -3,6 +3,81 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"ma-city":[
+  {
+    "term": "집 같던 라페스타 또 웨스턴돔",
+    "card": "Lafesta e Western Dom são espaços comerciais e culturais reais de Ilsan, em Goyang. Na memória de RM, esses nomes deixam de ser apenas pontos no mapa: são lugares que pareciam casa. A tradução preserva os nomes próprios.",
+    "source": "https://newportal.goyang.go.kr/visitgoyang/www/contents.do?key=72"
+  },
+  {
+    "term": "아재들은 손을 들어",
+    "card": "아재 e 아지매 trazem uma voz regional e familiar, próxima de tio e tia. Não precisam indicar parentesco real. Ao chamar adultos da comunidade para participar, o refrão amplia a festa para além de quem está cantando."
+  },
+  {
+    "term": "이열치열 법칙 포기란 없지",
+    "card": "이열치열 é enfrentar calor com calor. No verso, o dito se liga ao sul quente, à energia da dança e à recusa de desistir. A explicação conserva a imagem em vez de reduzi-la a uma instrução literal sobre temperatura."
+  },
+  {
+    "term": "나 KIA넣고 시동 걸어 미친 듯이 bounce",
+    "card": "KIA aponta para os KIA Tigers de Gwangju. A imagem de ligar o motor também permite ouvir um jogo com 기어, marcha. Beisebol e movimento se sobrepõem.",
+    "source": "https://magazine.weverse.io/article/view/159?lang=ko"
+  },
+  {
+    "term": "날 볼라면 시간은 7시 모여 집합",
+    "card": "7시 também aparece como código de discriminação regional. A Weverse interpreta o verso como enfrentamento desse preconceito, seguido da memória do 18 de maio. Entender só “às sete horas” perderia essa camada.",
+    "source": "https://magazine.weverse.io/article/view/159?lang=ko"
+  },
+  {
+    "term": "모두다 눌러라 062-518",
+    "card": "062 é o código telefônico de Gwangju; 518 evoca o movimento democrático iniciado em 18 de maio de 1980. A combinação junta lugar e memória histórica na forma de um convite para discar.",
+    "source": "https://tour.gwangju.go.kr/home/tour/info/history.cs?act=view&infoId=215&pageIndex=6"
+  },
+  {
+    "term": "몸 속에는 파란 피",
+    "card": "O sangue azul expressa orgulho ligado aos Samsung Lions, time associado a Daegu. A imagem transforma a ligação esportiva com a cidade em algo que corre nas veias.",
+    "source": "https://magazine.weverse.io/article/view/159?lang=ko"
+  },
+  {
+    "term": "질 수 밖에 안 그래?",
+    "card": "Leia a quebra com a linha anterior: 자랑스러워 + 질 forma 자랑스러워질. A ideia é tornar-se motivo de orgulho. Separar 질 e traduzi-lo como perder uma disputa mudaria o sentido do verso."
+  }
+],
+"butterfly":[
+  {
+    "term": "손 대면 날아갈까 부서질까",
+    "card": "Tocar poderia trazer proximidade, mas aqui parece arriscar a perda. As perguntas com -ㄹ까 não afirmam que a pessoa vai partir: deixam ouvir a ansiedade do eu diante de algo precioso e frágil."
+  },
+  {
+    "term": "시간을 멈출래",
+    "card": "-ㄹ래 muda de função conforme quem deseja agir. Nos pedidos anteriores, pergunta se você quer ficar ou prometer; aqui expressa a vontade do eu de parar o tempo. Reconhecer o sujeito evita traduzir tudo como pergunta."
+  },
+  {
+    "term": "겁나 겁나 겁나",
+    "card": "겁나 vem de 겁나다, sentir medo. Existe também um uso coloquial como intensificador, mas neste refrão a palavra é o próprio predicado: tenho medo. A repetição dá ritmo à insegurança."
+  },
+  {
+    "term": "이 칠흑 같은 어둠 속 날 밝히는 나비효과",
+    "card": "나비효과 é efeito borboleta: a ideia de que pequenas diferenças iniciais podem produzir efeitos muito diferentes num sistema. A letra adapta essa imagem ao afeto: um gesto pequeno ilumina e transforma o mundo do eu.",
+    "source": "https://www.aps.org/apsnews/2003/01/lorenz-butterfly-effect-1961"
+  },
+  {
+    "term": "니 작은 손짓 한 번에 현실을 잊어 난",
+    "card": "한 번 conta uma ocorrência: basta um único gesto. A pequenez do movimento contrasta com o efeito enorme de esquecer a realidade. Essa proporção aproxima o verso do efeito borboleta mencionado antes."
+  },
+  {
+    "term": "살포시 표류하는 먼지 같아",
+    "card": "Vento e poeira são leves, móveis e difíceis de segurar. Junto da borboleta, ampliam a imagem de uma presença que pode estar perto sem se deixar alcançar. 살며시 e 살포시 dão suavidade ao movimento."
+  },
+  {
+    "term": "나의 해변의 카프카여",
+    "card": "해변의 카프카 é o título coreano de Kafka à Beira-Mar, romance de Haruki Murakami. O pedido para não entrar na floresta prolonga a referência. Ela reforça a fronteira entre sonho e realidade, sem exigir que a canção reproduza todo o enredo do livro.",
+    "source": "https://www.penguinrandomhouse.com/books/118718/9781400079278/readers-guide"
+  },
+  {
+    "term": "조각조각 까맣게 녹아 흘러",
+    "card": "O coração se parte, derrete, escorre e, no verso seguinte, deseja evaporar. A sequência transforma a emoção em mudanças de matéria. É uma maneira poética de mostrar a dificuldade de manter algo inteiro diante do medo da perda."
+  }
+],
 "love-is-not-over-full":[
   {
     "term": "이 시간이 널 따라 흐려지는 것 같아",

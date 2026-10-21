@@ -1,4 +1,6 @@
 "use client";
+import {maCitySections,maCityVocabulary} from '@/lib/ma-city';
+import {butterflySections,butterflyVocabulary} from '@/lib/butterfly';
 import {loveIsNotOverFullSections,loveIsNotOverFullVocabulary} from '@/lib/love-is-not-over-full';
 import {deadLeavesSections,deadLeavesVocabulary} from '@/lib/dead-leaves';
 import {funBoysSections,funBoysVocabulary} from '@/lib/fun-boys';
@@ -145,6 +147,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'ma-city':{sections:maCitySections,vocabulary:maCityVocabulary,summary:"Ilsan, Busan, Gwangju e Daegu formam um mapa de pertencimento. Explore lugares reais, fala regional, comparações, jogos de palavras e referências à história e ao beisebol que dão sentido ao orgulho de cada cidade.",heading:"Ma City · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
+ 'butterfly':{sections:butterflySections,vocabulary:butterflyVocabulary,summary:"Uma presença tão preciosa parece capaz de desaparecer ao menor toque. Explore pedidos íntimos, perguntas de receio, comparações delicadas e a referência a Kafka à Beira-Mar, sem transformar as imagens poéticas numa única história obrigatória.",heading:"Butterfly · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'love-is-not-over-full':{sections:loveIsNotOverFullSections,vocabulary:loveIsNotOverFullVocabulary,summary:"A separação já aconteceu, mas o sentimento continua. Explore 안녕 como chegada e despedida, imagens de pontuação, desejos e o contraste entre o fim da relação e a persistência do amor.",heading:"Love Is Not Over (Full Length Edition) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'dead-leaves':{sections:deadLeavesSections,vocabulary:deadLeavesVocabulary,summary:"Um amor que perde a vitalidade é comparado a folhas frágeis. Explore pedidos para ficar, verbos de transformação, a quinta estação e o desejo de recuperar uma reciprocidade que está desaparecendo.",heading:"Autumn Leaves (Dead Leaves) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'fun-boys':{sections:funBoysSections,vocabulary:funBoysVocabulary,summary:"Uma festa sem fingimento, com jogos entre animação, identidade e o nome do BTS. Explore chamadas ao grupo, gírias, brincadeiras de escolher, rimas entre idiomas e os trocadilhos de 일상, 이상 e 정상.",heading:"Fun Boys (흥탄소년단) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

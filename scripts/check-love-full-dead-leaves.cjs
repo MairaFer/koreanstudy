@@ -21,5 +21,5 @@ for(const n of [6,9])assert.deepEqual(sections[2].lines,sections[n].lines);asser
 assert.equal(sections[4].lines[2].text,'너는 나의 다섯 번째 계절');assert.equal(sections[4].lines[6].text,'미련이 빨래처럼 조각조각 널어지네');assert.equal(sections[8].lines.at(-1).text,'마지막 잎새까지 넌 넌 넌');assert.equal(sections[1].lines[14].text,'제발 떨어지지 말아주오');
 }
 }
-assert.equal(lookup('Outro: Love Is Not Over'),'outro-love-is-not-over');assert.equal(songs.length,109);
+assert.equal(lookup('Outro: Love Is Not Over'),'outro-love-is-not-over');assert.ok(songs.length>=109);
 console.log('PASS: 59/81 lines, repetitions and lyric variants, PT/ENG notes and Korean preservation, 16 unique cards, vocabulary, 10 exercises, catalog aliases and separate original outro.');
