@@ -1,3 +1,5 @@
+import {youngForeverSections,youngForeverVocabulary} from './young-forever';
+import {saveMeSections,saveMeVocabulary} from './save-me';
 import {cypher4Sections,cypher4Vocabulary} from './cypher-pt4';
 import {centuryGirlSections,centuryGirlVocabulary} from './21st-century-girl';
 import {notTodaySections,notTodayVocabulary} from './not-today';
@@ -115,6 +117,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'save-me',sections:saveMeSections,vocabulary:saveMeVocabulary},
+ {id:'young-forever',sections:youngForeverSections,vocabulary:youngForeverVocabulary},
  {id:'never-mind',sections:neverMindSections,vocabulary:neverMindVocabulary},
  {id:'house-of-cards',sections:houseOfCardsSections,vocabulary:houseOfCardsVocabulary},
  {id:'whalien-52',sections:whalien52Sections,vocabulary:whalien52Vocabulary},

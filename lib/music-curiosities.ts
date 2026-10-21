@@ -3,6 +3,79 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"save-me":[
+  {
+    "term": "난 숨쉬고 싶어 이 밤이 싫어",
+    "card": "A noite e o sonho não são refúgios nesta abertura: são espaços dos quais o eu quer sair. 숨쉬고 싶어 apresenta um desejo básico, respirar, antes de qualquer promessa romântica. Isso dá urgência ao pedido sem exigir que o leitor atribua um diagnóstico ao narrador."
+  },
+  {
+    "term": "그 손을 내밀어줘 save me save me",
+    "card": "내밀다 é estender algo para fora; com -어 주다, o gesto é pedido em benefício de alguém. A salvação ganha uma forma pequena e concreta: uma mão oferecida. O refrão repete o pedido porque a letra encena uma necessidade, não porque cada retorno ensine uma regra nova."
+  },
+  {
+    "term": "나를 구원해줄 이 밤",
+    "card": "A mesma noite rejeitada na abertura agora pode acolher a salvação. 이 밤 continua sendo esta noite; o que muda é a possibilidade de encontrar alguém nela. Essa virada impede uma leitura em que noite sempre significa algo ruim e luz sempre resolve tudo automaticamente."
+  },
+  {
+    "term": "고마워 내가 나이게 해줘서",
+    "card": "나이게 deve ser dividido como 나 + 이다 + -게: ser eu. Não é uma referência a 나이, idade. A gratidão não é só por receber carinho, mas por poder existir como si mesmo; depois, 날게 e 날갤 fazem esse reconhecimento ganhar a imagem de voo e asas."
+  },
+  {
+    "term": "꼬깃하던 날 개 줘서",
+    "card": "O dicionário define 개다, no uso com roupa, como dobrar ou arrumar cuidadosamente. Não significa desdobrar. A letra aproxima 날게, 날갤 e 날 개 pelo som; aqui o eu amassado pode ser lido como alguém colocado de novo em ordem por um gesto de cuidado. A adaptação preserva a metáfora sem ensinar um significado lexical incorreto.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=23416&nation=eng"
+  },
+  {
+    "term": "꿈 속에만 살던 날 깨워줘서",
+    "card": "깨워 vem de 깨우다, acordar alguém; não é a mesma forma de 깨다, que pode indicar acordar ou romper conforme o uso. O rap aproxima 날 깨 e 날 깨워, mas a função muda: na segunda imagem, alguém desperta o eu que vivia apenas nos sonhos. Ouça a sequência inteira para perceber o encadeamento.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=305121"
+  },
+  {
+    "term": "널 생각하면 날 개어서",
+    "card": "Há outro 개다: o tempo abrir depois de nuvens ou mau tempo. 날 pode evocar dia ou tempo, ao mesmo tempo que ecoa 날 como 나를, a mim. Pensar na pessoa faz o céu interior clarear: esta é uma leitura contextual do jogo sonoro, não uma tradução palavra por palavra única.",
+    "source": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=6144"
+  },
+  {
+    "term": "슬픔 따윈 나 개 줬어",
+    "card": "A escrita comprimida mantém a brincadeira com 개. Uma leitura possível aproxima dar aos cães e descartar a tristeza, daí a adaptação mandei embora. Não tratamos a linha como se escrevesse literalmente uma expressão fixa nem ensinamos que 개다 significa jogar fora. O efeito está nas mudanças de divisão e sentido dentro do rap."
+  }
+],
+"young-forever":[
+  {
+    "term": "막이 내리고 나는 숨이 차",
+    "card": "막이 내리다 é a imagem da cortina que desce ao fim do espetáculo. A narrativa começa quando a apresentação termina: o corpo ainda está ofegante e a mente passa a rever erros e reações. Esse ponto de vista desloca o foco do brilho do palco para o que fica depois dele."
+  },
+  {
+    "term": "채 가시지 않은 여운들을 품에 안고",
+    "card": "여운 pode ser um som que permanece ou a impressão emocional deixada por algo. Aqui a imagem de carregar esse resto junto ao peito se combina com o palco ainda quente. Nem tudo termina quando o público sai: o calor e o sentimento precisam de tempo para desaparecer."
+  },
+  {
+    "term": "처음도 아닌데 익숙해질 법한데",
+    "card": "-ㄹ 법하다 expressa uma expectativa plausível: já seria de esperar que eu estivesse acostumado. O contraste é que a experiência se repete, mas o sentimento continua difícil. A letra reconhece essa diferença entre saber racionalmente e sentir, sem dizer que familiaridade elimina toda insegurança."
+  },
+  {
+    "term": "큰 박수갈채가",
+    "card": "Este sujeito aparece depois da frase que diz não poder possuir algo para sempre. Leia as duas linhas juntas: os grandes aplausos não podem ser meus eternamente. A impermanência do reconhecimento motiva a pergunta seguinte: ainda quero cantar mesmo sem essa garantia?"
+  },
+  {
+    "term": "영원한 관객은 없대도 난 노래할거야",
+    "card": "없대도 retoma 없다고 해도: ainda que se diga que não existe. A voz não promete que o público nunca irá embora; afirma que vai cantar apesar dessa incerteza. A diferença entre garantir um resultado e escolher uma ação é central para a virada da canção."
+  },
+  {
+    "term": "오늘의 나로 영원하고파",
+    "card": "-고파 é uma forma reduzida de -고 싶어, quero. A vontade de permanecer como o eu de hoje liga juventude, sonho e identidade. Forever funciona como desejo poético de conservar uma disposição, não como afirmação literal de que ninguém envelhece."
+  },
+  {
+    "term": "나리는 꽃잎 비 사이로",
+    "card": "Mantemos 나리는 como na letra enviada. Para o estudo da forma padrão, o Instituto Nacional da Língua Coreana orienta 내리다 no sentido de chuva ou neve cair. Assim, aprenda 내리는; reconhecer a forma da letra não exige adotá-la como modelo de escrita padrão.",
+    "source": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=8814&mn_id=62&pageIndex=43"
+  },
+  {
+    "term": "끝없이 달리네 꿈을 향해",
+    "card": "A ligação com o fandom continua em For Youth: a apresentação oficial de Proof informa que a faixa sampleia Epilogue: Young Forever, retomando memórias compartilhadas entre BTS e ARMY. Isso cria uma ponte musical concreta entre juventude, continuidade e gratidão, além de uma semelhança de temas.",
+    "source": "https://bts.ibighit.com/kor/discography/detail/proof/index.html"
+  }
+],
 "never-mind":[
   {
     "term": "어느 정도 성공을 했어",

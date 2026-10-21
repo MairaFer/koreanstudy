@@ -1,4 +1,6 @@
 "use client";
+import {youngForeverSections,youngForeverVocabulary} from '@/lib/young-forever';
+import {saveMeSections,saveMeVocabulary} from '@/lib/save-me';
 import {neverMindSections,neverMindVocabulary} from '@/lib/never-mind';
 import {houseOfCardsSections,houseOfCardsVocabulary} from '@/lib/house-of-cards';
 import {whalien52Sections,whalien52Vocabulary} from '@/lib/whalien-52';
@@ -151,6 +153,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'save-me':{sections:saveMeSections,vocabulary:saveMeVocabulary,summary:"Uma voz presa dentro de si pede ajuda e encontra na outra pessoa luz, cuidado e a possibilidade de voltar a ser ela mesma. Estude pedidos com -어 주다, frases que atravessam versos e o jogo sonoro do rap final, sem reduzir metáforas a traduções literais.",heading:"Save Me · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
+ 'young-forever':{sections:youngForeverSections,vocabulary:youngForeverVocabulary,summary:"Depois do show, o palco quente e vazio revela insegurança e gratidão ao mesmo tempo. A letra passa da avaliação de si ao compromisso de cantar mesmo sem aplausos eternos. Explore concessões, desejo, ordem poética e a juventude como vínculo com os sonhos.",heading:"Epilogue: Young Forever · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'never-mind':{sections:neverMindSections,vocabulary:neverMindVocabulary,summary:"A lembrança da adolescência vira uma resposta a quem previa o fracasso. Explore fala citada, comparações, permissão para se abater e imagens de movimento que incentivam a seguir sem entregar a vida aos julgamentos.",heading:"Intro: Never Mind · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'house-of-cards':{sections:houseOfCardsSections,vocabulary:houseOfCardsVocabulary,summary:"Este estudo segue toda a letra enviada, incluindo a ponte da Full Length Edition. Uma casa de cartas representa uma relação frágil: saber que ela pode cair não elimina o desejo de ficar. Explore concessões, mudança gradual e pedidos íntimos.",heading:"Outro: House of Cards · coreano palavra por palavra",badge:"Letra enviada · inclui trechos da edição completa"},
  'whalien-52':{sections:whalien52Sections,vocabulary:whalien52Vocabulary,summary:"Uma baleia de voz singular dá forma ao desejo de ser ouvido. Explore solidão, barreiras feitas de palavras, sonhos de baleia, discurso citado e a esperança de que uma canção alcance alguém, preservando a mudança de pronome no final enviado.",heading:"Whalien 52 · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
