@@ -1,4 +1,6 @@
 "use client";
+import {neverMindSections,neverMindVocabulary} from '@/lib/never-mind';
+import {houseOfCardsSections,houseOfCardsVocabulary} from '@/lib/house-of-cards';
 import {whalien52Sections,whalien52Vocabulary} from '@/lib/whalien-52';
 import {silverSpoonSections,silverSpoonVocabulary} from '@/lib/silver-spoon';
 import {maCitySections,maCityVocabulary} from '@/lib/ma-city';
@@ -149,6 +151,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'never-mind':{sections:neverMindSections,vocabulary:neverMindVocabulary,summary:"A lembrança da adolescência vira uma resposta a quem previa o fracasso. Explore fala citada, comparações, permissão para se abater e imagens de movimento que incentivam a seguir sem entregar a vida aos julgamentos.",heading:"Intro: Never Mind · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
+ 'house-of-cards':{sections:houseOfCardsSections,vocabulary:houseOfCardsVocabulary,summary:"Este estudo segue toda a letra enviada, incluindo a ponte da Full Length Edition. Uma casa de cartas representa uma relação frágil: saber que ela pode cair não elimina o desejo de ficar. Explore concessões, mudança gradual e pedidos íntimos.",heading:"Outro: House of Cards · coreano palavra por palavra",badge:"Letra enviada · inclui trechos da edição completa"},
  'whalien-52':{sections:whalien52Sections,vocabulary:whalien52Vocabulary,summary:"Uma baleia de voz singular dá forma ao desejo de ser ouvido. Explore solidão, barreiras feitas de palavras, sonhos de baleia, discurso citado e a esperança de que uma canção alcance alguém, preservando a mudança de pronome no final enviado.",heading:"Whalien 52 · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'silver-spoon':{sections:silverSpoonSections,vocabulary:silverSpoonVocabulary,summary:"A pequena ave do provérbio contesta uma corrida com condições desiguais. Explore privilégio herdado, trabalho mal remunerado, rótulos de geração, expressões idiomáticas e a virada da ironia contra as cegonhas para a solidariedade entre baepsae.",heading:"Silver Spoon (Baepsae) · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},
  'ma-city':{sections:maCitySections,vocabulary:maCityVocabulary,summary:"Ilsan, Busan, Gwangju e Daegu formam um mapa de pertencimento. Explore lugares reais, fala regional, comparações, jogos de palavras e referências à história e ao beisebol que dão sentido ao orgulho de cada cidade.",heading:"Ma City · coreano palavra por palavra",badge:'Letra enviada · análise preparada'},

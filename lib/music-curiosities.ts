@@ -3,6 +3,75 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"never-mind":[
+  {
+    "term": "어느 정도 성공을 했어",
+    "card": "어느 정도 limita o grau: algum sucesso, até certo ponto. A frase reconhece a conquista sem dizer que tudo já foi resolvido. Esse cuidado combina com uma canção que olha para trás e ainda insiste em continuar."
+  },
+  {
+    "term": "음악 한답시고 깝치면 집안 거덜내니까",
+    "card": "-답시고 pode apresentar a justificativa de alguém de modo depreciativo. Aqui a fala dos outros reduz a música a uma pretensão que arruinaria a família. Mais tarde, o eu retoma essa acusação para confrontá-la com o que conseguiu."
+  },
+  {
+    "term": "실패나 좌절 맛보고 고개 숙여도 돼",
+    "card": "-어도 돼 dá permissão: tudo bem baixar a cabeça depois de um revés. A insistência do refrão não exige confiança constante. A letra abre espaço para o abatimento e ainda deixa aberta a possibilidade de seguir."
+  },
+  {
+    "term": "우리는 아직 젊고 어려 걱정 붙들어매",
+    "card": "걱정 붙들어매 usa a ideia de amarrar para dizer deixe essa preocupação quieta, pode sossegar. A expressão funciona como um gesto de tranquilizar, junto da lembrança de que ainda há tempo para aprender."
+  },
+  {
+    "term": "필시 끼기 마련이거든 이끼",
+    "card": "A pedra parada acumula musgo. Neste contexto, a imagem associa imobilidade à estagnação e prepara a decisão de seguir. -기 마련이다 indica uma tendência esperada, não uma obrigação imposta a alguém."
+  },
+  {
+    "term": "부딪힐 것 같으면 더 세게 밟아 임마",
+    "card": "Colidir e pisar mais forte formam uma metáfora de impulso diante dos obstáculos. O pedal fica implícito. A leitura acompanha a trajetória artística e os julgamentos citados; o verso não precisa ser tratado como uma instrução literal de direção."
+  },
+  {
+    "term": "세상엔 니가 어쩔 수 없는 일도 많아",
+    "card": "어쩔 수 없다 é não poder remediar ou controlar algo. A canção combina ação com reconhecimento de limites. Never mind pode soar como não deixe isso deter você, sem prometer que toda dificuldade depende apenas de esforço individual."
+  },
+  {
+    "term": "쉽진 않지만 가슴에 새겨놔",
+    "card": "새겨놔 combina gravar com deixar guardado. A imagem de inscrever no peito transforma o conselho em algo para recordar quando ficar difícil. A própria frase começa reconhecendo que não é fácil."
+  }
+],
+"house-of-cards":[
+  {
+    "term": "또 위태로워 또 위험해",
+    "card": "O catálogo oficial distingue o Outro de The Most Beautiful Moment in Life Pt.2 da Full Length Edition em Young Forever. A letra enviada aqui inclui a ponte e o retorno final da edição estendida; o estudo mantém todas essas linhas e informa essa escolha no cabeçalho.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/hwayangyeonhwa-young_forever.html"
+  },
+  {
+    "term": "카드로 만든 집 그 속에서 우린",
+    "card": "로 marca o material da construção: uma casa feita de cartas. Em português, castelo de cartas é uma imagem familiar de estrutura frágil. O casal está dentro dela, então sustentar a relação também é tentar manter seu próprio abrigo de pé."
+  },
+  {
+    "term": "더 버티기도 지탱하기도",
+    "card": "버티다 é aguentar, resistir; 지탱하다 é sustentar, manter de pé. Os dois verbos aproximam o desgaste das pessoas e a fragilidade da estrutura. -기도 repete a forma nominal para listar as duas ações."
+  },
+  {
+    "term": "멈출 수가 없었어",
+    "card": "Saber e conseguir parar não aparecem como a mesma coisa. O passado de não poder parar contrasta com o conhecimento já existente. Essa diferença mantém a tensão emocional sem apresentar o desejo de ficar como solução garantida."
+  },
+  {
+    "term": "더 망가져가기만 해",
+    "card": "-ㄹ수록 liga a passagem do tempo à piora; -어 가다 mostra a mudança avançando; -기만 하다 restringe o resultado a continuar se desfazendo. As três peças fazem a ruína parecer um processo, não um único instante."
+  },
+  {
+    "term": "끝이 보인대도 곧 쓰러진대도",
+    "card": "As concessões admitem o fim e a queda, mas não encerram o pedido. O refrão responde a elas com só mais um pouco. A contradição entre reconhecer e desejar é o centro da imagem."
+  },
+  {
+    "term": "내일이란 게 없듯이",
+    "card": "-듯이 cria uma comparação: como se não existisse amanhã. Não é uma notícia sobre o futuro; descreve a dificuldade do eu de imaginar um depois. A repetição com próxima vez reforça a sensação de tempo suspenso."
+  },
+  {
+    "term": "더 위태로워 더 위험해",
+    "card": "No começo, 또 marca repetição: de novo. Mais tarde, 더 marca intensidade: mais. O retorno musical traz, portanto, uma piora no texto, mesmo quando o casal repete o pedido de permanecer."
+  }
+],
 "whalien-52":[
   {
     "term": "한 마리 고래가 나즈막히 외롭게 말을 해",

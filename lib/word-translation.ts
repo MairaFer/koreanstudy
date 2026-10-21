@@ -2,6 +2,8 @@ import {cypher4Sections,cypher4Vocabulary} from './cypher-pt4';
 import {centuryGirlSections,centuryGirlVocabulary} from './21st-century-girl';
 import {notTodaySections,notTodayVocabulary} from './not-today';
 import {supplementaryStorySections,supplementaryStoryVocabulary} from './supplementary-story';
+import {neverMindSections,neverMindVocabulary} from './never-mind';
+import {houseOfCardsSections,houseOfCardsVocabulary} from './house-of-cards';
 import {whalien52Sections,whalien52Vocabulary} from './whalien-52';
 import {silverSpoonSections,silverSpoonVocabulary} from './silver-spoon';
 import {maCitySections,maCityVocabulary} from './ma-city';
@@ -113,6 +115,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'never-mind',sections:neverMindSections,vocabulary:neverMindVocabulary},
+ {id:'house-of-cards',sections:houseOfCardsSections,vocabulary:houseOfCardsVocabulary},
  {id:'whalien-52',sections:whalien52Sections,vocabulary:whalien52Vocabulary},
  {id:'silver-spoon',sections:silverSpoonSections,vocabulary:silverSpoonVocabulary},
  {id:'ma-city',sections:maCitySections,vocabulary:maCityVocabulary},
