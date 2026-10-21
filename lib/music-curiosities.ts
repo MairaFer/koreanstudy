@@ -3,6 +3,77 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"rain":[
+  {
+    "term": "(비가 오는 짙은 색 서울 그 위에)",
+    "card": "Rain aparece como a sexta faixa na lista oficial de DARK & WILD. O início funciona como uma câmera sobre Seul: carros, guarda-chuvas, céu e água acumulada. Depois, o quadro passa a incluir o próprio observador; a paisagem urbana dá forma à experiência de um dia sem direção.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/dark_and_wild.html"
+  },
+  {
+    "term": "죄 없는 냉장고 또 열었다 닫어",
+    "card": "A geladeira sem culpa é personificada. Abri-la e fechá-la não resolve uma necessidade clara: o gesto revela o tempo arrastado e o vazio que vem depois. O detalhe comum torna o estado emocional concreto, sem precisar transformá-lo num diagnóstico."
+  },
+  {
+    "term": "선명해 비들이 세상에 닿는 소리",
+    "card": "A visão é cinzenta e pouco definida, mas o som da chuva é 선명해, nítido. Esse contraste permite um pequeno sorriso e o cantarolar. A chuva não é apenas tristeza: também fornece textura e acompanhamento ao passeio."
+  },
+  {
+    "term": "친구의 안부문자는 나를 감성에 젖게",
+    "card": "젖다 é ficar molhado. Ao dizer que uma mensagem faz o eu se encharcar de emoção, a canção traz a chuva para o campo afetivo. A pergunta cotidiana sobre como ele está cria uma conexão pequena, em contraste com o isolamento da rotina."
+  },
+  {
+    "term": "비처럼 흔적을 새긴 사람일까",
+    "card": "As marcas nos sapatos levam a uma pergunta sobre a marca deixada na vida de alguém. A alternativa é ser apenas um aguaceiro que chega e passa. Como ambas são formuladas em pergunta, a letra não confirma o que a outra pessoa sente ou lembra."
+  },
+  {
+    "term": "내 몸을 예상이라도 한 듯 비가 내리고 있네",
+    "card": "A transcrição enviada diz 몸, corpo. A linha vem depois da sensação de indisposição e imagina que a chuva a antecipou. Não substituímos silenciosamente essa palavra por 마음, coração ou mente: a explicação lê o corpo que está efetivamente no texto."
+  },
+  {
+    "term": "선율같이 내리는 비에 모두 다 안단테",
+    "card": "Andante é uma indicação musical associada ao ritmo de caminhar. Aqui a chuva, os passos e a cidade parecem entrar num mesmo andamento. O termo não exige ensinar um número fixo de batidas por minuto: a imagem depende da sensação de movimento moderado.",
+    "source": "https://usa.yamaha.com/files/download/other_assets/4/2289274/psr_e383_en_songbook_a1.pdf"
+  },
+  {
+    "term": "거긴 아름답지 못한 내가 날 보고 있어",
+    "card": "O tempo pode abrir sem que o eu deixe de se ver com dureza. A estrutura coloca 내가 como quem olha e 날 como quem é olhado: o reflexo cria esse encontro consigo. O encerramento mantém a inquietação; não promete que parar de chover resolva automaticamente o dia."
+  }
+],
+"turn-off-your-cellphone":[
+  {
+    "term": "핸드폰 좀 꺼줄래",
+    "card": "A faixa está na lista oficial de DARK & WILD como Could You Turn Off Your Cell Phone. O pedido usa 좀 para suavizar e -어 주다 para orientar o gesto ao interlocutor, mas continua informal. A intenção se esclarece depois: o encontro foi marcado para ver uma pessoa, não para acompanhar a tela dela.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/dark_and_wild.html"
+  },
+  {
+    "term": "모두가 스마트하다지만",
+    "card": "Smart liga aparelhos inteligentes à ideia de inteligência das pessoas. O verso seguinte inverte o elogio: a tecnologia pode melhorar enquanto a atenção compartilhada piora. Essa é uma ironia construída pelas vozes da canção, não uma medição objetiva da inteligência de quem usa celular."
+  },
+  {
+    "term": "여기가 제일 핫스팟 같애",
+    "card": "Hotspot pode ser um local badalado e também remete à conectividade de rede. Entre escolher onde comer e continuar preso ao celular, o empréstimo mantém os dois campos próximos. O lugar parece escolhido para um encontro, mas a lógica da tela continua se intrometendo."
+  },
+  {
+    "term": "밀어서 잠금 해제 밀어서 잠금 해제",
+    "card": "A instrução de deslizar para desbloquear vira um refrão de gesto automático. Os efeitos 탁, 쉬웅 e 찰칵 acrescentam toques, deslizamentos e cliques à experiência. Não é um tutorial para um aparelho atual: a linguagem da interface é usada como material rítmico da canção."
+  },
+  {
+    "term": "음식을 눈으로 먹냐 여자애들처럼",
+    "card": "A fala recorre a uma comparação estereotipada com garotas para zombar das fotos de comida. Ela caracteriza o jeito provocativo do narrador. Para interpretar com precisão, preserve o que foi dito e diferencie essa voz de uma afirmação factual sobre como mulheres ou homens se comportam."
+  },
+  {
+    "term": "또 업뎃하기 바쁘겠지 얼굴책 아님 짹짹이에",
+    "card": "얼굴책 traduz de propósito as partes de Facebook: rosto e livro. 짹짹이 evoca o piado associado a Twitter. A sequência leva o piado para a mesa quando pede que a pessoa olhe para o amigo e fale; traduzir tudo apenas como rede social apagaria a brincadeira."
+  },
+  {
+    "term": "니 배터리 없을 때 우린 충전돼 있겠냐",
+    "card": "Carregar a bateria do aparelho é diferente de nutrir um vínculo. A pergunta imagina o telefone esgotado e questiona o que restou de energia entre as pessoas. Ela estende o vocabulário técnico para uma metáfora de reciprocidade, sem descrever uma recarga elétrica literal do corpo."
+  },
+  {
+    "term": "소통은 많아졌지만 우리들 사이엔 시끄러운 침묵만",
+    "card": "Silêncio barulhento põe duas ideias em conflito: muita atividade de mensagens e pouca presença entre quem está junto. A conclusão sobre ter vindo ver você devolve o motivo simples do encontro. O pedido de desligar o celular serve a esse desejo de conversa, não a uma rejeição abstrata de toda tecnologia."
+  }
+],
 "skit-be":[
   {
     "term": "축하드립니다!",

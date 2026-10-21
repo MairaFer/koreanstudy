@@ -1,3 +1,5 @@
+import {rainSections,rainVocabulary} from './rain';
+import {turnOffYourCellphoneSections,turnOffYourCellphoneVocabulary} from './turn-off-your-cellphone';
 import {skitBeSections,skitBeVocabulary} from './skit-be';
 import {hipHopLoverSections,hipHopLoverVocabulary} from './hip-hop-lover';
 import {letMeKnowSections,letMeKnowVocabulary} from './let-me-know';
@@ -124,6 +126,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'rain',sections:rainSections,vocabulary:rainVocabulary},
+ {id:'turn-off-your-cellphone',sections:turnOffYourCellphoneSections,vocabulary:turnOffYourCellphoneVocabulary},
  {id:'skit-be',sections:skitBeSections,vocabulary:skitBeVocabulary},
  {id:'hip-hop-lover',sections:hipHopLoverSections,vocabulary:hipHopLoverVocabulary},
  {id:'let-me-know',sections:letMeKnowSections,vocabulary:letMeKnowVocabulary},
