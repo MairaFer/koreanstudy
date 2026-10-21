@@ -1,3 +1,4 @@
+import {butterflyPrologueSections,butterflyPrologueVocabulary} from './butterfly-prologue';
 import {youngForeverSections,youngForeverVocabulary} from './young-forever';
 import {saveMeSections,saveMeVocabulary} from './save-me';
 import {cypher4Sections,cypher4Vocabulary} from './cypher-pt4';
@@ -117,6 +118,7 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'butterfly-prologue',sections:butterflyPrologueSections,vocabulary:butterflyPrologueVocabulary},
  {id:'save-me',sections:saveMeSections,vocabulary:saveMeVocabulary},
  {id:'young-forever',sections:youngForeverSections,vocabulary:youngForeverVocabulary},
  {id:'never-mind',sections:neverMindSections,vocabulary:neverMindVocabulary},

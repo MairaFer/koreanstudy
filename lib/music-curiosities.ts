@@ -3,6 +3,41 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"butterfly-prologue":[
+  {
+    "term": "아무것도 생각하지 마",
+    "card": "O catálogo oficial de Young Forever lista Butterfly prologue mix e Butterfly como faixas distintas. Este estudo acompanha a letra da Prologue enviada, com o verso sensorial e o retorno final ao pedido de silêncio. A versão já analisada continua com seu próprio estudo.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/hwayangyeonhwa-young_forever.html"
+  },
+  {
+    "term": "곁에 머물러줄래",
+    "card": "-ㄹ래 pode perguntar sobre a disposição da outra pessoa: você fica? Com -어 주다, há um pedido de fazer isso por quem fala. Mais adiante, 멈출래 expressa o desejo do próprio eu de parar o tempo. A mesma terminação muda de função conforme quem age e a situação da fala."
+  },
+  {
+    "term": "손 대면 날아갈까 부서질까",
+    "card": "O gesto de tocar traz dois receios: a pessoa voar para longe ou se partir. -ㄹ까 apresenta perguntas incertas, não previsões garantidas. A borboleta permite falar de uma presença preciosa e delicada sem afirmar que o relacionamento necessariamente terminará."
+  },
+  {
+    "term": "겁나 겁나 겁나",
+    "card": "Aqui 겁나 vem de 겁나다, sentir medo: é o predicado do eu, repetido para dar ritmo à insegurança. Embora a mesma forma possa aparecer como intensificador coloquial em outros contextos, neste refrão a leitura é tenho medo. O contexto decide o sentido."
+  },
+  {
+    "term": "보드랍게 흔들리는 니 솜털에",
+    "card": "O verso aproxima a pessoa por detalhes pequenos: luz nas sobrancelhas, movimento da penugem e perfume. 솜털 são pelos finíssimos. O olhar se torna muito próximo, mas essa proximidade sensorial não desfaz o medo de perder nem garante que o eu consiga alcançar a pessoa."
+  },
+  {
+    "term": "니 향기에 취해 맘이 간질거려",
+    "card": "취하다 pode ser usado para estar inebriado por algo; aqui o aroma produz encantamento. 간질거리다 parte de uma sensação de cócega ou formigamento, aplicada ao coração. A adaptação usa um arrepio bom ou heart all aflutter para transmitir o efeito afetivo, sem transformar a imagem em um diagnóstico físico."
+  },
+  {
+    "term": "한가로이 표류하는 먼지처럼",
+    "card": "한가로이 suaviza o movimento: sem pressa, tranquilamente. 표류하다 é ir à deriva, e 처럼 constrói a comparação com poeira. Leve e difícil de segurar, essa imagem prolonga a borboleta; não é uma afirmação de que a pessoa não tem valor."
+  },
+  {
+    "term": "넌 거기 있지만 왠지 닿질 않아",
+    "card": "있지만 reconhece a presença e cria o contraste: você está ali, mas... 닿질 않아 retoma a impossibilidade de alcançar; 왠지 deixa a causa em aberto. No final, o pedido de apenas sorrir volta ao início. Esse desenho circular conserva a delicadeza do instante, sem narrar uma solução definitiva."
+  }
+],
 "save-me":[
   {
     "term": "난 숨쉬고 싶어 이 밤이 싫어",
