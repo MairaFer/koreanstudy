@@ -1,4 +1,5 @@
 "use client";
+import {SkitContextStudy} from './skit-context-study';
 import {butterflyPrologueSections,butterflyPrologueVocabulary} from '@/lib/butterfly-prologue';
 import {youngForeverSections,youngForeverVocabulary} from '@/lib/young-forever';
 import {saveMeSections,saveMeVocabulary} from '@/lib/save-me';
@@ -150,6 +151,7 @@ import {KoreanText,AudioButton} from './korean-audio';
 
 export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string}){
  const song=songs.find(s=>s.id===initialSongId)??songs[0];
+ if(song.id==='skit-one-night')return <SkitContextStudy song={song}/>;
  return <Localized>{<><div className="intro"><div><p className="eyebrow">PALAVRAS, FRASES E DESCOBERTAS</p><h1>Aprenda coreano com BTS<span>.</span></h1><p>Toque nas palavras para ouvir uma voz sintetizada em coreano.</p></div><Music2 size={42}/></div><div className="song-tabs"><span className="pill">{song.title}</span></div><SongLesson key={song.id} song={song}/><p className="music-reference">Traduções e explicações preparadas para estudo. Este projeto não é afiliado ao BTS.</p></>}</Localized>;
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
