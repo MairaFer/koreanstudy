@@ -3,6 +3,329 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"we-on":[
+  {
+    "term": "런치란다와 랩몬",
+    "card": "Os nomes são apresentados como partes de um mesmo eu. A resposta à crítica não exige apagar o passado para caber na identidade de idol: a própria letra afirma continuidade."
+  },
+  {
+    "term": "가방끈이 짧아, 7부",
+    "card": "A alça curta é expressão de pouca escolarização. A nota do Instituto Nacional da Língua Coreana registra esse uso; o comprimento de roupa reativa o sentido literal para o trocadilho.",
+    "source": "https://www.korean.go.kr/common/download.do%3Bfront%3D7E45126BACBF89656F9DCB640AABDA37?c_file_name=4f5487b2-5b7c-482e-be91-16b24118bfa6_0.pdf&file_path=reportData&o_file_name=2008%EB%85%84+%ED%91%9C%EC%A4%80%EA%B5%AD%EC%96%B4%EB%8C%80%EC%82%AC%EC%A0%84+%EA%B0%9C%EC%A0%95.pdf"
+  },
+  {
+    "term": "난 기염을 토해",
+    "card": "Uma pequena troca de som separa fofura e ímpeto flamejante. A explicação oficial define o segundo como força revelada intensamente; não é vômito literal.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=261&pageIndex=1&qna_seq=312532"
+  },
+  {
+    "term": "넘버원이 아닌 only one",
+    "card": "O contraste distingue posição num ranking e singularidade. A voz pode vangloriar-se de sucesso e, ainda assim, declarar que quer ser reconhecida por uma identidade própria."
+  },
+  {
+    "term": "날 속단하긴 일러",
+    "card": "Ser cedo retoma a oposição entre julgamento imediato e futuro por demonstrar. A promessa do refrão oferece trabalho e continuidade como resposta, em vez de aceitar a definição do crítico."
+  },
+  {
+    "term": "이 가사는 핸드드립",
+    "card": "Café preparado à mão vira imagem de letra feita pelo próprio autor. A metáfora destaca processo e dedicação, sem exigir uma receita nem atribuir a faixa a um produto comercial."
+  },
+  {
+    "term": "너흰 그냥 그린벨트",
+    "card": "Faixa de artes marciais e área de desenvolvimento restrito se cruzam. A frase seguinte sobre falta de progresso ativa a segunda leitura; a fonte confirma o uso territorial do termo.",
+    "source": "https://www.korea.kr/news/policyNewsView.do?newsId=148969764"
+  },
+  {
+    "term": "니 \"감\"은 썩었어, 도려내",
+    "card": "Faro ou senso também pode soar como caqui. Apodrecer e retirar cortando tornam a leitura de fruto possível. O jogo critica discernimento; não há uma fruta real que precise aparecer na cena."
+  }
+],
+"intro-orul82":[
+  {
+    "term": "아버지는 말하셨지 인생을 즐겨라",
+    "card": "A página oficial apresenta o álbum como busca da própria felicidade antes que seja tarde. A intro transforma essa questão em conversa com o pai e depois em pergunta direta ao ouvinte.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/o_rul8_2.html"
+  },
+  {
+    "term": "아버지께 여쭤보고파 당신은 인생을 즐겼나",
+    "card": "A pergunta pode desafiar uma ideia sem abandonar a deferência linguística. Partícula respeitosa e verbo humilde mostram como relação social e discordância podem coexistir."
+  },
+  {
+    "term": "왜 당연한 게 당연하지 않게 됐고",
+    "card": "O mesmo adjetivo aparece afirmado e negado. Repetir e inverter a estrutura evidencia a estranheza de tratar como natural aquilo que antes não era."
+  },
+  {
+    "term": "왜 나의 인생에서 나는 없고",
+    "card": "O paradoxo não significa desaparecimento físico. Ele expõe a sensação de que escolhas alheias ocupam o lugar do próprio sujeito dentro da vida que leva."
+  },
+  {
+    "term": "그저 남의 인생들을 살게 됐어",
+    "card": "A construção de vir a fazer algo descreve um resultado percebido. Aqui, ela contrasta viver por expectativas externas e recuperar uma direção pessoal, sem proibir vínculos com outras pessoas."
+  },
+  {
+    "term": "딱 한번뿐인 인생",
+    "card": "A restrição de uma vez só retoma a abertura em inglês. A letra usa finitude para dar urgência à pergunta sobre por quem se vive, não para fornecer uma resposta única de carreira."
+  },
+  {
+    "term": "9살 아니면 10살 때쯤 내 심장은 멈췄지",
+    "card": "No contexto, o coração parado figura a perda do impulso próprio. A idade aproximada e a pergunta pelo sonho orientam essa leitura; a análise não inventa um histórico médico."
+  },
+  {
+    "term": "말해봐 내 꿈은 뭐였지?",
+    "card": "O final pede uma tentativa de lembrar. Não entrega um sonho pronto: a repetição mantém o espaço de pergunta aberto para o eu e para quem escuta."
+  }
+],
+"skit-r-u-happy-now":[
+  {
+    "term": "V: 쟨 차에 타자 마자 자냐",
+    "card": "Assim que conecta duas ações quase sem intervalo. A cena de dormir ao entrar no carro apresenta o cansaço antes de a conversa perguntar se aquela rotina também pode trazer felicidade."
+  },
+  {
+    "term": "V: 우리 휴게소 안들... 안들려요?",
+    "card": "Uma área de descanso na estrada organiza a cena. Hesitações e formas de passar por um lugar são preservadas; a nota oferece o equivalente contextual sem transformar toda fala espontânea em modelo padrão."
+  },
+  {
+    "term": "Jimin: 참아요 참아야 해",
+    "card": "A repetição distingue pedir que alguém aguente e dizer que precisa aguentar. O segundo formato marca necessidade; o humor vem da urgência cotidiana, não de uma lição médica."
+  },
+  {
+    "term": "J-Hope: 안무?! 어",
+    "card": "O combo junta tarefas e desconforto em tom de brincadeira. Depois do banheiro, coreografia e composição entram na conversa, mostrando como o trabalho atravessa o deslocamento."
+  },
+  {
+    "term": "Suga: 아 가사 쓰면 싫어진다",
+    "card": "Um beat pode empolgar ao ouvir e frustrar quando é preciso escrever. A mudança de gostar para desgostar descreve um processo de criação naquele momento, não uma regra para toda composição."
+  },
+  {
+    "term": "J-Hope: 아 그래도 뭐, 힘들어도 이게 행복한거아닌가?",
+    "card": "Mesmo sendo difícil mantém as duas experiências juntas: fadiga e alegria. A pergunta não apaga a falta de sono que a cena já mostrou."
+  },
+  {
+    "term": "Suga: 연습생 때 꿈꿔 오던게 이런거잖아",
+    "card": "A rotina atual é comparada ao sonho de trainee. A lembrança compartilhada explica por que estar ocupado pode ser feliz para essas vozes, sem concluir que descansar seja ruim."
+  },
+  {
+    "term": "Jungkook: 어...휴게소다",
+    "card": "O personagem que dormia reconhece a parada, e a conversa termina no rosto inchado. O humor devolve a reflexão sobre felicidade ao corpo cansado e ao cotidiano."
+  }
+],
+"if-i-ruled-the-world":[
+  {
+    "term": "내가 만약 세상을 지배한다면",
+    "card": "A hipótese organiza a faixa inteira. Poder total permite exageros, mas o próprio refrão admite que a canção é imatura; os desejos não são apresentados como acontecimentos confirmados."
+  },
+  {
+    "term": "완전히 없어지네 인종차별",
+    "card": "A promessa de eliminar discriminação surge ao lado de uma lista de mulheres tratadas como posse. Essa contradição pertence à persona autocentrada e não precisa ser apagada para entender a fantasia."
+  },
+  {
+    "term": "그리곤 불러 릭오웬스, 앤드뮬뮈스터",
+    "card": "Os nomes de criadores tornam o gosto pessoal uma encomenda de luxo. A coleção levar o próprio nome encena o desejo de controlar até a roupa que será produzida."
+  },
+  {
+    "term": "노래 제목은 애구가",
+    "card": "A grafia recebida é mantida e pode evocar o hino nacional pelo som. Não se inventa um título traduzido definitivo: o jogo funciona ao imaginar todos cantando a música do eu."
+  },
+  {
+    "term": "그래, 그 다음은 내 장롱면허",
+    "card": "Carteira no armário é uma expressão para habilitação pouco usada. Despertá-la personifica o documento e faz a compra do carro parecer a retomada de algo adormecido."
+  },
+  {
+    "term": "이런 게 무리라도 무이자인 할부로",
+    "card": "Parcelas sem juros aparecem dentro de um sonho de governar tudo. O contraste entre poder absoluto e preocupação doméstica traz humor e dá um tamanho concreto ao desejo de ajudar a família."
+  },
+  {
+    "term": "우리 음악 말곤 심의를 걸겠어",
+    "card": "Controlar a música dos outros é a ponta autoritária da fantasia. A própria ressalva de sonho absurdo impede tratar o trecho como plano político literal ou orientação do estudo."
+  },
+  {
+    "term": "내 지갑이란 골대에 돈이 골인되지",
+    "card": "A carteira vira trave e receber dinheiro vira marcar gol. A imagem traduz abundância em movimento esportivo e se liga às milhas que se acumulam sem corrida."
+  }
+],
+"coffee":[
+  {
+    "term": "Baby baby 그대는",
+    "card": "A pessoa é comparada a uma bebida antes de o verso dizer seu nome. Doçura, perfume e memória se misturam; não se trata de classificar objetivamente o sabor de todos os cafés."
+  },
+  {
+    "term": "알잖아 너 땜에 습관이 된 아메리카노",
+    "card": "O hábito preserva a presença de quem já se foi. A bebida não é só cenário: tomar americano repete um gesto aprendido na relação e muda a compreensão de seu amargor."
+  },
+  {
+    "term": "우리의 야속하던 약속들",
+    "card": "Promessas e crueldade se aproximam no som. A sequência de erros, culpa e palavras não ditas prolonga esse tecido de repetições, que uma tradução direta não reproduz por inteiro."
+  },
+  {
+    "term": "맛볼수록 쓰기만 했던 추억이 담긴 잔",
+    "card": "O copo contém lembranças; provar mais aumenta o amargor. A mesma raiz que pode significar escrever significa amargo aqui, selecionada pelo sabor e pelo contexto."
+  },
+  {
+    "term": "기억하고 있나요",
+    "card": "A pergunta do refrão não recebe resposta. A forma suave pede lembrar uma sensação acolhedora e contrasta com os versos em que o eu já reconhece a separação."
+  },
+  {
+    "term": "마치 에스프레소처럼 내려놓게 되었어",
+    "card": "Pousar algo e deixar um sentimento de lado se encontram. O espresso conserva a imagem concreta da xícara, enquanto a relação passa do querer ir junto ao afastamento."
+  },
+  {
+    "term": "아직도 추억은 여전히 그 카페로 가고 있어",
+    "card": "As lembranças caminham até o café como visitantes. Essa personificação permite que a relação tenha acabado e o passado ainda retorne ao mesmo lugar."
+  },
+  {
+    "term": "커피를 먹다 보니",
+    "card": "A construção de continuar fazendo e então perceber introduz o retorno da memória pelo aroma. O final pergunta por que a falta permanece; não confirma reconciliação."
+  }
+],
+"cypher-pt1":[
+  {
+    "term": "현대판 홍길동들",
+    "card": "Hong Gildong sofre discriminação de nascimento no romance e não pode reconhecer livremente vínculos familiares. A letra adapta a contradição para críticos que veem algo bom, mas recusam chamá-lo de bom.",
+    "source": "https://encykorea.aks.ac.kr/Article/E0063994"
+  },
+  {
+    "term": "Don, 비트 끄지마 becuz I'm not freakin",
+    "card": "Evangelion tem uma Lança de Cassius. A expressão pode aludir a essa arma, mas a fonte confirma o objeto, não a intenção do rapper nem uma adaptação da trama.",
+    "source": "https://www.eva-info.jp/17164"
+  },
+  {
+    "term": "Done 비트 위에선 까불지마",
+    "card": "Don e done atravessam a quebra do verso. O primeiro nomeia o chefão, o segundo completa não estou acabado. Som parecido e sintaxe entre linhas sustentam a afirmação de domínio."
+  },
+  {
+    "term": "랩몬스터, 란다, 리다, 랩몬, 니 아빠",
+    "card": "A lista de cinco responde à pergunta sobre os melhores rappers com versões do próprio eu e uma provocação final. É autorrepresentação hiperbólica, não uma lista de cinco pessoas distintas confirmada pelo estudo."
+  },
+  {
+    "term": "전부 날 follow 내 가능성은 리트윗돼",
+    "card": "Seguir e retuitar transformam potencial artístico em conteúdo que circula. O verso pede divulgação e usa a linguagem das redes para representar reconhecimento."
+  },
+  {
+    "term": "배가 아프면 병원 가 전치 2주감",
+    "card": "Dor de barriga pode expressar inveja. O hospital prolonga o sentido literal em piada, enquanto o comentário sobre recuperação exagera o impacto do rap, sem diagnosticar o rival."
+  },
+  {
+    "term": "좀더 열폭 해봐라 내 발음화질은 4k",
+    "card": "Resolução de imagem descreve pronúncia. Misturar qualidade visual e nitidez sonora responde à crítica de dicção por meio de uma comparação tecnológica, não de uma medida acústica literal."
+  },
+  {
+    "term": "난 보일러 순식간에 hot해졌지",
+    "card": "Aquecedor e estar em alta compartilham calor. A rima que segue com spoiler torna o oponente previsível; temperatura, fama e previsão se conectam pelo som."
+  }
+],
+"attack-on-bangtan":[
+  {
+    "term": "진격한다면 어떨까",
+    "card": "O título lembra a construção de Attack on Titan, mas o avanço aqui é entrada no cenário musical. A semelhança entre títulos não prova que toda a letra adapte a história do anime.",
+    "source": "https://aot-portal.com/about/"
+  },
+  {
+    "term": "난 랩괴물 깔리고 깔린 랩퇴물들을",
+    "card": "Monstro e figura ultrapassada se opõem com sons próximos. A força da comparação depende tanto de rebaixar o adversário quanto de demonstrar controle das rimas."
+  },
+  {
+    "term": "가사 완전 신들렸지",
+    "card": "Ser possuído pode elogiar uma atuação extraordinária. O som seguinte de good também pode evocar ritual; é uma leitura do encadeamento, sem afirmar evento sobrenatural."
+  },
+  {
+    "term": "내 첫 타석 봐 홈런 때려",
+    "card": "Primeira vez ao bastão e home run representam impacto de estreia. Logo depois, arremesso e um personagem de basquete mudam de esporte sem abandonar o campo de habilidade e competição."
+  },
+  {
+    "term": "그래 난 무대 위에 강백호",
+    "card": "Kang Baekho é Hanamichi Sakuragi, de Slam Dunk. A página oficial confirma a identidade do personagem; comparar o palco à quadra valoriza a energia e a confiança do eu.",
+    "source": "https://slamdunk-movie.jp/ko/about/character/?char=sakuragi"
+  },
+  {
+    "term": "그저 마이크는 거들 뿐",
+    "card": "Depois do personagem, o microfone apenas ajudar pode ecoar a ideia de apoio no arremesso. Essa é uma interpretação textual: a habilidade fica no artista, e o instrumento ajuda."
+  },
+  {
+    "term": "명치에 힘 빡 주고 단.전.호.흡",
+    "card": "As sílabas separadas viram comando rítmico ao público. A imagem de respiração organiza energia da performance, sem apresentar uma técnica clínica ou um exercício de saúde detalhado."
+  },
+  {
+    "term": "첫 블럭을 자빠뜨린 도미노",
+    "card": "Derrubar o primeiro bloco representa uma reação em cadeia já iniciada. A metáfora aproxima o avanço de algo que ganha continuidade depois do primeiro impulso."
+  }
+],
+"satoori-rap":[
+  {
+    "term": "서울 강원부터 경상도",
+    "card": "O título Paldogangsan significa o país inteiro por meio da imagem histórica de províncias, rios e montanhas. O refrão reúne vozes; não lista todas as divisões administrativas atuais.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=82860"
+  },
+  {
+    "term": "신라의 화랑 후예들이",
+    "card": "Os Hwarang eram grupos de jovens de Silla associados à formação e à lealdade. A história de Gyeongju dá base ao orgulho de Gyeongsang; herdeiros não é genealogia comprovada do rapper.",
+    "source": "https://gyeongju.museum.go.kr/eng/html/sub02/0201.html?GotoPage=2&d_mng_no=10&mng_no=53&mode=V"
+  },
+  {
+    "term": "요 비빔밥 갑이랑께",
+    "card": "Bibimbap é arroz misturado com acompanhamentos e temperos; Jeonju, em Jeolla, é conhecida por sua versão. A comida vira argumento divertido de identidade, sem exclusividade regional absoluta.",
+    "source": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=904&vcontsId=221301"
+  },
+  {
+    "term": "아나바다 같은거지 모",
+    "card": "Anabada reúne conservar, partilhar, trocar e reutilizar. A letra aproxima reciprocidade e vínculo afetivo; não afirma que a campanha tenha sido inventada numa das regiões.",
+    "source": "https://use.go.kr/usgne/user/bbs/BD_selectBbs.do?q_bbsDocNo=20250627093111839&q_bbsSn=1278"
+  },
+  {
+    "term": "아주라 마 우리가 어디 남인교",
+    "card": "Ajura é conhecido nos jogos de beisebol de Busan: a torcida pede que uma bola seja dada à criança. O grito local representa afeto e convivência; o marcador seguinte chama o interlocutor.",
+    "source": "https://www.busan.go.kr/news/totalnews01/view?dataNo=36564"
+  },
+  {
+    "term": "흑산도 홍어코",
+    "card": "Heuksando é conhecida pela raia frequentemente consumida fermentada. O sabor forte explica o exagero de desobstruir o corpo, sem justificar uma receita ou explicação médica inventada.",
+    "source": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=904&vcontsId=221391"
+  },
+  {
+    "term": "무등산 수박 크기",
+    "card": "A melancia de Mudeungsan é uma variedade local grande, de casca escura sem listras; há frutas de vinte quilos ou mais. A referência apoia o humor corporal sem resolver à força o verso anterior ambíguo.",
+    "source": "https://dh.aks.ac.kr/~gwangju/wiki/index.php/%EB%AC%B4%EB%93%B1%EC%82%B0%EC%88%98%EB%B0%95"
+  },
+  {
+    "term": "문산부터 마라도",
+    "card": "Munsan fica em Paju, no norte sul-coreano, e Marado ao sul de Jeju. O par sugere abrangência norte-sul e entendimento entre variedades; Munsan não é o extremo norte da península.",
+    "source": "https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500171&menuId=DOM_000001917005000000"
+  }
+],
+"outro-luv-in-skool":[
+  {
+    "term": "아직도 꿈인 것 같아 oh baby",
+    "card": "A forma de parecer conserva incerteza. O eu sente a situação como sonho, mas o texto não confirma que esteja dormindo ou que tudo tenha sido imaginado."
+  },
+  {
+    "term": "이미 넌 알고 있잖아 oh baby",
+    "card": "Já saber é tratado como algo compartilhado com o interlocutor. Essa estratégia aproxima quem escuta, sem registrar uma resposta real da pessoa amada."
+  },
+  {
+    "term": "커피를 마시고 눈을 떠봐도",
+    "card": "Mesmo tentar abrir os olhos não resolve a sensação de sono. Café e olhos abertos concretizam o esforço de despertar, enquanto a impressão de adormecer continua."
+  },
+  {
+    "term": "잠이 들 것만 같아 oh no no",
+    "card": "Adormecer aparece como impressão de algo prestes a acontecer. A construção é diferente de um relato direto no passado de que alguém dormiu."
+  },
+  {
+    "term": "그려보곤 했어 if I ruled the world",
+    "card": "Imaginar habitualmente introduz uma hipótese que ecoa o título de outra faixa do mesmo álbum. O estudo explica o eco textual, sem afirmar uma narrativa secreta comprovada entre músicas.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/o_rul8_2.html"
+  },
+  {
+    "term": "너를 다시 내 옆에 둘 것만 같아",
+    "card": "O desejo de recolocar a pessoa ao lado pertence à hipótese anterior. A palavra novamente sugere falta de proximidade, mas não comprova que um reencontro aconteceu."
+  },
+  {
+    "term": "이게 악몽이라면 날 어서 구해줘",
+    "card": "Se for pesadelo mantém uma condição. O pedido de resgate traduz aflição romântica sem transformar uma possibilidade poética em diagnóstico ou fato literal."
+  },
+  {
+    "term": "모든 게 꿈인 것 같아 oh baby",
+    "card": "O fim muda ainda parece sonho para tudo parece sonho. A impressão se amplia, e a música encerra sem resolver a espera ou confirmar a resposta da outra pessoa."
+  }
+],
 "jump":[
   {
     "term": "어릴 적 꿈꿔왔던 히어로",

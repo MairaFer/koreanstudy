@@ -1,3 +1,12 @@
+import {weOnSections,weOnVocabulary} from './we-on';
+import {introOrul82Sections,introOrul82Vocabulary} from './intro-orul82';
+import {skitRUHappyNowSections,skitRUHappyNowVocabulary} from './skit-r-u-happy-now';
+import {ifIRuledTheWorldSections,ifIRuledTheWorldVocabulary} from './if-i-ruled-the-world';
+import {coffeeSections,coffeeVocabulary} from './coffee';
+import {cypherPt1Sections,cypherPt1Vocabulary} from './cypher-pt1';
+import {attackOnBangtanSections,attackOnBangtanVocabulary} from './attack-on-bangtan';
+import {satooriRapSections,satooriRapVocabulary} from './satoori-rap';
+import {outroLuvInSkoolSections,outroLuvInSkoolVocabulary} from './outro-luv-in-skool';
 import {jumpSections,jumpVocabulary} from './jump';
 import {outroProposeSections,outroProposeVocabulary} from './outro-propose';
 import {cypherPt2Sections,cypherPt2Vocabulary} from './cypher-pt2';
@@ -142,6 +151,15 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'we-on',sections:weOnSections,vocabulary:weOnVocabulary},
+ {id:'intro-orul82',sections:introOrul82Sections,vocabulary:introOrul82Vocabulary},
+ {id:'skit-r-u-happy-now',sections:skitRUHappyNowSections,vocabulary:skitRUHappyNowVocabulary},
+ {id:'if-i-ruled-the-world',sections:ifIRuledTheWorldSections,vocabulary:ifIRuledTheWorldVocabulary},
+ {id:'coffee',sections:coffeeSections,vocabulary:coffeeVocabulary},
+ {id:'cypher-pt1',sections:cypherPt1Sections,vocabulary:cypherPt1Vocabulary},
+ {id:'attack-on-bangtan',sections:attackOnBangtanSections,vocabulary:attackOnBangtanVocabulary},
+ {id:'satoori-rap',sections:satooriRapSections,vocabulary:satooriRapVocabulary},
+ {id:'outro-luv-in-skool',sections:outroLuvInSkoolSections,vocabulary:outroLuvInSkoolVocabulary},
  {id:'jump',sections:jumpSections,vocabulary:jumpVocabulary},
  {id:'outro-propose',sections:outroProposeSections,vocabulary:outroProposeVocabulary},
  {id:'cypher-pt2',sections:cypherPt2Sections,vocabulary:cypherPt2Vocabulary},
