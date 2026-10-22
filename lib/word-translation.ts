@@ -1,3 +1,4 @@
+import {weAreBulletproofPt2Sections,weAreBulletproofPt2Vocabulary} from './we-are-bulletproof-pt2';
 import {intro2Cool4SkoolSections,intro2Cool4SkoolVocabulary} from './intro-2-cool-4-skool';
 import {skitExpectationSections,skitExpectationVocabulary} from './skit-expectation';
 import {interludeWingsSections,interludeWingsVocabulary} from './interlude-wings';
@@ -154,6 +155,7 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'we-are-bulletproof-pt2',sections:weAreBulletproofPt2Sections,vocabulary:weAreBulletproofPt2Vocabulary},
  {id:'intro-2-cool-4-skool',sections:intro2Cool4SkoolSections,vocabulary:intro2Cool4SkoolVocabulary},
  {id:'skit-expectation',sections:skitExpectationSections,vocabulary:skitExpectationVocabulary},
  {id:'interlude-wings',sections:interludeWingsSections,vocabulary:interludeWingsVocabulary},

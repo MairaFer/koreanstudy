@@ -3,6 +3,43 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"we-are-bulletproof-pt2":[
+  {
+    "term": "(What) 끝판대장",
+    "card": "A página oficial do álbum de estreia lista We Are Bulletproof Pt.2 como a faixa 2, com 3min45s. O chamado de chefão final usa uma imagem de jogos para anunciar confiança e oposição máxima, coerente com a entrada desafiadora do refrão.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/2_cool_4_school.html"
+  },
+  {
+    "term": "이름은 Jung Kook, 스케일은 전국",
+    "card": "O nome e a escala ocupam posições paralelas na frase. O som de Jung Kook se aproxima do final da palavra para país inteiro: a apresentação pessoal ganha um salto para alcance nacional. É um jogo de som e ambição, não uma mudança do significado literal do nome."
+  },
+  {
+    "term": "집도하며 잠을 참아가며",
+    "source": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=78391",
+    "card": "O objeto da operação está na linha anterior: os sonhos. O verbo cirúrgico transforma a criação em um trabalho preciso e intenso. Resistir ao sono e segurar a caneta completam a cena de elaboração; a imagem não descreve uma cirurgia real."
+  },
+  {
+    "term": "노래 못 해 랩퍼를 당한",
+    "card": "A voz acusa outros de receberem o papel de rapper porque não cantariam bem. A construção de sofrer ou receber algo imposto deixa esse papel parecer atribuído de fora, em contraste com a identidade construída pelo próprio trabalho. Trata-se da provocação do texto; ele não identifica pessoas para confirmar essa acusação."
+  },
+  {
+    "term": "나 보여줄게 칼을 갈아왔던 만큼",
+    "source": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62334",
+    "card": "A lâmina afiada representa preparação acumulada. A terminação de vir fazendo algo liga esse esforço passado ao momento presente, e a medida do trabalho vira medida do que o eu promete mostrar. O centro da leitura é a habilidade preparada para a apresentação."
+  },
+  {
+    "term": "Oh! 나만치 해봤다면 돌을 던져",
+    "card": "O desafio contém uma condição: só depois de ter feito tanto quanto o eu o outro poderia atirar a pedra. Ler o se impede que o verso vire uma ordem isolada; a imagem testa a legitimidade de quem critica e julga."
+  },
+  {
+    "term": "하하 힙부심뿐인 형들은",
+    "card": "O orgulho do gênero aparece como problema quando vira a única credencial para desqualificar alguém. A resposta vem logo depois: o que foi chamado de impossível será confrontado pela performance e pelo jogo de palavras. O verso encena uma disputa por reconhecimento no rap."
+  },
+  {
+    "term": "찍어 I'm possible 자 이제 됐니 boy",
+    "card": "O texto põe um ponto final na declaração impossível e passa para I’m possible, literalmente eu sou possível. A aproximação sonora de impossible com I’m possible ajuda a virar negação em afirmação. Não basta inserir um ponto dentro da palavra: o jogo também muda a separação, a maiúscula e o apóstrofo."
+  }
+],
 "intro-2-cool-4-skool":[
   {
     "term": "Bangtan",
