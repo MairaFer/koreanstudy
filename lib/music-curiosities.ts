@@ -3,6 +3,308 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"skit-on-the-start-line":[
+  {
+    "term": "연습생",
+    "card": "A palavra trainee abre e encerra o monólogo. Primeiro parece uma identidade impossível de definir; ao final, torna-se o nome de uma experiência que o eu decide lembrar."
+  },
+  {
+    "term": "그런 시기 과도기",
+    "card": "A fase de transição aparece por duas negativas: não pertencer a um lugar e não sentir que se está fazendo algo definido. A construção descreve a sensação da voz, sem definir a vida de todos os trainees."
+  },
+  {
+    "term": "친척들과 친구들의 언제 나올거냐고",
+    "card": "As perguntas dos próximos não têm resposta porque o próprio eu não sabe a data da estreia. A repetição transforma uma pergunta aparentemente simples em pressão."
+  },
+  {
+    "term": "내가 나가면 가요계를 정복해버리겠다",
+    "card": "Conquistar o meio musical aparece como pensamento confiante, logo contrastado com a bronca e a sensação de insignificância. Ler as linhas juntas mantém a oscilação emocional."
+  },
+  {
+    "term": "꼭 마치 내 앞에 푸르른 바다가 있다가도",
+    "card": "O mar azul abre possibilidades; o deserto árido traz desolação. A paisagem é uma imagem do movimento entre confiança e desânimo, não a indicação de uma viagem literal."
+  },
+  {
+    "term": "정말 그런 모래시계같은 기분에서",
+    "card": "A ampulheta liga areia, tempo e espera. A imagem permite aproximar o deserto dos três anos que passam, sem exigir uma interpretação única de cada detalhe."
+  },
+  {
+    "term": "네가 데뷔를 하더라도",
+    "card": "A linha enviada muda para você na condição sobre estrear e volta a mim na continuação. A análise preserva essa mudança de pronome e a sinaliza, em vez de apresentar uma correção como se fosse o original."
+  },
+  {
+    "term": "절대 잊지 않을 것이다",
+    "card": "A estreia não promete ausência de dificuldades: outros mares e desertos ainda virão. O que muda é a disposição de carregar a experiência anterior, que teria formado quem fala."
+  }
+],
+"seoul":[
+  {
+    "term": "이 도시의 harmony",
+    "card": "A página oficial de mono. lista seoul com produção de HONNE como a segunda faixa. Aqui o estudo acompanha a cidade como interlocutora, a partir da versão que você enviou.",
+    "source": "https://bts.ibighit.com/kor/discography/rm/detail/mono/"
+  },
+  {
+    "term": "넌 왜 soul과 발음 비슷한 걸까",
+    "card": "Seoul e soul são aproximados pelo som, e a pergunta seguinte traz alma para dentro da cidade. A semelhança sonora não significa que o nome coreano derive da palavra inglesa."
+  },
+  {
+    "term": "아니 아니 나는 내가 두려워",
+    "card": "O eu começa cansado da cidade e se corrige: o medo é de si mesmo. A mudança desloca o problema de um lugar externo para o vínculo e a identidade de quem fala."
+  },
+  {
+    "term": "사랑과 미움이 같은 말이면 I love you Seoul",
+    "card": "A condição sobre amor e ódio permite que os dois refrães coexistam. O verso não redefine as palavras no dicionário: expõe sentimentos incompatíveis que convivem no mesmo vínculo."
+  },
+  {
+    "term": "역한 듯 아닌 듯한 삶의 향과",
+    "card": "A vida tem um aroma que parece repulsivo e ao mesmo tempo não parece. A oscilação na descrição sensorial repete a ambivalência do refrão em escala cotidiana."
+  },
+  {
+    "term": "너무 많은 한을 품는 한강들과",
+    "card": "O som de han aproxima ressentimento e o nome do rio Han. O plural da paisagem é poético: não se precisa inventar vários rios geográficos para compreender a acumulação de dores."
+  },
+  {
+    "term": "청계천의 비린 널 사랑해",
+    "card": "Cheonggyecheon entra pelo cheiro, Seonyudo pela solidão e o taxista por um suspiro. Amar a cidade inclui características incômodas e vozes de outras pessoas."
+  },
+  {
+    "term": "어느 택시기사의 한숨까지도",
+    "card": "O suspiro completa a fala lembrada de um taxista e amplia a lista do que é amado. Mais adiante, leaving e living quase se encostam no som: partir da cidade e continuar vivendo-a permanecem em tensão."
+  }
+],
+"moonchild":[
+  {
+    "term": "우리에겐 누구보다 밤의 풍경이 필요해",
+    "card": "A terceira faixa de mono. aproxima noite e acolhimento. Precisar da paisagem noturna se opõe à abertura que não consegue oferecer a luz do sol. A imagem organiza um tipo diferente de luminosidade.",
+    "source": "https://bts.ibighit.com/kor/discography/rm/detail/mono/"
+  },
+  {
+    "term": "그 어느 누구도 아닌 너만이 날 위로해",
+    "card": "O consolo vem de uma presença singular. Mais tarde, a imagem se torna recíproca: o eu e o outro passam a ser luz um para o outro."
+  },
+  {
+    "term": "떠나도 절대 한 번도 떠나지지가 않아",
+    "card": "Partir não garante sentir-se livre. A repetição do verbo de ir embora distingue uma ação externa do vínculo que ainda continua."
+  },
+  {
+    "term": "생각하지 말란 생각조차 생각이잖아",
+    "card": "Pensar em não pensar mantém a própria atividade que tenta evitar. A frase dá forma a um paradoxo mental sem precisar resolvê-lo como conselho psicológico."
+  },
+  {
+    "term": "저유를 말허는 순간 자유는 없어",
+    "card": "A fala sobre liberdade esbarra no paradoxo de nomeá-la e não a ter. As grafias incomuns da linha são sinalizadas nas notas; o texto não é silenciosamente refeito."
+  },
+  {
+    "term": "알고 있니 저 가로등에도 가시가 많아",
+    "card": "A luz do poste ganha espinhos. A imagem permite aproximar o brilho visto à distância de dores que não são visíveis do mesmo modo para quem observa."
+  },
+  {
+    "term": "누구의 가시들이 모여 펼쳐진 장관을",
+    "card": "O espetáculo da noite é feito de pontas e dores reunidas. Assim, uma paisagem bela também pode ser cruel; a contradição prepara a possibilidade de alguém encontrar consolo nela."
+  },
+  {
+    "term": "우린 서로의 야경 서로의 달",
+    "card": "A lua deixa de pertencer apenas ao título: somos lua e paisagem uns dos outros. A repetição final amplia o apoio recíproco. Em inglês, tears e tear também aproximam lágrimas e despedaçar por grafia, com pronúncias distintas."
+  }
+],
+"badbye":[
+  {
+    "term": "날 산산 조각 내줘",
+    "card": "A quarta faixa de mono. é listada oficialmente com eAeon. O pedido coreano e as frases em inglês se repetem quase sem mudança: a insistência faz parte do efeito de dor suspensa.",
+    "source": "https://bts.ibighit.com/kor/discography/rm/detail/mono/"
+  },
+  {
+    "term": "산산 조각",
+    "card": "A imagem de fragmentos dá forma física à dor da separação. O título troca a promessa de um bom adeus por uma despedida ruim; o contraste entre matar e suavemente reforça a tensão da voz."
+  },
+  {
+    "term": "내줘",
+    "card": "O pedido termina em uma construção de fazer algo para quem fala. Depois dele, você e eu viram uma tentativa ruim e o eu chora. É uma cena poética de rompimento, sem necessidade de inferir um acontecimento biográfico literal."
+  }
+],
+"uhgood":[
+  {
+    "term": "가끔 난 내게 실망해 (내게 실망해)",
+    "card": "A quinta faixa de mono. aparece na página oficial com o título coreano. O título inglês se aproxima do som coreano, enquanto a letra desenvolve a ideia de sair do alinhamento entre ideal e realidade.",
+    "source": "https://bts.ibighit.com/kor/discography/rm/detail/mono/"
+  },
+  {
+    "term": "\"너 이것밖에 안돼?\" (너 이것밖에 안돼?)",
+    "card": "As aspas marcam uma voz que cobra mais desempenho. As exigências não são orientações ao estudante: o texto encena a dureza da relação do eu consigo mesmo."
+  },
+  {
+    "term": "어긋나는 건 너무 아픈 것",
+    "card": "Não coincidir é o centro da imagem: duas versões do eu parecem separadas por uma distância difícil de atravessar. O movimento desejado é chegar a si."
+  },
+  {
+    "term": "너무 멀고 먼 그 두 다리 건너 내게 닿고 싶어",
+    "card": "Duas pontes aparecem no texto recebido, ao lado do ideal e da realidade. A imagem é uma travessia figurada; a análise não troca a palavra por um lugar geográfico específico."
+  },
+  {
+    "term": "진짜 네게",
+    "card": "O texto enviado passa de chegar a mim para o verdadeiro você. A mudança é mantida, permitindo ler o diálogo com outra imagem de si, sem fingir que os pronomes são iguais."
+  },
+  {
+    "term": "살다보면 비를 받을 수도 있어",
+    "card": "As duas frases sobre receber chuva estão preservadas como enviadas. O estudo explica a possibilidade verbal sem completar ou substituir a letra por memória de outra versão."
+  },
+  {
+    "term": "저 사막에도 비가 내릴 수가 있어",
+    "card": "A chuva que pode cair até no deserto abre uma possibilidade dentro da imagem de secura. Não é uma previsão meteorológica: é parte da linguagem de continuar."
+  },
+  {
+    "term": "근데 미안 난 나를 포기할 수가 없어",
+    "card": "Não desistir de si responde à autocrítica da abertura. A imagem ideal continua inteira na cabeça, enquanto a realidade ainda exige travessia. O texto mantém essa tensão, sem resolver tudo num instante."
+  }
+],
+"everythingoes":[
+  {
+    "term": "지나가 언젠가 분명히 확실히",
+    "card": "Na página oficial de mono., a sexta faixa é listada com Nell e o título coreano de passar. O inglês everythingoes junta visualmente a ideia de tudo com o movimento de ir embora.",
+    "source": "https://bts.ibighit.com/kor/discography/rm/detail/mono/"
+  },
+  {
+    "term": "지나가",
+    "card": "A repetição não acrescenta novos fatos a cada volta: produz insistência, ritmo e uma tentativa de sustentar a certeza. O estudo mantém os oito ciclos enviados em cada bloco."
+  },
+  {
+    "term": "밤이 가고 아침이 오듯이",
+    "card": "Noite e manhã, primavera e verão, flor e fruto formam uma sequência de mudanças. A passagem da natureza prepara a fala sobre dor sem transformar cada ciclo em garantia sobre a vida de alguém."
+  },
+  {
+    "term": "모든 것은 아파야만 해",
+    "card": "A frase sobre tudo precisar doer é uma formulação enfática da voz. Ela é explicada dentro da poética da canção, sem recomendar sofrimento como obrigação ao estudante."
+  },
+  {
+    "term": "내 폐안에 가득 들어찬 따가운 공기가 모든 걸 말해",
+    "card": "O ar ganha uma sensação que arde e ocupa o corpo. Inspirar não apaga a dor: torna física a relação entre o mundo externo e o eu."
+  },
+  {
+    "term": "내가 좀 더 나은 어른이 될 수 있게",
+    "card": "O pedido de se tornar um adulto melhor desloca o foco de apagar o passado para continuar mudando. O verso apresenta um desejo, não uma comprovação de crescimento concluído."
+  },
+  {
+    "term": "힘내란 뿌연 말 대신",
+    "card": "O eu recusa palavras vagas de encorajamento e mentiras convincentes. O que oferece em seu lugar é um desejo de passagem, não uma promessa de que tudo se resolve imediatamente."
+  },
+  {
+    "term": "그저 이 모든 바람 바람처럼 지나가길",
+    "card": "Vento e desejo cabem na mesma palavra coreana. A repetição permite ouvir os dois sentidos antes da comparação com vento e do retorno do refrão; a chuva fecha a paisagem enviada."
+  }
+],
+"forever-rain":[
+  {
+    "term": "하루종일 비가 왔음 좋겠어.",
+    "card": "A faixa encerra a lista oficial de mono. Aqui o desejo de chuva abre uma paisagem em que tristeza e companhia podem coexistir, em vez de usar chuva apenas como sinal de infelicidade.",
+    "source": "https://bts.ibighit.com/kor/discography/rm/detail/mono/"
+  },
+  {
+    "term": "우산이 슬픈 얼굴 가려주니까",
+    "card": "O guarda-chuva protege o rosto do olhar alheio. A chuva também mantém as outras pessoas ocupadas: o anonimato se torna parte do alívio que a voz procura."
+  },
+  {
+    "term": "평소엔 내 삶도 내 랩도 너무 빠르니까",
+    "card": "Vida e rap aparecem juntos como rápidos demais. A repetição inglesa de slow funciona como forma e conteúdo: a voz pede outro ritmo para o próprio corpo e para a música."
+  },
+  {
+    "term": "비가 오면 조금은 나 친구가 있다는 기분이 들어",
+    "card": "A chuva passa de cenário a amiga que bate à janela. A personificação cria uma pergunta cotidiana sobre como o eu está, preparando a resposta sobre ser refém da vida."
+  },
+  {
+    "term": "난 여전히 삶의 인질",
+    "card": "Refém é uma metáfora de vínculo e limitação. A linha seguinte nega uma explicação simples para continuar vivendo e insiste que existe algo que o prende. Ler as duas juntas evita reduzir a fala a um único rótulo."
+  },
+  {
+    "term": "나도 너처럼 어딘가 두드릴수만 있다면",
+    "card": "O eu deseja agir como a chuva: tocar lugares e o mundo inteiro. A hipótese pergunta se, fazendo isso, alguém o encontraria e acolheria. O clima se torna modelo de contato."
+  },
+  {
+    "term": "너라도 내곁에 있어줘",
+    "card": "Pedir à chuva que fique ao lado transforma uma condição meteorológica em presença. Pelo menos você expressa um apoio mínimo desejado, sem afirmar que a solidão se resolve definitivamente."
+  },
+  {
+    "term": "영원따위 없는걸 알고선",
+    "card": "O pedido de chuva para sempre encontra a consciência de que eternidade não existe. A análise preserva esse final aberto do texto enviado, sem acrescentar um refrão ou uma conclusão ausente."
+  }
+],
+"outro-circle-room-cypher":[
+  {
+    "term": "Suga: 야 오랜만에 사이퍼 어때? 사이퍼",
+    "card": "A discografia oficial lista esta faixa como o encerramento de 2 Cool 4 Skool, na posição 7, com 5min21s. A roda alterna rap e conversa: os sete integrantes participam, e as reações fazem parte da cena tanto quanto os versos.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/2_cool_4_school.html"
+  },
+  {
+    "term": "RM: 야 500원 줄게 600원 남겨와라",
+    "card": "Pedir 600 won de troco depois de dar apenas 500 é uma exigência impossível. A piada apresenta uma interação absurda de colegas, não uma regra de dinheiro ou uma informação sobre preços."
+  },
+  {
+    "term": "나는 너를 치유하는 이가탄",
+    "card": "Igatan é uma marca de produto medicinal para gengivas. O nome entra na sequência sonora que passa por Satã e partes numeradas; a ideia de curar vira uma provocação rimada. A referência não é uma recomendação de tratamento.",
+    "source": "https://www.myunginph.co.kr/modules/bbs/bbsView.php?code=bbs_product&id=27"
+  },
+  {
+    "term": "너는 리본 돼지",
+    "card": "O porquinho com laço e Balrog aparecem em MapleStory; a Nexon apresenta Balrog entre os chefes do jogo. Ler a sequência como contraste entre uma criatura modesta e um chefe forte é plausível pelo contexto, mas não constitui confirmação da intenção dos autores.",
+    "source": "https://gi.maplestory.nexon.com/Guide/Contents/Boss"
+  },
+  {
+    "term": "아니면 폼페이",
+    "card": "Pompeia foi atingida pela erupção do Vesúvio em 79 d.C. O nome é seguido pela imagem de explosão: uma associação histórica transformada em hipérbole de rap, não um relato literal sobre o adversário.",
+    "source": "https://pompeiisites.org/en/pompeii-map/analysis/the-casts/"
+  },
+  {
+    "term": "뭐가 떨려 가서 김장하고 있어",
+    "card": "O nervosismo vira preparo de kimchi por semelhança sonora. Kimjang é a prática de preparar e compartilhar grandes quantidades de kimchi, tradicionalmente para o inverno. O trocadilho troca a tensão por uma tarefa doméstica; os sons são próximos, não idênticos.",
+    "source": "https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881"
+  },
+  {
+    "term": "우린 멋져부러 허벌나게",
+    "card": "J-Hope dá sabor de Jeolla à apresentação. O intensificador regional significa muito ou extremamente e amplia o elogio ao próprio estilo. O verso apresenta orgulho regional em chave de rap; não estabelece quem inventou historicamente o rap de toda a região.",
+    "source": "https://waks.aks.ac.kr/extdata/project/2021/AKS-2021-KDA-1250003/AKS-2021-KDA-1250003_TEXT/pdf/%EA%B0%80%EC%9D%B4%EB%93%9C%EB%B6%81_7%EA%B3%BC%EC%A0%95_5%EC%A3%BC%EC%B0%A8_%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9D%98%20%EB%B0%A9%EC%96%B8(231219).pdf"
+  },
+  {
+    "term": "But 최근 들어 따가 빠졌지 Yeah",
+    "card": "Jin brinca de tirar uma sílaba de um apelido depreciativo para chegar ao nome artístico. Mas a retirada deixa uma consoante tensa, enquanto o nome usa uma simples: o efeito é uma aproximação sonora, não uma equivalência ortográfica nem a história documentada da escolha do nome."
+  }
+],
+"i-like-it":[
+  {
+    "term": "니가 올리는 모든 사진마다",
+    "card": "A página oficial de 2 Cool 4 Skool lista a faixa como Like, na posição 6, com 3min51s. A letra enviada põe a separação no ambiente de fotos, curtidas e mensagens: as pequenas ações da tela tornam visível o conflito de quem tenta parecer tranquilo.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/2_cool_4_school.html"
+  },
+  {
+    "term": "좋아요 남발하는 처음 보는 저 남자",
+    "card": "O título coreano é uma expressão positiva que também nomeia a curtida. Mais adiante, a ideia de parecer bem ou bonito reaparece com a mesma base de bom. A canção aproxima o sinal positivo da tela e a aparência feliz da ex, enquanto o eu sente o contrário."
+  },
+  {
+    "term": "왜 싫어요 버튼은 없는데",
+    "card": "A falta de um botão de não gostei, como reclama a voz, expõe a diferença entre o que sente e o que consegue registrar com um clique. A observação pertence à cena da letra; o efeito principal é a ironia de demonstrar aprovação em meio ao ressentimento."
+  },
+  {
+    "term": "목까지 올라온 저주를 삼키고",
+    "card": "Engolir também pode significar conter palavras ou emoções. A maldição já chegou à garganta, mas é reprimida antes de sair. O clique positivo que vem em seguida torna a contradição concreta: o que aparece na tela não corresponde ao que o eu queria dizer.",
+    "source": "https://krdict.korean.go.kr/vie/dicSearch/SearchView?ParaWordNo=16747&nation=vie"
+  },
+  {
+    "term": "덕분에 추억 속으로 난 backspace",
+    "card": "Tag insere o novo namorado na foto; backspace sugere apagar ou recuar. A sequência usa palavras da tela para representar uma troca de posição: a outra pessoa aparece no presente da ex, e o eu é empurrado de volta às lembranças."
+  },
+  {
+    "term": "난 도깨비 감투 몰래 다가가",
+    "card": "O gorro do dokkaebi é um motivo de contos coreanos que torna invisível quem o usa. Na letra, a imagem se liga a acompanhar a vida da outra pessoa sem se mostrar. A referência folclórica ajuda a visualizar essa presença discreta, sem exigir uma invisibilidade literal.",
+    "source": "https://kmas.or.kr/webzine/article/2592"
+  },
+  {
+    "term": "그때마다 머릿속은 백팔번뇌",
+    "card": "A expressão das 108 aflições vem do budismo e também pode nomear tormentos mentais de modo geral. Aqui ela amplia o turbilhão de dúvidas e ciúmes provocado pela observação da ex. A força está na profusão de pensamentos, sem precisar fazer uma conta exata de 108 emoções na cena.",
+    "source": "https://encykorea.aks.ac.kr/Article/E0022432"
+  },
+  {
+    "term": "고민하며 좋아요를 누르지 말자",
+    "card": "A decisão de não curtir não encerra o conflito. Na ponte, o eu volta a dizer que vai deixar seu clique antes de sair, e o refrão insiste que quer aquele amor apesar de saber que acabou. O movimento de decidir e voltar atrás organiza a história."
+  }
+],
 "skit-circle-room-talk":[
   {
     "term": "Rap Monster: 대박이었다니까 그때는 그게",

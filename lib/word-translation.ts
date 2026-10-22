@@ -1,3 +1,12 @@
+import {skitOnTheStartLineSections,skitOnTheStartLineVocabulary} from './skit-on-the-start-line';
+import {seoulSections,seoulVocabulary} from './seoul';
+import {moonchildSections,moonchildVocabulary} from './moonchild';
+import {badbyeSections,badbyeVocabulary} from './badbye';
+import {uhgoodSections,uhgoodVocabulary} from './uhgood';
+import {everythingoesSections,everythingoesVocabulary} from './everythingoes';
+import {foreverRainSections,foreverRainVocabulary} from './forever-rain';
+import {outroCircleRoomCypherSections,outroCircleRoomCypherVocabulary} from './outro-circle-room-cypher';
+import {iLikeItSections,iLikeItVocabulary} from './i-like-it';
 import {skitCircleRoomTalkSections,skitCircleRoomTalkVocabulary} from './skit-circle-room-talk';
 import {weAreBulletproofPt2Sections,weAreBulletproofPt2Vocabulary} from './we-are-bulletproof-pt2';
 import {intro2Cool4SkoolSections,intro2Cool4SkoolVocabulary} from './intro-2-cool-4-skool';
@@ -156,6 +165,15 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'skit-on-the-start-line',sections:skitOnTheStartLineSections,vocabulary:skitOnTheStartLineVocabulary},
+ {id:'seoul',sections:seoulSections,vocabulary:seoulVocabulary},
+ {id:'moonchild',sections:moonchildSections,vocabulary:moonchildVocabulary},
+ {id:'badbye',sections:badbyeSections,vocabulary:badbyeVocabulary},
+ {id:'uhgood',sections:uhgoodSections,vocabulary:uhgoodVocabulary},
+ {id:'everythingoes',sections:everythingoesSections,vocabulary:everythingoesVocabulary},
+ {id:'forever-rain',sections:foreverRainSections,vocabulary:foreverRainVocabulary},
+ {id:'outro-circle-room-cypher',sections:outroCircleRoomCypherSections,vocabulary:outroCircleRoomCypherVocabulary},
+ {id:'i-like-it',sections:iLikeItSections,vocabulary:iLikeItVocabulary},
  {id:'skit-circle-room-talk',sections:skitCircleRoomTalkSections,vocabulary:skitCircleRoomTalkVocabulary},
  {id:'we-are-bulletproof-pt2',sections:weAreBulletproofPt2Sections,vocabulary:weAreBulletproofPt2Vocabulary},
  {id:'intro-2-cool-4-skool',sections:intro2Cool4SkoolSections,vocabulary:intro2Cool4SkoolVocabulary},
