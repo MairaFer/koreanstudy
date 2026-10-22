@@ -3,6 +3,42 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"intro-2-cool-4-skool":[
+  {
+    "term": "Bangtan",
+    "card": "A página oficial do álbum de estreia lista esta introdução como a faixa 1, com participação de DJ Friz e duração de 1min03s. O título usa números pelo som do inglês: 2 lembra too e 4 lembra for; Skool estiliza school. A grafia school do refrão enviado foi mantida.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/2_cool_4_school.html"
+  },
+  {
+    "term": "방탄소년단",
+    "card": "A soletração B-A-N-G-T-A-N prepara o nome que aparece na linha seguinte. A sequência funciona como apresentação e afirmação de identidade; o nome curto Bangtan corresponde à primeira parte do nome coreano completo, não à soletração de todas as suas sílabas."
+  },
+  {
+    "term": "10대",
+    "card": "A letra convoca faixas etárias, não enumera pessoas com dez e vinte anos exatos. A palavra adolescentes é natural no contexto, mas a faixa coreana começa aos dez: reconhecer essa diferença evita usar a tradução como definição matemática perfeita."
+  },
+  {
+    "term": "20대",
+    "card": "As duas faixas etárias ficam lado a lado, e a próxima linha diz que o grupo fala por elas. Ler as linhas juntas recupera a relação de representação que seria menos clara se cada fragmento fosse tratado como uma frase isolada."
+  },
+  {
+    "term": "대신해",
+    "card": "Representar alguém não significa apenas copiar sua fala. Nesta introdução, a proposta é contar experiências próprias que possam dialogar com outras pessoas da mesma geração. A apresentação oficial do álbum destaca histórias e emoções vividas pelos integrantes.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/2_cool_4_school.html"
+  },
+  {
+    "term": "쉽게",
+    "card": "A ideia de facilidade descreve a maneira de comunicar. O adjetivo recebe uma terminação adverbial, por isso a leitura é contar de modo simples ou acessível. Isso não transforma os temas da juventude em problemas necessariamente simples."
+  },
+  {
+    "term": "우리",
+    "card": "A voz usa nosso para apresentar uma história coletiva. A letra combina essa proximidade com os chamados em inglês, criando uma introdução de identidade e atitude. O slogan do título deve ser lido nesse contexto, sem virar uma instrução literal para abandonar a escola."
+  },
+  {
+    "term": "얘길해",
+    "card": "O refrão inteiro aparece duas vezes na versão enviada. A repetição reforça a mesma proposta de falar por uma geração; a contração informal dá fluidez à fala cantada. As duas ocorrências foram preservadas no estudo, com o cartão apresentado uma única vez."
+  }
+],
 "skit-expectation":[
   {
     "term": "일등 할 수 있겠냐",
