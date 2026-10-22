@@ -1,4 +1,5 @@
 "use client";
+import {skitExpectationSections,skitExpectationVocabulary} from '@/lib/skit-expectation';
 import {interludeWingsSections,interludeWingsVocabulary} from '@/lib/interlude-wings';
 import {weOnSections,weOnVocabulary} from '@/lib/we-on';
 import {introOrul82Sections,introOrul82Vocabulary} from '@/lib/intro-orul82';
@@ -188,6 +189,7 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'skit-expectation':{sections:skitExpectationSections,vocabulary:skitExpectationVocabulary,summary:"Uma conversa sobre o próximo álbum mistura vontade de chegar ao primeiro lugar, medo de se decepcionar e provocações entre amigos. Leia as falas sem romanização, acompanhe as hesitações e descubra como o assunto muda de música para renda. Falantes não identificados no texto enviado não recebem atribuições inventadas.",heading:"Skit: Expectation · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'interlude-wings':{sections:interludeWingsSections,vocabulary:interludeWingsVocabulary,summary:"A lembrança de uma pena que viraria asa se transforma em decisão de seguir o próprio caminho. Acompanhe ordens citadas, pronomes contraídos, concessões e desejos de voo nesta versão Interlude, preservando o final curto da letra enviada.",heading:"Interlude: Wings · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'we-on':{sections:weOnSections,vocabulary:weOnVocabulary,summary:"A voz responde a julgamentos sobre nome, aparência e legitimidade com a promessa de mostrar seu trabalho. Explore os jogos de som, as imagens de café e faixas e a diferença entre singularidade e posição em ranking.",heading:"We On · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'intro-orul82':{sections:introOrul82Sections,vocabulary:introOrul82Vocabulary,summary:"Uma fala sobre aproveitar a vida vira pergunta ao pai, crítica ao que foi normalizado e convite a lembrar do próprio sonho. Aprenda perguntas encaixadas, respeito linguístico e mudanças de estado sem perder o fio da reflexão.",heading:"Intro: O!RUL8,2? · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},

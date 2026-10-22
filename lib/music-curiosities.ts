@@ -3,6 +3,44 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"skit-expectation":[
+  {
+    "term": "일등 할 수 있겠냐",
+    "card": "A página oficial de The Most Beautiful Moment in Life pt.1 identifica SKIT : Expectation! como a faixa 4, com 2min27s. O formato registra uma conversa: hesitações, interrupções e frases incompletas fazem parte da leitura, sem exigir uma voz identificada em cada linha.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/hwayangyeonhwa-pt1.html"
+  },
+  {
+    "term": "아니 뭐 일등 그런거 떠나서 앨범 자체는 좋아 난 앨범 자체는",
+    "card": "A conversa separa dois critérios: gostar do álbum e alcançar primeiro lugar. A satisfação artística não desaparece só porque os participantes também desejam reconhecimento; a mudança de foco cria o conflito que abre o skit."
+  },
+  {
+    "term": "솔직히 기대하지 마 라고 해서 기대가안되는 게아니잖아요",
+    "card": "Receber a ordem de não criar expectativa não elimina automaticamente a esperança. A resposta contesta essa possibilidade por meio de dupla negação: entenda a frase inteira antes de interpretar cada negação separadamente."
+  },
+  {
+    "term": "내가 내가 내가 드는 걱정은 그거지 약간 진짜 기대를 했는데 안 될까봐 나는 그게 인제",
+    "card": "O receio aqui é específico: esperar muito e depois não dar certo. A construção de medo ajuda a distinguir insegurança sobre um resultado de uma previsão de que ele certamente será ruim."
+  },
+  {
+    "term": "아그성득 뱀이 그때도 얘기했잖아요",
+    "card": "A forma pouco clara do nome pode se referir a Son Sung-deuk, diretor de performance ligado ao BTS e entrevistado pela GQ Korea. Essa associação é uma interpretação contextual, não uma correção confirmada da fala; a grafia recebida permanece no texto.",
+    "source": "https://www.gqkorea.co.kr/2022/01/07/방탄소년단bts의-숨은-조력자-손성득과-피독을-만났/"
+  },
+  {
+    "term": "너 방탄의 펠레구나 (하하하) 야 아예 폭삭 망할 거라고 생각해라",
+    "card": "A comparação com Pelé brinca com a fama popular de seus palpites darem errado: os colegas mandam imaginar o fracasso para ver se acontece o contrário. A reportagem do ge mostra que essa reputação exagera os erros; a referência não afirma uma maldição real nem compara talento musical com talento no futebol.",
+    "source": "https://ge.globo.com/pele/noticia/2022/12/30/entre-polemicas-e-criticas-pele-acertou-mais-do-que-errou-em-previsoes-nas-copas-do-mundo.ghtml"
+  },
+  {
+    "term": "야 나 싸비 썼어",
+    "card": "O termo de estúdio para refrão orienta a leitura musical desta fala. Os créditos editoriais de Outro: Love Is Not Over listam Jung Kook e Slow Rabbit na produção e Jung Kook, Slow Rabbit, Pdogg e Jin na autoria: há contexto para a conversa sobre escrever o outro, sem concluir autoria exclusiva ou atribuir esta fala a alguém pelo crédito.",
+    "source": "https://www.genie.co.kr/detail/albumInfo?axnm=80569990"
+  },
+  {
+    "term": "돈 십원도 못 버는데 무슨 소리야",
+    "card": "O exagero de não ganhar nem dez won participa da provocação entre os integrantes. O estudo traduz o humor e explica o vocabulário de renda, sem deduzir valores reais de ganhos ou regras fiscais atuais a partir da conversa."
+  }
+],
 "interlude-wings":[
   {
     "term": "어릴 적의 날 기억해",
