@@ -3,6 +3,145 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"miss-right":[
+  {
+    "term": "널 놓친다면 miss, right?",
+    "card": "O título de tratamento para a garota certa se aproxima do verbo inglês sentir falta ou perder. A hipótese coreana de deixar alguém escapar dá apoio ao trocadilho. Logo depois, beijo e certo continuam a cadeia sonora: a graça depende da alternância entre idiomas e funções da mesma palavra."
+  },
+  {
+    "term": "너 같은 여자를 이상형이라 하나 봐",
+    "card": "O tipo ideal é contrastado com a expressão anterior de tipos comuns. O retrato enumera aparência, inteligência, cotidiano e caráter, mas a fala final abandona a lista de requisitos: a razão decisiva é ser simplesmente aquela pessoa. Essa mudança impede reduzir a música apenas ao catálogo de qualidades."
+  },
+  {
+    "term": "한 편의 숲 같은 너",
+    "card": "Cabelo em movimento, quadris que gorjeiam e a floresta formam uma cena de natureza dentro da cidade. A descrição mistura sentidos e personifica partes do corpo. A tradução deve permitir essa estranheza, em vez de transformar cada imagem em uma observação literal sobre o ambiente."
+  },
+  {
+    "term": "너의 한숨이 되고 싶어",
+    "card": "Neste refrão, a vontade de conhecer o dia de alguém leva ao desejo de ser seu suspiro. A palavra pode ter outros usos, mas aqui não vem com o verbo dormir. O contexto favorece proximidade com os sentimentos e com o ritmo da vida da pessoa."
+  },
+  {
+    "term": "내 겨울바다, 널 걷고 싶다",
+    "card": "O coração que sente um frio agudo prepara o mar de inverno. A pessoa amada vira paisagem pela qual o eu quer caminhar, unindo desejo de aproximação e sensação física. Não é necessário inventar uma praia ou viagem real para acompanhar a metáfora."
+  },
+  {
+    "term": "질투심과 시기보단됨됨이를 알아주는",
+    "card": "A falta de espaço na transcrição não elimina a palavra caráter. A análise separa as unidades na explicação e mantém a linha como foi enviada. Nesse trecho, segurar a mão e reconhecer o caráter são valorizados acima de bens e comparação com os outros."
+  },
+  {
+    "term": "우리 커플 신발 사이에 어린이 운동화",
+    "card": "O futuro imaginado aparece numa imagem pequena e concreta: tênis infantil entre os sapatos do casal. É uma projeção de convivência e família, dentro do ato de desenhar o futuro. A linha não confirma a existência de um filho nem relata um acontecimento já concluído."
+  },
+  {
+    "term": "같이 걸어볼까 함께 걸어볼까",
+    "card": "O convite para caminhar é expresso como possibilidade compartilhada. O bom tempo se combina ao encaixe entre as pessoas, e os pronomes trocam de lugar nos versos vizinhos. O encerramento mantém a aproximação como convite, não como passeio que já aconteceu."
+  }
+],
+"intro-skool-luv-affair":[
+  {
+    "term": "첫 만남 첫 문자 첫 통화",
+    "card": "A página oficial apresenta esta faixa como abertura de SKOOL LUV AFFAIR, álbum cujo tema é o amor juvenil. Na letra enviada, as interrupções faladas encenam uma discussão sobre como expressar esse amor. Cada nova entrada traz outra postura, e o final reúne as vozes numa assinatura coletiva.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/skool_luv_affair.html"
+  },
+  {
+    "term": "그런 게 행복일 순 없겠지만 꼭 주고파",
+    "card": "O diálogo brinca de ouvir a última expressão como algo parecido com só espera, antes de corrigir para quero dar. A forma de desejo é importante: oferecer casa e carro é uma vontade do eu, mesmo depois de admitir que esses bens talvez não sejam felicidade. A brincadeira muda o estilo da apresentação."
+  },
+  {
+    "term": "내 인생 맨 앞에 두고파",
+    "card": "Colocar no início e querer dar aparecem com sons próximos, mas são verbos diferentes. A comparação com letra maiúscula põe a pessoa no começo da vida como no começo de uma frase. Ler a sequência evita confundir o primeiro desejo de posicionar com a oferta da linha final."
+  },
+  {
+    "term": "시적 허용을 넘어섰어",
+    "card": "A licença poética aparece como comentário sobre a própria dificuldade de descrever. O eu diz que nem o exagero parece suficiente. A fala sobre fome, na mesma seção, integra essa intensidade figurada; o termo clínico usado na letra não autoriza diagnosticar uma pessoa real."
+  },
+  {
+    "term": "우리는 콩깍지 씌었지, 알콩달콩",
+    "card": "A expressão de vagens sobre os olhos representa enxergar alguém através da idealização amorosa. O som doce da palavra seguinte combina com o futuro radiante e colorido. Esse otimismo é uma das posturas encenadas, que o diálogo seguinte contrasta com uma visão menos sempre esperançosa."
+  },
+  {
+    "term": "난 이렇게까지 사랑해봤어 넌 어떠니",
+    "card": "A terceira voz afirma experiência e pergunta pela experiência do ouvinte. O trecho inglês declara uma insistência intensa, enquanto o coreano conta frustração e julgamento alheio. A análise descreve a postura dramatizada do narrador; não transforma insistência diante de recusa numa recomendação ao estudante."
+  },
+  {
+    "term": "상처받지 않은 것처럼",
+    "card": "Como se não tivesse sido ferido é uma comparação que atravessa o verso anterior. A dor não desaparece do relato: sorrir e chorar já foram contrapostos. O final apresenta disposição para amar com intensidade mesmo conhecendo a vulnerabilidade, sem garantir que ninguém se machucou."
+  },
+  {
+    "term": "사랑할 때는 좀 화끈하게",
+    "card": "O refrão aproxima o calor do amor e o ardor da música. As duas palavras descrevem maneiras de agir e também se encaixam pelo som. Depois, o pronome coletivo reforça que as diferentes apresentações desembocam numa declaração de estilo do grupo."
+  }
+],
+"does-that-make-sense":[
+  {
+    "term": "그게 말이 돼? 너 그게 말이 돼?",
+    "card": "A expressão central pergunta se algo faz sentido ou é plausível. Aqui, o eu reage ao amor que parece mudar com facilidade. A página oficial coloca a canção como encerramento de DARK & WILD, com um título inglês que também pergunta se isso faz sentido.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/dark_and_wild.html"
+  },
+  {
+    "term": "아무도 모르게 괜찮아 보이게",
+    "card": "A construção de parecer bem separa aparência e estado interior. Logo depois, a expressão da outra pessoa faz o eu chorar. A justaposição torna visível a distância entre a tentativa de esconder o sofrimento e a intensidade da reação, em vez de afirmar que tudo estava bem."
+  },
+  {
+    "term": "니가 죽을 만큼 밉지만 지금도 니 생각이 나는 걸",
+    "card": "A oposição entre odiar e continuar pensando na pessoa concentra o conflito. A intensidade de morrer é uma hipérbole afetiva, e o mas mantém os sentimentos juntos. A tradução precisa preservar o contraste: a saudade não apaga a raiva, nem a raiva impede a lembrança."
+  },
+  {
+    "term": "내 숨이 터질듯한 너의 그 눈빛",
+    "card": "Olhar e dedos são lembrados de perto, como fragmentos físicos de uma relação que parecia eterna. Depois, o texto passa à frieza da fala e da expressão. Essa passagem muda o valor das lembranças sem precisar narrar um acontecimento que não foi contado."
+  },
+  {
+    "term": "그땐 영원할 것만 같았었는데",
+    "card": "Parecia que seria eterno é uma lembrança de expectativa, não uma afirmação de eternidade real. O final de contraste prepara a mudança posterior. Reconhecer a diferença entre parecer, esperar e acontecer ajuda a traduzir o tempo verbal sem transformar uma impressão passada em fato."
+  },
+  {
+    "term": "우리 관계는 계속 제자리를 돌고 도는데",
+    "card": "Dar voltas no mesmo lugar representa estagnação. A duplicação do verbo imita o movimento circular, e o tempo que passa no verso anterior não traz avanço à relação. O recurso combina com o desejo inglês de rebobinar: o eu tenta voltar, mas o texto não confirma uma reconciliação."
+  },
+  {
+    "term": "니 마음 안에 더 이상 내 자리가 없단 걸",
+    "card": "O lugar no coração traduz pertencimento em espaço. A frase completa aquilo que o narrador diz saber, por trás do próprio silêncio. É uma conclusão da voz da canção sobre o vínculo; a análise deve manter esse ponto de vista, sem inventar uma fala da outra pessoa."
+  },
+  {
+    "term": "니가 죽을 만큼 밉지만 지금도 니 생각이 나는걸",
+    "card": "O final repete a lembrança persistente e depois volta ao pedido de retorno. A grafia junta no segundo pedido é preservada em relação à forma separada anterior. Essa diferença de espaço não cria outro sentimento ou verbo: o conflito continua e o final permanece aberto."
+  }
+],
+"intro-serendipity":[
+  {
+    "term": "이 모든건 우연이 아냐",
+    "card": "A página oficial de LOVE YOURSELF 承 'Her' apresenta Intro : Serendipity como a primeira faixa. Este estudo segue a introdução e a divisão de versos enviada, com seus vocais de resposta. A edição completa tem sua própria página, pois inclui outros trechos e repetições.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/love_yourself-her.html"
+  },
+  {
+    "term": "그냥 그냥 나의 느낌으로",
+    "card": "A convicção de que não foi acaso nasce do sentimento do eu. A palavra simplesmente repetida dá delicadeza à afirmação, enquanto o mundo diferente de ontem apresenta a transformação vivida por quem ama. O texto pode soar certo de si sem oferecer uma prova externa sobre destino."
+  },
+  {
+    "term": "네가 날 불렀을 때 나는 너의 꽃으로",
+    "card": "Ser chamado e se tornar flor aproxima reconhecimento e florescimento. A imagem atravessa duas linhas: a primeira deixa o tornar-se em aberto e a seguinte desenvolve o florescer intenso. Ler a frase completa evita tratar a quebra do verso como fim de toda a construção."
+  },
+  {
+    "term": "설레는 만큼 많이 두려워 운명이 우릴 자꾸 질투해서",
+    "card": "A medida do encantamento se torna também a medida do medo. O destino ganha ciúme como se fosse uma pessoa, e a vulnerabilidade é compartilhada no verso seguinte. Assim, a imagem cósmica não elimina o receio de perder aquilo que parece precioso."
+  },
+  {
+    "term": "You know, I know 너는 나, 나는 너",
+    "card": "O arranjo troca as posições de você e eu e deixa o verbo ser implícito. O espelhamento sugere afinidade e uma sensação de reconhecimento mútuo. A imagem é afetiva; não diz que duas pessoas perderam literalmente sua identidade ou são a mesma pessoa."
+  },
+  {
+    "term": "넌 내 푸른 곰팡이",
+    "card": "A combinação de cor e mofo causa estranhamento, mas o próximo verso apresenta a pessoa como salvadora, anjo e mundo. O contexto dá valor positivo à imagem. A cor coreana pode abranger azul e verde; não é necessário atribuir ao verso uma explicação médica literal para entender a ideia de resgate."
+  },
+  {
+    "term": "난 네 삼색 고양이 널 만나러 온",
+    "card": "O gato tricolor é apresentado como quem veio ao encontro. O final de finalidade liga encontrar e vir, completando uma pequena cena de aproximação. A metáfora dialoga com as imagens incomuns da pessoa amada, mas não exige inventar uma biografia ou um animal real."
+  },
+  {
+    "term": "우주가 처음 생겨났을 때부터 모든 건 정해진 거였어",
+    "card": "O ponto inicial é ampliado até o surgimento do universo: a felicidade parece anterior ao próprio encontro. O pedido inglês para deixar amar continua, apesar dessa certeza de destino. A justaposição entre o que parecia decidido e o que ainda se pede dá movimento ao encerramento."
+  }
+],
 "look-here":[
   {
     "term": "여기 봐 도망가지 마",

@@ -5,7 +5,7 @@ const overrides=JSON.parse(fs.readFileSync('locales/en-overrides.json','utf8'));
 let js=ts.transpileModule(fs.readFileSync('lib/localization.ts','utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText;
 js=js.replace(/^import .*$/gm,'').replace(/export /g,'');
 const {translate}=new Function('english','overrides',js+';return {translate};')(english,overrides);
-const ko=/[\u1100-\u11ff\u3130-\u318f\uac00-\ud7af]+/gu;
+const ko=/[\u1100-\u11ff\u3134-\u318f\uac00-\ud7af]+/gu;
 for(const text of source){
  assert.ok(Object.hasOwn(english,text)||Object.hasOwn(overrides,text),'Missing English: '+text);
  const value=translate(text,'eng');assert.ok(typeof value==='string'&&value.trim(),'Empty English: '+text);
@@ -36,5 +36,5 @@ assert.ok(music.includes('localize={false}'));
 const layout=fs.readFileSync('app/layout.tsx','utf8');assert.ok(layout.includes('<LocaleProvider>'));
 const app=fs.readFileSync('app/page.tsx','utf8');assert.ok(app.includes('<LanguageSwitcher/>'));
 const locale=fs.readFileSync('components/localization.tsx','utf8');assert.ok(locale.includes('localStorage.setItem'));assert.ok(locale.includes('document.documentElement.lang'));
-const words=fs.readFileSync('lib/word-translation.ts','utf8');assert.equal((words.match(/sections:\w+Sections/g)||[]).length,130);
-console.log('PASS: '+source.length+' English entries covered; Korean preserved, PT unchanged, dynamic labels, all 130 studies, language controls and English-line reveal behavior.');
+const words=fs.readFileSync('lib/word-translation.ts','utf8');assert.equal((words.match(/sections:\w+Sections/g)||[]).length,134);
+console.log('PASS: '+source.length+' English entries covered; Korean preserved, PT unchanged, dynamic labels, all 134 studies, language controls and English-line reveal behavior.');

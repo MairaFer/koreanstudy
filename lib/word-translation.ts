@@ -1,3 +1,7 @@
+import {missRightSections,missRightVocabulary} from './miss-right';
+import {introSkoolLuvAffairSections,introSkoolLuvAffairVocabulary} from './intro-skool-luv-affair';
+import {doesThatMakeSenseSections,doesThatMakeSenseVocabulary} from './does-that-make-sense';
+import {introSerendipitySections,introSerendipityVocabulary} from './intro-serendipity';
 import {lookHereSections,lookHereVocabulary} from './look-here';
 import {secondGradeSections,secondGradeVocabulary} from './2nd-grade';
 import {blanketKickSections,blanketKickVocabulary} from './blanket-kick';
@@ -130,6 +134,10 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'miss-right',sections:missRightSections,vocabulary:missRightVocabulary},
+ {id:'intro-skool-luv-affair',sections:introSkoolLuvAffairSections,vocabulary:introSkoolLuvAffairVocabulary},
+ {id:'does-that-make-sense',sections:doesThatMakeSenseSections,vocabulary:doesThatMakeSenseVocabulary},
+ {id:'intro-serendipity',sections:introSerendipitySections,vocabulary:introSerendipityVocabulary},
  {id:'look-here',sections:lookHereSections,vocabulary:lookHereVocabulary},
  {id:'2nd-grade',sections:secondGradeSections,vocabulary:secondGradeVocabulary},
  {id:'blanket-kick',sections:blanketKickSections,vocabulary:blanketKickVocabulary},
