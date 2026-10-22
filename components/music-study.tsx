@@ -1,4 +1,6 @@
 "use client";
+import {jumpSections,jumpVocabulary} from '@/lib/jump';
+import {outroProposeSections,outroProposeVocabulary} from '@/lib/outro-propose';
 import {cypherPt2Sections,cypherPt2Vocabulary} from '@/lib/cypher-pt2';
 import {spineBreakerSections,spineBreakerVocabulary} from '@/lib/spine-breaker';
 import {justOneDaySections,justOneDayVocabulary} from '@/lib/just-one-day';
@@ -176,6 +178,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'jump':{sections:jumpSections,vocabulary:jumpVocabulary,summary:"O salto começa como brincadeira de herói, atravessa a saudade da infância e encontra outro lugar: o palco. Acompanhe convites, concessões, lembranças e imagens de voo para entender como sete aspirantes transformam o sonho antigo em ação coletiva no presente.",heading:"Jump · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
+ 'outro-propose':{sections:outroProposeSections,vocabulary:outroProposeVocabulary,summary:"Uma lembrança do primeiro olhar vira desejo de entrega e promessa de cantar para alguém. Explore como a letra curta distingue querer, oferecer e pedir; como só e tudo intensificam o afeto; e como companhia pode ser desejada mesmo à distância ou diante de um amanhã difícil.",heading:"Outro: Propose · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'cypher-pt2':{sections:cypherPt2Sections,vocabulary:cypherPt2Vocabulary,summary:"Três vozes disputam espaço pelo rap: crédito coletivo, superioridade técnica e crítica à falta de originalidade. Explore comparações, referências, rimas entre idiomas e palavras que mudam de sentido quando as sílabas são separadas. A tradução preserva a agressividade do cypher e distingue os jogos demonstráveis das alusões incertas.",heading:"BTS Cypher Pt. 2: Triptych · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'spine-breaker':{sections:spineBreakerSections,vocabulary:spineBreakerVocabulary,summary:"Uma roupa pode prometer prestígio e, ao mesmo tempo, pesar nas costas de quem a paga. Acompanhe a acusação, a defesa baseada em gosto e pressão dos colegas e a voz que admite participar da contradição. O estudo explica as imagens do corpo, as expressões coloquiais e as condições que constroem essa discussão.",heading:"Spine Breaker · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'just-one-day':{sections:justOneDaySections,vocabulary:justOneDayVocabulary,summary:"Um dia parece pouco, mas o eu imagina nele toda a proximidade que a rotina não permite. Entre desejos, arrependimento e cenas de vinte e quatro horas a dois, acompanhe as condições verbais, as imagens de imersão e a diferença entre encontro sonhado e acontecimento confirmado.",heading:"Just One Day · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},

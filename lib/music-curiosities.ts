@@ -3,6 +3,77 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"jump":[
+  {
+    "term": "어릴 적 꿈꿔왔던 히어로",
+    "card": "A página oficial de SKOOL LUV AFFAIR lista Jump como a faixa nove. A letra liga o herói da infância ao artista que encontra no palco uma nova forma de saltar. Essa leitura acompanha imagens repetidas no texto; não exige identificar um desenho específico que a letra não nomeia.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/skool_luv_affair.html"
+  },
+  {
+    "term": "(Let's jump!) 뛰어보자고",
+    "card": "O verbo pode significar correr ou saltar, mas a repetição de jump seleciona o salto. Acrescentar experimentar e um convite coletivo produz a ideia de vamos tentar, em vez de apenas descrever alguém pulando. A mistura de idiomas ajuda o aprendiz a perceber como o contexto decide o significado de um verbo."
+  },
+  {
+    "term": "넌 어른이 되어가지만 I wanna rewind",
+    "card": "Tornar-se adulto aparece como processo em andamento, enquanto rebobinar expressa o desejo de regressar. Depois, a memória de querer ser adulto quando criança inverte essa vontade. A tensão entre as duas direções do tempo prepara uma saída no presente: dar outra forma ao sonho, em vez de confirmar que a infância voltou literalmente."
+  },
+  {
+    "term": "누가 나를 막아도",
+    "card": "Mesmo que alguém impeça, a decisão de seguir continua. A mesma estrutura reaparece ao imaginar viver só um dia e, em Propose, ficar longe ou enfrentar um amanhã difícil. A concessão reconhece um obstáculo sem deixar que ele anule a afirmação ou o pedido seguinte."
+  },
+  {
+    "term": "내 인생이 바뀐 2007년",
+    "card": "O ano e os sete anos seguintes situam o relato dentro da canção. O estudo mantém essa perspectiva temporal: não atualiza a contagem como se a voz estivesse falando hoje, nem inventa um evento biográfico que o verso não especifica. O foco do trecho é como lembrar do eu anterior desperta outro eu."
+  },
+  {
+    "term": "모두 다 놀라게 jump like Jordan",
+    "card": "Jordan, salto e o grito de bola formam uma alusão ao basquete. A própria Jordan Brand descreve Michael Jordan voando pelo ar em uma competição de enterradas. Essa referência ajuda a ler o salto como gesto de impacto e habilidade; a letra não escolhe uma jogada ou partida específica para ser reconstruída.",
+    "source": "https://about.nike.com/en/newsroom/releases/jordan-brand-basketball-design"
+  },
+  {
+    "term": "순수했던 꿈들로 날 수놓아",
+    "card": "Bordar transforma sonhos em material que compõe o eu. A imagem vem depois da folha branca e do encontro com o próprio passado: recordar deixa de ser apenas querer voltar e passa a produzir uma identidade. A tradução preserva o bordado como metáfora, sem convertê-lo numa atividade manual literal."
+  },
+  {
+    "term": "트램폴린 대신 내가 뛰어야 하는",
+    "card": "A frase deixa o lugar em suspense até revelar o palco na linha seguinte. Trocar o trampolim pelo palco reformula a fantasia do herói: o impulso da infância continua, mas o espaço de agir mudou. Os sete construindo o som tornam essa passagem coletiva, além de individual."
+  }
+],
+"outro-propose":[
+  {
+    "term": "조금 어색했었지만",
+    "card": "A página oficial de SKOOL LUV AFFAIR lista Outro: Propose como a décima e última faixa. O início contrapõe um passado acanhado ao desejo de dar tudo agora. O estudo lê o título como proposta ou declaração amorosa; a letra não narra um pedido de casamento aceito como acontecimento confirmado.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/skool_luv_affair.html"
+  },
+  {
+    "term": "이젠 다 주고 싶어",
+    "card": "Quero dar expressa desejo; vou cantar para você, mais adiante, oferece uma ação. A distinção entre querer, oferecer e pedir organiza uma letra curta sem transformar tudo em fato já realizado. As traduções mantêm essas diferenças de intenção, em vez de uniformizar os versos no passado."
+  },
+  {
+    "term": "때론 울고 웃어주는",
+    "card": "Chorar e sorrir formam um par de emoções que inclui momentos difíceis e bons. A terminação de fazer algo pelo outro acrescenta reciprocidade afetiva à imagem. A descrição continua na pessoa que é única para o eu; por isso, ler a linha isolada deixa a relação sintática incompleta."
+  },
+  {
+    "term": "단발에 너무 예쁜 교복",
+    "card": "Cabelo curto e uniforme dão detalhes concretos à lembrança do primeiro olhar. O contexto seleciona o sentido de corte de cabelo para uma palavra que pode ter outros usos. A análise explica a imagem sem identificar uma pessoa real nem tratar o retrato lírico como informação biográfica confirmada."
+  },
+  {
+    "term": "그 모습만 생각나",
+    "card": "A partícula que significa só limita o conteúdo da lembrança. Mais tarde, ela limita a pessoa que importa ao eu, enquanto tudo amplia a importância atribuída a essa pessoa. Ler esses pequenos marcadores mostra como exclusividade e intensidade são construídas dentro das frases."
+  },
+  {
+    "term": "나는 리듬이 되고 노래가 되어",
+    "card": "A voz não oferece apenas uma canção: imagina tornar-se ritmo e música. O verbo de tornar-se dá forma a essa metáfora e continua no compromisso de cantar para alguém. É uma maneira de apresentar o próprio afeto como algo que pode ser ouvido e compartilhado."
+  },
+  {
+    "term": "내가 멀리 있어도",
+    "card": "Estar longe é uma condição, não uma afirmação de abandono. Mesmo nessa possibilidade, o pedido é permanecer ao lado: a letra permite proximidade afetiva apesar de distância física. O pedido seguinte sobre um amanhã difícil repete a ideia de apoio que persiste sob uma dificuldade."
+  },
+  {
+    "term": "내 손 잡아줘",
+    "card": "Segurar a mão concretiza o pedido de companhia. A forma de pedido informal difere da oferta de cantar para você: uma pede que o outro aja, a outra anuncia o que o eu fará. A letra termina repetindo o desejo de entrega, sem registrar a resposta da pessoa a esses pedidos."
+  }
+],
 "cypher-pt2":[
   {
     "term": "모든 스타일과 흐름은 다 방탄 때문에",
