@@ -3,6 +3,42 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"interlude-wings":[
+  {
+    "term": "어릴 적의 날 기억해",
+    "card": "A página oficial de WINGS lista Interlude: Wings como a faixa quinze, com 2 minutos e 23 segundos. A apresentação do álbum usa a imagem de jovens que tentam voar pela primeira vez. A memória da infância abre esse percurso dentro da letra.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/wings.html"
+  },
+  {
+    "term": "이 작은 깃털이 날개가 될 것이고",
+    "card": "A pena pequena ainda não é a asa pronta. A crença infantil imagina transformação e possibilidade de voo; as terminações voltadas ao futuro mantêm a diferença entre desejar um caminho e já tê-lo concluído."
+  },
+  {
+    "term": "가지 말라는 길을 가고",
+    "card": "Não vá aparece dentro da descrição do caminho, como uma ordem citada. A ação principal do eu é ir. Identificar esses dois níveis evita inverter a leitura e concluir que o narrador esteja proibindo o ouvinte de caminhar."
+  },
+  {
+    "term": "난 내가 하기 싫은 일로",
+    "card": "O verso seguinte completa que o eu não quer ter sucesso fazendo o que detesta. O conflito é entre escolha pessoal e um modelo de sucesso imposto, não uma afirmação de que alcançar um objetivo dispensa esforço ou dificuldade."
+  },
+  {
+    "term": "난 날 밀어",
+    "card": "Uma pessoa ocupa duas funções: eu como tópico e a mim como objeto. A forma curta de a mim não significa dia nem asa aqui. Impulsionar a si mesmo reúne decisão e movimento no campo das imagens de voo."
+  },
+  {
+    "term": "난 날 믿어 내 등이 아픈 건",
+    "card": "As costas doem porque asas estariam nascendo. Essa é a explicação poética que o eu dá ao crescimento: o texto transforma dor em passagem para outra possibilidade. A imagem não estabelece uma causa médica para dores nas costas."
+  },
+  {
+    "term": "날 널 믿어 지금은 미약할지언정",
+    "card": "Mesmo que a força atual seja pequena, a voz espera um grande salto no resultado. A concessão admite fragilidade sem anular confiança. A sequência inicial de pronomes é mantida como enviada; não se troca silenciosamente uma palavra para tornar o verso mais regular."
+  },
+  {
+    "term": "붉게 물든 날개를 힘껏",
+    "card": "O verso deixa o verbo de abrir as asas para a continuação em inglês. Este estudo termina no final curto enviado da Interlude. A página oficial de You Never Walk Alone lista separadamente Outro: Wings, com duração maior; a ponte dessa versão não é acrescentada aqui.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/you_never_walk_alone.html"
+  }
+],
 "we-on":[
   {
     "term": "런치란다와 랩몬",

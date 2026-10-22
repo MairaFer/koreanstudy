@@ -1,3 +1,4 @@
+import {interludeWingsSections,interludeWingsVocabulary} from './interlude-wings';
 import {weOnSections,weOnVocabulary} from './we-on';
 import {introOrul82Sections,introOrul82Vocabulary} from './intro-orul82';
 import {skitRUHappyNowSections,skitRUHappyNowVocabulary} from './skit-r-u-happy-now';
@@ -151,6 +152,7 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'interlude-wings',sections:interludeWingsSections,vocabulary:interludeWingsVocabulary},
  {id:'we-on',sections:weOnSections,vocabulary:weOnVocabulary},
  {id:'intro-orul82',sections:introOrul82Sections,vocabulary:introOrul82Vocabulary},
  {id:'skit-r-u-happy-now',sections:skitRUHappyNowSections,vocabulary:skitRUHappyNowVocabulary},

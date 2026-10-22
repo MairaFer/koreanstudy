@@ -1,4 +1,5 @@
 "use client";
+import {interludeWingsSections,interludeWingsVocabulary} from '@/lib/interlude-wings';
 import {weOnSections,weOnVocabulary} from '@/lib/we-on';
 import {introOrul82Sections,introOrul82Vocabulary} from '@/lib/intro-orul82';
 import {skitRUHappyNowSections,skitRUHappyNowVocabulary} from '@/lib/skit-r-u-happy-now';
@@ -187,6 +188,7 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'interlude-wings':{sections:interludeWingsSections,vocabulary:interludeWingsVocabulary,summary:"A lembrança de uma pena que viraria asa se transforma em decisão de seguir o próprio caminho. Acompanhe ordens citadas, pronomes contraídos, concessões e desejos de voo nesta versão Interlude, preservando o final curto da letra enviada.",heading:"Interlude: Wings · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'we-on':{sections:weOnSections,vocabulary:weOnVocabulary,summary:"A voz responde a julgamentos sobre nome, aparência e legitimidade com a promessa de mostrar seu trabalho. Explore os jogos de som, as imagens de café e faixas e a diferença entre singularidade e posição em ranking.",heading:"We On · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'intro-orul82':{sections:introOrul82Sections,vocabulary:introOrul82Vocabulary,summary:"Uma fala sobre aproveitar a vida vira pergunta ao pai, crítica ao que foi normalizado e convite a lembrar do próprio sonho. Aprenda perguntas encaixadas, respeito linguístico e mudanças de estado sem perder o fio da reflexão.",heading:"Intro: O!RUL8,2? · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'skit-r-u-happy-now':{sections:skitRUHappyNowSections,vocabulary:skitRUHappyNowVocabulary,summary:"No carro, sono, banheiro, coreografia e composição se misturam. Acompanhe a fala informal com os nomes e as interrupções recebidos e veja como a conversa deixa dificuldade e felicidade coexistirem.",heading:"Skit: R U Happy Now? · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
