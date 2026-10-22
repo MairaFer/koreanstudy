@@ -3,6 +3,43 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"skit-circle-room-talk":[
+  {
+    "term": "Rap Monster: 대박이었다니까 그때는 그게",
+    "card": "A página oficial de 2 Cool 4 Skool lista este skit como a faixa 3, com 2min11s. O sinal, a conversa sobre sonhos e a chegada do professor constroem uma cena escolar: as falas têm humor de encenação e não precisam ser tomadas como registro de um dia real de aula.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/2_cool_4_school.html"
+  },
+  {
+    "term": "Rap Monster: 아니 그래가지고 그거 듣고 이제 딱 시작했다니까요 제가 랩을 말 그대로 Fly 했다는 거 아니예요",
+    "card": "O nome da música Fly também significa voar em inglês. Depois de dizer que começou a fazer rap ao ouvi-la, o falante brinca que voou. A transcrição mantém a exclamação 2006; o lançamento original em Swan Songs aparece datado de 2005 no catálogo editorial, sem que isso explique sozinho a lembrança da cena.",
+    "source": "https://music.apple.com/us/album/swan-songs/1610095199"
+  },
+  {
+    "term": "J-Hope: 시원하게 한번 째봅시다",
+    "card": "O verbo coloquial nesta proposta significa faltar à aula. A forma de vamos tentar acrescenta uma proposta polida ao conteúdo de transgressão, e a palavra associada a alívio reforça o tom descontraído. É fala de personagens na cena, não uma instrução de estudo ao usuário."
+  },
+  {
+    "term": "Jimin: 아이! 당연하죠! 혹시 여기서 무용을 꿈 꿔 본 사람은 없나?",
+    "source": "https://www.archives.go.kr/next/newsearch/thesaurusSearchDetail.do?match=1&thesaurusId=92989&thesaurusWord=%EB%AC%B4%EC%9A%A9",
+    "card": "Dança pode aparecer tanto com a palavra cotidiana para dançar quanto com a palavra usada para dança como arte ou área de estudo. A pergunta de Jimin afunila o assunto para um sonho ligado a essa área; a distinção é de uso e contexto, não uma regra de que uma palavra seja sempre profissional e a outra nunca seja."
+  },
+  {
+    "term": "Rap Monster: 방금, 방금 전적 들었냐 방금",
+    "card": "A pergunta recebe uma pausa, depois uma negativa coletiva e a brincadeira sobre um segundo de silêncio. A fala recebida usa uma grafia diferente da palavra silêncio que aparece mais adiante. O estudo conserva essa diferença e explica a leitura contextual, em vez de apresentar uma correção como se estivesse no texto original."
+  },
+  {
+    "term": "V: 입이 아파서...",
+    "card": "A expectativa de uma grande explicação para parar de tocar saxofone acaba numa resposta muito concreta: a boca doía. Os colegas repetem a causa, exageram a importância do motivo e trocam a dor física por dor no coração. O humor está nessa sequência de reações."
+  },
+  {
+    "term": "Jin: 나야 뭐 그냥 우리 아빠처럼 어? 7시에 출근하고 저녁 6시에 퇴근해서 딱 마누라가 차려주는 밥 먹고",
+    "card": "O sonho descrito é uma rotina previsível de trabalho e vida doméstica. A resposta dos outros contrasta esse conforto com o discurso do hip-hop. É um desejo narrado na conversa; a cena não transforma a esposa cozinhar em obrigação geral nem prova os planos familiares reais do artista."
+  },
+  {
+    "term": "Teacher: 이놈 새끼들 수업 안 들어 뭐하노 (어우 시끄러 시끄러) 힙합동아리, 진짜 없애뿌든가 해야겠네",
+    "card": "A entrada do professor interrompe a resposta de Jungkook. A bronca usa formas regionais e insultos; os integrantes passam rapidamente para promessas polidas e uma confirmação formal. Essa mudança de registro encerra a cena e deixa o sonho de Jungkook sem resposta completa."
+  }
+],
 "we-are-bulletproof-pt2":[
   {
     "term": "(What) 끝판대장",
