@@ -3,6 +3,77 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"just-one-day":[
+  {
+    "term": "하루만 내게 시간이 있다면",
+    "card": "Só um dia é um limite pequeno que concentra um desejo enorme. A condição de ter tempo abre a fantasia, e o refrão repete a possibilidade de estar junto e dar as mãos. A página oficial de SKOOL LUV AFFAIR lista Just One Day como a quinta faixa.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/skool_luv_affair.html"
+  },
+  {
+    "term": "목선과 흘러내린 잔머리",
+    "card": "A palavra para os cabelos finos pode ter outro sentido em contextos de astúcia. Aqui, prender o cabelo e a linha do pescoço fixam a leitura física. O exemplo mostra por que uma tradução de vocabulário precisa considerar os versos vizinhos, em vez de escolher sempre a mesma equivalência."
+  },
+  {
+    "term": "잠겨서 난 수영하고파",
+    "card": "Olhos profundos, voz e luz do sol recebem imagens de imersão ao longo da canção. O eu transforma proximidade em mergulho e nado. A repetição dessas imagens une a descrição sensorial ao desejo de conhecer a pessoa, que depois aparece como floresta desconhecida."
+  },
+  {
+    "term": "너란 작품에 대해 감상을 해",
+    "card": "O verbo de apreciar uma obra se liga à afirmação de que a existência da pessoa é arte. A pessoa vira obra e paisagem no olhar do narrador. A sequência termina dizendo que ele passa a noite imaginando, o que enquadra esse retrato como parte da fantasia."
+  },
+  {
+    "term": "알아 내 꿈 때문에 널 더 바라보지 못해서",
+    "card": "Sonho não cumpre sempre a mesma função na música. Aqui, a aspiração do eu compete pelo tempo que poderia dar ao vínculo. Pouco depois, aceitar até um dia dentro de um sonho aponta à fantasia. Distinguir esses usos ajuda a acompanhar o conflito entre ambição, realidade e desejo."
+  },
+  {
+    "term": "그래 나팔꽃이 필",
+    "card": "A flor é a glória-da-manhã. O dicionário do Instituto Nacional da Língua Coreana exemplifica sua abertura de manhã e o fechamento ao longo do dia. A letra usa florescer e murchar para delimitar poeticamente um encontro curto; não determina um horário exato nem relata o encontro como concluído.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=38927"
+  },
+  {
+    "term": "너에게 난 그랬음 좋겠다면 이기적일까",
+    "card": "A pergunta de egoísmo depende da linha anterior sobre ser esquecido. O eu considera desejar que a outra pessoa o esqueça facilmente, mas logo admite mentir ao dizer que age só por ela. Esse vaivém impede ler o trecho como um afastamento sereno e já resolvido."
+  },
+  {
+    "term": "너와 내가 함께 하고 있다면, let's go time",
+    "card": "O roteiro de manhã, brunch, sol e declaração nasce dentro de uma condição. Por isso, as ações podem ser traduzidas como o que ele faria se tivesse as vinte e quatro horas. O retorno do pedido no fim mantém o dia como desejado; a letra não oferece uma confirmação de que ele aconteceu."
+  }
+],
+"tomorrow":[
+  {
+    "term": "같은 날, 같은 달",
+    "card": "A abertura apresenta tempo repetido e um futuro que assusta, antes da resposta de encorajamento. A página oficial de SKOOL LUV AFFAIR lista Tomorrow como a sexta faixa. Ler esse movimento inteiro evita tomar as perguntas desanimadas de um verso como conclusão definitiva da canção.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/skool_luv_affair.html"
+  },
+  {
+    "term": "매일매일이 Ctrl+C, Ctrl+V 반복되네",
+    "card": "Copiar e colar dão à rotina a aparência de dias idênticos. A imagem não descreve uma tarefa real no computador: transforma o gesto de repetir em linguagem de tecnologia. Mais tarde, pausa e reprodução voltarão a usar esse campo de imagens para oferecer outra relação com o tempo."
+  },
+  {
+    "term": "우리가 그토록 기다린 내일도 어느새",
+    "card": "O amanhã desejado muda de nome quando vira hoje e depois ontem. O texto põe o futuro atrás das costas para mostrar a velocidade dessa passagem. Essa sequência prepara a pergunta sobre como viver o dia, que o final responde com a possibilidade de retomar o movimento."
+  },
+  {
+    "term": "삶은 살아지는 게 아니라 살아내는 것,",
+    "card": "As formas parecidas mudam a relação com viver: deixar a vida acontecer é contraposto a atravessá-la, enfrentando-a. O final que acrescenta a ideia de conseguir realizar a ação dá peso a esse esforço. Em seguida, o som aproxima viver e desaparecer, sem tornar as palavras sinônimas."
+  },
+  {
+    "term": "가장 어두우니까",
+    "card": "A imagem de uma madrugada muito escura antes do sol serve ao consolo: a dificuldade presente não precisa ser o fim. É linguagem poética de esperança, não uma lei sobre a luminosidade real da madrugada. A análise mantém a função da frase sem transformá-la em explicação astronômica."
+  },
+  {
+    "term": "널 절대로 잊지 마",
+    "card": "O você do futuro recebe a tarefa de lembrar do você de agora. O objeto atravessa a quebra do verso anterior, e a mesma pessoa aparece em dois momentos. A memória do esforço presente ganha valor mesmo antes de algum sucesso ser narrado."
+  },
+  {
+    "term": "쉬어가는 잠시 동안의 일시 정지",
+    "card": "A canção diferencia parar de vez de pausar por um tempo. A explicação de descansar no caminho retoma o consolo anterior e muda o valor de parecer estar no mesmo lugar. O descanso cabe dentro da continuidade; o texto não diz que a pessoa só tem valor quando produz sem parar."
+  },
+  {
+    "term": "재생해 모두 보란 듯이",
+    "card": "O polegar erguido e o verbo dar play reúnem gesto de incentivo e imagem de mídia. Depois dos dias copiados, a pessoa é convidada a retomar a própria vida como reprodução. O recurso conclui a mudança de perspectiva: repetir sem sentido e continuar após uma pausa não são tratados da mesma maneira."
+  }
+],
 "skit-soulmate":[
   {
     "term": "저 빨간불을 의식하지 말라고",

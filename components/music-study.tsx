@@ -1,4 +1,6 @@
 "use client";
+import {justOneDaySections,justOneDayVocabulary} from '@/lib/just-one-day';
+import {tomorrowSections,tomorrowVocabulary} from '@/lib/tomorrow';
 import {skitSoulmateSections,skitSoulmateVocabulary} from '@/lib/skit-soulmate';
 import {whereYouFromSections,whereYouFromVocabulary} from '@/lib/where-you-from';
 import {missRightSections,missRightVocabulary} from '@/lib/miss-right';
@@ -172,6 +174,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'just-one-day':{sections:justOneDaySections,vocabulary:justOneDayVocabulary,summary:"Um dia parece pouco, mas o eu imagina nele toda a proximidade que a rotina não permite. Entre desejos, arrependimento e cenas de vinte e quatro horas a dois, acompanhe as condições verbais, as imagens de imersão e a diferença entre encontro sonhado e acontecimento confirmado.",heading:"Just One Day · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
+ 'tomorrow':{sections:tomorrowSections,vocabulary:tomorrowVocabulary,summary:"Dias parecem cópias, o futuro vira passado e o progresso não aparece. A canção atravessa essa frustração até propor outra leitura: descansar pode ser uma pausa, não o fim. Explore perguntas, concessões, jogos com viver e desaparecer e as imagens de copiar, pausar e dar play.",heading:"Tomorrow · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'skit-soulmate':{sections:skitSoulmateSections,vocabulary:skitSoulmateVocabulary,summary:"O grupo procura um assunto para o skit, brinca com o tipo ideal e recebe uma visita no meio da gravação. A própria conversa vira a cena. Explore pedidos, perguntas, níveis de fala e hesitações, com risos e trechos incompletos preservados sem palavras inventadas.",heading:"Skit: Soulmate · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'where-you-from':{sections:whereYouFromSections,vocabulary:whereYouFromVocabulary,summary:"Duas maneiras regionais de falar se encontram numa cantada cheia de humor, rivalidade e curiosidade. As notas aproximam formas de Gyeongsang e Jeolla do coreano padrão, explicam sons e trocadilhos e distinguem a bravata dos narradores de convites neutros do cotidiano.",heading:"Where Did You Come From? · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'miss-right':{sections:missRightSections,vocabulary:missRightVocabulary,summary:"Um retrato de atração mistura mente, corpo, paisagem e caráter até desembocar numa razão simples: a pessoa é ela mesma. Explore o trocadilho do título, o desejo de conhecer o cotidiano, as imagens de futuro e o convite para caminhar juntos.",heading:"Miss Right · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},

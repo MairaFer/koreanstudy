@@ -1,3 +1,5 @@
+import {justOneDaySections,justOneDayVocabulary} from './just-one-day';
+import {tomorrowSections,tomorrowVocabulary} from './tomorrow';
 import {skitSoulmateSections,skitSoulmateVocabulary} from './skit-soulmate';
 import {whereYouFromSections,whereYouFromVocabulary} from './where-you-from';
 import {missRightSections,missRightVocabulary} from './miss-right';
@@ -136,6 +138,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'just-one-day',sections:justOneDaySections,vocabulary:justOneDayVocabulary},
+ {id:'tomorrow',sections:tomorrowSections,vocabulary:tomorrowVocabulary},
  {id:'skit-soulmate',sections:skitSoulmateSections,vocabulary:skitSoulmateVocabulary},
  {id:'where-you-from',sections:whereYouFromSections,vocabulary:whereYouFromVocabulary},
  {id:'miss-right',sections:missRightSections,vocabulary:missRightVocabulary},
