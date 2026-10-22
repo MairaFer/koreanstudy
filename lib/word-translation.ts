@@ -1,3 +1,5 @@
+import {cypherPt2Sections,cypherPt2Vocabulary} from './cypher-pt2';
+import {spineBreakerSections,spineBreakerVocabulary} from './spine-breaker';
 import {justOneDaySections,justOneDayVocabulary} from './just-one-day';
 import {tomorrowSections,tomorrowVocabulary} from './tomorrow';
 import {skitSoulmateSections,skitSoulmateVocabulary} from './skit-soulmate';
@@ -138,6 +140,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'cypher-pt2',sections:cypherPt2Sections,vocabulary:cypherPt2Vocabulary},
+ {id:'spine-breaker',sections:spineBreakerSections,vocabulary:spineBreakerVocabulary},
  {id:'just-one-day',sections:justOneDaySections,vocabulary:justOneDayVocabulary},
  {id:'tomorrow',sections:tomorrowSections,vocabulary:tomorrowVocabulary},
  {id:'skit-soulmate',sections:skitSoulmateSections,vocabulary:skitSoulmateVocabulary},

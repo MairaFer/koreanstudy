@@ -3,6 +3,79 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"cypher-pt2":[
+  {
+    "term": "모든 스타일과 흐름은 다 방탄 때문에",
+    "card": "A página oficial de SKOOL LUV AFFAIR lista este cypher como a faixa sete. A chamada concede crédito aos três rappers e logo apresenta o grupo como sete lobos. Triptych significa tríptico, obra em três partes: o título oferece uma chave para a sequência das três vozes, que dividem a afirmação de identidade artística.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/skool_luv_affair.html"
+  },
+  {
+    "term": "내가 다이서라면 임마 난 다이스 다 있어",
+    "card": "Dicer, dice e a expressão coreana para ter tudo se aproximam pelo som. Em seguida, nice vira nicer e a comparação entre Pride e Chrysler termina em priceless. A superioridade é construída tanto no significado quanto na capacidade de atravessar idiomas e rearranjar sons. Traduzir só o insulto apagaria o mecanismo da rima."
+  },
+  {
+    "term": "난 흰수염 너넨 그냥 긴수염,",
+    "card": "A página oficial de One Piece identifica Edward Newgate como Barba Branca. A letra parte desse nome e muda uma consoante para produzir barba comprida; depois reduz o rival a um peixe de bigodes. A alusão dá prestígio ao eu e a troca mínima de som retira prestígio do outro, sem exigir reconstruir toda a história da obra.",
+    "source": "https://one-piece.com/character/edward_newgate/index.html"
+  },
+  {
+    "term": "여긴 왕국, 나는 킹 너는 덤",
+    "card": "Reino fornece o sentido, enquanto king e a palavra coreana para extra ou brinde fornecem as duas partes sonoras de kingdom. O rival fica com a parte que significa acessório dispensável, e o eu fica com rei. A divisão da palavra inglesa funciona ao mesmo tempo como montagem sonora e hierarquia entre personagens."
+  },
+  {
+    "term": "왜냐하면 넌 실 없어",
+    "card": "A sequência começa com tecido e falta de fio, passa pela costura e termina numa pipa sem linha. Ao juntar ou separar sílabas, os mesmos sons evocam falta de substância, pôr em prática e fragilidade. A tradução mostra os sentidos que competem; as separações especiais da letra não devem virar modelos de escrita neutra para uma conversa."
+  },
+  {
+    "term": "넌 태생부터 겁나 모태",
+    "card": "Fé prepara o sentido de algo que vem do nascimento ou do ventre materno, mas a pronúncia aproxima essa forma de não saber fazer. O efeito mistura vocabulário religioso e ataque à habilidade. A nota mantém o sentido escrito e o eco sonoro separados; o verso não fornece uma informação biográfica verificável sobre um rival."
+  },
+  {
+    "term": "내가 뜰 때면 지니까",
+    "card": "O sol e a lua permitem que nascer e se pôr também signifiquem despontar na fama e perder uma disputa. É o contexto que ativa os sentidos simultâneos: uma leitura só astronômica perderia a competição, e uma leitura só competitiva perderia a imagem que sustenta o jogo."
+  },
+  {
+    "term": "추어 같은 인생 너희 랩은 아나바다",
+    "source": "https://www.kecla.org/uploads/prog/attach/18153520220701igakf03511yrfqw.pdf",
+    "card": "O rótulo de amador atravessa duas linhas: a primeira termina com o início da palavra, que também soa como talvez. Depois, a sigla de economizar, partilhar, trocar e reutilizar é deslocada para acusar flows reaproveitados. As ações seguintes de copiar por ditado e escrever de novo completam a crítica à falta de criação própria."
+  }
+],
+"spine-breaker":[
+  {
+    "term": "수십짜리 신발에 또 수백짜리 패딩",
+    "card": "A página oficial de SKOOL LUV AFFAIR lista Spine Breaker como a faixa oito. O início transforma sapatos, casaco e relógio em uma escala de pertencimento. A crítica acompanha tanto a exibição de status quanto o custo que fica para os pais; não depende de atribuir uma marca específica a toda peça citada.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/skool_luv_affair.html"
+  },
+  {
+    "term": "니가 바로 등골브레이커",
+    "card": "A palavra do título combina coluna ou costas com o empréstimo breaker. A imagem é a dos pais curvados pelo peso de sustentar exigências de consumo. O refrão usa um rótulo duro, mas a segunda voz o devolve a quem critica; acompanhar quem fala evita tratar todas as acusações como uma única voz concordante."
+  },
+  {
+    "term": "교육은 산으로 가고 학생도 산으로 가",
+    "card": "Ir para a montanha pode descrever literalmente um destino, mas também significa sair do rumo esperado. Repetir a mesma direção para educação e alunos sobrepõe o desvio do ensino à imagem dos jovens vestidos com casacos. O jogo não exige afirmar que cada aluno da cena realmente fez uma caminhada."
+  },
+  {
+    "term": "가득 찬 패딩 마냥 욕심이 계속 차",
+    "card": "O enchimento do casaco dá forma à cobiça que vai enchendo. Logo depois, a coluna dos pais se curva; no pré-refrão, o aperto passa para o coração de quem veste a peça. O mesmo objeto une volume, peso e sufocamento para questionar a promessa de bem-estar trazida pela compra."
+  },
+  {
+    "term": "속 빈 강정뿐인 말들을 왜 계속해",
+    "card": "A expressão compara algo sem conteúdo a um doce oco por dentro. O Portal de Cultura Tradicional coreano explica seu uso para aparência vistosa sem substância. Aqui, a voz que se defende acusa os conselhos alheios de serem vazios: o alvo da expressão são as falas, não uma descrição culinária literal da roupa.",
+    "source": "https://www.kculture.or.kr/brd/board/640/L/menu/735?bbIdx=11576&brdType=R"
+  },
+  {
+    "term": "(And I say) 은따 되기 싫음 살 수밖에",
+    "card": "A defesa não diz apenas que a roupa é bonita: ela admite até o contrário e insiste que precisa comprá-la para não ser isolada. A construção de não ter alternativa dá forma à pressão dos colegas. Isso acrescenta uma causa social ao consumo sem apagar o peso imposto aos pais na outra parte da música."
+  },
+  {
+    "term": "너도 dirty clothes 나도 dirty clothes",
+    "card": "Você também e eu também incluem a própria voz no problema. Essa mudança interrompe uma divisão fácil entre quem julga e quem compra: o prazer de vestir e se sentir maior pode ser compartilhado. A conclusão ainda pergunta pelos sentimentos dos pais e entrega ao interlocutor a decisão."
+  },
+  {
+    "term": "체해, 후회해",
+    "card": "Barriga cheia funciona como conforto excessivo, e a rima entre indigestão e arrependimento mostra uma consequência. A metáfora retorna ao corpo, como a coluna curvada e o coração apertado. A canção compreende o desejo de se vestir e, ao mesmo tempo, questiona excluir os pais do cálculo desse desejo."
+  }
+],
 "just-one-day":[
   {
     "term": "하루만 내게 시간이 있다면",
