@@ -3,6 +3,77 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"skit-soulmate":[
+  {
+    "term": "저 빨간불을 의식하지 말라고",
+    "card": "A luz de gravação vira assunto da própria gravação. O grupo tenta soar natural, mas falar sobre o sinal vermelho evidencia essa tentativa. A página oficial de SKOOL LUV AFFAIR apresenta Skit: Soulmate como a terceira faixa; este estudo segue as falas e interrupções da transcrição enviada.",
+    "source": "https://bts.ibighit.com/eng/discography/detail/skool_luv_affair.html"
+  },
+  {
+    "term": "형도 형도 의식해요, 막 자는척 하고(크헑)",
+    "card": "Fingir dormir é um exemplo concreto da tensão entre naturalidade e atuação. A construção de fingimento não confirma que alguém dormiu. A reação vocal entre parênteses também é preservada como som, em vez de virar uma palavra com significado inventado."
+  },
+  {
+    "term": "우리모두 이상형에 대해서 해보자",
+    "card": "O tema proposto é o tipo ideal, mas a tentativa de organizar a conversa logo vira provocação entre os participantes. O convite conjunto e a pergunta polida coexistem com respostas muito informais. Essa mistura mostra proximidade entre os falantes e ajuda a estudar níveis de fala em contexto."
+  },
+  {
+    "term": "아 방탄 다섯명으로 활동하겠습니다",
+    "card": "O anúncio formal de atuar como cinco integrantes funciona como piada dentro da sequência de gritos e provocações. Não é informação de mudança real na formação. A transcrição seguinte fica interrompida: manter a hesitação evita inventar uma ameaça ou frase completa que não está fornecida."
+  },
+  {
+    "term": "안녕하세요!!",
+    "card": "A chegada de alguém altera a conversa: a saudação é polida, enquanto a pergunta que vem depois usa um final informal. A transcrição chama o visitante de chefe, mas não fornece aqui uma identificação nominal. A análise acompanha os registros sem atribuir todas as falas a pessoas por suposição."
+  },
+  {
+    "term": "네?",
+    "card": "Esta pequena resposta pode pedir que a pessoa repita ou esclareça o que disse. Traduzir automaticamente como sim apagaria a sequência em que a pergunta é feita de novo. O turno anterior e o seguinte ajudam a decidir o sentido, mostrando que uma palavra curta pode cumprir funções diferentes."
+  },
+  {
+    "term": "이거 지금 스킷 삼으라고",
+    "card": "A busca de assunto termina no reconhecimento de que a própria conversa pode ser usada como skit. O verbo de tomar algo como esclarece a virada: a cena que parecia interromper a gravação passa a ser o material dela. A pergunta inicial sobre o que fazer encontra uma resposta dentro do diálogo."
+  },
+  {
+    "term": "한마디만 해주시고 가세요!",
+    "card": "O pedido final limita a participação a um comentário e usa formas respeitosas. Em seguida, outra fala começa a corrigir algo e fica aberta. Preservar esse final interrompido mantém o caráter conversacional do material; completar a frase daria uma precisão que a transcrição não permite."
+  }
+],
+"where-you-from":[
+  {
+    "term": "가시나야 니는 어데서 왔노",
+    "card": "A canção alterna formas associadas a Gyeongsang e Jeolla. Dialetos têm sistemas próprios, não são simplesmente coreano errado; também há diferenças dentro de cada região. As equivalências padrão nas notas servem como ponte de leitura, enquanto a grafia enviada mantém a identidade das vozes.",
+    "source": "https://www.korean.go.kr/nkview/nklife/1998_4/8-1.html"
+  },
+  {
+    "term": "사라다같이 쌔그랍게 생기가꼬 쪼매 반반하네",
+    "card": "A palavra de gosto azedo é deslocada para uma aparência atraente, junto da comparação com salada. A estranheza faz parte da cantada. Um quadro de dialetos da MBC apresenta essa forma com o sentido de ser azedo; a leitura estética vem do contexto da letra, não dessa definição isolada.",
+    "source": "https://voda.donga.com/view/3/all/39/4766614/1"
+  },
+  {
+    "term": "밥 뭇나? 까대기 치는 거 아이다",
+    "card": "Perguntar se alguém comeu cria uma entrada cotidiana para a aproximação. O eu nega estar passando cantada, mas logo convida para café. A graça está nessa contradição entre o que afirma e o que faz; a tradução precisa manter a negação como fala da personagem."
+  },
+  {
+    "term": "나는 부산에서 너는 광주에서",
+    "card": "A marca de origem se repete nos dois nomes de cidade e volta com a lua e uma estrela na ponte. O tema passa de diferenças regionais a uma hipótese muito mais distante. Mesmo assim, o eu insiste numa semelhança: amar seria algo compartilhado, onde quer que se viva."
+  },
+  {
+    "term": "고마 쫌 팅기라, 궁디를 주차뿌기 전에",
+    "card": "Este trecho muda a cantada para bravata e ameaça grosseira. Reconhecer o tom ajuda a não aprender a linha como um convite neutro. A cena dramatiza ciúme e rivalidade; descrevê-la não exige transformar a fala da personagem em comportamento recomendado ao estudante."
+  },
+  {
+    "term": "지금 니 맘은 온통 다, 호시기 호시기해?",
+    "card": "O som do nome Hoseok é aproximado da palavra de substituição da linha anterior. Assim, a pergunta brinca com a ideia de a cabeça estar cheia dele. O termo vago não nomeia sozinho uma ação específica, e a pergunta deixa a resposta da outra pessoa desconhecida."
+  },
+  {
+    "term": "손이 덜덜 숨이 컥컥",
+    "card": "Mãos tremendo e respiração cortada ganham ritmo por palavras de som e modo. Os verbos podem ficar implícitos porque as imagens já permitem reconstruir a reação. A descrição faz o corpo participar da cantada, sem funcionar como diagnóstico de quem canta ou escuta."
+  },
+  {
+    "term": "사랑할 수밖에 없는 거잖아",
+    "card": "A construção de não haver outra possibilidade faz a conclusão soar inevitável na voz do eu. Mas isso continua sendo sua maneira confiante de contar a atração. O refrão volta à curiosidade sobre origem e nome: a pessoa abordada não tem uma resposta direta transcrita nessa letra."
+  }
+],
 "miss-right":[
   {
     "term": "널 놓친다면 miss, right?",

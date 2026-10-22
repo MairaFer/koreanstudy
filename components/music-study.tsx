@@ -1,4 +1,6 @@
 "use client";
+import {skitSoulmateSections,skitSoulmateVocabulary} from '@/lib/skit-soulmate';
+import {whereYouFromSections,whereYouFromVocabulary} from '@/lib/where-you-from';
 import {missRightSections,missRightVocabulary} from '@/lib/miss-right';
 import {introSkoolLuvAffairSections,introSkoolLuvAffairVocabulary} from '@/lib/intro-skool-luv-affair';
 import {doesThatMakeSenseSections,doesThatMakeSenseVocabulary} from '@/lib/does-that-make-sense';
@@ -170,6 +172,8 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'skit-soulmate':{sections:skitSoulmateSections,vocabulary:skitSoulmateVocabulary,summary:"O grupo procura um assunto para o skit, brinca com o tipo ideal e recebe uma visita no meio da gravação. A própria conversa vira a cena. Explore pedidos, perguntas, níveis de fala e hesitações, com risos e trechos incompletos preservados sem palavras inventadas.",heading:"Skit: Soulmate · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
+ 'where-you-from':{sections:whereYouFromSections,vocabulary:whereYouFromVocabulary,summary:"Duas maneiras regionais de falar se encontram numa cantada cheia de humor, rivalidade e curiosidade. As notas aproximam formas de Gyeongsang e Jeolla do coreano padrão, explicam sons e trocadilhos e distinguem a bravata dos narradores de convites neutros do cotidiano.",heading:"Where Did You Come From? · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'miss-right':{sections:missRightSections,vocabulary:missRightVocabulary,summary:"Um retrato de atração mistura mente, corpo, paisagem e caráter até desembocar numa razão simples: a pessoa é ela mesma. Explore o trocadilho do título, o desejo de conhecer o cotidiano, as imagens de futuro e o convite para caminhar juntos.",heading:"Miss Right · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'intro-skool-luv-affair':{sections:introSkoolLuvAffairSections,vocabulary:introSkoolLuvAffairVocabulary,summary:"Três posturas sobre o amor se apresentam e se interrompem: primeiros desejos, esperança e intensidade diante da frustração. Os diálogos enviados são preservados com tradução, enquanto as explicações acompanham jogos sonoros, metáforas e a assinatura coletiva do final.",heading:"Intro: Skool Luv Affair · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'does-that-make-sense':{sections:doesThatMakeSenseSections,vocabulary:doesThatMakeSenseVocabulary,summary:"O amor parece mudar, mas o eu não consegue encerrar a história. Entre lembranças do toque, raiva e saudade, ele tenta parecer bem e pede explicações. Acompanhe as perguntas de incredulidade, as voltas da relação e o desejo de rebobinar que abre e fecha a faixa.",heading:"Does That Make Sense? · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},

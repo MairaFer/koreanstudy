@@ -1,3 +1,5 @@
+import {skitSoulmateSections,skitSoulmateVocabulary} from './skit-soulmate';
+import {whereYouFromSections,whereYouFromVocabulary} from './where-you-from';
 import {missRightSections,missRightVocabulary} from './miss-right';
 import {introSkoolLuvAffairSections,introSkoolLuvAffairVocabulary} from './intro-skool-luv-affair';
 import {doesThatMakeSenseSections,doesThatMakeSenseVocabulary} from './does-that-make-sense';
@@ -134,6 +136,8 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'skit-soulmate',sections:skitSoulmateSections,vocabulary:skitSoulmateVocabulary},
+ {id:'where-you-from',sections:whereYouFromSections,vocabulary:whereYouFromVocabulary},
  {id:'miss-right',sections:missRightSections,vocabulary:missRightVocabulary},
  {id:'intro-skool-luv-affair',sections:introSkoolLuvAffairSections,vocabulary:introSkoolLuvAffairVocabulary},
  {id:'does-that-make-sense',sections:doesThatMakeSenseSections,vocabulary:doesThatMakeSenseVocabulary},
