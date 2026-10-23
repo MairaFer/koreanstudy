@@ -3,6 +3,43 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"yun":[
+  {
+    "term": "그는 말했지 늘, 먼저 사람이 돼라",
+    "card": "Yun, com Erykah Badu, abre Indigo. O título dialoga com o pintor coreano Yun Hyong-keun e com a prioridade de ser uma pessoa antes de produzir arte. O verso faz dessa orientação uma pergunta para o próprio caminho de RM; a formulação poética não é apresentada como transcrição literal de uma declaração do pintor.",
+    "source": "https://magazine.weverse.io/article/view/600?lang=en"
+  },
+  {
+    "term": "이젠 가야 할 곳이라며 저 산을 가리키지",
+    "card": "O mesmo dedo que antes censurava agora aponta o caminho que o eu deveria seguir. A mudança liga julgamento alheio e expectativas de carreira: a direção vem dos outros, antes de a voz reivindicar seu próprio ritmo."
+  },
+  {
+    "term": "팀 빠진 넌 사실 뭣도 아니야 너는",
+    "card": "Esta desqualificação faz parte da pressão que a letra reproduz e em seguida rejeita. Não é a análise afirmando que RM não tem valor fora do grupo, nem um anúncio factual de separação. Ler a mudança de vozes mantém o conflito da cena."
+  },
+  {
+    "term": "고속도로서 오솔길로 가려 해 너는",
+    "card": "Autoestrada e trilha estreita tornam concreta a escolha entre um caminho já amplo e outro menos previsível. A comparação não exige uma viagem real: ela prepara o eu que prefere a posição de estrangeiro e de fronteira."
+  },
+  {
+    "term": "예술 할 생각 말고 놀아 느껴 희로애락",
+    "card": "A expressão das quatro emoções dá conteúdo ao princípio do refrão. Antes de técnicas e palavras, a voz pede experiência vivida: alegria, raiva, tristeza e prazer. As perguntas seguintes desafiam palavras que não se consegue sentir, em vez de simplesmente declarar que toda técnica é inútil."
+  },
+  {
+    "term": "여전히 이곳에 살아서 흘러 permanently",
+    "card": "Yun Hyong-keun viveu de 1928 a 2007. Morto e contemporâneo se encostam no diálogo: a obra e a influência permitem tratar o artista como uma presença atual. Isso é uma leitura de legado, não uma negação literal da morte. O eu admite que ainda procura a verdade, em sua própria velocidade e direção.",
+    "source": "https://www.yunhyongkeun.org/about/biography"
+  },
+  {
+    "term": "카이사르의 것은 카이사르로",
+    "card": "A frase evoca a máxima de dar a César o que é de César. Aqui ela vem depois da chama que um dia retorna à terra e antes das cinzas e da poesia: uma leitura possível é a devolução de cada coisa a seu lugar. A alusão, sozinha, não comprova uma crença religiosa de RM.",
+    "source": "https://bible.usccb.org/bible/matthew/22"
+  },
+  {
+    "term": "나 역시 그저 좀 더 나은 어른이길",
+    "card": "A ambição final é ser um adulto um pouco melhor. Ela retoma o ser humano antes da arte e desloca o ponto de chegada de vencer tendências para amadurecer. A última linha enviada do refrão termina em pergunta, preservada na tradução."
+  }
+],
 "skit-on-the-start-line":[
   {
     "term": "연습생",

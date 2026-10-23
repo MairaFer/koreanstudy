@@ -1,4 +1,5 @@
 "use client";
+import {yunSections,yunVocabulary} from '@/lib/yun';
 import {skitOnTheStartLineSections,skitOnTheStartLineVocabulary} from '@/lib/skit-on-the-start-line';
 import {seoulSections,seoulVocabulary} from '@/lib/seoul';
 import {moonchildSections,moonchildVocabulary} from '@/lib/moonchild';
@@ -201,6 +202,7 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'yun':{sections:yunSections,vocabulary:yunVocabulary,summary:"Antes de fazer arte, ser uma pessoa: Yun confronta tendências, pressão e sinceridade em um diálogo com o pintor Yun Hyong-keun. Acompanhe as mudanças de voz, a escolha de caminho e as imagens de fronteira, fogo e cinzas, até o desejo de ser um adulto um pouco melhor.",heading:"Yun · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'skit-on-the-start-line':{sections:skitOnTheStartLineSections,vocabulary:skitOnTheStartLineVocabulary,summary:"O monólogo transforma a espera pela estreia em uma linha de partida. Leia a insegurança do período de trainee, as perguntas sem resposta e o contraste entre mar e deserto, sem apagar as grafias da transcrição enviada.",heading:"Skit: On The Start Line · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'seoul':{sections:seoulSections,vocabulary:seoulVocabulary,summary:"Amar e odiar a mesma cidade: o eu encontra casa, memória, incômodo e medo em Seul. Explore o jogo Seoul/soul, as paisagens urbanas e a tensão entre partir e continuar vivendo o lugar. As grafias incomuns enviadas são mantidas e comentadas.",heading:"seoul · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'moonchild':{sections:moonchildSections,vocabulary:moonchildVocabulary,summary:"A noite vira um espaço de acolhimento e luz compartilhada. Acompanhe a passagem do conselho a outra pessoa para a imagem de sermos a paisagem noturna uns dos outros, com atenção aos jogos em inglês e às grafias enviadas.",heading:"moonchild · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
