@@ -3,6 +3,42 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"all-day":[
+  {
+    "term": "요즘 광고는 똑같애",
+    "card": "All Day, com Tablo, é a terceira faixa de Indigo. A abertura contrapõe corpos e danças da publicidade a quem está fora da imagem. A crítica logo muda para a mente e para a dificuldade de reconhecer o próprio eu; a performance começa com uma diferença entre a imagem exibida e a experiência vivida.",
+    "source": "https://shop.bts-official.us/collections/vinyl/products/indigo-vinyl"
+  },
+  {
+    "term": "사색이 필요해 Fuck all the rhythm",
+    "card": "Algoritmo, ritmo e biorritmo formam uma cadeia sonora que ocupa o espaço do pensamento. Refletir e escrever um poema próprio aparecem como necessidades da voz. A letra critica pressões e automatismos, sem apresentar uma descrição técnica de como uma plataforma específica funciona."
+  },
+  {
+    "term": "묻혀진 뭔가를 찾고 있다면",
+    "card": "Algo foi enterrado ou esquecido enquanto se tentava sobreviver. O verbo inglês digging no refrão permite ouvir a busca por esse algo como escavação, além do uso coloquial de se interessar por algo. A sequência buscar, encontrar o eu e cantar prepara a ação mais combativa do segundo refrão."
+  },
+  {
+    "term": "죄다 중립 기어",
+    "card": "Em ponto morto, o carro não transmite força para avançar: a imagem acompanha ficar no mesmo lugar. O verso aproxima essa imobilidade da pressão para ter medo e não expressar o pensamento. Recuperar movimento se torna também recuperar a própria voz."
+  },
+  {
+    "term": "어서 접어 Origami",
+    "card": "Dobrar papel e abandonar uma intenção cabem no mesmo verbo coreano. O dicionário oficial registra o uso figurado de desistir de uma ideia. Origami torna literal o gesto de dobrar justamente quando a voz encena alguém mandando recolher o pensamento.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=58162"
+  },
+  {
+    "term": "특색을 밟아버린 Think tanks",
+    "card": "Think tanks são organizações dedicadas a pesquisa e análise de ideias e políticas. Na letra, o nome entra numa acusação poética de esmagar diferenças; o estudo distingue a definição do termo da avaliação que a voz faz dele. O contraste entre esfriar e acender um fogo maior reconstrói o impulso individual."
+  },
+  {
+    "term": "눈 부릅뜨고 알아서 잘 지낼게",
+    "card": "A frase inglesa anterior aproxima dinamite e DNA. Os nomes permitem reconhecer os títulos Dynamite e DNA, do BTS, enquanto formam uma imagem de energia explosiva dentro da identidade. A leitura textual liga essa força coletiva à decisão individual de seguir em frente de olhos abertos."
+  },
+  {
+    "term": "원래 꿈 같은 일은 눈뜨고 보기 힘들어",
+    "card": "Olhos abertos, fechar os olhos e coisas parecidas com sonho se respondem no verso. O eu permanece atento e provoca quem não quer vê-lo prosperar. Depois, o encerramento muda para encorajamento: acreditar, viver, sonhar e sentir, mesmo quando o mundo parece zombar."
+  }
+],
 "still-life":[
   {
     "term": "난 Still life but I'm movin'",

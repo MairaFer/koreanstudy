@@ -1,3 +1,4 @@
+import {allDaySections,allDayVocabulary} from './all-day';
 import {stillLifeSections,stillLifeVocabulary} from './still-life';
 import {yunSections,yunVocabulary} from './yun';
 import {skitOnTheStartLineSections,skitOnTheStartLineVocabulary} from './skit-on-the-start-line';
@@ -167,6 +168,7 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'all-day',sections:allDaySections,vocabulary:allDayVocabulary},
  {id:'still-life',sections:stillLifeSections,vocabulary:stillLifeVocabulary},
  {id:'yun',sections:yunSections,vocabulary:yunVocabulary},
  {id:'skit-on-the-start-line',sections:skitOnTheStartLineSections,vocabulary:skitOnTheStartLineVocabulary},

@@ -1,4 +1,5 @@
 "use client";
+import {allDaySections,allDayVocabulary} from '@/lib/all-day';
 import {stillLifeSections,stillLifeVocabulary} from '@/lib/still-life';
 import {yunSections,yunVocabulary} from '@/lib/yun';
 import {skitOnTheStartLineSections,skitOnTheStartLineVocabulary} from '@/lib/skit-on-the-start-line';
@@ -203,6 +204,7 @@ export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string})
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+ 'all-day':{sections:allDaySections,vocabulary:allDayVocabulary,summary:"All Day, de RM com Tablo, busca espaço para pensar e viver do próprio jeito entre propaganda, algoritmos e pressão. Acompanhe as mudanças dos refrães, os sonhos enterrados, o ponto morto e o origami, até o convite final para acreditar, viver, sonhar e sentir.",heading:"All Day · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'still-life':{sections:stillLifeSections,vocabulary:stillLifeVocabulary,summary:"Uma natureza-morta que se move: Still Life transforma tela, moldura e exposição em imagens de uma vida que recusa ficar fixa. Leia o jogo do título, o florescimento, o presente vivido a cada segundo e as provocações do segundo verso, preservando todas as repetições da letra enviada.",heading:"Still Life · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'yun':{sections:yunSections,vocabulary:yunVocabulary,summary:"Antes de fazer arte, ser uma pessoa: Yun confronta tendências, pressão e sinceridade em um diálogo com o pintor Yun Hyong-keun. Acompanhe as mudanças de voz, a escolha de caminho e as imagens de fronteira, fogo e cinzas, até o desejo de ser um adulto um pouco melhor.",heading:"Yun · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
  'skit-on-the-start-line':{sections:skitOnTheStartLineSections,vocabulary:skitOnTheStartLineVocabulary,summary:"O monólogo transforma a espera pela estreia em uma linha de partida. Leia a insegurança do período de trainee, as perguntas sem resposta e o contraste entre mar e deserto, sem apagar as grafias da transcrição enviada.",heading:"Skit: On The Start Line · coreano palavra por palavra",badge:"Letra enviada · análise preparada"},
