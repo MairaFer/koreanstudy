@@ -1,3 +1,4 @@
+import {stillLifeSections,stillLifeVocabulary} from './still-life';
 import {yunSections,yunVocabulary} from './yun';
 import {skitOnTheStartLineSections,skitOnTheStartLineVocabulary} from './skit-on-the-start-line';
 import {seoulSections,seoulVocabulary} from './seoul';
@@ -166,6 +167,7 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'still-life',sections:stillLifeSections,vocabulary:stillLifeVocabulary},
  {id:'yun',sections:yunSections,vocabulary:yunVocabulary},
  {id:'skit-on-the-start-line',sections:skitOnTheStartLineSections,vocabulary:skitOnTheStartLineVocabulary},
  {id:'seoul',sections:seoulSections,vocabulary:seoulVocabulary},

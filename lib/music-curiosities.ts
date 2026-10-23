@@ -3,6 +3,42 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"still-life":[
+  {
+    "term": "난 Still life but I'm movin'",
+    "source": "https://shop.bts-official.us/collections/vinyl/products/indigo-vinyl",
+    "card": "Still Life, com Anderson .Paak, integra Indigo. Still life é o nome inglês do gênero natureza-morta; na música, o objeto supostamente imóvel insiste em se mover. A letra também aproxima still da ideia de continuar vivo, sem ensinar que still life seja a tradução gramatical comum de ainda estou vivo."
+  },
+  {
+    "term": "계속 전시되는 내 삶",
+    "card": "A vida ocupa o lugar de uma obra continuamente exposta. A linha inglesa sobre não receber nome e estar sem título reforça a recusa de uma identificação fixa; isso não significa que a música ou o álbum realmente não tenham título."
+  },
+  {
+    "term": "벗어나고 싶어 이 캔버스의 틀",
+    "card": "Tela, moldura, exposição e natureza-morta constroem a mesma família de imagens. Escapar da estrutura visual se torna uma maneira de falar de não ser fixado por expectativas. O passado e o futuro ganham sombra, enquanto o eu escolhe viver hoje."
+  },
+  {
+    "term": "Baby 난 돈으로 시간을 벌어",
+    "card": "Ganhar costuma aparecer ligado a dinheiro; aqui, o objeto ganho é tempo, e o dinheiro vira meio. A inversão sustenta a autoafirmação da voz e mantém o foco da canção no modo de viver o presente."
+  },
+  {
+    "term": "식상해질 정도의 Go-and-getter",
+    "card": "A resposta em inglês troca a posição de lançar tendências pela de ser amigo e correr atrás. A busca é tão insistente que chega a ser descrita como repetitiva. É uma construção da voz artística, sem exigir um alvo real para a zombaria e a provocação do verso."
+  },
+  {
+    "term": "91 look at my 탄탄대로",
+    "source": "https://bts-official.jp/profile/RM",
+    "card": "A sequência aproxima nomes de vias e uma expressão de sucesso. Hannam-daero e Gangnam-daero cercam a imagem de um caminho desimpedido, com finais que soam parecidos. RM nasceu em 1994, portanto 94 provavelmente retoma esse ano; já o significado de 91 não foi confirmado e o número não é tratado como nascimento do convidado."
+  },
+  {
+    "term": "오늘을 살아 잡초처럼",
+    "card": "A corrente da ostentação é contraposta, em inglês, à mancha que o eu prefere mostrar. Isso pode ser lido como valorizar marcas da experiência em vez de apenas um adorno; a letra não identifica uma mancha ou um quadro específicos. As plantas seguintes prolongam a imagem de vida que persiste."
+  },
+  {
+    "term": "걍 화초처럼 But I never stay",
+    "card": "Erva daninha e planta ornamental têm posições diferentes, mas a frase mantém a recusa de ficar parado. O retorno integral do refrão fecha a versão enviada com movimento e novo florescimento; os dois tipos de planta não viram uma classificação definitiva do eu."
+  }
+],
 "yun":[
   {
     "term": "그는 말했지 늘, 먼저 사람이 돼라",
