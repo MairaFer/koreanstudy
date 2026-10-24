@@ -402,6 +402,43 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     "card": "Dor e divino se aproximam sem eliminar a tensão. A repetição final prolonga essa associação em vez de apresentar uma solução. Divine pode qualificar a dor ou funcionar como evocação, sem definir uma religião."
   }
 ],
+"sexy-nukim":[
+  {
+    "term": "우리 모두 섹시느낌",
+    "card": "SEXY NUKIM é uma colaboração do Balming Tiger com RM, não uma faixa solo de RM. O título aproxima sexy e 느낌, sensação ou jeito percebido; neste estudo, a confiança e a atitude são leituras apoiadas nas palavras da letra.",
+    "source": "https://www.youtube.com/watch?v=E-S75YDYY7I"
+  },
+  {
+    "term": "Communicate, show me 눈빛",
+    "card": "O olhar ocupa o lugar de objeto depois de comandos em inglês. A pergunta retórica sobre para que falar vem logo depois e sugere uma comunicação que dispensa explicações. Telepatia funciona como imagem textual, não como afirmação científica."
+  },
+  {
+    "term": "You can touch this, 연아의 햅틱, cool",
+    "card": "연아의 햅틱 era o nome de um celular touchscreen Samsung/Anycall promovido por Kim Yuna, conforme comunicado da própria Samsung em 2009. A proximidade com tocar permite ler um trocadilho tátil; essa interpretação não é uma declaração autoral confirmada.",
+    "source": "https://www.newswire.co.kr/newsRead.php?no=406917"
+  },
+  {
+    "term": "자기장처럼",
+    "card": "처럼 transforma campo magnético numa comparação. A imagem continua a frase de tudo girar por meio de nós. Ela sugere atração e movimento na leitura da letra; não descreve um mecanismo físico aplicado a pessoas."
+  },
+  {
+    "term": "우리가 그리는 건 절대 틀리지 않아",
+    "card": "건 reduz 것은: aquilo que desenhamos ou imaginamos vira tópico. Estar errado e ser diferente são conceitos distintos; aqui o verbo é 틀리다, e sua negação sustenta a afirmação confiante da voz."
+  },
+  {
+    "term": "불러, 112",
+    "card": "112 é o número policial na Coreia, como informa a Korea Tourism Organization. Na sequência da letra, o número acompanha luz e bipe. Isso contextualiza a imagem sem comprovar crime ou chamada reais.",
+    "source": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=217&vcontsId=248145"
+  },
+  {
+    "term": "들려 네 마음의 소리",
+    "card": "O som é aquilo que se torna audível com 들리다. Logo depois, o dinheiro alheio aparece como sujeito de fazer rir. A tradução em português reorganiza as frases, por isso não devemos deduzir o sujeito coreano apenas pela ordem portuguesa."
+  },
+  {
+    "term": "난 느낄 틈 없지 lonely, twenty-four hour",
+    "card": "A forma que modifica intervalo vem de sentir. O final ji afirma uma ausência que já está no verbo não haver; sozinho, ji não é um marcador negativo. A linha expressa a postura da voz, não um diagnóstico ou descrição comprovada da vida privada."
+  }
+],
 "closer":[
   {
     "term": "이걸로 만족할게",

@@ -9,6 +9,7 @@ import {groinSections,groinVocabulary} from "./groin";
 import {lostRmSections,lostRmVocabulary} from "./lost-rm";
 import {aroundWorldSections,aroundWorldVocabulary} from "./around-the-world-in-a-day";
 import {comeBackSections,comeBackVocabulary} from "./come-back-to-me";
+import {sexyNukimSections,sexyNukimVocabulary} from "./sexy-nukim";
 import {closerSections,closerVocabulary} from './closer';
 import {forgetfulnessSections,forgetfulnessVocabulary} from './forgetfulness';
 import {allDaySections,allDayVocabulary} from './all-day';
@@ -192,6 +193,7 @@ const studies=[
  {id:'lost-rm',sections:lostRmSections,vocabulary:lostRmVocabulary},
  {id:'around-the-world-in-a-day',sections:aroundWorldSections,vocabulary:aroundWorldVocabulary},
  {id:'come-back-to-me',sections:comeBackSections,vocabulary:comeBackVocabulary},
+ {id:'sexy-nukim',sections:sexyNukimSections,vocabulary:sexyNukimVocabulary},
  {id:'closer',sections:closerSections,vocabulary:closerVocabulary},
  {id:'forgetfulness',sections:forgetfulnessSections,vocabulary:forgetfulnessVocabulary},
  {id:'all-day',sections:allDaySections,vocabulary:allDayVocabulary},
