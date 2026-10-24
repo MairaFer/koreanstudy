@@ -3,6 +3,474 @@ export type MusicCuriosity={term:string;card:string;source?:string};
 // Editorial additions: one occurrence per song; original cards remain unchanged.
 export const musicCuriosities:Record<string,MusicCuriosity[]>=
 {
+"lonely":[
+  {
+    "term": "나 혼자 섬에",
+    "card": "Lonely é a sétima faixa de Indigo. A ilha não precisa ser um lugar geográfico: ao lado do quarto de hotel e do aprisionamento em si, ela permite ler o isolamento em meio a deslocamentos e cidades. O pedido para alguém ligar procura uma ponte para fora dessa imagem.",
+    "source": "https://www.universalmusic.it/popular-music/album/indigo_36007045699/"
+  },
+  {
+    "term": "찰나는 영원 속에",
+    "card": "Instante e eternidade têm escalas diferentes. A frase guarda o menor dentro do maior, em vez de dizer que o instante terminou. O contraste ajuda a entender uma experiência breve que parece ficar suspensa por tempo demais."
+  },
+  {
+    "term": "에 혼자 떠있어",
+    "card": "O nome inglês do quarto de hotel termina uma linha, mas a partícula coreana de lugar só aparece na próxima. Ler os versos juntos evita tratar essa abertura como fragmento sem ligação. A pessoa flutua num espaço fechado, uma combinação que aproxima instabilidade e confinamento."
+  },
+  {
+    "term": "나 내게 갇혔어",
+    "card": "O quarto parece estreitar, mas o último limite é o próprio eu. Ficar preso em si aproxima o espaço físico e a experiência afetiva. O desejo de voltar para casa responde tanto à distância das cidades quanto a essa dificuldade de encontrar uma saída em si."
+  },
+  {
+    "term": "나 모든 게 싫어졌어",
+    "card": "O verbo marca mudança: as coisas passaram a desagradar. Essa diferença é importante porque a letra não declara uma essência imutável. O desejo recorrente de voltar para casa dá uma direção ao mal-estar com cidades e prédios."
+  },
+  {
+    "term": "그저 또 폰 속 데이터와 Datin'",
+    "card": "As plataformas oferecem imagens e companhia mediada, mas o verso chama isso de namorar dados. A metáfora põe em contraste contato digital e o pedido por uma pessoa que ligue. A letra descreve essa rotina; não afirma que toda interação pela internet seja vazia."
+  },
+  {
+    "term": "매일 아침과의 랑데부",
+    "card": "O empréstimo francês nomeia um encontro marcado. Quando a manhã assume esse papel, o encontro parece inevitável e repetido, enquanto a outra companhia é feita de telas. A palavra conserva uma tonalidade de encontro pessoal dentro da solidão."
+  },
+  {
+    "term": "빨갛게 돌아가는 나의 물랑루즈",
+    "card": "Moulin Rouge é o nome do cabaré parisiense associado a um moinho vermelho. O verso aproveita nome, giro e cor para uma imagem pessoal. Reconhecer a referência não prova que haja uma cena do filme homônimo sendo narrada. No refrão final, o pedido muda de telefonema para amor.",
+    "source": "https://www.moulinrouge.fr/en/"
+  }
+],
+"hectic":[
+  {
+    "term": "또 멋쩍은 나의 웃음",
+    "card": "Hectic, com Colde, é a oitava faixa de Indigo, produzida por Pdogg. O dia agitado se prolonga numa noite de conversas repetidas e deslocamento. O refrão mantém a busca por uma razão e pela possibilidade de imaginar outro paraíso.",
+    "source": "https://www.universalmusic.it/popular-music/album/indigo_36007045699/"
+  },
+  {
+    "term": "돌고 도는 liquor talks",
+    "card": "A repetição verbal faz a conversa dar voltas. Ela combina com as repetições inglesas de pessoas, razões e pensar. O cansaço vem tanto do encontro social quanto da dificuldade de sair de um mesmo circuito mental."
+  },
+  {
+    "term": "밤의 올림픽대로",
+    "card": "Olympic-daero é uma via expressa real de Seul, identificada pela corporação municipal responsável pelas vias. O nome localiza a imagem noturna, junto a luzes e táxi. Não é uma referência a competir nos Jogos Olímpicos nesta passagem.",
+    "source": "https://www.sisul.or.kr/open_content/driveway/present/present.jsp"
+  },
+  {
+    "term": "적어 내려갔던 시도",
+    "card": "A escrita ganha a forma de um caminho já percorrido. Neste contexto, a leitura de poema mais também aproxima o ato de escrever e a vida vivida. A palavra isolada também pode ter outras segmentações; a tradução se apoia nas linhas seguintes, não apenas no dicionário."
+  },
+  {
+    "term": "더 이상 길을 잃고 싶지 않은 날",
+    "card": "A forma curta de a mim vem depois de uma descrição longa. Essa descrição diz quem pede socorro: alguém que não quer mais se perder nas lembranças. Ler como dia trocaria o objeto da frase e desfaria a ligação com o pedido seguinte."
+  },
+  {
+    "term": "슬픈 밤 서울을 위한 Nocturne",
+    "card": "Nocturne é o termo musical noturno, associado à noite e à sua atmosfera. Aqui ele nomeia poeticamente uma cena de Seul. A referência não identifica uma peça específica de Chopin e não obriga a classificar a faixa inteira nesse gênero musical.",
+    "source": "https://k-knowledge.kr/srch/read.jsp?id=268467772"
+  },
+  {
+    "term": "마침내 우리가 수놓은 별밤",
+    "card": "Bordar faz das estrelas um desenho construído por nós. A paz desejada é pequena, mas a imagem final ocupa uma noite inteira. É uma transformação de escala dentro da canção, sem uma promessa de que a agitação tenha acabado para sempre."
+  },
+  {
+    "term": "붙잡을 수는 없대도",
+    "card": "O encerramento aceita que o que flui não pode ser retido e ainda mantém amor e ódio pela cidade. Essa ambivalência conversa com seoul, mas não exige que as duas letras contem o mesmo episódio. Permanecer dividido também faz parte da relação com o lugar."
+  }
+],
+"wild-flower":[
+  {
+    "term": "불꽃을 나는 동경했었네",
+    "card": "Wild Flower, com youjeen e produção de DOCSKIM, é a nona faixa de Indigo. O título coreano aproxima a flor do campo da ideia de espetáculo dos fogos. O inglês inventado flowerwork mantém esse encontro entre flores e luz, sem ser apenas a palavra habitual para fogos de artifício.",
+    "source": "https://magazine.weverse.io/article/view/579?lang=en"
+  },
+  {
+    "term": "이 모든 명예가 이젠 멍에가 됐을 때",
+    "card": "Honra e jugo têm sons próximos na frase. O que parecia consagração passa a pesar como algo preso ao corpo. O trocadilho não apaga a conquista; muda a relação do eu com a necessidade de carregá-la e de continuar à altura dela."
+  },
+  {
+    "term": "오 나를 나로 하게 하소서",
+    "card": "O pedido solene para continuar sendo eu acompanha outro pedido, o de retirar a cobiça. A terminação de súplica pode lembrar uma prece ou linguagem antiga. Sua presença não identifica por si só uma religião ou um destinatário divino específico.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=318257"
+  },
+  {
+    "term": "공회전은 반복돼 기억들은 난폭해",
+    "card": "O giro em falso produz movimento sem avanço. A imagem contrasta com o balão que sobe e com a pessoa que procura chão. O aparente sucesso externo pode coexistir, na voz da canção, com sensação de repetição e ausência de direção."
+  },
+  {
+    "term": "이건 방백, 완숙한 돛단배",
+    "card": "Aparte é uma fala que deixa um pensamento aparecer em cena. Junto do silêncio e do veleiro, a imagem aproxima exposição íntima e deslocamento. Não é necessário atribuir ao barco um sentido único para perceber a tensão entre falar e recusar o ruído de quem só fala alto."
+  },
+  {
+    "term": "반갑지 않아 너의 헹가래",
+    "card": "O gesto de celebrar lançando alguém para o alto torna concreto um reconhecimento que afasta os pés do chão. Logo depois, a voz recoloca os pés na terra junto a flores sem nome. A sequência permite ler a homenagem como desconfortável sem concluir que todo reconhecimento seja recusado."
+  },
+  {
+    "term": "타는 불꽃에서 들꽃으로",
+    "card": "A mudança de origem e destino resume o desejo de trocar o brilho que explode pela flor que existe no campo. O movimento não é simplesmente sumir: a voz quer permanecer e continuar sendo ela mesma, com uma forma de presença menos dependente de espetáculo."
+  },
+  {
+    "term": "내가 내가 아닌 때",
+    "card": "O final retorna à mesma paisagem e às mesmas condições da abertura. Uma pequena variante muda a forma modificadora do verso sobre não ser eu, mas não inverte o tema. O retorno deixa o campo disponível como lugar imaginado quando sonho, autoimagem e coração ultrapassam a própria pessoa."
+  }
+],
+"no2":[
+  {
+    "term": "그대여 더는 뒤돌아보지 마, mm",
+    "card": "No.2, com parkjiyoon, encerra Indigo como a décima faixa, produzida por John Eun. O chamado afetuoso abre um espaço de consolo. A segunda pessoa também permite ouvir uma conversa consigo, sem obrigar a identificar uma pessoa real como destinatária.",
+    "source": "https://www.universalmusic.it/popular-music/album/indigo_36007045699/"
+  },
+  {
+    "term": "무수한 만일이 널 괴롭혀도",
+    "card": "Os e se deixam de ser apenas uma forma de introduzir hipóteses e viram agentes que atormentam. A imagem dá corpo às alternativas que poderiam ter acontecido. O consolo não prova que as lembranças desapareçam; diz que elas podem ser atravessadas sem uma revisão infinita de si."
+  },
+  {
+    "term": "어느 길이던 아쉬움 없을까, mm-mm",
+    "card": "A pergunta pode ser lida como haverá algum caminho sem arrependimentos? Essa dúvida não afirma que não haverá pesar. A grafia recebida é preservada; para escolha indiferente, a referência normativa usa a forma de escolha, em vez da forma retrospectiva.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=313072"
+  },
+  {
+    "term": "이젠 노인정이 더 잘 어울릴 mind",
+    "card": "O som de reconhecimento reaparece dentro do nome de um centro para idosos. A brincadeira muda a fome de aprovação para uma imagem de mente envelhecida ou mais tranquila. Trata-se de uma leitura do trocadilho no texto, não de uma confirmação de aposentadoria real.",
+    "source": "https://encykorea.aks.ac.kr/Article/E0002392"
+  },
+  {
+    "term": "터지고 안 건 그 안은 텅 비어있었단 거",
+    "card": "O balão se dizia cheio de eu, mas o rompimento revela vazio. A contradição faz a autoimagem perder seu volume, sem apagar a pessoa. O eu que continua sendo eu pode abandonar a obrigação de provar que é excepcional."
+  },
+  {
+    "term": "속하고 싶지 않던 데 속해도 되는 거야?",
+    "card": "A pergunta testa a liberdade de pertencer a um lugar antes recusado. Ela recorda o desejo anterior e pergunta por uma permissão no presente. Não estabelece que todos devam pertencer nem que a identidade dependa de manter para sempre cada recusa passada."
+  },
+  {
+    "term": "최선을 넌 다했을 뿐이야",
+    "card": "Ter feito o melhor possível é apresentado como suficiente para o consolo. O apenas limita a afirmação, em vez de prometer sucesso ou inocência absoluta. A frase volta com uma forma contraída no final, preservando a pequena diferença da transcrição.",
+    "source": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=315390"
+  },
+  {
+    "term": "이젠 니가 널 지켜줄 거야",
+    "card": "A mesma pessoa ocupa as posições de quem protege e de quem recebe proteção. O final alterna a lembrança do esforço com essa capacidade de cuidar de si. Não olhar para trás ganha o sentido contextual de parar de se julgar sem fim, sem exigir apagar a própria história."
+  }
+],
+"nuts":[
+  {
+    "term": "I go mad 어찌 모든 걸 함께 해",
+    "card": "Nuts é a segunda faixa de Right Place, Wrong Person. Os retratos paralelos alternam ela e ele, com amor e dinheiro como pontos de tensão. A repetição do lugar certo se desloca depois para acorde e pessoa: a promessa de fazer dar certo também pode soar como desejo de consertar o outro.",
+    "source": "https://bts-official.jp/discography/c3d0bda63b05"
+  },
+  {
+    "term": "어째 이제 네가 줄 수 있는 게 없는데",
+    "card": "Slider é um arremesso que muda de trajetória.",
+    "source": "https://www.mlb.com/glossary/pitch-types/slider"
+  },
+  {
+    "term": "Must be an A1 guider, always on that fuckin' 카톡",
+    "card": "KakaoTalk é um serviço de mensagens, e a forma curta coreana nomeia o aplicativo na letra. Estar sempre nele compõe o retrato da pessoa descrita. O verso não mostra o conteúdo de uma conversa nem identifica participantes reais.",
+    "source": "https://kakaocorp.com/page/service/service/KakaoTalk?lang=en"
+  },
+  {
+    "term": "그저 껍데기 뿐인 trust",
+    "card": "Gaslighting designa manipulação que leva alguém a duvidar da própria percepção. A letra coloca esse comportamento ao lado da confiança reduzida a casca: a superfície da relação permanece, mas seu conteúdo é questionado. São acusações da voz narradora dentro dos retratos.",
+    "source": "https://www.merriam-webster.com/dictionary/gaslighting"
+  },
+  {
+    "term": "너 간 뒤로 비로소 난 살아 있어",
+    "card": "O título conversa com enlouquecer e perder o controle no registro coloquial. No final, a partida da outra pessoa permite dizer estar vivo, em contraste com a promessa anterior de dar o lugar certo a ela. A virada muda quem parece precisar de resgate."
+  },
+  {
+    "term": "매일 밤이면 과거의 나에게 보내는 유서를 써",
+    "card": "A carta se dirige ao eu do passado. A imagem extrema encena uma despedida dessa versão de si, e a faixa dos vinte anos aparece logo depois como um tempo do qual se deseja sair. A passagem fala da ruptura com uma história, sem apagar a força do vocabulário usado."
+  },
+  {
+    "term": "행복하길 바랄게, 진심이야 안 믿겠지만",
+    "card": "O desejo de felicidade aparece depois de desejar sofrimento. A voz afirma sinceridade e já antecipa descrença, mantendo a tensão. A construção coreana é um desejo dirigido ao outro; não obriga a interpretar o final como perdão completo ou reconciliação.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=58156&nation=eng"
+  },
+  {
+    "term": "It's called you, 함께였던 것 조차 믿기질 않는",
+    "card": "A outra pessoa vira o nome de uma marca no peito; a relação é comparada depois a uma gripe. O monstro também retorna, agora numa negação do eu. Essas mudanças expõem como a voz disputa o significado do que viveu, e não oferecem uma versão neutra dos acontecimentos."
+  }
+],
+"out-of-love":[
+  {
+    "term": "다 한 번에 섞어 버리고 I put 'em in the sink",
+    "card": "out of love é a terceira faixa de Right Place, Wrong Person, com o título oficial em minúsculas. A vida sem amor aparece como um maço que pode queimar a si e o próprio mundo. Depois, fumaça, bebida e gente entram na mesma mistura, mudando a imagem do fogo para a pia.",
+    "source": "https://bts-official.jp/discography/c3d0bda63b05"
+  },
+  {
+    "term": "설거지는 안 해 'cause it's my fuckin' script",
+    "card": "A louça que não será lavada prolonga a imagem do que foi acumulado e despejado. A voz invoca o próprio roteiro para decidir o que fazer com isso. Diários e prioridades também se aproximam pelo som no inglês, contrapondo registro de vida e organização dela."
+  },
+  {
+    "term": "십몇년만에 이제야 다시 들리네 creep",
+    "card": "Creep é uma canção do Radiohead, incluída em Pablo Honey. A combinação do nome com a afirmação seguinte de não pertencer aqui sugere uma alusão textual. Essa leitura não equivale a demonstrar uso de um sample ou a atribuir uma explicação autoral específica a RM.",
+    "source": "https://shop.xlrecordings.com/release/346538-radiohead-pablo-honey?lang=en_US"
+  },
+  {
+    "term": "I don't belong here 시는 죽어 버리고 사랑은 묻어 버렸 네",
+    "card": "A poesia morre, enquanto o amor é enterrado. Os verbos não são intercambiáveis: um descreve morrer, o outro uma ação sobre o amor. O final de ação concluída dá peso à ruptura, e os espaços incomuns da transcrição não devem esconder essa estrutura."
+  },
+  {
+    "term": "어차피 너와 내가 믿는 진실은 다르 기에",
+    "card": "As verdades acreditadas pelas duas pessoas são postas em contraste antes de negar a culpa. A frase se concentra na separação entre elas, sem resolver a relação. A resenha oficial da Weverse lê Nuts e out of love como faixas que funcionam juntas; isso ajuda a observar continuidade, sem provar um episódio biográfico único.",
+    "source": "https://magazine.weverse.io/article/view/1115?lang=en"
+  },
+  {
+    "term": "그래 널 원망하지 않아",
+    "card": "Culpar ou guardar ressentimento é mais específico que odiar. A repetição da negação pode soar como tentativa de firmar uma decisão. Ela convive com a amargura do que foi dito e com o fracasso previsto para o amor, sem exigir uma resolução emocional limpa."
+  },
+  {
+    "term": "사랑은 망하지 아마",
+    "card": "A mesma sequência sonora com ji aparece em funções diferentes. Negar culpar exige o auxiliar negativo; na frase sobre o amor, o final afirma ou confirma e recebe um provavelmente. A ausência do auxiliar muda a polaridade: aqui o amor fracassa, não deixa de fracassar."
+  },
+  {
+    "term": "난 익숙하지 I love it when you hate me",
+    "card": "Gostar de ser odiado se segue a uma pergunta sobre acreditar na pessoa. Logo depois, a voz pede beijo, olhar e permanência, mas recusa dar seu tempo. O limite final entre corpo e mente preserva a contradição entre desejar atenção e defender o próprio espaço."
+  }
+],
+"domodachi":[
+  {
+    "term": "친구들은 모여 내 주위 하나둘씩",
+    "card": "Domodachi é a quarta faixa de Right Place, Wrong Person e tem participação de Little Simz. A fogueira reúne amigos um por um; a leitura de amizade como acolhimento e proteção se apoia nessas imagens e no verso da convidada.",
+    "source": "https://bts-official.jp/discography/c3d0bda63b05"
+  },
+  {
+    "term": "みんな友達ここで踊りましょう",
+    "card": "O refrão está em japonês. O marcador de lugar de ação acompanha aqui, enquanto a forma em mashou convida a dançar. A tradução mantém um convite coletivo; não é uma ordem em coreano."
+  },
+  {
+    "term": "Take a sip 그 잔에 부어 말없이",
+    "card": "Despejar e soprar aparecem com formas parecidas em português e coreano, mas são verbos distintos: 붓다 produz 부어; 불다 produz 불어. As imagens do copo e da flauta ajudam a escolher cada sentido."
+  },
+  {
+    "term": "그저 붙여 이 모닥불의 불씨",
+    "card": "Acender a brasa desloca o fogo de ameaça para reunião. O objeto vem depois do verbo, uma organização permitida pelo contexto do rap; não deve ser confundida com a ordem neutra mais frequente do coreano."
+  },
+  {
+    "term": "하나둘씩",
+    "card": "O elemento 씩 distribui: um ou dois de cada vez. Aqui sugere amigos chegando gradualmente, em vez de especificar um número total de pessoas."
+  },
+  {
+    "term": "You know my name but you do not know me, I got",
+    "card": "Conhecer o nome é contrastado com conhecer a pessoa. O verso distingue visibilidade pública de intimidade; as promessas de defesa e respeito descrevem como a amizade se manifesta."
+  },
+  {
+    "term": "내 선은 넘지 못해",
+    "card": "A estrutura negativa expressa impossibilidade de atravessar um limite. O tema da proximidade mantém um espaço de proteção pessoal: ser amigo não elimina fronteiras."
+  },
+  {
+    "term": "Get high, get fire, we in saudi",
+    "card": "A tradução preserva a menção à Arábia Saudita. A letra enviada não explica o referente de O’s nem desenvolve essa localização; não atribuímos viagem, substância ou episódio real a essas expressões."
+  }
+],
+"groin":[
+  {
+    "term": "내가 뭘 대표해, 나는 나만 대표해",
+    "card": "Groin é a sexta faixa de Right Place, Wrong Person. A afirmação de representar apenas a si próprio concentra sua resistência às expectativas externas. É uma leitura do narrador, sem identificar destinatários reais.",
+    "source": "https://bts-official.jp/discography/c3d0bda63b05"
+  },
+  {
+    "term": "이렇게 번번이 또 망치고 말아",
+    "card": "O auxiliar de acabar fazendo pode transmitir um resultado indesejado. A voz que desafia os outros também reconhece que volta a estragar as coisas; a afirmação de controle mantém essa fissura."
+  },
+  {
+    "term": "내가 뭘 하던 이제는 못 말려 방상",
+    "card": "A transcrição recebida usa 하던, mas a escolha indiferente entre possibilidades costuma usar 하든. Preservar a letra e explicar a forma esperada permite estudar sem trocar silenciosamente o original."
+  },
+  {
+    "term": "맘 안 드는 놈한테 난 무조건 빵상",
+    "card": "Ppangsang e bangsang ficam transliterados. Não há aqui comprovação primária de um significado literal para essas expressões nem de um alvo pessoal; o material não as transforma em acusações biográficas."
+  },
+  {
+    "term": "증오는 해롭지만 I suck it up",
+    "card": "O contraste coreano termina em mas; a expressão inglesa continua com aguentar ou engolir o incômodo. A explosão verbal convive com contenção, em vez de eliminar todo conflito."
+  },
+  {
+    "term": "산얀 형과 함께 어머니 속 썩이러",
+    "card": "San Yawn é produtor e diretor criativo do Team RM, conforme sua entrevista à SSENSE. O tratamento 형 indica um homem mais velho/próximo na fala de um homem; não estabelece irmão biológico.",
+    "source": "https://www.ssense.com/en-us/editorial/music/rm-bts-solo-career-right-place-wrong-person"
+  },
+  {
+    "term": "눈은 좀 깔아줘 그러니 자극하지 마라 좀",
+    "card": "O pedido com dar/fazer para alguém e a proibição com não faça aparecem juntos. O registro é brusco e confrontador; não deve ser usado como modelo neutro de conversa educada."
+  },
+  {
+    "term": "난 착하게 살 거야 하지만은 You never know",
+    "card": "A intenção de viver direito é seguida por nunca se sabe. O recuo da linha sobre a lei e essa ressalva mantêm a provocação, sem descrever um plano concreto de infração."
+  }
+],
+"lost-rm":[
+  {
+    "term": "시간은 쏜살 열네살 걘 벌써 thirty",
+    "card": "LOST! é a oitava faixa de Right Place, Wrong Person, distinta de Lost do BTS. O verso aproxima catorze e trinta anos para representar a passagem rápida do tempo; não precisamos calcular uma data biográfica para entender a imagem.",
+    "source": "https://bts-official.jp/discography/c3d0bda63b05"
+  },
+  {
+    "term": "정신차려보니 어느새 난 텅 빈 거리",
+    "card": "Dar-se conta de onde está é diferente de pular para dentro de algo. A tradução em inglês anexada à mensagem não foi tratada como outra linha da música; a explicação parte da construção coreana de percepção."
+  },
+  {
+    "term": "I'm goddamn lost",
+    "card": "Lost pode funcionar como estado de estar perdido. Aqui a construção com ser/estar contrasta com sentir-se livre: a canção permite que desorientação e abertura coexistam."
+  },
+  {
+    "term": "I never been to club before",
+    "card": "A letra usa inglês coloquial com omissão do auxiliar have. Na escrita padrão, a experiência anterior costuma ser expressa por I have never been; a nota esclarece a forma sem alterar a transcrição."
+  },
+  {
+    "term": "I hit the club",
+    "card": "Hit the club é uma expressão de ir à boate, não de bater fisicamente no prédio. O passado de hit mantém a mesma forma do presente; o contexto orienta o tempo da narrativa."
+  },
+  {
+    "term": "Pick it up, throw it in the trunk",
+    "card": "Pick up é um verbo com partícula. Com o pronome it, a ordem natural é pick it up. A letra não identifica tudo o que está sendo recolhido; bagagem emocional é uma leitura possível, não um objeto confirmado."
+  },
+  {
+    "term": "I keep trippin', I can't stop bleedin'",
+    "card": "Keep e stop recebem formas em ing: continuar tropeçando e não conseguir parar de sangrar. As terminações escritas com apóstrofo representam a pronúncia informal; a instabilidade persiste apesar da energia do refrão."
+  },
+  {
+    "term": "It'd gonna lightless, uh",
+    "card": "Esta linha recebida tem sintaxe não padrão e sentido elíptico. A tradução conserva a imagem de falta de luz sem inventar uma estrutura gramatical regular; não se recomenda copiar essa forma em prosa formal."
+  }
+],
+"around-the-world-in-a-day":[
+  {
+    "term": "길을 잃고 난 뒤 경치가 더 beautiful",
+    "card": "Around the World in a Day é a nona faixa de Right Place, Wrong Person, com Moses Sumney. A paisagem mais bonita depois de perder o caminho aproxima desorientação e descoberta, como leitura da imagem.",
+    "source": "https://bts-official.jp/discography/c3d0bda63b05"
+  },
+  {
+    "term": "Only time will sort it out",
+    "card": "Sort out é esclarecer, resolver ou organizar uma questão. O pronome it entra entre verbo e partícula. O tempo recebe a tarefa que os participantes ainda não conseguem concluir."
+  },
+  {
+    "term": "That I've outgrown",
+    "card": "Outgrow pode significar crescer além de algo ou deixá-lo para trás ao amadurecer. O present perfect liga essa mudança ao presente; o complemento fica implícito na linha recebida."
+  },
+  {
+    "term": "내 꼴 마치 꼭 발견되길 소원하는 분실물",
+    "card": "O objeto perdido é personificado como alguém que deseja ser encontrado. A forma passiva importa: a voz quer ser descoberta, enquanto a paisagem anterior permite reconhecer valor em estar perdida."
+  },
+  {
+    "term": "이제야 그 미소 띠며 치켜들어 중지를",
+    "card": "Esboçar um sorriso é uma expressão com 띠다. O final de simultaneidade liga o sorriso a erguer o dedo; 중지 é dedo do meio aqui, não interrupção de uma atividade."
+  },
+  {
+    "term": "난 고장난 내가 좋아 bitch, that's the shit",
+    "card": "A estrutura coreana põe o eu quebrado como aquilo que agrada. A aceitação das falhas é uma interpretação possível; a frase não exige tratar sofrimento como identidade permanente ou diagnóstico."
+  },
+  {
+    "term": "Yet it's our design",
+    "card": "Their e our mudam de um plano deles para um plano nosso. Essa troca de possessivos permite ler uma reivindicação de participação e autonomia, sem resolver as perguntas de certo e errado."
+  },
+  {
+    "term": "Let's end masquerade",
+    "card": "A mascarada sugere encenação; encerrá-la contrasta com começar o desfile. São imagens textuais, e o material não as atribui a um evento real específico."
+  }
+],
+"come-back-to-me":[
+  {
+    "term": "세수할 시간도 아까워",
+    "card": "Come back to me encerra Right Place, Wrong Person como sua décima primeira faixa. A pequena tarefa de lavar o rosto aparece num trecho que suspende a atenção ao relógio e à rotina; o texto não fornece um diagnóstico para isso.",
+    "source": "https://bts-official.jp/discography/c3d0bda63b05"
+  },
+  {
+    "term": "시간도",
+    "card": "아깝다 envolve pesar em perder ou gastar algo considerado valioso. O tempo até para lavar o rosto parece difícil de ceder. A forma 아까워 resulta da irregularidade de ㅂ; 도 acrescenta até ou mesmo."
+  },
+  {
+    "term": "Like you used to do",
+    "card": "Used to seguido de verbo descreve um hábito ou estado anterior. Não é a mesma estrutura de be used to, estar acostumado; o retorno desejado é comparado a algo que acontecia antes."
+  },
+  {
+    "term": "You don't have to be the anything you see",
+    "card": "Don’t have to retira a obrigação: você não precisa ser. Não equivale a must not, que proíbe. A expressão anything you see permanece incomum, sugerindo não ter de corresponder a tudo que se vê."
+  },
+  {
+    "term": "Tryin' not to be that something in this sea",
+    "card": "A negação vem antes do infinitivo: tentar não ser. O apóstrofo em tryin’ registra pronúncia informal. Mar e algo indefinido formam uma imagem aberta; não há um papel social específico nomeado."
+  },
+  {
+    "term": "I see you come back to me",
+    "card": "See com objeto e verbo sem to apresenta a percepção de uma ação. A imagem de ver alguém voltar convive com o imperativo que pede esse retorno; o destinatário permanece não identificado."
+  },
+  {
+    "term": "Spring always been here",
+    "card": "A frase recebida omite has, auxiliar esperado no present perfect padrão. A imagem diz que a primavera já estava aqui; renovação e acolhimento são leituras possíveis, não uma explicação autoral confirmada."
+  },
+  {
+    "term": "You are my pain, divine, divine",
+    "card": "Dor e divino se aproximam sem eliminar a tensão. A repetição final prolonga essa associação em vez de apresentar uma solução. Divine pode qualificar a dor ou funcionar como evocação, sem definir uma religião."
+  }
+],
+"closer":[
+  {
+    "term": "이걸로 만족할게",
+    "card": "Closer, com Paul Blanco e Mahalia, é a quinta faixa de Indigo, com produção de HONNE. A letra alterna vozes e formas de desejar proximidade. As duas linhas em coreano chegam na ponte; as partes em inglês também estão traduzidas integralmente neste estudo.",
+    "source": "https://www.universalmusic.it/popular-music/album/indigo_36007045699/"
+  },
+  {
+    "term": "이걸로",
+    "card": "A pequena palavra isto não especifica o acordo inteiro. Na ponte, ela aponta para o que é possível receber ou viver. O começo queria uma intimidade ainda maior, e o fim fala de apenas olhar: a mudança deixa espaço para contentamento e renúncia ao mesmo tempo."
+  },
+  {
+    "term": "만족할게",
+    "card": "O final verbal apresenta uma intenção do eu ao interlocutor. Ele pode soar como promessa ou decisão: vou me contentar. A escolha de uma tradução resignada depende do diálogo com o restante da letra; a forma gramatical sozinha não quer dizer que a pessoa esteja triste.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=80987&nation=eng&nationCode=6&wordMatchFlag=N"
+  },
+  {
+    "term": "너의 사랑이면 돼",
+    "card": "A proximidade física e a proximidade afetiva não coincidem na canção. A noite permite estar mais perto e, ainda assim, sentir distância; o sonho guarda uma presença que escapa quando se tenta fixá-la. Dizer que o amor basta conversa com esse conflito, sem resolver todos os desejos anteriores."
+  },
+  {
+    "term": "너의",
+    "card": "As vozes falam com um você, mas a letra não identifica uma pessoa real. Linha do tempo e holofotes sugerem uma presença vista de longe; sonho e toque sugerem intimidade. Essas imagens permitem mais de uma leitura da relação sem transformar a canção numa confissão biográfica."
+  },
+  {
+    "term": "사랑이면",
+    "card": "A condição não é uma pergunta sobre quando o amor chegará. O substantivo amor se une a se for, e o verbo seguinte diz que isso basta. Reconhecer a cópula evita confundir esse trecho com uma marca de sujeito ou traduzir se como uma certeza já realizada."
+  },
+  {
+    "term": "돼",
+    "card": "O encerramento troca a imagem de entrar sob a pele por olhar e pedir que a outra pessoa permaneça onde está. A segunda tomada evoca filmagem e a possibilidade de refazer uma cena. O pedido final pode carregar cuidado, limite e desejo de preservar o vínculo; sua repetição não confirma um reencontro."
+  }
+],
+"forgetfulness":[
+  {
+    "term": "어제의 일을 자꾸 잊어요",
+    "card": "O estudo segue o título Forgetfulness que você enviou e também se conecta a Forg_tful (with Kim Sawol), a quarta faixa de Indigo. O título coreano nomeia o esquecimento frequente. A abertura parte de acontecimentos cotidianos, em uma voz próxima e polida.",
+    "source": "https://www.universalmusic.it/popular-music/album/indigo_36007045699/"
+  },
+  {
+    "term": "어제의 나를 자꾸 잊어요",
+    "card": "Primeiro se esquece o que aconteceu ontem; depois, o eu de ontem. Repetir a mesma estrutura com um objeto diferente transforma uma falha cotidiana de memória em pergunta sobre continuidade da identidade. A letra ausente na grafia inglesa Forg_tful também permite uma leitura visual ligada ao tema."
+  },
+  {
+    "term": "나 고작 스물여섯인데",
+    "card": "Vinte e seis é a idade dita pelo eu da canção, não uma atualização da idade atual de RM. O contraste entre ser tão jovem e já esquecer sustenta o estranhamento da voz. A leitura acompanha esse tempo narrado."
+  },
+  {
+    "term": "내 메모리가 모자라요",
+    "card": "A memória vira uma capacidade que não comporta tudo. A linha vem depois da desculpa e dos muitos pensamentos: o esquecimento aparece numa relação entre vida interior e amigos que se sentem magoados. A imagem não reduz tudo a simples falta de consideração."
+  },
+  {
+    "term": "오고야 마는 아침과",
+    "card": "A manhã não é apenas uma promessa de recomeço: ela chega inevitavelmente entre os espinhos e o esforço de amortecer o sentir. A construção verbal reforça esse acabar acontecendo, mesmo que se queira adiar a chegada.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=72580"
+  },
+  {
+    "term": "스스로 마취해 가요",
+    "card": "A anestesia funciona como imagem de ir amortecendo a experiência. Cada um tem seu modo, e o processo se prolonga: o auxiliar de ir acrescenta desenvolvimento ao gesto. Os três refrães mantêm essa repetição, inclusive a mudança de espaçamento na última ocorrência."
+  },
+  {
+    "term": "어릴 적 풀냄새 기억나요",
+    "card": "Embora a abertura diga esquecer, o cheiro da vegetação na infância ainda pode vir à memória. A lembrança sensorial e as cores da natureza abrem outro ritmo no parque. Algo conhecido pode parecer novo quando é percebido de novo."
+  },
+  {
+    "term": "그래요 그냥 잊고 살아요",
+    "card": "A canção deixa uma tensão entre sofrer por esquecer e tentar viver sem carregar tudo. A frase pode soar como convite e resignação ao mesmo tempo. Depois, as palavras cedem lugar à vocalização: os grupos sonoros são preservados sem tratá-los como vocabulário comum.",
+    "source": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70067&nation=eng"
+  }
+],
 "all-day":[
   {
     "term": "요즘 광고는 똑같애",

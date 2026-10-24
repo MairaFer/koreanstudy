@@ -1,3 +1,16 @@
+import {lonelySections,lonelyVocabulary} from "./lonely";
+import {hecticSections,hecticVocabulary} from "./hectic";
+import {wildFlowerSections,wildFlowerVocabulary} from "./wild-flower";
+import {no2Sections,no2Vocabulary} from "./no2";
+import {nutsSections,nutsVocabulary} from "./nuts";
+import {outOfLoveSections,outOfLoveVocabulary} from "./out-of-love";
+import {domodachiSections,domodachiVocabulary} from "./domodachi";
+import {groinSections,groinVocabulary} from "./groin";
+import {lostRmSections,lostRmVocabulary} from "./lost-rm";
+import {aroundWorldSections,aroundWorldVocabulary} from "./around-the-world-in-a-day";
+import {comeBackSections,comeBackVocabulary} from "./come-back-to-me";
+import {closerSections,closerVocabulary} from './closer';
+import {forgetfulnessSections,forgetfulnessVocabulary} from './forgetfulness';
 import {allDaySections,allDayVocabulary} from './all-day';
 import {stillLifeSections,stillLifeVocabulary} from './still-life';
 import {yunSections,yunVocabulary} from './yun';
@@ -168,6 +181,19 @@ import {seesawSections,seesawVocabulary} from './seesaw';
 import {moonSections,moonVocabulary} from './moon';
 import {jamaisVuSections,jamaisVuVocabulary} from './jamais-vu';
 const studies=[
+ {id:'lonely',sections:lonelySections,vocabulary:lonelyVocabulary},
+ {id:'hectic',sections:hecticSections,vocabulary:hecticVocabulary},
+ {id:'wild-flower',sections:wildFlowerSections,vocabulary:wildFlowerVocabulary},
+ {id:'no2',sections:no2Sections,vocabulary:no2Vocabulary},
+ {id:'nuts',sections:nutsSections,vocabulary:nutsVocabulary},
+ {id:'out-of-love',sections:outOfLoveSections,vocabulary:outOfLoveVocabulary},
+ {id:'domodachi',sections:domodachiSections,vocabulary:domodachiVocabulary},
+ {id:'groin',sections:groinSections,vocabulary:groinVocabulary},
+ {id:'lost-rm',sections:lostRmSections,vocabulary:lostRmVocabulary},
+ {id:'around-the-world-in-a-day',sections:aroundWorldSections,vocabulary:aroundWorldVocabulary},
+ {id:'come-back-to-me',sections:comeBackSections,vocabulary:comeBackVocabulary},
+ {id:'closer',sections:closerSections,vocabulary:closerVocabulary},
+ {id:'forgetfulness',sections:forgetfulnessSections,vocabulary:forgetfulnessVocabulary},
  {id:'all-day',sections:allDaySections,vocabulary:allDayVocabulary},
  {id:'still-life',sections:stillLifeSections,vocabulary:stillLifeVocabulary},
  {id:'yun',sections:yunSections,vocabulary:yunVocabulary},
