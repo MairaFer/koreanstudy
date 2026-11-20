@@ -66,7 +66,7 @@ function studyForAlbum(title:string,albumTitle:string,artist:string){
  if(normalizedTitle==='honsool'||normalizedTitle.startsWith('honsool ('))return 'honsool';
  if(normalizedTitle==='people'||normalizedTitle.startsWith('people ('))return 'people-agustd';
  if(normalizedTitle==='give it to me')return 'give-it-to-me';
- if(normalizedTitle==='tony montana')return 'tony-montana';
+ if(normalizedTitle==='tony montana'||normalizedTitle.startsWith('tony montana ('))return 'tony-montana';
  if(normalizedTitle==='agust d')return 'agust-d-song';
  if(normalizedTitle.startsWith('intro: dt suga'))return 'intro-dt-suga';
  if(normalizedTitle==='724148'||normalizedTitle.startsWith('724148 ('))return '724148';
@@ -109,4 +109,3 @@ export function BtsCatalog(){
  <p className="music-reference">CatÃ¡logo digital consultado em 22/09/2026. LanÃ§amentos japoneses nÃ£o incluÃ­dos; versÃµes instrumentais e remixes removidas. EdiÃ§Ãµes regionais podem variar. Faixas de discos fÃ­sicos adicionadas manualmente aparecem identificadas, como Skit: On The Start Line (Hidden Track). Fontes: <a href="https://music.apple.com/us/artist/bts/883131348" target="_blank" rel="noreferrer">Apple Music</a>, <a href="https://bts.ibighit.com/eng/discography/" target="_blank" rel="noreferrer">BIGHIT MUSIC</a>, os catÃ¡logos oficiais dos integrantes no Apple Music e o <a href="https://soundcloud.com/search?q=BTS" target="_blank" rel="noreferrer">SoundCloud</a>.</p>
 </>}</>}</Localized>;
 }
-
