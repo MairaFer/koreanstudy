@@ -1,5 +1,5 @@
 Exit code: 0
-Wall time: 18.8 seconds
+Wall time: 133.3 seconds
 Output:
 "use client";
 /* localized-returns */
@@ -53,6 +53,26 @@ function studyForAlbum(title:string,albumTitle:string,artist:string){
  if(normalizedTitle==='people pt.2'||normalizedTitle.startsWith('people pt.2 ('))return 'people-pt2';
  if(normalizedTitle==='polar night'||normalizedTitle.startsWith('polar night ('))return 'polar-night';
  if(normalizedTitle==='snooze'||normalizedTitle.startsWith('snooze ('))return 'snooze';
+ if(normalizedTitle==='so far away'||normalizedTitle.startsWith('so far away ('))return 'so-far-away';
+ if(normalizedTitle==='life goes on'&&artist==='Agust D')return 'life-goes-on-suga';
+ if(normalizedTitle==='daechwita'||normalizedTitle.startsWith('daechwita ('))return 'daechwita';
+ if(normalizedTitle==='moonlight'||normalizedTitle.startsWith('moonlight ('))return 'moonlight-agustd';
+ if(normalizedTitle.startsWith('what do you think'))return 'what-do-you-think';
+ if(normalizedTitle==='strange'||normalizedTitle.startsWith('strange ('))return 'strange-agustd';
+ if(normalizedTitle==='28'||normalizedTitle.startsWith('28 ('))return 'twenty-eight';
+ if(normalizedTitle==='burn it')return 'burn-it';
+ if(normalizedTitle.startsWith('dear my friend'))return 'dear-my-friend';
+ if(normalizedTitle.startsWith('interlude : set me free'))return 'interlude-set-me-free';
+ if(normalizedTitle==='honsool'||normalizedTitle.startsWith('honsool ('))return 'honsool';
+ if(normalizedTitle==='people'||normalizedTitle.startsWith('people ('))return 'people-agustd';
+ if(normalizedTitle==='give it to me')return 'give-it-to-me';
+ if(normalizedTitle==='tony montana')return 'tony-montana';
+ if(normalizedTitle==='agust d')return 'agust-d-song';
+ if(normalizedTitle.startsWith('intro: dt suga'))return 'intro-dt-suga';
+ if(normalizedTitle==='724148'||normalizedTitle.startsWith('724148 ('))return '724148';
+ if(normalizedTitle.startsWith('140503 at dawn'))return 'at-dawn-140503';
+ if(normalizedTitle==='the last'||normalizedTitle.startsWith('the last ('))return 'the-last';
+ if(normalizedTitle==='life goes on'&&artist==='Agust D')return 'life-goes-on-suga';
  const specialStudies:Record<string,string>={
   'sea':'sea',"4 o'clock":'four-oclock','i will come to you':'i-will-come-to-you','i will come to you (ê·¸ë¦¬ì›€ì—)':'i-will-come-to-you','heart on the window':'heart-on-the-window','falling':'falling','falling (ë„¤ê²Œ ë‹¿ì„ ë•Œê¹Œì§€)':'falling','another level':'another-level',"i'll be there":'ill-be-there','ill be there':'ill-be-there','to me, today':'to-me-today','to me today':'to-me-today','ì˜¤ëŠ˜ì˜ ë‚˜ì—ê²Œ':'to-me-today','background':'background','with the clouds':'with-the-clouds','with the clouds (êµ¬ë¦„ê³¼ ë– ë‚˜ëŠ” ì—¬í–‰)':'with-the-clouds','rope it':'rope-it','loser':'loser','nothing without your love':'nothing-without-your-love','gajah (feat. rm)':'gajah','bicycle':'bicycle','make it right (feat. lauv)':'make-it-right-lauv','my universe':'my-universe','the planet':'the-planet','take two':'take-two'
  };
@@ -89,3 +109,4 @@ export function BtsCatalog(){
  <p className="music-reference">CatÃ¡logo digital consultado em 22/09/2026. LanÃ§amentos japoneses nÃ£o incluÃ­dos; versÃµes instrumentais e remixes removidas. EdiÃ§Ãµes regionais podem variar. Faixas de discos fÃ­sicos adicionadas manualmente aparecem identificadas, como Skit: On The Start Line (Hidden Track). Fontes: <a href="https://music.apple.com/us/artist/bts/883131348" target="_blank" rel="noreferrer">Apple Music</a>, <a href="https://bts.ibighit.com/eng/discography/" target="_blank" rel="noreferrer">BIGHIT MUSIC</a>, os catÃ¡logos oficiais dos integrantes no Apple Music e o <a href="https://soundcloud.com/search?q=BTS" target="_blank" rel="noreferrer">SoundCloud</a>.</p>
 </>}</>}</Localized>;
 }
+

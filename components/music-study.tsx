@@ -1,6 +1,6 @@
 Exit code: 0
-Wall time: 15.9 seconds
-Total output lines: 497
+Wall time: 28.1 seconds
+Total output lines: 539
 Output:
 "use client";
 import {lonelySections,lonelyVocabulary} from "@/lib/lonely";
@@ -197,6 +197,25 @@ import {sdlSections,sdlVocabulary,sdlSong} from '@/lib/sdl';
 import {peoplePt2Sections,peoplePt2Vocabulary,peoplePt2Song} from '@/lib/people-pt2';
 import {polarNightSections,polarNightVocabulary,polarNightSong} from '@/lib/polar-night';
 import {snoozeSections,snoozeVocabulary,snoozeSong} from '@/lib/snooze';
+import {lifeGoesOnSugaSections,lifeGoesOnSugaVocabulary,lifeGoesOnSugaSong} from '@/lib/life-goes-on-suga';
+import {daechwitaSections,daechwitaVocabulary,daechwitaSong} from '@/lib/daechwita';
+import {soFarAwaySections,soFarAwayVocabulary,soFarAwaySong} from '@/lib/so-far-away';
+import {moonlightAgustdSections,moonlightAgustdVocabulary,moonlightAgustdSong} from '@/lib/moonlight-agustd';
+import {whatDoYouThinkSections,whatDoYouThinkVocabulary,whatDoYouThinkSong} from '@/lib/what-do-you-think';
+import {strangeAgustdSections,strangeAgustdVocabulary,strangeAgustdSong} from '@/lib/strange-agustd';
+import {twentyEightSections,twentyEightVocabulary,twentyEightSong} from '@/lib/twenty-eight';
+import {burnItSections,burnItVocabulary,burnItSong} from '@/lib/burn-it';
+import {dearMyFriendSections,dearMyFriendVocabulary,dearMyFriendSong} from '@/lib/dear-my-friend';
+import {interludeSetMeFreeSections,interludeSetMeFreeVocabulary,interludeSetMeFreeSong} from '@/lib/interlude-set-me-free';
+import {honsoolSections,honsoolVocabulary,honsoolSong} from '@/lib/honsool';
+import {peopleAgustdSections,peopleAgustdVocabulary,peopleAgustdSong} from '@/lib/people-agustd';
+import {giveItToMeSections,giveItToMeVocabulary,giveItToMeSong} from '@/lib/give-it-to-me';
+import {tonyMontanaSections,tonyMontanaVocabulary,tonyMontanaSong} from '@/lib/tony-montana';
+import {agustDSections,agustDVocabulary,agustDSong} from '@/lib/agust-d-song';
+import {introDtSugaSections,introDtSugaVocabulary,introDtSugaSong} from '@/lib/intro-dt-suga';
+import {sevenTwoFourOneFourEightSections,sevenTwoFourOneFourEightVocabulary,sevenTwoFourOneFourEightSong} from '@/lib/seven-two-four-one-four-eight';
+import {atDawn140503Sections,atDawn140503Vocabulary,atDawn140503Song} from '@/lib/at-dawn-140503';
+import {theLastSections,theLastVocabulary,theLastSong} from '@/lib/the-last';
 import {nothingWithoutYourLoveSections,nothingWithoutYourLoveVocabulary,nothingWithoutYourLoveSong} from '@/lib/nothing-without-your-love';
 import {bodyToBodySections,bodyToBodyVocabulary} from '@/lib/body-to-body';
 import {hooliganSections,hooliganVocabulary} from '@/lib/hooligan';
@@ -251,23 +270,10 @@ import {ExerciseCard} from './exercise';
 import {KoreanText,AudioButton} from './korean-audio';
 
 export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string}){
-const song=[...songs,takeTwoSong,thePlanetSong,myUniverseSong,makeItRightLauvSong,seaSong,fourOclockSong,bicycleSong,gajahSong,nothingWithoutYourLoveSong,loserSong,ropeItSong,withTheCloudsSong,backgroundSong,toMeTodaySong,illBeThereSong,anotherLevelSong,fallingSong,heartOnTheWindowSong,iWillComeToYouSong,closeToYouSong,superTunaSong,theAstronautSong,yoursSong,abyssSong,tonightSong,itsDefinitelyYouSong,dDaySong,haegeumSong,huhSong,amygdalaSong,sdlSong,peoplePt2Song,polarNightSong,snoozeSong].find(s=>s.id===initialSongId)??songs[0];
+const song=[...songs,takeTwoSong,thePlanetSong,myUniverseSong,makeItRightLauvSong,seaSong,fourOclockSong,bicycleSong,gajahSong,nothingWithoutYourLoveSong,loserSong,ropeItSong,withTheCloudsSong,backgroundSong,toMeTodaySong,illBeThereSong,anotherLevelSong,fallingSong,heartOnTheWindowSong,iWillComeToYouSong,closeToYouSong,superTunaSong,theAstronautSong,yoursSong,abyssSong,tonightSong,itsDefinitelyYouSong,dDaySong,haegeumSong,huhSong,amygdalaSong,sdlSong,peoplePt2Song,polarNightSong,snoozeSong,lifeGoesOnSugaSong,daechwitaSong,soFarAwaySong,moonlightAgustdSong,whatDoYouThinkSong,strangeAgustdSong,twentyEightSong,burnItSong,dearMyFriendSong,interludeSetMeFreeSong,honsoolSong,peopleAgustdSong,giveItToMeSong,tonyMontanaSong,agustDSong,introDtSugaSong,sevenTwoFourOneFourEightSong,atDawn140503Song,theLastSong].find(s=>s.id===initialSongId)??songs[0];
  return <Localized>{<><div className="intro"><div><p className="eyebrow">PALAVRAS, FRASES E DESCOBERTAS</p><h1>Aprenda coreano com BTS<span>.</span></h1><p>Toque nas palavras para ouvir uma voz sintetizada em coreano.</p></div><Music2 size={42}/></div><div className="song-tabs"><span className="pill">{song.title}</span></div><SongLesson key={song.id} song={song}/><p className="music-reference">TraduÃ§Ãµes e explicaÃ§Ãµes preparadas para estudo. Este projeto nÃ£o Ã© afiliado ao BTS.</p></>}</Localized>;
 }
-type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
-const studies:Record<string,StudyConfig>={
-  'snooze':{sections:snoozeSections,vocabulary:snoozeVocabulary,summary:'Snooze oferece acolhimento a quem persegue um sonho. A aula trabalha conselho, permissao, proibicao, condicao e desejos de florescimento.',heading:'Snooze · letra e gramatica',badge:'SUGA · analise gramatical'},
-  'polar-night':{sections:polarNightSections,vocabulary:polarNightVocabulary,summary:'Polar Night questiona verdades, polarizacao e a responsabilidade de olhar alem do proprio lado. A aula explora critica social, condicao, citacao e contraste.',heading:'Polar Night · letra e gramatica',badge:'SUGA · analise gramatical'},
-  'people-pt2':{sections:peoplePt2Sections,vocabulary:peoplePt2Vocabulary,summary:'People Pt.2 questiona o amor, o medo da perda e a solidao. A aula explora perguntas reflexivas, memorias, contraste e acolhimento emocional.',heading:'People Pt.2 Â· letra e gramatica',badge:'SUGA feat. IU Â· analise gramatical'},
-  'sdl':{sections:sdlSections,vocabulary:sdlVocabulary,summary:'SDL reflete sobre amor, saudade e memorias idealizadas.',heading:'SDL Â· letra e gramatica',badge:'SUGA Â· analise gramatical'},
-  'amygdala':{sections:amygdalaSections,vocabulary:amygdalaVocabulary,summary:'AMYGDALA visita memorias dolorosas e o desejo de se libertar delas.',heading:'AMYGDALA Â· letra e gramatica',badge:'SUGA Â· analise gramatical'},
-  'huh':{sections:huhSections,vocabulary:huhVocabulary,summary:'HUH?! responde a julgamentos externos com limites e independencia.',heading:'HUH?! Â· letra e gramatica',badge:'SUGA feat. j-hope Â· analise gramatical'},
-  'haegeum':{sections:haegeumSections,vocabulary:haegeumVocabulary,summary:'Haegeum discute liberdade de expressao e pensamento.',heading:'Haegeum Â· letra e gramatica',badge:'SUGA Â· analise gramatical'},
-  'd-day':{sections:dDaySections,vocabulary:dDayVocabulary,summary:'D-Day transforma um novo comeco em coragem para atravessar dor e medo.',heading:'D-Day Â· letra e gramatica',badge:'SUGA Â· analise gramatical'},
-  'its-definitely-you':{sections:itsDefinitelyYouSections,vocabulary:itsDefinitelyYouVocabulary,summary:'Its Definitely You apresenta um amor urgente que recusa a separacao.',heading:'Its Definitely You Â· letra e gramatica',badge:'V e Jin Â· analise gramatical'},
-  'tonight':{sections:tonightSections,vocabulary:tonightVocabulary,summary:'Tonight observa o medo da despedida e preserva lembrancas de companhia.',heading:'Tonight Â· letra e gramatica',badge:'Jin Â· analise gramatical'},
-  'abyss':{sections:abyssSections,vocabulary:abyssVocabulary,summary:'Abyss mergulha em um mar interior de silencio e autoconhecimento.',heading:'Abyss Â· letra e gramatica',badge:'Jin Â· analise gramatical'},
-  'yours':{sections:yoursSections,vocabulary:yoursVocabulary,summary:'â€œYoursâ€…20712 tokens truncated…of-me':{sections:bestOfMeSections,vocabulary:bestOfMeVocabulary,summary:"A declaraÃ§Ã£o de amor como seguranÃ§a e entrega. Explore suficiÃªncia, experiÃªncia, pedidos e concessÃµes nas imagens do cÃ©u, da onda e do mar, preservando as repetiÃ§Ãµes e o retorno do inÃ­cio no final.",heading:"Best Of Me Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{k…22667 tokens truncated…of-me':{sections:bestOfMeSections,vocabulary:bestOfMeVocabulary,summary:"A declaraÃ§Ã£o de amor como seguranÃ§a e entrega. Explore suficiÃªncia, experiÃªncia, pedidos e concessÃµes nas imagens do cÃ©u, da onda e do mar, preservando as repetiÃ§Ãµes e o retorno do inÃ­cio no final.",heading:"Best Of Me Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
   'trivia-love':{sections:triviaLoveSections,vocabulary:triviaLoveVocabulary,summary:"Uma investigaÃ§Ã£o do amor feita com letras, sons e imagens. Explore a passagem de pessoa para amor, os sentidos de vento e desejo, perguntas hipotÃ©ticas e a vontade de participar da histÃ³ria de alguÃ©m.",heading:"Trivia æ‰¿: Love Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
   'the-truth-untold':{sections:truthUntoldSections,vocabulary:truthUntoldVocabulary,summary:"O desejo de se aproximar e o medo de mostrar o prÃ³prio eu. Estude perguntas, finalidade, possibilidade e hipÃ³teses sobre o passado nas imagens do jardim, da flor, da mÃ¡scara e do castelo de areia.",heading:"The Truth Untold Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
   'serendipity':{sections:serendipitySections,vocabulary:serendipityVocabulary,summary:"A versÃ£o completa acompanha um encontro sentido como destino, com medo, florescimento e o pedido de se tornar um nÃ³s. Explore comparaÃ§Ãµes, finalidade, estados e aÃ§Ãµes, mantendo as imagens incomuns sem trocar o significado das palavras.",heading:"Serendipity (Full Length Edition) Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
@@ -332,3 +338,4 @@ const snippetVocabulary:Record<string,Words>={
 'boy-with-luv':{verbs:[{ko:'ê¶ê¸ˆí•˜ë‹¤',pt:'ter curiosidade; verbo descritivo'}],nouns:[{ko:'ê²ƒ',pt:'coisa; substantivo dependente'}]},
 'dna':{verbs:[{ko:'ì•Œì•„ë³´ë‹¤',pt:'reconhecer'},{ko:'ë˜ë‹¤',pt:'tornar-se; auxiliar de mudanÃ§a'}],nouns:[]},
 'idol':{verbs:[{ko:'ìžìœ ë¡­ë‹¤',pt:'ser livre; verbo descritivo'}],nouns:[]}};
+
