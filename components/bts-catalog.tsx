@@ -1,5 +1,5 @@
 Exit code: 0
-Wall time: 50.2 seconds
+Wall time: 18.8 seconds
 Output:
 "use client";
 /* localized-returns */
@@ -38,6 +38,18 @@ function platformLinks(item:ListenItem){return [
 ];}
 function studyForAlbum(title:string,albumTitle:string,artist:string){
  const normalizedTitle=title.trim().toLowerCase();
+ if(normalizedTitle==='close to you')return 'close-to-you';
+ if(normalizedTitle==='yours')return 'yours';
+ if(normalizedTitle==='super tuna')return 'super-tuna';
+ if(normalizedTitle==='the astronaut')return 'the-astronaut';
+ if(normalizedTitle==='abyss')return 'abyss';
+ if(normalizedTitle==='tonight'||normalizedTitle.includes('tonight'))return 'tonight';
+ if(normalizedTitle.startsWith("it's definitely you")||normalizedTitle.startsWith('jugeodo neoya'))return 'its-definitely-you';
+ if(normalizedTitle==='d-day')return 'd-day';
+ if(normalizedTitle==='haegeum'||normalizedTitle.startsWith('haegeum'))return 'haegeum';
+ if(normalizedTitle==='huh?!'||normalizedTitle==='huh?'||normalizedTitle.startsWith('huh?!'))return 'huh';
+ if(normalizedTitle==='amygdala')return 'amygdala';
+ if(normalizedTitle==='sdl')return 'sdl';
  const specialStudies:Record<string,string>={
   'sea':'sea',"4 o'clock":'four-oclock','i will come to you':'i-will-come-to-you','i will come to you (ê·¸ë¦¬ì›€ì—)':'i-will-come-to-you','heart on the window':'heart-on-the-window','falling':'falling','falling (ë„¤ê²Œ ë‹¿ì„ ë•Œê¹Œì§€)':'falling','another level':'another-level',"i'll be there":'ill-be-there','ill be there':'ill-be-there','to me, today':'to-me-today','to me today':'to-me-today','ì˜¤ëŠ˜ì˜ ë‚˜ì—ê²Œ':'to-me-today','background':'background','with the clouds':'with-the-clouds','with the clouds (êµ¬ë¦„ê³¼ ë– ë‚˜ëŠ” ì—¬í–‰)':'with-the-clouds','rope it':'rope-it','loser':'loser','nothing without your love':'nothing-without-your-love','gajah (feat. rm)':'gajah','bicycle':'bicycle','make it right (feat. lauv)':'make-it-right-lauv','my universe':'my-universe','the planet':'the-planet','take two':'take-two'
  };

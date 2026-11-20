@@ -1,3 +1,7 @@
+Exit code: 0
+Wall time: 15.3 seconds
+Total output lines: 495
+Output:
 "use client";
 import {lonelySections,lonelyVocabulary} from "@/lib/lonely";
 import {hecticSections,hecticVocabulary} from "@/lib/hectic";
@@ -20,64 +24,307 @@ import {skitOnTheStartLineSections,skitOnTheStartLineVocabulary} from '@/lib/ski
 import {seoulSections,seoulVocabulary} from '@/lib/seoul';
 import {moonchildSections,moonchildVocabulary} from '@/lib/moonchild';
 import {badbyeSections,badbyeVocabulary} from '@/lib/badbye';
-import {uhgoodSections,uhgoodV…31859 tokens truncated…lphone","skit (be)":"skit-be","skit - be":"skit-be","hip hop lover":"hip-hop-lover","hip-hop lover":"hip-hop-lover","hip hop phile":"hip-hop-lover","hip hop phile (íž™í•©ì„±ì• ìž)":"hip-hop-lover","hiphop phile":"hip-hop-lover","íž™í•©ì„±ì• ìž":"hip-hop-lover","hip hop lover (íž™í•©ì„±ì• ìž)":"hip-hop-lover","let me know":"let-me-know","intro: what am i to you":"what-am-i-to-you","intro : what am i to you":"what-am-i-to-you","what am i to you":"what-am-i-to-you","what am i to you (intro)":"what-am-i-to-you","intro: what am i to you?":"what-am-i-to-you","war of hormone":"war-of-hormone","war of hormones":"war-of-hormone","í˜¸ë¥´ëª¬ ì „ìŸ":"war-of-hormone","war of hormone (í˜¸ë¥´ëª¬ ì „ìŸ)":"war-of-hormone","skit: one night in a strange city":"skit-one-night","skit : one night in a strange city":"skit-one-night","butterfly (prologue mix)":"butterfly-prologue","butterfly prologue mix":"butterfly-prologue","butterfly prologue":"butterfly-prologue","save me":"save-me","epilogue: young forever":"young-forever","epilogue : young forever":"young-forever","young forever":"young-forever","intro: never mind":"never-mind","intro : never mind":"never-mind","never mind":"never-mind","nevermind":"never-mind","intro: nevermind":"never-mind","intro : nevermind":"never-mind","outro: house of cards":"house-of-cards","outro : house of cards":"house-of-cards","house of cards":"house-of-cards","house of cards (full length edition)":"house-of-cards","house of cards (full length)":"house-of-cards","whalien 52":"whalien-52","silver spoon":"silver-spoon","baepsae":"silver-spoon","ë±ìƒˆ":"silver-spoon","silver spoon (baepsae)":"silver-spoon","silver spoon (ë±ìƒˆ)":"silver-spoon","silver spoon (ë±ìƒˆ; baepsae)":"silver-spoon","ë±ìƒˆ (silver spoon)":"silver-spoon","ma city":"ma-city","butterfly":"butterfly","love is not over (full length edition)":"love-is-not-over-full","love is not over (full length)":"love-is-not-over-full","autumn leaves":"dead-leaves","dead leaves":"dead-leaves","ê³ ì—½":"dead-leaves","dead leaves (ê³ ì—½)":"dead-leaves","autumn leaves (ê³ ì—½)":"dead-leaves","dead leaves (ê³ ì—½; goyeob)":"dead-leaves","fun boys":"fun-boys","boyz with fun":"fun-boys","boys with fun":"fun-boys","í¥íƒ„ì†Œë…„ë‹¨":"fun-boys","fun boys (í¥íƒ„ì†Œë…„ë‹¨)":"fun-boys","converse high":"converse-high","dope":"dope","ì©”ì–´":"dope","dope (ì©”ì–´)":"dope","hold me tight":"hold-me-tight","ìž¡ì•„ì¤˜":"hold-me-tight","hold me tight (ìž¡ì•„ì¤˜)":"hold-me-tight","moving on":"moving-on","move":"moving-on","ì´ì‚¬":"moving-on","move (ì´ì‚¬)":"moving-on","moving on (ì´ì‚¬)":"moving-on","outro: love is not over":"outro-love-is-not-over","outro : love is not over":"outro-love-is-not-over","a supplementary story: you never walk alone":"supplementary-story","a supplementary story : you never walk alone":"supplementary-story","intro: the most beautiful moment in life":"intro-hyyh","intro : the most beautiful moment in life":"intro-hyyh","intro: the most beautiful moment in life (í™”ì–‘ì—°í™”)":"intro-hyyh","intro: í™”ì–‘ì—°í™”":"intro-hyyh","not today":"not-today","outro: wings":"outro-wings","outro : wings":"outro-wings","21st century girl":"21st-century-girl","21st century girls":"21st-century-girl","21ì„¸ê¸° ì†Œë…€":"21st-century-girl","21st century girls (21ì„¸ê¸° ì†Œë…€)":"21st-century-girl","21st century girl (21ì„¸ê¸° ì†Œë…€)":"21st-century-girl","2! 3!":"two-three","two! three!":"two-three","two! three! (still wishing there will be better days)":"two-three","2! 3! (still wishing there will be better days)":"two-three","ë‘˜! ì…‹!":"two-three","ë‘˜! ì…‹! (ê·¸ëž˜ë„ ì¢‹ì€ ë‚ ì´ ë” ë§Žê¸°ë¥¼)":"two-three","bts cypher 4":"cypher-pt4","cypher 4":"cypher-pt4","bts cypher pt.4":"cypher-pt4","bts cypher pt. 4":"cypher-pt4","am i wrong":"am-i-wrong","mama":"mama","lost":"lost","reflection":"reflection","awake":"awake","lie":"lie","first love":"first-love","begin":"begin","stigma":"stigma","pied piper":"pied-piper","intro: boy meets evil":"boy-meets-evil","intro : boy meets evil":"boy-meets-evil","boy meets evil":"boy-meets-evil","normal (korean ver.)":"normal-korean","normal (korean ver)":"normal-korean","normal (korean version)":"normal-korean","come over":"come-over","love maze":"love-maze","so what":"so-what","134340":"134340","paradise":"paradise","ë‚™ì›":"paradise","paradise (ë‚™ì›)":"paradise","ë‚™ì› (paradise)":"paradise","paradise (ë‚™ì›; nagwon)":"paradise","anpanman":"anpanman","mic drop":"mic-drop",'gogo':'go-go','go, go':'go-go','go go':'go-go','ê³ ë¯¼ë³´ë‹¤ go':'go-go','ê³ ë¯¼ë³´ë‹¤ go (go, go)':'go-go','magic shop':'magic-shop',"i'm fine":'im-fine','im fine':'im-fine','airplane pt. 2':'airplane-pt2','airplane pt.2':'airplane-pt2','airplane, pt. 2':'airplane-pt2','tear':'tear','outro: tear':'tear','outro : tear':'tear','best of me':'best-of-me','trivia æ‰¿: love':'trivia-love','trivia æ‰¿ : love':'trivia-love','trivia: love':'trivia-love','the truth untold':'the-truth-untold','the truth untold (feat. steve aoki)':'the-truth-untold','ì „í•˜ì§€ ëª»í•œ ì§„ì‹¬':'the-truth-untold','the truth untold (ì „í•˜ì§€ ëª»í•œ ì§„ì‹¬)':'the-truth-untold','serendipity (full length edition)':'serendipity','serendipity (full length)':'serendipity','serendipity':'serendipity','epiphany':'epiphany','answer: love myself':'answer-love-myself','answer : love myself':'answer-love-myself','answer love myself':'answer-love-myself','home':'home','mikrokosmos':'mikrokosmos','ì†Œìš°ì£¼':'mikrokosmos','mikrokosmos (ì†Œìš°ì£¼)':'mikrokosmos','ì†Œìš°ì£¼ (mikrokosmos)':'mikrokosmos','ugh!':'ugh',"we are bulletproof: the eternal":'we-are-bulletproof-eternal',"we are bulletproof : the eternal":'we-are-bulletproof-eternal',"we are bulletproof the eternal":'we-are-bulletproof-eternal',"we are bulletproof : eternal":'we-are-bulletproof-eternal',"a brand new day":'a-brand-new-day',"a brand new day (pt. 2)":'a-brand-new-day',"a brand new day (bts world original soundtrack) [pt. 2]":'a-brand-new-day',"all night":'all-night',"all night (pt. 3)":'all-night',"all night (bts world original soundtrack) [pt. 3]":'all-night','dream glow':'dream-glow','dream glow (pt. 1)':'dream-glow','heartbeat':'heartbeat','respect':'respect','inner child':'inner-child','ugh':'ugh','ìš±':'ugh','ugh! (ìš±)':'ugh','louder than bombs':'louder-than-bombs','my time':'my-time','ì‹œì°¨':'my-time','my time (ì‹œì°¨)':'my-time','ì‹œì°¨ (my time)':'my-time','black swan':'black-swan','interlude: shadow':'interlude-shadow','interlude : shadow':'interlude-shadow','shadow':'interlude-shadow','dionysus':'dionysus','make it right':'make-it-right','dis-ease':'dis-ease','ë³‘':'dis-ease','dis-ease (ë³‘)':'dis-ease','telepathy':'telepathy','ìž ì‹œ':'telepathy','telepathy (ìž ì‹œ)':'telepathy','blue & grey':'blue-grey','blue and grey':'blue-grey','fly to my room':'fly-to-my-room','ë‚´ ë°©ì„ ì—¬í–‰í•˜ëŠ” ë²•':'fly-to-my-room','fly to my room (ë‚´ ë°©ì„ ì—¬í–‰í•˜ëŠ” ë²•)':'fly-to-my-room','burning up (fire)':'fire','fire':'fire','ë¶ˆíƒ€ì˜¤ë¥´ë„¤':'fire','run':'run','i need u':'i-need-u','danger':'danger','born singer':'born-singer','into the sun':'into-the-sun','please':'please','one more night':'one-more-night',"they don't know 'bout us":'they-dont-know-bout-us',"they don't know bout us":'they-dont-know-bout-us','merry go round':'merry-go-round','fya':'fya','aliens':'aliens','2.0':'two-point-zero','hooligan':'hooligan','body to body':'body-to-body','no more dream':'no-more-dream','n.o':'n-o','boy in luv':'boy-in-luv','ìƒë‚¨ìž':'boy-in-luv','fake love':'fake-love','blood sweat and tears':'blood-sweat-tears','blood sweat & tears':'blood-sweat-tears','í”¼ ë•€ ëˆˆë¬¼':'blood-sweat-tears','spring day':'spring-day','life goes on':'life-goes-on','boy with luv (feat. halsey)':'boy-with-luv','on':'on','on (feat. sia)':'on','yet to come':'yet-to-come','dna':'dna','idol':'idol','run bts':'run-bts','intro : persona':'intro-persona','intro: persona':'intro-persona','trivia è½‰ : seesaw':'seesaw','trivia è½‰: seesaw':'seesaw','trivia: seesaw':'seesaw','bts cypher pt.3 : killer (feat. supreme boi)':'cypher-pt3','bts cypher, pt. 3: killer (feat. supreme boi)':'cypher-pt3','bts cypher pt.3 : killer':'cypher-pt3','bts cypher pt. 3: killer':'cypher-pt3','outro : ego':'ego','outro: ego':'ego',"00:00 (zero o'clock)":'zero-oclock',"zero o'clock":'zero-oclock','for youth':'for-youth','dimple':'dimple','ë³´ì¡°ê°œ':'dimple','ë³´ì¡°ê°œ (dimple)':'dimple','just dance':'just-dance','trivia èµ·: just dance':'just-dance','trivia èµ· : just dance':'just-dance','trivia: just dance':'just-dance','euphoria':'euphoria','euphoria: theme of love yourself wonder':'euphoria','euphoria : theme of love yourself wonder':'euphoria','singularity':'singularity','intro: singularity':'singularity','intro : singularity':'singularity','her':'her','outro: her':'her','outro : her':'her','filter':'filter','friends':'friends','ì¹œêµ¬':'friends','ego':'ego','seesaw':'seesaw','moon':'moon','jamais vu':'jamais-vu','stay':'stay'} as Record<string,string>)[s]}
-const remixOrInstrumental=/(instrumental|remix)/i;
-const blockedTitles=['PERMISSION TO DANCE ON STAGE (LIVE)','SWIM - Single','Dreamers (Music from the','Yet To Come (Hyundai Ver.)','Bad Decisions','My Universe (Supernova 7 Mix)','Permission to Dance - Single','Butter - Single','Who (feat. BTS)','FAKE LOVE (Rocking Vibe Mix)'];
-const isBlocked=(title:string)=>blockedTitles.some(b=>normalized(title).includes(normalized(b)));
-const discography:Album[]=catalog.filter(a=>!hiddenAlbums.has(a.artist+':'+a.id)&&!remixOrInstrumental.test(a.title)&&!isBlocked(a.title)).map(a=>({...a,tracks:a.tracks.filter(t=>!hiddenTracks.has(a.artist+':'+t.id)&&!remixOrInstrumental.test(t.title)&&!isBlocked(t.title))})).filter(a=>a.tracks.length>0);
-const isSingle=(a:Album)=>/ - single$/i.test(a.title);
-const sc=(q:string)=>'https://soundcloud.com/search?q='+encodeURIComponent(q);
-const soundCloudOnly=[
- {id:'sc-sea',title:'SEA',artist:'BTS',url:sc('BTS SEA')},
- {id:'sc-4-oclock',title:"4 O'Clock",artist:'RM, V Â· BTS',url:sc("BTS 4 O'Clock")},
-];
-type ListenItem={title:string;artist:string;apple:string;soundcloud?:string};
-type Listen=(item:ListenItem)=>void;
-function platformLinks(item:ListenItem){return [
- ...(item.soundcloud?[{label:'SoundCloud',href:item.soundcloud}]:[]),
- {label:'YouTube',href:'https://www.youtube.com/results?search_query='+encodeURIComponent(item.artist+' '+item.title+' official audio')},
- {label:'Spotify',href:'https://open.spotify.com/search/'+encodeURIComponent(item.artist+' '+item.title)},
- {label:item.apple.includes('soundcloud.com/')?'SoundCloud':'Apple Music',href:item.apple}
-];}
-function studyForAlbum(title:string,albumTitle:string,artist:string){
- const normalizedTitle=title.trim().toLowerCase();
- if(normalizedTitle==='close to you')return 'close-to-you';
- if(normalizedTitle==='super tuna')return 'super-tuna';
- if(normalizedTitle==='the astronaut')return 'the-astronaut';
- const specialStudies:Record<string,string>={
-  'sea':'sea',"4 o'clock":'four-oclock','i will come to you':'i-will-come-to-you','i will come to you (ê·¸ë¦¬ì›€ì—)':'i-will-come-to-you','heart on the window':'heart-on-the-window','falling':'falling','falling (ë„¤ê²Œ ë‹¿ì„ ë•Œê¹Œì§€)':'falling','another level':'another-level',"i'll be there":'ill-be-there','ill be there':'ill-be-there','to me, today':'to-me-today','to me today':'to-me-today','ì˜¤ëŠ˜ì˜ ë‚˜ì—ê²Œ':'to-me-today','background':'background','with the clouds':'with-the-clouds','with the clouds (êµ¬ë¦„ê³¼ ë– ë‚˜ëŠ” ì—¬í–‰)':'with-the-clouds','rope it':'rope-it','loser':'loser','nothing without your love':'nothing-without-your-love','gajah (feat. rm)':'gajah','bicycle':'bicycle','make it right (feat. lauv)':'make-it-right-lauv','my universe':'my-universe','the planet':'the-planet','take two':'take-two'
- };
- if(specialStudies[normalizedTitle])return specialStudies[normalizedTitle];
- if(normalizedTitle==='skit')return albumTitle.trim().toUpperCase()==='BE'&&artist==='BTS'?'skit-be':undefined;
- return studyFor(title)
+import {uhgoodSections,uhgoodVocabulary} from '@/lib/uhgood';
+import {everythingoesSections,everythingoesVocabulary} from '@/lib/everythingoes';
+import {foreverRainSections,foreverRainVocabulary} from '@/lib/forever-rain';
+import {outroCircleRoomCypherSections,outroCircleRoomCypherVocabulary} from '@/lib/outro-circle-room-cypher';
+import {iLikeItSections,iLikeItVocabulary} from '@/lib/i-like-it';
+import {skitCircleRoomTalkSections,skitCircleRoomTalkVocabulary} from '@/lib/skit-circle-room-talk';
+import {weAreBulletproofPt2Sections,weAreBulletproofPt2Vocabulary} from '@/lib/we-are-bulletproof-pt2';
+import {intro2Cool4SkoolSections,intro2Cool4SkoolVocabulary} from '@/lib/intro-2-cool-4-skool';
+import {skitExpectationSections,skitExpectationVocabulary} from '@/lib/skit-expectation';
+import {interludeWingsSections,interludeWingsVocabulary} from '@/lib/interlude-wings';
+import {weOnSections,weOnVocabulary} from '@/lib/we-on';
+import {introOrul82Sections,introOrul82Vocabulary} from '@/lib/intro-orul82';
+import {skitRUHappyNowSections,skitRUHappyNowVocabulary} from '@/lib/skit-r-u-happy-now';
+import {ifIRuledTheWorldSections,ifIRuledTheWorldVocabulary} from '@/lib/if-i-ruled-the-world';
+import {coffeeSections,coffeeVocabulary} from '@/lib/coffee';
+import {cypherPt1Sections,cypherPt1Vocabulary} from '@/lib/cypher-pt1';
+import {attackOnBangtanSections,attackOnBangtanVocabulary} from '@/lib/attack-on-bangtan';
+import {satooriRapSections,satooriRapVocabulary} from '@/lib/satoori-rap';
+import {outroLuvInSkoolSections,outroLuvInSkoolVocabulary} from '@/lib/outro-luv-in-skool';
+import {jumpSections,jumpVocabulary} from '@/lib/jump';
+import {outroProposeSections,outroProposeVocabulary} from '@/lib/outro-propose';
+import {cypherPt2Sections,cypherPt2Vocabulary} from '@/lib/cypher-pt2';
+import {spineBreakerSections,spineBreakerVocabulary} from '@/lib/spine-breaker';
+import {justOneDaySections,justOneDayVocabulary} from '@/lib/just-one-day';
+import {tomorrowSections,tomorrowVocabulary} from '@/lib/tomorrow';
+import {skitSoulmateSections,skitSoulmateVocabulary} from '@/lib/skit-soulmate';
+import {whereYouFromSections,whereYouFromVocabulary} from '@/lib/where-you-from';
+import {missRightSections,missRightVocabulary} from '@/lib/miss-right';
+import {introSkoolLuvAffairSections,introSkoolLuvAffairVocabulary} from '@/lib/intro-skool-luv-affair';
+import {doesThatMakeSenseSections,doesThatMakeSenseVocabulary} from '@/lib/does-that-make-sense';
+import {introSerendipitySections,introSerendipityVocabulary} from '@/lib/intro-serendipity';
+import {lookHereSections,lookHereVocabulary} from '@/lib/look-here';
+import {secondGradeSections,secondGradeVocabulary} from '@/lib/2nd-grade';
+import {blanketKickSections,blanketKickVocabulary} from '@/lib/blanket-kick';
+import {heaven247Sections,heaven247Vocabulary} from '@/lib/24-7-heaven';
+import {rainSections,rainVocabulary} from '@/lib/rain';
+import {turnOffYourCellphoneSections,turnOffYourCellphoneVocabulary} from '@/lib/turn-off-your-cellphone';
+import {skitBeSections,skitBeVocabulary} from '@/lib/skit-be';
+import {hipHopLoverSections,hipHopLoverVocabulary} from '@/lib/hip-hop-lover';
+import {letMeKnowSections,letMeKnowVocabulary} from '@/lib/let-me-know';
+import {warOfHormoneSections,warOfHormoneVocabulary} from '@/lib/war-of-hormone';
+import {whatAmIToYouSections,whatAmIToYouVocabulary} from '@/lib/what-am-i-to-you';
+import {skitOneNightSections,skitOneNightVocabulary} from '@/lib/skit-one-night';
+import {butterflyPrologueSections,butterflyPrologueVocabulary} from '@/lib/butterfly-prologue';
+import {youngForeverSections,youngForeverVocabulary} from '@/lib/young-forever';
+import {saveMeSections,saveMeVocabulary} from '@/lib/save-me';
+import {neverMindSections,neverMindVocabulary} from '@/lib/never-mind';
+import {houseOfCardsSections,houseOfCardsVocabulary} from '@/lib/house-of-cards';
+import {whalien52Sections,whalien52Vocabulary} from '@/lib/whalien-52';
+import {silverSpoonSections,silverSpoonVocabulary} from '@/lib/silver-spoon';
+import {maCitySections,maCityVocabulary} from '@/lib/ma-city';
+import {butterflySections,butterflyVocabulary} from '@/lib/butterfly';
+import {loveIsNotOverFullSections,loveIsNotOverFullVocabulary} from '@/lib/love-is-not-over-full';
+import {deadLeavesSections,deadLeavesVocabulary} from '@/lib/dead-leaves';
+import {funBoysSections,funBoysVocabulary} from '@/lib/fun-boys';
+import {converseHighSections,converseHighVocabulary} from '@/lib/converse-high';
+import {dopeSections,dopeVocabulary} from '@/lib/dope';
+import {holdMeTightSections,holdMeTightVocabulary} from '@/lib/hold-me-tight';
+import {movingOnSections,movingOnVocabulary} from '@/lib/moving-on';
+
+import {loveNotOverSections,loveNotOverVocabulary} from '@/lib/outro-love-is-not-over';
+
+import {introHyyhSections,introHyyhVocabulary} from '@/lib/intro-hyyh';
+
+import {supplementaryStorySections,supplementaryStoryVocabulary} from '@/lib/supplementary-story';
+
+import {outroWingsSections,outroWingsVocabulary} from '@/lib/outro-wings';
+
+import {notTodaySections,notTodayVocabulary} from '@/lib/not-today';
+
+import {twoThreeSections,twoThreeVocabulary} from '@/lib/two-three';
+
+import {centuryGirlSections,centuryGirlVocabulary} from '@/lib/21st-century-girl';
+
+import {amIWrongSections,amIWrongVocabulary} from '@/lib/am-i-wrong';
+
+import {cypher4Sections,cypher4Vocabulary} from '@/lib/cypher-pt4';
+
+import {lostSections,lostVocabulary} from '@/lib/lost';
+
+import {mamaSections,mamaVocabulary} from '@/lib/mama';
+
+import {awakeSections,awakeVocabulary} from '@/lib/awake';
+
+import {reflectionSections,reflectionVocabulary} from '@/lib/reflection';
+
+import {firstLoveSections,firstLoveVocabulary} from '@/lib/first-love';
+
+import {lieSections,lieVocabulary} from '@/lib/lie';
+
+import {stigmaSections,stigmaVocabulary} from '@/lib/stigma';
+
+import {beginSections,beginVocabulary} from '@/lib/begin';
+
+import {piedPiperSections,piedPiperVocabulary} from '@/lib/pied-piper';
+import {boyMeetsEvilSections,boyMeetsEvilVocabulary} from '@/lib/boy-meets-evil';
+import {normalKoreanSections,normalKoreanVocabulary} from '@/lib/normal-korean';
+import {comeOverSections,comeOverVocabulary} from '@/lib/come-over';
+import {loveMazeSections,loveMazeVocabulary} from '@/lib/love-maze';
+import {soWhatSections,soWhatVocabulary} from '@/lib/so-what';
+import {plutoSections,plutoVocabulary} from '@/lib/pluto';
+import {paradiseSections,paradiseVocabulary} from '@/lib/paradise';
+import {anpanmanSections,anpanmanVocabulary} from '@/lib/anpanman';
+import {micDropSections,micDropVocabulary} from '@/lib/mic-drop';
+import {goGoSections,goGoVocabulary} from '@/lib/go-go';
+import {magicShopSections,magicShopVocabulary} from '@/lib/magic-shop';
+import {imFineSections,imFineVocabulary} from '@/lib/im-fine';
+import {airplanePt2Sections,airplanePt2Vocabulary} from '@/lib/airplane-pt2';
+import {tearSections,tearVocabulary} from '@/lib/tear';
+import {bestOfMeSections,bestOfMeVocabulary} from '@/lib/best-of-me';
+import {triviaLoveSections,triviaLoveVocabulary} from '@/lib/trivia-love';
+import {truthUntoldSections,truthUntoldVocabulary} from '@/lib/the-truth-untold';
+import {serendipitySections,serendipityVocabulary} from '@/lib/serendipity';
+import {epiphanySections,epiphanyVocabulary} from '@/lib/epiphany';
+import {answerLoveMyselfSections,answerLoveMyselfVocabulary} from '@/lib/answer-love-myself';
+import {homeSections,homeVocabulary} from '@/lib/home';
+import {mikrokosmosSections,mikrokosmosVocabulary} from '@/lib/mikrokosmos';
+import {allNightSections,allNightVocabulary} from '@/lib/all-night';
+import {brandNewDaySections,brandNewDayVocabulary} from '@/lib/a-brand-new-day';
+import {dreamGlowSections,dreamGlowVocabulary} from '@/lib/dream-glow';
+import {heartbeatSections,heartbeatVocabulary} from '@/lib/heartbeat';
+import {eternalSections,eternalVocabulary} from '@/lib/we-are-bulletproof-eternal';
+import {respectSections,respectVocabulary} from '@/lib/respect';
+import {innerChildSections,innerChildVocabulary} from '@/lib/inner-child';
+
+import {ughSections,ughVocabulary} from '@/lib/ugh';
+import {louderThanBombsSections,louderThanBombsVocabulary} from '@/lib/louder-than-bombs';
+import {myTimeSections,myTimeVocabulary} from '@/lib/my-time';
+import {blackSwanSections,blackSwanVocabulary} from '@/lib/black-swan';
+import {interludeShadowSections,interludeShadowVocabulary} from '@/lib/interlude-shadow';
+import {dionysusSections,dionysusVocabulary} from '@/lib/dionysus';
+/* localized-returns */
+import {useLocale,Localized} from '@/components/localization';
+import {useState,type ReactNode} from 'react';
+import {Music2} from 'lucide-react';
+import {Checkbox} from '@/components/ui/checkbox';
+import {koreanPattern} from '@/lib/audio-text';
+import {addMusicCuriosities} from '@/lib/music-curiosities';
+import {songs,Song} from '@/lib/songs';
+import {springDaySections,springDayVocabulary,StudyLine} from '@/lib/spring-day';
+import {takeTwoSections,takeTwoVocabulary,takeTwoSong} from '@/lib/take-two';
+import {thePlanetSections,thePlanetVocabulary,thePlanetSong} from '@/lib/the-planet';
+import {myUniverseSections,myUniverseVocabulary,myUniverseSong} from '@/lib/my-universe';
+import {makeItRightLauvSections,makeItRightLauvVocabulary,makeItRightLauvSong} from '@/lib/make-it-right-lauv';
+import {seaSections,seaVocabulary,seaSong} from '@/lib/sea';
+import {fourOclockSections,fourOclockVocabulary,fourOclockSong} from '@/lib/four-oclock';
+import {bicycleSections,bicycleVocabulary,bicycleSong} from '@/lib/bicycle';
+import {gajahSections,gajahVocabulary,gajahSong} from '@/lib/gajah';
+import {loserSections,loserVocabulary,loserSong} from '@/lib/loser';
+import {ropeItSections,ropeItVocabulary,ropeItSong} from '@/lib/rope-it';
+import {withTheCloudsSections,withTheCloudsVocabulary,withTheCloudsSong} from '@/lib/with-the-clouds';
+import {backgroundSections,backgroundVocabulary,backgroundSong} from '@/lib/background';
+import {toMeTodaySections,toMeTodayVocabulary,toMeTodaySong} from '@/lib/to-me-today';
+import {illBeThereSections,illBeThereVocabulary,illBeThereSong} from '@/lib/ill-be-there';
+import {anotherLevelSections,anotherLevelVocabulary,anotherLevelSong} from '@/lib/another-level';
+import {fallingSections,fallingVocabulary,fallingSong} from '@/lib/falling';
+import {heartOnTheWindowSections,heartOnTheWindowVocabulary,heartOnTheWindowSong} from '@/lib/heart-on-the-window';
+import {iWillComeToYouSections,iWillComeToYouVocabulary,iWillComeToYouSong} from '@/lib/i-will-come-to-you';
+import {closeToYouSections,closeToYouVocabulary,closeToYouSong} from '@/lib/close-to-you';
+import {superTunaSections,superTunaVocabulary,superTunaSong} from '@/lib/super-tuna';
+import {theAstronautSections,theAstronautVocabulary,theAstronautSong} from '@/lib/the-astronaut';
+import {yoursSections,yoursVocabulary,yoursSong} from '@/lib/yours';
+import {abyssSections,abyssVocabulary,abyssSong} from '@/lib/abyss';
+import {tonightSections,tonightVocabulary,tonightSong} from '@/lib/tonight';
+import {itsDefinitelyYouSections,itsDefinitelyYouVocabulary,itsDefinitelyYouSong} from '@/lib/its-definitely-you';
+import {dDaySections,dDayVocabulary,dDaySong} from '@/lib/d-day';
+import {haegeumSections,haegeumVocabulary,haegeumSong} from '@/lib/haegeum';
+import {huhSections,huhVocabulary,huhSong} from '@/lib/huh';
+import {amygdalaSections,amygdalaVocabulary,amygdalaSong} from '@/lib/amygdala';
+import {sdlSections,sdlVocabulary,sdlSong} from '@/lib/sdl';
+import {nothingWithoutYourLoveSections,nothingWithoutYourLoveVocabulary,nothingWithoutYourLoveSong} from '@/lib/nothing-without-your-love';
+import {bodyToBodySections,bodyToBodyVocabulary} from '@/lib/body-to-body';
+import {hooliganSections,hooliganVocabulary} from '@/lib/hooligan';
+import {twoPointZeroSections,twoPointZeroVocabulary} from '@/lib/two-point-zero';
+import {aliensSections,aliensVocabulary} from '@/lib/aliens';
+import {fyaSections,fyaVocabulary} from '@/lib/fya';
+import {bornSingerSections,bornSingerVocabulary} from '@/lib/born-singer';
+import {intoTheSunSections,intoTheSunVocabulary} from '@/lib/into-the-sun';
+import {pleaseSections,pleaseVocabulary} from '@/lib/please';
+import {oneMoreNightSections,oneMoreNightVocabulary} from '@/lib/one-more-night';
+import {theyDontKnowSections,theyDontKnowVocabulary} from '@/lib/they-dont-know-bout-us';
+import {merryGoRoundSections,merryGoRoundVocabulary} from '@/lib/merry-go-round';
+import {noMoreDreamSections,noMoreDreamVocabulary} from '@/lib/no-more-dream';
+import {nOSections,nOVocabulary} from '@/lib/n-o';
+import {fireSections,fireVocabulary} from '@/lib/fire';
+import {runSections,runVocabulary} from '@/lib/run';
+import {iNeedUSections,iNeedUVocabulary} from '@/lib/i-need-u';
+import {dangerSections,dangerVocabulary} from '@/lib/danger';
+import {boyInLuvSections,boyInLuvVocabulary} from '@/lib/boy-in-luv';
+import {dnaSections,dnaVocabulary} from '@/lib/dna';
+import {fakeLoveSections,fakeLoveVocabulary} from '@/lib/fake-love';
+import {bstSections,bstVocabulary} from '@/lib/blood-sweat-tears';
+import {idolSections,idolVocabulary} from '@/lib/idol';
+import {bwlSections,bwlVocabulary} from '@/lib/boy-with-luv';
+import {onSections,onVocabulary} from '@/lib/on';
+import {lgoSections,lgoVocabulary} from '@/lib/life-goes-on';
+import {ytcSections,ytcVocabulary} from '@/lib/yet-to-come';
+import {runBtsSections,runBtsVocabulary} from '@/lib/run-bts';
+import {personaSections,personaVocabulary} from '@/lib/persona';
+import {staySections,stayVocabulary} from '@/lib/stay';
+import {egoSections,egoVocabulary} from '@/lib/ego';
+import {friendsSections,friendsVocabulary} from '@/lib/friends';
+import {filterSections,filterVocabulary} from '@/lib/filter';
+import {herSections,herVocabulary} from '@/lib/her';
+import {singularitySections,singularityVocabulary} from '@/lib/singularity';
+import {euphoriaSections,euphoriaVocabulary} from '@/lib/euphoria';
+import {justDanceSections,justDanceVocabulary} from '@/lib/just-dance';
+import {zeroOclockSections,zeroOclockVocabulary} from '@/lib/zero-oclock';
+import {dimpleSections,dimpleVocabulary} from '@/lib/dimple';
+import {forYouthSections,forYouthVocabulary} from '@/lib/for-youth';
+import {flyToMyRoomSections,flyToMyRoomVocabulary} from '@/lib/fly-to-my-room';
+import {blueGreySections,blueGreyVocabulary} from '@/lib/blue-grey';
+import {telepathySections,telepathyVocabulary} from '@/lib/telepathy';
+import {disEaseSections,disEaseVocabulary} from '@/lib/dis-ease';
+import {makeItRightSections,makeItRightVocabulary} from '@/lib/make-it-right';
+import {cypherPt3Sections,cypherPt3Vocabulary} from '@/lib/cypher-pt3';
+import {seesawSections,seesawVocabulary} from '@/lib/seesaw';
+import {moonSections,moonVocabulary} from '@/lib/moon';
+import {jamaisVuSections,jamaisVuVocabulary} from '@/lib/jamais-vu';
+import {useProgress} from '@/lib/progress';
+import {ExerciseCard} from './exercise';
+import {KoreanText,AudioButton} from './korean-audio';
+
+export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string}){
+const song=[...songs,takeTwoSong,thePlanetSong,myUniverseSong,makeItRightLauvSong,seaSong,fourOclockSong,bicycleSong,gajahSong,nothingWithoutYourLoveSong,loserSong,ropeItSong,withTheCloudsSong,backgroundSong,toMeTodaySong,illBeThereSong,anotherLevelSong,fallingSong,heartOnTheWindowSong,iWillComeToYouSong,closeToYouSong,superTunaSong,theAstronautSong,yoursSong,abyssSong,tonightSong,itsDefinitelyYouSong,dDaySong,haegeumSong,huhSong,amygdalaSong,sdlSong].find(s=>s.id===initialSongId)??songs[0];
+ return <Localized>{<><div className="intro"><div><p className="eyebrow">PALAVRAS, FRASES E DESCOBERTAS</p><h1>Aprenda coreano com BTS<span>.</span></h1><p>Toque nas palavras para ouvir uma voz sintetizada em coreano.</p></div><Music2 size={42}/></div><div className="song-tabs"><span className="pill">{song.title}</span></div><SongLesson key={song.id} song={song}/><p className="music-reference">TraduÃ§Ãµes e explicaÃ§Ãµes preparadas para estudo. Este projeto nÃ£o Ã© afiliado ao BTS.</p></>}</Localized>;
 }
-function ListenModal({item,onClose}:{item:ListenItem;onClose:()=>void}){
- return createPortal(<div className="listen-overlay" onClick={onClose}><div className="listen-box" role="dialog" aria-modal="true" aria-label="Escolher plataforma" onClick={e=>e.stopPropagation()}><button type="button" className="listen-close" aria-label="Fechar" onClick={onClose}>Ã—</button><p className="eyebrow">ESCOLHA A PLATAFORMA</p><h3>Ouvir â€œ{item.title}â€</h3><p className="listen-artist">{item.artist}</p><ul className="listen-platforms">{platformLinks(item).map(p=><li key={p.label}><a href={p.href} target="_blank" rel="noreferrer">{p.label} â†—</a></li>)}</ul></div></div>,document.body);
+type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
+const studies:Record<string,StudyConfig>={
+  'sdl':{sections:sdlSections,vocabulary:sdlVocabulary,summary:'SDL reflete sobre amor, saudade e memorias idealizadas.',heading:'SDL Â· letra e gramatica',badge:'SUGA Â· analise gramatical'},
+  'amygdala':{sections:amygdalaSections,vocabulary:amygdalaVocabulary,summary:'AMYGDALA visita memorias dolorosas e o desejo de se libertar delas.',heading:'AMYGDALA Â· letra e gramatica',badge:'SUGA Â· analise gramatical'},
+  'huh':{sections:huhSections,vocabulary:huhVocabulary,summary:'HUH?! responde a julgamentos externos com limites e independencia.',heading:'HUH?! Â· letra e gramatica',badge:'SUGA feat. j-hope Â· analise gramatical'},
+  'haegeum':{sections:haegeumSections,vocabulary:haegeumVocabulary,summary:'Haegeum discute liberdade de expressao e pensamento.',heading:'Haegeum Â· letra e gramatica',badge:'SUGA Â· analise gramatical'},
+  'd-day':{sections:dDaySections,vocabulary:dDayVocabulary,summary:'D-Day transforma um novo comeco em coragem para atravessar dor e medo.',heading:'D-Day Â· letra e gramatica',badge:'SUGA Â· analise gramatical'},
+  'its-definitely-you':{sections:itsDefinitelyYouSections,vocabulary:itsDefinitelyYouVocabulary,summary:'Its Definitely You apresenta um amor urgente que recusa a separacao.',heading:'Its Definitely You Â· letra e gramatica',badge:'V e Jin Â· analise gramatical'},
+  'tonight':{sections:tonightSections,vocabulary:tonightVocabulary,summary:'Tonight observa o medo da despedida e preserva lembrancas de companhia.',heading:'Tonight Â· letra e gramatica',badge:'Jin Â· analise gramatical'},
+  'abyss':{sections:abyssSections,vocabulary:abyssVocabulary,summary:'Abyss mergulha em um mar interior de silencio e autoconhecimento.',heading:'Abyss Â· letra e gramatica',badge:'Jin Â· analise gramatical'},
+  'yours':{sections:yoursSections,vocabulary:yoursVocabulary,summary:'â€œYoursâ€ retrata a distÃ¢ncia atravÃ©s de imagens de sombra, pÃ´r do sol e tempo paralisado. O estudo trabalha mudanÃ§a gradual, continuidade, condiÃ§Ã£o, suposiÃ§Ã£o e o desejo de alcanÃ§ar alguÃ©m na escuridÃ£o.',heading:'Yours Â· letra e gramÃ¡tica',badge:'Jin Â· anÃ¡lise gramatical'},
+  'the-astronaut':{sections:theAstronautSections,vocabulary:theAstronautVocabulary,summary:'â€œThe As…20608 tokens truncated…of-me':{sections:bestOfMeSections,vocabulary:bestOfMeVocabulary,summary:"A declaraÃ§Ã£o de amor como seguranÃ§a e entrega. Explore suficiÃªncia, experiÃªncia, pedidos e concessÃµes nas imagens do cÃ©u, da onda e do mar, preservando as repetiÃ§Ãµes e o retorno do inÃ­cio no final.",heading:"Best Of Me Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'trivia-love':{sections:triviaLoveSections,vocabulary:triviaLoveVocabulary,summary:"Uma investigaÃ§Ã£o do amor feita com letras, sons e imagens. Explore a passagem de pessoa para amor, os sentidos de vento e desejo, perguntas hipotÃ©ticas e a vontade de participar da histÃ³ria de alguÃ©m.",heading:"Trivia æ‰¿: Love Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'the-truth-untold':{sections:truthUntoldSections,vocabulary:truthUntoldVocabulary,summary:"O desejo de se aproximar e o medo de mostrar o prÃ³prio eu. Estude perguntas, finalidade, possibilidade e hipÃ³teses sobre o passado nas imagens do jardim, da flor, da mÃ¡scara e do castelo de areia.",heading:"The Truth Untold Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'serendipity':{sections:serendipitySections,vocabulary:serendipityVocabulary,summary:"A versÃ£o completa acompanha um encontro sentido como destino, com medo, florescimento e o pedido de se tornar um nÃ³s. Explore comparaÃ§Ãµes, finalidade, estados e aÃ§Ãµes, mantendo as imagens incomuns sem trocar o significado das palavras.",heading:"Serendipity (Full Length Edition) Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'epiphany':{sections:epiphanySections,vocabulary:epiphanyVocabulary,summary:"A descoberta do amor prÃ³prio apÃ³s tentar viver para outra pessoa. Estude concessÃµes, perguntas reflexivas e possibilidades, acompanhando o contraste entre a mÃ¡scara sorridente e o eu que comeÃ§a a aparecer.",heading:"Epiphany Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'answer-love-myself':{sections:answerLoveMyselfSections,vocabulary:answerLoveMyselfVocabulary,summary:"Aprender a acolher a prÃ³pria histÃ³ria, incluindo dÃºvidas, erros e mudanÃ§as. Estude comparaÃ§Ãµes, propostas, possibilidades e explicaÃ§Ãµes nas imagens do espelho, dos anÃ©is de uma Ã¡rvore e das cicatrizes que formam uma constelaÃ§Ã£o.",heading:"Answer: Love Myself Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'home':{sections:homeSections,vocabulary:homeVocabulary,summary:"Um lar construÃ­do pela presenÃ§a de alguÃ©m, alÃ©m das conquistas e dos espaÃ§os bonitos. Estude condiÃ§Ãµes, contrastes, desejos e pedidos, acompanhando a mudanÃ§a da saÃ­da empolgada para o reconhecimento de um lugar ao qual voltar.",heading:"HOME Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'mikrokosmos':{sections:mikrokosmosSections,vocabulary:mikrokosmosVocabulary,summary:"Cada pessoa como um pequeno universo de luz. Explore imagens da cidade e das estrelas, reciprocidade, comparaÃ§Ãµes e a ideia de brilhar do prÃ³prio jeito, com explicaÃ§Ãµes sobre nÃºmeros e construÃ§Ãµes que atravessam versos.",heading:"Mikrokosmos Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'all-night':{sections:allNightSections,vocabulary:allNightVocabulary,summary:"Uma noite entre o estÃºdio, a inspiraÃ§Ã£o e os vÃ­nculos afetivos. Estude limites de tempo, promessas, perguntas indiretas e comparaÃ§Ãµes, com notas sobre gÃ­rias, ironia e frases que atravessam vÃ¡rios versos.",heading:"All Night Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'a-brand-new-day':{sections:brandNewDaySections,vocabulary:brandNewDayVocabulary,summary:"Descobrir a prÃ³pria voz e avanÃ§ar apesar do medo. Estude hipÃ³teses, concessÃµes, mudanÃ§as e razÃµes, acompanhando imagens de luz, sonhos e escolhas que combinam com quem vocÃª Ã©.",heading:"A Brand New Day Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'dream-glow':{sections:dreamGlowSections,vocabulary:dreamGlowVocabulary,summary:"O sonho que continua brilhando mesmo quando parece parado. Estude hÃ¡bitos passados, experiÃªncias, negaÃ§Ã£o e promessas nas imagens de joelhos ralados, luz, sombra e asas que se abrem.",heading:"Dream Glow Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'heartbeat':{sections:heartbeatSections,vocabulary:heartbeatVocabulary,summary:"Um encontro que dÃ¡ sentido ao caminho. Estude hipÃ³teses, suposiÃ§Ãµes, finalidade e decisÃµes nas imagens de mar, lua diurna, mÃ£os e labirinto, com notas sobre as grafias enviadas e o jogo com universo.",heading:"Heartbeat Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'we-are-bulletproof-eternal':{sections:eternalSections,vocabulary:eternalVocabulary,summary:"De sonhos solitÃ¡rios a uma forÃ§a compartilhada. Estude restriÃ§Ã£o, concessÃ£o, dÃºvidas e decisÃµes, acompanhando as imagens de estaÃ§Ãµes, mÃ£os unidas e resistÃªncia ao lado de quem caminha junto.",heading:"We Are Bulletproof: The Eternal Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'respect':{sections:respectSections,vocabulary:respectVocabulary,summary:"O peso de dizer respeito: admiraÃ§Ã£o, consideraÃ§Ã£o e sinceridade em uma conversa cheia de perguntas e ironia. Estude contraÃ§Ãµes, desejos, fala relatada e expressÃµes coloquiais sem confundir o elogio aparente com o tom do contexto.",heading:"Respect Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'inner-child':{sections:innerChildSections,vocabulary:innerChildVocabulary,summary:"Um diÃ¡logo afetuoso com o eu mais jovem. Estude lembranÃ§as, desejos, suposiÃ§Ãµes sobre o passado e promessas, acompanhando as imagens de estrelas, rosas e mÃ£os que se encontram.",heading:"Inner Child Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+ 'ugh':{sections:ughSections,vocabulary:ughVocabulary,summary:"A diferenÃ§a entre indignaÃ§Ã£o e agressÃ£o movida por maldade. Explore jogos sonoros, expressÃµes figuradas, formas coloquiais e ironia, distinguindo a voz crÃ­tica das falas que ela imita.",heading:"UGH! (ìš±) Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'louder-than-bombs':{sections:louderThanBombsSections,vocabulary:louderThanBombsVocabulary,summary:"Tristeza silenciosa, julgamentos externos e a promessa de continuar cantando. Explore propostas citadas, fala relatada, contrastes e concessÃµes, acompanhando a mudanÃ§a de se quebrar para falar e cantar.",heading:"Louder Than Bombs Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'my-time':{sections:myTimeSections,vocabulary:myTimeVocabulary,summary:"Crescer depressa, viver em outro ritmo e buscar um tempo que seja seu. Explore comparaÃ§Ãµes, impressÃµes, experiÃªncias passadas e contraÃ§Ãµes, acompanhando o contraste entre impossibilidade e promessa no final.",heading:"My Time (ì‹œì°¨) Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'black-swan':{sections:blackSwanSections,vocabulary:blackSwanVocabulary,summary:"O medo de deixar de sentir a mÃºsica e o reencontro com a prÃ³pria criaÃ§Ã£o. Explore hipÃ³teses, negaÃ§Ãµes, pedidos, decisÃµes e a passagem do coraÃ§Ã£o lento ao rÃ¡pido, com as imagens poÃ©ticas explicadas no contexto.",heading:"Black Swan Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'interlude-shadow':{sections:interludeShadowSections,vocabulary:interludeShadowVocabulary,summary:"AmbiÃ§Ã£o, solidÃ£o e uma sombra que nÃ£o se separa do eu. Explore perguntas indiretas, tentativas inÃºteis, escolhas e o contraste entre salto e queda, com notas sobre as grafias enviadas.",heading:"Interlude: Shadow Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'dionysus':{sections:dionysusSections,vocabulary:dionysusVocabulary,summary:"Arte, criaÃ§Ã£o e reinvenÃ§Ã£o em imagens de festa. Estude comandos, contadores, alternativas e modificadores, com cards sobre Dioniso, jogos sonoros e tradiÃ§Ã£o musical coreana.",heading:"Dionysus Â· coreano palavra por palavra",badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'make-it-right':{sections:makeItRightSections,vocabulary:makeItRightVocabulary,summary:'Uma jornada entre deserto, mar e retorno. Acolhimento, pedidos, finalidade e promessas explicados a partir da letra enviada, com cards sobre percepÃ§Ã£o, abertura e carinho.',heading:'Make It Right Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'dimple':{sections:dimpleSections,vocabulary:dimpleVocabulary,summary:'Covinhas, sorrisos e um encanto descrito como perigoso. GramÃ¡tica, pedidos informais e o trocadilho illegal/illegirl explicados em portuguÃªs.',heading:'ë³´ì¡°ê°œ (Dimple) Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'zero-oclock':{sections:zeroOclockSections,vocabulary:zeroOclockVocabulary,summary:'O fim de um dia difÃ­cil e o desejo de recomeÃ§ar. ExpressÃµes cotidianas, imagens do relÃ³gio e formas de convite e esperanÃ§a explicadas em portuguÃªs.',heading:'00:00 (Zero Oâ€™Clock) Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'just-dance':{sections:justDanceSections,vocabulary:justDanceVocabulary,summary:'DanÃ§a, sintonia e sentimentos que ganham forma no movimento. A letra enviada Ã© preservada, com notas sobre linguagem figurada e passagens elÃ­pticas.',heading:'Trivia èµ·: Just Dance Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'euphoria':{sections:euphoriaSections,vocabulary:euphoriaVocabulary,summary:'Alegria, sonhos e a promessa de continuar de mÃ£os dadas. ExplicaÃ§Ãµes de metÃ¡foras, hipÃ³teses e pedidos, com notas de grafia sobre a letra enviada.',heading:'Euphoria Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'singularity':{sections:singularitySections,vocabulary:singularityVocabulary,summary:'Voz, identidade e a imagem de um lago congelado. A transcriÃ§Ã£o enviada Ã© preservada com notas sobre grafia, espaÃ§amento e ambiguidades.',heading:'Singularity Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'her':{sections:herSections,vocabulary:herVocabulary,summary:'Amor, identidade e mÃ¡scaras: metÃ¡foras e contrastes explicados a partir da letra enviada.',heading:'Her Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'filter':{sections:filterSections,vocabulary:filterVocabulary,summary:'Escolhas, transformaÃ§Ãµes e a metÃ¡fora de um filtro que muda a percepÃ§Ã£o. GramÃ¡tica e expressÃµes explicadas em portuguÃªs.',heading:'Filter Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'friends':{sections:friendsSections,vocabulary:friendsVocabulary,summary:'Amizade, lembranÃ§as e a promessa de continuar juntos. ExpressÃµes coloquiais e frases ligadas entre linhas explicadas em portuguÃªs.',heading:'Friends Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'ego':{sections:egoSections,vocabulary:egoVocabulary,summary:'O caminho escolhido, a vida alternativa imaginada e a confianÃ§a em si mesmo. Notas de grafia preservam a letra enviada.',heading:'Outro : Ego Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'cypher-pt3':{sections:cypherPt3Sections,vocabulary:cypherPt3Vocabulary,summary:'Batalha de rap, identidade artÃ­stica e trocadilhos. Notas de registro coloquial e de grafias ambÃ­guas da transcriÃ§Ã£o.',heading:'BTS Cypher PT.3 : KILLER Â· coreano palavra por palavra',badge:'Letra enviada Â· anÃ¡lise preparada'},
+  'seesaw':{sections:seesawSections,vocabulary:seesawVocabulary,summary:'A gangorra como metÃ¡fora de uma relaÃ§Ã£o desgastada e da dificuldade de decidir quando descer.',heading:'Trivia è½‰ : Seesaw Â· coreano palavra por palavra',badge:'Letra completa Â· anÃ¡lise preparada'},
+  'moon':{sections:moonSections,vocabulary:moonVocabulary,summary:'A lua e a Terra como metÃ¡fora de carinho, gratidÃ£o e companhia.',heading:'Moon Â· coreano palavra por palavra',badge:'Letra completa Â· anÃ¡lise preparada'},
+  'jamais-vu':{sections:jamaisVuSections,vocabulary:jamaisVuVocabulary,summary:'Tentativas, quedas e a decisÃ£o de continuar: a metÃ¡fora do jogo e do remÃ©dio.',heading:'Jamais Vu Â· coreano palavra por palavra',badge:'Letra completa Â· anÃ¡lise preparada'},
+};
+function SongLesson({song}:{song:Song}){const {progress,setProgress}=useProgress();const [onlyKorean,setOnlyKorean]=useState(false);
+ const study=studies[song.id];
+ const complete=Boolean(study);
+ const sections=study?addMusicCuriosities(song.id,study.sections):[{title:'Trecho de estudo',lines:song.clips}];
+ const koreanCount=sections.reduce((n,section)=>n+section.lines.filter(line=>koreanPattern.test(line.text)).length,0);
+ return <Localized>{<><div className="lyrics-filter"><label htmlFor={song.id+'-only-korean'}><Checkbox id={song.id+'-only-korean'} checked={onlyKorean} onCheckedChange={checked=>setOnlyKorean(checked===true)}/>Mostrar sÃ³ frases com coreano</label><p role="status">{onlyKorean?`${koreanCount} frases com coreano visÃ­veis. Frases que misturam idiomas continuam aparecendo.`:'Todas as frases visÃ­veis. Ative para ocultar as que nÃ£o tÃªm palavras em coreano.'}</p></div><div className="music-layout"><aside className="player-panel"><span className="eyebrow">ESTUDO COM VOZ SINTETIZADA</span><h2>{song.title}</h2><p><KoreanText text={song.koTitle}/></p><p>{study?study.summary:song.intro}</p><p>OuÃ§a palavras isoladas tocando nelas. O alto-falante lÃª a frase inteira.</p><p>Abra â€œVer explicaÃ§Ã£oâ€ para revelar a traduÃ§Ã£o e a gramÃ¡tica de cada frase.</p><span className="pill">{study?.badge??(complete?'Letra completa Â· estudo preparado':'Trecho Â· estudo preparado')}</span></aside><section className="music-content"><span className="pill">{song.level}</span><h2>{study?study.heading:song.topic}</h2>{complete&&<p className="muted">TraduÃ§Ã£o contextual em portuguÃªs. As imagens poÃ©ticas podem admitir mais de uma leitura.</p>}{sections.map((section,sectionIndex)=><section className="lyric-section" key={sectionIndex} hidden={onlyKorean&&!section.lines.some(line=>koreanPattern.test(line.text))}><h3>{section.title}</h3>{section.lines.map((line,index)=><Line key={index} id={song.id+'-'+sectionIndex+'-'+index} line={line} hidden={onlyKorean&&!koreanPattern.test(line.text)}/>)}</section>)}{onlyKorean&&koreanCount===0&&<p className="empty-state">NÃ£o hÃ¡ frases com coreano nesta letra. Desative o filtro para ver todas.</p>}<Vocabulary {...(study?study.vocabulary:snippetVocabulary[song.id])}/><StreamLinks title={song.title} videoId={song.videoId}/>{study?.references}<div className="music-original"><p className="eyebrow">EXEMPLO ORIGINAL PARA PRATICAR</p><strong><KoreanText text={song.example.ko}/></strong><p>{song.example.pt}</p><p><KoreanText text={song.example.explanation}/></p></div><h2>Agora Ã© com vocÃª</h2>{song.exercises.map((e,i)=><ExerciseCard key={e.id} exercise={e} index={i} saved={progress.answers[e.id]} onAnswer={(value,correct)=>setProgress(p=>({...p,answers:{...p.answers,[e.id]:{value,correct}}}))}/>)}</section></div></>}</Localized>;
 }
-function AlbumCard({album,query,onListen}:{album:Album;query:string;onListen:Listen}){const {locale}=useLocale();
- return <Localized>{<details className="album" open={query.trim()?true:undefined}>
-  <summary><img src={album.artwork} width="72" height="72" alt="" loading="lazy"/><span><strong translate="no">{album.title}</strong><small>{new Date(album.date+'T12:00:00Z').toLocaleDateString(locale==='eng'?'en-US':'pt-BR',{timeZone:'UTC'})} Â· {album.tracks.length} faixas</small></span><span className="album-expand" aria-hidden="true">ï¼‹</span></summary>
-  <div className="album-tracks"><button type="button" className="text-button" onClick={()=>onListen({title:album.title,artist:album.artist,apple:album.url})}>Ouvir Ã¡lbum â†—</button><ol>{album.tracks.filter(t=>!query||normalized(album.title).includes(normalized(query))||normalized(t.title).includes(normalized(query))).map(track=><li key={track.id}><span className="track-number">{track.disc>1?track.disc+'.':''}{String(track.number).padStart(2,'0')}</span><span className="track-title"><span translate="no"><KoreanText text={track.title} localize={false}/></span>{track.artist!=='BTS'&&<small translate="no">{track.artist}</small>}</span><span className="track-actions">{studyForAlbum(track.title,album.title,album.artist)&&<a href={'#bts/estudos/'+studyForAlbum(track.title,album.title,album.artist)}>Estudar</a>}<button type="button" onClick={()=>onListen({title:track.title,artist:track.artist,apple:track.url})} aria-label={'Ouvir '+track.title+' em outra plataforma'}>Ouvir â†—</button></span></li>)}</ol></div>
- </details>}</Localized>;
+ function Line({id,line,hidden=false}:{id:string;line:StudyLine;hidden?:boolean}){
+ const [show,setShow]=useState(false);
+ const {locale}=useLocale();
+ const english=Boolean(line.english)||(!koreanPattern.test(line.text)&&!/[ã-ã‚“ã‚¡-ãƒ¶ä¸€-é¾¯]/u.test(line.text));
+ const canReveal=locale==='pt'||!english;
+ return <Localized>{<article className="lyric-card" hidden={hidden}><div className="lyric-speech"><KoreanText text={line.text} phrase={false} localize={false}/><AudioButton text={line.text}/></div>{canReveal&&<button className="text-button reveal" aria-expanded={show} aria-controls={id+'-explanation'} onClick={()=>setShow(!show)}>{show?'Ocultar explicaÃ§Ã£o':english?'Ver traduÃ§Ã£o':'Ver explicaÃ§Ã£o'}</button>}{canReveal&&show&&<div className="explanation" id={id+'-explanation'}><strong>TraduÃ§Ã£o</strong><p>{line.translation}</p>{line.entries&&line.entries.length>0?<><strong>GramÃ¡tica Â· palavra a palavra</strong><ul className="word-analysis">{line.entries.map((entry,index)=><li key={index}><p className="term"><em><KoreanText text={entry.term} phrase={false}/></em><span> = <KoreanText text={entry.meaning} phrase={false}/></span></p>{entry.notes&&entry.notes.map((note,noteIndex)=><p className="note" key={noteIndex}><KoreanText text={note} phrase={false}/></p>)}{entry.card&&<CuriosityCard text={entry.card} source={entry.cardSource}/>}</li>)}</ul></>:line.grammar?<><strong>Por dentro da gramÃ¡tica</strong><p><KoreanText text={line.grammar}/></p></>:null}</div>}</article>}</Localized>;
 }
-export function BtsCatalog(){
- const [study,setStudy]=useState(''),[query,setQuery]=useState(''),[artist,setArtist]=useState('BTS');
- const [listen,setListen]=useState<ListenItem|null>(null);
- useEffect(()=>{const read=()=>{const parts=location.hash.split('/');setStudy(parts[1]==='estudos'?(parts[2]||'spring-day'):'');setArtist(artists.find(a=>artistSlug(a)===parts[1])||'BTS');setQuery('')};read();addEventListener('hashchange',read);return()=>removeEventListener('hashchange',read)},[]);
- const match=(a:Album)=>normalized(a.title+' '+a.tracks.map(t=>t.title).join(' ')).includes(normalized(query));
- const found=discography.filter(a=>a.artist===artist).filter(match);
- const albums=found.filter(a=>!isSingle(a));
- const singles=found.filter(a=>isSingle(a));
- const others=(artist==='BTS'?soundCloudOnly:[]).filter(s=>!query||normalized(s.title+' '+s.artist).includes(normalized(query)));
- return <Localized>{<><nav className="artist-tabs" aria-label="Escolher artista">{artists.map(a=><a key={a} className={a===artist?'selected':''} aria-current={a===artist?'page':undefined} href={a==='BTS'?'#bts':'#bts/'+artistSlug(a)}><span translate="no">{a}</span> MÃºsicas</a>)}</nav>{!study&&<div className="intro"><div><p className="eyebrow">SUA MÃšSICA, SUAS DESCOBERTAS</p><h1>{artist==='BTS'?'Aprenda coreano com BTS':<><span translate="no">{artist}</span> MÃºsicas</>}<span>.</span></h1><p>{artist==='BTS'?'Escolha um Ã¡lbum, encontre a mÃºsica e clique em â€œEstudarâ€ para descobrir a traduÃ§Ã£o, a gramÃ¡tica e as palavras em coreano. O botÃ£o aparece nas mÃºsicas com estudo preparado.':'Explore os lanÃ§amentos do mais recente ao mais antigo e descubra suas faixas favoritas.'}</p></div></div>}{study&&<a className="text-button back" href="#bts">â† Voltar Ã  discografia</a>}{study?<MusicStudy key={study} initialSongId={study}/>:<>
- <div className="catalog-search"><label htmlFor="music-search">Buscar Ã¡lbum ou mÃºsica</label><input id="music-search" type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Nome da mÃºsica ou do Ã¡lbumâ€¦"/><p>{found.length} lanÃ§amentos no Apple Music{others.length?` Â· ${others.length} sÃ³ no SoundCloud`:''} Â· Ã¡lbuns, singles e colaboraÃ§Ãµes creditadas a {artist}</p></div>
- <p className="muted">Ao clicar em â€œOuvirâ€ abre um seletor de plataforma: SoundCloud (quando existir), YouTube, Spotify e Apple Music. VersÃµes instrumentais e remixes nÃ£o sÃ£o exibidos â€” sÃ³ as originais e as versÃµes oficiais (por exemplo, a versÃ£o coreana). Uma mÃºsica pode aparecer em vÃ¡rios Ã¡lbuns. Os estudos disponÃ­veis tÃªm um botÃ£o prÃ³prio; as demais faixas ainda nÃ£o tÃªm traduÃ§Ã£o ou explicaÃ§Ã£o no BoraLang.</p>
- {albums.length>0&&<><h2 className="discography-heading">Ãlbuns</h2><div className="album-list">{albums.map(album=><AlbumCard key={album.id} album={album} query={query} onListen={setListen}/>)}</div></>}
- {singles.length>0&&<><h2 className="discography-heading">Singles</h2><div className="album-list">{singles.map(album=><AlbumCard key={album.id} album={album} query={query} onListen={setListen}/>)}</div></>}
- {others.length>0&&<><h2 className="discography-heading">Outros</h2><div className="album-list"><div className="soundcloud-list">{others.map(song=><div className="soundcloud-song" key={song.id}><span><strong translate="no">{song.title}</strong><small><span translate="no">{song.artist}</span> Â· sÃ³ no SoundCloud</small></span><span className="track-actions">{studyForAlbum(song.title,'',song.artist)&&<a href={'#bts/estudos/'+studyForAlbum(song.title,'',song.artist)}>Estudar</a>}<button type="button" onClick={()=>setListen({title:song.title,artist:song.artist,apple:'https://music.apple.com/us/search?term='+encodeURIComponent(song.artist+' '+song.title),soundcloud:song.url})}>Ouvir â†—</button></span></div>)}</div></div></>}
- {listen&&<ListenModal item={listen} onClose={()=>setListen(null)}/>}
- {!found.length&&!others.length&&<p className="empty-state">Nenhuma mÃºsica encontrada. Tente outro tÃ­tulo.</p>}
- <p className="music-reference">CatÃ¡logo digital consultado em 22/09/2026. LanÃ§amentos japoneses nÃ£o incluÃ­dos; versÃµes instrumentais e remixes removidas. EdiÃ§Ãµes regionais podem variar. Faixas de discos fÃ­sicos adicionadas manualmente aparecem identificadas, como Skit: On The Start Line (Hidden Track). Fontes: <a href="https://music.apple.com/us/artist/bts/883131348" target="_blank" rel="noreferrer">Apple Music</a>, <a href="https://bts.ibighit.com/eng/discography/" target="_blank" rel="noreferrer">BIGHIT MUSIC</a>, os catÃ¡logos oficiais dos integrantes no Apple Music e o <a href="https://soundcloud.com/search?q=BTS" target="_blank" rel="noreferrer">SoundCloud</a>.</p>
-</>}</>}</Localized>;
+export function CuriosityCard({text,source}:{text:string;source?:string}){
+ return <Localized>{<div className="post-it"><span className="post-it-label">Card de curiosidade</span><p><KoreanText text={text} phrase={false}/></p>{source&&<a href={source} target="_blank" rel="noreferrer">Consultar referÃªncia â†—</a>}</div>}</Localized>;
 }
+function StreamLinks({title,videoId}:{title:string;videoId:string}){
+ const q=encodeURIComponent('BTS '+title);
+ return <Localized>{<div className="stream-links"><h3>Ouvir â€œ{title}â€ nas plataformas</h3><p className="muted">Escolha onde ouvir a mÃºsica original.</p><div className="stream-buttons"><a href={videoId?'https://www.youtube.com/watch?v='+videoId:'https://www.youtube.com/results?search_query='+q} target="_blank" rel="noreferrer">YouTube â†—</a><a href={'https://open.spotify.com/search/'+q} target="_blank" rel="noreferrer">Spotify â†—</a><a href={'https://music.apple.com/us/search?term='+q} target="_blank" rel="noreferrer">Apple Music â†—</a></div></div>}</Localized>;
+}
+type Words={verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};
+function Vocabulary({verbs,nouns}:Words){return <Localized>{<section className="song-vocabulary"><h2>Palavras importantes</h2><p>Os verbos aparecem na forma de dicionÃ¡rio. Os verbos descritivos estÃ£o identificados nas definiÃ§Ãµes.</p><div className="word-columns">{[{title:'Verbos',words:verbs},{title:'Substantivos',words:nouns}].map(group=><div key={group.title}><h3>{group.title}</h3>{group.words.length?group.words.map(w=><p key={w.ko}><KoreanText text={w.ko}/><span> â€” {w.pt}</span></p>):<p>Nenhum neste trecho.</p>}</div>)}</div></section>}</Localized>}
+const snippetVocabulary:Record<string,Words>={
+'spring-day':{verbs:[{ko:'ë³´ë‹¤',pt:'ver'},{ko:'ì‹¶ë‹¤',pt:'querer; auxiliar de desejo'}],nouns:[]},
+'life-goes-on':{verbs:[{ko:'ë©ˆì¶”ë‹¤',pt:'parar'}],nouns:[{ko:'ì„¸ìƒ',pt:'mundo'}]},
+'boy-with-luv':{verbs:[{ko:'ê¶ê¸ˆí•˜ë‹¤',pt:'ter curiosidade; verbo descritivo'}],nouns:[{ko:'ê²ƒ',pt:'coisa; substantivo dependente'}]},
+'dna':{verbs:[{ko:'ì•Œì•„ë³´ë‹¤',pt:'reconhecer'},{ko:'ë˜ë‹¤',pt:'tornar-se; auxiliar de mudanÃ§a'}],nouns:[]},
+'idol':{verbs:[{ko:'ìžìœ ë¡­ë‹¤',pt:'ser livre; verbo descritivo'}],nouns:[]}};
 
