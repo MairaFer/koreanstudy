@@ -196,6 +196,7 @@ import {amygdalaSections,amygdalaVocabulary,amygdalaSong} from '@/lib/amygdala';
 import {sdlSections,sdlVocabulary,sdlSong} from '@/lib/sdl';
 import {peoplePt2Sections,peoplePt2Vocabulary,peoplePt2Song} from '@/lib/people-pt2';
 import {polarNightSections,polarNightVocabulary,polarNightSong} from '@/lib/polar-night';
+import {snoozeSections,snoozeVocabulary,snoozeSong} from '@/lib/snooze';
 import {nothingWithoutYourLoveSections,nothingWithoutYourLoveVocabulary,nothingWithoutYourLoveSong} from '@/lib/nothing-without-your-love';
 import {bodyToBodySections,bodyToBodyVocabulary} from '@/lib/body-to-body';
 import {hooliganSections,hooliganVocabulary} from '@/lib/hooligan';
@@ -250,11 +251,12 @@ import {ExerciseCard} from './exercise';
 import {KoreanText,AudioButton} from './korean-audio';
 
 export function MusicStudy({initialSongId='spring-day'}:{initialSongId?:string}){
-const song=[...songs,takeTwoSong,thePlanetSong,myUniverseSong,makeItRightLauvSong,seaSong,fourOclockSong,bicycleSong,gajahSong,nothingWithoutYourLoveSong,loserSong,ropeItSong,withTheCloudsSong,backgroundSong,toMeTodaySong,illBeThereSong,anotherLevelSong,fallingSong,heartOnTheWindowSong,iWillComeToYouSong,closeToYouSong,superTunaSong,theAstronautSong,yoursSong,abyssSong,tonightSong,itsDefinitelyYouSong,dDaySong,haegeumSong,huhSong,amygdalaSong,sdlSong,peoplePt2Song,polarNightSong].find(s=>s.id===initialSongId)??songs[0];
+const song=[...songs,takeTwoSong,thePlanetSong,myUniverseSong,makeItRightLauvSong,seaSong,fourOclockSong,bicycleSong,gajahSong,nothingWithoutYourLoveSong,loserSong,ropeItSong,withTheCloudsSong,backgroundSong,toMeTodaySong,illBeThereSong,anotherLevelSong,fallingSong,heartOnTheWindowSong,iWillComeToYouSong,closeToYouSong,superTunaSong,theAstronautSong,yoursSong,abyssSong,tonightSong,itsDefinitelyYouSong,dDaySong,haegeumSong,huhSong,amygdalaSong,sdlSong,peoplePt2Song,polarNightSong,snoozeSong].find(s=>s.id===initialSongId)??songs[0];
  return <Localized>{<><div className="intro"><div><p className="eyebrow">PALAVRAS, FRASES E DESCOBERTAS</p><h1>Aprenda coreano com BTS<span>.</span></h1><p>Toque nas palavras para ouvir uma voz sintetizada em coreano.</p></div><Music2 size={42}/></div><div className="song-tabs"><span className="pill">{song.title}</span></div><SongLesson key={song.id} song={song}/><p className="music-reference">TraduÃ§Ãµes e explicaÃ§Ãµes preparadas para estudo. Este projeto nÃ£o Ã© afiliado ao BTS.</p></>}</Localized>;
 }
 type StudyConfig={sections:{title:string;lines:StudyLine[]}[];vocabulary:{verbs:{ko:string;pt:string}[];nouns:{ko:string;pt:string}[]};summary:string;heading:string;badge?:string;references?:ReactNode};
 const studies:Record<string,StudyConfig>={
+  'snooze':{sections:snoozeSections,vocabulary:snoozeVocabulary,summary:'Snooze oferece acolhimento a quem persegue um sonho. A aula trabalha conselho, permissao, proibicao, condicao e desejos de florescimento.',heading:'Snooze · letra e gramatica',badge:'SUGA · analise gramatical'},
   'polar-night':{sections:polarNightSections,vocabulary:polarNightVocabulary,summary:'Polar Night questiona verdades, polarizacao e a responsabilidade de olhar alem do proprio lado. A aula explora critica social, condicao, citacao e contraste.',heading:'Polar Night · letra e gramatica',badge:'SUGA · analise gramatical'},
   'people-pt2':{sections:peoplePt2Sections,vocabulary:peoplePt2Vocabulary,summary:'People Pt.2 questiona o amor, o medo da perda e a solidao. A aula explora perguntas reflexivas, memorias, contraste e acolhimento emocional.',heading:'People Pt.2 Â· letra e gramatica',badge:'SUGA feat. IU Â· analise gramatical'},
   'sdl':{sections:sdlSections,vocabulary:sdlVocabulary,summary:'SDL reflete sobre amor, saudade e memorias idealizadas.',heading:'SDL Â· letra e gramatica',badge:'SUGA Â· analise gramatical'},

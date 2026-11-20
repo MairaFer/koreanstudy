@@ -52,6 +52,7 @@ function studyForAlbum(title:string,albumTitle:string,artist:string){
  if(normalizedTitle==='sdl')return 'sdl';
  if(normalizedTitle==='people pt.2'||normalizedTitle.startsWith('people pt.2 ('))return 'people-pt2';
  if(normalizedTitle==='polar night'||normalizedTitle.startsWith('polar night ('))return 'polar-night';
+ if(normalizedTitle==='snooze'||normalizedTitle.startsWith('snooze ('))return 'snooze';
  const specialStudies:Record<string,string>={
   'sea':'sea',"4 o'clock":'four-oclock','i will come to you':'i-will-come-to-you','i will come to you (ê·¸ë¦¬ì›€ì—)':'i-will-come-to-you','heart on the window':'heart-on-the-window','falling':'falling','falling (ë„¤ê²Œ ë‹¿ì„ ë•Œê¹Œì§€)':'falling','another level':'another-level',"i'll be there":'ill-be-there','ill be there':'ill-be-there','to me, today':'to-me-today','to me today':'to-me-today','ì˜¤ëŠ˜ì˜ ë‚˜ì—ê²Œ':'to-me-today','background':'background','with the clouds':'with-the-clouds','with the clouds (êµ¬ë¦„ê³¼ ë– ë‚˜ëŠ” ì—¬í–‰)':'with-the-clouds','rope it':'rope-it','loser':'loser','nothing without your love':'nothing-without-your-love','gajah (feat. rm)':'gajah','bicycle':'bicycle','make it right (feat. lauv)':'make-it-right-lauv','my universe':'my-universe','the planet':'the-planet','take two':'take-two'
  };
