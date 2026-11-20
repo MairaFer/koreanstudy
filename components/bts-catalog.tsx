@@ -50,6 +50,7 @@ function studyForAlbum(title:string,albumTitle:string,artist:string){
  if(normalizedTitle==='huh?!'||normalizedTitle==='huh?'||normalizedTitle.startsWith('huh?!'))return 'huh';
  if(normalizedTitle==='amygdala')return 'amygdala';
  if(normalizedTitle==='sdl')return 'sdl';
+ if(normalizedTitle==='people pt.2'||normalizedTitle.startsWith('people pt.2 ('))return 'people-pt2';
  const specialStudies:Record<string,string>={
   'sea':'sea',"4 o'clock":'four-oclock','i will come to you':'i-will-come-to-you','i will come to you (ê·¸ë¦¬ì›€ì—)':'i-will-come-to-you','heart on the window':'heart-on-the-window','falling':'falling','falling (ë„¤ê²Œ ë‹¿ì„ ë•Œê¹Œì§€)':'falling','another level':'another-level',"i'll be there":'ill-be-there','ill be there':'ill-be-there','to me, today':'to-me-today','to me today':'to-me-today','ì˜¤ëŠ˜ì˜ ë‚˜ì—ê²Œ':'to-me-today','background':'background','with the clouds':'with-the-clouds','with the clouds (êµ¬ë¦„ê³¼ ë– ë‚˜ëŠ” ì—¬í–‰)':'with-the-clouds','rope it':'rope-it','loser':'loser','nothing without your love':'nothing-without-your-love','gajah (feat. rm)':'gajah','bicycle':'bicycle','make it right (feat. lauv)':'make-it-right-lauv','my universe':'my-universe','the planet':'the-planet','take two':'take-two'
  };
@@ -86,4 +87,3 @@ export function BtsCatalog(){
  <p className="music-reference">CatÃ¡logo digital consultado em 22/09/2026. LanÃ§amentos japoneses nÃ£o incluÃ­dos; versÃµes instrumentais e remixes removidas. EdiÃ§Ãµes regionais podem variar. Faixas de discos fÃ­sicos adicionadas manualmente aparecem identificadas, como Skit: On The Start Line (Hidden Track). Fontes: <a href="https://music.apple.com/us/artist/bts/883131348" target="_blank" rel="noreferrer">Apple Music</a>, <a href="https://bts.ibighit.com/eng/discography/" target="_blank" rel="noreferrer">BIGHIT MUSIC</a>, os catÃ¡logos oficiais dos integrantes no Apple Music e o <a href="https://soundcloud.com/search?q=BTS" target="_blank" rel="noreferrer">SoundCloud</a>.</p>
 </>}</>}</Localized>;
 }
-
