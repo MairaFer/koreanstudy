@@ -439,6 +439,40 @@ export const musicCuriosities:Record<string,MusicCuriosity[]>=
     "card": "A forma que modifica intervalo vem de sentir. O final ji afirma uma ausência que já está no verbo não haver; sozinho, ji não é um marcador negativo. A linha expressa a postura da voz, não um diagnóstico ou descrição comprovada da vida privada."
   }
 ],
+"blueberry-eyes":[
+  {
+    "term": "Your body's a neighborhood",
+    "card": "Neighborhood transforma o corpo numa paisagem urbana íntima: os versos seguintes imaginam percorrê-la. É uma metáfora de desejo, não uma equivalência literal entre corpo e bairro."
+  },
+  {
+    "term": "holding my breath",
+    "card": "A expressão pode ser literal, mas também comunica expectativa intensa. A linha seguinte especifica o que a voz aguarda: a pessoa acordar em seus braços."
+  },
+  {
+    "term": "strawberry skies",
+    "card": "O céu recebe uma cor de fruta para criar uma imagem romântica e sinestésica. A letra não fixa uma hora do dia; a cor funciona como atmosfera afetiva."
+  },
+  {
+    "term": "blueberry eyes",
+    "card": "Blueberry eyes usa a cor azul-arroxeada do mirtilo como imagem carinhosa para os olhos. A repetição no refrão faz da metáfora o centro visual e sonoro da canção."
+  },
+  {
+    "term": "내 그림자를 가른 한줄기 빛",
+    "card": "가르다, cortar, dá movimento ao raio de luz: ele atravessa a sombra, em vez de apenas estar presente. A imagem abre a parte de SUGA com uma transformação da escuridão para a luz."
+  },
+  {
+    "term": "뒤집어 놓은 너",
+    "card": "뒤집어 놓다 sugere virar algo completamente e deixar o resultado assim. A pessoa amada é apresentada como agente de uma mudança profunda na vida do narrador."
+  },
+  {
+    "term": "우리의 낮 우리의 밤 그래 우리의 삶",
+    "card": "A repetição de 우리, nós/nosso, constrói intimidade compartilhada. 낮 e 밤 formam um par que se amplia para 삶, vida: a relação ocupa o dia a dia inteiro."
+  },
+  {
+    "term": "서롤 지탱하는 벗 서로의 닻",
+    "card": "서로, um ao outro, aparece nas formas 서롤 e 서로의. A primeira traz a relação recíproca como objeto; a segunda liga a âncora a cada pessoa. 벗 descreve amizade/companheirismo."
+  }
+],
 "closer":[
   {
     "term": "이걸로 만족할게",

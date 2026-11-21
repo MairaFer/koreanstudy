@@ -30,7 +30,7 @@ for(const match of source.matchAll(/import \{(\w+Sections),[^}]+\} from ['"]@\/l
  }
  reviewed++;
 }
-assert.equal(reviewed,182);assert.equal(updated,171);assert.equal(retained,11);assert.equal(added,965);
+assert.equal(reviewed,183);assert.equal(updated,172);assert.equal(retained,11);assert.equal(added,973);
 const {CuriosityCard}=require('../components/music-study.tsx');
 for(const [id,cards] of Object.entries(musicCuriosities))for(const card of cards)for(const locale of ['pt','eng']){
  const html=renderToStaticMarkup(React.createElement(LocaleProvider,{initialLocale:locale},React.createElement(CuriosityCard,{text:card.card,source:card.source})));
@@ -46,4 +46,4 @@ const necklace=require('../lib/persona.ts').personaSections.flatMap(s=>s.lines).
 assert.ok(necklace.translation.includes('penduram'));
 assert.ok(necklace.entries.some(e=>e.notes?.some(n=>n.includes('걸다'))));
 assert.ok(source.includes('addMusicCuriosities(song.id,study.sections)'));
-console.log('PASS: 182 studies reviewed; 965 new cards in 171 studies; 11 retained; PT/ENG cards render with sources; originals preserved; repeated choruses and repeated application do not duplicate additions.');
+console.log('PASS: 183 studies reviewed; 973 new cards in 172 studies; 11 retained; PT/ENG cards render with sources; originals preserved; repeated choruses and repeated application do not duplicate additions.');
