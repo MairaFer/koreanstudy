@@ -1,0 +1,50 @@
+'use client';
+import {useRef,useState} from 'react';
+import {ArrowLeft,ArrowRight,CheckCircle2,Crosshair,Lightbulb,RotateCcw,Target,Volume2} from 'lucide-react';
+import {LessonText} from './lesson-text';
+import {useKoreanSpeech} from './korean-audio';
+
+const intentions=[
+ {source:'배우다',meaning:'aprender',form:'배우려고',sentence:'한국어를 배우려고 왔어요.',pt:'Vim para aprender coreano.',rule:'Base em vogal + 려고.'},
+ {source:'먹다',meaning:'comer',form:'먹으려고',sentence:'밥을 먹으려고 식당에 갔어요.',pt:'Fui ao restaurante para comer.',rule:'Base em consoante + 으려고.'},
+ {source:'공부하다',meaning:'estudar',form:'공부하려고',sentence:'시험을 위해 공부하려고 해요.',pt:'Pretendo estudar para a prova.',rule:'하다 → 하려고.'},
+ {source:'만들다',meaning:'fazer / criar',form:'만들려고',sentence:'케이크를 만들려고 재료를 샀어요.',pt:'Comprei ingredientes para fazer um bolo.',rule:'Base em ㄹ mantém ㄹ + 려고.'},
+];
+const purposes=[
+ {goal:'건강을 지키다',form:'건강을 지키기 위해서',action:'운동해요',sentence:'건강을 지키기 위해서 운동해요.',pt:'Faço exercício para cuidar da saúde.'},
+ {goal:'한국어 실력을 높이다',form:'한국어 실력을 높이기 위해서',action:'매일 연습해요',sentence:'한국어 실력을 높이기 위해서 매일 연습해요.',pt:'Pratico diariamente para melhorar meu coreano.'},
+ {goal:'친구를 돕다',form:'친구를 돕기 위해서',action:'일찍 왔어요',sentence:'친구를 돕기 위해서 일찍 왔어요.',pt:'Vim cedo para ajudar um amigo.'},
+];
+const contrasts=[
+ {label:'Intenção',ko:'한국어를 배우려고 한국에 왔어요.',pt:'Vim à Coreia com a intenção de aprender coreano.',note:'-(으)려고 destaca intenção ou plano do agente.'},
+ {label:'Finalidade',ko:'한국어를 배우기 위해서 한국에 왔어요.',pt:'Vim à Coreia para aprender coreano.',note:'-기 위해서 apresenta a finalidade de modo explícito.'},
+ {label:'Causa',ko:'한국어를 좋아해서 공부해요.',pt:'Estudo porque gosto de coreano.',note:'-아/어서 explica uma causa, não um objetivo futuro.'},
+];
+const challenges=[
+ {prompt:'배우다 + -(으)려고',options:['배우려고','배우으려고','배우기 때문에'],answer:'배우려고',feedback:'Base em vogal recebe 려고.'},
+ {prompt:'먹다 + -(으)려고',options:['먹려고','먹으려고','먹기 위해'],answer:'먹으려고',feedback:'Base em consoante recebe 으려고.'},
+ {prompt:'지키다 antes de 위해서',options:['지키는 위해서','지키기 위해서','지키려고 위해서'],answer:'지키기 위해서',feedback:'-기 nominaliza a ação na construção -기 위해서.'},
+ {prompt:'Qual frase expressa causa, não finalidade?',options:['건강을 위해서 운동해요.','건강해지려고 운동해요.','피곤해서 쉬어요.'],answer:'피곤해서 쉬어요.',feedback:'-아/어서 apresenta o motivo que causa o resultado.'},
+ {prompt:'Predicado pouco adequado a intenção voluntária',options:['공부하려고 해요.','가려고 해요.','예쁘려고 해요.'],answer:'예쁘려고 해요.',feedback:'-(으)려고 normalmente acompanha ações voluntárias, não qualquer descrição.'},
+];
+const steps=['Forme a intenção','Explicite o objetivo','Compare relações','Oficina'];
+
+export function PurposeLesson(){
+ const [step,setStep]=useState(0),[intention,setIntention]=useState(0),[purpose,setPurpose]=useState(0),[contrast,setContrast]=useState(0),[round,setRound]=useState(0),[answer,setAnswer]=useState(''),[checked,setChecked]=useState(false),[wins,setWins]=useState<number[]>([]);
+ const root=useRef<HTMLDivElement>(null),speech=useKoreanSpeech(),plan=intentions[intention],goal=purposes[purpose],relation=contrasts[contrast],task=challenges[round],correct=answer===task.answer;
+ function go(next:number){speech.stop();setStep(next);requestAnimationFrame(()=>{root.current?.focus({preventScroll:true});root.current?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});}
+ function nextChallenge(next:number){setRound(next);setAnswer('');setChecked(false);speech.stop();}
+ return <LessonText><div className="vowel-lab routine-lab" tabIndex={-1} ref={root}>
+  <div className="vl-welcome"><div><span className="vl-kicker"><Target size={15}/>A AÇÃO APONTA PARA UM OBJETIVO</span><h2>Para quê você faz isso?</h2><p><b>-(으)려고</b> destaca uma intenção; <b>-기 위해서</b> apresenta a finalidade de modo explícito. As duas olham para um objetivo, não para uma causa já ocorrida.</p></div><div className="vl-welcome-art" aria-hidden="true"><span>기</span><Crosshair/></div></div>
+  <nav className="vl-steps" aria-label="Etapas da quarta aula avançada">{steps.map((label,index)=><button type="button" key={label} aria-current={step===index?'step':undefined} onClick={()=>go(index)}><span>{index+1}</span>{label}</button>)}</nav>
+  <div className="vl-panel" key={step}>
+   {step===0?<><p className="vl-kicker">01 · INTENÇÃO COM (으)려고</p><h3>O final da base escolhe 려고 ou 으려고.</h3><div className="rl-rules"><div><strong>Vogal + 려고</strong><p>배우다 → 배우려고</p></div><div><strong>Consoante + 으려고</strong><p>먹다 → 먹으려고</p></div><div><strong>하다 → 하려고</strong><p>공부하다 → 공부하려고</p></div></div><div className="rl-choice-grid" role="group" aria-label="Escolha uma intenção">{intentions.map((item,index)=><button type="button" key={item.source} aria-pressed={intention===index} onClick={()=>{setIntention(index);speech.stop();}}><strong>{item.source}</strong><small>{item.meaning}</small></button>)}</div><div className="rl-path"><span lang="ko">{plan.source}</span><ArrowRight/><span lang="ko">{plan.form}</span></div><div className="rl-context" aria-live="polite"><strong lang="ko">{plan.sentence}</strong><p>{plan.pt}</p><p>{plan.rule}</p><button type="button" className="secondary" onClick={()=>speech.speak(plan.sentence)}><Volume2 size={17}/>Ouvir</button></div><div className="vl-note"><Lightbulb size={20}/><p><b>공부하려고 해요</b> também expressa um plano: “pretendo estudar”. A construção normalmente combina com ações voluntárias.</p></div></>:
+   step===1?<><p className="vl-kicker">02 · FINALIDADE COM -기 위해서</p><h3>Transforme a ação em objetivo com -기.</h3><div className="rl-choice-grid" role="group" aria-label="Escolha uma finalidade">{purposes.map((item,index)=><button type="button" key={item.goal} aria-pressed={purpose===index} onClick={()=>setPurpose(index)}><strong>{item.goal}</strong><small>{item.action}</small></button>)}</div><div className="rl-path"><span lang="ko">{goal.goal}<small>objetivo</small></span><ArrowRight/><span lang="ko">{goal.form}<small>para alcançar</small></span><ArrowRight/><span lang="ko">{goal.action}<small>ação</small></span></div><div className="rl-context" aria-live="polite"><strong lang="ko">{goal.sentence}</strong><p>{goal.pt}</p><button type="button" className="secondary" onClick={()=>speech.speak(goal.sentence)}><Volume2 size={17}/>Ouvir</button></div><div className="vl-note"><Lightbulb size={20}/><p>A finalidade ainda pode não ter sido alcançada. <b>운동해요</b> é a ação realizada; <b>건강을 지키기 위해서</b> é o objetivo que a orienta.</p></div></>:
+   step===2?<><p className="vl-kicker">03 · INTENÇÃO, FINALIDADE OU CAUSA?</p><h3>Faça a pergunta certa: “para quê?” ou “por quê?”.</h3><div className="st-example-tabs" role="group" aria-label="Escolha a relação">{contrasts.map((item,index)=><button type="button" key={item.label} aria-pressed={contrast===index} onClick={()=>setContrast(index)}>{item.label}</button>)}</div><div className="rl-context" aria-live="polite"><strong lang="ko">{relation.ko}</strong><p>{relation.pt}</p><p>{relation.note}</p><button type="button" className="secondary" onClick={()=>speech.speak(relation.ko)}><Volume2 size={17}/>Ouvir</button></div><div className="rl-rules"><div><strong>-(으)려고</strong><p>com que intenção?</p></div><div><strong>-기 위해서</strong><p>para qual finalidade?</p></div><div><strong>-아/어서</strong><p>por qual causa?</p></div></div><details className="vl-reference"><summary>위해서 com substantivos</summary><p><b>가족을 위해서</b> significa “pela família / em benefício da família”. Com verbos, use <b>-기 위해서</b>: 가족을 돕기 위해서, “para ajudar a família”.</p></details></>:
+   <><p className="vl-kicker">04 · QUAL RELAÇÃO A FRASE CONSTRÓI?</p><h3>Base, voluntariedade e sentido trabalham juntos.</h3><p>Resolva cinco desafios e siga para os exercícios que registram seu progresso.</p><div className="st-challenge"><span>{round+1} / {challenges.length}</span><h4>{task.prompt}</h4><div className="st-answer-options rl-challenge-options" role="group" aria-label="Respostas da oficina de finalidade">{task.options.map(option=><button type="button" key={option} lang="ko" aria-pressed={answer===option} onClick={()=>{setAnswer(option);setChecked(false);speech.speak(option);}}>{option}</button>)}</div><button type="button" className="primary" disabled={!answer} onClick={()=>{setChecked(true);if(correct)setWins(current=>current.includes(round)?current:[...current,round]);}}>Conferir minha resposta</button></div>{checked&&<div className={'st-feedback '+(correct?'st-correct':'')} role="status"><strong>{correct?'Isso! A forma expressa a relação certa.':'Pergunte se a frase apresenta intenção, finalidade ou causa.'}</strong><p>{correct?task.feedback:'-(으)려고 destaca intenção; -기 위해서, finalidade; -아/어서, causa.'}</p></div>}<div className="st-inline-actions"><span>{wins.length} / {challenges.length} <span>descobertas</span></span><button type="button" className="secondary" onClick={()=>nextChallenge((round+1)%challenges.length)}>Próximo desafio<ArrowRight size={17}/></button><button type="button" className="text-button" onClick={()=>{nextChallenge(0);setWins([]);}}><RotateCcw size={16}/>Recomeçar</button></div><ul className="vl-takeaways"><li><CheckCircle2/>-(으)려고 destaca intenção ou plano.</li><li><CheckCircle2/>-기 위해서 explicita a finalidade.</li><li><CheckCircle2/>Objetivo e causa respondem a perguntas diferentes.</li></ul></>}
+  </div>
+  <div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#purpose-practice" onClick={event=>{event.preventDefault();const el=document.getElementById('purpose-practice');el?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});el?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
+  <p className="vl-audio-status" role="status">{speech.status}</p>
+ </div></LessonText>;
+}
+
