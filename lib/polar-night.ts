@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 23.3 seconds
-Output:
 import type { Song } from './songs'
 type Grammar={expression:string;meaning:string;note:string};type Line={original:string;translation:string;grammar?:Grammar[]};type Section={title:string;lines:Line[];exercises:{prompt:string;answer:string}[]};const g=(expression:string,meaning:string,note:string):Grammar=>({expression,meaning,note});const line=(original:string,translation:string,grammar:Grammar[]=[]):Line=>({original,translation,grammar})
 export const polarNightSong:Song={id:'polar-night',title:'Polar Night (ê·¹ì•¼)',artist:'Agust D',album:'D-DAY',year:2023,cover:'https://i.scdn.co/image/ab67616d0000b2730c5f4a41291cfb9d7f648b6b',color:'from-slate-900 to-indigo-700',lyrics:[]}

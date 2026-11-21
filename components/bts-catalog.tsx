@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 133.3 seconds
-Output:
 "use client";
 /* localized-returns */
 import {useLocale,Localized} from '@/components/localization';

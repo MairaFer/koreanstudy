@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 16.5 seconds
-Output:
 import type {Song} from './songs';
 type Grammar={expression:string;meaning:string;note:string};
 type Line={original:string;translation:string;grammar?:Grammar[]};

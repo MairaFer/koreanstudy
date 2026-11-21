@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 23.3 seconds
-Output:
 import type { Song } from './songs'
 type Grammar={expression:string;meaning:string;note:string};type Line={original:string;translation:string;grammar?:Grammar[]};type Section={title:string;lines:Line[];exercises:{prompt:string;answer:string}[]};const g=(expression:string,meaning:string,note:string):Grammar=>({expression,meaning,note});const line=(original:string,translation:string,grammar:Grammar[]=[]):Line=>({original,translation,grammar})
 export const strangeAgustdSong:Song={id:'strange-agustd',title:'Strange (ì´ìƒí•˜ì§€ ì•Šì€ê°€)',artist:'Agust D feat. RM',album:'D-2',year:2020,cover:'https://i.scdn.co/image/ab67616d0000b2735ce8b100cff0b1575b4f20d2',color:'from-zinc-700 to-indigo-950',lyrics:[]}

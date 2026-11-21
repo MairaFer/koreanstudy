@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 21.9 seconds
-Output:
 import type { Song } from './songs'
 
 type Grammar = { expression: string; meaning: string; note: string }

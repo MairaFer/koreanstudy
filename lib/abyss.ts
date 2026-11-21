@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 14.3 seconds
-Output:
 import type { Song } from './songs'
 type Grammar={expression:string;meaning:string;note:string};type Line={original:string;translation:string;grammar?:Grammar[]};type Section={title:string;lines:Line[];exercises:{prompt:string;answer:string}[]};const g=(expression:string,meaning:string,note:string):Grammar=>({expression,meaning,note});const line=(original:string,translation:string,grammar:Grammar[]=[]):Line=>({original,translation,grammar})
 export const abyssSong:Song={id:'abyss',title:'Abyss',artist:'Jin',album:'Abyss',year:2020,cover:'https://i.scdn.co/image/ab67616d0000b273b5f5e7c5f5615d3387372ac5',color:'from-slate-700 to-cyan-950',lyrics:[]}

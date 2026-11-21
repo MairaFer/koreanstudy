@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 17.5 seconds
-Output:
 import type { Song } from './songs'
 type Grammar={expression:string;meaning:string;note:string};type Line={original:string;translation:string;grammar?:Grammar[]};type Section={title:string;lines:Line[];exercises:{prompt:string;answer:string}[]};const g=(expression:string,meaning:string,note:string):Grammar=>({expression,meaning,note});const line=(original:string,translation:string,grammar:Grammar[]=[]):Line=>({original,translation,grammar})
 export const itsDefinitelyYouSong:Song={id:'its-definitely-you',title:"It's Definitely You (ì£½ì–´ë„ ë„ˆì•¼)",artist:'V, Jin',album:'Hwarang OST',year:2016,cover:'https://i.scdn.co/image/ab67616d0000b273b5f5e7c5f5615d3387372ac5',color:'from-red-600 to-slate-950',lyrics:[]}

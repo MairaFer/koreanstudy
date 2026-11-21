@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 17.2 seconds
-Output:
 'use client';
 import {useRef,useState} from 'react';
 import {ArrowLeft,ArrowRight,CheckCircle2,Eye,Lightbulb,MessageCircle,RotateCcw,Volume2} from 'lucide-react';

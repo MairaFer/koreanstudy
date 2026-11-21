@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 16.9 seconds
-Output:
 import type { Song } from './songs'
 type Grammar={expression:string;meaning:string;note:string};type Line={original:string;translation:string;grammar?:Grammar[]};type Section={title:string;lines:Line[];exercises:{prompt:string;answer:string}[]};const g=(expression:string,meaning:string,note:string):Grammar=>({expression,meaning,note});const line=(original:string,translation:string,grammar:Grammar[]=[]):Line=>({original,translation,grammar})
 export const huhSong:Song={id:'huh',title:'HUH?! (feat. j-hope)',artist:'Agust D feat. j-hope',album:'D-DAY',year:2023,cover:'https://i.scdn.co/image/ab67616d0000b2730c5f4a41291cfb9d7f648b6b',color:'from-stone-600 to-orange-900',lyrics:[]}

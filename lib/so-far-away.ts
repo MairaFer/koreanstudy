@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 33.1 seconds
-Output:
 import type { Song } from './songs'
 type Grammar={expression:string;meaning:string;note:string};type Line={original:string;translation:string;grammar?:Grammar[]};type Section={title:string;lines:Line[];exercises:{prompt:string,answer:string}[]};const g=(expression:string,meaning:string,note:string):Grammar=>({expression,meaning,note});const line=(original:string,translation:string,grammar:Grammar[]=[]):Line=>({original,translation,grammar})
 export const soFarAwaySong:Song={id:'so-far-away',title:'So Far Away',artist:'Agust D feat. Suran',album:'Agust D',year:2016,cover:'https://i.scdn.co/image/ab67616d0000b273e7b92b7d8b4d6ce0c2c6a7b9',color:'from-sky-700 to-violet-950',lyrics:[]}
