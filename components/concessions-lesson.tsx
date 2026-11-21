@@ -1,0 +1,49 @@
+'use client';
+import {useRef,useState} from 'react';
+import {ArrowLeft,ArrowRight,CheckCircle2,CloudSun,Lightbulb,RotateCcw,ShieldCheck,Volume2} from 'lucide-react';
+import {LessonText} from './lesson-text';
+import {useKoreanSpeech} from './korean-audio';
+
+const concessions=[
+ {label:'Condição não impede',base:'바쁘다',bridge:'바빠도',result:'매일 운동해요',sentence:'바빠도 매일 운동해요.',pt:'Mesmo ocupado, faço exercício todos os dias.',form:'-아/어도',note:'A condição existe, mas não impede o resultado.'},
+ {label:'Fato contrário',base:'비가 오다',bridge:'비가 오는데도',result:'밖에 나갔어요',sentence:'비가 오는데도 밖에 나갔어요.',pt:'Embora estivesse chovendo, saí.',form:'-는데도',note:'O fato já conhecido torna o resultado inesperado.'},
+ {label:'Hipótese forte',base:'어렵다',bridge:'어렵더라도',result:'계속할 거예요',sentence:'어렵더라도 계속할 거예요.',pt:'Mesmo que seja difícil, vou continuar.',form:'-더라도',note:'Apresenta uma concessão hipotética ou enfática.'},
+];
+const expectations=[
+ {condition:'비가 와요',expected:'집에 있어요',actual:'밖에 나가요',sentence:'비가 와도 밖에 나가요.',pt:'Mesmo que chova, saio.'},
+ {condition:'피곤해요',expected:'쉬어요',actual:'공부해요',sentence:'피곤해도 공부해요.',pt:'Mesmo cansado, estudo.'},
+ {condition:'시간이 없어요',expected:'포기해요',actual:'계속해요',sentence:'시간이 없어도 계속해요.',pt:'Mesmo sem tempo, continuo.'},
+];
+const forms=[
+ {type:'Ação presente',source:'먹다',result:'먹는데도',sentence:'많이 먹는데도 배가 고파요.',pt:'Embora coma muito, estou com fome.'},
+ {type:'Descrição presente',source:'작다',result:'작은데도',sentence:'방이 작은데도 편해요.',pt:'Embora o quarto seja pequeno, é confortável.'},
+ {type:'Passado',source:'먹었다',result:'먹었는데도',sentence:'밥을 먹었는데도 배가 고파요.',pt:'Embora tenha comido, estou com fome.'},
+];
+const challenges=[
+ {prompt:'“Mesmo ocupado, faço exercício.”',options:['바빠서 운동해요.','바빠도 운동해요.','바쁘니까 운동해요.'],answer:'바빠도 운동해요.',feedback:'-아/어도 indica que a condição não impede o resultado.'},
+ {prompt:'Fato: “Embora esteja chovendo, saí.”',options:['비가 오는데도 나갔어요.','비가 오려고 나갔어요.','비가 오니까 나갔어요.'],answer:'비가 오는데도 나갔어요.',feedback:'-는데도 destaca um resultado contrário ao fato apresentado.'},
+ {prompt:'Hipótese enfática: “Mesmo que seja difícil...”',options:['어려워서','어렵더라도','어려우니까'],answer:'어렵더라도',feedback:'-더라도 constrói a concessão hipotética.'},
+ {prompt:'Adjetivo 작다 + -는데도',options:['작는데도','작은데도','작았는 데도'],answer:'작은데도',feedback:'Adjetivo descritivo no presente usa -(으)ㄴ데도.'},
+ {prompt:'Compare causa e concessão',options:['비가 와서 집에 있어요 = causa','비가 와도 집에 있어요 = causa','비가 오는데도 나갔어요 = resultado esperado'],answer:'비가 와서 집에 있어요 = causa',feedback:'-아/어서 apresenta causa; -아/어도 e -는데도 quebram uma expectativa.'},
+];
+const steps=['Quebre a expectativa','Escolha a concessão','Ajuste a forma','Oficina'];
+
+export function ConcessionsLesson(){
+ const [step,setStep]=useState(0),[concession,setConcession]=useState(0),[expectation,setExpectation]=useState(0),[form,setForm]=useState(0),[round,setRound]=useState(0),[answer,setAnswer]=useState(''),[checked,setChecked]=useState(false),[wins,setWins]=useState<number[]>([]);
+ const root=useRef<HTMLDivElement>(null),speech=useKoreanSpeech(),contrast=concessions[concession],scene=expectations[expectation],shape=forms[form],task=challenges[round],correct=answer===task.answer;
+ function go(next:number){speech.stop();setStep(next);requestAnimationFrame(()=>{root.current?.focus({preventScroll:true});root.current?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});}
+ function nextChallenge(next:number){setRound(next);setAnswer('');setChecked(false);speech.stop();}
+ return <LessonText><div className="vowel-lab routine-lab" tabIndex={-1} ref={root}>
+  <div className="vl-welcome"><div><span className="vl-kicker"><ShieldCheck size={15}/>A CONDIÇÃO EXISTE, MAS NÃO VENCE</span><h2>Mesmo assim, o resultado mudou.</h2><p>Concessões apresentam uma condição ou fato que criaria uma expectativa — e mostram que o resultado segue outro caminho.</p></div><div className="vl-welcome-art" aria-hidden="true"><span>도</span><CloudSun/></div></div>
+  <nav className="vl-steps" aria-label="Etapas da terceira aula avançada">{steps.map((label,index)=><button type="button" key={label} aria-current={step===index?'step':undefined} onClick={()=>go(index)}><span>{index+1}</span>{label}</button>)}</nav>
+  <div className="vl-panel" key={step}>
+   {step===0?<><p className="vl-kicker">01 · EXPECTATIVA ≠ RESULTADO</p><h3>Veja o caminho esperado e o que realmente acontece.</h3><div className="rl-choice-grid" role="group" aria-label="Escolha uma situação concessiva">{expectations.map((item,index)=><button type="button" key={item.sentence} aria-pressed={expectation===index} onClick={()=>{setExpectation(index);speech.stop();}}><strong>{item.condition}</strong><small>{item.pt}</small></button>)}</div><div className="rl-rules"><div><strong>Condição</strong><p>{scene.condition}</p></div><div><strong>Expectativa</strong><p>{scene.expected}</p></div><div><strong>Resultado real</strong><p>{scene.actual}</p></div></div><div className="rl-context" aria-live="polite"><strong lang="ko">{scene.sentence}</strong><p>{scene.pt}</p><button type="button" className="secondary" onClick={()=>speech.speak(scene.sentence)}><Volume2 size={17}/>Ouvir</button></div><div className="vl-note"><Lightbulb size={20}/><p>Compare: <b>비가 와서 집에 있어요</b> (“fico em casa porque chove”) apresenta causa; <b>비가 와도 밖에 나가요</b> quebra a expectativa.</p></div></>:
+   step===1?<><p className="vl-kicker">02 · TRÊS GRAUS DE CONCESSÃO</p><h3>Condição, fato ou hipótese enfática?</h3><div className="rl-choice-grid" role="group" aria-label="Escolha uma construção concessiva">{concessions.map((item,index)=><button type="button" key={item.form} aria-pressed={concession===index} onClick={()=>setConcession(index)}><strong>{item.form}</strong><small>{item.label}</small></button>)}</div><div className="rl-path"><span lang="ko">{contrast.bridge}<small>condição / fato</small></span><ArrowRight/><span lang="ko">{contrast.result}<small>resultado contrário</small></span></div><div className="rl-context" aria-live="polite"><strong lang="ko">{contrast.sentence}</strong><p>{contrast.pt}</p><p>{contrast.note}</p><button type="button" className="secondary" onClick={()=>speech.speak(contrast.sentence)}><Volume2 size={17}/>Ouvir</button></div><div className="rl-rules"><div><strong>-아/어도</strong><p>mesmo se / mesmo estando</p></div><div><strong>-는데도</strong><p>apesar do fato de</p></div><div><strong>-더라도</strong><p>mesmo que, hipótese forte</p></div></div></>:
+   step===2?<><p className="vl-kicker">03 · A FORMA DE -는데도</p><h3>A classe e o tempo aparecem antes de 데도.</h3><div className="st-example-tabs" role="group" aria-label="Escolha classe e tempo">{forms.map((item,index)=><button type="button" key={item.type} aria-pressed={form===index} onClick={()=>setForm(index)}>{item.type}</button>)}</div><div className="rl-path"><span lang="ko">{shape.source}</span><ArrowRight/><span lang="ko">{shape.result}</span></div><div className="rl-context" aria-live="polite"><strong lang="ko">{shape.sentence}</strong><p>{shape.pt}</p><button type="button" className="secondary" onClick={()=>speech.speak(shape.sentence)}><Volume2 size={17}/>Ouvir</button></div><div className="rl-rules"><div><strong>Ação presente</strong><p>-는데도</p></div><div><strong>Descrição presente</strong><p>-(으)ㄴ데도</p></div><div><strong>Passado</strong><p>-았/었는데도</p></div></div></>:
+   <><p className="vl-kicker">04 · QUAL EXPECTATIVA FOI QUEBRADA?</p><h3>Escolha pelo fato, hipótese e classe.</h3><p>Resolva cinco desafios e siga para os exercícios que registram seu progresso.</p><div className="st-challenge"><span>{round+1} / {challenges.length}</span><h4>{task.prompt}</h4><div className="st-answer-options rl-challenge-options" role="group" aria-label="Respostas da oficina de concessões">{task.options.map(option=><button type="button" key={option} lang="ko" aria-pressed={answer===option} onClick={()=>{setAnswer(option);setChecked(false);speech.speak(option);}}>{option}</button>)}</div><button type="button" className="primary" disabled={!answer} onClick={()=>{setChecked(true);if(correct)setWins(current=>current.includes(round)?current:[...current,round]);}}>Conferir minha resposta</button></div>{checked&&<div className={'st-feedback '+(correct?'st-correct':'')} role="status"><strong>{correct?'Isso! A construção combina com a concessão.':'Procure a expectativa e o resultado que a contraria.'}</strong><p>{correct?task.feedback:'-아/어도 não deixa a condição impedir; -는데도 contrasta um fato; -더라도 enfatiza hipótese.'}</p></div>}<div className="st-inline-actions"><span>{wins.length} / {challenges.length} <span>descobertas</span></span><button type="button" className="secondary" onClick={()=>nextChallenge((round+1)%challenges.length)}>Próximo desafio<ArrowRight size={17}/></button><button type="button" className="text-button" onClick={()=>{nextChallenge(0);setWins([]);}}><RotateCcw size={16}/>Recomeçar</button></div><ul className="vl-takeaways"><li><CheckCircle2/>Concessão mantém o resultado apesar da condição.</li><li><CheckCircle2/>-는데도 varia conforme classe e tempo.</li><li><CheckCircle2/>Causa e concessão criam relações opostas.</li></ul></>}
+  </div>
+  <div className="vl-step-footer"><span>{step+1} / 4</span><div><button type="button" className="text-button" disabled={step===0} onClick={()=>go(step-1)}><ArrowLeft size={16}/>Anterior</button>{step<3?<button type="button" className="primary" onClick={()=>go(step+1)}>Continuar<ArrowRight size={16}/></button>:<a className="primary" href="#concessions-practice" onClick={event=>{event.preventDefault();const el=document.getElementById('concessions-practice');el?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});el?.focus({preventScroll:true});}}>Ir para os exercícios<ArrowRight size={16}/></a>}</div></div>
+  <p className="vl-audio-status" role="status">{speech.status}</p>
+ </div></LessonText>;
+}
+
