@@ -50,6 +50,7 @@ function studyForAlbum(title:string,albumTitle:string,artist:string){
  if(normalizedTitle==='huh?!'||normalizedTitle==='huh?'||normalizedTitle.startsWith('huh?!'))return 'huh';
  if(normalizedTitle==='amygdala')return 'amygdala';
  if(normalizedTitle==='sdl')return 'sdl';
+ if(normalizedTitle==='eight'||normalizedTitle.startsWith('eight (feat. suga'))return 'eight-iu';
  if(normalizedTitle==='people pt.2'||normalizedTitle.startsWith('people pt.2 ('))return 'people-pt2';
  if(normalizedTitle==='polar night'||normalizedTitle.startsWith('polar night ('))return 'polar-night';
  if(normalizedTitle==='snooze'||normalizedTitle.startsWith('snooze ('))return 'snooze';
@@ -68,7 +69,7 @@ function studyForAlbum(title:string,albumTitle:string,artist:string){
  if(normalizedTitle==='give it to me')return 'give-it-to-me';
  if(normalizedTitle==='tony montana'||normalizedTitle.startsWith('tony montana ('))return 'tony-montana';
  if(normalizedTitle==='agust d')return 'agust-d-song';
- if(normalizedTitle.startsWith('intro: dt suga'))return 'intro-dt-suga';
+ if(/^intro\s*:\s*dt suga\b/.test(normalizedTitle))return 'intro-dt-suga';
  if(normalizedTitle==='724148'||normalizedTitle.startsWith('724148 ('))return '724148';
  if(normalizedTitle.startsWith('140503 at dawn'))return 'at-dawn-140503';
  if(normalizedTitle==='the last'||normalizedTitle.startsWith('the last ('))return 'the-last';
